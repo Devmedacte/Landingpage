@@ -8,6 +8,44 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <style>
+        /* Scroll animation classes */
+        .scroll-animate {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease-out;
+        }
+        .scroll-animate.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .scroll-animate-left {
+            opacity: 0;
+            transform: translateX(-20px);
+            transition: all 0.6s ease-out;
+        }
+        .scroll-animate-left.show {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        .scroll-animate-right {
+            opacity: 0;
+            transform: translateX(20px);
+            transition: all 0.6s ease-out;
+        }
+        .scroll-animate-right.show {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        .scroll-animate-scale {
+            opacity: 0;
+            transform: scale(0.9);
+            transition: all 0.6s ease-out;
+        }
+        .scroll-animate-scale.show {
+            opacity: 1;
+            transform: scale(1);
+        }
+
         .language-switch {
             transition: all 0.3s ease;
         }
@@ -64,17 +102,19 @@
 </head>
 <body class="bg-gradient-to-br from-blue-50 to-indigo-100 text-gray-800 min-h-screen">
     <!-- Professional Signup Banner -->
-    <div class="bg-indigo-800 text-white py-2 px-4 text-center">
+    <div class="bg-gradient-to-r from-indigo-600 to-indigo-800 text-white py-3 px-4 text-center sticky top-0 z-50 shadow-md">
         <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
-            <p class="mb-2 md:mb-0" data-lang="fr">Médecins, pharmacies et laboratoires: inscrivez-vous sur notre plateforme</p>
-            <p class="mb-2 md:mb-0 hidden" data-lang="ar">الأطباء والصيدليات والمختبرات: سجلوا على منصتنا</p>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLScsWHDfzWYVAkI9t6sYPKYi_iWy4wL8G0QmbsZHDyNtmnLKSw/viewform?usp=header" 
+            <p class="mb-2 md:mb-0 font-medium" data-lang="fr">Médecins, pharmacies et laboratoires: inscrivez-vous sur notre plateforme</p>
+            <p class="mb-2 md:mb-0 font-medium hidden" data-lang="ar">الأطباء والصيدليات والمختبرات: سجلوا على منصتنا</p>
+            <a href="https://forms.gle/ehREcRXVs5azynum6" 
                target="_blank"
-               class="bg-white text-indigo-800 hover:bg-indigo-100 px-4 py-1 rounded-full font-medium transition shadow-sm whitespace-nowrap"
+               rel="noopener noreferrer"
+               class="bg-white text-indigo-800 hover:bg-indigo-100 px-6 py-2 rounded-full font-medium transition-all shadow-lg whitespace-nowrap hover:scale-105"
                data-lang="fr">S'inscrire maintenant</a>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLScsWHDfzWYVAkI9t6sYPKYi_iWy4wL8G0QmbsZHDyNtmnLKSw/viewform?usp=header" 
+            <a href="https://forms.gle/ehREcRXVs5azynum6" 
                target="_blank"
-               class="bg-white text-indigo-800 hover:bg-indigo-100 px-4 py-1 rounded-full font-medium transition shadow-sm whitespace-nowrap hidden"
+               rel="noopener noreferrer"
+               class="bg-white text-indigo-800 hover:bg-indigo-100 px-6 py-2 rounded-full font-medium transition-all shadow-lg whitespace-nowrap hover:scale-105 hidden"
                data-lang="ar">سجل الآن</a>
         </div>
     </div>
@@ -132,15 +172,15 @@
     <!-- Hero Section -->
     <section class="hero-section min-h-screen flex items-center">
         <div class="container mx-auto px-4 hero-content">
-            <div class="max-w-2xl">
-                <h2 class="text-4xl md:text-6xl font-bold mb-6 text-indigo-900" data-lang="fr">Votre santé, notre priorité</h2>
-                <h2 class="text-4xl md:text-6xl font-bold mb-6 text-indigo-900 hidden" data-lang="ar">صحتك، أولويتنا</h2>
+            <div class="max-w-2xl scroll-animate">
+                <h2 class="text-3xl md:text-5xl font-bold mb-6 text-indigo-900" data-lang="fr">Votre santé, notre priorité</h2>
+                <h2 class="text-3xl md:text-5xl font-bold mb-6 text-indigo-900 hidden" data-lang="ar">صحتك، أولويتنا</h2>
                 <div class="mb-2">
                     <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm font-medium" data-lang="fr">AI powered</span>
                     <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm font-medium hidden" data-lang="ar">مدعوم بالذكاء الاصطناعي</span>
                 </div>
-                <p class="text-xl mb-8 text-gray-700" data-lang="fr">La super application santé qui révolutionne l'accès aux soins au Maroc. Bientôt disponible!</p>
-                <p class="text-xl mb-8 text-gray-700 hidden" data-lang="ar">التطبيق الصحي الفائق الذي يغير طريقة الوصول إلى الرعاية الصحية في المغرب. قريبا!</p>
+                <p class="text-lg mb-8 text-gray-700" data-lang="fr">La super application santé qui révolutionne l'accès aux soins au Maroc. Bientôt disponible!</p>
+                <p class="text-lg mb-8 text-gray-700 hidden" data-lang="ar">التطبيق الصحي الفائق الذي يغير طريقة الوصول إلى الرعاية الصحية في المغرب. قريبا!</p>
                 <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
                     <button class="bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-3 rounded-full font-medium transition shadow-lg" data-lang="fr">Pré-inscription</button>
                     <button class="bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-3 rounded-full font-medium transition shadow-lg hidden" data-lang="ar">تسجيل مسبق</button>
@@ -154,10 +194,10 @@
     <!-- Features Section -->
     <section id="features" class="py-20 bg-white bg-opacity-70 backdrop-blur-sm">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-indigo-900" data-lang="fr">Nos fonctionnalités</h2>
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-indigo-900 hidden" data-lang="ar">ميزاتنا</h2>
-            <p class="text-xl text-center mb-12 max-w-2xl mx-auto text-gray-600" data-lang="fr">Découvrez comment Medacte va transformer votre expérience santé</p>
-            <p class="text-xl text-center mb-12 max-w-2xl mx-auto text-gray-600 hidden" data-lang="ar">اكتشف كيف ستحول ميداكت تجربتك الصحية</p>
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-indigo-900 scroll-animate" data-lang="fr">Nos fonctionnalités</h2>
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-indigo-900 hidden scroll-animate" data-lang="ar">ميزاتنا</h2>
+            <p class="text-xl text-center mb-12 max-w-2xl mx-auto text-gray-600 scroll-animate" data-lang="fr">Découvrez comment Medacte va transformer votre expérience santé</p>
+            <p class="text-xl text-center mb-12 max-w-2xl mx-auto text-gray-600 hidden scroll-animate" data-lang="ar">اكتشف كيف ستحول ميداكت تجربتك الصحية</p>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Feature 1 -->
@@ -477,6 +517,45 @@
     </button>
 
     <script>
+        // Scroll Animation Observer
+        const animateOnScroll = function() {
+            const elements = document.querySelectorAll('.scroll-animate, .scroll-animate-left, .scroll-animate-right, .scroll-animate-scale');
+            const windowHeight = window.innerHeight;
+            const windowTopPosition = window.scrollY;
+            const windowBottomPosition = (windowTopPosition + windowHeight);
+            
+            elements.forEach(element => {
+                const elementHeight = element.offsetHeight;
+                const elementTopPosition = element.offsetTop;
+                const elementBottomPosition = (elementTopPosition + elementHeight);
+                
+                // Check if element is in viewport
+                if ((elementBottomPosition >= windowTopPosition) &&
+                    (elementTopPosition <= windowBottomPosition)) {
+                    element.classList.add('show');
+                }
+            });
+        };
+
+        // Run once on page load
+        document.addEventListener('DOMContentLoaded', animateOnScroll);
+        // Run on scroll
+        window.addEventListener('scroll', animateOnScroll);
+        // Run on resize (in case layout changes)
+        window.addEventListener('resize', animateOnScroll);
+
+        // Professional Signup Form Handling
+        document.querySelectorAll('[href="https://forms.gle/example123"]').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                // Here you can add any pre-submission logic
+                // For example, tracking the click event
+                console.log('Professional signup clicked');
+                // Then proceed to open the form
+                window.open(link.href, '_blank', 'noopener,noreferrer');
+            });
+        });
+
         // Mobile Menu Toggle
         const mobileMenuButton = document.getElementById('mobileMenuButton');
         const mobileMenu = document.getElementById('mobileMenu');
