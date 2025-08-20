@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medacte - Super App Santé Maroc</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <style>
+        .language-switch {
+            transition: all 0.3s ease;
+        }
+        .language-switch:hover {
+            transform: scale(1.05);
+        }
+        .hero-section {
+            position: relative;
+            overflow: hidden;
+        }
+        #canvas3d {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 10;
+        }
+        .feature-card {
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.1);
+        }
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .contact-input {
+            backdrop-filter: blur(5px);
+            background: rgba(255, 255, 255, 0.1);
+        }
+        .contact-input:focus {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.2);
+        }
+        .rtl {
+            direction: rtl;
+        }
+        [lang="ar"] {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .professional-banner a {
+            transition: all 0.2s ease;
+        }
+        .professional-banner a:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-blue-50 to-indigo-100 text-gray-800 min-h-screen">
+    <!-- Professional Signup Banner -->
+    <div class="bg-indigo-800 text-white py-2 px-4 text-center">
+        <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
+            <p class="mb-2 md:mb-0" data-lang="fr">Médecins, pharmacies et laboratoires: inscrivez-vous sur notre plateforme</p>
+            <p class="mb-2 md:mb-0 hidden" data-lang="ar">الأطباء والصيدليات والمختبرات: سجلوا على منصتنا</p>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLScsWHDfzWYVAkI9t6sYPKYi_iWy4wL8G0QmbsZHDyNtmnLKSw/viewform?usp=header" 
+               target="_blank"
+               class="bg-white text-indigo-800 hover:bg-indigo-100 px-4 py-1 rounded-full font-medium transition shadow-sm whitespace-nowrap"
+               data-lang="fr">S'inscrire maintenant</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLScsWHDfzWYVAkI9t6sYPKYi_iWy4wL8G0QmbsZHDyNtmnLKSw/viewform?usp=header" 
+               target="_blank"
+               class="bg-white text-indigo-800 hover:bg-indigo-100 px-4 py-1 rounded-full font-medium transition shadow-sm whitespace-nowrap hidden"
+               data-lang="ar">سجل الآن</a>
+        </div>
+    </div>
+
+    <!-- 3D Background Canvas -->
+    <div id="canvas3d"></div>
+
+    <!-- Language Switch -->
+    <div class="fixed bottom-4 left-4 z-50 flex space-x-2">
+        <button id="switchToFr" class="language-switch bg-white/90 hover:bg-white px-3 py-1 rounded-full shadow-lg flex items-center backdrop-blur-sm border border-white/20">
+            <img src="https://flagcdn.com/w20/fr.png" srcset="https://flagcdn.com/w40/fr.png 2x" width="20" alt="France" class="mr-1">
+            <span class="font-medium">FR</span>
+        </button>
+        <button id="switchToAr" class="language-switch bg-white/90 hover:bg-white px-3 py-1 rounded-full shadow-lg flex items-center backdrop-blur-sm border border-white/20">
+            <img src="https://flagcdn.com/w20/ma.png" srcset="https://flagcdn.com/w40/ma.png 2x" width="20" alt="Morocco" class="mr-1">
+            <span class="font-medium">AR</span>
+        </button>
+    </div>
+
+    <!-- Header -->
+    <header class="container mx-auto px-4 py-6 flex justify-between items-center">
+        <div class="flex items-center">
+            <div class="w-12 h-12 bg-indigo-600 rounded-full flex items-center justify-center text-white font-bold text-xl">M</div>
+            <h1 class="text-2xl font-bold ml-3 text-indigo-800" data-lang="fr">Medacte</h1>
+            <h1 class="text-2xl font-bold ml-3 text-indigo-800 hidden" data-lang="ar">ميداكت</h1>
+        </div>
+        <nav class="hidden md:flex space-x-8">
+            <a href="#features" class="font-medium hover:text-indigo-600 transition" data-lang="fr">Fonctionnalités</a>
+            <a href="#features" class="font-medium hover:text-indigo-600 transition hidden" data-lang="ar">الميزات</a>
+            <a href="#about" class="font-medium hover:text-indigo-600 transition" data-lang="fr">À propos</a>
+            <a href="#about" class="font-medium hover:text-indigo-600 transition hidden" data-lang="ar">حول</a>
+            <a href="#contact" class="font-medium hover:text-indigo-600 transition" data-lang="fr">Contact</a>
+            <a href="#contact" class="font-medium hover:text-indigo-600 transition hidden" data-lang="ar">اتصل بنا</a>
+        </nav>
+        <button class="md:hidden text-2xl" id="mobileMenuButton">
+            <i class="fas fa-bars"></i>
+        </button>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="fixed inset-0 bg-white z-40 flex flex-col items-center justify-center hidden">
+        <button id="closeMobileMenu" class="absolute top-4 right-4 text-2xl">
+            <i class="fas fa-times"></i>
+        </button>
+        <nav class="flex flex-col items-center space-y-8">
+            <a href="#features" class="text-xl font-medium hover:text-indigo-600 transition" data-lang="fr">Fonctionnalités</a>
+            <a href="#features" class="text-xl font-medium hover:text-indigo-600 transition hidden" data-lang="ar">الميزات</a>
+            <a href="#about" class="text-xl font-medium hover:text-indigo-600 transition" data-lang="fr">À propos</a>
+            <a href="#about" class="text-xl font-medium hover:text-indigo-600 transition hidden" data-lang="ar">حول</a>
+            <a href="#contact" class="text-xl font-medium hover:text-indigo-600 transition" data-lang="fr">Contact</a>
+            <a href="#contact" class="text-xl font-medium hover:text-indigo-600 transition hidden" data-lang="ar">اتصل بنا</a>
+        </nav>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero-section min-h-screen flex items-center">
+        <div class="container mx-auto px-4 hero-content">
+            <div class="max-w-2xl">
+                <h2 class="text-4xl md:text-6xl font-bold mb-6 text-indigo-900" data-lang="fr">Votre santé, notre priorité</h2>
+                <h2 class="text-4xl md:text-6xl font-bold mb-6 text-indigo-900 hidden" data-lang="ar">صحتك، أولويتنا</h2>
+                <div class="mb-2">
+                    <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm font-medium" data-lang="fr">AI powered</span>
+                    <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm font-medium hidden" data-lang="ar">مدعوم بالذكاء الاصطناعي</span>
+                </div>
+                <p class="text-xl mb-8 text-gray-700" data-lang="fr">La super application santé qui révolutionne l'accès aux soins au Maroc. Bientôt disponible!</p>
+                <p class="text-xl mb-8 text-gray-700 hidden" data-lang="ar">التطبيق الصحي الفائق الذي يغير طريقة الوصول إلى الرعاية الصحية في المغرب. قريبا!</p>
+                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                    <button class="bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-3 rounded-full font-medium transition shadow-lg" data-lang="fr">Pré-inscription</button>
+                    <button class="bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-3 rounded-full font-medium transition shadow-lg hidden" data-lang="ar">تسجيل مسبق</button>
+                    <button class="border border-indigo-600 text-indigo-600 hover:bg-indigo-50 px-8 py-3 rounded-full font-medium transition" data-lang="fr">Voir la démo</button>
+                    <button class="border border-indigo-600 text-indigo-600 hover:bg-indigo-50 px-8 py-3 rounded-full font-medium transition hidden" data-lang="ar">عرض التجريبي</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 bg-white bg-opacity-70 backdrop-blur-sm">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-indigo-900" data-lang="fr">Nos fonctionnalités</h2>
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-indigo-900 hidden" data-lang="ar">ميزاتنا</h2>
+            <p class="text-xl text-center mb-12 max-w-2xl mx-auto text-gray-600" data-lang="fr">Découvrez comment Medacte va transformer votre expérience santé</p>
+            <p class="text-xl text-center mb-12 max-w-2xl mx-auto text-gray-600 hidden" data-lang="ar">اكتشف كيف ستحول ميداكت تجربتك الصحية</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="feature-card p-8 rounded-2xl border border-white border-opacity-30">
+                    <div class="w-14 h-14 bg-indigo-100 rounded-full flex items-center justify-center text-indigo-600 mb-6">
+                        <i class="fas fa-calendar-check text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3" data-lang="fr">Rendez-vous en ligne</h3>
+                    <h3 class="text-xl font-bold mb-3 hidden" data-lang="ar">مواعيد عبر الإنترنت</h3>
+                    <p class="text-gray-600" data-lang="fr">Prenez rendez-vous avec des professionnels de santé en quelques clics, 24h/24.</p>
+                    <p class="text-gray-600 hidden" data-lang="ar">احجز موعدًا مع متخصصي الرعاية الصحية ببضع نقرات، على مدار الساعة.</p>
+                </div>
+                
+                <!-- Feature 2 -->
+                <div class="feature-card p-8 rounded-2xl border border-white border-opacity-30">
+                    <div class="w-14 h-14 bg-indigo-100 rounded-full flex items-center justify-center text-indigo-600 mb-6">
+                        <i class="fas fa-comments text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3" data-lang="fr">Consultation à distance</h3>
+                    <h3 class="text-xl font-bold mb-3 hidden" data-lang="ar">استشارة عن بعد</h3>
+                    <p class="text-gray-600" data-lang="fr">Consultez un médecin par vidéo ou chat sans vous déplacer.</p>
+                    <p class="text-gray-600 hidden" data-lang="ar">استشر طبيبًا عبر الفيديو أو الدردشة دون الحاجة إلى التنقل.</p>
+                </div>
+                
+                <!-- Feature 3 -->
+                <div class="feature-card p-8 rounded-2xl border border-white border-opacity-30">
+                    <div class="w-14 h-14 bg-indigo-100 rounded-full flex items-center justify-center text-indigo-600 mb-6">
+                        <i class="fas fa-pills text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3" data-lang="fr">Pharmacie en ligne</h3>
+                    <h3 class="text-xl font-bold mb-3 hidden" data-lang="ar">صيدلية على الإنترنت</h3>
+                    <p class="text-gray-600" data-lang="fr">Commandez vos médicaments et recevez-les à domicile.</p>
+                    <p class="text-gray-600 hidden" data-lang="ar">اطلب أدويتك واستلمها في منزلك.</p>
+                </div>
+                
+                <!-- Feature 4 -->
+                <div class="feature-card p-8 rounded-2xl border border-white border-opacity-30">
+                    <div class="w-14 h-14 bg-indigo-100 rounded-full flex items-center justify-center text-indigo-600 mb-6">
+                        <i class="fas fa-heartbeat text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3" data-lang="fr">Suivi médical</h3>
+                    <h3 class="text-xl font-bold mb-3 hidden" data-lang="ar">متابعة طبية</h3>
+                    <p class="text-gray-600" data-lang="fr">Accédez à votre dossier médical et suivez vos indicateurs santé.</p>
+                    <p class="text-gray-600 hidden" data-lang="ar">الوصول إلى ملفك الطبي ومتابعة مؤشراتك الصحية.</p>
+                </div>
+                
+                <!-- Feature 5 -->
+                <div class="feature-card p-8 rounded-2xl border border-white border-opacity-30">
+                    <div class="w-14 h-14 bg-indigo-100 rounded-full flex items-center justify-center text-indigo-600 mb-6">
+                        <i class="fas fa-ambulance text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3" data-lang="fr">Urgence 24/7</h3>
+                    <h3 class="text-xl font-bold mb-3 hidden" data-lang="ar">طوارئ 24/7</h3>
+                    <p class="text-gray-600" data-lang="fr">Accès immédiat à des services d'urgence partout au Maroc.</p>
+                    <p class="text-gray-600 hidden" data-lang="ar">وصول فوري إلى خدمات الطوارئ في جميع أنحاء المغرب.</p>
+                </div>
+                
+                <!-- Feature 6 -->
+                <div class="feature-card p-8 rounded-2xl border border-white border-opacity-30">
+                    <div class="w-14 h-14 bg-indigo-100 rounded-full flex items-center justify-center text-indigo-600 mb-6">
+                        <i class="fas fa-shield-alt text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3" data-lang="fr">Sécurité des données</h3>
+                    <h3 class="text-xl font-bold mb-3 hidden" data-lang="ar">حماية البيانات</h3>
+                    <p class="text-gray-600" data-lang="fr">Vos données médicales sont cryptées et protégées.</p>
+                    <p class="text-gray-600 hidden" data-lang="ar">بياناتك الطبية مشفرة ومحمية.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-indigo-50 overflow-hidden">
+        <!-- Image Slider -->
+        <div class="container mx-auto px-4 mb-16">
+            <div class="relative h-64 md:h-80 lg:h-96 overflow-hidden rounded-2xl shadow-xl">
+                <div class="absolute inset-0 flex transition-transform duration-500 ease-in-out" id="healthSlider">
+                    <!-- Slide 1 -->
+                    <div class="min-w-full relative">
+                        <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80" 
+                             alt="Telemedicine" 
+                             class="w-full h-full object-cover">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
+                            <p class="text-white text-sm md:text-base" data-lang="fr">Consultation à distance avec nos médecins certifiés</p>
+                            <p class="text-white text-sm md:text-base hidden" data-lang="ar">استشارة عن بعد مع أطبائنا المعتمدين</p>
+                        </div>
+                    </div>
+                    <!-- Slide 2 -->
+                    <div class="min-w-full relative">
+                        <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80" 
+                             alt="Medical Records" 
+                             class="w-full h-full object-cover">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
+                            <p class="text-white text-sm md:text-base" data-lang="fr">Gestion sécurisée de votre dossier médical</p>
+                            <p class="text-white text-sm md:text-base hidden" data-lang="ar">إدارة آمنة لملفك الطبي</p>
+                        </div>
+                    </div>
+                    <!-- Slide 3 -->
+                    <div class="min-w-full relative">
+                        <img src="https://images.unsplash.com/photo-1581056771107-24ca5f033842?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80" 
+                             alt="Online Pharmacy" 
+                             class="w-full h-full object-cover">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
+                            <p class="text-white text-sm md:text-base" data-lang="fr">Commande de médicaments en ligne rapide et sécurisée</p>
+                            <p class="text-white text-sm md:text-base hidden" data-lang="ar">طلب الأدوية عبر الإنترنت بسرعة وأمان</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Navigation Dots -->
+                <div class="absolute bottom-4 left-0 right-0 flex justify-center space-x-2">
+                    <button class="w-2 h-2 rounded-full bg-white/50 slider-dot" data-index="0"></button>
+                    <button class="w-2 h-2 rounded-full bg-white/50 slider-dot" data-index="1"></button>
+                    <button class="w-2 h-2 rounded-full bg-white/50 slider-dot" data-index="2"></button>
+                </div>
+            </div>
+        </div>
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row items-center">
+                <div class="lg:w-1/2 mb-12 lg:mb-0 lg:pr-12">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6 text-indigo-900" data-lang="fr">Health Technologie</h2>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6 text-indigo-900 hidden" data-lang="ar">تكنولوجيا الصحة</h2>
+                    <p class="text-lg mb-6 text-gray-700" data-lang="fr">Medacte est la première plateforme de santé digitale au Maroc, combinant technologie de pointe et expertise médicale.</p>
+                    <p class="text-lg mb-6 text-gray-700 hidden" data-lang="ar">ميداكت هي أول منصة للصحة الرقمية في المغرب، تجمع بين التكنولوجيا المتطورة والخبرة الطبية.</p>
+                    <p class="text-lg mb-6 text-gray-700" data-lang="fr">Notre mission est de connecter patients et professionnels de santé grâce à une plateforme intuitive, sécurisée et complète.</p>
+                    <p class="text-lg mb-6 text-gray-700 hidden" data-lang="ar">مهمتنا هي ربط المرضى بمتخصصي الرعاية الصحية من خلال منصة سهلة الاستخدام وآمنة وشاملة.</p>
+                    <div class="flex space-x-4">
+                        <div class="bg-white p-4 rounded-lg shadow-md text-center">
+                            <div class="text-3xl font-bold text-indigo-600">100+</div>
+                            <div class="text-gray-600" data-lang="fr">Professionnels</div>
+                            <div class="text-gray-600 hidden" data-lang="ar">متخصصين</div>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow-md text-center">
+                            <div class="text-3xl font-bold text-indigo-600">24/7</div>
+                            <div class="text-gray-600" data-lang="fr">Disponibilité</div>
+                            <div class="text-gray-600 hidden" data-lang="ar">متاح</div>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow-md text-center">
+                            <div class="text-3xl font-bold text-indigo-600">50K+</div>
+                            <div class="text-gray-600" data-lang="fr">Utilisateurs</div>
+                            <div class="text-gray-600 hidden" data-lang="ar">مستخدم</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:w-1/2 relative">
+                    <div class="bg-indigo-100 rounded-3xl p-6 inline-block relative overflow-hidden">
+                        <div class="relative z-10">
+                            <div class="w-24 h-24 bg-white rounded-full flex items-center justify-center shadow-lg mb-4 mx-auto">
+                                <i class="fas fa-heartbeat text-4xl text-indigo-600"></i>
+                            </div>
+                            <div class="grid grid-cols-3 gap-3">
+                                <div class="bg-white p-3 rounded-lg shadow-sm flex flex-col items-center">
+                                    <i class="fas fa-mobile-alt text-indigo-500 text-xl mb-2"></i>
+                                    <span class="text-xs font-medium text-center" data-lang="fr">App Mobile</span>
+                                    <span class="text-xs font-medium text-center hidden" data-lang="ar">تطبيق</span>
+                                </div>
+                                <div class="bg-white p-3 rounded-lg shadow-sm flex flex-col items-center">
+                                    <i class="fas fa-brain text-indigo-500 text-xl mb-2"></i>
+                                    <span class="text-xs font-medium text-center" data-lang="fr">AI Santé</span>
+                                    <span class="text-xs font-medium text-center hidden" data-lang="ar">ذكاء اصطناعي</span>
+                                </div>
+                                <div class="bg-white p-3 rounded-lg shadow-sm flex flex-col items-center">
+                                    <i class="fas fa-shield-alt text-indigo-500 text-xl mb-2"></i>
+                                    <span class="text-xs font-medium text-center" data-lang="fr">Sécurité</span>
+                                    <span class="text-xs font-medium text-center hidden" data-lang="ar">حماية</span>
+                                </div>
+                                <div class="bg-white p-3 rounded-lg shadow-sm flex flex-col items-center">
+                                    <i class="fas fa-user-md text-indigo-500 text-xl mb-2"></i>
+                                    <span class="text-xs font-medium text-center" data-lang="fr">Docteurs</span>
+                                    <span class="text-xs font-medium text-center hidden" data-lang="ar">أطباء</span>
+                                </div>
+                                <div class="bg-white p-3 rounded-lg shadow-sm flex flex-col items-center">
+                                    <i class="fas fa-pills text-indigo-500 text-xl mb-2"></i>
+                                    <span class="text-xs font-medium text-center" data-lang="fr">Médicaments</span>
+                                    <span class="text-xs font-medium text-center hidden" data-lang="ar">أدوية</span>
+                                </div>
+                                <div class="bg-white p-3 rounded-lg shadow-sm flex flex-col items-center">
+                                    <i class="fas fa-ambulance text-indigo-500 text-xl mb-2"></i>
+                                    <span class="text-xs font-medium text-center" data-lang="fr">Urgence</span>
+                                    <span class="text-xs font-medium text-center hidden" data-lang="ar">طوارئ</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="absolute -bottom-10 -right-10 w-40 h-40 bg-indigo-200 rounded-full opacity-20"></div>
+                        <div class="absolute -top-10 -left-10 w-32 h-32 bg-indigo-300 rounded-full opacity-20"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-indigo-900" data-lang="fr">Bientôt disponible</h2>
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-indigo-900 hidden" data-lang="ar">قريبا متاح</h2>
+                <p class="text-xl text-center mb-12 text-gray-600" data-lang="fr">Inscrivez-vous pour être informé du lancement et bénéficier d'offres exclusives</p>
+                <p class="text-xl text-center mb-12 text-gray-600 hidden" data-lang="ar">سجل للحصول على إشعار عند الإطلاق والاستفادة من العروض الحصرية</p>
+                
+                <form class="bg-indigo-50 rounded-2xl p-8 shadow-sm">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                        <div>
+                            <label class="block text-gray-700 mb-2" data-lang="fr">Nom complet</label>
+                            <label class="block text-gray-700 mb-2 hidden" data-lang="ar">الاسم الكامل</label>
+                            <input type="text" class="contact-input w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 mb-2" data-lang="fr">Email</label>
+                            <label class="block text-gray-700 mb-2 hidden" data-lang="ar">البريد الإلكتروني</label>
+                            <input type="email" class="contact-input w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 mb-2" data-lang="fr">Téléphone</label>
+                            <label class="block text-gray-700 mb-2 hidden" data-lang="ar">الهاتف</label>
+                            <input type="tel" class="contact-input w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 mb-2" data-lang="fr">Ville</label>
+                            <label class="block text-gray-700 mb-2 hidden" data-lang="ar">المدينة</label>
+                            <select class="contact-input w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                                <option value="" data-lang="fr">Sélectionnez votre ville</option>
+                                <option value="" data-lang="ar" class="hidden">اختر مدينتك</option>
+                                <option value="casablanca">Casablanca</option>
+                                <option value="rabat">Rabat</option>
+                                <option value="marrakech">Marrakech</option>
+                                <option value="fes">Fès</option>
+                                <option value="tanger">Tanger</option>
+                                <option value="agadir">Agadir</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="mb-6">
+                        <label class="block text-gray-700 mb-2" data-lang="fr">Message</label>
+                        <label class="block text-gray-700 mb-2 hidden" data-lang="ar">رسالة</label>
+                        <textarea rows="4" class="contact-input w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500"></textarea>
+                    </div>
+                    <div class="flex items-center mb-6">
+                        <input type="checkbox" id="newsletter" class="mr-2">
+                        <label for="newsletter" class="text-gray-700" data-lang="fr">Je souhaite recevoir des actualités et offres de Medacte</label>
+                        <label for="newsletter" class="text-gray-700 hidden" data-lang="ar">أرغب في تلقي أخبار وعروض من ميداكت</label>
+                    </div>
+                    <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-4 rounded-lg font-medium transition shadow-lg" data-lang="fr">Envoyer</button>
+                    <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-4 rounded-lg font-medium transition shadow-lg hidden" data-lang="ar">إرسال</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-indigo-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-indigo-900 font-bold text-xl">M</div>
+                        <h3 class="text-xl font-bold ml-2" data-lang="fr">Medacte</h3>
+                        <h3 class="text-xl font-bold ml-2 hidden" data-lang="ar">ميداكت</h3>
+                    </div>
+                    <p class="text-indigo-200" data-lang="fr">La santé digitale pour tous les Marocains.</p>
+                    <p class="text-indigo-200 hidden" data-lang="ar">الصحة الرقمية لجميع المغاربة.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4" data-lang="fr">Liens rapides</h4>
+                    <h4 class="text-lg font-semibold mb-4 hidden" data-lang="ar">روابط سريعة</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#features" class="text-indigo-200 hover:text-white transition" data-lang="fr">Fonctionnalités</a></li>
+                        <li><a href="#features" class="text-indigo-200 hover:text-white transition hidden" data-lang="ar">الميزات</a></li>
+                        <li><a href="#about" class="text-indigo-200 hover:text-white transition" data-lang="fr">À propos</a></li>
+                        <li><a href="#about" class="text-indigo-200 hover:text-white transition hidden" data-lang="ar">حول</a></li>
+                        <li><a href="#contact" class="text-indigo-200 hover:text-white transition" data-lang="fr">Contact</a></li>
+                        <li><a href="#contact" class="text-indigo-200 hover:text-white transition hidden" data-lang="ar">اتصل بنا</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4" data-lang="fr">Légal</h4>
+                    <h4 class="text-lg font-semibold mb-4 hidden" data-lang="ar">قانوني</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-indigo-200 hover:text-white transition" data-lang="fr">Conditions d'utilisation</a></li>
+                        <li><a href="#" class="text-indigo-200 hover:text-white transition hidden" data-lang="ar">شروط الاستخدام</a></li>
+                        <li><a href="#" class="text-indigo-200 hover:text-white transition" data-lang="fr">Politique de confidentialité</a></li>
+                        <li><a href="#" class="text-indigo-200 hover:text-white transition hidden" data-lang="ar">سياسة الخصوصية</a></li>
+                        <li><a href="#" class="text-indigo-200 hover:text-white transition" data-lang="fr">Cookies</a></li>
+                        <li><a href="#" class="text-indigo-200 hover:text-white transition hidden" data-lang="ar">الكوكيز</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4" data-lang="fr">Nous suivre</h4>
+                    <h4 class="text-lg font-semibold mb-4 hidden" data-lang="ar">تابعنا</h4>
+                    <div class="flex space-x-4 mb-6">
+                        <a href="#" class="w-10 h-10 bg-indigo-800 rounded-full flex items-center justify-center hover:bg-indigo-700 transition">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-indigo-800 rounded-full flex items-center justify-center hover:bg-indigo-700 transition">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-indigo-800 rounded-full flex items-center justify-center hover:bg-indigo-700 transition">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-indigo-800 rounded-full flex items-center justify-center hover:bg-indigo-700 transition">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                    <p class="text-indigo-200" data-lang="fr">contact@medacte.com </p>
+                    <p class="text-indigo-200" data-lang="fr">+212 773-125597</p>
+                </div>
+            </div>
+            <div class="border-t border-indigo-800 mt-8 pt-8 text-center text-indigo-300">
+                <p data-lang="fr">&copy; 2025 Medacte. Tous droits réservés.</p>
+                <p class="hidden" data-lang="ar">&copy; 2025 ميداكت. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="fixed bottom-8 right-8 w-12 h-12 bg-indigo-600 text-white rounded-full shadow-lg flex items-center justify-center opacity-0 invisible transition-all duration-300 hover:bg-indigo-700">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobileMenuButton');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const closeMobileMenu = document.getElementById('closeMobileMenu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.remove('hidden');
+        });
+        
+        closeMobileMenu.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+        });
+
+        // Language Switch
+        const switchToFr = document.getElementById('switchToFr');
+        const switchToAr = document.getElementById('switchToAr');
+        
+        switchToFr.addEventListener('click', () => {
+            document.documentElement.lang = 'fr';
+            document.documentElement.dir = 'ltr';
+            document.querySelectorAll('[data-lang="fr"]').forEach(el => el.classList.remove('hidden'));
+            document.querySelectorAll('[data-lang="ar"]').forEach(el => el.classList.add('hidden'));
+        });
+        
+        switchToAr.addEventListener('click', () => {
+            document.documentElement.lang = 'ar';
+            document.documentElement.dir = 'rtl';
+            document.querySelectorAll('[data-lang="ar"]').forEach(el => el.classList.remove('hidden'));
+            document.querySelectorAll('[data-lang="fr"]').forEach(el => el.classList.add('hidden'));
+        });
+
+        // 3D Background with Three.js
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.getElementById('canvas3d').appendChild(renderer.domElement);
+
+        // Create floating shapes
+        const geometry = new THREE.IcosahedronGeometry(1, 0);
+        const material = new THREE.MeshPhongMaterial({ 
+            color: 0x5a67d8,
+            transparent: true,
+            opacity: 0.7,
+            shininess: 100
+        });
+
+        const shapes = [];
+        const shapeCount = 10;
+
+        for (let i = 0; i < shapeCount; i++) {
+            const shape = new THREE.Mesh(geometry, material);
+            
+            // Random position
+            shape.position.x = Math.random() * 20 - 10;
+            shape.position.y = Math.random() * 20 - 10;
+            shape.position.z = Math.random() * 20 - 10;
+            
+            // Random size
+            const size = Math.random() * 0.5 + 0.5;
+            shape.scale.set(size, size, size);
+            
+            // Random rotation
+            shape.rotation.x = Math.random() * Math.PI;
+            shape.rotation.y = Math.random() * Math.PI;
+            
+            // Store reference for animation
+            shape.userData = {
+                speed: {
+                    x: Math.random() * 0.02 - 0.01,
+                    y: Math.random() * 0.02 - 0.01,
+                    z: Math.random() * 0.02 - 0.01
+                },
+                rotation: {
+                    x: Math.random() * 0.02 - 0.01,
+                    y: Math.random() * 0.02 - 0.01
+                }
+            };
+            
+            shapes.push(shape);
+            scene.add(shape);
+        }
+
+        // Add lights
+        const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+        scene.add(ambientLight);
+
+        const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
+        directionalLight.position.set(1, 1, 1);
+        scene.add(directionalLight);
+
+        // Camera position
+        camera.position.z = 5;
+
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+
+        // Animation loop
+        function animate() {
+            requestAnimationFrame(animate);
+            
+            // Animate shapes
+            shapes.forEach(shape => {
+                // Movement
+                shape.position.x += shape.userData.speed.x;
+                shape.position.y += shape.userData.speed.y;
+                shape.position.z += shape.userData.speed.z;
+                
+                // Bounce off edges
+                if (Math.abs(shape.position.x) > 10) shape.userData.speed.x *= -1;
+                if (Math.abs(shape.position.y) > 10) shape.userData.speed.y *= -1;
+                if (Math.abs(shape.position.z) > 10) shape.userData.speed.z *= -1;
+                
+                // Rotation
+                shape.rotation.x += shape.userData.rotation.x;
+                shape.rotation.y += shape.userData.rotation.y;
+            });
+            
+            renderer.render(scene, camera);
+        }
+
+        animate();
+
+        // Health Image Slider
+        const slider = document.getElementById('healthSlider');
+        const slides = document.querySelectorAll('#healthSlider > div');
+        const dots = document.querySelectorAll('.slider-dot');
+        let currentSlide = 0;
+        const slideCount = slides.length;
+
+        function goToSlide(index) {
+            currentSlide = (index + slideCount) % slideCount;
+            slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+            
+            // Update dots
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('bg-white', i === currentSlide);
+                dot.classList.toggle('bg-white/50', i !== currentSlide);
+            });
+        }
+
+        // Auto-advance slides every 5 seconds
+        let slideInterval = setInterval(() => {
+            goToSlide(currentSlide + 1);
+        }, 5000);
+
+        // Pause on hover
+        slider.parentElement.addEventListener('mouseenter', () => {
+            clearInterval(slideInterval);
+        });
+
+        slider.parentElement.addEventListener('mouseleave', () => {
+            slideInterval = setInterval(() => {
+                goToSlide(currentSlide + 1);
+            }, 5000);
+        });
+
+        // Dot navigation
+        dots.forEach(dot => {
+            dot.addEventListener('click', () => {
+                clearInterval(slideInterval);
+                goToSlide(parseInt(dot.dataset.index));
+                slideInterval = setInterval(() => {
+                    goToSlide(currentSlide + 1);
+                }, 5000);
+            });
+        });
+
+        // Initialize first dot as active
+        dots[0].classList.remove('bg-white/50');
+        dots[0].classList.add('bg-white');
+
+        // Back to Top Button
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.remove('opacity-100', 'visible');
+                backToTopButton.classList.add('opacity-0', 'invisible');
+            }
+        });
+
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html>
