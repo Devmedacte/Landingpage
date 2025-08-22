@@ -501,12 +501,12 @@
             <a href="#contact" class="font-medium hover:text-indigo-600 transition-all hover:scale-105 hidden" data-lang="ar">
                 <i class="fas fa-envelope mr-1"></i>اتصل بنا
             </a>
-            <a href="https://forms.gle/MjANBjHoxBYoAAEV7" target="_blank" rel="noopener noreferrer" class="bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-6 py-2 rounded-full font-medium hover:from-indigo-700 hover:to-purple-700 transition-all hover:scale-105 shadow-lg hover:shadow-xl" data-lang="fr">
+            <button onclick="window.open('https://forms.gle/MjANBjHoxBYoAAEV7', '_blank', 'noopener,noreferrer')" class="bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-6 py-2 rounded-full font-medium hover:from-indigo-700 hover:to-purple-700 transition-all hover:scale-105 shadow-lg hover:shadow-xl" data-lang="fr">
                 <i class="fas fa-user-plus mr-2"></i>Pré-inscription
-            </a>
-            <a href="https://forms.gle/MjANBjHoxBYoAAEV7" target="_blank" rel="noopener noreferrer" class="bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-6 py-2 rounded-full font-medium hover:from-indigo-700 hover:to-purple-700 transition-all hover:scale-105 shadow-lg hover:shadow-xl hidden" data-lang="ar">
+            </button>
+            <button onclick="window.open('https://forms.gle/MjANBjHoxBYoAAEV7', '_blank', 'noopener,noreferrer')" class="bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-6 py-2 rounded-full font-medium hover:from-indigo-700 hover:to-purple-700 transition-all hover:scale-105 shadow-lg hover:shadow-xl hidden" data-lang="ar">
                 <i class="fas fa-user-plus mr-2"></i>التسجيل المسبق
-            </a>
+            </button>
         </nav>
         
         <button class="md:hidden text-2xl glass-effect p-2 rounded-lg" id="mobileMenuButton" aria-label="Menu">
@@ -547,12 +547,12 @@
             <a href="#contact" class="text-xl font-medium hover:text-indigo-600 transition-all hover:scale-105 hidden" data-lang="ar">
                 <i class="fas fa-envelope mr-2"></i>اتصل بنا
             </a>
-            <a href="https://forms.gle/MjANBjHoxBYoAAEV7" target="_blank" rel="noopener noreferrer" class="bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-8 py-4 rounded-full font-medium hover:from-indigo-700 hover:to-purple-700 transition-all hover:scale-105 shadow-lg hover:shadow-xl text-lg" data-lang="fr">
+            <button onclick="window.open('https://forms.gle/MjANBjHoxBYoAAEV7', '_blank', 'noopener,noreferrer')" class="bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-8 py-4 rounded-full font-medium hover:from-indigo-700 hover:to-purple-700 transition-all hover:scale-105 shadow-lg hover:shadow-xl text-lg" data-lang="fr">
                 <i class="fas fa-user-plus mr-3"></i>Pré-inscription
-            </a>
-            <a href="https://forms.gle/MjANBjHoxBYoAAEV7" target="_blank" rel="noopener noreferrer" class="bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-8 py-4 rounded-full font-medium hover:from-indigo-700 hover:to-purple-700 transition-all hover:scale-105 shadow-lg hover:shadow-xl text-lg hidden" data-lang="ar">
+            </button>
+            <button onclick="window.open('https://forms.gle/MjANBjHoxBYoAAEV7', '_blank', 'noopener,noreferrer')" class="bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-8 py-4 rounded-full font-medium hover:from-indigo-700 hover:to-purple-700 transition-all hover:scale-105 shadow-lg hover:shadow-xl text-lg hidden" data-lang="ar">
                 <i class="fas fa-user-plus mr-3"></i>التسجيل المسبق
-            </a>
+            </button>
         </nav>
         
         <!-- Mobile Cities -->
@@ -1238,17 +1238,8 @@
             });
         });
 
-        // Pré-inscription Form Handling
-        document.querySelectorAll('[href="https://forms.gle/MjANBjHoxBYoAAEV7"]').forEach(link => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                // Here you can add any pre-submission logic
-                // For example, tracking the click event
-                console.log('Pré-inscription clicked');
-                // Then proceed to open the form
-                window.open(link.href, '_blank', 'noopener,noreferrer');
-            });
-        });
+        // Pré-inscription Form Handling - No JavaScript interference
+        // Links will work normally with target="_blank" and rel="noopener noreferrer"
 
         // Mobile Menu Toggle
         const mobileMenuButton = document.getElementById('mobileMenuButton');
@@ -1271,12 +1262,12 @@
             document.body.style.overflow = ''; // Restore scrolling
         });
         
-        // Close menu when clicking on navigation links (except external links)
+        // Close menu when clicking on navigation links (only for internal links)
         document.querySelectorAll('#mobileMenu nav a').forEach(link => {
             link.addEventListener('click', () => {
-                // Don't close menu for external links (they open in new tab)
-                if (!link.href.startsWith('http') || link.href.includes('forms.gle')) {
-                    return;
+                // Only close menu for internal links (not external ones)
+                if (link.href.startsWith('http') || link.href.includes('forms.gle')) {
+                    return; // Don't close menu for external links
                 }
                 mobileMenu.classList.add('hidden');
                 document.body.style.overflow = '';
