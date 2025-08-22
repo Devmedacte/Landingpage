@@ -168,6 +168,25 @@
             display: block !important;
         }
         
+        /* Ensure Health Technology elements are visible */
+        .modern-tech-card,
+        .modern-stat-card,
+        .tech-icon-wrapper,
+        .floating-tech-shape {
+            opacity: 1 !important;
+            visibility: visible !important;
+            display: block !important;
+        }
+        
+        /* Ensure FAQ elements are visible */
+        .faq-item,
+        .faq-question,
+        .faq-answer,
+        .faq-icon {
+            opacity: 1 !important;
+            visibility: visible !important;
+        }
+        
         /* Floating Shapes Animation */
         .floating-shape {
             position: absolute;
@@ -453,6 +472,38 @@
             direction: rtl;
         }
         
+        /* Arabic Icon Centering */
+        [lang="ar"] i {
+            display: inline-flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+        }
+        
+        [lang="ar"] .faq-icon i,
+        [lang="ar"] .tech-icon-wrapper i,
+        [lang="ar"] .feature-icon-wrapper i {
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+        
+        /* Arabic Button and Link Icons */
+        [lang="ar"] button i,
+        [lang="ar"] a i {
+            margin-left: 0.5rem !important;
+            margin-right: 0 !important;
+            display: inline-flex !important;
+            align-items: center !important;
+        }
+        
+        /* Arabic Navigation Icons */
+        [lang="ar"] nav a i {
+            margin-left: 0.25rem !important;
+            margin-right: 0 !important;
+            display: inline-flex !important;
+            align-items: center !important;
+        }
+        
+        /* Arabic Spacing Fixes */
         .rtl .mr-1 {
             margin-right: 0 !important;
             margin-left: 0.25rem !important;
@@ -486,6 +537,27 @@
         .rtl .space-x-8 > * + * {
             margin-left: 0 !important;
             margin-right: 2rem !important;
+        }
+        
+        /* RTL Space Reverse */
+        .rtl .space-x-3 > * + * {
+            margin-left: 0.75rem !important;
+            margin-right: 0 !important;
+        }
+        
+        .rtl .space-x-6 > * + * {
+            margin-left: 1.5rem !important;
+            margin-right: 0 !important;
+        }
+        
+        /* Arabic Icon Centering in Cards */
+        [lang="ar"] .tech-icon-wrapper i,
+        [lang="ar"] .faq-icon i {
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            width: 100% !important;
+            height: 100% !important;
         }
         
 
@@ -1321,37 +1393,37 @@
                         <h3 class="text-2xl font-bold text-indigo-900 mb-6 hidden" data-lang="ar">المزايا التقنية</h3>
                         
                         <div class="space-y-4">
-                            <div class="flex items-center space-x-3">
-                                <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
-                                    <i class="fas fa-check text-green-600 text-sm"></i>
+                                                            <div class="flex items-center space-x-3 rtl:space-x-reverse">
+                                    <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
+                                        <i class="fas fa-check text-green-600 text-sm"></i>
+                                    </div>
+                                    <span class="text-gray-700" data-lang="fr">Temps de réponse < 30 secondes</span>
+                                    <span class="text-gray-700 hidden" data-lang="ar">وقت استجابة أقل من 30 ثانية</span>
                                 </div>
-                                <span class="text-gray-700" data-lang="fr">Temps de réponse < 30 secondes</span>
-                                <span class="text-gray-700 hidden" data-lang="ar">وقت استجابة أقل من 30 ثانية</span>
-                            </div>
-                            
-                            <div class="flex items-center space-x-3">
-                                <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
-                                    <i class="fas fa-check text-green-600 text-sm"></i>
+                                
+                                <div class="flex items-center space-x-3 rtl:space-x-reverse">
+                                    <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
+                                        <i class="fas fa-check text-green-600 text-sm"></i>
+                                    </div>
+                                    <span class="text-gray-700" data-lang="fr">Chiffrement de niveau bancaire</span>
+                                    <span class="text-gray-700 hidden" data-lang="ar">تشفير بمستوى البنوك</span>
                                 </div>
-                                <span class="text-gray-700" data-lang="fr">Chiffrement de niveau bancaire</span>
-                                <span class="text-gray-700 hidden" data-lang="ar">تشفير بمستوى البنوك</span>
-                            </div>
-                            
-                            <div class="flex items-center space-x-3">
-                                <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
-                                    <i class="fas fa-check text-green-600 text-sm"></i>
+                                
+                                <div class="flex items-center space-x-3 rtl:space-x-reverse">
+                                    <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
+                                        <i class="fas fa-check text-green-600 text-sm"></i>
+                                    </div>
+                                    <span class="text-gray-700" data-lang="fr">Conformité internationale</span>
+                                    <span class="text-gray-700 hidden" data-lang="ar">امتثال دولي</span>
                                 </div>
-                                <span class="text-gray-700" data-lang="fr">Conformité internationale</span>
-                                <span class="text-gray-700 hidden" data-lang="ar">امتثال دولي</span>
-                            </div>
-                            
-                            <div class="flex items-center space-x-3">
-                                <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
-                                    <i class="fas fa-check text-green-600 text-sm"></i>
+                                
+                                <div class="flex items-center space-x-3 rtl:space-x-reverse">
+                                    <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
+                                        <i class="fas fa-check text-green-600 text-sm"></i>
+                                    </div>
+                                    <span class="text-gray-700" data-lang="fr">Interface intuitive</span>
+                                    <span class="text-gray-700 hidden" data-lang="ar">واجهة سهلة الاستخدام</span>
                                 </div>
-                                <span class="text-gray-700" data-lang="fr">Interface intuitive</span>
-                                <span class="text-gray-700 hidden" data-lang="ar">واجهة سهلة الاستخدام</span>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -1359,8 +1431,6 @@
         </div>
     </section>
 
-            </div>
-        </div>
     </section>
 
     <!-- Enhanced Contact Section with No 3D Background -->
@@ -1681,7 +1751,7 @@
     </footer>
 
     <!-- Enhanced Back to Top Button -->
-    <button id="backToTop" class="fixed bottom-8 right-8 w-14 h-14 bg-gradient-to-br from-indigo-600 to-purple-600 text-white rounded-full shadow-xl flex items-center justify-center opacity-0 invisible transition-all duration-500 hover:scale-110 hover:shadow-2xl group z-50">
+    <button id="backToTop" class="fixed bottom-24 right-8 w-14 h-14 bg-gradient-to-br from-indigo-600 to-purple-600 text-white rounded-full shadow-xl flex items-center justify-center opacity-0 invisible transition-all duration-500 hover:scale-110 hover:shadow-2xl group z-50">
         <i class="fas fa-arrow-up text-lg group-hover:animate-bounce"></i>
         <div class="absolute inset-0 bg-white/20 rounded-full scale-0 group-hover:scale-100 transition-transform duration-300"></div>
     </button>
@@ -1953,12 +2023,28 @@
             console.error('FAQ section not found!');
         } else {
             console.log('FAQ section found and visible');
+            // Ensure FAQ section is visible
+            faqSection.style.opacity = '1';
+            faqSection.style.visibility = 'visible';
+            faqSection.style.display = 'block';
         }
         
         if (!aboutSection) {
             console.error('Health Technology section not found!');
         } else {
             console.log('Health Technology section found and visible');
+            // Ensure Health Technology section is visible
+            aboutSection.style.opacity = '1';
+            aboutSection.style.visibility = 'visible';
+            aboutSection.style.display = 'block';
+            
+            // Ensure all tech cards are visible
+            const techCards = aboutSection.querySelectorAll('.modern-tech-card, .modern-stat-card');
+            techCards.forEach(card => {
+                card.style.opacity = '1';
+                card.style.visibility = 'visible';
+                card.style.display = 'block';
+            });
         }
         
         // FAQ Section Animations
