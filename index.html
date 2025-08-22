@@ -476,7 +476,6 @@
             margin-left: 0 !important;
             margin-right: 2rem !important;
         }
-        }
         
 
         
@@ -507,30 +506,7 @@
             box-shadow: 0 15px 40px rgba(79, 70, 229, 0.4);
         }
         
-        /* Loading Animations */
-        .loading-spinner {
-            width: 40px;
-            height: 40px;
-            border: 4px solid #f3f3f3;
-            border-top: 4px solid var(--primary-color);
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-        }
-        
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-        
-        /* Pulse Animation */
-        .pulse-animation {
-            animation: pulse 2s infinite;
-        }
-        
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.7; }
-        }
+
         
         /* Gradient Text */
         .gradient-text {
@@ -540,28 +516,7 @@
             background-clip: text;
         }
         
-        /* Morocco-specific RTL Support */
-        .rtl {
-            direction: rtl;
-        }
-        
-        [lang="ar"] {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.8;
-        }
-        
-        /* Arabic-specific spacing improvements */
-        [lang="ar"] .mr-1 {
-            margin-right: 0.25rem !important;
-            margin-left: 0.25rem !important;
-        }
-        
-        [lang="ar"] .mr-2 {
-            margin-right: 0.5rem !important;
-            margin-left: 0.5rem !important;
-        }
-        
-        [lang="ar"] .mr-3 {
+
             margin-right: 0.75rem !important;
             margin-left: 0.75rem !important;
         }
@@ -584,43 +539,7 @@
             margin-right: 0 !important;
         }
         
-        /* Arabic button spacing */
-        [lang="ar"] button i,
-        [lang="ar"] a i {
-            margin-left: 0.75rem !important;
-            margin-right: 0 !important;
-        }
-        
-        /* Arabic navigation spacing */
-        [lang="ar"] nav a i {
-            margin-left: 0.5rem !important;
-            margin-right: 0 !important;
-        }
-        
-        /* Arabic feature cards spacing */
-        [lang="ar"] .feature-card i {
-            margin-left: 0.75rem !important;
-            margin-right: 0 !important;
-        }
-        
-        /* Arabic form labels spacing */
-        [lang="ar"] label i {
-            margin-left: 0.5rem !important;
-            margin-right: 0 !important;
-        }
-        
-        /* Arabic footer spacing */
-        [lang="ar"] footer a i,
-        [lang="ar"] footer h4 i {
-            margin-left: 0.75rem !important;
-            margin-right: 0 !important;
-        }
-        
-        /* Arabic contact info spacing */
-        [lang="ar"] .contact-info i {
-            margin-left: 0.5rem !important;
-            margin-right: 0 !important;
-        }
+
         
         /* Mobile Optimizations */
         @media (max-width: 768px) {
@@ -632,17 +551,7 @@
                 transform: translateY(-5px);
             }
             
-            /* Mobile Arabic spacing */
-            [lang="ar"] i {
-                margin-left: 0.25rem !important;
-                margin-right: 0 !important;
-            }
-            
-            [lang="ar"] button i,
-            [lang="ar"] a i {
-                margin-left: 0.5rem !important;
-                margin-right: 0 !important;
-            }
+
         }
         
         /* Dark Mode Support */
@@ -677,7 +586,7 @@
     <!-- AI Chat Widget - Fixed Position -->
     <div class="ai-chat-widget" id="aiChatWidget">
         <button class="ai-chat-button" id="aiChatButton" aria-label="Chat with AI Health Assistant">
-            <i class="fas fa-comments"></i>
+            <i class="fas fa-robot"></i>
         </button>
     </div>
 
@@ -1438,67 +1347,7 @@
             </div>
         </div>
     </section>
-                            <div class="text-3xl font-bold text-indigo-600">100+</div>
-                            <div class="text-gray-600" data-lang="fr">Professionnels</div>
-                            <div class="text-gray-600 hidden" data-lang="ar">متخصصين</div>
-                        </div>
-                        <div class="bg-white p-4 rounded-lg shadow-md text-center">
-                            <div class="text-3xl font-bold text-indigo-600">24/7</div>
-                            <div class="text-gray-600" data-lang="fr">Disponibilité</div>
-                            <div class="text-gray-600 hidden" data-lang="ar">متاح</div>
-                        </div>
-                        <div class="bg-white p-4 rounded-lg shadow-md text-center">
-                            <div class="text-3xl font-bold text-indigo-600">50K+</div>
-                            <div class="text-gray-600" data-lang="fr">Utilisateurs</div>
-                            <div class="text-gray-600 hidden" data-lang="ar">مستخدم</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="lg:w-1/2 relative">
-                    <div class="bg-gradient-to-br from-indigo-100 to-purple-100 rounded-3xl p-8 inline-block relative overflow-hidden shadow-2xl">
-                        <div class="relative z-10">
-                            <div class="w-28 h-28 bg-gradient-to-br from-indigo-600 to-purple-600 rounded-full flex items-center justify-center shadow-xl mb-6 mx-auto">
-                                <i class="fas fa-heartbeat text-5xl text-white"></i>
-                            </div>
-                            <div class="grid grid-cols-3 gap-4">
-                                <div class="bg-white/90 backdrop-blur-sm p-4 rounded-xl shadow-lg flex flex-col items-center hover:scale-105 transition-transform">
-                                    <i class="fas fa-mobile-alt text-indigo-600 text-2xl mb-3"></i>
-                                    <span class="text-sm font-semibold text-center text-gray-800" data-lang="fr">App Mobile</span>
-                                    <span class="text-sm font-semibold text-center text-gray-800 hidden" data-lang="ar">تطبيق</span>
-                                </div>
-                                <div class="bg-white/90 backdrop-blur-sm p-4 rounded-xl shadow-lg flex flex-col items-center hover:scale-105 transition-transform">
-                                    <i class="fas fa-brain text-indigo-600 text-2xl mb-3"></i>
-                                    <span class="text-sm font-semibold text-center text-gray-800" data-lang="fr">AI Santé</span>
-                                    <span class="text-sm font-semibold text-center text-gray-800 hidden" data-lang="ar">ذكاء اصطناعي</span>
-                                </div>
-                                <div class="bg-white/90 backdrop-blur-sm p-4 rounded-xl shadow-lg flex flex-col items-center hover:scale-105 transition-transform">
-                                    <i class="fas fa-shield-alt text-indigo-600 text-2xl mb-3"></i>
-                                    <span class="text-sm font-semibold text-center text-gray-800" data-lang="fr">Sécurité</span>
-                                    <span class="text-sm font-semibold text-center text-gray-800 hidden" data-lang="ar">حماية</span>
-                                </div>
-                                <div class="bg-white/90 backdrop-blur-sm p-4 rounded-xl shadow-lg flex flex-col items-center hover:scale-105 transition-transform">
-                                    <i class="fas fa-user-md text-indigo-600 text-2xl mb-3"></i>
-                                    <span class="text-sm font-semibold text-center text-gray-800" data-lang="fr">Docteurs</span>
-                                    <span class="text-sm font-semibold text-center text-gray-800 hidden" data-lang="ar">أطباء</span>
-                                </div>
-                                <div class="bg-white/90 backdrop-blur-sm p-4 rounded-xl shadow-lg flex flex-col items-center hover:scale-105 transition-transform">
-                                    <i class="fas fa-pills text-indigo-600 text-2xl mb-3"></i>
-                                    <span class="text-sm font-semibold text-center text-gray-800" data-lang="fr">Médicaments</span>
-                                    <span class="text-sm font-semibold text-center text-gray-800 hidden" data-lang="ar">أدوية</span>
-                                </div>
-                                <div class="bg-white/90 backdrop-blur-sm p-4 rounded-xl shadow-lg flex flex-col items-center hover:scale-105 transition-transform">
-                                    <i class="fas fa-ambulance text-indigo-600 text-2xl mb-3"></i>
-                                    <span class="text-sm font-semibold text-center text-gray-800" data-lang="fr">Urgence</span>
-                                    <span class="text-sm font-semibold text-center text-gray-800 hidden" data-lang="ar">طوارئ</span>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Enhanced Background Elements -->
-                        <div class="absolute -bottom-16 -right-16 w-48 h-48 bg-gradient-to-br from-indigo-200 to-purple-200 rounded-full opacity-30 animate-pulse"></div>
-                        <div class="absolute -top-16 -left-16 w-40 h-40 bg-gradient-to-br from-purple-200 to-pink-200 rounded-full opacity-30 animate-pulse" style="animation-delay: 1s;"></div>
-                        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-gradient-to-br from-indigo-300 to-purple-300 rounded-full opacity-20 animate-pulse" style="animation-delay: 2s;"></div>
-                    </div>
-                </div>
+
             </div>
         </div>
     </section>
@@ -1821,7 +1670,7 @@
     </footer>
 
     <!-- Enhanced Back to Top Button -->
-    <button id="backToTop" class="fixed bottom-8 right-8 w-14 h-14 bg-gradient-to-br from-indigo-600 to-purple-600 text-white rounded-full shadow-xl flex items-center justify-center opacity-0 invisible transition-all duration-500 hover:scale-110 hover:shadow-2xl group">
+    <button id="backToTop" class="fixed bottom-8 right-8 w-14 h-14 bg-gradient-to-br from-indigo-600 to-purple-600 text-white rounded-full shadow-xl flex items-center justify-center opacity-0 invisible transition-all duration-500 hover:scale-110 hover:shadow-2xl group z-50">
         <i class="fas fa-arrow-up text-lg group-hover:animate-bounce"></i>
         <div class="absolute inset-0 bg-white/20 rounded-full scale-0 group-hover:scale-100 transition-transform duration-300"></div>
     </button>
@@ -1829,7 +1678,7 @@
     <script>
         // Scroll Animation Observer
         const animateOnScroll = function() {
-            const elements = document.querySelectorAll('.scroll-animate, .scroll-animate-left, .scroll-animate-right, .scroll-animate-scale');
+            const elements = document.querySelectorAll('.scroll-animate');
             const windowHeight = window.innerHeight;
             const windowTopPosition = window.scrollY;
             const windowBottomPosition = (windowTopPosition + windowHeight);
