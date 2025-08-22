@@ -359,6 +359,33 @@
             box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
         }
         
+        /* 3D Tech Stat Circles */
+        .tech-stat-circle {
+            position: relative;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .tech-stat-circle:hover {
+            transform: translateY(-10px);
+        }
+        
+        .tech-stat-circle::before {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            border-radius: 50%;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .tech-stat-circle:hover::before {
+            opacity: 1;
+        }
+        
         /* Title Animations */
         .faq-title, .features-title, .health-tech-title {
             background-size: 200% 200%;
@@ -1061,16 +1088,16 @@
                     <!-- FAQ Item 1 -->
                     <div class="faq-item bg-white/80 backdrop-blur-sm rounded-2xl border border-white/50 shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden">
                         <button class="faq-question w-full px-8 py-6 text-left flex items-center justify-between group">
-                            <h3 class="text-xl font-semibold text-indigo-900 group-hover:text-indigo-600 transition-colors" data-lang="fr">Comment fonctionne la télémedecine sur Medacte ?</h3>
-                            <h3 class="text-xl font-semibold text-indigo-900 group-hover:text-indigo-600 transition-colors hidden" data-lang="ar">كيف يعمل الطب عن بعد على ميداكت؟</h3>
+                            <h3 class="text-xl font-semibold text-indigo-900 group-hover:text-indigo-600 transition-colors" data-lang="fr">Combien coûte une consultation sur Medacte ?</h3>
+                            <h3 class="text-xl font-semibold text-indigo-900 group-hover:text-indigo-600 transition-colors hidden" data-lang="ar">كم تكلفة الاستشارة على ميداكت؟</h3>
                             <div class="faq-icon w-8 h-8 rounded-full bg-gradient-to-r from-indigo-500 to-purple-500 flex items-center justify-center text-white transition-all duration-300 group-hover:scale-110">
                                 <i class="fas fa-plus transform transition-transform duration-300"></i>
                             </div>
                         </button>
                         <div class="faq-answer max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
                             <div class="px-8 pb-6">
-                                <p class="text-gray-700 leading-relaxed" data-lang="fr">La télémedecine sur Medacte vous permet de consulter un médecin certifié en vidéo ou par chat. Prenez rendez-vous, connectez-vous à l'heure prévue, et recevez une consultation de qualité depuis chez vous. Vos ordonnances sont envoyées directement à votre pharmacie partenaire.</p>
-                                <p class="text-gray-700 leading-relaxed hidden" data-lang="ar">يتيح لك الطب عن بعد على ميداكت استشارة طبيب معتمد عبر الفيديو أو الدردشة. احجز موعدًا، اتصل في الوقت المحدد، واحصل على استشارة عالية الجودة من منزلك. يتم إرسال وصفتك الطبية مباشرة إلى صيدليتك الشريكة.</p>
+                                <p class="text-gray-700 leading-relaxed" data-lang="fr">Les tarifs varient selon la spécialité : consultation générale (150-200 MAD), spécialiste (250-350 MAD), urgence (400 MAD). Nous proposons des forfaits familiaux et des réductions pour les abonnés. La première consultation est offerte !</p>
+                                <p class="text-gray-700 leading-relaxed hidden" data-lang="ar">تختلف الأسعار حسب التخصص: استشارة عامة (150-200 درهم)، متخصص (250-350 درهم)، طوارئ (400 درهم). نقدم باقات عائلية وخصومات للمشتركين. الاستشارة الأولى مجانية!</p>
                             </div>
                         </div>
                     </div>
@@ -1078,16 +1105,16 @@
                     <!-- FAQ Item 2 -->
                     <div class="faq-item bg-white/80 backdrop-blur-sm rounded-2xl border border-white/50 shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden">
                         <button class="faq-question w-full px-8 py-6 text-left flex items-center justify-between group">
-                            <h3 class="text-xl font-semibold text-indigo-900 group-hover:text-indigo-600 transition-colors" data-lang="fr">Mes données médicales sont-elles sécurisées ?</h3>
-                            <h3 class="text-xl font-semibold text-indigo-900 group-hover:text-indigo-600 transition-colors hidden" data-lang="ar">هل بياناتي الطبية آمنة؟</h3>
+                            <h3 class="text-xl font-semibold text-indigo-900 group-hover:text-indigo-600 transition-colors" data-lang="fr">Puis-je obtenir une ordonnance en ligne ?</h3>
+                            <h3 class="text-xl font-semibold text-indigo-900 group-hover:text-indigo-600 transition-colors hidden" data-lang="ar">هل يمكنني الحصول على وصفة طبية عبر الإنترنت؟</h3>
                             <div class="faq-icon w-8 h-8 rounded-full bg-gradient-to-r from-indigo-500 to-purple-500 flex items-center justify-center text-white transition-all duration-300 group-hover:scale-110">
                                 <i class="fas fa-plus transform transition-transform duration-300"></i>
                             </div>
                         </button>
                         <div class="faq-answer max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
                             <div class="px-8 pb-6">
-                                <p class="text-gray-700 leading-relaxed" data-lang="fr">Absolument ! Medacte utilise un cryptage de niveau bancaire et respecte les normes internationales de protection des données médicales. Vos informations sont stockées de manière sécurisée et ne sont accessibles qu'aux professionnels de santé autorisés.</p>
-                                <p class="text-gray-700 leading-relaxed hidden" data-lang="ar">بالتأكيد! يستخدم ميداكت تشفيرًا بمستوى البنوك ويحترم المعايير الدولية لحماية البيانات الطبية. يتم تخزين معلوماتك بشكل آمن ولا يمكن الوصول إليها إلا من قبل متخصصي الرعاية الصحية المصرح لهم.</p>
+                                <p class="text-gray-700 leading-relaxed" data-lang="fr">Oui ! Après votre consultation, le médecin peut vous prescrire des médicaments si nécessaire. L'ordonnance est envoyée électroniquement à votre pharmacie partenaire. Vous recevez également une copie numérique dans votre espace patient.</p>
+                                <p class="text-gray-700 leading-relaxed hidden" data-lang="ar">نعم! بعد استشارتك، يمكن للطبيب أن يصف لك أدوية إذا لزم الأمر. يتم إرسال الوصفة الطبية إلكترونيًا إلى صيدليتك الشريكة. كما تحصل على نسخة رقمية في مساحة المريض الخاصة بك.</p>
                             </div>
                         </div>
                     </div>
@@ -1095,16 +1122,16 @@
                     <!-- FAQ Item 3 -->
                     <div class="faq-item bg-white/80 backdrop-blur-sm rounded-2xl border border-white/50 shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden">
                         <button class="faq-question w-full px-8 py-6 text-left flex items-center justify-between group">
-                            <h3 class="text-xl font-semibold text-indigo-900 group-hover:text-indigo-600 transition-colors" data-lang="fr">Quels types de médecins sont disponibles ?</h3>
-                            <h3 class="text-xl font-semibold text-indigo-900 group-hover:text-indigo-600 transition-colors hidden" data-lang="ar">ما أنواع الأطباء المتاحين؟</h3>
+                            <h3 class="text-xl font-semibold text-indigo-900 group-hover:text-indigo-600 transition-colors" data-lang="fr">Dans quelles villes Medacte est-il disponible ?</h3>
+                            <h3 class="text-xl font-semibold text-indigo-900 group-hover:text-indigo-600 transition-colors hidden" data-lang="ar">في أي مدن متاح ميداكت؟</h3>
                             <div class="faq-icon w-8 h-8 rounded-full bg-gradient-to-r from-indigo-500 to-purple-500 flex items-center justify-center text-white transition-all duration-300 group-hover:scale-110">
                                 <i class="fas fa-plus transform transition-transform duration-300"></i>
                             </div>
                         </button>
                         <div class="faq-answer max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
                             <div class="px-8 pb-6">
-                                <p class="text-gray-700 leading-relaxed" data-lang="fr">Nous proposons une large gamme de spécialités : médecine générale, pédiatrie, cardiologie, dermatologie, gynécologie, psychiatrie, et bien d'autres. Tous nos médecins sont certifiés et exercent au Maroc avec des années d'expérience.</p>
-                                <p class="text-gray-700 leading-relaxed hidden" data-lang="ar">نقدم مجموعة واسعة من التخصصات: الطب العام، طب الأطفال، أمراض القلب، الأمراض الجلدية، أمراض النساء، الطب النفسي، وغيرها الكثير. جميع أطبائنا معتمدون ويمارسون في المغرب مع سنوات من الخبرة.</p>
+                                <p class="text-gray-700 leading-relaxed" data-lang="fr">Medacte est disponible dans toutes les grandes villes du Maroc : Casablanca, Rabat, Marrakech, Fès, Tanger, Agadir, Meknès, Oujda, et plus encore. La télémedecine est accessible partout, et la livraison de médicaments couvre 95% du territoire.</p>
+                                <p class="text-gray-700 leading-relaxed hidden" data-lang="ar">ميداكت متاح في جميع المدن الكبرى في المغرب: الدار البيضاء، الرباط، مراكش، فاس، طنجة، أغادير، مكناس، وجدة، والمزيد. الطب عن بعد متاح في كل مكان، وتوصيل الأدوية يغطي 95% من الأراضي.</p>
                             </div>
                         </div>
                     </div>
@@ -1112,16 +1139,16 @@
                     <!-- FAQ Item 4 -->
                     <div class="faq-item bg-white/80 backdrop-blur-sm rounded-2xl border border-white/50 shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden">
                         <button class="faq-question w-full px-8 py-6 text-left flex items-center justify-between group">
-                            <h3 class="text-xl font-semibold text-indigo-900 group-hover:text-indigo-600 transition-colors" data-lang="fr">Comment commander mes médicaments en ligne ?</h3>
-                            <h3 class="text-xl font-semibold text-indigo-900 group-hover:text-indigo-600 transition-colors hidden" data-lang="ar">كيف أطلب أدويتي عبر الإنترنت؟</h3>
+                            <h3 class="text-xl font-semibold text-indigo-900 group-hover:text-indigo-600 transition-colors" data-lang="fr">Comment fonctionne le suivi médical ?</h3>
+                            <h3 class="text-xl font-semibold text-indigo-900 group-hover:text-indigo-600 transition-colors hidden" data-lang="ar">كيف يعمل المتابعة الطبية؟</h3>
                             <div class="faq-icon w-8 h-8 rounded-full bg-gradient-to-r from-indigo-500 to-purple-500 flex items-center justify-center text-white transition-all duration-300 group-hover:scale-110">
                                 <i class="fas fa-plus transform transition-transform duration-300"></i>
                             </div>
                         </button>
                         <div class="faq-answer max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
                             <div class="px-8 pb-6">
-                                <p class="text-gray-700 leading-relaxed" data-lang="fr">Après votre consultation, votre ordonnance est automatiquement envoyée à notre réseau de pharmacies partenaires. Vous pouvez choisir la livraison à domicile ou le retrait en pharmacie. La livraison est rapide et sécurisée dans tout le Maroc.</p>
-                                <p class="text-gray-700 leading-relaxed hidden" data-lang="ar">بعد استشارتك، يتم إرسال وصفتك الطبية تلقائيًا إلى شبكة الصيدليات الشريكة لدينا. يمكنك اختيار التوصيل إلى المنزل أو الاستلام من الصيدلية. التوصيل سريع وآمن في جميع أنحاء المغرب.</p>
+                                <p class="text-gray-700 leading-relaxed" data-lang="fr">Votre dossier médical est centralisé et accessible 24h/24. Vous pouvez consulter vos antécédents, résultats d'analyses, ordonnances, et planifier des rappels de prise de médicaments. Nos médecins ont accès à votre historique complet pour un suivi optimal.</p>
+                                <p class="text-gray-700 leading-relaxed hidden" data-lang="ar">ملفك الطبي مركزي ويمكن الوصول إليه على مدار الساعة. يمكنك الاطلاع على سجلك الطبي، نتائج التحاليل، الوصفات الطبية، وتخطيط تذكيرات تناول الأدوية. أطباؤنا لديهم إمكانية الوصول إلى سجلك الكامل لمتابعة مثالية.</p>
                             </div>
                         </div>
                     </div>
@@ -1129,16 +1156,67 @@
                     <!-- FAQ Item 5 -->
                     <div class="faq-item bg-white/80 backdrop-blur-sm rounded-2xl border border-white/50 shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden">
                         <button class="faq-question w-full px-8 py-6 text-left flex items-center justify-between group">
-                            <h3 class="text-xl font-semibold text-indigo-900 group-hover:text-indigo-600 transition-colors" data-lang="fr">Que faire en cas d'urgence médicale ?</h3>
-                            <h3 class="text-xl font-semibold text-indigo-900 group-hover:text-indigo-600 transition-colors hidden" data-lang="ar">ماذا أفعل في حالة الطوارئ الطبية؟</h3>
+                            <h3 class="text-xl font-semibold text-indigo-900 group-hover:text-indigo-600 transition-colors" data-lang="fr">Puis-je annuler ou reporter un rendez-vous ?</h3>
+                            <h3 class="text-xl font-semibold text-indigo-900 group-hover:text-indigo-600 transition-colors hidden" data-lang="ar">هل يمكنني إلغاء أو تأجيل موعد؟</h3>
                             <div class="faq-icon w-8 h-8 rounded-full bg-gradient-to-r from-indigo-500 to-purple-500 flex items-center justify-center text-white transition-all duration-300 group-hover:scale-110">
                                 <i class="fas fa-plus transform transition-transform duration-300"></i>
                             </div>
                         </button>
                         <div class="faq-answer max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
                             <div class="px-8 pb-6">
-                                <p class="text-gray-700 leading-relaxed" data-lang="fr">En cas d'urgence, utilisez notre service d'urgence 24/7. Un médecin vous répondra immédiatement et pourra organiser une intervention si nécessaire. Pour les urgences vitales, appelez directement le 15 (SAMU) ou le 19 (Police).</p>
-                                <p class="text-gray-700 leading-relaxed hidden" data-lang="ar">في حالة الطوارئ، استخدم خدمة الطوارئ لدينا على مدار الساعة. سيجيبك طبيب فورًا ويمكنه تنظيم تدخل إذا لزم الأمر. للطوارئ الحيوية، اتصل مباشرة بالرقم 15 (الإسعاف) أو 19 (الشرطة).</p>
+                                <p class="text-gray-700 leading-relaxed" data-lang="fr">Oui, vous pouvez annuler ou reporter votre rendez-vous jusqu'à 2 heures avant la consultation. Les modifications se font facilement dans votre espace patient. En cas d'annulation tardive, des frais peuvent s'appliquer selon la politique du médecin.</p>
+                                <p class="text-gray-700 leading-relaxed hidden" data-lang="ar">نعم، يمكنك إلغاء أو تأجيل موعدك حتى ساعتين قبل الاستشارة. يمكن إجراء التعديلات بسهولة في مساحة المريض الخاصة بك. في حالة الإلغاء المتأخر، قد تطبق رسوم حسب سياسة الطبيب.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 6 -->
+                    <div class="faq-item bg-white/80 backdrop-blur-sm rounded-2xl border border-white/50 shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden">
+                        <button class="faq-question w-full px-8 py-6 text-left flex items-center justify-between group">
+                            <h3 class="text-xl font-semibold text-indigo-900 group-hover:text-indigo-600 transition-colors" data-lang="fr">Les consultations sont-elles remboursées par l'assurance ?</h3>
+                            <h3 class="text-xl font-semibold text-indigo-900 group-hover:text-indigo-600 transition-colors hidden" data-lang="ar">هل يتم استرداد الاستشارات من التأمين؟</h3>
+                            <div class="faq-icon w-8 h-8 rounded-full bg-gradient-to-r from-indigo-500 to-purple-500 flex items-center justify-center text-white transition-all duration-300 group-hover:scale-110">
+                                <i class="fas fa-plus transform transition-transform duration-300"></i>
+                            </div>
+                        </button>
+                        <div class="faq-answer max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+                            <div class="px-8 pb-6">
+                                <p class="text-gray-700 leading-relaxed" data-lang="fr">Medacte collabore avec de nombreuses compagnies d'assurance au Maroc. Vérifiez avec votre assureur si la télémedecine est couverte. Nous fournissons les factures nécessaires pour le remboursement. Certaines mutuelles remboursent jusqu'à 80% des frais.</p>
+                                <p class="text-gray-700 leading-relaxed hidden" data-lang="ar">يتعاون ميداكت مع العديد من شركات التأمين في المغرب. تحقق مع شركة التأمين الخاصة بك إذا كان الطب عن بعد مشمولاً. نقدم الفواتير اللازمة للاسترداد. بعض التأمينات التكميلية تسترد حتى 80% من الرسوم.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 7 -->
+                    <div class="faq-item bg-white/80 backdrop-blur-sm rounded-2xl border border-white/50 shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden">
+                        <button class="faq-question w-full px-8 py-6 text-left flex items-center justify-between group">
+                            <h3 class="text-xl font-semibold text-indigo-900 group-hover:text-indigo-600 transition-colors" data-lang="fr">Comment fonctionne la livraison de médicaments ?</h3>
+                            <h3 class="text-xl font-semibold text-indigo-900 group-hover:text-indigo-600 transition-colors hidden" data-lang="ar">كيف يعمل توصيل الأدوية؟</h3>
+                            <div class="faq-icon w-8 h-8 rounded-full bg-gradient-to-r from-indigo-500 to-purple-500 flex items-center justify-center text-white transition-all duration-300 group-hover:scale-110">
+                                <i class="fas fa-plus transform transition-transform duration-300"></i>
+                            </div>
+                        </button>
+                        <div class="faq-answer max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+                            <div class="px-8 pb-6">
+                                <p class="text-gray-700 leading-relaxed" data-lang="fr">La livraison se fait en 2-4 heures dans les grandes villes, 24h dans les zones rurales. Nos livreurs sont formés et équipés pour transporter les médicaments en toute sécurité. Vous recevez un SMS avec le suivi GPS en temps réel. Paiement à la livraison ou en ligne.</p>
+                                <p class="text-gray-700 leading-relaxed hidden" data-lang="ar">يتم التوصيل في 2-4 ساعات في المدن الكبرى، 24 ساعة في المناطق الريفية. سائقونا مدربون ومجهزون لنقل الأدوية بأمان. تحصل على رسالة نصية مع متابعة GPS في الوقت الفعلي. الدفع عند الاستلام أو عبر الإنترنت.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 8 -->
+                    <div class="faq-item bg-white/80 backdrop-blur-sm rounded-2xl border border-white/50 shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden">
+                        <button class="faq-question w-full px-8 py-6 text-left flex items-center justify-between group">
+                            <h3 class="text-xl font-semibold text-indigo-900 group-hover:text-indigo-600 transition-colors" data-lang="fr">Puis-je consulter un spécialiste directement ?</h3>
+                            <h3 class="text-xl font-semibold text-indigo-900 group-hover:text-indigo-600 transition-colors hidden" data-lang="ar">هل يمكنني استشارة متخصص مباشرة؟</h3>
+                            <div class="faq-icon w-8 h-8 rounded-full bg-gradient-to-r from-indigo-500 to-purple-500 flex items-center justify-center text-white transition-all duration-300 group-hover:scale-110">
+                                <i class="fas fa-plus transform transition-transform duration-300"></i>
+                            </div>
+                        </button>
+                        <div class="faq-answer max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+                            <div class="px-8 pb-6">
+                                <p class="text-gray-700 leading-relaxed" data-lang="fr">Oui, vous pouvez consulter directement un spécialiste selon vos besoins. Cependant, nous recommandons de commencer par un médecin généraliste qui pourra vous orienter vers le bon spécialiste si nécessaire. Cela optimise votre parcours de soins et réduit les coûts.</p>
+                                <p class="text-gray-700 leading-relaxed hidden" data-lang="ar">نعم، يمكنك استشارة متخصص مباشرة حسب احتياجاتك. ومع ذلك، نوصي بالبدء بطبيب عام يمكنه توجيهك إلى المتخصص المناسب إذا لزم الأمر. هذا يحسن مسار رعايتك ويقلل التكاليف.</p>
                             </div>
                         </div>
                     </div>
@@ -1235,68 +1313,82 @@
                     <div class="absolute -bottom-4 -right-4 w-16 h-16 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-full opacity-20 animate-pulse delay-1000"></div>
                     
                     <div class="relative z-10">
-                        <h2 class="text-4xl md:text-5xl font-bold mb-8 bg-gradient-to-r from-indigo-600 via-purple-600 to-cyan-600 bg-clip-text text-transparent health-tech-title" data-lang="fr">Health Technologie</h2>
-                        <h2 class="text-4xl md:text-5xl font-bold mb-8 bg-gradient-to-r from-indigo-600 via-purple-600 to-cyan-600 bg-clip-text text-transparent health-tech-title hidden" data-lang="ar">تكنولوجيا الصحة</h2>
+                        <h2 class="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-indigo-600 via-purple-600 to-cyan-600 bg-clip-text text-transparent health-tech-title" data-lang="fr">Health Technologie</h2>
+                        <h2 class="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-indigo-600 via-purple-600 to-cyan-600 bg-clip-text text-transparent health-tech-title hidden" data-lang="ar">تكنولوجيا الصحة</h2>
                         
-                        <div class="space-y-6">
-                            <div class="tech-feature bg-white/80 backdrop-blur-sm p-6 rounded-xl border border-white/50 shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-1">
-                                <div class="flex items-start space-x-4">
-                                    <div class="w-12 h-12 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-lg flex items-center justify-center text-white shadow-lg">
-                                        <i class="fas fa-brain text-xl"></i>
+                        <div class="space-y-4 mb-6">
+                            <div class="tech-feature bg-white/80 backdrop-blur-sm p-4 rounded-xl border border-white/50 shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-1">
+                                <div class="flex items-start space-x-3">
+                                    <div class="w-10 h-10 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-lg flex items-center justify-center text-white shadow-lg">
+                                        <i class="fas fa-brain text-lg"></i>
                                     </div>
                                     <div>
-                                        <h3 class="text-xl font-bold text-indigo-900 mb-2" data-lang="fr">Intelligence Artificielle</h3>
-                                        <h3 class="text-xl font-bold text-indigo-900 mb-2 hidden" data-lang="ar">الذكاء الاصطناعي</h3>
-                                        <p class="text-gray-700" data-lang="fr">IA avancée pour le diagnostic précoce et l'analyse prédictive de la santé.</p>
-                                        <p class="text-gray-700 hidden" data-lang="ar">ذكاء اصطناعي متقدم للتشخيص المبكر والتحليل التنبؤي للصحة.</p>
+                                        <h3 class="text-lg font-bold text-indigo-900 mb-1" data-lang="fr">Intelligence Artificielle</h3>
+                                        <h3 class="text-lg font-bold text-indigo-900 mb-1 hidden" data-lang="ar">الذكاء الاصطناعي</h3>
+                                        <p class="text-gray-700 text-sm" data-lang="fr">IA avancée pour le diagnostic précoce et l'analyse prédictive de la santé.</p>
+                                        <p class="text-gray-700 text-sm hidden" data-lang="ar">ذكاء اصطناعي متقدم للتشخيص المبكر والتحليل التنبؤي للصحة.</p>
                                     </div>
                                 </div>
                             </div>
                             
-                            <div class="tech-feature bg-white/80 backdrop-blur-sm p-6 rounded-xl border border-white/50 shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-1">
-                                <div class="flex items-start space-x-4">
-                                    <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-lg flex items-center justify-center text-white shadow-lg">
-                                        <i class="fas fa-cloud text-xl"></i>
+                            <div class="tech-feature bg-white/80 backdrop-blur-sm p-4 rounded-xl border border-white/50 shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-1">
+                                <div class="flex items-start space-x-3">
+                                    <div class="w-10 h-10 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-lg flex items-center justify-center text-white shadow-lg">
+                                        <i class="fas fa-cloud text-lg"></i>
                                     </div>
                                     <div>
-                                        <h3 class="text-xl font-bold text-indigo-900 mb-2" data-lang="fr">Cloud Sécurisé</h3>
-                                        <h3 class="text-xl font-bold text-indigo-900 mb-2 hidden" data-lang="ar">سحابة آمنة</h3>
-                                        <p class="text-gray-700" data-lang="fr">Infrastructure cloud de niveau bancaire avec chiffrement AES-256.</p>
-                                        <p class="text-gray-700 hidden" data-lang="ar">بنية تحتية سحابية بمستوى البنوك مع تشفير AES-256.</p>
+                                        <h3 class="text-lg font-bold text-indigo-900 mb-1" data-lang="fr">Cloud Sécurisé</h3>
+                                        <h3 class="text-lg font-bold text-indigo-900 mb-1 hidden" data-lang="ar">سحابة آمنة</h3>
+                                        <p class="text-gray-700 text-sm" data-lang="fr">Infrastructure cloud de niveau bancaire avec chiffrement AES-256.</p>
+                                        <p class="text-gray-700 text-sm hidden" data-lang="ar">بنية تحتية سحابية بمستوى البنوك مع تشفير AES-256.</p>
                                     </div>
                                 </div>
                             </div>
                             
-                            <div class="tech-feature bg-white/80 backdrop-blur-sm p-6 rounded-xl border border-white/50 shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-1">
-                                <div class="flex items-start space-x-4">
-                                    <div class="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-600 rounded-lg flex items-center justify-center text-white shadow-lg">
-                                        <i class="fas fa-mobile-alt text-xl"></i>
+                            <div class="tech-feature bg-white/80 backdrop-blur-sm p-4 rounded-xl border border-white/50 shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-1">
+                                <div class="flex items-start space-x-3">
+                                    <div class="w-10 h-10 bg-gradient-to-br from-green-500 to-emerald-600 rounded-lg flex items-center justify-center text-white shadow-lg">
+                                        <i class="fas fa-mobile-alt text-lg"></i>
                                     </div>
                                     <div>
-                                        <h3 class="text-xl font-bold text-indigo-900 mb-2" data-lang="fr">Mobile First</h3>
-                                        <h3 class="text-xl font-bold text-indigo-900 mb-2 hidden" data-lang="ar">موبايل أولاً</h3>
-                                        <p class="text-gray-700" data-lang="fr">Application native optimisée pour tous les appareils mobiles.</p>
-                                        <p class="text-gray-700 hidden" data-lang="ar">تطبيق أصلي محسن لجميع الأجهزة المحمولة.</p>
+                                        <h3 class="text-lg font-bold text-indigo-900 mb-1" data-lang="fr">Mobile First</h3>
+                                        <h3 class="text-lg font-bold text-indigo-900 mb-1 hidden" data-lang="ar">موبايل أولاً</h3>
+                                        <p class="text-gray-700 text-sm" data-lang="fr">Application native optimisée pour tous les appareils mobiles.</p>
+                                        <p class="text-gray-700 text-sm hidden" data-lang="ar">تطبيق أصلي محسن لجميع الأجهزة المحمولة.</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         
-                        <div class="mt-8 flex flex-wrap gap-4">
-                            <div class="bg-gradient-to-r from-indigo-500 to-purple-600 p-4 rounded-xl text-white text-center shadow-lg">
-                                <div class="text-2xl font-bold">99.9%</div>
-                                <div class="text-sm" data-lang="fr">Disponibilité</div>
-                                <div class="text-sm hidden" data-lang="ar">التوفر</div>
+                        <div class="flex flex-wrap gap-4">
+                            <div class="tech-stat-circle group">
+                                <div class="w-20 h-20 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-full flex flex-col items-center justify-center text-white shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:scale-110 hover:-rotate-12 relative overflow-hidden">
+                                    <div class="absolute inset-0 bg-gradient-to-br from-indigo-400 to-purple-500 opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
+                                    <div class="text-xl font-bold relative z-10">99.9%</div>
+                                    <div class="text-xs relative z-10" data-lang="fr">Disponibilité</div>
+                                    <div class="text-xs relative z-10 hidden" data-lang="ar">التوفر</div>
+                                </div>
+                                <div class="absolute inset-0 bg-gradient-to-br from-indigo-400 to-purple-500 rounded-full opacity-0 group-hover:opacity-10 blur-xl transition-all duration-500 scale-150"></div>
                             </div>
-                            <div class="bg-gradient-to-r from-blue-500 to-cyan-600 p-4 rounded-xl text-white text-center shadow-lg">
-                                <div class="text-2xl font-bold">256-bit</div>
-                                <div class="text-sm" data-lang="fr">Chiffrement</div>
-                                <div class="text-sm hidden" data-lang="ar">التشفير</div>
+                            
+                            <div class="tech-stat-circle group">
+                                <div class="w-20 h-20 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-full flex flex-col items-center justify-center text-white shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:scale-110 hover:rotate-12 relative overflow-hidden">
+                                    <div class="absolute inset-0 bg-gradient-to-br from-blue-400 to-cyan-500 opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
+                                    <div class="text-xl font-bold relative z-10">256-bit</div>
+                                    <div class="text-xs relative z-10" data-lang="fr">Chiffrement</div>
+                                    <div class="text-xs relative z-10 hidden" data-lang="ar">التشفير</div>
+                                </div>
+                                <div class="absolute inset-0 bg-gradient-to-br from-blue-400 to-cyan-500 rounded-full opacity-0 group-hover:opacity-10 blur-xl transition-all duration-500 scale-150"></div>
                             </div>
-                            <div class="bg-gradient-to-r from-green-500 to-emerald-600 p-4 rounded-xl text-white text-center shadow-lg">
-                                <div class="text-2xl font-bold">24/7</div>
-                                <div class="text-sm" data-lang="fr">Support</div>
-                                <div class="text-sm hidden" data-lang="ar">الدعم</div>
+                            
+                            <div class="tech-stat-circle group">
+                                <div class="w-20 h-20 bg-gradient-to-br from-green-500 to-emerald-600 rounded-full flex flex-col items-center justify-center text-white shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:scale-110 hover:-rotate-12 relative overflow-hidden">
+                                    <div class="absolute inset-0 bg-gradient-to-br from-green-400 to-emerald-500 opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
+                                    <div class="text-xl font-bold relative z-10">24/7</div>
+                                    <div class="text-xs relative z-10" data-lang="fr">Support</div>
+                                    <div class="text-xs relative z-10 hidden" data-lang="ar">الدعم</div>
+                                </div>
+                                <div class="absolute inset-0 bg-gradient-to-br from-green-400 to-emerald-500 rounded-full opacity-0 group-hover:opacity-10 blur-xl transition-all duration-500 scale-150"></div>
                             </div>
                         </div>
                     </div>
