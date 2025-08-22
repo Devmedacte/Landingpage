@@ -282,6 +282,78 @@
             line-height: 1.8;
         }
         
+        /* Arabic-specific spacing improvements */
+        [lang="ar"] .mr-1 {
+            margin-right: 0.25rem !important;
+            margin-left: 0.25rem !important;
+        }
+        
+        [lang="ar"] .mr-2 {
+            margin-right: 0.5rem !important;
+            margin-left: 0.5rem !important;
+        }
+        
+        [lang="ar"] .mr-3 {
+            margin-right: 0.75rem !important;
+            margin-left: 0.75rem !important;
+        }
+        
+        [lang="ar"] .mr-4 {
+            margin-right: 1rem !important;
+            margin-left: 1rem !important;
+        }
+        
+        /* Arabic icon spacing */
+        [lang="ar"] i {
+            margin-left: 0.5rem !important;
+            margin-right: 0 !important;
+        }
+        
+        [lang="ar"] .fas,
+        [lang="ar"] .fab,
+        [lang="ar"] .far {
+            margin-left: 0.5rem !important;
+            margin-right: 0 !important;
+        }
+        
+        /* Arabic button spacing */
+        [lang="ar"] button i,
+        [lang="ar"] a i {
+            margin-left: 0.75rem !important;
+            margin-right: 0 !important;
+        }
+        
+        /* Arabic navigation spacing */
+        [lang="ar"] nav a i {
+            margin-left: 0.5rem !important;
+            margin-right: 0 !important;
+        }
+        
+        /* Arabic feature cards spacing */
+        [lang="ar"] .feature-card i {
+            margin-left: 0.75rem !important;
+            margin-right: 0 !important;
+        }
+        
+        /* Arabic form labels spacing */
+        [lang="ar"] label i {
+            margin-left: 0.5rem !important;
+            margin-right: 0 !important;
+        }
+        
+        /* Arabic footer spacing */
+        [lang="ar"] footer a i,
+        [lang="ar"] footer h4 i {
+            margin-left: 0.75rem !important;
+            margin-right: 0 !important;
+        }
+        
+        /* Arabic contact info spacing */
+        [lang="ar"] .contact-info i {
+            margin-left: 0.5rem !important;
+            margin-right: 0 !important;
+        }
+        
         /* Mobile Optimizations */
         @media (max-width: 768px) {
             .glass-effect {
@@ -290,6 +362,18 @@
             
             .feature-card:hover {
                 transform: translateY(-5px);
+            }
+            
+            /* Mobile Arabic spacing */
+            [lang="ar"] i {
+                margin-left: 0.25rem !important;
+                margin-right: 0 !important;
+            }
+            
+            [lang="ar"] button i,
+            [lang="ar"] a i {
+                margin-left: 0.5rem !important;
+                margin-right: 0 !important;
             }
         }
         
@@ -1171,13 +1255,14 @@
             });
         });
 
-        // Language Switch
+        // Language Switch with RTL support
         const switchToFr = document.getElementById('switchToFr');
         const switchToAr = document.getElementById('switchToAr');
         
         switchToFr.addEventListener('click', () => {
             document.documentElement.lang = 'fr';
             document.documentElement.dir = 'ltr';
+            document.body.classList.remove('rtl');
             document.querySelectorAll('[data-lang="fr"]').forEach(el => el.classList.remove('hidden'));
             document.querySelectorAll('[data-lang="ar"]').forEach(el => el.classList.add('hidden'));
         });
@@ -1185,6 +1270,7 @@
         switchToAr.addEventListener('click', () => {
             document.documentElement.lang = 'ar';
             document.documentElement.dir = 'rtl';
+            document.body.classList.add('rtl');
             document.querySelectorAll('[data-lang="ar"]').forEach(el => el.classList.remove('hidden'));
             document.querySelectorAll('[data-lang="fr"]').forEach(el => el.classList.add('hidden'));
         });
