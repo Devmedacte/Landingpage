@@ -134,6 +134,8 @@
         /* Modern FAQ Animations */
         .faq-item {
             transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            opacity: 1 !important;
+            visibility: visible !important;
         }
         
         .faq-item:hover {
@@ -143,18 +145,27 @@
         
         .faq-question {
             transition: all 0.3s ease;
+            cursor: pointer;
         }
         
         .faq-answer {
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            overflow: hidden;
         }
         
         .faq-item.active .faq-answer {
-            max-height: 500px;
+            max-height: 1000px !important;
         }
         
         .faq-item.active .faq-icon i {
-            transform: rotate(45deg);
+            transform: rotate(45deg) !important;
+        }
+        
+        /* Ensure sections are visible */
+        #faq, #about {
+            opacity: 1 !important;
+            visibility: visible !important;
+            display: block !important;
         }
         
         /* Floating Shapes Animation */
@@ -1865,18 +1876,29 @@
         // Modern FAQ Functionality
         const faqItems = document.querySelectorAll('.faq-item');
         
-        // Initialize FAQ items
-        faqItems.forEach(item => {
+        // Initialize FAQ items with better error handling
+        faqItems.forEach((item, index) => {
             const question = item.querySelector('.faq-question');
             const answer = item.querySelector('.faq-answer');
             const icon = item.querySelector('.faq-icon i');
             
-            // Set initial state
-            answer.style.maxHeight = '0';
+            if (!question || !answer || !icon) {
+                console.error(`FAQ item ${index + 1} is missing required elements`);
+                return;
+            }
+            
+            // Set initial state with explicit styles
+            answer.style.maxHeight = '0px';
             answer.style.overflow = 'hidden';
             answer.style.transition = 'max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
+            answer.style.opacity = '1';
+            answer.style.visibility = 'visible';
             
-            question.addEventListener('click', () => {
+            // Ensure icon is properly set
+            icon.className = 'fas fa-plus transform transition-transform duration-300';
+            
+            question.addEventListener('click', (e) => {
+                e.preventDefault();
                 const isActive = item.classList.contains('active');
                 
                 // Close all other FAQ items
@@ -1885,39 +1907,59 @@
                         otherItem.classList.remove('active');
                         const otherAnswer = otherItem.querySelector('.faq-answer');
                         const otherIcon = otherItem.querySelector('.faq-icon i');
-                        otherAnswer.style.maxHeight = '0';
-                        otherIcon.style.transform = 'rotate(0deg)';
-                        otherIcon.classList.remove('fa-minus');
-                        otherIcon.classList.add('fa-plus');
+                        if (otherAnswer && otherIcon) {
+                            otherAnswer.style.maxHeight = '0px';
+                            otherIcon.style.transform = 'rotate(0deg)';
+                            otherIcon.className = 'fas fa-plus transform transition-transform duration-300';
+                        }
                     }
                 });
                 
                 // Toggle current item
                 if (isActive) {
                     item.classList.remove('active');
-                    answer.style.maxHeight = '0';
+                    answer.style.maxHeight = '0px';
                     icon.style.transform = 'rotate(0deg)';
-                    icon.classList.remove('fa-minus');
-                    icon.classList.add('fa-plus');
+                    icon.className = 'fas fa-plus transform transition-transform duration-300';
                 } else {
                     item.classList.add('active');
+                    // Calculate the actual height needed
                     const scrollHeight = answer.scrollHeight;
-                    answer.style.maxHeight = scrollHeight + 'px';
+                    answer.style.maxHeight = (scrollHeight + 20) + 'px';
                     icon.style.transform = 'rotate(45deg)';
-                    icon.classList.remove('fa-plus');
-                    icon.classList.add('fa-minus');
+                    icon.className = 'fas fa-minus transform transition-transform duration-300';
                 }
             });
         });
         
         // Debug FAQ functionality
         console.log('FAQ Items found:', faqItems.length);
-        faqItems.forEach((item, index) => {
-            console.log(`FAQ Item ${index + 1}:`, item);
-        });
+        
+        // Ensure FAQ items are visible
+        if (faqItems.length === 0) {
+            console.error('No FAQ items found! Check HTML structure.');
+        } else {
+            console.log('FAQ section is working correctly.');
+        }
 
         // GSAP Animations
         gsap.registerPlugin(ScrollTrigger);
+        
+        // Check if sections are visible
+        const faqSection = document.getElementById('faq');
+        const aboutSection = document.getElementById('about');
+        
+        if (!faqSection) {
+            console.error('FAQ section not found!');
+        } else {
+            console.log('FAQ section found and visible');
+        }
+        
+        if (!aboutSection) {
+            console.error('Health Technology section not found!');
+        } else {
+            console.log('Health Technology section found and visible');
+        }
         
         // FAQ Section Animations
         gsap.from('.faq-title', {
