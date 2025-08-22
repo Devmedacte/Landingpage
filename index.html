@@ -779,36 +779,67 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-white">
-        <div class="container mx-auto px-4">
+    <!-- Enhanced Contact Section with No 3D Background -->
+    <section id="contact" class="py-20 bg-gradient-to-br from-white to-indigo-50 relative overflow-hidden">
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 opacity-5">
+            <div class="absolute inset-0" style="background-image: radial-gradient(circle at 1px 1px, #4F46E5 1px, transparent 0); background-size: 40px 40px;"></div>
+        </div>
+        
+        <div class="container mx-auto px-4 relative z-10">
             <div class="max-w-4xl mx-auto">
-                <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-indigo-900" data-lang="fr">Bientôt disponible</h2>
-                <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-indigo-900 hidden" data-lang="ar">قريبا متاح</h2>
-                <p class="text-xl text-center mb-12 text-gray-600" data-lang="fr">Inscrivez-vous pour être informé du lancement et bénéficier d'offres exclusives</p>
-                <p class="text-xl text-center mb-12 text-gray-600 hidden" data-lang="ar">سجل للحصول على إشعار عند الإطلاق والاستفادة من العروض الحصرية</p>
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl md:text-5xl font-bold mb-6 gradient-text" data-lang="fr">
+                        <i class="fas fa-rocket mr-4"></i>Bientôt disponible
+                    </h2>
+                    <h2 class="text-4xl md:text-5xl font-bold mb-6 gradient-text hidden" data-lang="ar">
+                        <i class="fas fa-rocket mr-4"></i>قريبا متاح
+                    </h2>
+                    <p class="text-xl md:text-2xl text-gray-600 max-w-2xl mx-auto leading-relaxed" data-lang="fr">
+                        Inscrivez-vous pour être informé du lancement et bénéficier d'offres exclusives
+                    </p>
+                    <p class="text-xl md:text-2xl text-gray-600 max-w-2xl mx-auto leading-relaxed hidden" data-lang="ar">
+                        سجل للحصول على إشعار عند الإطلاق والاستفادة من العروض الحصرية
+                    </p>
+                </div>
                 
-                <form class="bg-indigo-50 rounded-2xl p-8 shadow-sm">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                        <div>
-                            <label class="block text-gray-700 mb-2" data-lang="fr">Nom complet</label>
-                            <label class="block text-gray-700 mb-2 hidden" data-lang="ar">الاسم الكامل</label>
-                            <input type="text" class="contact-input w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                <form class="bg-white/80 backdrop-blur-sm rounded-3xl p-8 md:p-12 shadow-2xl border border-white/30">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                        <div class="group">
+                            <label class="block text-gray-700 mb-3 font-semibold" data-lang="fr">
+                                <i class="fas fa-user mr-2 text-indigo-600"></i>Nom complet
+                            </label>
+                            <label class="block text-gray-700 mb-3 font-semibold hidden" data-lang="ar">
+                                <i class="fas fa-user mr-2 text-indigo-600"></i>الاسم الكامل
+                            </label>
+                            <input type="text" class="w-full px-4 py-4 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all bg-white/50 backdrop-blur-sm hover:bg-white/80">
                         </div>
-                        <div>
-                            <label class="block text-gray-700 mb-2" data-lang="fr">Email</label>
-                            <label class="block text-gray-700 mb-2 hidden" data-lang="ar">البريد الإلكتروني</label>
-                            <input type="email" class="contact-input w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                        <div class="group">
+                            <label class="block text-gray-700 mb-3 font-semibold" data-lang="fr">
+                                <i class="fas fa-envelope mr-2 text-indigo-600"></i>Email
+                            </label>
+                            <label class="block text-gray-700 mb-3 font-semibold hidden" data-lang="ar">
+                                <i class="fas fa-envelope mr-2 text-indigo-600"></i>البريد الإلكتروني
+                            </label>
+                            <input type="email" class="w-full px-4 py-4 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all bg-white/50 backdrop-blur-sm hover:bg-white/80">
                         </div>
-                        <div>
-                            <label class="block text-gray-700 mb-2" data-lang="fr">Téléphone</label>
-                            <label class="block text-gray-700 mb-2 hidden" data-lang="ar">الهاتف</label>
-                            <input type="tel" class="contact-input w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                        <div class="group">
+                            <label class="block text-gray-700 mb-3 font-semibold" data-lang="fr">
+                                <i class="fas fa-phone mr-2 text-indigo-600"></i>Téléphone
+                            </label>
+                            <label class="block text-gray-700 mb-3 font-semibold hidden" data-lang="ar">
+                                <i class="fas fa-phone mr-2 text-indigo-600"></i>الهاتف
+                            </label>
+                            <input type="tel" class="w-full px-4 py-4 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all bg-white/50 backdrop-blur-sm hover:bg-white/80">
                         </div>
-                        <div>
-                            <label class="block text-gray-700 mb-2" data-lang="fr">Ville</label>
-                            <label class="block text-gray-700 mb-2 hidden" data-lang="ar">المدينة</label>
-                            <select class="contact-input w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                        <div class="group">
+                            <label class="block text-gray-700 mb-3 font-semibold" data-lang="fr">
+                                <i class="fas fa-map-marker-alt mr-2 text-indigo-600"></i>Ville
+                            </label>
+                            <label class="block text-gray-700 mb-3 font-semibold hidden" data-lang="ar">
+                                <i class="fas fa-map-marker-alt mr-2 text-indigo-600"></i>المدينة
+                            </label>
+                            <select class="w-full px-4 py-4 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all bg-white/50 backdrop-blur-sm hover:bg-white/80">
                                 <option value="" data-lang="fr">Sélectionnez votre ville</option>
                                 <option value="" data-lang="ar" class="hidden">اختر مدينتك</option>
                                 <option value="casablanca">Casablanca</option>
@@ -820,91 +851,255 @@
                             </select>
                         </div>
                     </div>
-                    <div class="mb-6">
-                        <label class="block text-gray-700 mb-2" data-lang="fr">Message</label>
-                        <label class="block text-gray-700 mb-2 hidden" data-lang="ar">رسالة</label>
-                        <textarea rows="4" class="contact-input w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500"></textarea>
+                    <div class="mb-8">
+                        <label class="block text-gray-700 mb-3 font-semibold" data-lang="fr">
+                            <i class="fas fa-comment mr-2 text-indigo-600"></i>Message
+                        </label>
+                        <label class="block text-gray-700 mb-3 font-semibold hidden" data-lang="ar">
+                            <i class="fas fa-comment mr-2 text-indigo-600"></i>رسالة
+                        </label>
+                        <textarea rows="4" class="w-full px-4 py-4 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all bg-white/50 backdrop-blur-sm hover:bg-white/80 resize-none"></textarea>
                     </div>
-                    <div class="flex items-center mb-6">
-                        <input type="checkbox" id="newsletter" class="mr-2">
-                        <label for="newsletter" class="text-gray-700" data-lang="fr">Je souhaite recevoir des actualités et offres de Medacte</label>
-                        <label for="newsletter" class="text-gray-700 hidden" data-lang="ar">أرغب في تلقي أخبار وعروض من ميداكت</label>
+                    <div class="flex items-center mb-8 p-4 bg-indigo-50 rounded-xl">
+                        <input type="checkbox" id="newsletter" class="mr-3 w-5 h-5 text-indigo-600 rounded focus:ring-indigo-500">
+                        <label for="newsletter" class="text-gray-700 font-medium" data-lang="fr">
+                            <i class="fas fa-bell mr-2 text-indigo-600"></i>Je souhaite recevoir des actualités et offres de Medacte
+                        </label>
+                        <label for="newsletter" class="text-gray-700 font-medium hidden" data-lang="ar">
+                            <i class="fas fa-bell mr-2 text-indigo-600"></i>أرغب في تلقي أخبار وعروض من ميداكت
+                        </label>
                     </div>
-                    <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-4 rounded-lg font-medium transition shadow-lg" data-lang="fr">Envoyer</button>
-                    <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-4 rounded-lg font-medium transition shadow-lg hidden" data-lang="ar">إرسال</button>
+                    <button type="submit" class="w-full bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white px-8 py-5 rounded-xl font-semibold text-lg transition-all shadow-lg hover:scale-105 hover:shadow-xl" data-lang="fr">
+                        <i class="fas fa-paper-plane mr-3"></i>Envoyer
+                    </button>
+                    <button type="submit" class="w-full bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white px-8 py-5 rounded-xl font-semibold text-lg transition-all shadow-lg hover:scale-105 hover:shadow-xl hidden" data-lang="ar">
+                        <i class="fas fa-paper-plane mr-3"></i>إرسال
+                    </button>
                 </form>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-indigo-900 text-white py-12">
-        <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <div>
-                    <div class="flex items-center mb-4">
-                        <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-indigo-900 font-bold text-xl">M</div>
-                        <h3 class="text-xl font-bold ml-2" data-lang="fr">Medacte</h3>
-                        <h3 class="text-xl font-bold ml-2 hidden" data-lang="ar">ميداكت</h3>
+    <!-- Enhanced Footer with No 3D Background -->
+    <footer class="bg-gradient-to-br from-indigo-900 via-purple-900 to-indigo-950 text-white py-16 relative overflow-hidden">
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute inset-0" style="background-image: radial-gradient(circle at 1px 1px, #ffffff 1px, transparent 0); background-size: 40px 40px;"></div>
+        </div>
+        
+        <div class="container mx-auto px-4 relative z-10">
+            <!-- Main Footer Content -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <!-- Company Info -->
+                <div class="lg:col-span-1">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg">
+                            <i class="fas fa-heartbeat"></i>
+                        </div>
+                        <div class="ml-3">
+                            <h3 class="text-2xl font-bold" data-lang="fr">Medacte</h3>
+                            <h3 class="text-2xl font-bold hidden" data-lang="ar">ميداكت</h3>
+                            <p class="text-indigo-300 text-sm" data-lang="fr">Santé Digitale Maroc</p>
+                            <p class="text-indigo-300 text-sm hidden" data-lang="ar">الصحة الرقمية المغرب</p>
+                        </div>
                     </div>
-                    <p class="text-indigo-200" data-lang="fr">La santé digitale pour tous les Marocains.</p>
-                    <p class="text-indigo-200 hidden" data-lang="ar">الصحة الرقمية لجميع المغاربة.</p>
+                    <p class="text-indigo-200 leading-relaxed mb-6" data-lang="fr">
+                        La première plateforme de santé digitale au Maroc, révolutionnant l'accès aux soins pour tous les Marocains.
+                    </p>
+                    <p class="text-indigo-200 leading-relaxed mb-6 hidden" data-lang="ar">
+                        أول منصة للصحة الرقمية في المغرب، ثورة في الوصول إلى الرعاية الصحية لجميع المغاربة.
+                    </p>
+                    
+                    <!-- Morocco Cities -->
+                    <div class="mb-6">
+                        <h5 class="text-indigo-300 font-semibold mb-3" data-lang="fr">Disponible dans:</h5>
+                        <h5 class="text-indigo-300 font-semibold mb-3 hidden" data-lang="ar">متاح في:</h5>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-indigo-800/50 rounded-full text-sm">Casablanca</span>
+                            <span class="px-3 py-1 bg-indigo-800/50 rounded-full text-sm">Rabat</span>
+                            <span class="px-3 py-1 bg-indigo-800/50 rounded-full text-sm">Marrakech</span>
+                            <span class="px-3 py-1 bg-indigo-800/50 rounded-full text-sm">Fès</span>
+                        </div>
+                    </div>
                 </div>
+                
+                <!-- Quick Links -->
                 <div>
-                    <h4 class="text-lg font-semibold mb-4" data-lang="fr">Liens rapides</h4>
-                    <h4 class="text-lg font-semibold mb-4 hidden" data-lang="ar">روابط سريعة</h4>
-                    <ul class="space-y-2">
-                        <li><a href="#features" class="text-indigo-200 hover:text-white transition" data-lang="fr">Fonctionnalités</a></li>
-                        <li><a href="#features" class="text-indigo-200 hover:text-white transition hidden" data-lang="ar">الميزات</a></li>
-                        <li><a href="#about" class="text-indigo-200 hover:text-white transition" data-lang="fr">À propos</a></li>
-                        <li><a href="#about" class="text-indigo-200 hover:text-white transition hidden" data-lang="ar">حول</a></li>
-                        <li><a href="#contact" class="text-indigo-200 hover:text-white transition" data-lang="fr">Contact</a></li>
-                        <li><a href="#contact" class="text-indigo-200 hover:text-white transition hidden" data-lang="ar">اتصل بنا</a></li>
+                    <h4 class="text-xl font-bold mb-6 flex items-center" data-lang="fr">
+                        <i class="fas fa-link mr-3 text-indigo-400"></i>Liens rapides
+                    </h4>
+                    <h4 class="text-xl font-bold mb-6 flex items-center hidden" data-lang="ar">
+                        <i class="fas fa-link mr-3 text-indigo-400"></i>روابط سريعة
+                    </h4>
+                    <ul class="space-y-3">
+                        <li>
+                            <a href="#features" class="text-indigo-200 hover:text-white transition-all hover:translate-x-2 flex items-center group" data-lang="fr">
+                                <i class="fas fa-star mr-3 text-indigo-400 group-hover:text-indigo-300"></i>Fonctionnalités
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#features" class="text-indigo-200 hover:text-white transition-all hover:translate-x-2 flex items-center group hidden" data-lang="ar">
+                                <i class="fas fa-star mr-3 text-indigo-400 group-hover:text-indigo-300"></i>الميزات
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#about" class="text-indigo-200 hover:text-white transition-all hover:translate-x-2 flex items-center group" data-lang="fr">
+                                <i class="fas fa-info-circle mr-3 text-indigo-400 group-hover:text-indigo-300"></i>À propos
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#about" class="text-indigo-200 hover:text-white transition-all hover:translate-x-2 flex items-center group hidden" data-lang="ar">
+                                <i class="fas fa-info-circle mr-3 text-indigo-400 group-hover:text-indigo-300"></i>حول
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#contact" class="text-indigo-200 hover:text-white transition-all hover:translate-x-2 flex items-center group" data-lang="fr">
+                                <i class="fas fa-envelope mr-3 text-indigo-400 group-hover:text-indigo-300"></i>Contact
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#contact" class="text-indigo-200 hover:text-white transition-all hover:translate-x-2 flex items-center group hidden" data-lang="ar">
+                                <i class="fas fa-envelope mr-3 text-indigo-400 group-hover:text-indigo-300"></i>اتصل بنا
+                            </a>
+                        </li>
                     </ul>
                 </div>
+                
+                <!-- Legal -->
                 <div>
-                    <h4 class="text-lg font-semibold mb-4" data-lang="fr">Légal</h4>
-                    <h4 class="text-lg font-semibold mb-4 hidden" data-lang="ar">قانوني</h4>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="text-indigo-200 hover:text-white transition" data-lang="fr">Conditions d'utilisation</a></li>
-                        <li><a href="#" class="text-indigo-200 hover:text-white transition hidden" data-lang="ar">شروط الاستخدام</a></li>
-                        <li><a href="#" class="text-indigo-200 hover:text-white transition" data-lang="fr">Politique de confidentialité</a></li>
-                        <li><a href="#" class="text-indigo-200 hover:text-white transition hidden" data-lang="ar">سياسة الخصوصية</a></li>
-                        <li><a href="#" class="text-indigo-200 hover:text-white transition" data-lang="fr">Cookies</a></li>
-                        <li><a href="#" class="text-indigo-200 hover:text-white transition hidden" data-lang="ar">الكوكيز</a></li>
+                    <h4 class="text-xl font-bold mb-6 flex items-center" data-lang="fr">
+                        <i class="fas fa-gavel mr-3 text-indigo-400"></i>Légal
+                    </h4>
+                    <h4 class="text-xl font-bold mb-6 flex items-center hidden" data-lang="ar">
+                        <i class="fas fa-gavel mr-3 text-indigo-400"></i>قانوني
+                    </h4>
+                    <ul class="space-y-3">
+                        <li>
+                            <a href="#" class="text-indigo-200 hover:text-white transition-all hover:translate-x-2 flex items-center group" data-lang="fr">
+                                <i class="fas fa-file-contract mr-3 text-indigo-400 group-hover:text-indigo-300"></i>Conditions d'utilisation
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-indigo-200 hover:text-white transition-all hover:translate-x-2 flex items-center group hidden" data-lang="ar">
+                                <i class="fas fa-file-contract mr-3 text-indigo-400 group-hover:text-indigo-300"></i>شروط الاستخدام
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-indigo-200 hover:text-white transition-all hover:translate-x-2 flex items-center group" data-lang="fr">
+                                <i class="fas fa-shield-alt mr-3 text-indigo-400 group-hover:text-indigo-300"></i>Politique de confidentialité
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-indigo-200 hover:text-white transition-all hover:translate-x-2 flex items-center group hidden" data-lang="ar">
+                                <i class="fas fa-shield-alt mr-3 text-indigo-400 group-hover:text-indigo-300"></i>سياسة الخصوصية
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-indigo-200 hover:text-white transition-all hover:translate-x-2 flex items-center group" data-lang="fr">
+                                <i class="fas fa-cookie-bite mr-3 text-indigo-400 group-hover:text-indigo-300"></i>Cookies
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-indigo-200 hover:text-white transition-all hover:translate-x-2 flex items-center group hidden" data-lang="ar">
+                                <i class="fas fa-cookie-bite mr-3 text-indigo-400 group-hover:text-indigo-300"></i>الكوكيز
+                            </a>
+                        </li>
                     </ul>
                 </div>
+                
+                <!-- Contact & Social -->
                 <div>
-                    <h4 class="text-lg font-semibold mb-4" data-lang="fr">Nous suivre</h4>
-                    <h4 class="text-lg font-semibold mb-4 hidden" data-lang="ar">تابعنا</h4>
-                    <div class="flex space-x-4 mb-6">
-                        <a href="#" class="w-10 h-10 bg-indigo-800 rounded-full flex items-center justify-center hover:bg-indigo-700 transition">
-                            <i class="fab fa-facebook-f"></i>
+                    <h4 class="text-xl font-bold mb-6 flex items-center" data-lang="fr">
+                        <i class="fas fa-users mr-3 text-indigo-400"></i>Nous suivre
+                    </h4>
+                    <h4 class="text-xl font-bold mb-6 flex items-center hidden" data-lang="ar">
+                        <i class="fas fa-users mr-3 text-indigo-400"></i>تابعنا
+                    </h4>
+                    
+                    <!-- Social Media -->
+                    <div class="flex space-x-4 mb-8">
+                        <a href="#" class="w-12 h-12 bg-gradient-to-br from-indigo-600 to-purple-600 rounded-full flex items-center justify-center hover:scale-110 transition-all shadow-lg hover:shadow-xl">
+                            <i class="fab fa-facebook-f text-lg"></i>
                         </a>
-                        <a href="#" class="w-10 h-10 bg-indigo-800 rounded-full flex items-center justify-center hover:bg-indigo-700 transition">
-                            <i class="fab fa-twitter"></i>
+                        <a href="#" class="w-12 h-12 bg-gradient-to-br from-indigo-600 to-purple-600 rounded-full flex items-center justify-center hover:scale-110 transition-all shadow-lg hover:shadow-xl">
+                            <i class="fab fa-twitter text-lg"></i>
                         </a>
-                        <a href="#" class="w-10 h-10 bg-indigo-800 rounded-full flex items-center justify-center hover:bg-indigo-700 transition">
-                            <i class="fab fa-instagram"></i>
+                        <a href="#" class="w-12 h-12 bg-gradient-to-br from-indigo-600 to-purple-600 rounded-full flex items-center justify-center hover:scale-110 transition-all shadow-lg hover:shadow-xl">
+                            <i class="fab fa-instagram text-lg"></i>
                         </a>
-                        <a href="#" class="w-10 h-10 bg-indigo-800 rounded-full flex items-center justify-center hover:bg-indigo-700 transition">
-                            <i class="fab fa-linkedin-in"></i>
+                        <a href="#" class="w-12 h-12 bg-gradient-to-br from-indigo-600 to-purple-600 rounded-full flex items-center justify-center hover:scale-110 transition-all shadow-lg hover:shadow-xl">
+                            <i class="fab fa-linkedin-in text-lg"></i>
                         </a>
                     </div>
-                    <p class="text-indigo-200" data-lang="fr">contact@medacte.com </p>
-                    <p class="text-indigo-200" data-lang="fr">+212 773-125597</p>
+                    
+                    <!-- Contact Info -->
+                    <div class="space-y-3">
+                        <div class="flex items-center text-indigo-200">
+                            <i class="fas fa-envelope mr-3 text-indigo-400"></i>
+                            <span>contact@medacte.com</span>
+                        </div>
+                        <div class="flex items-center text-indigo-200">
+                            <i class="fas fa-phone mr-3 text-indigo-400"></i>
+                            <span>+212 773-125597</span>
+                        </div>
+                        <div class="flex items-center text-indigo-200">
+                            <i class="fas fa-map-marker-alt mr-3 text-indigo-400"></i>
+                            <span data-lang="fr">Casablanca, Maroc</span>
+                            <span data-lang="ar" class="hidden">الدار البيضاء، المغرب</span>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="border-t border-indigo-800 mt-8 pt-8 text-center text-indigo-300">
-                <p data-lang="fr">&copy; 2025 Medacte. Tous droits réservés.</p>
-                <p class="hidden" data-lang="ar">&copy; 2025 ميداكت. جميع الحقوق محفوظة.</p>
+            
+            <!-- Newsletter Signup -->
+            <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 mb-12">
+                <div class="text-center">
+                    <h4 class="text-2xl font-bold mb-4" data-lang="fr">
+                        <i class="fas fa-bell mr-3 text-indigo-400"></i>Restez informé
+                    </h4>
+                    <h4 class="text-2xl font-bold mb-4 hidden" data-lang="ar">
+                        <i class="fas fa-bell mr-3 text-indigo-400"></i>ابق على اطلاع
+                    </h4>
+                    <p class="text-indigo-200 mb-6 max-w-2xl mx-auto" data-lang="fr">
+                        Recevez les dernières actualités et offres exclusives de Medacte directement dans votre boîte mail.
+                    </p>
+                    <p class="text-indigo-200 mb-6 max-w-2xl mx-auto hidden" data-lang="ar">
+                        احصل على آخر الأخبار والعروض الحصرية من ميداكت مباشرة في بريدك الإلكتروني.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+                        <input type="email" placeholder="Votre email" class="flex-1 px-4 py-3 rounded-xl border border-indigo-300 bg-white/20 text-white placeholder-indigo-200 focus:outline-none focus:ring-2 focus:ring-indigo-400">
+                        <button class="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white px-6 py-3 rounded-xl font-semibold transition-all hover:scale-105">
+                            <i class="fas fa-paper-plane mr-2"></i>S'abonner
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Copyright -->
+            <div class="border-t border-indigo-800 pt-8 text-center">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-indigo-300 mb-4 md:mb-0" data-lang="fr">
+                        &copy; 2025 Medacte. Tous droits réservés. | 
+                        <span class="text-indigo-400">La santé digitale pour tous les Marocains</span>
+                    </p>
+                    <p class="text-indigo-300 mb-4 md:mb-0 hidden" data-lang="ar">
+                        &copy; 2025 ميداكت. جميع الحقوق محفوظة. | 
+                        <span class="text-indigo-400">الصحة الرقمية لجميع المغاربة</span>
+                    </p>
+                    <div class="flex space-x-6">
+                        <a href="#" class="text-indigo-300 hover:text-white transition-colors" data-lang="fr">Mentions légales</a>
+                        <a href="#" class="text-indigo-300 hover:text-white transition-colors" data-lang="fr">CGU</a>
+                        <a href="#" class="text-indigo-300 hover:text-white transition-colors" data-lang="fr">RGPD</a>
+                    </div>
+                </div>
             </div>
         </div>
     </footer>
 
-    <!-- Back to Top Button -->
-    <button id="backToTop" class="fixed bottom-8 right-8 w-12 h-12 bg-indigo-600 text-white rounded-full shadow-lg flex items-center justify-center opacity-0 invisible transition-all duration-300 hover:bg-indigo-700">
-        <i class="fas fa-arrow-up"></i>
+    <!-- Enhanced Back to Top Button -->
+    <button id="backToTop" class="fixed bottom-8 right-8 w-14 h-14 bg-gradient-to-br from-indigo-600 to-purple-600 text-white rounded-full shadow-xl flex items-center justify-center opacity-0 invisible transition-all duration-500 hover:scale-110 hover:shadow-2xl group">
+        <i class="fas fa-arrow-up text-lg group-hover:animate-bounce"></i>
+        <div class="absolute inset-0 bg-white/20 rounded-full scale-0 group-hover:scale-100 transition-transform duration-300"></div>
     </button>
 
     <script>
@@ -1175,7 +1370,7 @@
         dots[0].classList.remove('bg-white/50');
         dots[0].classList.add('bg-white');
 
-        // Back to Top Button
+        // Enhanced Back to Top Button
         const backToTopButton = document.getElementById('backToTop');
         
         window.addEventListener('scroll', () => {
@@ -1193,6 +1388,21 @@
                 top: 0,
                 behavior: 'smooth'
             });
+            
+            // Add click animation
+            backToTopButton.style.transform = 'scale(0.9)';
+            setTimeout(() => {
+                backToTopButton.style.transform = '';
+            }, 150);
+        });
+        
+        // Add hover sound effect (optional)
+        backToTopButton.addEventListener('mouseenter', () => {
+            backToTopButton.style.transform = 'scale(1.1)';
+        });
+        
+        backToTopButton.addEventListener('mouseleave', () => {
+            backToTopButton.style.transform = '';
         });
     </script>
 </body>
