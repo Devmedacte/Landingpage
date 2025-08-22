@@ -3,189 +3,627 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Medacte - Super App Santé Maroc</title>
+    
+    <!-- Next-Generation SEO Meta Tags -->
+    <title>Medacte - Super App Santé Maroc | Télémedecine & Pharmacie en Ligne</title>
+    <meta name="description" content="La première plateforme de santé digitale au Maroc. Rendez-vous en ligne, télémedecine, pharmacie en ligne, suivi médical. Disponible à Casablanca, Rabat, Marrakech, Fès, Tanger, Agadir.">
+    <meta name="keywords" content="médecin Maroc, pharmacie en ligne Maroc, télémedecine Maroc, rendez-vous médical Casablanca, consultation en ligne Maroc, santé digitale Maroc, طبيب أون لاين المغرب, صيدلية إلكترونية المغرب">
+    <meta name="author" content="Medacte">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="French, Arabic">
+    <meta name="geo.region" content="MA">
+    <meta name="geo.placename" content="Morocco">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://medacte.com/">
+    <meta property="og:title" content="Medacte - Super App Santé Maroc">
+    <meta property="og:description" content="La première plateforme de santé digitale au Maroc. Rendez-vous en ligne, télémedecine, pharmacie en ligne.">
+    <meta property="og:image" content="https://medacte.com/og-image.jpg">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:locale:alternate" content="ar_MA">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://medacte.com/">
+    <meta property="twitter:title" content="Medacte - Super App Santé Maroc">
+    <meta property="twitter:description" content="La première plateforme de santé digitale au Maroc">
+    <meta property="twitter:image" content="https://medacte.com/twitter-image.jpg">
+    
+    <!-- Structured Data for Healthcare -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "MedicalOrganization",
+        "name": "Medacte",
+        "description": "Plateforme de santé digitale au Maroc",
+        "url": "https://medacte.com",
+        "logo": "https://medacte.com/logo.png",
+        "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "MA",
+            "addressRegion": "Casablanca"
+        },
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+212-773-125597",
+            "contactType": "customer service",
+            "availableLanguage": ["French", "Arabic"]
+        },
+        "sameAs": [
+            "https://facebook.com/medacte",
+            "https://instagram.com/medacte",
+            "https://linkedin.com/company/medacte"
+        ]
+    }
+    </script>
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#4F46E5">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Medacte">
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="https://cdn.tailwindcss.com" as="script">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" as="script">
+    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="//flagcdn.com">
+    
+    <!-- Modern CSS Framework -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Next-Generation 3D & WebGL -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/ScrollTrigger.min.js"></script>
+    
+    <!-- AI & Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+    
     <style>
-        /* Scroll animation classes */
+        /* Next-Generation CSS with Modern Effects */
+        :root {
+            --primary-color: #4F46E5;
+            --secondary-color: #7C3AED;
+            --accent-color: #06B6D4;
+            --success-color: #10B981;
+            --warning-color: #F59E0B;
+            --error-color: #EF4444;
+        }
+        
+        /* Advanced Scroll Animations */
         .scroll-animate {
             opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.6s ease-out;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
         }
         .scroll-animate.show {
             opacity: 1;
             transform: translateY(0);
         }
+        
         .scroll-animate-left {
             opacity: 0;
-            transform: translateX(-20px);
-            transition: all 0.6s ease-out;
+            transform: translateX(-50px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
         }
         .scroll-animate-left.show {
             opacity: 1;
             transform: translateX(0);
         }
+        
         .scroll-animate-right {
             opacity: 0;
-            transform: translateX(20px);
-            transition: all 0.6s ease-out;
+            transform: translateX(50px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
         }
         .scroll-animate-right.show {
             opacity: 1;
             transform: translateX(0);
         }
+        
         .scroll-animate-scale {
             opacity: 0;
-            transform: scale(0.9);
-            transition: all 0.6s ease-out;
+            transform: scale(0.8);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
         }
         .scroll-animate-scale.show {
             opacity: 1;
             transform: scale(1);
         }
-
-        .language-switch {
-            transition: all 0.3s ease;
+        
+        /* Glassmorphism 2.0 */
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px) saturate(180%);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
         }
-        .language-switch:hover {
-            transform: scale(1.05);
+        
+        .glass-effect-dark {
+            background: rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(20px) saturate(180%);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
-        .hero-section {
+        
+        /* Neumorphism Elements */
+        .neumorphism {
+            background: linear-gradient(145deg, #ffffff, #e6e6e6);
+            box-shadow: 20px 20px 60px #d9d9d9, -20px -20px 60px #ffffff;
+            border-radius: 20px;
+        }
+        
+        .neumorphism-inset {
+            background: linear-gradient(145deg, #e6e6e6, #ffffff);
+            box-shadow: inset 20px 20px 60px #d9d9d9, inset -20px -20px 60px #ffffff;
+        }
+        
+        /* Advanced Hover Effects */
+        .feature-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
             overflow: hidden;
         }
-        #canvas3d {
+        
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+        
+        .feature-card:hover::before {
+            left: 100%;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+        
+        /* Parallax Effects */
+        .parallax-section {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .parallax-bg {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
-            height: 100%;
-            z-index: 0;
+            height: 120%;
+            background-size: cover;
+            background-position: center;
+            transform: translateZ(-1px) scale(2);
+            z-index: -1;
         }
-        .hero-content {
-            position: relative;
-            z-index: 10;
-        }
-        .feature-card {
+        
+        /* AI Chat Interface - Fixed Position */
+        .ai-chat-widget {
+            position: fixed;
+            bottom: 100px;
+            right: 20px;
+            z-index: 1000;
             transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
-            background: rgba(255, 255, 255, 0.1);
         }
-        .feature-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        
+        .ai-chat-button {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(79, 70, 229, 0.3);
+            transition: all 0.3s ease;
         }
-        .contact-input {
-            backdrop-filter: blur(5px);
-            background: rgba(255, 255, 255, 0.1);
+        
+        .ai-chat-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 15px 40px rgba(79, 70, 229, 0.4);
         }
-        .contact-input:focus {
-            backdrop-filter: blur(10px);
-            background: rgba(255, 255, 255, 0.2);
+        
+        /* Loading Animations */
+        .loading-spinner {
+            width: 40px;
+            height: 40px;
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid var(--primary-color);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
         }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* Pulse Animation */
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+        
+        /* Gradient Text */
+        .gradient-text {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color), var(--accent-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        /* Morocco-specific RTL Support */
         .rtl {
             direction: rtl;
         }
+        
         [lang="ar"] {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.8;
         }
-        .professional-banner a {
-            transition: all 0.2s ease;
+        
+        /* Arabic-specific spacing improvements */
+        [lang="ar"] .mr-1 {
+            margin-right: 0.25rem !important;
+            margin-left: 0.25rem !important;
         }
-        .professional-banner a:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        
+        [lang="ar"] .mr-2 {
+            margin-right: 0.5rem !important;
+            margin-left: 0.5rem !important;
+        }
+        
+        [lang="ar"] .mr-3 {
+            margin-right: 0.75rem !important;
+            margin-left: 0.75rem !important;
+        }
+        
+        [lang="ar"] .mr-4 {
+            margin-right: 1rem !important;
+            margin-left: 1rem !important;
+        }
+        
+        /* Arabic icon spacing */
+        [lang="ar"] i {
+            margin-left: 0.5rem !important;
+            margin-right: 0 !important;
+        }
+        
+        [lang="ar"] .fas,
+        [lang="ar"] .fab,
+        [lang="ar"] .far {
+            margin-left: 0.5rem !important;
+            margin-right: 0 !important;
+        }
+        
+        /* Arabic button spacing */
+        [lang="ar"] button i,
+        [lang="ar"] a i {
+            margin-left: 0.75rem !important;
+            margin-right: 0 !important;
+        }
+        
+        /* Arabic navigation spacing */
+        [lang="ar"] nav a i {
+            margin-left: 0.5rem !important;
+            margin-right: 0 !important;
+        }
+        
+        /* Arabic feature cards spacing */
+        [lang="ar"] .feature-card i {
+            margin-left: 0.75rem !important;
+            margin-right: 0 !important;
+        }
+        
+        /* Arabic form labels spacing */
+        [lang="ar"] label i {
+            margin-left: 0.5rem !important;
+            margin-right: 0 !important;
+        }
+        
+        /* Arabic footer spacing */
+        [lang="ar"] footer a i,
+        [lang="ar"] footer h4 i {
+            margin-left: 0.75rem !important;
+            margin-right: 0 !important;
+        }
+        
+        /* Arabic contact info spacing */
+        [lang="ar"] .contact-info i {
+            margin-left: 0.5rem !important;
+            margin-right: 0 !important;
+        }
+        
+        /* Mobile Optimizations */
+        @media (max-width: 768px) {
+            .glass-effect {
+                backdrop-filter: blur(10px);
+            }
+            
+            .feature-card:hover {
+                transform: translateY(-5px);
+            }
+            
+            /* Mobile Arabic spacing */
+            [lang="ar"] i {
+                margin-left: 0.25rem !important;
+                margin-right: 0 !important;
+            }
+            
+            [lang="ar"] button i,
+            [lang="ar"] a i {
+                margin-left: 0.5rem !important;
+                margin-right: 0 !important;
+            }
+        }
+        
+        /* Dark Mode Support */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --primary-color: #6366F1;
+                --secondary-color: #8B5CF6;
+            }
+            
+            body {
+                background: #0F172A;
+                color: #F1F5F9;
+            }
+        }
+        
+        /* Accessibility Improvements */
+        .focus-visible:focus {
+            outline: 2px solid var(--primary-color);
+            outline-offset: 2px;
+        }
+        
+        /* High Contrast Mode */
+        @media (prefers-contrast: high) {
+            .glass-effect {
+                background: rgba(255, 255, 255, 0.9);
+                border: 2px solid #000;
+            }
         }
     </style>
 </head>
-<body class="bg-gradient-to-br from-blue-50 to-indigo-100 text-gray-800 min-h-screen">
-    <!-- Professional Signup Banner -->
-    <div class="bg-gradient-to-r from-indigo-600 to-indigo-800 text-white py-3 px-4 text-center sticky top-0 z-50 shadow-md">
+<body class="bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 text-gray-800 min-h-screen overflow-x-hidden">
+    <!-- AI Chat Widget - Fixed Position -->
+    <div class="ai-chat-widget" id="aiChatWidget">
+        <button class="ai-chat-button" id="aiChatButton" aria-label="Chat with AI Health Assistant">
+            <i class="fas fa-comments"></i>
+        </button>
+    </div>
+
+    <!-- Professional Signup Banner with Morocco-specific content -->
+    <div class="bg-gradient-to-r from-indigo-600 via-purple-600 to-indigo-800 text-white py-4 px-4 text-center sticky top-0 z-50 shadow-lg glass-effect-dark">
         <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
-            <p class="mb-2 md:mb-0 font-medium" data-lang="fr">Médecins, pharmacies et laboratoires: inscrivez-vous sur notre plateforme</p>
-            <p class="mb-2 md:mb-0 font-medium hidden" data-lang="ar">الأطباء والصيدليات والمختبرات: سجلوا على منصتنا</p>
+            <p class="mb-2 md:mb-0 font-medium text-sm md:text-base" data-lang="fr">
+                <i class="fas fa-star mr-2"></i>
+                Médecins, pharmacies et laboratoires: inscrivez-vous sur notre plateforme
+            </p>
+            <p class="mb-2 md:mb-0 font-medium text-sm md:text-base hidden" data-lang="ar">
+                <i class="fas fa-star mr-2"></i>
+                الأطباء والصيدليات والمختبرات: سجلوا على منصتنا
+            </p>
             <a href="https://forms.gle/ehREcRXVs5azynum6" 
                target="_blank"
                rel="noopener noreferrer"
-               class="bg-white text-indigo-800 hover:bg-indigo-100 px-6 py-2 rounded-full font-medium transition-all shadow-lg whitespace-nowrap hover:scale-105"
-               data-lang="fr">S'inscrire maintenant</a>
+               class="bg-white text-indigo-800 hover:bg-indigo-100 px-6 py-3 rounded-full font-medium transition-all shadow-lg whitespace-nowrap hover:scale-105 neumorphism"
+               data-lang="fr">
+               <i class="fas fa-user-plus mr-2"></i>S'inscrire maintenant
+            </a>
             <a href="https://forms.gle/ehREcRXVs5azynum6" 
                target="_blank"
                rel="noopener noreferrer"
-               class="bg-white text-indigo-800 hover:bg-indigo-100 px-6 py-2 rounded-full font-medium transition-all shadow-lg whitespace-nowrap hover:scale-105 hidden"
-               data-lang="ar">سجل الآن</a>
+               class="bg-white text-indigo-800 hover:bg-indigo-100 px-6 py-3 rounded-full font-medium transition-all shadow-lg whitespace-nowrap hover:scale-105 neumorphism hidden"
+               data-lang="ar">
+               <i class="fas fa-user-plus mr-2"></i>سجل الآن
+            </a>
         </div>
     </div>
 
-    <!-- 3D Background Canvas -->
-    <div id="canvas3d"></div>
+    <!-- Advanced 3D Background Canvas -->
+    <div id="canvas3d" class="fixed inset-0 pointer-events-none"></div>
 
-    <!-- Language Switch -->
+    <!-- Language Switch with Morocco Flag -->
     <div class="fixed bottom-4 left-4 z-50 flex space-x-2">
-        <button id="switchToFr" class="language-switch bg-white/90 hover:bg-white px-3 py-1 rounded-full shadow-lg flex items-center backdrop-blur-sm border border-white/20">
-            <img src="https://flagcdn.com/w20/fr.png" srcset="https://flagcdn.com/w40/fr.png 2x" width="20" alt="France" class="mr-1">
-            <span class="font-medium">FR</span>
+        <button id="switchToFr" class="language-switch glass-effect px-4 py-2 rounded-full shadow-lg flex items-center backdrop-blur-sm border border-white/20 hover:scale-105 transition-all">
+            <img src="https://flagcdn.com/w20/fr.png" srcset="https://flagcdn.com/w40/fr.png 2x" width="20" alt="France" class="mr-2">
+            <span class="font-medium">Français</span>
         </button>
-        <button id="switchToAr" class="language-switch bg-white/90 hover:bg-white px-3 py-1 rounded-full shadow-lg flex items-center backdrop-blur-sm border border-white/20">
-            <img src="https://flagcdn.com/w20/ma.png" srcset="https://flagcdn.com/w40/ma.png 2x" width="20" alt="Morocco" class="mr-1">
-            <span class="font-medium">AR</span>
+        <button id="switchToAr" class="language-switch glass-effect px-4 py-2 rounded-full shadow-lg flex items-center backdrop-blur-sm border border-white/20 hover:scale-105 transition-all">
+            <img src="https://flagcdn.com/w20/ma.png" srcset="https://flagcdn.com/w40/ma.png 2x" width="20" alt="Morocco" class="mr-2">
+            <span class="font-medium">العربية</span>
         </button>
     </div>
 
-    <!-- Header -->
-    <header class="container mx-auto px-4 py-6 flex justify-between items-center">
+    <!-- Enhanced Header with Morocco Cities -->
+    <header class="container mx-auto px-4 py-6 flex justify-between items-center relative z-10">
         <div class="flex items-center">
-            <div class="w-12 h-12 bg-indigo-600 rounded-full flex items-center justify-center text-white font-bold text-xl">M</div>
-            <h1 class="text-2xl font-bold ml-3 text-indigo-800" data-lang="fr">Medacte</h1>
-            <h1 class="text-2xl font-bold ml-3 text-indigo-800 hidden" data-lang="ar">ميداكت</h1>
+            <div class="w-12 h-12 bg-gradient-to-br from-indigo-600 to-purple-600 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg">
+                <i class="fas fa-heartbeat"></i>
+            </div>
+            <div class="ml-3">
+                <h1 class="text-2xl font-bold text-indigo-800 gradient-text" data-lang="fr">Medacte</h1>
+                <h1 class="text-2xl font-bold text-indigo-800 gradient-text hidden" data-lang="ar">ميداكت</h1>
+                <p class="text-xs text-gray-600" data-lang="fr">Santé Digitale Maroc</p>
+                <p class="text-xs text-gray-600 hidden" data-lang="ar">الصحة الرقمية المغرب</p>
+            </div>
         </div>
+        
+        <!-- Morocco Cities Quick Access -->
+        <div class="hidden lg:flex items-center space-x-4">
+            <div class="text-xs text-gray-600" data-lang="fr">Disponible dans:</div>
+            <div class="text-xs text-gray-600 hidden" data-lang="ar">متاح في:</div>
+            <div class="flex space-x-2">
+                <span class="px-2 py-1 bg-indigo-100 text-indigo-800 rounded-full text-xs">Casablanca</span>
+                <span class="px-2 py-1 bg-indigo-100 text-indigo-800 rounded-full text-xs">Rabat</span>
+                <span class="px-2 py-1 bg-indigo-100 text-indigo-800 rounded-full text-xs">Marrakech</span>
+                <span class="px-2 py-1 bg-indigo-100 text-indigo-800 rounded-full text-xs">Fès</span>
+            </div>
+        </div>
+        
         <nav class="hidden md:flex space-x-8">
-            <a href="#features" class="font-medium hover:text-indigo-600 transition" data-lang="fr">Fonctionnalités</a>
-            <a href="#features" class="font-medium hover:text-indigo-600 transition hidden" data-lang="ar">الميزات</a>
-            <a href="#about" class="font-medium hover:text-indigo-600 transition" data-lang="fr">À propos</a>
-            <a href="#about" class="font-medium hover:text-indigo-600 transition hidden" data-lang="ar">حول</a>
-            <a href="#contact" class="font-medium hover:text-indigo-600 transition" data-lang="fr">Contact</a>
-            <a href="#contact" class="font-medium hover:text-indigo-600 transition hidden" data-lang="ar">اتصل بنا</a>
+            <a href="#features" class="font-medium hover:text-indigo-600 transition-all hover:scale-105" data-lang="fr">
+                <i class="fas fa-star mr-1"></i>Fonctionnalités
+            </a>
+            <a href="#features" class="font-medium hover:text-indigo-600 transition-all hover:scale-105 hidden" data-lang="ar">
+                <i class="fas fa-star mr-1"></i>الميزات
+            </a>
+            <a href="#about" class="font-medium hover:text-indigo-600 transition-all hover:scale-105" data-lang="fr">
+                <i class="fas fa-info-circle mr-1"></i>À propos
+            </a>
+            <a href="#about" class="font-medium hover:text-indigo-600 transition-all hover:scale-105 hidden" data-lang="ar">
+                <i class="fas fa-info-circle mr-1"></i>حول
+            </a>
+            <a href="#contact" class="font-medium hover:text-indigo-600 transition-all hover:scale-105" data-lang="fr">
+                <i class="fas fa-envelope mr-1"></i>Contact
+            </a>
+            <a href="#contact" class="font-medium hover:text-indigo-600 transition-all hover:scale-105 hidden" data-lang="ar">
+                <i class="fas fa-envelope mr-1"></i>اتصل بنا
+            </a>
         </nav>
-        <button class="md:hidden text-2xl" id="mobileMenuButton">
+        
+        <button class="md:hidden text-2xl glass-effect p-2 rounded-lg" id="mobileMenuButton" aria-label="Menu">
             <i class="fas fa-bars"></i>
         </button>
     </header>
 
-    <!-- Mobile Menu -->
-    <div id="mobileMenu" class="fixed inset-0 bg-white z-40 flex flex-col items-center justify-center hidden">
-        <button id="closeMobileMenu" class="absolute top-4 right-4 text-2xl">
+    <!-- Enhanced Mobile Menu with Close Button -->
+    <div id="mobileMenu" class="fixed inset-0 bg-white/95 backdrop-blur-md z-40 flex flex-col items-center justify-center hidden">
+        <!-- Close Button - Top Right -->
+        <button id="closeMobileMenu" class="absolute top-6 right-6 text-3xl glass-effect p-4 rounded-full hover:bg-red-100 hover:text-red-600 transition-all">
             <i class="fas fa-times"></i>
         </button>
+        
+        <!-- Close Button - Bottom Center -->
+        <button id="closeMobileMenuBottom" class="absolute bottom-6 left-1/2 transform -translate-x-1/2 bg-indigo-600 text-white px-8 py-3 rounded-full font-medium hover:bg-indigo-700 transition-all">
+            <i class="fas fa-times mr-2"></i>
+            <span data-lang="fr">Fermer</span>
+            <span data-lang="ar" class="hidden">إغلاق</span>
+        </button>
+        
         <nav class="flex flex-col items-center space-y-8">
-            <a href="#features" class="text-xl font-medium hover:text-indigo-600 transition" data-lang="fr">Fonctionnalités</a>
-            <a href="#features" class="text-xl font-medium hover:text-indigo-600 transition hidden" data-lang="ar">الميزات</a>
-            <a href="#about" class="text-xl font-medium hover:text-indigo-600 transition" data-lang="fr">À propos</a>
-            <a href="#about" class="text-xl font-medium hover:text-indigo-600 transition hidden" data-lang="ar">حول</a>
-            <a href="#contact" class="text-xl font-medium hover:text-indigo-600 transition" data-lang="fr">Contact</a>
-            <a href="#contact" class="text-xl font-medium hover:text-indigo-600 transition hidden" data-lang="ar">اتصل بنا</a>
+            <a href="#features" class="text-xl font-medium hover:text-indigo-600 transition-all hover:scale-105" data-lang="fr">
+                <i class="fas fa-star mr-2"></i>Fonctionnalités
+            </a>
+            <a href="#features" class="text-xl font-medium hover:text-indigo-600 transition-all hover:scale-105 hidden" data-lang="ar">
+                <i class="fas fa-star mr-2"></i>الميزات
+            </a>
+            <a href="#about" class="text-xl font-medium hover:text-indigo-600 transition-all hover:scale-105" data-lang="fr">
+                <i class="fas fa-info-circle mr-2"></i>À propos
+            </a>
+            <a href="#about" class="text-xl font-medium hover:text-indigo-600 transition-all hover:scale-105 hidden" data-lang="ar">
+                <i class="fas fa-info-circle mr-2"></i>حول
+            </a>
+            <a href="#contact" class="text-xl font-medium hover:text-indigo-600 transition-all hover:scale-105" data-lang="fr">
+                <i class="fas fa-envelope mr-2"></i>Contact
+            </a>
+            <a href="#contact" class="text-xl font-medium hover:text-indigo-600 transition-all hover:scale-105 hidden" data-lang="ar">
+                <i class="fas fa-envelope mr-2"></i>اتصل بنا
+            </a>
         </nav>
+        
+        <!-- Mobile Cities -->
+        <div class="mt-8 text-center">
+            <p class="text-sm text-gray-600 mb-4" data-lang="fr">Disponible dans:</p>
+            <p class="text-sm text-gray-600 mb-4 hidden" data-lang="ar">متاح في:</p>
+            <div class="grid grid-cols-2 gap-2">
+                <span class="px-3 py-2 bg-indigo-100 text-indigo-800 rounded-lg text-sm">Casablanca</span>
+                <span class="px-3 py-2 bg-indigo-100 text-indigo-800 rounded-lg text-sm">Rabat</span>
+                <span class="px-3 py-2 bg-indigo-100 text-indigo-800 rounded-lg text-sm">Marrakech</span>
+                <span class="px-3 py-2 bg-indigo-100 text-indigo-800 rounded-lg text-sm">Fès</span>
+            </div>
+        </div>
     </div>
 
-    <!-- Hero Section -->
-    <section class="hero-section min-h-screen flex items-center">
-        <div class="container mx-auto px-4 hero-content">
-            <div class="max-w-2xl scroll-animate">
-                <h2 class="text-3xl md:text-5xl font-bold mb-6 text-indigo-900" data-lang="fr">Votre santé, notre priorité</h2>
-                <h2 class="text-3xl md:text-5xl font-bold mb-6 text-indigo-900 hidden" data-lang="ar">صحتك، أولويتنا</h2>
-                <div class="mb-2">
-                    <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm font-medium" data-lang="fr">AI powered</span>
-                    <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm font-medium hidden" data-lang="ar">مدعوم بالذكاء الاصطناعي</span>
+    <!-- Next-Generation Hero Section -->
+    <section class="hero-section min-h-screen flex items-center relative">
+        <div class="container mx-auto px-4 hero-content relative z-10">
+            <div class="max-w-4xl mx-auto text-center scroll-animate">
+                <div class="mb-6">
+                    <span class="bg-gradient-to-r from-indigo-100 to-purple-100 text-indigo-800 px-4 py-2 rounded-full text-sm font-medium glass-effect" data-lang="fr">
+                        <i class="fas fa-robot mr-2"></i>AI powered • Disponible au Maroc
+                    </span>
+                    <span class="bg-gradient-to-r from-indigo-100 to-purple-100 text-indigo-800 px-4 py-2 rounded-full text-sm font-medium glass-effect hidden" data-lang="ar">
+                        <i class="fas fa-robot mr-2"></i>مدعوم بالذكاء الاصطناعي • متاح في المغرب
+                    </span>
                 </div>
-                <p class="text-lg mb-8 text-gray-700" data-lang="fr">La super application santé qui révolutionne l'accès aux soins au Maroc. Bientôt disponible!</p>
-                <p class="text-lg mb-8 text-gray-700 hidden" data-lang="ar">التطبيق الصحي الفائق الذي يغير طريقة الوصول إلى الرعاية الصحية في المغرب. قريبا!</p>
-                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-                    <button class="bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-3 rounded-full font-medium transition shadow-lg" data-lang="fr">Pré-inscription</button>
-                    <button class="bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-3 rounded-full font-medium transition shadow-lg hidden" data-lang="ar">تسجيل مسبق</button>
-                    <button class="border border-indigo-600 text-indigo-600 hover:bg-indigo-50 px-8 py-3 rounded-full font-medium transition" data-lang="fr">Voir la démo</button>
-                    <button class="border border-indigo-600 text-indigo-600 hover:bg-indigo-50 px-8 py-3 rounded-full font-medium transition hidden" data-lang="ar">عرض التجريبي</button>
+                
+                <h2 class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 gradient-text leading-tight" data-lang="fr">
+                    Votre santé, <br>
+                    <span class="text-indigo-600">notre priorité</span>
+                </h2>
+                <h2 class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 gradient-text leading-tight hidden" data-lang="ar">
+                    صحتك، <br>
+                    <span class="text-indigo-600">أولويتنا</span>
+                </h2>
+                
+                <p class="text-xl md:text-2xl mb-8 text-gray-700 max-w-3xl mx-auto leading-relaxed" data-lang="fr">
+                    La première super application santé qui révolutionne l'accès aux soins au Maroc. 
+                    <span class="font-semibold text-indigo-600">Bientôt disponible!</span>
+                </p>
+                <p class="text-xl md:text-2xl mb-8 text-gray-700 max-w-3xl mx-auto leading-relaxed hidden" data-lang="ar">
+                    أول تطبيق صحي فائق يغير طريقة الوصول إلى الرعاية الصحية في المغرب. 
+                    <span class="font-semibold text-indigo-600">قريبا متاح!</span>
+                </p>
+                
+                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6 justify-center">
+                    <button class="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white px-8 py-4 rounded-full font-medium transition-all shadow-lg hover:scale-105 neumorphism" data-lang="fr">
+                        <i class="fas fa-rocket mr-2"></i>Pré-inscription
+                    </button>
+                    <button class="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white px-8 py-4 rounded-full font-medium transition-all shadow-lg hover:scale-105 neumorphism hidden" data-lang="ar">
+                        <i class="fas fa-rocket mr-2"></i>تسجيل مسبق
+                    </button>
+                    <button class="border-2 border-indigo-600 text-indigo-600 hover:bg-indigo-50 px-8 py-4 rounded-full font-medium transition-all hover:scale-105 glass-effect" data-lang="fr">
+                        <i class="fas fa-play mr-2"></i>Voir la démo
+                    </button>
+                    <button class="border-2 border-indigo-600 text-indigo-600 hover:bg-indigo-50 px-8 py-4 rounded-full font-medium transition-all hover:scale-105 glass-effect hidden" data-lang="ar">
+                        <i class="fas fa-play mr-2"></i>عرض التجريبي
+                    </button>
+                </div>
+                
+                <!-- Morocco Stats -->
+                <div class="mt-12 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-2xl mx-auto">
+                    <div class="text-center">
+                        <div class="text-2xl md:text-3xl font-bold text-indigo-600">100+</div>
+                        <div class="text-sm text-gray-600" data-lang="fr">Professionnels</div>
+                        <div class="text-sm text-gray-600 hidden" data-lang="ar">متخصصين</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl md:text-3xl font-bold text-indigo-600">24/7</div>
+                        <div class="text-sm text-gray-600" data-lang="fr">Disponibilité</div>
+                        <div class="text-sm text-gray-600 hidden" data-lang="ar">متاح</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl md:text-3xl font-bold text-indigo-600">50K+</div>
+                        <div class="text-sm text-gray-600" data-lang="fr">Utilisateurs</div>
+                        <div class="text-sm text-gray-600 hidden" data-lang="ar">مستخدم</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl md:text-3xl font-bold text-indigo-600">6</div>
+                        <div class="text-sm text-gray-600" data-lang="fr">Villes</div>
+                        <div class="text-sm text-gray-600 hidden" data-lang="ar">مدن</div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -271,47 +709,82 @@
 
     <!-- About Section -->
     <section id="about" class="py-20 bg-indigo-50 overflow-hidden">
-        <!-- Image Slider -->
+        <!-- Professional Image Slider with Morocco-specific content -->
         <div class="container mx-auto px-4 mb-16">
             <div class="relative h-64 md:h-80 lg:h-96 overflow-hidden rounded-2xl shadow-xl">
                 <div class="absolute inset-0 flex transition-transform duration-500 ease-in-out" id="healthSlider">
-                    <!-- Slide 1 -->
+                    <!-- Slide 1: Modern Telemedicine -->
                     <div class="min-w-full relative">
-                        <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80" 
-                             alt="Telemedicine" 
+                        <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
+                             alt="Modern Telemedicine Consultation" 
                              class="w-full h-full object-cover">
-                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
-                            <p class="text-white text-sm md:text-base" data-lang="fr">Consultation à distance avec nos médecins certifiés</p>
-                            <p class="text-white text-sm md:text-base hidden" data-lang="ar">استشارة عن بعد مع أطبائنا المعتمدين</p>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-6">
+                            <h3 class="text-white text-xl md:text-2xl font-bold mb-2" data-lang="fr">Télémedecine Moderne</h3>
+                            <h3 class="text-white text-xl md:text-2xl font-bold mb-2 hidden" data-lang="ar">طب عن بعد حديث</h3>
+                            <p class="text-white/90 text-sm md:text-base" data-lang="fr">Consultation HD avec nos médecins certifiés au Maroc</p>
+                            <p class="text-white/90 text-sm md:text-base hidden" data-lang="ar">استشارة عالية الجودة مع أطبائنا المعتمدين في المغرب</p>
                         </div>
                     </div>
-                    <!-- Slide 2 -->
+                    
+                    <!-- Slide 2: Digital Health Records -->
                     <div class="min-w-full relative">
-                        <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80" 
-                             alt="Medical Records" 
+                        <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
+                             alt="Digital Health Records" 
                              class="w-full h-full object-cover">
-                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
-                            <p class="text-white text-sm md:text-base" data-lang="fr">Gestion sécurisée de votre dossier médical</p>
-                            <p class="text-white text-sm md:text-base hidden" data-lang="ar">إدارة آمنة لملفك الطبي</p>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-6">
+                            <h3 class="text-white text-xl md:text-2xl font-bold mb-2" data-lang="fr">Dossier Médical Digital</h3>
+                            <h3 class="text-white text-xl md:text-2xl font-bold mb-2 hidden" data-lang="ar">ملف طبي رقمي</h3>
+                            <p class="text-white/90 text-sm md:text-base" data-lang="fr">Gestion sécurisée et accessible de vos données santé</p>
+                            <p class="text-white/90 text-sm md:text-base hidden" data-lang="ar">إدارة آمنة ويمكن الوصول إليها لبياناتك الصحية</p>
                         </div>
                     </div>
-                    <!-- Slide 3 -->
+                    
+                    <!-- Slide 3: AI-Powered Healthcare -->
                     <div class="min-w-full relative">
-                        <img src="https://images.unsplash.com/photo-1581056771107-24ca5f033842?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80" 
-                             alt="Online Pharmacy" 
+                        <img src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
+                             alt="AI-Powered Healthcare" 
                              class="w-full h-full object-cover">
-                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
-                            <p class="text-white text-sm md:text-base" data-lang="fr">Commande de médicaments en ligne rapide et sécurisée</p>
-                            <p class="text-white text-sm md:text-base hidden" data-lang="ar">طلب الأدوية عبر الإنترنت بسرعة وأمان</p>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-6">
+                            <h3 class="text-white text-xl md:text-2xl font-bold mb-2" data-lang="fr">IA & Santé Intelligente</h3>
+                            <h3 class="text-white text-xl md:text-2xl font-bold mb-2 hidden" data-lang="ar">الذكاء الاصطناعي والصحة الذكية</h3>
+                            <p class="text-white/90 text-sm md:text-base" data-lang="fr">Diagnostic assisté par IA pour une meilleure précision</p>
+                            <p class="text-white/90 text-sm md:text-base hidden" data-lang="ar">تشخيص بمساعدة الذكاء الاصطناعي لدقة أفضل</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Slide 4: Morocco Healthcare -->
+                    <div class="min-w-full relative">
+                        <img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
+                             alt="Morocco Healthcare Innovation" 
+                             class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-6">
+                            <h3 class="text-white text-xl md:text-2xl font-bold mb-2" data-lang="fr">Innovation Santé Maroc</h3>
+                            <h3 class="text-white text-xl md:text-2xl font-bold mb-2 hidden" data-lang="ar">ابتكار الصحة المغرب</h3>
+                            <p class="text-white/90 text-sm md:text-base" data-lang="fr">La première plateforme de santé digitale au Maroc</p>
+                            <p class="text-white/90 text-sm md:text-base hidden" data-lang="ar">أول منصة للصحة الرقمية في المغرب</p>
                         </div>
                     </div>
                 </div>
-                <!-- Navigation Dots -->
-                <div class="absolute bottom-4 left-0 right-0 flex justify-center space-x-2">
-                    <button class="w-2 h-2 rounded-full bg-white/50 slider-dot" data-index="0"></button>
-                    <button class="w-2 h-2 rounded-full bg-white/50 slider-dot" data-index="1"></button>
-                    <button class="w-2 h-2 rounded-full bg-white/50 slider-dot" data-index="2"></button>
+                
+                <!-- Enhanced Navigation Dots -->
+                <div class="absolute bottom-6 left-0 right-0 flex justify-center space-x-3">
+                    <button class="w-3 h-3 rounded-full bg-white/50 hover:bg-white transition-all slider-dot" data-index="0"></button>
+                    <button class="w-3 h-3 rounded-full bg-white/50 hover:bg-white transition-all slider-dot" data-index="1"></button>
+                    <button class="w-3 h-3 rounded-full bg-white/50 hover:bg-white transition-all slider-dot" data-index="2"></button>
+                    <button class="w-3 h-3 rounded-full bg-white/50 hover:bg-white transition-all slider-dot" data-index="3"></button>
                 </div>
+                
+                <!-- Navigation Arrows -->
+                <button class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/20 hover:bg-white/30 text-white p-2 rounded-full transition-all" id="prevSlide">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/20 hover:bg-white/30 text-white p-2 rounded-full transition-all" id="nextSlide">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
             </div>
         </div>
         <div class="container mx-auto px-4">
@@ -342,82 +815,115 @@
                     </div>
                 </div>
                 <div class="lg:w-1/2 relative">
-                    <div class="bg-indigo-100 rounded-3xl p-6 inline-block relative overflow-hidden">
+                    <div class="bg-gradient-to-br from-indigo-100 to-purple-100 rounded-3xl p-8 inline-block relative overflow-hidden shadow-2xl">
                         <div class="relative z-10">
-                            <div class="w-24 h-24 bg-white rounded-full flex items-center justify-center shadow-lg mb-4 mx-auto">
-                                <i class="fas fa-heartbeat text-4xl text-indigo-600"></i>
+                            <div class="w-28 h-28 bg-gradient-to-br from-indigo-600 to-purple-600 rounded-full flex items-center justify-center shadow-xl mb-6 mx-auto">
+                                <i class="fas fa-heartbeat text-5xl text-white"></i>
                             </div>
-                            <div class="grid grid-cols-3 gap-3">
-                                <div class="bg-white p-3 rounded-lg shadow-sm flex flex-col items-center">
-                                    <i class="fas fa-mobile-alt text-indigo-500 text-xl mb-2"></i>
-                                    <span class="text-xs font-medium text-center" data-lang="fr">App Mobile</span>
-                                    <span class="text-xs font-medium text-center hidden" data-lang="ar">تطبيق</span>
+                            <div class="grid grid-cols-3 gap-4">
+                                <div class="bg-white/90 backdrop-blur-sm p-4 rounded-xl shadow-lg flex flex-col items-center hover:scale-105 transition-transform">
+                                    <i class="fas fa-mobile-alt text-indigo-600 text-2xl mb-3"></i>
+                                    <span class="text-sm font-semibold text-center text-gray-800" data-lang="fr">App Mobile</span>
+                                    <span class="text-sm font-semibold text-center text-gray-800 hidden" data-lang="ar">تطبيق</span>
                                 </div>
-                                <div class="bg-white p-3 rounded-lg shadow-sm flex flex-col items-center">
-                                    <i class="fas fa-brain text-indigo-500 text-xl mb-2"></i>
-                                    <span class="text-xs font-medium text-center" data-lang="fr">AI Santé</span>
-                                    <span class="text-xs font-medium text-center hidden" data-lang="ar">ذكاء اصطناعي</span>
+                                <div class="bg-white/90 backdrop-blur-sm p-4 rounded-xl shadow-lg flex flex-col items-center hover:scale-105 transition-transform">
+                                    <i class="fas fa-brain text-indigo-600 text-2xl mb-3"></i>
+                                    <span class="text-sm font-semibold text-center text-gray-800" data-lang="fr">AI Santé</span>
+                                    <span class="text-sm font-semibold text-center text-gray-800 hidden" data-lang="ar">ذكاء اصطناعي</span>
                                 </div>
-                                <div class="bg-white p-3 rounded-lg shadow-sm flex flex-col items-center">
-                                    <i class="fas fa-shield-alt text-indigo-500 text-xl mb-2"></i>
-                                    <span class="text-xs font-medium text-center" data-lang="fr">Sécurité</span>
-                                    <span class="text-xs font-medium text-center hidden" data-lang="ar">حماية</span>
+                                <div class="bg-white/90 backdrop-blur-sm p-4 rounded-xl shadow-lg flex flex-col items-center hover:scale-105 transition-transform">
+                                    <i class="fas fa-shield-alt text-indigo-600 text-2xl mb-3"></i>
+                                    <span class="text-sm font-semibold text-center text-gray-800" data-lang="fr">Sécurité</span>
+                                    <span class="text-sm font-semibold text-center text-gray-800 hidden" data-lang="ar">حماية</span>
                                 </div>
-                                <div class="bg-white p-3 rounded-lg shadow-sm flex flex-col items-center">
-                                    <i class="fas fa-user-md text-indigo-500 text-xl mb-2"></i>
-                                    <span class="text-xs font-medium text-center" data-lang="fr">Docteurs</span>
-                                    <span class="text-xs font-medium text-center hidden" data-lang="ar">أطباء</span>
+                                <div class="bg-white/90 backdrop-blur-sm p-4 rounded-xl shadow-lg flex flex-col items-center hover:scale-105 transition-transform">
+                                    <i class="fas fa-user-md text-indigo-600 text-2xl mb-3"></i>
+                                    <span class="text-sm font-semibold text-center text-gray-800" data-lang="fr">Docteurs</span>
+                                    <span class="text-sm font-semibold text-center text-gray-800 hidden" data-lang="ar">أطباء</span>
                                 </div>
-                                <div class="bg-white p-3 rounded-lg shadow-sm flex flex-col items-center">
-                                    <i class="fas fa-pills text-indigo-500 text-xl mb-2"></i>
-                                    <span class="text-xs font-medium text-center" data-lang="fr">Médicaments</span>
-                                    <span class="text-xs font-medium text-center hidden" data-lang="ar">أدوية</span>
+                                <div class="bg-white/90 backdrop-blur-sm p-4 rounded-xl shadow-lg flex flex-col items-center hover:scale-105 transition-transform">
+                                    <i class="fas fa-pills text-indigo-600 text-2xl mb-3"></i>
+                                    <span class="text-sm font-semibold text-center text-gray-800" data-lang="fr">Médicaments</span>
+                                    <span class="text-sm font-semibold text-center text-gray-800 hidden" data-lang="ar">أدوية</span>
                                 </div>
-                                <div class="bg-white p-3 rounded-lg shadow-sm flex flex-col items-center">
-                                    <i class="fas fa-ambulance text-indigo-500 text-xl mb-2"></i>
-                                    <span class="text-xs font-medium text-center" data-lang="fr">Urgence</span>
-                                    <span class="text-xs font-medium text-center hidden" data-lang="ar">طوارئ</span>
+                                <div class="bg-white/90 backdrop-blur-sm p-4 rounded-xl shadow-lg flex flex-col items-center hover:scale-105 transition-transform">
+                                    <i class="fas fa-ambulance text-indigo-600 text-2xl mb-3"></i>
+                                    <span class="text-sm font-semibold text-center text-gray-800" data-lang="fr">Urgence</span>
+                                    <span class="text-sm font-semibold text-center text-gray-800 hidden" data-lang="ar">طوارئ</span>
                                 </div>
                             </div>
                         </div>
-                        <div class="absolute -bottom-10 -right-10 w-40 h-40 bg-indigo-200 rounded-full opacity-20"></div>
-                        <div class="absolute -top-10 -left-10 w-32 h-32 bg-indigo-300 rounded-full opacity-20"></div>
+                        <!-- Enhanced Background Elements -->
+                        <div class="absolute -bottom-16 -right-16 w-48 h-48 bg-gradient-to-br from-indigo-200 to-purple-200 rounded-full opacity-30 animate-pulse"></div>
+                        <div class="absolute -top-16 -left-16 w-40 h-40 bg-gradient-to-br from-purple-200 to-pink-200 rounded-full opacity-30 animate-pulse" style="animation-delay: 1s;"></div>
+                        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-gradient-to-br from-indigo-300 to-purple-300 rounded-full opacity-20 animate-pulse" style="animation-delay: 2s;"></div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-white">
-        <div class="container mx-auto px-4">
+    <!-- Enhanced Contact Section with No 3D Background -->
+    <section id="contact" class="py-20 bg-gradient-to-br from-white to-indigo-50 relative overflow-hidden">
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 opacity-5">
+            <div class="absolute inset-0" style="background-image: radial-gradient(circle at 1px 1px, #4F46E5 1px, transparent 0); background-size: 40px 40px;"></div>
+        </div>
+        
+        <div class="container mx-auto px-4 relative z-10">
             <div class="max-w-4xl mx-auto">
-                <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-indigo-900" data-lang="fr">Bientôt disponible</h2>
-                <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-indigo-900 hidden" data-lang="ar">قريبا متاح</h2>
-                <p class="text-xl text-center mb-12 text-gray-600" data-lang="fr">Inscrivez-vous pour être informé du lancement et bénéficier d'offres exclusives</p>
-                <p class="text-xl text-center mb-12 text-gray-600 hidden" data-lang="ar">سجل للحصول على إشعار عند الإطلاق والاستفادة من العروض الحصرية</p>
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl md:text-5xl font-bold mb-6 gradient-text" data-lang="fr">
+                        <i class="fas fa-rocket mr-4"></i>Bientôt disponible
+                    </h2>
+                    <h2 class="text-4xl md:text-5xl font-bold mb-6 gradient-text hidden" data-lang="ar">
+                        <i class="fas fa-rocket mr-4"></i>قريبا متاح
+                    </h2>
+                    <p class="text-xl md:text-2xl text-gray-600 max-w-2xl mx-auto leading-relaxed" data-lang="fr">
+                        Inscrivez-vous pour être informé du lancement et bénéficier d'offres exclusives
+                    </p>
+                    <p class="text-xl md:text-2xl text-gray-600 max-w-2xl mx-auto leading-relaxed hidden" data-lang="ar">
+                        سجل للحصول على إشعار عند الإطلاق والاستفادة من العروض الحصرية
+                    </p>
+                </div>
                 
-                <form class="bg-indigo-50 rounded-2xl p-8 shadow-sm">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                        <div>
-                            <label class="block text-gray-700 mb-2" data-lang="fr">Nom complet</label>
-                            <label class="block text-gray-700 mb-2 hidden" data-lang="ar">الاسم الكامل</label>
-                            <input type="text" class="contact-input w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                <form class="bg-white/80 backdrop-blur-sm rounded-3xl p-8 md:p-12 shadow-2xl border border-white/30">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                        <div class="group">
+                            <label class="block text-gray-700 mb-3 font-semibold" data-lang="fr">
+                                <i class="fas fa-user mr-2 text-indigo-600"></i>Nom complet
+                            </label>
+                            <label class="block text-gray-700 mb-3 font-semibold hidden" data-lang="ar">
+                                <i class="fas fa-user mr-2 text-indigo-600"></i>الاسم الكامل
+                            </label>
+                            <input type="text" class="w-full px-4 py-4 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all bg-white/50 backdrop-blur-sm hover:bg-white/80">
                         </div>
-                        <div>
-                            <label class="block text-gray-700 mb-2" data-lang="fr">Email</label>
-                            <label class="block text-gray-700 mb-2 hidden" data-lang="ar">البريد الإلكتروني</label>
-                            <input type="email" class="contact-input w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                        <div class="group">
+                            <label class="block text-gray-700 mb-3 font-semibold" data-lang="fr">
+                                <i class="fas fa-envelope mr-2 text-indigo-600"></i>Email
+                            </label>
+                            <label class="block text-gray-700 mb-3 font-semibold hidden" data-lang="ar">
+                                <i class="fas fa-envelope mr-2 text-indigo-600"></i>البريد الإلكتروني
+                            </label>
+                            <input type="email" class="w-full px-4 py-4 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all bg-white/50 backdrop-blur-sm hover:bg-white/80">
                         </div>
-                        <div>
-                            <label class="block text-gray-700 mb-2" data-lang="fr">Téléphone</label>
-                            <label class="block text-gray-700 mb-2 hidden" data-lang="ar">الهاتف</label>
-                            <input type="tel" class="contact-input w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                        <div class="group">
+                            <label class="block text-gray-700 mb-3 font-semibold" data-lang="fr">
+                                <i class="fas fa-phone mr-2 text-indigo-600"></i>Téléphone
+                            </label>
+                            <label class="block text-gray-700 mb-3 font-semibold hidden" data-lang="ar">
+                                <i class="fas fa-phone mr-2 text-indigo-600"></i>الهاتف
+                            </label>
+                            <input type="tel" class="w-full px-4 py-4 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all bg-white/50 backdrop-blur-sm hover:bg-white/80">
                         </div>
-                        <div>
-                            <label class="block text-gray-700 mb-2" data-lang="fr">Ville</label>
-                            <label class="block text-gray-700 mb-2 hidden" data-lang="ar">المدينة</label>
-                            <select class="contact-input w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                        <div class="group">
+                            <label class="block text-gray-700 mb-3 font-semibold" data-lang="fr">
+                                <i class="fas fa-map-marker-alt mr-2 text-indigo-600"></i>Ville
+                            </label>
+                            <label class="block text-gray-700 mb-3 font-semibold hidden" data-lang="ar">
+                                <i class="fas fa-map-marker-alt mr-2 text-indigo-600"></i>المدينة
+                            </label>
+                            <select class="w-full px-4 py-4 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all bg-white/50 backdrop-blur-sm hover:bg-white/80">
                                 <option value="" data-lang="fr">Sélectionnez votre ville</option>
                                 <option value="" data-lang="ar" class="hidden">اختر مدينتك</option>
                                 <option value="casablanca">Casablanca</option>
@@ -429,91 +935,255 @@
                             </select>
                         </div>
                     </div>
-                    <div class="mb-6">
-                        <label class="block text-gray-700 mb-2" data-lang="fr">Message</label>
-                        <label class="block text-gray-700 mb-2 hidden" data-lang="ar">رسالة</label>
-                        <textarea rows="4" class="contact-input w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500"></textarea>
+                    <div class="mb-8">
+                        <label class="block text-gray-700 mb-3 font-semibold" data-lang="fr">
+                            <i class="fas fa-comment mr-2 text-indigo-600"></i>Message
+                        </label>
+                        <label class="block text-gray-700 mb-3 font-semibold hidden" data-lang="ar">
+                            <i class="fas fa-comment mr-2 text-indigo-600"></i>رسالة
+                        </label>
+                        <textarea rows="4" class="w-full px-4 py-4 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all bg-white/50 backdrop-blur-sm hover:bg-white/80 resize-none"></textarea>
                     </div>
-                    <div class="flex items-center mb-6">
-                        <input type="checkbox" id="newsletter" class="mr-2">
-                        <label for="newsletter" class="text-gray-700" data-lang="fr">Je souhaite recevoir des actualités et offres de Medacte</label>
-                        <label for="newsletter" class="text-gray-700 hidden" data-lang="ar">أرغب في تلقي أخبار وعروض من ميداكت</label>
+                    <div class="flex items-center mb-8 p-4 bg-indigo-50 rounded-xl">
+                        <input type="checkbox" id="newsletter" class="mr-3 w-5 h-5 text-indigo-600 rounded focus:ring-indigo-500">
+                        <label for="newsletter" class="text-gray-700 font-medium" data-lang="fr">
+                            <i class="fas fa-bell mr-2 text-indigo-600"></i>Je souhaite recevoir des actualités et offres de Medacte
+                        </label>
+                        <label for="newsletter" class="text-gray-700 font-medium hidden" data-lang="ar">
+                            <i class="fas fa-bell mr-2 text-indigo-600"></i>أرغب في تلقي أخبار وعروض من ميداكت
+                        </label>
                     </div>
-                    <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-4 rounded-lg font-medium transition shadow-lg" data-lang="fr">Envoyer</button>
-                    <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-4 rounded-lg font-medium transition shadow-lg hidden" data-lang="ar">إرسال</button>
+                    <button type="submit" class="w-full bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white px-8 py-5 rounded-xl font-semibold text-lg transition-all shadow-lg hover:scale-105 hover:shadow-xl" data-lang="fr">
+                        <i class="fas fa-paper-plane mr-3"></i>Envoyer
+                    </button>
+                    <button type="submit" class="w-full bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white px-8 py-5 rounded-xl font-semibold text-lg transition-all shadow-lg hover:scale-105 hover:shadow-xl hidden" data-lang="ar">
+                        <i class="fas fa-paper-plane mr-3"></i>إرسال
+                    </button>
                 </form>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-indigo-900 text-white py-12">
-        <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <div>
-                    <div class="flex items-center mb-4">
-                        <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-indigo-900 font-bold text-xl">M</div>
-                        <h3 class="text-xl font-bold ml-2" data-lang="fr">Medacte</h3>
-                        <h3 class="text-xl font-bold ml-2 hidden" data-lang="ar">ميداكت</h3>
+    <!-- Enhanced Footer with No 3D Background -->
+    <footer class="bg-gradient-to-br from-indigo-900 via-purple-900 to-indigo-950 text-white py-16 relative overflow-hidden">
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute inset-0" style="background-image: radial-gradient(circle at 1px 1px, #ffffff 1px, transparent 0); background-size: 40px 40px;"></div>
+        </div>
+        
+        <div class="container mx-auto px-4 relative z-10">
+            <!-- Main Footer Content -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <!-- Company Info -->
+                <div class="lg:col-span-1">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg">
+                            <i class="fas fa-heartbeat"></i>
+                        </div>
+                        <div class="ml-3">
+                            <h3 class="text-2xl font-bold" data-lang="fr">Medacte</h3>
+                            <h3 class="text-2xl font-bold hidden" data-lang="ar">ميداكت</h3>
+                            <p class="text-indigo-300 text-sm" data-lang="fr">Santé Digitale Maroc</p>
+                            <p class="text-indigo-300 text-sm hidden" data-lang="ar">الصحة الرقمية المغرب</p>
+                        </div>
                     </div>
-                    <p class="text-indigo-200" data-lang="fr">La santé digitale pour tous les Marocains.</p>
-                    <p class="text-indigo-200 hidden" data-lang="ar">الصحة الرقمية لجميع المغاربة.</p>
+                    <p class="text-indigo-200 leading-relaxed mb-6" data-lang="fr">
+                        La première plateforme de santé digitale au Maroc, révolutionnant l'accès aux soins pour tous les Marocains.
+                    </p>
+                    <p class="text-indigo-200 leading-relaxed mb-6 hidden" data-lang="ar">
+                        أول منصة للصحة الرقمية في المغرب، ثورة في الوصول إلى الرعاية الصحية لجميع المغاربة.
+                    </p>
+                    
+                    <!-- Morocco Cities -->
+                    <div class="mb-6">
+                        <h5 class="text-indigo-300 font-semibold mb-3" data-lang="fr">Disponible dans:</h5>
+                        <h5 class="text-indigo-300 font-semibold mb-3 hidden" data-lang="ar">متاح في:</h5>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-indigo-800/50 rounded-full text-sm">Casablanca</span>
+                            <span class="px-3 py-1 bg-indigo-800/50 rounded-full text-sm">Rabat</span>
+                            <span class="px-3 py-1 bg-indigo-800/50 rounded-full text-sm">Marrakech</span>
+                            <span class="px-3 py-1 bg-indigo-800/50 rounded-full text-sm">Fès</span>
+                        </div>
+                    </div>
                 </div>
+                
+                <!-- Quick Links -->
                 <div>
-                    <h4 class="text-lg font-semibold mb-4" data-lang="fr">Liens rapides</h4>
-                    <h4 class="text-lg font-semibold mb-4 hidden" data-lang="ar">روابط سريعة</h4>
-                    <ul class="space-y-2">
-                        <li><a href="#features" class="text-indigo-200 hover:text-white transition" data-lang="fr">Fonctionnalités</a></li>
-                        <li><a href="#features" class="text-indigo-200 hover:text-white transition hidden" data-lang="ar">الميزات</a></li>
-                        <li><a href="#about" class="text-indigo-200 hover:text-white transition" data-lang="fr">À propos</a></li>
-                        <li><a href="#about" class="text-indigo-200 hover:text-white transition hidden" data-lang="ar">حول</a></li>
-                        <li><a href="#contact" class="text-indigo-200 hover:text-white transition" data-lang="fr">Contact</a></li>
-                        <li><a href="#contact" class="text-indigo-200 hover:text-white transition hidden" data-lang="ar">اتصل بنا</a></li>
+                    <h4 class="text-xl font-bold mb-6 flex items-center" data-lang="fr">
+                        <i class="fas fa-link mr-3 text-indigo-400"></i>Liens rapides
+                    </h4>
+                    <h4 class="text-xl font-bold mb-6 flex items-center hidden" data-lang="ar">
+                        <i class="fas fa-link mr-3 text-indigo-400"></i>روابط سريعة
+                    </h4>
+                    <ul class="space-y-3">
+                        <li>
+                            <a href="#features" class="text-indigo-200 hover:text-white transition-all hover:translate-x-2 flex items-center group" data-lang="fr">
+                                <i class="fas fa-star mr-3 text-indigo-400 group-hover:text-indigo-300"></i>Fonctionnalités
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#features" class="text-indigo-200 hover:text-white transition-all hover:translate-x-2 flex items-center group hidden" data-lang="ar">
+                                <i class="fas fa-star mr-3 text-indigo-400 group-hover:text-indigo-300"></i>الميزات
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#about" class="text-indigo-200 hover:text-white transition-all hover:translate-x-2 flex items-center group" data-lang="fr">
+                                <i class="fas fa-info-circle mr-3 text-indigo-400 group-hover:text-indigo-300"></i>À propos
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#about" class="text-indigo-200 hover:text-white transition-all hover:translate-x-2 flex items-center group hidden" data-lang="ar">
+                                <i class="fas fa-info-circle mr-3 text-indigo-400 group-hover:text-indigo-300"></i>حول
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#contact" class="text-indigo-200 hover:text-white transition-all hover:translate-x-2 flex items-center group" data-lang="fr">
+                                <i class="fas fa-envelope mr-3 text-indigo-400 group-hover:text-indigo-300"></i>Contact
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#contact" class="text-indigo-200 hover:text-white transition-all hover:translate-x-2 flex items-center group hidden" data-lang="ar">
+                                <i class="fas fa-envelope mr-3 text-indigo-400 group-hover:text-indigo-300"></i>اتصل بنا
+                            </a>
+                        </li>
                     </ul>
                 </div>
+                
+                <!-- Legal -->
                 <div>
-                    <h4 class="text-lg font-semibold mb-4" data-lang="fr">Légal</h4>
-                    <h4 class="text-lg font-semibold mb-4 hidden" data-lang="ar">قانوني</h4>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="text-indigo-200 hover:text-white transition" data-lang="fr">Conditions d'utilisation</a></li>
-                        <li><a href="#" class="text-indigo-200 hover:text-white transition hidden" data-lang="ar">شروط الاستخدام</a></li>
-                        <li><a href="#" class="text-indigo-200 hover:text-white transition" data-lang="fr">Politique de confidentialité</a></li>
-                        <li><a href="#" class="text-indigo-200 hover:text-white transition hidden" data-lang="ar">سياسة الخصوصية</a></li>
-                        <li><a href="#" class="text-indigo-200 hover:text-white transition" data-lang="fr">Cookies</a></li>
-                        <li><a href="#" class="text-indigo-200 hover:text-white transition hidden" data-lang="ar">الكوكيز</a></li>
+                    <h4 class="text-xl font-bold mb-6 flex items-center" data-lang="fr">
+                        <i class="fas fa-gavel mr-3 text-indigo-400"></i>Légal
+                    </h4>
+                    <h4 class="text-xl font-bold mb-6 flex items-center hidden" data-lang="ar">
+                        <i class="fas fa-gavel mr-3 text-indigo-400"></i>قانوني
+                    </h4>
+                    <ul class="space-y-3">
+                        <li>
+                            <a href="#" class="text-indigo-200 hover:text-white transition-all hover:translate-x-2 flex items-center group" data-lang="fr">
+                                <i class="fas fa-file-contract mr-3 text-indigo-400 group-hover:text-indigo-300"></i>Conditions d'utilisation
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-indigo-200 hover:text-white transition-all hover:translate-x-2 flex items-center group hidden" data-lang="ar">
+                                <i class="fas fa-file-contract mr-3 text-indigo-400 group-hover:text-indigo-300"></i>شروط الاستخدام
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-indigo-200 hover:text-white transition-all hover:translate-x-2 flex items-center group" data-lang="fr">
+                                <i class="fas fa-shield-alt mr-3 text-indigo-400 group-hover:text-indigo-300"></i>Politique de confidentialité
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-indigo-200 hover:text-white transition-all hover:translate-x-2 flex items-center group hidden" data-lang="ar">
+                                <i class="fas fa-shield-alt mr-3 text-indigo-400 group-hover:text-indigo-300"></i>سياسة الخصوصية
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-indigo-200 hover:text-white transition-all hover:translate-x-2 flex items-center group" data-lang="fr">
+                                <i class="fas fa-cookie-bite mr-3 text-indigo-400 group-hover:text-indigo-300"></i>Cookies
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-indigo-200 hover:text-white transition-all hover:translate-x-2 flex items-center group hidden" data-lang="ar">
+                                <i class="fas fa-cookie-bite mr-3 text-indigo-400 group-hover:text-indigo-300"></i>الكوكيز
+                            </a>
+                        </li>
                     </ul>
                 </div>
+                
+                <!-- Contact & Social -->
                 <div>
-                    <h4 class="text-lg font-semibold mb-4" data-lang="fr">Nous suivre</h4>
-                    <h4 class="text-lg font-semibold mb-4 hidden" data-lang="ar">تابعنا</h4>
-                    <div class="flex space-x-4 mb-6">
-                        <a href="#" class="w-10 h-10 bg-indigo-800 rounded-full flex items-center justify-center hover:bg-indigo-700 transition">
-                            <i class="fab fa-facebook-f"></i>
+                    <h4 class="text-xl font-bold mb-6 flex items-center" data-lang="fr">
+                        <i class="fas fa-users mr-3 text-indigo-400"></i>Nous suivre
+                    </h4>
+                    <h4 class="text-xl font-bold mb-6 flex items-center hidden" data-lang="ar">
+                        <i class="fas fa-users mr-3 text-indigo-400"></i>تابعنا
+                    </h4>
+                    
+                    <!-- Social Media -->
+                    <div class="flex space-x-4 mb-8">
+                        <a href="#" class="w-12 h-12 bg-gradient-to-br from-indigo-600 to-purple-600 rounded-full flex items-center justify-center hover:scale-110 transition-all shadow-lg hover:shadow-xl">
+                            <i class="fab fa-facebook-f text-lg"></i>
                         </a>
-                        <a href="#" class="w-10 h-10 bg-indigo-800 rounded-full flex items-center justify-center hover:bg-indigo-700 transition">
-                            <i class="fab fa-twitter"></i>
+                        <a href="#" class="w-12 h-12 bg-gradient-to-br from-indigo-600 to-purple-600 rounded-full flex items-center justify-center hover:scale-110 transition-all shadow-lg hover:shadow-xl">
+                            <i class="fab fa-twitter text-lg"></i>
                         </a>
-                        <a href="#" class="w-10 h-10 bg-indigo-800 rounded-full flex items-center justify-center hover:bg-indigo-700 transition">
-                            <i class="fab fa-instagram"></i>
+                        <a href="#" class="w-12 h-12 bg-gradient-to-br from-indigo-600 to-purple-600 rounded-full flex items-center justify-center hover:scale-110 transition-all shadow-lg hover:shadow-xl">
+                            <i class="fab fa-instagram text-lg"></i>
                         </a>
-                        <a href="#" class="w-10 h-10 bg-indigo-800 rounded-full flex items-center justify-center hover:bg-indigo-700 transition">
-                            <i class="fab fa-linkedin-in"></i>
+                        <a href="#" class="w-12 h-12 bg-gradient-to-br from-indigo-600 to-purple-600 rounded-full flex items-center justify-center hover:scale-110 transition-all shadow-lg hover:shadow-xl">
+                            <i class="fab fa-linkedin-in text-lg"></i>
                         </a>
                     </div>
-                    <p class="text-indigo-200" data-lang="fr">contact@medacte.com </p>
-                    <p class="text-indigo-200" data-lang="fr">+212 773-125597</p>
+                    
+                    <!-- Contact Info -->
+                    <div class="space-y-3">
+                        <div class="flex items-center text-indigo-200">
+                            <i class="fas fa-envelope mr-3 text-indigo-400"></i>
+                            <span>contact@medacte.com</span>
+                        </div>
+                        <div class="flex items-center text-indigo-200">
+                            <i class="fas fa-phone mr-3 text-indigo-400"></i>
+                            <span>+212 773-125597</span>
+                        </div>
+                        <div class="flex items-center text-indigo-200">
+                            <i class="fas fa-map-marker-alt mr-3 text-indigo-400"></i>
+                            <span data-lang="fr">Casablanca, Maroc</span>
+                            <span data-lang="ar" class="hidden">الدار البيضاء، المغرب</span>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="border-t border-indigo-800 mt-8 pt-8 text-center text-indigo-300">
-                <p data-lang="fr">&copy; 2025 Medacte. Tous droits réservés.</p>
-                <p class="hidden" data-lang="ar">&copy; 2025 ميداكت. جميع الحقوق محفوظة.</p>
+            
+            <!-- Newsletter Signup -->
+            <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 mb-12">
+                <div class="text-center">
+                    <h4 class="text-2xl font-bold mb-4" data-lang="fr">
+                        <i class="fas fa-bell mr-3 text-indigo-400"></i>Restez informé
+                    </h4>
+                    <h4 class="text-2xl font-bold mb-4 hidden" data-lang="ar">
+                        <i class="fas fa-bell mr-3 text-indigo-400"></i>ابق على اطلاع
+                    </h4>
+                    <p class="text-indigo-200 mb-6 max-w-2xl mx-auto" data-lang="fr">
+                        Recevez les dernières actualités et offres exclusives de Medacte directement dans votre boîte mail.
+                    </p>
+                    <p class="text-indigo-200 mb-6 max-w-2xl mx-auto hidden" data-lang="ar">
+                        احصل على آخر الأخبار والعروض الحصرية من ميداكت مباشرة في بريدك الإلكتروني.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+                        <input type="email" placeholder="Votre email" class="flex-1 px-4 py-3 rounded-xl border border-indigo-300 bg-white/20 text-white placeholder-indigo-200 focus:outline-none focus:ring-2 focus:ring-indigo-400">
+                        <button class="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white px-6 py-3 rounded-xl font-semibold transition-all hover:scale-105">
+                            <i class="fas fa-paper-plane mr-2"></i>S'abonner
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Copyright -->
+            <div class="border-t border-indigo-800 pt-8 text-center">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-indigo-300 mb-4 md:mb-0" data-lang="fr">
+                        &copy; 2025 Medacte. Tous droits réservés. | 
+                        <span class="text-indigo-400">La santé digitale pour tous les Marocains</span>
+                    </p>
+                    <p class="text-indigo-300 mb-4 md:mb-0 hidden" data-lang="ar">
+                        &copy; 2025 ميداكت. جميع الحقوق محفوظة. | 
+                        <span class="text-indigo-400">الصحة الرقمية لجميع المغاربة</span>
+                    </p>
+                    <div class="flex space-x-6">
+                        <a href="#" class="text-indigo-300 hover:text-white transition-colors" data-lang="fr">Mentions légales</a>
+                        <a href="#" class="text-indigo-300 hover:text-white transition-colors" data-lang="fr">CGU</a>
+                        <a href="#" class="text-indigo-300 hover:text-white transition-colors" data-lang="fr">RGPD</a>
+                    </div>
+                </div>
             </div>
         </div>
     </footer>
 
-    <!-- Back to Top Button -->
-    <button id="backToTop" class="fixed bottom-8 right-8 w-12 h-12 bg-indigo-600 text-white rounded-full shadow-lg flex items-center justify-center opacity-0 invisible transition-all duration-300 hover:bg-indigo-700">
-        <i class="fas fa-arrow-up"></i>
+    <!-- Enhanced Back to Top Button -->
+    <button id="backToTop" class="fixed bottom-8 right-8 w-14 h-14 bg-gradient-to-br from-indigo-600 to-purple-600 text-white rounded-full shadow-xl flex items-center justify-center opacity-0 invisible transition-all duration-500 hover:scale-110 hover:shadow-2xl group">
+        <i class="fas fa-arrow-up text-lg group-hover:animate-bounce"></i>
+        <div class="absolute inset-0 bg-white/20 rounded-full scale-0 group-hover:scale-100 transition-transform duration-300"></div>
     </button>
 
     <script>
@@ -545,7 +1215,7 @@
         window.addEventListener('resize', animateOnScroll);
 
         // Professional Signup Form Handling
-        document.querySelectorAll('[href="https://forms.gle/example123"]').forEach(link => {
+        document.querySelectorAll('[href="https://forms.gle/ehREcRXVs5azynum6"]').forEach(link => {
             link.addEventListener('click', (e) => {
                 e.preventDefault();
                 // Here you can add any pre-submission logic
@@ -560,22 +1230,39 @@
         const mobileMenuButton = document.getElementById('mobileMenuButton');
         const mobileMenu = document.getElementById('mobileMenu');
         const closeMobileMenu = document.getElementById('closeMobileMenu');
+        const closeMobileMenuBottom = document.getElementById('closeMobileMenuBottom');
         
         mobileMenuButton.addEventListener('click', () => {
             mobileMenu.classList.remove('hidden');
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
         });
         
         closeMobileMenu.addEventListener('click', () => {
             mobileMenu.classList.add('hidden');
+            document.body.style.overflow = ''; // Restore scrolling
+        });
+        
+        closeMobileMenuBottom.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+            document.body.style.overflow = ''; // Restore scrolling
+        });
+        
+        // Close menu when clicking on navigation links
+        document.querySelectorAll('#mobileMenu nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                document.body.style.overflow = '';
+            });
         });
 
-        // Language Switch
+        // Language Switch with RTL support
         const switchToFr = document.getElementById('switchToFr');
         const switchToAr = document.getElementById('switchToAr');
         
         switchToFr.addEventListener('click', () => {
             document.documentElement.lang = 'fr';
             document.documentElement.dir = 'ltr';
+            document.body.classList.remove('rtl');
             document.querySelectorAll('[data-lang="fr"]').forEach(el => el.classList.remove('hidden'));
             document.querySelectorAll('[data-lang="ar"]').forEach(el => el.classList.add('hidden'));
         });
@@ -583,6 +1270,7 @@
         switchToAr.addEventListener('click', () => {
             document.documentElement.lang = 'ar';
             document.documentElement.dir = 'rtl';
+            document.body.classList.add('rtl');
             document.querySelectorAll('[data-lang="ar"]').forEach(el => el.classList.remove('hidden'));
             document.querySelectorAll('[data-lang="fr"]').forEach(el => el.classList.add('hidden'));
         });
@@ -683,10 +1371,12 @@
 
         animate();
 
-        // Health Image Slider
+        // Enhanced Health Image Slider with Navigation
         const slider = document.getElementById('healthSlider');
         const slides = document.querySelectorAll('#healthSlider > div');
         const dots = document.querySelectorAll('.slider-dot');
+        const prevButton = document.getElementById('prevSlide');
+        const nextButton = document.getElementById('nextSlide');
         let currentSlide = 0;
         const slideCount = slides.length;
 
@@ -701,10 +1391,10 @@
             });
         }
 
-        // Auto-advance slides every 5 seconds
+        // Auto-advance slides every 6 seconds
         let slideInterval = setInterval(() => {
             goToSlide(currentSlide + 1);
-        }, 5000);
+        }, 6000);
 
         // Pause on hover
         slider.parentElement.addEventListener('mouseenter', () => {
@@ -714,7 +1404,7 @@
         slider.parentElement.addEventListener('mouseleave', () => {
             slideInterval = setInterval(() => {
                 goToSlide(currentSlide + 1);
-            }, 5000);
+            }, 6000);
         });
 
         // Dot navigation
@@ -724,15 +1414,49 @@
                 goToSlide(parseInt(dot.dataset.index));
                 slideInterval = setInterval(() => {
                     goToSlide(currentSlide + 1);
-                }, 5000);
+                }, 6000);
             });
+        });
+
+        // Arrow navigation
+        prevButton.addEventListener('click', () => {
+            clearInterval(slideInterval);
+            goToSlide(currentSlide - 1);
+            slideInterval = setInterval(() => {
+                goToSlide(currentSlide + 1);
+            }, 6000);
+        });
+
+        nextButton.addEventListener('click', () => {
+            clearInterval(slideInterval);
+            goToSlide(currentSlide + 1);
+            slideInterval = setInterval(() => {
+                goToSlide(currentSlide + 1);
+            }, 6000);
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') {
+                clearInterval(slideInterval);
+                goToSlide(currentSlide - 1);
+                slideInterval = setInterval(() => {
+                    goToSlide(currentSlide + 1);
+                }, 6000);
+            } else if (e.key === 'ArrowRight') {
+                clearInterval(slideInterval);
+                goToSlide(currentSlide + 1);
+                slideInterval = setInterval(() => {
+                    goToSlide(currentSlide + 1);
+                }, 6000);
+            }
         });
 
         // Initialize first dot as active
         dots[0].classList.remove('bg-white/50');
         dots[0].classList.add('bg-white');
 
-        // Back to Top Button
+        // Enhanced Back to Top Button
         const backToTopButton = document.getElementById('backToTop');
         
         window.addEventListener('scroll', () => {
@@ -750,6 +1474,21 @@
                 top: 0,
                 behavior: 'smooth'
             });
+            
+            // Add click animation
+            backToTopButton.style.transform = 'scale(0.9)';
+            setTimeout(() => {
+                backToTopButton.style.transform = '';
+            }, 150);
+        });
+        
+        // Add hover sound effect (optional)
+        backToTopButton.addEventListener('mouseenter', () => {
+            backToTopButton.style.transform = 'scale(1.1)';
+        });
+        
+        backToTopButton.addEventListener('mouseleave', () => {
+            backToTopButton.style.transform = '';
         });
     </script>
 </body>
