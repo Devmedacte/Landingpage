@@ -316,50 +316,8 @@
             transition: all 0.3s ease;
         }
         
-        /* Morocco Map Styles */
-        .morocco-map {
-            transition: transform 0.3s ease;
-        }
-        
-        .city-point {
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .city-point:hover {
-            filter: brightness(1.2);
-        }
-        
-        .coverage-area {
-            transition: all 0.3s ease;
-        }
-        
-        .city-label {
-            pointer-events: none;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
-        .morocco-outline {
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .morocco-outline:hover {
-            filter: brightness(1.1);
-        }
-        
-        /* Logo Animation */
-        .morocco-map svg {
-            transition: transform 0.3s ease;
-        }
-        
         /* Enhanced Mobile Responsiveness */
         @media (max-width: 768px) {
-            .morocco-map {
-                width: 300px !important;
-                height: 225px !important;
-            }
-            
             .faq-question span {
                 font-size: 16px !important;
             }
@@ -960,117 +918,7 @@
         </div>
     </section>
 
-    <!-- Morocco Map Section -->
-    <section class="py-20 bg-gradient-to-br from-green-50 to-blue-50 relative overflow-hidden">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-12">
-                <h2 class="text-4xl md:text-5xl font-bold mb-6 gradient-text" data-lang="fr">
-                    <i class="fas fa-map-marked-alt mr-4"></i>Présence au Maroc
-                </h2>
-                <h2 class="text-4xl md:text-5xl font-bold mb-6 gradient-text hidden" data-lang="ar">
-                    <i class="fas fa-map-marked-alt mr-4"></i>الوجود في المغرب
-                </h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto" data-lang="fr">
-                    Medacte couvre les principales villes du Maroc avec des services de santé digitale de qualité
-                </p>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto hidden" data-lang="ar">
-                    يغطي ميداكت المدن الرئيسية في المغرب بخدمات صحية رقمية عالية الجودة
-                </p>
-            </div>
-            
-            <div class="flex flex-col lg:flex-row items-center justify-center gap-12">
-                <!-- Morocco Map SVG -->
-                <div class="lg:w-1/2 flex justify-center">
-                    <div class="relative">
-                        <svg width="400" height="300" viewBox="0 0 400 300" class="morocco-map">
-                            <!-- Morocco outline -->
-                            <path d="M 50 80 L 80 60 L 120 70 L 150 80 L 180 90 L 200 100 L 220 110 L 240 120 L 260 130 L 280 140 L 300 150 L 320 160 L 340 170 L 360 180 L 380 190 L 390 200 L 380 210 L 360 220 L 340 230 L 320 240 L 300 250 L 280 260 L 260 270 L 240 280 L 220 290 L 200 300 L 180 290 L 160 280 L 140 270 L 120 260 L 100 250 L 80 240 L 60 230 L 50 220 L 40 200 L 50 180 L 60 160 L 50 140 L 50 120 L 50 100 L 50 80 Z" 
-                                  fill="#C53030" 
-                                  stroke="#7F1D1D" 
-                                  stroke-width="2"
-                                  class="morocco-outline hover:fill-red-600 transition-colors duration-300"/>
-                            
-                            <!-- Major cities -->
-                            <circle cx="120" cy="100" r="8" fill="#4F46E5" class="city-point" data-city="Casablanca"/>
-                            <circle cx="140" cy="120" r="6" fill="#7C3AED" class="city-point" data-city="Rabat"/>
-                            <circle cx="160" cy="140" r="6" fill="#7C3AED" class="city-point" data-city="Marrakech"/>
-                            <circle cx="180" cy="160" r="6" fill="#7C3AED" class="city-point" data-city="Fès"/>
-                            <circle cx="200" cy="180" r="6" fill="#7C3AED" class="city-point" data-city="Tanger"/>
-                            <circle cx="220" cy="200" r="6" fill="#7C3AED" class="city-point" data-city="Agadir"/>
-                            
-                            <!-- City labels -->
-                            <text x="125" y="95" class="city-label" fill="#1F2937" font-size="10" font-weight="bold">Casablanca</text>
-                            <text x="145" y="115" class="city-label" fill="#1F2937" font-size="8" font-weight="bold">Rabat</text>
-                            <text x="165" y="135" class="city-label" fill="#1F2937" font-size="8" font-weight="bold">Marrakech</text>
-                            <text x="185" y="155" class="city-label" fill="#1F2937" font-size="8" font-weight="bold">Fès</text>
-                            <text x="205" y="175" class="city-label" fill="#1F2937" font-size="8" font-weight="bold">Tanger</text>
-                            <text x="225" y="195" class="city-label" fill="#1F2937" font-size="8" font-weight="bold">Agadir</text>
-                            
-                            <!-- Service coverage areas -->
-                            <circle cx="120" cy="100" r="25" fill="rgba(79, 70, 229, 0.1)" stroke="rgba(79, 70, 229, 0.3)" stroke-width="1" class="coverage-area"/>
-                            <circle cx="140" cy="120" r="20" fill="rgba(124, 58, 237, 0.1)" stroke="rgba(124, 58, 237, 0.3)" stroke-width="1" class="coverage-area"/>
-                            <circle cx="160" cy="140" r="20" fill="rgba(124, 58, 237, 0.1)" stroke="rgba(124, 58, 237, 0.3)" stroke-width="1" class="coverage-area"/>
-                            <circle cx="180" cy="160" r="20" fill="rgba(124, 58, 237, 0.1)" stroke="rgba(124, 58, 237, 0.3)" stroke-width="1" class="coverage-area"/>
-                            <circle cx="200" cy="180" r="20" fill="rgba(124, 58, 237, 0.1)" stroke="rgba(124, 58, 237, 0.3)" stroke-width="1" class="coverage-area"/>
-                            <circle cx="220" cy="200" r="20" fill="rgba(124, 58, 237, 0.1)" stroke="rgba(124, 58, 237, 0.3)" stroke-width="1" class="coverage-area"/>
-                        </svg>
-                    </div>
-                </div>
-                
-                <!-- Cities Information -->
-                <div class="lg:w-1/2">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
-                            <div class="flex items-center mb-4">
-                                <div class="w-3 h-3 bg-indigo-600 rounded-full mr-3"></div>
-                                <h3 class="font-bold text-lg" data-lang="fr">Casablanca</h3>
-                                <h3 class="font-bold text-lg hidden" data-lang="ar">الدار البيضاء</h3>
-                            </div>
-                            <p class="text-gray-600 text-sm" data-lang="fr">Centre principal avec plus de 50 médecins spécialisés</p>
-                            <p class="text-gray-600 text-sm hidden" data-lang="ar">المركز الرئيسي مع أكثر من 50 طبيب متخصص</p>
-                        </div>
-                        
-                        <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
-                            <div class="flex items-center mb-4">
-                                <div class="w-3 h-3 bg-purple-600 rounded-full mr-3"></div>
-                                <h3 class="font-bold text-lg" data-lang="fr">Rabat</h3>
-                                <h3 class="font-bold text-lg hidden" data-lang="ar">الرباط</h3>
-                            </div>
-                            <p class="text-gray-600 text-sm" data-lang="fr">Capitale administrative avec services gouvernementaux</p>
-                            <p class="text-gray-600 text-sm hidden" data-lang="ar">العاصمة الإدارية مع الخدمات الحكومية</p>
-                        </div>
-                        
-                        <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
-                            <div class="flex items-center mb-4">
-                                <div class="w-3 h-3 bg-purple-600 rounded-full mr-3"></div>
-                                <h3 class="font-bold text-lg" data-lang="fr">Marrakech</h3>
-                                <h3 class="font-bold text-lg hidden" data-lang="ar">مراكش</h3>
-                            </div>
-                            <p class="text-gray-600 text-sm" data-lang="fr">Tourisme médical et services spécialisés</p>
-                            <p class="text-gray-600 text-sm hidden" data-lang="ar">السياحة الطبية والخدمات المتخصصة</p>
-                        </div>
-                        
-                        <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
-                            <div class="flex items-center mb-4">
-                                <div class="w-3 h-3 bg-purple-600 rounded-full mr-3"></div>
-                                <h3 class="font-bold text-lg" data-lang="fr">Fès</h3>
-                                <h3 class="font-bold text-lg hidden" data-lang="ar">فاس</h3>
-                            </div>
-                            <p class="text-gray-600 text-sm" data-lang="fr">Médecine traditionnelle et moderne combinées</p>
-                            <p class="text-gray-600 text-sm hidden" data-lang="ar">الطب التقليدي والحديث مجتمعين</p>
-                        </div>
-                    </div>
-                    
-                    <div class="mt-8 bg-gradient-to-r from-indigo-600 to-purple-600 p-6 rounded-xl text-white">
-                        <h3 class="text-xl font-bold mb-3" data-lang="fr">Expansion Continue</h3>
-                        <h3 class="text-xl font-bold mb-3 hidden" data-lang="ar">التوسع المستمر</h3>
-                        <p class="text-indigo-100" data-lang="fr">Nous étendons nos services à travers tout le Maroc pour assurer l'accès à la santé digitale pour tous.</p>
-                        <p class="text-indigo-100 hidden" data-lang="ar">نحن نوسع خدماتنا في جميع أنحاء المغرب لضمان الوصول إلى الصحة الرقمية للجميع.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+
 
     <!-- FAQ Section -->
     <section id="faq" class="py-20 bg-white relative overflow-hidden">
@@ -1846,64 +1694,7 @@
             });
         });
 
-        // Morocco Map Interactions
-        const cityPoints = document.querySelectorAll('.city-point');
-        const coverageAreas = document.querySelectorAll('.coverage-area');
-        
-        cityPoints.forEach((point, index) => {
-            point.addEventListener('mouseenter', () => {
-                // Highlight city point
-                point.style.transform = 'scale(1.2)';
-                point.style.transition = 'transform 0.3s ease';
-                
-                // Highlight corresponding coverage area
-                if (coverageAreas[index]) {
-                    coverageAreas[index].style.fill = 'rgba(79, 70, 229, 0.2)';
-                    coverageAreas[index].style.stroke = 'rgba(79, 70, 229, 0.5)';
-                }
-                
-                // Show city name tooltip
-                const cityName = point.getAttribute('data-city');
-                const tooltip = document.createElement('div');
-                tooltip.className = 'absolute bg-black text-white px-2 py-1 rounded text-xs z-50';
-                tooltip.textContent = cityName;
-                tooltip.style.left = point.getBoundingClientRect().left + 'px';
-                tooltip.style.top = (point.getBoundingClientRect().top - 30) + 'px';
-                document.body.appendChild(tooltip);
-                
-                point.tooltip = tooltip;
-            });
-            
-            point.addEventListener('mouseleave', () => {
-                // Reset city point
-                point.style.transform = 'scale(1)';
-                
-                // Reset coverage area
-                if (coverageAreas[index]) {
-                    coverageAreas[index].style.fill = 'rgba(79, 70, 229, 0.1)';
-                    coverageAreas[index].style.stroke = 'rgba(79, 70, 229, 0.3)';
-                }
-                
-                // Remove tooltip
-                if (point.tooltip) {
-                    point.tooltip.remove();
-                    point.tooltip = null;
-                }
-            });
-        });
 
-        // Enhanced Logo Animation
-        const logo = document.querySelector('.morocco-map');
-        if (logo) {
-            logo.addEventListener('mouseenter', () => {
-                logo.style.transform = 'scale(1.05)';
-                logo.style.transition = 'transform 0.3s ease';
-            });
-            
-            logo.addEventListener('mouseleave', () => {
-                logo.style.transform = 'scale(1)';
-            });
-        }
     </script>
 </body>
 </html>
