@@ -743,13 +743,84 @@
                 <!-- Interactive Map -->
                 <div class="relative">
                     <div id="morocco-interactive-map" class="w-full h-96 rounded-2xl shadow-xl overflow-hidden glass-effect">
-                        <!-- Map will be loaded here via JavaScript -->
-                        <div class="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-indigo-100 to-purple-100">
-                            <div class="text-center">
-                                <i class="fas fa-map-marked-alt text-6xl text-indigo-600 mb-4"></i>
-                                <p class="text-indigo-800 font-medium" data-lang="fr">Carte interactive du Maroc</p>
-                                <p class="text-indigo-800 font-medium hidden" data-lang="ar">خريطة تفاعلية للمغرب</p>
+                        <!-- Real Morocco map with interactive markers -->
+                        <div class="relative w-full h-full">
+                            <!-- Background map image -->
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Regions_of_Morocco.svg/1200px-Regions_of_Morocco.svg.png" 
+                                 alt="Carte du Maroc" 
+                                 class="w-full h-full object-cover opacity-80">
+                            
+                            <!-- Interactive markers overlay -->
+                            <div class="absolute inset-0">
+                                <!-- Casablanca -->
+                                <div class="absolute" style="left: 25%; top: 35%;">
+                                    <div class="city-marker bg-indigo-600 w-4 h-4 rounded-full border-2 border-white shadow-lg cursor-pointer transform hover:scale-150 transition-all duration-300" 
+                                         data-city="casablanca" 
+                                         title="Casablanca - +150 médecins">
+                                        <div class="city-tooltip absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-1 bg-indigo-600 text-white text-xs rounded-lg opacity-0 pointer-events-none transition-opacity duration-300 whitespace-nowrap">
+                                            Casablanca<br>+150 médecins
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Rabat -->
+                                <div class="absolute" style="left: 30%; top: 30%;">
+                                    <div class="city-marker bg-purple-600 w-4 h-4 rounded-full border-2 border-white shadow-lg cursor-pointer transform hover:scale-150 transition-all duration-300" 
+                                         data-city="rabat" 
+                                         title="Rabat - +120 médecins">
+                                        <div class="city-tooltip absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-1 bg-purple-600 text-white text-xs rounded-lg opacity-0 pointer-events-none transition-opacity duration-300 whitespace-nowrap">
+                                            Rabat<br>+120 médecins
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Marrakech -->
+                                <div class="absolute" style="left: 35%; top: 60%;">
+                                    <div class="city-marker bg-cyan-600 w-4 h-4 rounded-full border-2 border-white shadow-lg cursor-pointer transform hover:scale-150 transition-all duration-300" 
+                                         data-city="marrakech" 
+                                         title="Marrakech - +100 médecins">
+                                        <div class="city-tooltip absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-1 bg-cyan-600 text-white text-xs rounded-lg opacity-0 pointer-events-none transition-opacity duration-300 whitespace-nowrap">
+                                            Marrakech<br>+100 médecins
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Fès -->
+                                <div class="absolute" style="left: 40%; top: 25%;">
+                                    <div class="city-marker bg-emerald-600 w-4 h-4 rounded-full border-2 border-white shadow-lg cursor-pointer transform hover:scale-150 transition-all duration-300" 
+                                         data-city="fes" 
+                                         title="Fès - +80 médecins">
+                                        <div class="city-tooltip absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-1 bg-emerald-600 text-white text-xs rounded-lg opacity-0 pointer-events-none transition-opacity duration-300 whitespace-nowrap">
+                                            Fès<br>+80 médecins
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Tanger -->
+                                <div class="absolute" style="left: 20%; top: 20%;">
+                                    <div class="city-marker bg-orange-600 w-4 h-4 rounded-full border-2 border-white shadow-lg cursor-pointer transform hover:scale-150 transition-all duration-300" 
+                                         data-city="tanger" 
+                                         title="Tanger - +70 médecins">
+                                        <div class="city-tooltip absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-1 bg-orange-600 text-white text-xs rounded-lg opacity-0 pointer-events-none transition-opacity duration-300 whitespace-nowrap">
+                                            Tanger<br>+70 médecins
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Agadir -->
+                                <div class="absolute" style="left: 15%; top: 70%;">
+                                    <div class="city-marker bg-pink-600 w-4 h-4 rounded-full border-2 border-white shadow-lg cursor-pointer transform hover:scale-150 transition-all duration-300" 
+                                         data-city="agadir" 
+                                         title="Agadir - +60 médecins">
+                                        <div class="city-tooltip absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-1 bg-pink-600 text-white text-xs rounded-lg opacity-0 pointer-events-none transition-opacity duration-300 whitespace-nowrap">
+                                            Agadir<br>+60 médecins
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
+                            
+                            <!-- Map overlay with gradient -->
+                            <div class="absolute inset-0 bg-gradient-to-t from-indigo-900/20 via-transparent to-transparent"></div>
                         </div>
                     </div>
                 </div>
@@ -1698,7 +1769,7 @@
         function createMoroccoMap() {
             const mapContainer = moroccoMap;
             
-            // Create SVG map
+            // Create SVG map with actual Morocco shape
             const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
             svg.setAttribute('viewBox', '0 0 400 300');
             svg.setAttribute('width', '100%');
@@ -1707,64 +1778,98 @@
             svg.style.top = '0';
             svg.style.left = '0';
             
-            // Morocco outline (simplified)
+            // Morocco outline (more accurate shape)
             const moroccoPath = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-            moroccoPath.setAttribute('d', 'M 50 50 L 350 50 L 350 250 L 50 250 Z');
+            moroccoPath.setAttribute('d', 'M 80 40 L 320 40 L 340 60 L 350 80 L 360 120 L 350 160 L 340 200 L 320 220 L 300 240 L 280 250 L 260 260 L 240 270 L 220 280 L 200 285 L 180 280 L 160 270 L 140 260 L 120 250 L 100 240 L 80 220 L 60 200 L 50 160 L 40 120 L 50 80 L 60 60 Z');
             moroccoPath.setAttribute('fill', '#E0E7FF');
             moroccoPath.setAttribute('stroke', '#4F46E5');
             moroccoPath.setAttribute('stroke-width', '2');
+            moroccoPath.style.transition = 'all 0.3s ease';
             svg.appendChild(moroccoPath);
             
-            // Add city markers
+            // Add some geographical features
+            const mountains = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+            mountains.setAttribute('d', 'M 120 120 L 140 100 L 160 110 L 180 90 L 200 100 L 220 80 L 240 90 L 260 70 L 280 80 L 300 60 L 320 70 L 340 50 L 360 60 L 340 80 L 320 100 L 300 120 L 280 140 L 260 160 L 240 180 L 220 200 L 200 220 L 180 240 L 160 260 L 140 280 L 120 300 L 100 280 L 80 260 L 60 240 L 40 220 L 20 200 L 40 180 L 60 160 L 80 140 L 100 120 Z');
+            mountains.setAttribute('fill', '#A5B4FC');
+            mountains.setAttribute('opacity', '0.3');
+            svg.appendChild(mountains);
+            
+            // Add city markers with more accurate positions
             const cityPositions = {
-                casablanca: { x: 200, y: 120 },
-                rabat: { x: 180, y: 100 },
-                marrakech: { x: 220, y: 180 },
-                fes: { x: 250, y: 80 },
-                tanger: { x: 150, y: 60 },
-                agadir: { x: 120, y: 200 }
+                casablanca: { x: 180, y: 140 },
+                rabat: { x: 200, y: 120 },
+                marrakech: { x: 220, y: 200 },
+                fes: { x: 240, y: 100 },
+                tanger: { x: 160, y: 80 },
+                agadir: { x: 140, y: 220 }
             };
             
             Object.keys(cityPositions).forEach(city => {
                 const pos = cityPositions[city];
                 const cityData = cities[city];
                 
-                // City marker
+                // City marker with pulse effect
                 const marker = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
                 marker.setAttribute('cx', pos.x);
                 marker.setAttribute('cy', pos.y);
                 marker.setAttribute('r', '8');
                 marker.setAttribute('fill', cityData.color);
                 marker.setAttribute('stroke', '#fff');
-                marker.setAttribute('stroke-width', '2');
+                marker.setAttribute('stroke-width', '3');
                 marker.setAttribute('data-city', city);
                 marker.style.cursor = 'pointer';
                 marker.style.transition = 'all 0.3s ease';
+                marker.style.filter = 'drop-shadow(0 2px 4px rgba(0,0,0,0.2))';
                 
                 // Pulse animation
                 marker.addEventListener('mouseenter', () => {
                     marker.setAttribute('r', '12');
-                    marker.style.filter = 'drop-shadow(0 0 8px ' + cityData.color + ')';
+                    marker.style.filter = 'drop-shadow(0 0 12px ' + cityData.color + ')';
+                    marker.style.transform = 'scale(1.2)';
                 });
                 
                 marker.addEventListener('mouseleave', () => {
                     marker.setAttribute('r', '8');
-                    marker.style.filter = 'none';
+                    marker.style.filter = 'drop-shadow(0 2px 4px rgba(0,0,0,0.2))';
+                    marker.style.transform = 'scale(1)';
                 });
                 
-                // City name label
+                // City name label with background
+                const labelBg = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+                labelBg.setAttribute('x', pos.x - 30);
+                labelBg.setAttribute('y', pos.y - 25);
+                labelBg.setAttribute('width', '60');
+                labelBg.setAttribute('height', '20');
+                labelBg.setAttribute('fill', 'rgba(255,255,255,0.9)');
+                labelBg.setAttribute('rx', '10');
+                labelBg.setAttribute('stroke', cityData.color);
+                labelBg.setAttribute('stroke-width', '1');
+                
                 const label = document.createElementNS('http://www.w3.org/2000/svg', 'text');
                 label.setAttribute('x', pos.x);
-                label.setAttribute('y', pos.y - 15);
+                label.setAttribute('y', pos.y - 12);
                 label.setAttribute('text-anchor', 'middle');
-                label.setAttribute('font-size', '12');
+                label.setAttribute('font-size', '10');
                 label.setAttribute('font-weight', 'bold');
                 label.setAttribute('fill', '#374151');
                 label.textContent = cityData.name;
                 
+                svg.appendChild(labelBg);
                 svg.appendChild(marker);
                 svg.appendChild(label);
             });
+            
+            // Add title
+            const title = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+            title.setAttribute('x', '200');
+            title.setAttribute('y', '30');
+            title.setAttribute('text-anchor', 'middle');
+            title.setAttribute('font-size', '16');
+            title.setAttribute('font-weight', 'bold');
+            title.setAttribute('fill', '#4F46E5');
+            title.textContent = 'Maroc';
+            
+            svg.appendChild(title);
             
             // Clear existing content and add SVG
             mapContainer.innerHTML = '';
@@ -1774,6 +1879,44 @@
         // Initialize map
         createMoroccoMap();
 
+        // Interactive map markers functionality
+        const cityMarkers = document.querySelectorAll('.city-marker');
+        
+        cityMarkers.forEach(marker => {
+            const tooltip = marker.querySelector('.city-tooltip');
+            
+            marker.addEventListener('mouseenter', () => {
+                tooltip.classList.remove('opacity-0');
+                tooltip.classList.add('opacity-100');
+                marker.style.transform = 'scale(1.5)';
+            });
+            
+            marker.addEventListener('mouseleave', () => {
+                tooltip.classList.remove('opacity-100');
+                tooltip.classList.add('opacity-0');
+                marker.style.transform = 'scale(1)';
+            });
+            
+            marker.addEventListener('click', () => {
+                const city = marker.getAttribute('data-city');
+                const cityData = cities[city];
+                
+                // Highlight corresponding city card
+                cityCards.forEach(card => {
+                    card.style.transform = 'scale(1)';
+                    card.style.boxShadow = '';
+                });
+                
+                const correspondingCard = document.querySelector(`[data-city="${city}"]`);
+                if (correspondingCard) {
+                    correspondingCard.style.transform = 'scale(1.05)';
+                    correspondingCard.style.boxShadow = '0 20px 40px rgba(0,0,0,0.1)';
+                }
+                
+                console.log(`Selected: ${cityData.name} - ${cityData.description}`);
+            });
+        });
+
         // City card interactions
         cityCards.forEach(card => {
             card.addEventListener('click', () => {
@@ -1781,9 +1924,24 @@
                 const cityData = cities[city];
                 
                 // Highlight card
-                cityCards.forEach(c => c.style.transform = 'scale(1)');
+                cityCards.forEach(c => {
+                    c.style.transform = 'scale(1)';
+                    c.style.boxShadow = '';
+                });
                 card.style.transform = 'scale(1.05)';
                 card.style.boxShadow = '0 20px 40px rgba(0,0,0,0.1)';
+                
+                // Highlight corresponding map marker
+                cityMarkers.forEach(marker => {
+                    marker.style.transform = 'scale(1)';
+                    marker.style.filter = 'none';
+                });
+                
+                const correspondingMarker = document.querySelector(`[data-city="${city}"]`);
+                if (correspondingMarker) {
+                    correspondingMarker.style.transform = 'scale(1.5)';
+                    correspondingMarker.style.filter = 'drop-shadow(0 0 12px ' + cityData.color + ')';
+                }
                 
                 // Show city info
                 console.log(`Selected: ${cityData.name} - ${cityData.description}`);
