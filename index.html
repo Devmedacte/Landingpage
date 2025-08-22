@@ -386,6 +386,74 @@
             opacity: 1;
         }
         
+        /* Modern Health Technology Styles */
+        .floating-tech-shape {
+            position: absolute;
+            border-radius: 50%;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            opacity: 0.1;
+            animation: tech-float 8s ease-in-out infinite;
+        }
+        
+        .floating-tech-shape.shape-1 {
+            width: 100px;
+            height: 100px;
+            top: 10%;
+            left: 5%;
+            animation-delay: 0s;
+        }
+        
+        .floating-tech-shape.shape-2 {
+            width: 80px;
+            height: 80px;
+            top: 60%;
+            right: 10%;
+            animation-delay: 2s;
+        }
+        
+        .floating-tech-shape.shape-3 {
+            width: 120px;
+            height: 120px;
+            bottom: 20%;
+            left: 15%;
+            animation-delay: 4s;
+        }
+        
+        .floating-tech-shape.shape-4 {
+            width: 60px;
+            height: 60px;
+            top: 30%;
+            right: 30%;
+            animation-delay: 6s;
+        }
+        
+        @keyframes tech-float {
+            0%, 100% { transform: translateY(0px) rotate(0deg) scale(1); }
+            50% { transform: translateY(-30px) rotate(180deg) scale(1.1); }
+        }
+        
+        /* Modern Tech Cards */
+        .modern-tech-card {
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .modern-tech-card:hover {
+            transform: translateY(-8px);
+        }
+        
+        .tech-icon-wrapper {
+            position: relative;
+        }
+        
+        /* Modern Stat Cards */
+        .modern-stat-card {
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .modern-stat-card:hover {
+            transform: translateY(-5px);
+        }
+        
         /* Title Animations */
         .faq-title, .features-title, .health-tech-title {
             background-size: 200% 200%;
@@ -1225,174 +1293,180 @@
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="py-20 bg-indigo-50 overflow-hidden">
-        <!-- Professional Image Slider with Morocco-specific content -->
-        <div class="container mx-auto px-4 mb-16">
-            <div class="relative h-64 md:h-80 lg:h-96 overflow-hidden rounded-2xl shadow-xl">
-                <div class="absolute inset-0 flex transition-transform duration-500 ease-in-out" id="healthSlider">
-                    <!-- Slide 1: Modern Telemedicine -->
-                    <div class="min-w-full relative">
-                        <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
-                             alt="Modern Telemedicine Consultation" 
-                             class="w-full h-full object-cover">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-                        <div class="absolute bottom-0 left-0 right-0 p-6">
-                            <h3 class="text-white text-xl md:text-2xl font-bold mb-2" data-lang="fr">Télémedecine Moderne</h3>
-                            <h3 class="text-white text-xl md:text-2xl font-bold mb-2 hidden" data-lang="ar">طب عن بعد حديث</h3>
-                            <p class="text-white/90 text-sm md:text-base" data-lang="fr">Consultation HD avec nos médecins certifiés au Maroc</p>
-                            <p class="text-white/90 text-sm md:text-base hidden" data-lang="ar">استشارة عالية الجودة مع أطبائنا المعتمدين في المغرب</p>
+    <!-- Modern Health Technology Section -->
+    <section id="about" class="py-20 bg-gradient-to-br from-indigo-50 via-white to-purple-50 relative overflow-hidden">
+        <!-- Animated Background Elements -->
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="floating-tech-shape shape-1"></div>
+            <div class="floating-tech-shape shape-2"></div>
+            <div class="floating-tech-shape shape-3"></div>
+            <div class="floating-tech-shape shape-4"></div>
+        </div>
+        
+        <div class="container mx-auto px-4 relative z-10">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-indigo-600 via-purple-600 to-cyan-600 bg-clip-text text-transparent health-tech-title" data-lang="fr">Health Technologie</h2>
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-indigo-600 via-purple-600 to-cyan-600 bg-clip-text text-transparent health-tech-title hidden" data-lang="ar">تكنولوجيا الصحة</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto" data-lang="fr">Découvrez les technologies de pointe qui révolutionnent la santé au Maroc</p>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto hidden" data-lang="ar">اكتشف أحدث التقنيات التي تحدث ثورة في الصحة بالمغرب</p>
+            </div>
+            
+            <!-- Main Content Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Left Column - Technology Features -->
+                <div class="space-y-6">
+                    <!-- AI Technology Card -->
+                    <div class="modern-tech-card group">
+                        <div class="bg-white/90 backdrop-blur-sm p-6 rounded-2xl border border-white/50 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 relative overflow-hidden">
+                            <div class="absolute inset-0 bg-gradient-to-r from-indigo-500/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                            <div class="relative z-10">
+                                <div class="flex items-start space-x-4">
+                                    <div class="tech-icon-wrapper">
+                                        <div class="w-14 h-14 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-xl flex items-center justify-center text-white shadow-lg transform transition-all duration-500 group-hover:scale-110 group-hover:rotate-12">
+                                            <i class="fas fa-brain text-xl"></i>
+                                        </div>
+                                        <div class="absolute inset-0 bg-gradient-to-br from-indigo-400 to-purple-500 rounded-xl opacity-0 group-hover:opacity-20 blur-xl transition-all duration-500"></div>
+                                    </div>
+                                    <div class="flex-1">
+                                        <h3 class="text-xl font-bold text-indigo-900 mb-2 group-hover:text-indigo-600 transition-colors" data-lang="fr">Intelligence Artificielle</h3>
+                                        <h3 class="text-xl font-bold text-indigo-900 mb-2 group-hover:text-indigo-600 transition-colors hidden" data-lang="ar">الذكاء الاصطناعي</h3>
+                                        <p class="text-gray-700 leading-relaxed" data-lang="fr">IA avancée pour le diagnostic précoce, l'analyse prédictive et l'optimisation des parcours de soins. Algorithmes certifiés et transparents.</p>
+                                        <p class="text-gray-700 leading-relaxed hidden" data-lang="ar">ذكاء اصطناعي متقدم للتشخيص المبكر والتحليل التنبؤي وتحسين مسارات الرعاية. خوارزميات معتمدة وشفافة.</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     
-                    <!-- Slide 2: Digital Health Records -->
-                    <div class="min-w-full relative">
-                        <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
-                             alt="Digital Health Records" 
-                             class="w-full h-full object-cover">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-                        <div class="absolute bottom-0 left-0 right-0 p-6">
-                            <h3 class="text-white text-xl md:text-2xl font-bold mb-2" data-lang="fr">Dossier Médical Digital</h3>
-                            <h3 class="text-white text-xl md:text-2xl font-bold mb-2 hidden" data-lang="ar">ملف طبي رقمي</h3>
-                            <p class="text-white/90 text-sm md:text-base" data-lang="fr">Gestion sécurisée et accessible de vos données santé</p>
-                            <p class="text-white/90 text-sm md:text-base hidden" data-lang="ar">إدارة آمنة ويمكن الوصول إليها لبياناتك الصحية</p>
+                    <!-- Cloud Security Card -->
+                    <div class="modern-tech-card group">
+                        <div class="bg-white/90 backdrop-blur-sm p-6 rounded-2xl border border-white/50 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 relative overflow-hidden">
+                            <div class="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-cyan-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                            <div class="relative z-10">
+                                <div class="flex items-start space-x-4">
+                                    <div class="tech-icon-wrapper">
+                                        <div class="w-14 h-14 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-xl flex items-center justify-center text-white shadow-lg transform transition-all duration-500 group-hover:scale-110 group-hover:rotate-12">
+                                            <i class="fas fa-shield-alt text-xl"></i>
+                                        </div>
+                                        <div class="absolute inset-0 bg-gradient-to-br from-blue-400 to-cyan-500 rounded-xl opacity-0 group-hover:opacity-20 blur-xl transition-all duration-500"></div>
+                                    </div>
+                                    <div class="flex-1">
+                                        <h3 class="text-xl font-bold text-indigo-900 mb-2 group-hover:text-indigo-600 transition-colors" data-lang="fr">Sécurité Cloud</h3>
+                                        <h3 class="text-xl font-bold text-indigo-900 mb-2 group-hover:text-indigo-600 transition-colors hidden" data-lang="ar">أمان السحابة</h3>
+                                        <p class="text-gray-700 leading-relaxed" data-lang="fr">Infrastructure cloud de niveau bancaire avec chiffrement AES-256, conformité GDPR et audit de sécurité continu.</p>
+                                        <p class="text-gray-700 leading-relaxed hidden" data-lang="ar">بنية تحتية سحابية بمستوى البنوك مع تشفير AES-256 وامتثال GDPR ومراجعة أمنية مستمرة.</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     
-                    <!-- Slide 3: AI-Powered Healthcare -->
-                    <div class="min-w-full relative">
-                        <img src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
-                             alt="AI-Powered Healthcare" 
-                             class="w-full h-full object-cover">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-                        <div class="absolute bottom-0 left-0 right-0 p-6">
-                            <h3 class="text-white text-xl md:text-2xl font-bold mb-2" data-lang="fr">IA & Santé Intelligente</h3>
-                            <h3 class="text-white text-xl md:text-2xl font-bold mb-2 hidden" data-lang="ar">الذكاء الاصطناعي والصحة الذكية</h3>
-                            <p class="text-white/90 text-sm md:text-base" data-lang="fr">Diagnostic assisté par IA pour une meilleure précision</p>
-                            <p class="text-white/90 text-sm md:text-base hidden" data-lang="ar">تشخيص بمساعدة الذكاء الاصطناعي لدقة أفضل</p>
-                        </div>
-                    </div>
-                    
-                    <!-- Slide 4: Morocco Healthcare -->
-                    <div class="min-w-full relative">
-                        <img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
-                             alt="Morocco Healthcare Innovation" 
-                             class="w-full h-full object-cover">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-                        <div class="absolute bottom-0 left-0 right-0 p-6">
-                            <h3 class="text-white text-xl md:text-2xl font-bold mb-2" data-lang="fr">Innovation Santé Maroc</h3>
-                            <h3 class="text-white text-xl md:text-2xl font-bold mb-2 hidden" data-lang="ar">ابتكار الصحة المغرب</h3>
-                            <p class="text-white/90 text-sm md:text-base" data-lang="fr">La première plateforme de santé digitale au Maroc</p>
-                            <p class="text-white/90 text-sm md:text-base hidden" data-lang="ar">أول منصة للصحة الرقمية في المغرب</p>
+                    <!-- Mobile Technology Card -->
+                    <div class="modern-tech-card group">
+                        <div class="bg-white/90 backdrop-blur-sm p-6 rounded-2xl border border-white/50 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 relative overflow-hidden">
+                            <div class="absolute inset-0 bg-gradient-to-r from-green-500/10 to-emerald-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                            <div class="relative z-10">
+                                <div class="flex items-start space-x-4">
+                                    <div class="tech-icon-wrapper">
+                                        <div class="w-14 h-14 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl flex items-center justify-center text-white shadow-lg transform transition-all duration-500 group-hover:scale-110 group-hover:rotate-12">
+                                            <i class="fas fa-mobile-alt text-xl"></i>
+                                        </div>
+                                        <div class="absolute inset-0 bg-gradient-to-br from-green-400 to-emerald-500 rounded-xl opacity-0 group-hover:opacity-20 blur-xl transition-all duration-500"></div>
+                                    </div>
+                                    <div class="flex-1">
+                                        <h3 class="text-xl font-bold text-indigo-900 mb-2 group-hover:text-indigo-600 transition-colors" data-lang="fr">Mobile First</h3>
+                                        <h3 class="text-xl font-bold text-indigo-900 mb-2 group-hover:text-indigo-600 transition-colors hidden" data-lang="ar">موبايل أولاً</h3>
+                                        <p class="text-gray-700 leading-relaxed" data-lang="fr">Application native optimisée pour tous les appareils avec interface intuitive et performance maximale.</p>
+                                        <p class="text-gray-700 leading-relaxed hidden" data-lang="ar">تطبيق أصلي محسن لجميع الأجهزة مع واجهة سهلة الاستخدام وأداء أقصى.</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Enhanced Navigation Dots -->
-                <div class="absolute bottom-6 left-0 right-0 flex justify-center space-x-3">
-                    <button class="w-3 h-3 rounded-full bg-white/50 hover:bg-white transition-all slider-dot" data-index="0"></button>
-                    <button class="w-3 h-3 rounded-full bg-white/50 hover:bg-white transition-all slider-dot" data-index="1"></button>
-                    <button class="w-3 h-3 rounded-full bg-white/50 hover:bg-white transition-all slider-dot" data-index="2"></button>
-                    <button class="w-3 h-3 rounded-full bg-white/50 hover:bg-white transition-all slider-dot" data-index="3"></button>
+                <!-- Right Column - Statistics & Visual Elements -->
+                <div class="space-y-8">
+                    <!-- Technology Statistics -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="modern-stat-card group">
+                            <div class="bg-gradient-to-br from-indigo-500 to-purple-600 p-6 rounded-2xl text-white text-center shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-rotate-3 relative overflow-hidden">
+                                <div class="absolute inset-0 bg-gradient-to-br from-indigo-400 to-purple-500 opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
+                                <div class="relative z-10">
+                                    <div class="text-3xl font-bold mb-2">99.9%</div>
+                                    <div class="text-sm font-medium" data-lang="fr">Disponibilité</div>
+                                    <div class="text-sm font-medium hidden" data-lang="ar">التوفر</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="modern-stat-card group">
+                            <div class="bg-gradient-to-br from-blue-500 to-cyan-600 p-6 rounded-2xl text-white text-center shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:rotate-3 relative overflow-hidden">
+                                <div class="absolute inset-0 bg-gradient-to-br from-blue-400 to-cyan-500 opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
+                                <div class="relative z-10">
+                                    <div class="text-3xl font-bold mb-2">256-bit</div>
+                                    <div class="text-sm font-medium" data-lang="fr">Chiffrement</div>
+                                    <div class="text-sm font-medium hidden" data-lang="ar">التشفير</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="modern-stat-card group">
+                            <div class="bg-gradient-to-br from-green-500 to-emerald-600 p-6 rounded-2xl text-white text-center shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-rotate-3 relative overflow-hidden">
+                                <div class="absolute inset-0 bg-gradient-to-br from-green-400 to-emerald-500 opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
+                                <div class="relative z-10">
+                                    <div class="text-3xl font-bold mb-2">24/7</div>
+                                    <div class="text-sm font-medium" data-lang="fr">Support</div>
+                                    <div class="text-sm font-medium hidden" data-lang="ar">الدعم</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Technology Benefits -->
+                    <div class="bg-white/80 backdrop-blur-sm p-8 rounded-2xl border border-white/50 shadow-xl">
+                        <h3 class="text-2xl font-bold text-indigo-900 mb-6" data-lang="fr">Avantages Technologiques</h3>
+                        <h3 class="text-2xl font-bold text-indigo-900 mb-6 hidden" data-lang="ar">المزايا التقنية</h3>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-check text-green-600 text-sm"></i>
+                                </div>
+                                <span class="text-gray-700" data-lang="fr">Temps de réponse < 30 secondes</span>
+                                <span class="text-gray-700 hidden" data-lang="ar">وقت استجابة أقل من 30 ثانية</span>
+                            </div>
+                            
+                            <div class="flex items-center space-x-3">
+                                <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-check text-green-600 text-sm"></i>
+                                </div>
+                                <span class="text-gray-700" data-lang="fr">Chiffrement de niveau bancaire</span>
+                                <span class="text-gray-700 hidden" data-lang="ar">تشفير بمستوى البنوك</span>
+                            </div>
+                            
+                            <div class="flex items-center space-x-3">
+                                <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-check text-green-600 text-sm"></i>
+                                </div>
+                                <span class="text-gray-700" data-lang="fr">Conformité internationale</span>
+                                <span class="text-gray-700 hidden" data-lang="ar">امتثال دولي</span>
+                            </div>
+                            
+                            <div class="flex items-center space-x-3">
+                                <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-check text-green-600 text-sm"></i>
+                                </div>
+                                <span class="text-gray-700" data-lang="fr">Interface intuitive</span>
+                                <span class="text-gray-700 hidden" data-lang="ar">واجهة سهلة الاستخدام</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                
-                <!-- Navigation Arrows -->
-                <button class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/20 hover:bg-white/30 text-white p-2 rounded-full transition-all" id="prevSlide">
-                    <i class="fas fa-chevron-left"></i>
-                </button>
-                <button class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/20 hover:bg-white/30 text-white p-2 rounded-full transition-all" id="nextSlide">
-                    <i class="fas fa-chevron-right"></i>
-                </button>
             </div>
         </div>
-        <div class="container mx-auto px-4">
-            <div class="flex flex-col lg:flex-row items-center">
-                <div class="lg:w-1/2 mb-12 lg:mb-0 lg:pr-12 relative">
-                    <!-- Floating Tech Elements -->
-                    <div class="absolute -top-4 -left-4 w-20 h-20 bg-gradient-to-br from-indigo-400 to-purple-500 rounded-full opacity-20 animate-pulse"></div>
-                    <div class="absolute -bottom-4 -right-4 w-16 h-16 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-full opacity-20 animate-pulse delay-1000"></div>
-                    
-                    <div class="relative z-10">
-                        <h2 class="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-indigo-600 via-purple-600 to-cyan-600 bg-clip-text text-transparent health-tech-title" data-lang="fr">Health Technologie</h2>
-                        <h2 class="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-indigo-600 via-purple-600 to-cyan-600 bg-clip-text text-transparent health-tech-title hidden" data-lang="ar">تكنولوجيا الصحة</h2>
-                        
-                        <div class="space-y-4 mb-6">
-                            <div class="tech-feature bg-white/80 backdrop-blur-sm p-4 rounded-xl border border-white/50 shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-1">
-                                <div class="flex items-start space-x-3">
-                                    <div class="w-10 h-10 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-lg flex items-center justify-center text-white shadow-lg">
-                                        <i class="fas fa-brain text-lg"></i>
-                                    </div>
-                                    <div>
-                                        <h3 class="text-lg font-bold text-indigo-900 mb-1" data-lang="fr">Intelligence Artificielle</h3>
-                                        <h3 class="text-lg font-bold text-indigo-900 mb-1 hidden" data-lang="ar">الذكاء الاصطناعي</h3>
-                                        <p class="text-gray-700 text-sm" data-lang="fr">IA avancée pour le diagnostic précoce et l'analyse prédictive de la santé.</p>
-                                        <p class="text-gray-700 text-sm hidden" data-lang="ar">ذكاء اصطناعي متقدم للتشخيص المبكر والتحليل التنبؤي للصحة.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="tech-feature bg-white/80 backdrop-blur-sm p-4 rounded-xl border border-white/50 shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-1">
-                                <div class="flex items-start space-x-3">
-                                    <div class="w-10 h-10 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-lg flex items-center justify-center text-white shadow-lg">
-                                        <i class="fas fa-cloud text-lg"></i>
-                                    </div>
-                                    <div>
-                                        <h3 class="text-lg font-bold text-indigo-900 mb-1" data-lang="fr">Cloud Sécurisé</h3>
-                                        <h3 class="text-lg font-bold text-indigo-900 mb-1 hidden" data-lang="ar">سحابة آمنة</h3>
-                                        <p class="text-gray-700 text-sm" data-lang="fr">Infrastructure cloud de niveau bancaire avec chiffrement AES-256.</p>
-                                        <p class="text-gray-700 text-sm hidden" data-lang="ar">بنية تحتية سحابية بمستوى البنوك مع تشفير AES-256.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="tech-feature bg-white/80 backdrop-blur-sm p-4 rounded-xl border border-white/50 shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-1">
-                                <div class="flex items-start space-x-3">
-                                    <div class="w-10 h-10 bg-gradient-to-br from-green-500 to-emerald-600 rounded-lg flex items-center justify-center text-white shadow-lg">
-                                        <i class="fas fa-mobile-alt text-lg"></i>
-                                    </div>
-                                    <div>
-                                        <h3 class="text-lg font-bold text-indigo-900 mb-1" data-lang="fr">Mobile First</h3>
-                                        <h3 class="text-lg font-bold text-indigo-900 mb-1 hidden" data-lang="ar">موبايل أولاً</h3>
-                                        <p class="text-gray-700 text-sm" data-lang="fr">Application native optimisée pour tous les appareils mobiles.</p>
-                                        <p class="text-gray-700 text-sm hidden" data-lang="ar">تطبيق أصلي محسن لجميع الأجهزة المحمولة.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="flex flex-wrap gap-4">
-                            <div class="tech-stat-circle group">
-                                <div class="w-20 h-20 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-full flex flex-col items-center justify-center text-white shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:scale-110 hover:-rotate-12 relative overflow-hidden">
-                                    <div class="absolute inset-0 bg-gradient-to-br from-indigo-400 to-purple-500 opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
-                                    <div class="text-xl font-bold relative z-10">99.9%</div>
-                                    <div class="text-xs relative z-10" data-lang="fr">Disponibilité</div>
-                                    <div class="text-xs relative z-10 hidden" data-lang="ar">التوفر</div>
-                                </div>
-                                <div class="absolute inset-0 bg-gradient-to-br from-indigo-400 to-purple-500 rounded-full opacity-0 group-hover:opacity-10 blur-xl transition-all duration-500 scale-150"></div>
-                            </div>
-                            
-                            <div class="tech-stat-circle group">
-                                <div class="w-20 h-20 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-full flex flex-col items-center justify-center text-white shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:scale-110 hover:rotate-12 relative overflow-hidden">
-                                    <div class="absolute inset-0 bg-gradient-to-br from-blue-400 to-cyan-500 opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
-                                    <div class="text-xl font-bold relative z-10">256-bit</div>
-                                    <div class="text-xs relative z-10" data-lang="fr">Chiffrement</div>
-                                    <div class="text-xs relative z-10 hidden" data-lang="ar">التشفير</div>
-                                </div>
-                                <div class="absolute inset-0 bg-gradient-to-br from-blue-400 to-cyan-500 rounded-full opacity-0 group-hover:opacity-10 blur-xl transition-all duration-500 scale-150"></div>
-                            </div>
-                            
-                            <div class="tech-stat-circle group">
-                                <div class="w-20 h-20 bg-gradient-to-br from-green-500 to-emerald-600 rounded-full flex flex-col items-center justify-center text-white shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:scale-110 hover:-rotate-12 relative overflow-hidden">
-                                    <div class="absolute inset-0 bg-gradient-to-br from-green-400 to-emerald-500 opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
-                                    <div class="text-xl font-bold relative z-10">24/7</div>
-                                    <div class="text-xs relative z-10" data-lang="fr">Support</div>
-                                    <div class="text-xs relative z-10 hidden" data-lang="ar">الدعم</div>
-                                </div>
-                                <div class="absolute inset-0 bg-gradient-to-br from-green-400 to-emerald-500 rounded-full opacity-0 group-hover:opacity-10 blur-xl transition-all duration-500 scale-150"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    </section>
                             <div class="text-3xl font-bold text-indigo-600">100+</div>
                             <div class="text-gray-600" data-lang="fr">Professionnels</div>
                             <div class="text-gray-600 hidden" data-lang="ar">متخصصين</div>
@@ -2059,6 +2133,10 @@
             const answer = item.querySelector('.faq-answer');
             const icon = item.querySelector('.faq-icon i');
             
+            // Set initial state
+            answer.style.maxHeight = '0';
+            answer.style.overflow = 'hidden';
+            
             question.addEventListener('click', () => {
                 const isActive = item.classList.contains('active');
                 
@@ -2070,6 +2148,8 @@
                         const otherIcon = otherItem.querySelector('.faq-icon i');
                         otherAnswer.style.maxHeight = '0';
                         otherIcon.style.transform = 'rotate(0deg)';
+                        otherIcon.classList.remove('fa-minus');
+                        otherIcon.classList.add('fa-plus');
                     }
                 });
                 
@@ -2078,10 +2158,14 @@
                     item.classList.remove('active');
                     answer.style.maxHeight = '0';
                     icon.style.transform = 'rotate(0deg)';
+                    icon.classList.remove('fa-minus');
+                    icon.classList.add('fa-plus');
                 } else {
                     item.classList.add('active');
                     answer.style.maxHeight = answer.scrollHeight + 'px';
                     icon.style.transform = 'rotate(45deg)';
+                    icon.classList.remove('fa-plus');
+                    icon.classList.add('fa-minus');
                 }
             });
         });
@@ -2187,7 +2271,7 @@
             ease: 'power3.out'
         });
         
-        gsap.from('.tech-feature', {
+        gsap.from('.modern-tech-card', {
             scrollTrigger: {
                 trigger: '#about',
                 start: 'top 80%',
@@ -2199,6 +2283,32 @@
             duration: 0.8,
             stagger: 0.2,
             ease: 'power3.out'
+        });
+        
+        gsap.from('.modern-stat-card', {
+            scrollTrigger: {
+                trigger: '#about',
+                start: 'top 80%',
+                end: 'bottom 20%',
+                toggleActions: 'play none none reverse'
+            },
+            y: 50,
+            opacity: 0,
+            duration: 0.6,
+            stagger: 0.1,
+            ease: 'power3.out'
+        });
+        
+        // Floating Tech Shapes Animation
+        gsap.to('.floating-tech-shape', {
+            y: -30,
+            rotation: 360,
+            scale: 1.1,
+            duration: 8,
+            ease: 'power2.inOut',
+            yoyo: true,
+            repeat: -1,
+            stagger: 2
         });
         
         // Floating Elements Animation
