@@ -212,10 +212,10 @@
             z-index: -1;
         }
         
-        /* AI Chat Interface */
+        /* AI Chat Interface - Fixed Position */
         .ai-chat-widget {
             position: fixed;
-            bottom: 20px;
+            bottom: 100px;
             right: 20px;
             z-index: 1000;
             transition: all 0.3s ease;
@@ -322,10 +322,10 @@
     </style>
 </head>
 <body class="bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 text-gray-800 min-h-screen overflow-x-hidden">
-    <!-- AI Chat Widget -->
+    <!-- AI Chat Widget - Fixed Position -->
     <div class="ai-chat-widget" id="aiChatWidget">
         <button class="ai-chat-button" id="aiChatButton" aria-label="Chat with AI Health Assistant">
-            <i class="fas fa-robot"></i>
+            <i class="fas fa-comments"></i>
         </button>
     </div>
 
@@ -424,11 +424,20 @@
         </button>
     </header>
 
-    <!-- Enhanced Mobile Menu -->
+    <!-- Enhanced Mobile Menu with Close Button -->
     <div id="mobileMenu" class="fixed inset-0 bg-white/95 backdrop-blur-md z-40 flex flex-col items-center justify-center hidden">
-        <button id="closeMobileMenu" class="absolute top-4 right-4 text-2xl glass-effect p-3 rounded-full">
+        <!-- Close Button - Top Right -->
+        <button id="closeMobileMenu" class="absolute top-6 right-6 text-3xl glass-effect p-4 rounded-full hover:bg-red-100 hover:text-red-600 transition-all">
             <i class="fas fa-times"></i>
         </button>
+        
+        <!-- Close Button - Bottom Center -->
+        <button id="closeMobileMenuBottom" class="absolute bottom-6 left-1/2 transform -translate-x-1/2 bg-indigo-600 text-white px-8 py-3 rounded-full font-medium hover:bg-indigo-700 transition-all">
+            <i class="fas fa-times mr-2"></i>
+            <span data-lang="fr">Fermer</span>
+            <span data-lang="ar" class="hidden">إغلاق</span>
+        </button>
+        
         <nav class="flex flex-col items-center space-y-8">
             <a href="#features" class="text-xl font-medium hover:text-indigo-600 transition-all hover:scale-105" data-lang="fr">
                 <i class="fas fa-star mr-2"></i>Fonctionnalités
@@ -616,47 +625,82 @@
 
     <!-- About Section -->
     <section id="about" class="py-20 bg-indigo-50 overflow-hidden">
-        <!-- Image Slider -->
+        <!-- Professional Image Slider with Morocco-specific content -->
         <div class="container mx-auto px-4 mb-16">
             <div class="relative h-64 md:h-80 lg:h-96 overflow-hidden rounded-2xl shadow-xl">
                 <div class="absolute inset-0 flex transition-transform duration-500 ease-in-out" id="healthSlider">
-                    <!-- Slide 1 -->
+                    <!-- Slide 1: Modern Telemedicine -->
                     <div class="min-w-full relative">
-                        <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80" 
-                             alt="Telemedicine" 
+                        <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
+                             alt="Modern Telemedicine Consultation" 
                              class="w-full h-full object-cover">
-                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
-                            <p class="text-white text-sm md:text-base" data-lang="fr">Consultation à distance avec nos médecins certifiés</p>
-                            <p class="text-white text-sm md:text-base hidden" data-lang="ar">استشارة عن بعد مع أطبائنا المعتمدين</p>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-6">
+                            <h3 class="text-white text-xl md:text-2xl font-bold mb-2" data-lang="fr">Télémedecine Moderne</h3>
+                            <h3 class="text-white text-xl md:text-2xl font-bold mb-2 hidden" data-lang="ar">طب عن بعد حديث</h3>
+                            <p class="text-white/90 text-sm md:text-base" data-lang="fr">Consultation HD avec nos médecins certifiés au Maroc</p>
+                            <p class="text-white/90 text-sm md:text-base hidden" data-lang="ar">استشارة عالية الجودة مع أطبائنا المعتمدين في المغرب</p>
                         </div>
                     </div>
-                    <!-- Slide 2 -->
+                    
+                    <!-- Slide 2: Digital Health Records -->
                     <div class="min-w-full relative">
-                        <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80" 
-                             alt="Medical Records" 
+                        <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
+                             alt="Digital Health Records" 
                              class="w-full h-full object-cover">
-                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
-                            <p class="text-white text-sm md:text-base" data-lang="fr">Gestion sécurisée de votre dossier médical</p>
-                            <p class="text-white text-sm md:text-base hidden" data-lang="ar">إدارة آمنة لملفك الطبي</p>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-6">
+                            <h3 class="text-white text-xl md:text-2xl font-bold mb-2" data-lang="fr">Dossier Médical Digital</h3>
+                            <h3 class="text-white text-xl md:text-2xl font-bold mb-2 hidden" data-lang="ar">ملف طبي رقمي</h3>
+                            <p class="text-white/90 text-sm md:text-base" data-lang="fr">Gestion sécurisée et accessible de vos données santé</p>
+                            <p class="text-white/90 text-sm md:text-base hidden" data-lang="ar">إدارة آمنة ويمكن الوصول إليها لبياناتك الصحية</p>
                         </div>
                     </div>
-                    <!-- Slide 3 -->
+                    
+                    <!-- Slide 3: AI-Powered Healthcare -->
                     <div class="min-w-full relative">
-                        <img src="https://images.unsplash.com/photo-1581056771107-24ca5f033842?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80" 
-                             alt="Online Pharmacy" 
+                        <img src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
+                             alt="AI-Powered Healthcare" 
                              class="w-full h-full object-cover">
-                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
-                            <p class="text-white text-sm md:text-base" data-lang="fr">Commande de médicaments en ligne rapide et sécurisée</p>
-                            <p class="text-white text-sm md:text-base hidden" data-lang="ar">طلب الأدوية عبر الإنترنت بسرعة وأمان</p>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-6">
+                            <h3 class="text-white text-xl md:text-2xl font-bold mb-2" data-lang="fr">IA & Santé Intelligente</h3>
+                            <h3 class="text-white text-xl md:text-2xl font-bold mb-2 hidden" data-lang="ar">الذكاء الاصطناعي والصحة الذكية</h3>
+                            <p class="text-white/90 text-sm md:text-base" data-lang="fr">Diagnostic assisté par IA pour une meilleure précision</p>
+                            <p class="text-white/90 text-sm md:text-base hidden" data-lang="ar">تشخيص بمساعدة الذكاء الاصطناعي لدقة أفضل</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Slide 4: Morocco Healthcare -->
+                    <div class="min-w-full relative">
+                        <img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
+                             alt="Morocco Healthcare Innovation" 
+                             class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-6">
+                            <h3 class="text-white text-xl md:text-2xl font-bold mb-2" data-lang="fr">Innovation Santé Maroc</h3>
+                            <h3 class="text-white text-xl md:text-2xl font-bold mb-2 hidden" data-lang="ar">ابتكار الصحة المغرب</h3>
+                            <p class="text-white/90 text-sm md:text-base" data-lang="fr">La première plateforme de santé digitale au Maroc</p>
+                            <p class="text-white/90 text-sm md:text-base hidden" data-lang="ar">أول منصة للصحة الرقمية في المغرب</p>
                         </div>
                     </div>
                 </div>
-                <!-- Navigation Dots -->
-                <div class="absolute bottom-4 left-0 right-0 flex justify-center space-x-2">
-                    <button class="w-2 h-2 rounded-full bg-white/50 slider-dot" data-index="0"></button>
-                    <button class="w-2 h-2 rounded-full bg-white/50 slider-dot" data-index="1"></button>
-                    <button class="w-2 h-2 rounded-full bg-white/50 slider-dot" data-index="2"></button>
+                
+                <!-- Enhanced Navigation Dots -->
+                <div class="absolute bottom-6 left-0 right-0 flex justify-center space-x-3">
+                    <button class="w-3 h-3 rounded-full bg-white/50 hover:bg-white transition-all slider-dot" data-index="0"></button>
+                    <button class="w-3 h-3 rounded-full bg-white/50 hover:bg-white transition-all slider-dot" data-index="1"></button>
+                    <button class="w-3 h-3 rounded-full bg-white/50 hover:bg-white transition-all slider-dot" data-index="2"></button>
+                    <button class="w-3 h-3 rounded-full bg-white/50 hover:bg-white transition-all slider-dot" data-index="3"></button>
                 </div>
+                
+                <!-- Navigation Arrows -->
+                <button class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/20 hover:bg-white/30 text-white p-2 rounded-full transition-all" id="prevSlide">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/20 hover:bg-white/30 text-white p-2 rounded-full transition-all" id="nextSlide">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
             </div>
         </div>
         <div class="container mx-auto px-4">
@@ -687,46 +731,48 @@
                     </div>
                 </div>
                 <div class="lg:w-1/2 relative">
-                    <div class="bg-indigo-100 rounded-3xl p-6 inline-block relative overflow-hidden">
+                    <div class="bg-gradient-to-br from-indigo-100 to-purple-100 rounded-3xl p-8 inline-block relative overflow-hidden shadow-2xl">
                         <div class="relative z-10">
-                            <div class="w-24 h-24 bg-white rounded-full flex items-center justify-center shadow-lg mb-4 mx-auto">
-                                <i class="fas fa-heartbeat text-4xl text-indigo-600"></i>
+                            <div class="w-28 h-28 bg-gradient-to-br from-indigo-600 to-purple-600 rounded-full flex items-center justify-center shadow-xl mb-6 mx-auto">
+                                <i class="fas fa-heartbeat text-5xl text-white"></i>
                             </div>
-                            <div class="grid grid-cols-3 gap-3">
-                                <div class="bg-white p-3 rounded-lg shadow-sm flex flex-col items-center">
-                                    <i class="fas fa-mobile-alt text-indigo-500 text-xl mb-2"></i>
-                                    <span class="text-xs font-medium text-center" data-lang="fr">App Mobile</span>
-                                    <span class="text-xs font-medium text-center hidden" data-lang="ar">تطبيق</span>
+                            <div class="grid grid-cols-3 gap-4">
+                                <div class="bg-white/90 backdrop-blur-sm p-4 rounded-xl shadow-lg flex flex-col items-center hover:scale-105 transition-transform">
+                                    <i class="fas fa-mobile-alt text-indigo-600 text-2xl mb-3"></i>
+                                    <span class="text-sm font-semibold text-center text-gray-800" data-lang="fr">App Mobile</span>
+                                    <span class="text-sm font-semibold text-center text-gray-800 hidden" data-lang="ar">تطبيق</span>
                                 </div>
-                                <div class="bg-white p-3 rounded-lg shadow-sm flex flex-col items-center">
-                                    <i class="fas fa-brain text-indigo-500 text-xl mb-2"></i>
-                                    <span class="text-xs font-medium text-center" data-lang="fr">AI Santé</span>
-                                    <span class="text-xs font-medium text-center hidden" data-lang="ar">ذكاء اصطناعي</span>
+                                <div class="bg-white/90 backdrop-blur-sm p-4 rounded-xl shadow-lg flex flex-col items-center hover:scale-105 transition-transform">
+                                    <i class="fas fa-brain text-indigo-600 text-2xl mb-3"></i>
+                                    <span class="text-sm font-semibold text-center text-gray-800" data-lang="fr">AI Santé</span>
+                                    <span class="text-sm font-semibold text-center text-gray-800 hidden" data-lang="ar">ذكاء اصطناعي</span>
                                 </div>
-                                <div class="bg-white p-3 rounded-lg shadow-sm flex flex-col items-center">
-                                    <i class="fas fa-shield-alt text-indigo-500 text-xl mb-2"></i>
-                                    <span class="text-xs font-medium text-center" data-lang="fr">Sécurité</span>
-                                    <span class="text-xs font-medium text-center hidden" data-lang="ar">حماية</span>
+                                <div class="bg-white/90 backdrop-blur-sm p-4 rounded-xl shadow-lg flex flex-col items-center hover:scale-105 transition-transform">
+                                    <i class="fas fa-shield-alt text-indigo-600 text-2xl mb-3"></i>
+                                    <span class="text-sm font-semibold text-center text-gray-800" data-lang="fr">Sécurité</span>
+                                    <span class="text-sm font-semibold text-center text-gray-800 hidden" data-lang="ar">حماية</span>
                                 </div>
-                                <div class="bg-white p-3 rounded-lg shadow-sm flex flex-col items-center">
-                                    <i class="fas fa-user-md text-indigo-500 text-xl mb-2"></i>
-                                    <span class="text-xs font-medium text-center" data-lang="fr">Docteurs</span>
-                                    <span class="text-xs font-medium text-center hidden" data-lang="ar">أطباء</span>
+                                <div class="bg-white/90 backdrop-blur-sm p-4 rounded-xl shadow-lg flex flex-col items-center hover:scale-105 transition-transform">
+                                    <i class="fas fa-user-md text-indigo-600 text-2xl mb-3"></i>
+                                    <span class="text-sm font-semibold text-center text-gray-800" data-lang="fr">Docteurs</span>
+                                    <span class="text-sm font-semibold text-center text-gray-800 hidden" data-lang="ar">أطباء</span>
                                 </div>
-                                <div class="bg-white p-3 rounded-lg shadow-sm flex flex-col items-center">
-                                    <i class="fas fa-pills text-indigo-500 text-xl mb-2"></i>
-                                    <span class="text-xs font-medium text-center" data-lang="fr">Médicaments</span>
-                                    <span class="text-xs font-medium text-center hidden" data-lang="ar">أدوية</span>
+                                <div class="bg-white/90 backdrop-blur-sm p-4 rounded-xl shadow-lg flex flex-col items-center hover:scale-105 transition-transform">
+                                    <i class="fas fa-pills text-indigo-600 text-2xl mb-3"></i>
+                                    <span class="text-sm font-semibold text-center text-gray-800" data-lang="fr">Médicaments</span>
+                                    <span class="text-sm font-semibold text-center text-gray-800 hidden" data-lang="ar">أدوية</span>
                                 </div>
-                                <div class="bg-white p-3 rounded-lg shadow-sm flex flex-col items-center">
-                                    <i class="fas fa-ambulance text-indigo-500 text-xl mb-2"></i>
-                                    <span class="text-xs font-medium text-center" data-lang="fr">Urgence</span>
-                                    <span class="text-xs font-medium text-center hidden" data-lang="ar">طوارئ</span>
+                                <div class="bg-white/90 backdrop-blur-sm p-4 rounded-xl shadow-lg flex flex-col items-center hover:scale-105 transition-transform">
+                                    <i class="fas fa-ambulance text-indigo-600 text-2xl mb-3"></i>
+                                    <span class="text-sm font-semibold text-center text-gray-800" data-lang="fr">Urgence</span>
+                                    <span class="text-sm font-semibold text-center text-gray-800 hidden" data-lang="ar">طوارئ</span>
                                 </div>
                             </div>
                         </div>
-                        <div class="absolute -bottom-10 -right-10 w-40 h-40 bg-indigo-200 rounded-full opacity-20"></div>
-                        <div class="absolute -top-10 -left-10 w-32 h-32 bg-indigo-300 rounded-full opacity-20"></div>
+                        <!-- Enhanced Background Elements -->
+                        <div class="absolute -bottom-16 -right-16 w-48 h-48 bg-gradient-to-br from-indigo-200 to-purple-200 rounded-full opacity-30 animate-pulse"></div>
+                        <div class="absolute -top-16 -left-16 w-40 h-40 bg-gradient-to-br from-purple-200 to-pink-200 rounded-full opacity-30 animate-pulse" style="animation-delay: 1s;"></div>
+                        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-gradient-to-br from-indigo-300 to-purple-300 rounded-full opacity-20 animate-pulse" style="animation-delay: 2s;"></div>
                     </div>
                 </div>
             </div>
@@ -905,13 +951,29 @@
         const mobileMenuButton = document.getElementById('mobileMenuButton');
         const mobileMenu = document.getElementById('mobileMenu');
         const closeMobileMenu = document.getElementById('closeMobileMenu');
+        const closeMobileMenuBottom = document.getElementById('closeMobileMenuBottom');
         
         mobileMenuButton.addEventListener('click', () => {
             mobileMenu.classList.remove('hidden');
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
         });
         
         closeMobileMenu.addEventListener('click', () => {
             mobileMenu.classList.add('hidden');
+            document.body.style.overflow = ''; // Restore scrolling
+        });
+        
+        closeMobileMenuBottom.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+            document.body.style.overflow = ''; // Restore scrolling
+        });
+        
+        // Close menu when clicking on navigation links
+        document.querySelectorAll('#mobileMenu nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                document.body.style.overflow = '';
+            });
         });
 
         // Language Switch
@@ -1028,10 +1090,12 @@
 
         animate();
 
-        // Health Image Slider
+        // Enhanced Health Image Slider with Navigation
         const slider = document.getElementById('healthSlider');
         const slides = document.querySelectorAll('#healthSlider > div');
         const dots = document.querySelectorAll('.slider-dot');
+        const prevButton = document.getElementById('prevSlide');
+        const nextButton = document.getElementById('nextSlide');
         let currentSlide = 0;
         const slideCount = slides.length;
 
@@ -1046,10 +1110,10 @@
             });
         }
 
-        // Auto-advance slides every 5 seconds
+        // Auto-advance slides every 6 seconds
         let slideInterval = setInterval(() => {
             goToSlide(currentSlide + 1);
-        }, 5000);
+        }, 6000);
 
         // Pause on hover
         slider.parentElement.addEventListener('mouseenter', () => {
@@ -1059,7 +1123,7 @@
         slider.parentElement.addEventListener('mouseleave', () => {
             slideInterval = setInterval(() => {
                 goToSlide(currentSlide + 1);
-            }, 5000);
+            }, 6000);
         });
 
         // Dot navigation
@@ -1069,8 +1133,42 @@
                 goToSlide(parseInt(dot.dataset.index));
                 slideInterval = setInterval(() => {
                     goToSlide(currentSlide + 1);
-                }, 5000);
+                }, 6000);
             });
+        });
+
+        // Arrow navigation
+        prevButton.addEventListener('click', () => {
+            clearInterval(slideInterval);
+            goToSlide(currentSlide - 1);
+            slideInterval = setInterval(() => {
+                goToSlide(currentSlide + 1);
+            }, 6000);
+        });
+
+        nextButton.addEventListener('click', () => {
+            clearInterval(slideInterval);
+            goToSlide(currentSlide + 1);
+            slideInterval = setInterval(() => {
+                goToSlide(currentSlide + 1);
+            }, 6000);
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') {
+                clearInterval(slideInterval);
+                goToSlide(currentSlide - 1);
+                slideInterval = setInterval(() => {
+                    goToSlide(currentSlide + 1);
+                }, 6000);
+            } else if (e.key === 'ArrowRight') {
+                clearInterval(slideInterval);
+                goToSlide(currentSlide + 1);
+                slideInterval = setInterval(() => {
+                    goToSlide(currentSlide + 1);
+                }, 6000);
+            }
         });
 
         // Initialize first dot as active
