@@ -200,6 +200,218 @@
             overflow: hidden;
         }
         
+        /* Modern FAQ Animations */
+        .faq-item {
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .faq-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .faq-question {
+            transition: all 0.3s ease;
+        }
+        
+        .faq-answer {
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+        }
+        
+        .faq-item.active .faq-icon i {
+            transform: rotate(45deg);
+        }
+        
+        /* Floating Shapes Animation */
+        .floating-shape {
+            position: absolute;
+            border-radius: 50%;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            opacity: 0.1;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .shape-1 {
+            width: 80px;
+            height: 80px;
+            top: 10%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+        
+        .shape-2 {
+            width: 120px;
+            height: 120px;
+            top: 60%;
+            right: 15%;
+            animation-delay: 2s;
+        }
+        
+        .shape-3 {
+            width: 60px;
+            height: 60px;
+            bottom: 20%;
+            left: 20%;
+            animation-delay: 4s;
+        }
+        
+        .shape-4 {
+            width: 100px;
+            height: 100px;
+            top: 30%;
+            right: 30%;
+            animation-delay: 1s;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+        
+        /* Particle Animation */
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+            border-radius: 50%;
+            animation: particle-float 8s linear infinite;
+        }
+        
+        .particle-1 {
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+        
+        .particle-2 {
+            top: 40%;
+            right: 20%;
+            animation-delay: 2s;
+        }
+        
+        .particle-3 {
+            bottom: 30%;
+            left: 30%;
+            animation-delay: 4s;
+        }
+        
+        .particle-4 {
+            top: 60%;
+            right: 40%;
+            animation-delay: 6s;
+        }
+        
+        .particle-5 {
+            bottom: 50%;
+            left: 50%;
+            animation-delay: 1s;
+        }
+        
+        @keyframes particle-float {
+            0% { transform: translateY(100vh) scale(0); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-100px) scale(1); opacity: 0; }
+        }
+        
+        /* 3D Card Effects */
+        .perspective-1000 {
+            perspective: 1000px;
+        }
+        
+        .transform-style-preserve-3d {
+            transform-style: preserve-3d;
+        }
+        
+        .rotate-y-12 {
+            transform: rotateY(12deg);
+        }
+        
+        .rotate-y-180 {
+            transform: rotateY(180deg);
+        }
+        
+        .feature-front, .feature-back {
+            backface-visibility: hidden;
+        }
+        
+        .feature-back {
+            transform: rotateY(180deg);
+        }
+        
+        /* Feature Icon Wrapper */
+        .feature-icon-wrapper {
+            position: relative;
+        }
+        
+        /* Tech Feature Animations */
+        .tech-feature {
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .tech-feature:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+        }
+        
+        /* Title Animations */
+        .faq-title, .features-title, .health-tech-title {
+            background-size: 200% 200%;
+            animation: gradient-shift 3s ease infinite;
+        }
+        
+        @keyframes gradient-shift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        
+        /* Magnetic Hover Effect */
+        .magnetic-hover {
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        /* Smooth Scroll Behavior */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Enhanced Backdrop Blur */
+        .backdrop-blur-sm {
+            backdrop-filter: blur(8px);
+        }
+        
+        .backdrop-blur-md {
+            backdrop-filter: blur(12px);
+        }
+        
+        .backdrop-blur-lg {
+            backdrop-filter: blur(16px);
+        }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            border-radius: 4px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(45deg, var(--secondary-color), var(--accent-color));
+        }
+        }
+        
         .parallax-bg {
             position: absolute;
             top: 0;
@@ -489,6 +701,12 @@
             <a href="#features" class="font-medium hover:text-indigo-600 transition-all hover:scale-105 hidden" data-lang="ar">
                 <i class="fas fa-star mr-1"></i>الميزات
             </a>
+            <a href="#faq" class="font-medium hover:text-indigo-600 transition-all hover:scale-105" data-lang="fr">
+                <i class="fas fa-question-circle mr-1"></i>FAQ
+            </a>
+            <a href="#faq" class="font-medium hover:text-indigo-600 transition-all hover:scale-105 hidden" data-lang="ar">
+                <i class="fas fa-question-circle mr-1"></i>الأسئلة الشائعة
+            </a>
             <a href="#about" class="font-medium hover:text-indigo-600 transition-all hover:scale-105" data-lang="fr">
                 <i class="fas fa-info-circle mr-1"></i>À propos
             </a>
@@ -528,6 +746,12 @@
             </a>
             <a href="#features" class="text-xl font-medium hover:text-indigo-600 transition-all hover:scale-105 hidden" data-lang="ar">
                 <i class="fas fa-star mr-2"></i>الميزات
+            </a>
+            <a href="#faq" class="text-xl font-medium hover:text-indigo-600 transition-all hover:scale-105" data-lang="fr">
+                <i class="fas fa-question-circle mr-2"></i>FAQ
+            </a>
+            <a href="#faq" class="text-xl font-medium hover:text-indigo-600 transition-all hover:scale-105 hidden" data-lang="ar">
+                <i class="fas fa-question-circle mr-2"></i>الأسئلة الشائعة
             </a>
             <a href="#about" class="text-xl font-medium hover:text-indigo-600 transition-all hover:scale-105" data-lang="fr">
                 <i class="fas fa-info-circle mr-2"></i>À propos
@@ -629,79 +853,295 @@
         </div>
     </section>
 
-    <!-- Features Section -->
-    <section id="features" class="py-20 bg-white bg-opacity-70 backdrop-blur-sm">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-indigo-900 scroll-animate" data-lang="fr">Nos fonctionnalités</h2>
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-indigo-900 hidden scroll-animate" data-lang="ar">ميزاتنا</h2>
-            <p class="text-xl text-center mb-12 max-w-2xl mx-auto text-gray-600 scroll-animate" data-lang="fr">Découvrez comment Medacte va transformer votre expérience santé</p>
-            <p class="text-xl text-center mb-12 max-w-2xl mx-auto text-gray-600 hidden scroll-animate" data-lang="ar">اكتشف كيف ستحول ميداكت تجربتك الصحية</p>
+    <!-- Modern Features Section -->
+    <section id="features" class="py-20 bg-gradient-to-br from-white via-indigo-50 to-purple-50 relative overflow-hidden">
+        <!-- Animated Background Particles -->
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="particle particle-1"></div>
+            <div class="particle particle-2"></div>
+            <div class="particle particle-3"></div>
+            <div class="particle particle-4"></div>
+            <div class="particle particle-5"></div>
+        </div>
+        
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent features-title" data-lang="fr">Nos fonctionnalités</h2>
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent features-title hidden" data-lang="ar">ميزاتنا</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto features-subtitle" data-lang="fr">Découvrez comment Medacte va transformer votre expérience santé avec des technologies de pointe</p>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto features-subtitle hidden" data-lang="ar">اكتشف كيف ستحول ميداكت تجربتك الصحية بأحدث التقنيات</p>
+            </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Feature 1 -->
-                <div class="feature-card p-8 rounded-2xl border border-white border-opacity-30">
-                    <div class="w-14 h-14 bg-indigo-100 rounded-full flex items-center justify-center text-indigo-600 mb-6">
-                        <i class="fas fa-calendar-check text-2xl"></i>
+                <!-- Feature 1 - 3D Card -->
+                <div class="feature-card-3d group perspective-1000">
+                    <div class="relative transform-style-preserve-3d transition-all duration-700 group-hover:rotate-y-12">
+                        <div class="feature-front bg-white/90 backdrop-blur-sm p-8 rounded-2xl border border-white/50 shadow-xl hover:shadow-2xl transition-all duration-500">
+                            <div class="feature-icon-wrapper mb-6">
+                                <div class="w-16 h-16 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-2xl flex items-center justify-center text-white shadow-lg transform transition-all duration-500 group-hover:scale-110 group-hover:rotate-12">
+                                    <i class="fas fa-calendar-check text-2xl"></i>
+                                </div>
+                                <div class="absolute inset-0 bg-gradient-to-br from-indigo-400 to-purple-500 rounded-2xl opacity-0 group-hover:opacity-20 blur-xl transition-all duration-500"></div>
+                            </div>
+                            <h3 class="text-xl font-bold mb-4 text-indigo-900 group-hover:text-indigo-600 transition-colors" data-lang="fr">Rendez-vous en ligne</h3>
+                            <h3 class="text-xl font-bold mb-4 text-indigo-900 group-hover:text-indigo-600 transition-colors hidden" data-lang="ar">مواعيد عبر الإنترنت</h3>
+                            <p class="text-gray-600 leading-relaxed" data-lang="fr">Prenez rendez-vous avec des professionnels de santé en quelques clics, 24h/24. Interface intuitive et confirmation instantanée.</p>
+                            <p class="text-gray-600 leading-relaxed hidden" data-lang="ar">احجز موعدًا مع متخصصي الرعاية الصحية ببضع نقرات، على مدار الساعة. واجهة سهلة الاستخدام وتأكيد فوري.</p>
+                        </div>
+                        <div class="feature-back absolute inset-0 bg-gradient-to-br from-indigo-600 to-purple-700 p-8 rounded-2xl text-white opacity-0 group-hover:opacity-100 transition-all duration-500 transform rotate-y-180">
+                            <h4 class="text-lg font-bold mb-3" data-lang="fr">Fonctionnalités avancées</h4>
+                            <h4 class="text-lg font-bold mb-3 hidden" data-lang="ar">ميزات متقدمة</h4>
+                            <ul class="text-sm space-y-2">
+                                <li class="flex items-center"><i class="fas fa-check mr-2"></i> <span data-lang="fr">Rappels automatiques</span><span data-lang="ar" class="hidden">تذكيرات تلقائية</span></li>
+                                <li class="flex items-center"><i class="fas fa-check mr-2"></i> <span data-lang="fr">Annulation facile</span><span data-lang="ar" class="hidden">إلغاء سهل</span></li>
+                                <li class="flex items-center"><i class="fas fa-check mr-2"></i> <span data-lang="fr">Historique complet</span><span data-lang="ar" class="hidden">سجل كامل</span></li>
+                            </ul>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-bold mb-3" data-lang="fr">Rendez-vous en ligne</h3>
-                    <h3 class="text-xl font-bold mb-3 hidden" data-lang="ar">مواعيد عبر الإنترنت</h3>
-                    <p class="text-gray-600" data-lang="fr">Prenez rendez-vous avec des professionnels de santé en quelques clics, 24h/24.</p>
-                    <p class="text-gray-600 hidden" data-lang="ar">احجز موعدًا مع متخصصي الرعاية الصحية ببضع نقرات، على مدار الساعة.</p>
                 </div>
                 
-                <!-- Feature 2 -->
-                <div class="feature-card p-8 rounded-2xl border border-white border-opacity-30">
-                    <div class="w-14 h-14 bg-indigo-100 rounded-full flex items-center justify-center text-indigo-600 mb-6">
-                        <i class="fas fa-comments text-2xl"></i>
+                <!-- Feature 2 - 3D Card -->
+                <div class="feature-card-3d group perspective-1000">
+                    <div class="relative transform-style-preserve-3d transition-all duration-700 group-hover:rotate-y-12">
+                        <div class="feature-front bg-white/90 backdrop-blur-sm p-8 rounded-2xl border border-white/50 shadow-xl hover:shadow-2xl transition-all duration-500">
+                            <div class="feature-icon-wrapper mb-6">
+                                <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-2xl flex items-center justify-center text-white shadow-lg transform transition-all duration-500 group-hover:scale-110 group-hover:rotate-12">
+                                    <i class="fas fa-comments text-2xl"></i>
+                                </div>
+                                <div class="absolute inset-0 bg-gradient-to-br from-blue-400 to-cyan-500 rounded-2xl opacity-0 group-hover:opacity-20 blur-xl transition-all duration-500"></div>
+                            </div>
+                            <h3 class="text-xl font-bold mb-4 text-indigo-900 group-hover:text-indigo-600 transition-colors" data-lang="fr">Consultation à distance</h3>
+                            <h3 class="text-xl font-bold mb-4 text-indigo-900 group-hover:text-indigo-600 transition-colors hidden" data-lang="ar">استشارة عن بعد</h3>
+                            <p class="text-gray-600 leading-relaxed" data-lang="fr">Consultez un médecin par vidéo HD ou chat sécurisé sans vous déplacer. Qualité professionnelle garantie.</p>
+                            <p class="text-gray-600 leading-relaxed hidden" data-lang="ar">استشر طبيبًا عبر فيديو عالي الجودة أو دردشة آمنة دون الحاجة إلى التنقل. جودة مهنية مضمونة.</p>
+                        </div>
+                        <div class="feature-back absolute inset-0 bg-gradient-to-br from-blue-600 to-cyan-700 p-8 rounded-2xl text-white opacity-0 group-hover:opacity-100 transition-all duration-500 transform rotate-y-180">
+                            <h4 class="text-lg font-bold mb-3" data-lang="fr">Technologies utilisées</h4>
+                            <h4 class="text-lg font-bold mb-3 hidden" data-lang="ar">التقنيات المستخدمة</h4>
+                            <ul class="text-sm space-y-2">
+                                <li class="flex items-center"><i class="fas fa-video mr-2"></i> <span data-lang="fr">Vidéo HD 1080p</span><span data-lang="ar" class="hidden">فيديو عالي الجودة</span></li>
+                                <li class="flex items-center"><i class="fas fa-shield-alt mr-2"></i> <span data-lang="fr">Chiffrement end-to-end</span><span data-lang="ar" class="hidden">تشفير من طرف لطرف</span></li>
+                                <li class="flex items-center"><i class="fas fa-wifi mr-2"></i> <span data-lang="fr">Adaptation réseau</span><span data-lang="ar" class="hidden">تكيف الشبكة</span></li>
+                            </ul>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-bold mb-3" data-lang="fr">Consultation à distance</h3>
-                    <h3 class="text-xl font-bold mb-3 hidden" data-lang="ar">استشارة عن بعد</h3>
-                    <p class="text-gray-600" data-lang="fr">Consultez un médecin par vidéo ou chat sans vous déplacer.</p>
-                    <p class="text-gray-600 hidden" data-lang="ar">استشر طبيبًا عبر الفيديو أو الدردشة دون الحاجة إلى التنقل.</p>
                 </div>
                 
-                <!-- Feature 3 -->
-                <div class="feature-card p-8 rounded-2xl border border-white border-opacity-30">
-                    <div class="w-14 h-14 bg-indigo-100 rounded-full flex items-center justify-center text-indigo-600 mb-6">
-                        <i class="fas fa-pills text-2xl"></i>
+                <!-- Feature 3 - 3D Card -->
+                <div class="feature-card-3d group perspective-1000">
+                    <div class="relative transform-style-preserve-3d transition-all duration-700 group-hover:rotate-y-12">
+                        <div class="feature-front bg-white/90 backdrop-blur-sm p-8 rounded-2xl border border-white/50 shadow-xl hover:shadow-2xl transition-all duration-500">
+                            <div class="feature-icon-wrapper mb-6">
+                                <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center text-white shadow-lg transform transition-all duration-500 group-hover:scale-110 group-hover:rotate-12">
+                                    <i class="fas fa-pills text-2xl"></i>
+                                </div>
+                                <div class="absolute inset-0 bg-gradient-to-br from-green-400 to-emerald-500 rounded-2xl opacity-0 group-hover:opacity-20 blur-xl transition-all duration-500"></div>
+                            </div>
+                            <h3 class="text-xl font-bold mb-4 text-indigo-900 group-hover:text-indigo-600 transition-colors" data-lang="fr">Pharmacie en ligne</h3>
+                            <h3 class="text-xl font-bold mb-4 text-indigo-900 group-hover:text-indigo-600 transition-colors hidden" data-lang="ar">صيدلية على الإنترنت</h3>
+                            <p class="text-gray-600 leading-relaxed" data-lang="fr">Commandez vos médicaments et recevez-les à domicile. Livraison rapide et suivi en temps réel de votre commande.</p>
+                            <p class="text-gray-600 leading-relaxed hidden" data-lang="ar">اطلب أدويتك واستلمها في منزلك. توصيل سريع ومتابعة فورية لطلبك.</p>
+                        </div>
+                        <div class="feature-back absolute inset-0 bg-gradient-to-br from-green-600 to-emerald-700 p-8 rounded-2xl text-white opacity-0 group-hover:opacity-100 transition-all duration-500 transform rotate-y-180">
+                            <h4 class="text-lg font-bold mb-3" data-lang="fr">Services inclus</h4>
+                            <h4 class="text-lg font-bold mb-3 hidden" data-lang="ar">الخدمات المدرجة</h4>
+                            <ul class="text-sm space-y-2">
+                                <li class="flex items-center"><i class="fas fa-truck mr-2"></i> <span data-lang="fr">Livraison 2h</span><span data-lang="ar" class="hidden">توصيل في ساعتين</span></li>
+                                <li class="flex items-center"><i class="fas fa-map-marker-alt mr-2"></i> <span data-lang="fr">Suivi GPS</span><span data-lang="ar" class="hidden">متابعة GPS</span></li>
+                                <li class="flex items-center"><i class="fas fa-clock mr-2"></i> <span data-lang="fr">24h/24</span><span data-lang="ar" class="hidden">24 ساعة</span></li>
+                            </ul>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-bold mb-3" data-lang="fr">Pharmacie en ligne</h3>
-                    <h3 class="text-xl font-bold mb-3 hidden" data-lang="ar">صيدلية على الإنترنت</h3>
-                    <p class="text-gray-600" data-lang="fr">Commandez vos médicaments et recevez-les à domicile.</p>
-                    <p class="text-gray-600 hidden" data-lang="ar">اطلب أدويتك واستلمها في منزلك.</p>
                 </div>
                 
-                <!-- Feature 4 -->
-                <div class="feature-card p-8 rounded-2xl border border-white border-opacity-30">
-                    <div class="w-14 h-14 bg-indigo-100 rounded-full flex items-center justify-center text-indigo-600 mb-6">
-                        <i class="fas fa-heartbeat text-2xl"></i>
+                <!-- Feature 4 - 3D Card -->
+                <div class="feature-card-3d group perspective-1000">
+                    <div class="relative transform-style-preserve-3d transition-all duration-700 group-hover:rotate-y-12">
+                        <div class="feature-front bg-white/90 backdrop-blur-sm p-8 rounded-2xl border border-white/50 shadow-xl hover:shadow-2xl transition-all duration-500">
+                            <div class="feature-icon-wrapper mb-6">
+                                <div class="w-16 h-16 bg-gradient-to-br from-red-500 to-pink-600 rounded-2xl flex items-center justify-center text-white shadow-lg transform transition-all duration-500 group-hover:scale-110 group-hover:rotate-12">
+                                    <i class="fas fa-heartbeat text-2xl"></i>
+                                </div>
+                                <div class="absolute inset-0 bg-gradient-to-br from-red-400 to-pink-500 rounded-2xl opacity-0 group-hover:opacity-20 blur-xl transition-all duration-500"></div>
+                            </div>
+                            <h3 class="text-xl font-bold mb-4 text-indigo-900 group-hover:text-indigo-600 transition-colors" data-lang="fr">Suivi médical</h3>
+                            <h3 class="text-xl font-bold mb-4 text-indigo-900 group-hover:text-indigo-600 transition-colors hidden" data-lang="ar">متابعة طبية</h3>
+                            <p class="text-gray-600 leading-relaxed" data-lang="fr">Accédez à votre dossier médical complet et suivez vos indicateurs santé en temps réel avec des graphiques interactifs.</p>
+                            <p class="text-gray-600 leading-relaxed hidden" data-lang="ar">الوصول إلى ملفك الطبي الكامل ومتابعة مؤشراتك الصحية في الوقت الفعلي مع رسوم بيانية تفاعلية.</p>
+                        </div>
+                        <div class="feature-back absolute inset-0 bg-gradient-to-br from-red-600 to-pink-700 p-8 rounded-2xl text-white opacity-0 group-hover:opacity-100 transition-all duration-500 transform rotate-y-180">
+                            <h4 class="text-lg font-bold mb-3" data-lang="fr">Données suivies</h4>
+                            <h4 class="text-lg font-bold mb-3 hidden" data-lang="ar">البيانات المتابعة</h4>
+                            <ul class="text-sm space-y-2">
+                                <li class="flex items-center"><i class="fas fa-chart-line mr-2"></i> <span data-lang="fr">Tension artérielle</span><span data-lang="ar" class="hidden">ضغط الدم</span></li>
+                                <li class="flex items-center"><i class="fas fa-weight mr-2"></i> <span data-lang="fr">Poids & IMC</span><span data-lang="ar" class="hidden">الوزن ومؤشر كتلة الجسم</span></li>
+                                <li class="flex items-center"><i class="fas fa-pills mr-2"></i> <span data-lang="fr">Médicaments</span><span data-lang="ar" class="hidden">الأدوية</span></li>
+                            </ul>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-bold mb-3" data-lang="fr">Suivi médical</h3>
-                    <h3 class="text-xl font-bold mb-3 hidden" data-lang="ar">متابعة طبية</h3>
-                    <p class="text-gray-600" data-lang="fr">Accédez à votre dossier médical et suivez vos indicateurs santé.</p>
-                    <p class="text-gray-600 hidden" data-lang="ar">الوصول إلى ملفك الطبي ومتابعة مؤشراتك الصحية.</p>
                 </div>
                 
-                <!-- Feature 5 -->
-                <div class="feature-card p-8 rounded-2xl border border-white border-opacity-30">
-                    <div class="w-14 h-14 bg-indigo-100 rounded-full flex items-center justify-center text-indigo-600 mb-6">
-                        <i class="fas fa-ambulance text-2xl"></i>
+                <!-- Feature 5 - 3D Card -->
+                <div class="feature-card-3d group perspective-1000">
+                    <div class="relative transform-style-preserve-3d transition-all duration-700 group-hover:rotate-y-12">
+                        <div class="feature-front bg-white/90 backdrop-blur-sm p-8 rounded-2xl border border-white/50 shadow-xl hover:shadow-2xl transition-all duration-500">
+                            <div class="feature-icon-wrapper mb-6">
+                                <div class="w-16 h-16 bg-gradient-to-br from-orange-500 to-red-600 rounded-2xl flex items-center justify-center text-white shadow-lg transform transition-all duration-500 group-hover:scale-110 group-hover:rotate-12">
+                                    <i class="fas fa-ambulance text-2xl"></i>
+                                </div>
+                                <div class="absolute inset-0 bg-gradient-to-br from-orange-400 to-red-500 rounded-2xl opacity-0 group-hover:opacity-20 blur-xl transition-all duration-500"></div>
+                            </div>
+                            <h3 class="text-xl font-bold mb-4 text-indigo-900 group-hover:text-indigo-600 transition-colors" data-lang="fr">Urgence 24/7</h3>
+                            <h3 class="text-xl font-bold mb-4 text-indigo-900 group-hover:text-indigo-600 transition-colors hidden" data-lang="ar">طوارئ 24/7</h3>
+                            <p class="text-gray-600 leading-relaxed" data-lang="fr">Accès immédiat à des services d'urgence partout au Maroc. Réponse en moins de 30 secondes.</p>
+                            <p class="text-gray-600 leading-relaxed hidden" data-lang="ar">وصول فوري إلى خدمات الطوارئ في جميع أنحاء المغرب. استجابة في أقل من 30 ثانية.</p>
+                        </div>
+                        <div class="feature-back absolute inset-0 bg-gradient-to-br from-orange-600 to-red-700 p-8 rounded-2xl text-white opacity-0 group-hover:opacity-100 transition-all duration-500 transform rotate-y-180">
+                            <h4 class="text-lg font-bold mb-3" data-lang="fr">Services d'urgence</h4>
+                            <h4 class="text-lg font-bold mb-3 hidden" data-lang="ar">خدمات الطوارئ</h4>
+                            <ul class="text-sm space-y-2">
+                                <li class="flex items-center"><i class="fas fa-phone mr-2"></i> <span data-lang="fr">Appel immédiat</span><span data-lang="ar" class="hidden">اتصال فوري</span></li>
+                                <li class="flex items-center"><i class="fas fa-location-arrow mr-2"></i> <span data-lang="fr">Géolocalisation</span><span data-lang="ar" class="hidden">تحديد الموقع</span></li>
+                                <li class="flex items-center"><i class="fas fa-user-md mr-2"></i> <span data-lang="fr">Médecin de garde</span><span data-lang="ar" class="hidden">طبيب المناوبة</span></li>
+                            </ul>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-bold mb-3" data-lang="fr">Urgence 24/7</h3>
-                    <h3 class="text-xl font-bold mb-3 hidden" data-lang="ar">طوارئ 24/7</h3>
-                    <p class="text-gray-600" data-lang="fr">Accès immédiat à des services d'urgence partout au Maroc.</p>
-                    <p class="text-gray-600 hidden" data-lang="ar">وصول فوري إلى خدمات الطوارئ في جميع أنحاء المغرب.</p>
                 </div>
                 
-                <!-- Feature 6 -->
-                <div class="feature-card p-8 rounded-2xl border border-white border-opacity-30">
-                    <div class="w-14 h-14 bg-indigo-100 rounded-full flex items-center justify-center text-indigo-600 mb-6">
-                        <i class="fas fa-shield-alt text-2xl"></i>
+                <!-- Feature 6 - 3D Card -->
+                <div class="feature-card-3d group perspective-1000">
+                    <div class="relative transform-style-preserve-3d transition-all duration-700 group-hover:rotate-y-12">
+                        <div class="feature-front bg-white/90 backdrop-blur-sm p-8 rounded-2xl border border-white/50 shadow-xl hover:shadow-2xl transition-all duration-500">
+                            <div class="feature-icon-wrapper mb-6">
+                                <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-2xl flex items-center justify-center text-white shadow-lg transform transition-all duration-500 group-hover:scale-110 group-hover:rotate-12">
+                                    <i class="fas fa-shield-alt text-2xl"></i>
+                                </div>
+                                <div class="absolute inset-0 bg-gradient-to-br from-purple-400 to-indigo-500 rounded-2xl opacity-0 group-hover:opacity-20 blur-xl transition-all duration-500"></div>
+                            </div>
+                            <h3 class="text-xl font-bold mb-4 text-indigo-900 group-hover:text-indigo-600 transition-colors" data-lang="fr">Sécurité des données</h3>
+                            <h3 class="text-xl font-bold mb-4 text-indigo-900 group-hover:text-indigo-600 transition-colors hidden" data-lang="ar">حماية البيانات</h3>
+                            <p class="text-gray-600 leading-relaxed" data-lang="fr">Vos données médicales sont cryptées avec des standards bancaires et protégées par des protocoles de sécurité avancés.</p>
+                            <p class="text-gray-600 leading-relaxed hidden" data-lang="ar">بياناتك الطبية مشفرة بمعايير بنكية ومحمية ببروتوكولات أمان متقدمة.</p>
+                        </div>
+                        <div class="feature-back absolute inset-0 bg-gradient-to-br from-purple-600 to-indigo-700 p-8 rounded-2xl text-white opacity-0 group-hover:opacity-100 transition-all duration-500 transform rotate-y-180">
+                            <h4 class="text-lg font-bold mb-3" data-lang="fr">Protection avancée</h4>
+                            <h4 class="text-lg font-bold mb-3 hidden" data-lang="ar">حماية متقدمة</h4>
+                            <ul class="text-sm space-y-2">
+                                <li class="flex items-center"><i class="fas fa-lock mr-2"></i> <span data-lang="fr">Chiffrement AES-256</span><span data-lang="ar" class="hidden">تشفير AES-256</span></li>
+                                <li class="flex items-center"><i class="fas fa-certificate mr-2"></i> <span data-lang="fr">Certification ISO</span><span data-lang="ar" class="hidden">شهادة ISO</span></li>
+                                <li class="flex items-center"><i class="fas fa-eye-slash mr-2"></i> <span data-lang="fr">Anonymisation</span><span data-lang="ar" class="hidden">إخفاء الهوية</span></li>
+                            </ul>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-bold mb-3" data-lang="fr">Sécurité des données</h3>
-                    <h3 class="text-xl font-bold mb-3 hidden" data-lang="ar">حماية البيانات</h3>
-                    <p class="text-gray-600" data-lang="fr">Vos données médicales sont cryptées et protégées.</p>
-                    <p class="text-gray-600 hidden" data-lang="ar">بياناتك الطبية مشفرة ومحمية.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modern FAQ Section -->
+    <section id="faq" class="py-20 bg-gradient-to-br from-indigo-50 via-white to-purple-50 relative overflow-hidden">
+        <!-- Animated Background Elements -->
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="floating-shape shape-1"></div>
+            <div class="floating-shape shape-2"></div>
+            <div class="floating-shape shape-3"></div>
+            <div class="floating-shape shape-4"></div>
+        </div>
+        
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent faq-title" data-lang="fr">Questions Fréquentes</h2>
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent faq-title hidden" data-lang="ar">الأسئلة الشائعة</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto faq-subtitle" data-lang="fr">Trouvez rapidement les réponses à vos questions sur Medacte</p>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto faq-subtitle hidden" data-lang="ar">اعثر بسرعة على إجابات أسئلتك حول ميداكت</p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="space-y-6">
+                    <!-- FAQ Item 1 -->
+                    <div class="faq-item bg-white/80 backdrop-blur-sm rounded-2xl border border-white/50 shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden">
+                        <button class="faq-question w-full px-8 py-6 text-left flex items-center justify-between group">
+                            <h3 class="text-xl font-semibold text-indigo-900 group-hover:text-indigo-600 transition-colors" data-lang="fr">Comment fonctionne la télémedecine sur Medacte ?</h3>
+                            <h3 class="text-xl font-semibold text-indigo-900 group-hover:text-indigo-600 transition-colors hidden" data-lang="ar">كيف يعمل الطب عن بعد على ميداكت؟</h3>
+                            <div class="faq-icon w-8 h-8 rounded-full bg-gradient-to-r from-indigo-500 to-purple-500 flex items-center justify-center text-white transition-all duration-300 group-hover:scale-110">
+                                <i class="fas fa-plus transform transition-transform duration-300"></i>
+                            </div>
+                        </button>
+                        <div class="faq-answer max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+                            <div class="px-8 pb-6">
+                                <p class="text-gray-700 leading-relaxed" data-lang="fr">La télémedecine sur Medacte vous permet de consulter un médecin certifié en vidéo ou par chat. Prenez rendez-vous, connectez-vous à l'heure prévue, et recevez une consultation de qualité depuis chez vous. Vos ordonnances sont envoyées directement à votre pharmacie partenaire.</p>
+                                <p class="text-gray-700 leading-relaxed hidden" data-lang="ar">يتيح لك الطب عن بعد على ميداكت استشارة طبيب معتمد عبر الفيديو أو الدردشة. احجز موعدًا، اتصل في الوقت المحدد، واحصل على استشارة عالية الجودة من منزلك. يتم إرسال وصفتك الطبية مباشرة إلى صيدليتك الشريكة.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 2 -->
+                    <div class="faq-item bg-white/80 backdrop-blur-sm rounded-2xl border border-white/50 shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden">
+                        <button class="faq-question w-full px-8 py-6 text-left flex items-center justify-between group">
+                            <h3 class="text-xl font-semibold text-indigo-900 group-hover:text-indigo-600 transition-colors" data-lang="fr">Mes données médicales sont-elles sécurisées ?</h3>
+                            <h3 class="text-xl font-semibold text-indigo-900 group-hover:text-indigo-600 transition-colors hidden" data-lang="ar">هل بياناتي الطبية آمنة؟</h3>
+                            <div class="faq-icon w-8 h-8 rounded-full bg-gradient-to-r from-indigo-500 to-purple-500 flex items-center justify-center text-white transition-all duration-300 group-hover:scale-110">
+                                <i class="fas fa-plus transform transition-transform duration-300"></i>
+                            </div>
+                        </button>
+                        <div class="faq-answer max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+                            <div class="px-8 pb-6">
+                                <p class="text-gray-700 leading-relaxed" data-lang="fr">Absolument ! Medacte utilise un cryptage de niveau bancaire et respecte les normes internationales de protection des données médicales. Vos informations sont stockées de manière sécurisée et ne sont accessibles qu'aux professionnels de santé autorisés.</p>
+                                <p class="text-gray-700 leading-relaxed hidden" data-lang="ar">بالتأكيد! يستخدم ميداكت تشفيرًا بمستوى البنوك ويحترم المعايير الدولية لحماية البيانات الطبية. يتم تخزين معلوماتك بشكل آمن ولا يمكن الوصول إليها إلا من قبل متخصصي الرعاية الصحية المصرح لهم.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 3 -->
+                    <div class="faq-item bg-white/80 backdrop-blur-sm rounded-2xl border border-white/50 shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden">
+                        <button class="faq-question w-full px-8 py-6 text-left flex items-center justify-between group">
+                            <h3 class="text-xl font-semibold text-indigo-900 group-hover:text-indigo-600 transition-colors" data-lang="fr">Quels types de médecins sont disponibles ?</h3>
+                            <h3 class="text-xl font-semibold text-indigo-900 group-hover:text-indigo-600 transition-colors hidden" data-lang="ar">ما أنواع الأطباء المتاحين؟</h3>
+                            <div class="faq-icon w-8 h-8 rounded-full bg-gradient-to-r from-indigo-500 to-purple-500 flex items-center justify-center text-white transition-all duration-300 group-hover:scale-110">
+                                <i class="fas fa-plus transform transition-transform duration-300"></i>
+                            </div>
+                        </button>
+                        <div class="faq-answer max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+                            <div class="px-8 pb-6">
+                                <p class="text-gray-700 leading-relaxed" data-lang="fr">Nous proposons une large gamme de spécialités : médecine générale, pédiatrie, cardiologie, dermatologie, gynécologie, psychiatrie, et bien d'autres. Tous nos médecins sont certifiés et exercent au Maroc avec des années d'expérience.</p>
+                                <p class="text-gray-700 leading-relaxed hidden" data-lang="ar">نقدم مجموعة واسعة من التخصصات: الطب العام، طب الأطفال، أمراض القلب، الأمراض الجلدية، أمراض النساء، الطب النفسي، وغيرها الكثير. جميع أطبائنا معتمدون ويمارسون في المغرب مع سنوات من الخبرة.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 4 -->
+                    <div class="faq-item bg-white/80 backdrop-blur-sm rounded-2xl border border-white/50 shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden">
+                        <button class="faq-question w-full px-8 py-6 text-left flex items-center justify-between group">
+                            <h3 class="text-xl font-semibold text-indigo-900 group-hover:text-indigo-600 transition-colors" data-lang="fr">Comment commander mes médicaments en ligne ?</h3>
+                            <h3 class="text-xl font-semibold text-indigo-900 group-hover:text-indigo-600 transition-colors hidden" data-lang="ar">كيف أطلب أدويتي عبر الإنترنت؟</h3>
+                            <div class="faq-icon w-8 h-8 rounded-full bg-gradient-to-r from-indigo-500 to-purple-500 flex items-center justify-center text-white transition-all duration-300 group-hover:scale-110">
+                                <i class="fas fa-plus transform transition-transform duration-300"></i>
+                            </div>
+                        </button>
+                        <div class="faq-answer max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+                            <div class="px-8 pb-6">
+                                <p class="text-gray-700 leading-relaxed" data-lang="fr">Après votre consultation, votre ordonnance est automatiquement envoyée à notre réseau de pharmacies partenaires. Vous pouvez choisir la livraison à domicile ou le retrait en pharmacie. La livraison est rapide et sécurisée dans tout le Maroc.</p>
+                                <p class="text-gray-700 leading-relaxed hidden" data-lang="ar">بعد استشارتك، يتم إرسال وصفتك الطبية تلقائيًا إلى شبكة الصيدليات الشريكة لدينا. يمكنك اختيار التوصيل إلى المنزل أو الاستلام من الصيدلية. التوصيل سريع وآمن في جميع أنحاء المغرب.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 5 -->
+                    <div class="faq-item bg-white/80 backdrop-blur-sm rounded-2xl border border-white/50 shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden">
+                        <button class="faq-question w-full px-8 py-6 text-left flex items-center justify-between group">
+                            <h3 class="text-xl font-semibold text-indigo-900 group-hover:text-indigo-600 transition-colors" data-lang="fr">Que faire en cas d'urgence médicale ?</h3>
+                            <h3 class="text-xl font-semibold text-indigo-900 group-hover:text-indigo-600 transition-colors hidden" data-lang="ar">ماذا أفعل في حالة الطوارئ الطبية؟</h3>
+                            <div class="faq-icon w-8 h-8 rounded-full bg-gradient-to-r from-indigo-500 to-purple-500 flex items-center justify-center text-white transition-all duration-300 group-hover:scale-110">
+                                <i class="fas fa-plus transform transition-transform duration-300"></i>
+                            </div>
+                        </button>
+                        <div class="faq-answer max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+                            <div class="px-8 pb-6">
+                                <p class="text-gray-700 leading-relaxed" data-lang="fr">En cas d'urgence, utilisez notre service d'urgence 24/7. Un médecin vous répondra immédiatement et pourra organiser une intervention si nécessaire. Pour les urgences vitales, appelez directement le 15 (SAMU) ou le 19 (Police).</p>
+                                <p class="text-gray-700 leading-relaxed hidden" data-lang="ar">في حالة الطوارئ، استخدم خدمة الطوارئ لدينا على مدار الساعة. سيجيبك طبيب فورًا ويمكنه تنظيم تدخل إذا لزم الأمر. للطوارئ الحيوية، اتصل مباشرة بالرقم 15 (الإسعاف) أو 19 (الشرطة).</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -789,15 +1229,78 @@
         </div>
         <div class="container mx-auto px-4">
             <div class="flex flex-col lg:flex-row items-center">
-                <div class="lg:w-1/2 mb-12 lg:mb-0 lg:pr-12">
-                    <h2 class="text-3xl md:text-4xl font-bold mb-6 text-indigo-900" data-lang="fr">Health Technologie</h2>
-                    <h2 class="text-3xl md:text-4xl font-bold mb-6 text-indigo-900 hidden" data-lang="ar">تكنولوجيا الصحة</h2>
-                    <p class="text-lg mb-6 text-gray-700" data-lang="fr">Medacte est la première plateforme de santé digitale au Maroc, combinant technologie de pointe et expertise médicale.</p>
-                    <p class="text-lg mb-6 text-gray-700 hidden" data-lang="ar">ميداكت هي أول منصة للصحة الرقمية في المغرب، تجمع بين التكنولوجيا المتطورة والخبرة الطبية.</p>
-                    <p class="text-lg mb-6 text-gray-700" data-lang="fr">Notre mission est de connecter patients et professionnels de santé grâce à une plateforme intuitive, sécurisée et complète.</p>
-                    <p class="text-lg mb-6 text-gray-700 hidden" data-lang="ar">مهمتنا هي ربط المرضى بمتخصصي الرعاية الصحية من خلال منصة سهلة الاستخدام وآمنة وشاملة.</p>
-                    <div class="flex space-x-4">
-                        <div class="bg-white p-4 rounded-lg shadow-md text-center">
+                <div class="lg:w-1/2 mb-12 lg:mb-0 lg:pr-12 relative">
+                    <!-- Floating Tech Elements -->
+                    <div class="absolute -top-4 -left-4 w-20 h-20 bg-gradient-to-br from-indigo-400 to-purple-500 rounded-full opacity-20 animate-pulse"></div>
+                    <div class="absolute -bottom-4 -right-4 w-16 h-16 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-full opacity-20 animate-pulse delay-1000"></div>
+                    
+                    <div class="relative z-10">
+                        <h2 class="text-4xl md:text-5xl font-bold mb-8 bg-gradient-to-r from-indigo-600 via-purple-600 to-cyan-600 bg-clip-text text-transparent health-tech-title" data-lang="fr">Health Technologie</h2>
+                        <h2 class="text-4xl md:text-5xl font-bold mb-8 bg-gradient-to-r from-indigo-600 via-purple-600 to-cyan-600 bg-clip-text text-transparent health-tech-title hidden" data-lang="ar">تكنولوجيا الصحة</h2>
+                        
+                        <div class="space-y-6">
+                            <div class="tech-feature bg-white/80 backdrop-blur-sm p-6 rounded-xl border border-white/50 shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-1">
+                                <div class="flex items-start space-x-4">
+                                    <div class="w-12 h-12 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-lg flex items-center justify-center text-white shadow-lg">
+                                        <i class="fas fa-brain text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-xl font-bold text-indigo-900 mb-2" data-lang="fr">Intelligence Artificielle</h3>
+                                        <h3 class="text-xl font-bold text-indigo-900 mb-2 hidden" data-lang="ar">الذكاء الاصطناعي</h3>
+                                        <p class="text-gray-700" data-lang="fr">IA avancée pour le diagnostic précoce et l'analyse prédictive de la santé.</p>
+                                        <p class="text-gray-700 hidden" data-lang="ar">ذكاء اصطناعي متقدم للتشخيص المبكر والتحليل التنبؤي للصحة.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="tech-feature bg-white/80 backdrop-blur-sm p-6 rounded-xl border border-white/50 shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-1">
+                                <div class="flex items-start space-x-4">
+                                    <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-lg flex items-center justify-center text-white shadow-lg">
+                                        <i class="fas fa-cloud text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-xl font-bold text-indigo-900 mb-2" data-lang="fr">Cloud Sécurisé</h3>
+                                        <h3 class="text-xl font-bold text-indigo-900 mb-2 hidden" data-lang="ar">سحابة آمنة</h3>
+                                        <p class="text-gray-700" data-lang="fr">Infrastructure cloud de niveau bancaire avec chiffrement AES-256.</p>
+                                        <p class="text-gray-700 hidden" data-lang="ar">بنية تحتية سحابية بمستوى البنوك مع تشفير AES-256.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="tech-feature bg-white/80 backdrop-blur-sm p-6 rounded-xl border border-white/50 shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-1">
+                                <div class="flex items-start space-x-4">
+                                    <div class="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-600 rounded-lg flex items-center justify-center text-white shadow-lg">
+                                        <i class="fas fa-mobile-alt text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-xl font-bold text-indigo-900 mb-2" data-lang="fr">Mobile First</h3>
+                                        <h3 class="text-xl font-bold text-indigo-900 mb-2 hidden" data-lang="ar">موبايل أولاً</h3>
+                                        <p class="text-gray-700" data-lang="fr">Application native optimisée pour tous les appareils mobiles.</p>
+                                        <p class="text-gray-700 hidden" data-lang="ar">تطبيق أصلي محسن لجميع الأجهزة المحمولة.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-8 flex flex-wrap gap-4">
+                            <div class="bg-gradient-to-r from-indigo-500 to-purple-600 p-4 rounded-xl text-white text-center shadow-lg">
+                                <div class="text-2xl font-bold">99.9%</div>
+                                <div class="text-sm" data-lang="fr">Disponibilité</div>
+                                <div class="text-sm hidden" data-lang="ar">التوفر</div>
+                            </div>
+                            <div class="bg-gradient-to-r from-blue-500 to-cyan-600 p-4 rounded-xl text-white text-center shadow-lg">
+                                <div class="text-2xl font-bold">256-bit</div>
+                                <div class="text-sm" data-lang="fr">Chiffrement</div>
+                                <div class="text-sm hidden" data-lang="ar">التشفير</div>
+                            </div>
+                            <div class="bg-gradient-to-r from-green-500 to-emerald-600 p-4 rounded-xl text-white text-center shadow-lg">
+                                <div class="text-2xl font-bold">24/7</div>
+                                <div class="text-sm" data-lang="fr">Support</div>
+                                <div class="text-sm hidden" data-lang="ar">الدعم</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                             <div class="text-3xl font-bold text-indigo-600">100+</div>
                             <div class="text-gray-600" data-lang="fr">Professionnels</div>
                             <div class="text-gray-600 hidden" data-lang="ar">متخصصين</div>
@@ -1455,6 +1958,201 @@
         // Initialize first dot as active
         dots[0].classList.remove('bg-white/50');
         dots[0].classList.add('bg-white');
+
+        // Modern FAQ Functionality
+        const faqItems = document.querySelectorAll('.faq-item');
+        
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            const answer = item.querySelector('.faq-answer');
+            const icon = item.querySelector('.faq-icon i');
+            
+            question.addEventListener('click', () => {
+                const isActive = item.classList.contains('active');
+                
+                // Close all other FAQ items
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('active');
+                        const otherAnswer = otherItem.querySelector('.faq-answer');
+                        const otherIcon = otherItem.querySelector('.faq-icon i');
+                        otherAnswer.style.maxHeight = '0';
+                        otherIcon.style.transform = 'rotate(0deg)';
+                    }
+                });
+                
+                // Toggle current item
+                if (isActive) {
+                    item.classList.remove('active');
+                    answer.style.maxHeight = '0';
+                    icon.style.transform = 'rotate(0deg)';
+                } else {
+                    item.classList.add('active');
+                    answer.style.maxHeight = answer.scrollHeight + 'px';
+                    icon.style.transform = 'rotate(45deg)';
+                }
+            });
+        });
+
+        // GSAP Animations
+        gsap.registerPlugin(ScrollTrigger);
+        
+        // FAQ Section Animations
+        gsap.from('.faq-title', {
+            scrollTrigger: {
+                trigger: '#faq',
+                start: 'top 80%',
+                end: 'bottom 20%',
+                toggleActions: 'play none none reverse'
+            },
+            y: 50,
+            opacity: 0,
+            duration: 1,
+            ease: 'power3.out'
+        });
+        
+        gsap.from('.faq-subtitle', {
+            scrollTrigger: {
+                trigger: '#faq',
+                start: 'top 80%',
+                end: 'bottom 20%',
+                toggleActions: 'play none none reverse'
+            },
+            y: 30,
+            opacity: 0,
+            duration: 1,
+            delay: 0.2,
+            ease: 'power3.out'
+        });
+        
+        gsap.from('.faq-item', {
+            scrollTrigger: {
+                trigger: '#faq',
+                start: 'top 80%',
+                end: 'bottom 20%',
+                toggleActions: 'play none none reverse'
+            },
+            y: 50,
+            opacity: 0,
+            duration: 0.8,
+            stagger: 0.1,
+            ease: 'power3.out'
+        });
+        
+        // Features Section Animations
+        gsap.from('.features-title', {
+            scrollTrigger: {
+                trigger: '#features',
+                start: 'top 80%',
+                end: 'bottom 20%',
+                toggleActions: 'play none none reverse'
+            },
+            y: 50,
+            opacity: 0,
+            duration: 1,
+            ease: 'power3.out'
+        });
+        
+        gsap.from('.features-subtitle', {
+            scrollTrigger: {
+                trigger: '#features',
+                start: 'top 80%',
+                end: 'bottom 20%',
+                toggleActions: 'play none none reverse'
+            },
+            y: 30,
+            opacity: 0,
+            duration: 1,
+            delay: 0.2,
+            ease: 'power3.out'
+        });
+        
+        gsap.from('.feature-card-3d', {
+            scrollTrigger: {
+                trigger: '#features',
+                start: 'top 80%',
+                end: 'bottom 20%',
+                toggleActions: 'play none none reverse'
+            },
+            y: 100,
+            opacity: 0,
+            duration: 1,
+            stagger: 0.15,
+            ease: 'power3.out'
+        });
+        
+        // Health Tech Section Animations
+        gsap.from('.health-tech-title', {
+            scrollTrigger: {
+                trigger: '#about',
+                start: 'top 80%',
+                end: 'bottom 20%',
+                toggleActions: 'play none none reverse'
+            },
+            y: 50,
+            opacity: 0,
+            duration: 1,
+            ease: 'power3.out'
+        });
+        
+        gsap.from('.tech-feature', {
+            scrollTrigger: {
+                trigger: '#about',
+                start: 'top 80%',
+                end: 'bottom 20%',
+                toggleActions: 'play none none reverse'
+            },
+            x: -100,
+            opacity: 0,
+            duration: 0.8,
+            stagger: 0.2,
+            ease: 'power3.out'
+        });
+        
+        // Floating Elements Animation
+        gsap.to('.floating-shape', {
+            y: -20,
+            rotation: 360,
+            duration: 6,
+            ease: 'power2.inOut',
+            yoyo: true,
+            repeat: -1,
+            stagger: 1
+        });
+        
+        // Particle Animation
+        gsap.to('.particle', {
+            y: -window.innerHeight,
+            duration: 8,
+            ease: 'none',
+            repeat: -1,
+            stagger: 2
+        });
+        
+        // Magnetic Hover Effect
+        document.querySelectorAll('.feature-card-3d, .tech-feature, .faq-item').forEach(element => {
+            element.addEventListener('mousemove', (e) => {
+                const rect = element.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+                
+                gsap.to(element, {
+                    x: x * 0.1,
+                    y: y * 0.1,
+                    duration: 0.3,
+                    ease: 'power2.out'
+                });
+            });
+            
+            element.addEventListener('mouseleave', () => {
+                gsap.to(element, {
+                    x: 0,
+                    y: 0,
+                    duration: 0.3,
+                    ease: 'power2.out'
+                });
+            });
+        });
 
         // Enhanced Back to Top Button
         const backToTopButton = document.getElementById('backToTop');
