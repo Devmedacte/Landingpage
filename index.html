@@ -1238,6 +1238,18 @@
             });
         });
 
+        // Pré-inscription Form Handling
+        document.querySelectorAll('[href="https://forms.gle/MjANBjHoxBYoAAEV7"]').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                // Here you can add any pre-submission logic
+                // For example, tracking the click event
+                console.log('Pré-inscription clicked');
+                // Then proceed to open the form
+                window.open(link.href, '_blank', 'noopener,noreferrer');
+            });
+        });
+
         // Mobile Menu Toggle
         const mobileMenuButton = document.getElementById('mobileMenuButton');
         const mobileMenu = document.getElementById('mobileMenu');
@@ -1259,9 +1271,13 @@
             document.body.style.overflow = ''; // Restore scrolling
         });
         
-        // Close menu when clicking on navigation links
+        // Close menu when clicking on navigation links (except external links)
         document.querySelectorAll('#mobileMenu nav a').forEach(link => {
             link.addEventListener('click', () => {
+                // Don't close menu for external links (they open in new tab)
+                if (!link.href.startsWith('http') || link.href.includes('forms.gle')) {
+                    return;
+                }
                 mobileMenu.classList.add('hidden');
                 document.body.style.overflow = '';
             });
