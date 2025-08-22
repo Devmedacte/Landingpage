@@ -459,8 +459,8 @@
     <!-- Enhanced Header with Morocco Cities -->
     <header class="container mx-auto px-4 py-6 flex justify-between items-center relative z-10">
         <div class="flex items-center">
-            <div class="w-12 h-12 bg-gradient-to-br from-indigo-600 to-purple-600 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg">
-                <i class="fas fa-heartbeat"></i>
+            <div class="w-12 h-12 flex items-center justify-center shadow-lg">
+                <img src="logo.svg" alt="Medacte Logo" class="w-full h-full">
             </div>
             <div class="ml-3">
                 <h1 class="text-2xl font-bold text-indigo-800 gradient-text" data-lang="fr">Medacte</h1>
@@ -488,6 +488,18 @@
             </a>
             <a href="#features" class="font-medium hover:text-indigo-600 transition-all hover:scale-105 hidden" data-lang="ar">
                 <i class="fas fa-star mr-1"></i>الميزات
+            </a>
+            <a href="#morocco-map" class="font-medium hover:text-indigo-600 transition-all hover:scale-105" data-lang="fr">
+                <i class="fas fa-map-marker-alt mr-1"></i>Carte
+            </a>
+            <a href="#morocco-map" class="font-medium hover:text-indigo-600 transition-all hover:scale-105 hidden" data-lang="ar">
+                <i class="fas fa-map-marker-alt mr-1"></i>الخريطة
+            </a>
+            <a href="#faq" class="font-medium hover:text-indigo-600 transition-all hover:scale-105" data-lang="fr">
+                <i class="fas fa-question-circle mr-1"></i>FAQ
+            </a>
+            <a href="#faq" class="font-medium hover:text-indigo-600 transition-all hover:scale-105 hidden" data-lang="ar">
+                <i class="fas fa-question-circle mr-1"></i>الأسئلة الشائعة
             </a>
             <a href="#about" class="font-medium hover:text-indigo-600 transition-all hover:scale-105" data-lang="fr">
                 <i class="fas fa-info-circle mr-1"></i>À propos
@@ -528,6 +540,18 @@
             </a>
             <a href="#features" class="text-xl font-medium hover:text-indigo-600 transition-all hover:scale-105 hidden" data-lang="ar">
                 <i class="fas fa-star mr-2"></i>الميزات
+            </a>
+            <a href="#morocco-map" class="text-xl font-medium hover:text-indigo-600 transition-all hover:scale-105" data-lang="fr">
+                <i class="fas fa-map-marker-alt mr-2"></i>Carte
+            </a>
+            <a href="#morocco-map" class="text-xl font-medium hover:text-indigo-600 transition-all hover:scale-105 hidden" data-lang="ar">
+                <i class="fas fa-map-marker-alt mr-2"></i>الخريطة
+            </a>
+            <a href="#faq" class="text-xl font-medium hover:text-indigo-600 transition-all hover:scale-105" data-lang="fr">
+                <i class="fas fa-question-circle mr-2"></i>FAQ
+            </a>
+            <a href="#faq" class="text-xl font-medium hover:text-indigo-600 transition-all hover:scale-105 hidden" data-lang="ar">
+                <i class="fas fa-question-circle mr-2"></i>الأسئلة الشائعة
             </a>
             <a href="#about" class="text-xl font-medium hover:text-indigo-600 transition-all hover:scale-105" data-lang="fr">
                 <i class="fas fa-info-circle mr-2"></i>À propos
@@ -702,6 +726,243 @@
                     <h3 class="text-xl font-bold mb-3 hidden" data-lang="ar">حماية البيانات</h3>
                     <p class="text-gray-600" data-lang="fr">Vos données médicales sont cryptées et protégées.</p>
                     <p class="text-gray-600 hidden" data-lang="ar">بياناتك الطبية مشفرة ومحمية.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Morocco Map Section -->
+    <section id="morocco-map" class="py-20 bg-gradient-to-br from-indigo-50 to-purple-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-indigo-900 scroll-animate" data-lang="fr">Disponible dans tout le Maroc</h2>
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-indigo-900 hidden scroll-animate" data-lang="ar">متاح في جميع أنحاء المغرب</h2>
+            <p class="text-xl text-center mb-12 max-w-2xl mx-auto text-gray-600 scroll-animate" data-lang="fr">Découvrez où Medacte est disponible et trouvez des professionnels de santé près de chez vous</p>
+            <p class="text-xl text-center mb-12 max-w-2xl mx-auto text-gray-600 hidden scroll-animate" data-lang="ar">اكتشف أين متاح ميداكت واعثر على متخصصي الرعاية الصحية بالقرب منك</p>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Interactive Map -->
+                <div class="relative">
+                    <div id="morocco-interactive-map" class="w-full h-96 rounded-2xl shadow-xl overflow-hidden glass-effect">
+                        <!-- Map will be loaded here via JavaScript -->
+                        <div class="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-indigo-100 to-purple-100">
+                            <div class="text-center">
+                                <i class="fas fa-map-marked-alt text-6xl text-indigo-600 mb-4"></i>
+                                <p class="text-indigo-800 font-medium" data-lang="fr">Carte interactive du Maroc</p>
+                                <p class="text-indigo-800 font-medium hidden" data-lang="ar">خريطة تفاعلية للمغرب</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Cities List -->
+                <div class="space-y-6">
+                    <h3 class="text-2xl font-bold text-indigo-800 mb-6" data-lang="fr">Villes principales</h3>
+                    <h3 class="text-2xl font-bold text-indigo-800 mb-6 hidden" data-lang="ar">المدن الرئيسية</h3>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="city-card p-4 rounded-xl bg-white shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer" data-city="casablanca">
+                            <div class="flex items-center">
+                                <div class="w-3 h-3 bg-indigo-600 rounded-full mr-3"></div>
+                                <div>
+                                    <h4 class="font-bold text-indigo-800">Casablanca</h4>
+                                    <p class="text-sm text-gray-600" data-lang="fr">+150 médecins</p>
+                                    <p class="text-sm text-gray-600 hidden" data-lang="ar">+150 طبيب</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="city-card p-4 rounded-xl bg-white shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer" data-city="rabat">
+                            <div class="flex items-center">
+                                <div class="w-3 h-3 bg-purple-600 rounded-full mr-3"></div>
+                                <div>
+                                    <h4 class="font-bold text-indigo-800">Rabat</h4>
+                                    <p class="text-sm text-gray-600" data-lang="fr">+120 médecins</p>
+                                    <p class="text-sm text-gray-600 hidden" data-lang="ar">+120 طبيب</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="city-card p-4 rounded-xl bg-white shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer" data-city="marrakech">
+                            <div class="flex items-center">
+                                <div class="w-3 h-3 bg-cyan-600 rounded-full mr-3"></div>
+                                <div>
+                                    <h4 class="font-bold text-indigo-800">Marrakech</h4>
+                                    <p class="text-sm text-gray-600" data-lang="fr">+100 médecins</p>
+                                    <p class="text-sm text-gray-600 hidden" data-lang="ar">+100 طبيب</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="city-card p-4 rounded-xl bg-white shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer" data-city="fes">
+                            <div class="flex items-center">
+                                <div class="w-3 h-3 bg-emerald-600 rounded-full mr-3"></div>
+                                <div>
+                                    <h4 class="font-bold text-indigo-800">Fès</h4>
+                                    <p class="text-sm text-gray-600" data-lang="fr">+80 médecins</p>
+                                    <p class="text-sm text-gray-600 hidden" data-lang="ar">+80 طبيب</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="city-card p-4 rounded-xl bg-white shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer" data-city="tanger">
+                            <div class="flex items-center">
+                                <div class="w-3 h-3 bg-orange-600 rounded-full mr-3"></div>
+                                <div>
+                                    <h4 class="font-bold text-indigo-800">Tanger</h4>
+                                    <p class="text-sm text-gray-600" data-lang="fr">+70 médecins</p>
+                                    <p class="text-sm text-gray-600 hidden" data-lang="ar">+70 طبيب</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="city-card p-4 rounded-xl bg-white shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer" data-city="agadir">
+                            <div class="flex items-center">
+                                <div class="w-3 h-3 bg-pink-600 rounded-full mr-3"></div>
+                                <div>
+                                    <h4 class="font-bold text-indigo-800">Agadir</h4>
+                                    <p class="text-sm text-gray-600" data-lang="fr">+60 médecins</p>
+                                    <p class="text-sm text-gray-600 hidden" data-lang="ar">+60 طبيب</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8 p-4 bg-indigo-50 rounded-xl">
+                        <p class="text-sm text-indigo-700" data-lang="fr">
+                            <i class="fas fa-info-circle mr-2"></i>
+                            <strong>Bientôt disponible</strong> dans toutes les régions du Maroc
+                        </p>
+                        <p class="text-sm text-indigo-700 hidden" data-lang="ar">
+                            <i class="fas fa-info-circle mr-2"></i>
+                            <strong>قريباً متاح</strong> في جميع مناطق المغرب
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-20 bg-white bg-opacity-70 backdrop-blur-sm">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-indigo-900 scroll-animate" data-lang="fr">Questions fréquentes</h2>
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-indigo-900 hidden scroll-animate" data-lang="ar">الأسئلة الشائعة</h2>
+            <p class="text-xl text-center mb-12 max-w-2xl mx-auto text-gray-600 scroll-animate" data-lang="fr">Trouvez rapidement les réponses à vos questions sur Medacte</p>
+            <p class="text-xl text-center mb-12 max-w-2xl mx-auto text-gray-600 hidden scroll-animate" data-lang="ar">اعثر بسرعة على إجابات لأسئلتك حول ميداكت</p>
+            
+            <!-- FAQ Search -->
+            <div class="max-w-md mx-auto mb-12">
+                <div class="relative">
+                    <input type="text" id="faqSearch" placeholder="Rechercher une question..." class="w-full px-4 py-3 pl-12 rounded-full border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 transition-all" data-lang="fr">
+                    <input type="text" id="faqSearchAr" placeholder="البحث عن سؤال..." class="w-full px-4 py-3 pl-12 rounded-full border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 transition-all hidden" data-lang="ar">
+                    <i class="fas fa-search absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                </div>
+            </div>
+            
+            <!-- FAQ Accordion -->
+            <div class="max-w-4xl mx-auto space-y-4" id="faqAccordion">
+                <!-- FAQ Item 1 -->
+                <div class="faq-item bg-white rounded-xl shadow-lg overflow-hidden">
+                    <button class="faq-question w-full px-6 py-4 text-left flex justify-between items-center hover:bg-indigo-50 transition-all">
+                        <h3 class="font-semibold text-indigo-800" data-lang="fr">Comment fonctionne Medacte ?</h3>
+                        <h3 class="font-semibold text-indigo-800 hidden" data-lang="ar">كيف يعمل ميداكت؟</h3>
+                        <i class="fas fa-chevron-down text-indigo-600 transition-transform"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-4 hidden">
+                        <p class="text-gray-600" data-lang="fr">Medacte est une plateforme de santé digitale qui connecte patients et professionnels de santé. Vous pouvez prendre rendez-vous, consulter en ligne, commander des médicaments et accéder à votre dossier médical en toute sécurité.</p>
+                        <p class="text-gray-600 hidden" data-lang="ar">ميداكت هو منصة صحية رقمية تربط المرضى بمتخصصي الرعاية الصحية. يمكنك حجز المواعيد والاستشارة عبر الإنترنت وطلب الأدوية والوصول إلى ملفك الطبي بأمان.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 2 -->
+                <div class="faq-item bg-white rounded-xl shadow-lg overflow-hidden">
+                    <button class="faq-question w-full px-6 py-4 text-left flex justify-between items-center hover:bg-indigo-50 transition-all">
+                        <h3 class="font-semibold text-indigo-800" data-lang="fr">Quels types de médecins sont disponibles ?</h3>
+                        <h3 class="font-semibold text-indigo-800 hidden" data-lang="ar">ما أنواع الأطباء المتاحين؟</h3>
+                        <i class="fas fa-chevron-down text-indigo-600 transition-transform"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-4 hidden">
+                        <p class="text-gray-600" data-lang="fr">Nous proposons une large gamme de spécialités : médecine générale, cardiologie, dermatologie, pédiatrie, gynécologie, psychiatrie, et bien d'autres. Tous nos médecins sont certifiés et expérimentés.</p>
+                        <p class="text-gray-600 hidden" data-lang="ar">نقدم مجموعة واسعة من التخصصات: الطب العام وأمراض القلب والأمراض الجلدية وطب الأطفال وأمراض النساء والطب النفسي وغيرها الكثير. جميع أطبائنا معتمدون وذوو خبرة.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 3 -->
+                <div class="faq-item bg-white rounded-xl shadow-lg overflow-hidden">
+                    <button class="faq-question w-full px-6 py-4 text-left flex justify-between items-center hover:bg-indigo-50 transition-all">
+                        <h3 class="font-semibold text-indigo-800" data-lang="fr">Comment prendre rendez-vous en ligne ?</h3>
+                        <h3 class="font-semibold text-indigo-800 hidden" data-lang="ar">كيف أحجز موعداً عبر الإنترنت؟</h3>
+                        <i class="fas fa-chevron-down text-indigo-600 transition-transform"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-4 hidden">
+                        <p class="text-gray-600" data-lang="fr">C'est simple ! Choisissez votre spécialité, sélectionnez un médecin, choisissez une date et heure disponibles, et confirmez votre rendez-vous. Vous recevrez une confirmation par email et SMS.</p>
+                        <p class="text-gray-600 hidden" data-lang="ar">الأمر بسيط! اختر تخصصك وحدد طبيباً واختر تاريخاً ووقتاً متاحين وأكد موعدك. ستتلقى تأكيداً عبر البريد الإلكتروني والرسائل النصية.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 4 -->
+                <div class="faq-item bg-white rounded-xl shadow-lg overflow-hidden">
+                    <button class="faq-question w-full px-6 py-4 text-left flex justify-between items-center hover:bg-indigo-50 transition-all">
+                        <h3 class="font-semibold text-indigo-800" data-lang="fr">La télémedecine est-elle sécurisée ?</h3>
+                        <h3 class="font-semibold text-indigo-800 hidden" data-lang="ar">هل التطبيب عن بعد آمن؟</h3>
+                        <i class="fas fa-chevron-down text-indigo-600 transition-transform"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-4 hidden">
+                        <p class="text-gray-600" data-lang="fr">Absolument ! Toutes nos consultations sont cryptées et conformes aux standards de sécurité internationaux. Vos données médicales sont protégées et confidentielles.</p>
+                        <p class="text-gray-600 hidden" data-lang="ar">بالتأكيد! جميع استشاراتنا مشفرة ومتوافقة مع معايير الأمان الدولية. بياناتك الطبية محمية وسرية.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 5 -->
+                <div class="faq-item bg-white rounded-xl shadow-lg overflow-hidden">
+                    <button class="faq-question w-full px-6 py-4 text-left flex justify-between items-center hover:bg-indigo-50 transition-all">
+                        <h3 class="font-semibold text-indigo-800" data-lang="fr">Dans quelles villes Medacte est-il disponible ?</h3>
+                        <h3 class="font-semibold text-indigo-800 hidden" data-lang="ar">في أي مدن متاح ميداكت؟</h3>
+                        <i class="fas fa-chevron-down text-indigo-600 transition-transform"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-4 hidden">
+                        <p class="text-gray-600" data-lang="fr">Nous sommes actuellement disponibles dans les principales villes du Maroc : Casablanca, Rabat, Marrakech, Fès, Tanger, et Agadir. Nous étendons rapidement notre couverture à d'autres régions.</p>
+                        <p class="text-gray-600 hidden" data-lang="ar">نحن متاحون حالياً في المدن الرئيسية في المغرب: الدار البيضاء والرباط ومراكش وفاس وطنجة وأكادير. نحن نوسع تغطيتنا بسرعة إلى مناطق أخرى.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 6 -->
+                <div class="faq-item bg-white rounded-xl shadow-lg overflow-hidden">
+                    <button class="faq-question w-full px-6 py-4 text-left flex justify-between items-center hover:bg-indigo-50 transition-all">
+                        <h3 class="font-semibold text-indigo-800" data-lang="fr">Comment fonctionne la pharmacie en ligne ?</h3>
+                        <h3 class="font-semibold text-indigo-800 hidden" data-lang="ar">كيف تعمل الصيدلية الإلكترونية؟</h3>
+                        <i class="fas fa-chevron-down text-indigo-600 transition-transform"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-4 hidden">
+                        <p class="text-gray-600" data-lang="fr">Commandez vos médicaments sur ordonnance ou en vente libre. Nous livrons à domicile dans un délai de 2-4 heures dans les grandes villes, ou par courrier express partout au Maroc.</p>
+                        <p class="text-gray-600 hidden" data-lang="ar">اطلب أدويتك بوصفة طبية أو بدون وصفة. نقدم التوصيل إلى المنزل خلال 2-4 ساعات في المدن الكبرى، أو عبر البريد السريع في جميع أنحاء المغرب.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 7 -->
+                <div class="faq-item bg-white rounded-xl shadow-lg overflow-hidden">
+                    <button class="faq-question w-full px-6 py-4 text-left flex justify-between items-center hover:bg-indigo-50 transition-all">
+                        <h3 class="font-semibold text-indigo-800" data-lang="fr">Quels sont les coûts des consultations ?</h3>
+                        <h3 class="font-semibold text-indigo-800 hidden" data-lang="ar">ما هي تكلفة الاستشارات؟</h3>
+                        <i class="fas fa-chevron-down text-indigo-600 transition-transform"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-4 hidden">
+                        <p class="text-gray-600" data-lang="fr">Nos tarifs sont transparents et compétitifs. Les consultations varient entre 150 et 300 MAD selon la spécialité. Nous proposons également des forfaits familiaux et des réductions pour les étudiants.</p>
+                        <p class="text-gray-600 hidden" data-lang="ar">أسعارنا شفافة ومنافسة. تتراوح الاستشارات بين 150 و300 درهم حسب التخصص. نقدم أيضاً باقات عائلية وخصومات للطلاب.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 8 -->
+                <div class="faq-item bg-white rounded-xl shadow-lg overflow-hidden">
+                    <button class="faq-question w-full px-6 py-4 text-left flex justify-between items-center hover:bg-indigo-50 transition-all">
+                        <h3 class="font-semibold text-indigo-800" data-lang="fr">Comment contacter le support client ?</h3>
+                        <h3 class="font-semibold text-indigo-800 hidden" data-lang="ar">كيف أتواصل مع خدمة العملاء؟</h3>
+                        <i class="fas fa-chevron-down text-indigo-600 transition-transform"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-4 hidden">
+                        <p class="text-gray-600" data-lang="fr">Notre équipe support est disponible 24h/24. Contactez-nous par chat en ligne, email à support@medacte.com, ou par téléphone au +212-773-125597.</p>
+                        <p class="text-gray-600 hidden" data-lang="ar">فريق الدعم لدينا متاح على مدار الساعة. اتصل بنا عبر الدردشة عبر الإنترنت أو البريد الإلكتروني على support@medacte.com أو عبر الهاتف على +212-773-125597.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1370,6 +1631,227 @@
         }
 
         animate();
+
+        // Interactive Morocco Map
+        const moroccoMap = document.getElementById('morocco-interactive-map');
+        const cityCards = document.querySelectorAll('.city-card');
+        
+        // City data with coordinates and information
+        const cities = {
+            casablanca: {
+                name: 'Casablanca',
+                nameAr: 'الدار البيضاء',
+                doctors: '+150 médecins',
+                doctorsAr: '+150 طبيب',
+                description: 'Centre économique du Maroc',
+                descriptionAr: 'المركز الاقتصادي للمغرب',
+                color: '#4F46E5'
+            },
+            rabat: {
+                name: 'Rabat',
+                nameAr: 'الرباط',
+                doctors: '+120 médecins',
+                doctorsAr: '+120 طبيب',
+                description: 'Capitale administrative',
+                descriptionAr: 'العاصمة الإدارية',
+                color: '#7C3AED'
+            },
+            marrakech: {
+                name: 'Marrakech',
+                nameAr: 'مراكش',
+                doctors: '+100 médecins',
+                doctorsAr: '+100 طبيب',
+                description: 'Perle du Sud',
+                descriptionAr: 'لؤلؤة الجنوب',
+                color: '#06B6D4'
+            },
+            fes: {
+                name: 'Fès',
+                nameAr: 'فاس',
+                doctors: '+80 médecins',
+                doctorsAr: '+80 طبيب',
+                description: 'Capitale spirituelle',
+                descriptionAr: 'العاصمة الروحية',
+                color: '#10B981'
+            },
+            tanger: {
+                name: 'Tanger',
+                nameAr: 'طنجة',
+                doctors: '+70 médecins',
+                doctorsAr: '+70 طبيب',
+                description: 'Porte de l\'Europe',
+                descriptionAr: 'بوابة أوروبا',
+                color: '#F59E0B'
+            },
+            agadir: {
+                name: 'Agadir',
+                nameAr: 'أكادير',
+                doctors: '+60 médecins',
+                doctorsAr: '+60 طبيب',
+                description: 'Station balnéaire',
+                descriptionAr: 'منتجع ساحلي',
+                color: '#EC4899'
+            }
+        };
+
+        // Create interactive map visualization
+        function createMoroccoMap() {
+            const mapContainer = moroccoMap;
+            
+            // Create SVG map
+            const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+            svg.setAttribute('viewBox', '0 0 400 300');
+            svg.setAttribute('width', '100%');
+            svg.setAttribute('height', '100%');
+            svg.style.position = 'absolute';
+            svg.style.top = '0';
+            svg.style.left = '0';
+            
+            // Morocco outline (simplified)
+            const moroccoPath = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+            moroccoPath.setAttribute('d', 'M 50 50 L 350 50 L 350 250 L 50 250 Z');
+            moroccoPath.setAttribute('fill', '#E0E7FF');
+            moroccoPath.setAttribute('stroke', '#4F46E5');
+            moroccoPath.setAttribute('stroke-width', '2');
+            svg.appendChild(moroccoPath);
+            
+            // Add city markers
+            const cityPositions = {
+                casablanca: { x: 200, y: 120 },
+                rabat: { x: 180, y: 100 },
+                marrakech: { x: 220, y: 180 },
+                fes: { x: 250, y: 80 },
+                tanger: { x: 150, y: 60 },
+                agadir: { x: 120, y: 200 }
+            };
+            
+            Object.keys(cityPositions).forEach(city => {
+                const pos = cityPositions[city];
+                const cityData = cities[city];
+                
+                // City marker
+                const marker = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+                marker.setAttribute('cx', pos.x);
+                marker.setAttribute('cy', pos.y);
+                marker.setAttribute('r', '8');
+                marker.setAttribute('fill', cityData.color);
+                marker.setAttribute('stroke', '#fff');
+                marker.setAttribute('stroke-width', '2');
+                marker.setAttribute('data-city', city);
+                marker.style.cursor = 'pointer';
+                marker.style.transition = 'all 0.3s ease';
+                
+                // Pulse animation
+                marker.addEventListener('mouseenter', () => {
+                    marker.setAttribute('r', '12');
+                    marker.style.filter = 'drop-shadow(0 0 8px ' + cityData.color + ')';
+                });
+                
+                marker.addEventListener('mouseleave', () => {
+                    marker.setAttribute('r', '8');
+                    marker.style.filter = 'none';
+                });
+                
+                // City name label
+                const label = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+                label.setAttribute('x', pos.x);
+                label.setAttribute('y', pos.y - 15);
+                label.setAttribute('text-anchor', 'middle');
+                label.setAttribute('font-size', '12');
+                label.setAttribute('font-weight', 'bold');
+                label.setAttribute('fill', '#374151');
+                label.textContent = cityData.name;
+                
+                svg.appendChild(marker);
+                svg.appendChild(label);
+            });
+            
+            // Clear existing content and add SVG
+            mapContainer.innerHTML = '';
+            mapContainer.appendChild(svg);
+        }
+
+        // Initialize map
+        createMoroccoMap();
+
+        // City card interactions
+        cityCards.forEach(card => {
+            card.addEventListener('click', () => {
+                const city = card.getAttribute('data-city');
+                const cityData = cities[city];
+                
+                // Highlight card
+                cityCards.forEach(c => c.style.transform = 'scale(1)');
+                card.style.transform = 'scale(1.05)';
+                card.style.boxShadow = '0 20px 40px rgba(0,0,0,0.1)';
+                
+                // Show city info
+                console.log(`Selected: ${cityData.name} - ${cityData.description}`);
+            });
+            
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-2px)';
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0)';
+            });
+        });
+
+        // FAQ Functionality
+        const faqQuestions = document.querySelectorAll('.faq-question');
+        const faqSearch = document.getElementById('faqSearch');
+        const faqSearchAr = document.getElementById('faqSearchAr');
+        const faqItems = document.querySelectorAll('.faq-item');
+
+        // FAQ Accordion
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const icon = question.querySelector('i');
+                
+                // Close other answers
+                faqQuestions.forEach(q => {
+                    if (q !== question) {
+                        const otherAnswer = q.nextElementSibling;
+                        const otherIcon = q.querySelector('i');
+                        otherAnswer.classList.add('hidden');
+                        otherIcon.style.transform = 'rotate(0deg)';
+                    }
+                });
+                
+                // Toggle current answer
+                answer.classList.toggle('hidden');
+                icon.style.transform = answer.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)';
+            });
+        });
+
+        // FAQ Search functionality
+        function filterFAQ(searchTerm, language) {
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question h3');
+                const answer = item.querySelector('.faq-answer p');
+                const questionText = question.textContent.toLowerCase();
+                const answerText = answer.textContent.toLowerCase();
+                
+                if (questionText.includes(searchTerm.toLowerCase()) || answerText.includes(searchTerm.toLowerCase())) {
+                    item.style.display = 'block';
+                    item.style.opacity = '1';
+                } else {
+                    item.style.display = 'none';
+                    item.style.opacity = '0';
+                }
+            });
+        }
+
+        // Search event listeners
+        faqSearch.addEventListener('input', (e) => {
+            filterFAQ(e.target.value, 'fr');
+        });
+
+        faqSearchAr.addEventListener('input', (e) => {
+            filterFAQ(e.target.value, 'ar');
+        });
 
         // Enhanced Health Image Slider with Navigation
         const slider = document.getElementById('healthSlider');
