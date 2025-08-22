@@ -1,36 +1,110 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Medacte - Next Generation Health Platform
 
-## Getting Started
+Une plateforme de santé digitale de nouvelle génération au Maroc, construite avec les technologies les plus modernes.
 
-First, run the development server:
+## 🚀 Technologies Utilisées
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- **Next.js 14** - Framework React moderne
+- **TypeScript** - Typage statique
+- **Tailwind CSS** - Framework CSS utilitaire
+- **Framer Motion** - Animations fluides
+- **Three.js** - Graphiques 3D
+- **React Three Fiber** - Intégration Three.js avec React
+
+## 🏗️ Structure du Projet
+
+```
+src/
+├── app/
+│   ├── layout.tsx      # Layout principal
+│   ├── page.tsx        # Page d'accueil
+│   └── globals.css     # Styles globaux
+└── components/
+    ├── 3d/
+    │   └── MedacteLogo.tsx    # Logo 3D animé
+    └── sections/
+        ├── Header.tsx         # Navigation
+        ├── Hero.tsx          # Section principale
+        └── FAQ.tsx           # Questions fréquentes
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🛠️ Installation
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+# Cloner le projet
+git clone [repository-url]
+cd medacte-nextgen
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+# Installer les dépendances
+npm install
 
-## Learn More
+# Lancer le serveur de développement
+npm run dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+Ouvrez [http://localhost:3000](http://localhost:3000) dans votre navigateur.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📦 Scripts Disponibles
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- `npm run dev` - Serveur de développement
+- `npm run build` - Build de production
+- `npm run start` - Serveur de production
+- `npm run lint` - Vérification du code
 
-## Deploy on Vercel
+## 🎨 Fonctionnalités
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### ✅ Implémentées
+- **Header** avec navigation et sélecteur de langue
+- **Hero Section** avec animations et statistiques
+- **FAQ** interactive avec recherche et catégories
+- **Logo 3D** animé avec Three.js
+- **Design responsive** pour tous les appareils
+- **Animations fluides** avec Framer Motion
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### 🚧 En Développement
+- Section Services
+- Section À propos
+- Section Contact
+- Chat IA intégré
+- Système d'authentification
+
+## 🌐 Déploiement
+
+Le projet est optimisé pour le déploiement sur Vercel :
+
+```bash
+npm run build
+npm run start
+```
+
+## 📱 Compatibilité
+
+- ✅ Desktop (Chrome, Firefox, Safari, Edge)
+- ✅ Mobile (iOS Safari, Chrome Mobile)
+- ✅ Tablette (iPad, Android)
+
+## 🔧 Configuration
+
+### Variables d'Environnement
+```env
+NEXT_PUBLIC_SITE_URL=https://medacte.com
+NEXT_PUBLIC_GA_ID=your-google-analytics-id
+```
+
+## 📄 Licence
+
+© 2024 Medacte. Tous droits réservés.
+
+## 🤝 Contribution
+
+Pour contribuer au projet :
+
+1. Fork le repository
+2. Créez une branche feature (`git checkout -b feature/AmazingFeature`)
+3. Committez vos changements (`git commit -m 'Add some AmazingFeature'`)
+4. Push vers la branche (`git push origin feature/AmazingFeature`)
+5. Ouvrez une Pull Request
+
+---
+
+**Medacte** - L'avenir de la santé digitale au Maroc 🇲🇦

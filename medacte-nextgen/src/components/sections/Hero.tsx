@@ -73,7 +73,7 @@ export default function Hero() {
               transition={{ delay: 0.6, duration: 0.8 }}
               className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto lg:mx-0"
             >
-              Découvrez l'avenir de la santé avec Medacte. Télémedecine, IA, 
+              Découvrez l&apos;avenir de la santé avec Medacte. Télémedecine, IA, 
               pharmacie en ligne et bien plus encore, le tout en un seul endroit.
             </motion.p>
 

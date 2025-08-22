@@ -1,7 +1,7 @@
 'use client'
 
 import { Canvas, useFrame } from '@react-three/fiber'
-import { OrbitControls, Text, Sphere, Cylinder } from '@react-three/drei'
+import { OrbitControls, Sphere, Cylinder } from '@react-three/drei'
 import { useRef, useState } from 'react'
 import * as THREE from 'three'
 
@@ -141,6 +141,7 @@ function ParticleSystem() {
           count={particleCount}
           array={positions}
           itemSize={3}
+          args={[positions, 3]}
         />
       </bufferGeometry>
       <pointsMaterial
