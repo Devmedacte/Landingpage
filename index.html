@@ -100,7 +100,7 @@
             --error-color: #EF4444;
         }
         
-        /* Advanced Scroll Animations */
+        /* Modern Scroll Animations */
         .scroll-animate {
             opacity: 0;
             transform: translateY(30px);
@@ -109,36 +109,6 @@
         .scroll-animate.show {
             opacity: 1;
             transform: translateY(0);
-        }
-        
-        .scroll-animate-left {
-            opacity: 0;
-            transform: translateX(-50px);
-            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .scroll-animate-left.show {
-            opacity: 1;
-            transform: translateX(0);
-        }
-        
-        .scroll-animate-right {
-            opacity: 0;
-            transform: translateX(50px);
-            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .scroll-animate-right.show {
-            opacity: 1;
-            transform: translateX(0);
-        }
-        
-        .scroll-animate-scale {
-            opacity: 0;
-            transform: scale(0.8);
-            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .scroll-animate-scale.show {
-            opacity: 1;
-            transform: scale(1);
         }
         
         /* Glassmorphism 2.0 */
@@ -155,50 +125,11 @@
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
         
-        /* Neumorphism Elements */
-        .neumorphism {
-            background: linear-gradient(145deg, #ffffff, #e6e6e6);
-            box-shadow: 20px 20px 60px #d9d9d9, -20px -20px 60px #ffffff;
-            border-radius: 20px;
-        }
+
         
-        .neumorphism-inset {
-            background: linear-gradient(145deg, #e6e6e6, #ffffff);
-            box-shadow: inset 20px 20px 60px #d9d9d9, inset -20px -20px 60px #ffffff;
-        }
+
         
-        /* Advanced Hover Effects */
-        .feature-card {
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .feature-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transition: left 0.5s;
-        }
-        
-        .feature-card:hover::before {
-            left: 100%;
-        }
-        
-        .feature-card:hover {
-            transform: translateY(-15px) scale(1.02);
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-        }
-        
-        /* Parallax Effects */
-        .parallax-section {
-            position: relative;
-            overflow: hidden;
-        }
+
         
         /* Modern FAQ Animations */
         .faq-item {
@@ -505,19 +436,49 @@
         ::-webkit-scrollbar-thumb:hover {
             background: linear-gradient(45deg, var(--secondary-color), var(--accent-color));
         }
+        
+        /* RTL Support for Arabic */
+        .rtl {
+            direction: rtl;
         }
         
-        .parallax-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 120%;
-            background-size: cover;
-            background-position: center;
-            transform: translateZ(-1px) scale(2);
-            z-index: -1;
+        .rtl .mr-1 {
+            margin-right: 0 !important;
+            margin-left: 0.25rem !important;
         }
+        
+        .rtl .mr-2 {
+            margin-right: 0 !important;
+            margin-left: 0.5rem !important;
+        }
+        
+        .rtl .ml-1 {
+            margin-left: 0 !important;
+            margin-right: 0.25rem !important;
+        }
+        
+        .rtl .ml-2 {
+            margin-left: 0 !important;
+            margin-right: 0.5rem !important;
+        }
+        
+        .rtl .space-x-3 > * + * {
+            margin-left: 0 !important;
+            margin-right: 0.75rem !important;
+        }
+        
+        .rtl .space-x-6 > * + * {
+            margin-left: 0 !important;
+            margin-right: 1.5rem !important;
+        }
+        
+        .rtl .space-x-8 > * + * {
+            margin-left: 0 !important;
+            margin-right: 2rem !important;
+        }
+        }
+        
+
         
         /* AI Chat Interface - Fixed Position */
         .ai-chat-widget {
@@ -794,25 +755,25 @@
                 <i class="fas fa-star mr-1"></i>Fonctionnalités
             </a>
             <a href="#features" class="font-medium hover:text-indigo-600 transition-all hover:scale-105 hidden" data-lang="ar">
-                <i class="fas fa-star mr-1"></i>الميزات
+                <i class="fas fa-star ml-1"></i>الميزات
             </a>
             <a href="#faq" class="font-medium hover:text-indigo-600 transition-all hover:scale-105" data-lang="fr">
                 <i class="fas fa-question-circle mr-1"></i>FAQ
             </a>
             <a href="#faq" class="font-medium hover:text-indigo-600 transition-all hover:scale-105 hidden" data-lang="ar">
-                <i class="fas fa-question-circle mr-1"></i>الأسئلة الشائعة
+                <i class="fas fa-question-circle ml-1"></i>الأسئلة الشائعة
             </a>
             <a href="#about" class="font-medium hover:text-indigo-600 transition-all hover:scale-105" data-lang="fr">
                 <i class="fas fa-info-circle mr-1"></i>À propos
             </a>
             <a href="#about" class="font-medium hover:text-indigo-600 transition-all hover:scale-105 hidden" data-lang="ar">
-                <i class="fas fa-info-circle mr-1"></i>حول
+                <i class="fas fa-info-circle ml-1"></i>حول
             </a>
             <a href="#contact" class="font-medium hover:text-indigo-600 transition-all hover:scale-105" data-lang="fr">
                 <i class="fas fa-envelope mr-1"></i>Contact
             </a>
             <a href="#contact" class="font-medium hover:text-indigo-600 transition-all hover:scale-105 hidden" data-lang="ar">
-                <i class="fas fa-envelope mr-1"></i>اتصل بنا
+                <i class="fas fa-envelope ml-1"></i>اتصل بنا
             </a>
         </nav>
         
@@ -840,25 +801,25 @@
                 <i class="fas fa-star mr-2"></i>Fonctionnalités
             </a>
             <a href="#features" class="text-xl font-medium hover:text-indigo-600 transition-all hover:scale-105 hidden" data-lang="ar">
-                <i class="fas fa-star mr-2"></i>الميزات
+                <i class="fas fa-star ml-2"></i>الميزات
             </a>
             <a href="#faq" class="text-xl font-medium hover:text-indigo-600 transition-all hover:scale-105" data-lang="fr">
                 <i class="fas fa-question-circle mr-2"></i>FAQ
             </a>
             <a href="#faq" class="text-xl font-medium hover:text-indigo-600 transition-all hover:scale-105 hidden" data-lang="ar">
-                <i class="fas fa-question-circle mr-2"></i>الأسئلة الشائعة
+                <i class="fas fa-question-circle ml-2"></i>الأسئلة الشائعة
             </a>
             <a href="#about" class="text-xl font-medium hover:text-indigo-600 transition-all hover:scale-105" data-lang="fr">
                 <i class="fas fa-info-circle mr-2"></i>À propos
             </a>
             <a href="#about" class="text-xl font-medium hover:text-indigo-600 transition-all hover:scale-105 hidden" data-lang="ar">
-                <i class="fas fa-info-circle mr-2"></i>حول
+                <i class="fas fa-info-circle ml-2"></i>حول
             </a>
             <a href="#contact" class="text-xl font-medium hover:text-indigo-600 transition-all hover:scale-105" data-lang="fr">
                 <i class="fas fa-envelope mr-2"></i>Contact
             </a>
             <a href="#contact" class="text-xl font-medium hover:text-indigo-600 transition-all hover:scale-105 hidden" data-lang="ar">
-                <i class="fas fa-envelope mr-2"></i>اتصل بنا
+                <i class="fas fa-envelope ml-2"></i>اتصل بنا
             </a>
         </nav>
         
@@ -879,13 +840,23 @@
     <section class="hero-section min-h-screen flex items-center relative">
         <div class="container mx-auto px-4 hero-content relative z-10">
             <div class="max-w-4xl mx-auto text-center scroll-animate">
-                <div class="mb-6">
-                    <span class="bg-gradient-to-r from-indigo-100 to-purple-100 text-indigo-800 px-4 py-2 rounded-full text-sm font-medium glass-effect" data-lang="fr">
-                        <i class="fas fa-robot mr-2"></i>AI powered • Disponible au Maroc
-                    </span>
-                    <span class="bg-gradient-to-r from-indigo-100 to-purple-100 text-indigo-800 px-4 py-2 rounded-full text-sm font-medium glass-effect hidden" data-lang="ar">
-                        <i class="fas fa-robot mr-2"></i>مدعوم بالذكاء الاصطناعي • متاح في المغرب
-                    </span>
+                <div class="mb-8">
+                    <div class="inline-flex items-center space-x-3 bg-gradient-to-r from-indigo-500/10 to-purple-500/10 backdrop-blur-sm border border-indigo-200/50 px-6 py-3 rounded-full text-sm font-medium text-indigo-700 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105" data-lang="fr">
+                        <div class="w-8 h-8 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-full flex items-center justify-center text-white shadow-md">
+                            <i class="fas fa-robot text-sm"></i>
+                        </div>
+                        <span class="font-semibold">AI Powered</span>
+                        <div class="w-1 h-1 bg-indigo-400 rounded-full"></div>
+                        <span>Disponible au Maroc</span>
+                    </div>
+                    <div class="inline-flex items-center space-x-3 bg-gradient-to-r from-indigo-500/10 to-purple-500/10 backdrop-blur-sm border border-indigo-200/50 px-6 py-3 rounded-full text-sm font-medium text-indigo-700 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 hidden" data-lang="ar">
+                        <div class="w-8 h-8 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-full flex items-center justify-center text-white shadow-md">
+                            <i class="fas fa-robot text-sm"></i>
+                        </div>
+                        <span class="font-semibold">مدعوم بالذكاء الاصطناعي</span>
+                        <div class="w-1 h-1 bg-indigo-400 rounded-full"></div>
+                        <span>متاح في المغرب</span>
+                    </div>
                 </div>
                 
                 <h2 class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 gradient-text leading-tight" data-lang="fr">
@@ -907,17 +878,17 @@
                 </p>
                 
                 <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6 justify-center">
-                    <a href="https://forms.gle/tvqkcwZDCqXG8qSU9" target="_blank" rel="noopener noreferrer" class="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white px-8 py-4 rounded-full font-medium transition-all shadow-lg hover:scale-105 neumorphism" data-lang="fr">
-                        <i class="fas fa-rocket mr-2"></i>Pré-inscription
+                    <a href="https://forms.gle/tvqkcwZDCqXG8qSU9" target="_blank" rel="noopener noreferrer" class="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white px-8 py-4 rounded-full font-medium transition-all shadow-lg hover:scale-105 neumorphism group" data-lang="fr">
+                        <i class="fas fa-rocket mr-2 group-hover:animate-bounce"></i>Pré-inscription
                     </a>
-                    <a href="https://forms.gle/tvqkcwZDCqXG8qSU9" target="_blank" rel="noopener noreferrer" class="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white px-8 py-4 rounded-full font-medium transition-all shadow-lg hover:scale-105 neumorphism hidden" data-lang="ar">
-                        <i class="fas fa-rocket mr-2"></i>تسجيل مسبق
+                    <a href="https://forms.gle/tvqkcwZDCqXG8qSU9" target="_blank" rel="noopener noreferrer" class="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white px-8 py-4 rounded-full font-medium transition-all shadow-lg hover:scale-105 neumorphism group hidden" data-lang="ar">
+                        <i class="fas fa-rocket ml-2 group-hover:animate-bounce"></i>تسجيل مسبق
                     </a>
-                    <button class="border-2 border-indigo-600 text-indigo-600 hover:bg-indigo-50 px-8 py-4 rounded-full font-medium transition-all hover:scale-105 glass-effect" data-lang="fr">
-                        <i class="fas fa-play mr-2"></i>Voir la démo
+                    <button class="border-2 border-indigo-600 text-indigo-600 hover:bg-indigo-50 px-8 py-4 rounded-full font-medium transition-all hover:scale-105 glass-effect group" data-lang="fr">
+                        <i class="fas fa-play mr-2 group-hover:animate-pulse"></i>Voir la démo
                     </button>
-                    <button class="border-2 border-indigo-600 text-indigo-600 hover:bg-indigo-50 px-8 py-4 rounded-full font-medium transition-all hover:scale-105 glass-effect hidden" data-lang="ar">
-                        <i class="fas fa-play mr-2"></i>عرض التجريبي
+                    <button class="border-2 border-indigo-600 text-indigo-600 hover:bg-indigo-50 px-8 py-4 rounded-full font-medium transition-all hover:scale-105 glass-effect group hidden" data-lang="ar">
+                        <i class="fas fa-play ml-2 group-hover:animate-pulse"></i>عرض التجريبي
                     </button>
                 </div>
                 
@@ -2040,94 +2011,12 @@
 
         animate();
 
-        // Enhanced Health Image Slider with Navigation
-        const slider = document.getElementById('healthSlider');
-        const slides = document.querySelectorAll('#healthSlider > div');
-        const dots = document.querySelectorAll('.slider-dot');
-        const prevButton = document.getElementById('prevSlide');
-        const nextButton = document.getElementById('nextSlide');
-        let currentSlide = 0;
-        const slideCount = slides.length;
 
-        function goToSlide(index) {
-            currentSlide = (index + slideCount) % slideCount;
-            slider.style.transform = `translateX(-${currentSlide * 100}%)`;
-            
-            // Update dots
-            dots.forEach((dot, i) => {
-                dot.classList.toggle('bg-white', i === currentSlide);
-                dot.classList.toggle('bg-white/50', i !== currentSlide);
-            });
-        }
-
-        // Auto-advance slides every 6 seconds
-        let slideInterval = setInterval(() => {
-            goToSlide(currentSlide + 1);
-        }, 6000);
-
-        // Pause on hover
-        slider.parentElement.addEventListener('mouseenter', () => {
-            clearInterval(slideInterval);
-        });
-
-        slider.parentElement.addEventListener('mouseleave', () => {
-            slideInterval = setInterval(() => {
-                goToSlide(currentSlide + 1);
-            }, 6000);
-        });
-
-        // Dot navigation
-        dots.forEach(dot => {
-            dot.addEventListener('click', () => {
-                clearInterval(slideInterval);
-                goToSlide(parseInt(dot.dataset.index));
-                slideInterval = setInterval(() => {
-                    goToSlide(currentSlide + 1);
-                }, 6000);
-            });
-        });
-
-        // Arrow navigation
-        prevButton.addEventListener('click', () => {
-            clearInterval(slideInterval);
-            goToSlide(currentSlide - 1);
-            slideInterval = setInterval(() => {
-                goToSlide(currentSlide + 1);
-            }, 6000);
-        });
-
-        nextButton.addEventListener('click', () => {
-            clearInterval(slideInterval);
-            goToSlide(currentSlide + 1);
-            slideInterval = setInterval(() => {
-                goToSlide(currentSlide + 1);
-            }, 6000);
-        });
-
-        // Keyboard navigation
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'ArrowLeft') {
-                clearInterval(slideInterval);
-                goToSlide(currentSlide - 1);
-                slideInterval = setInterval(() => {
-                    goToSlide(currentSlide + 1);
-                }, 6000);
-            } else if (e.key === 'ArrowRight') {
-                clearInterval(slideInterval);
-                goToSlide(currentSlide + 1);
-                slideInterval = setInterval(() => {
-                    goToSlide(currentSlide + 1);
-                }, 6000);
-            }
-        });
-
-        // Initialize first dot as active
-        dots[0].classList.remove('bg-white/50');
-        dots[0].classList.add('bg-white');
 
         // Modern FAQ Functionality
         const faqItems = document.querySelectorAll('.faq-item');
         
+        // Initialize FAQ items
         faqItems.forEach(item => {
             const question = item.querySelector('.faq-question');
             const answer = item.querySelector('.faq-answer');
@@ -2136,6 +2025,7 @@
             // Set initial state
             answer.style.maxHeight = '0';
             answer.style.overflow = 'hidden';
+            answer.style.transition = 'max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
             
             question.addEventListener('click', () => {
                 const isActive = item.classList.contains('active');
@@ -2162,12 +2052,19 @@
                     icon.classList.add('fa-plus');
                 } else {
                     item.classList.add('active');
-                    answer.style.maxHeight = answer.scrollHeight + 'px';
+                    const scrollHeight = answer.scrollHeight;
+                    answer.style.maxHeight = scrollHeight + 'px';
                     icon.style.transform = 'rotate(45deg)';
                     icon.classList.remove('fa-plus');
                     icon.classList.add('fa-minus');
                 }
             });
+        });
+        
+        // Debug FAQ functionality
+        console.log('FAQ Items found:', faqItems.length);
+        faqItems.forEach((item, index) => {
+            console.log(`FAQ Item ${index + 1}:`, item);
         });
 
         // GSAP Animations
