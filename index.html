@@ -677,7 +677,26 @@
                 transform: translateY(-5px);
             }
             
-
+            /* Improved mobile spacing for technology section */
+            .modern-tech-card {
+                margin-bottom: 1rem;
+            }
+            
+            /* Better mobile touch targets */
+            .mobile-touch-effect {
+                min-height: 60px;
+            }
+            
+            /* Ensure proper text wrapping on mobile */
+            .tech-icon-wrapper + div {
+                min-width: 0;
+                flex: 1;
+            }
+            
+            /* Better mobile grid layout */
+            .grid.grid-cols-1.sm\\:grid-cols-3 {
+                gap: 0.75rem;
+            }
         }
         
         /* Dark Mode Support */
@@ -1311,34 +1330,34 @@
         
         <div class="container mx-auto px-4 relative z-10">
             <!-- Section Header -->
-            <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-indigo-600 via-purple-600 to-cyan-600 bg-clip-text text-transparent health-tech-title" data-lang="fr">Technologie Avancée</h2>
-                <h2 class="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-indigo-600 via-purple-600 to-cyan-600 bg-clip-text text-transparent health-tech-title hidden" data-lang="ar">تقنية متقدمة</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto" data-lang="fr">Découvrez les technologies innovantes qui transforment l'expérience utilisateur</p>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto hidden" data-lang="ar">اكتشف التقنيات المبتكرة التي تحول تجربة المستخدم</p>
+            <div class="text-center mb-8 md:mb-16">
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6 bg-gradient-to-r from-indigo-600 via-purple-600 to-cyan-600 bg-clip-text text-transparent health-tech-title" data-lang="fr">Technologie Avancée</h2>
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6 bg-gradient-to-r from-indigo-600 via-purple-600 to-cyan-600 bg-clip-text text-transparent health-tech-title hidden" data-lang="ar">تقنية متقدمة</h2>
+                <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto px-4" data-lang="fr">Découvrez les technologies innovantes qui transforment l'expérience utilisateur</p>
+                <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto px-4 hidden" data-lang="ar">اكتشف التقنيات المبتكرة التي تحول تجربة المستخدم</p>
             </div>
             
             <!-- Main Content Grid -->
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
                 <!-- Left Column - Technology Features -->
-                <div class="space-y-6">
+                <div class="space-y-4 md:space-y-6 order-2 lg:order-1">
                     <!-- AI Technology Card -->
                     <div class="modern-tech-card group mobile-card-animate">
-                        <div class="bg-white/90 backdrop-blur-sm p-6 rounded-2xl border border-white/50 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 relative overflow-hidden mobile-touch-effect">
+                        <div class="bg-white/90 backdrop-blur-sm p-4 md:p-6 rounded-2xl border border-white/50 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 relative overflow-hidden mobile-touch-effect">
                             <div class="absolute inset-0 bg-gradient-to-r from-indigo-500/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                             <div class="relative z-10">
-                                <div class="flex items-start space-x-4">
-                                    <div class="tech-icon-wrapper">
-                                        <div class="w-14 h-14 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-xl flex items-center justify-center text-white shadow-lg transform transition-all duration-500 group-hover:scale-110 group-hover:rotate-12">
-                                            <i class="fas fa-brain text-xl"></i>
+                                <div class="flex flex-col sm:flex-row sm:items-start space-y-3 sm:space-y-0 sm:space-x-4">
+                                    <div class="tech-icon-wrapper flex-shrink-0">
+                                        <div class="w-12 h-12 md:w-14 md:h-14 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-xl flex items-center justify-center text-white shadow-lg transform transition-all duration-500 group-hover:scale-110 group-hover:rotate-12">
+                                            <i class="fas fa-brain text-lg md:text-xl"></i>
                                         </div>
                                         <div class="absolute inset-0 bg-gradient-to-br from-indigo-400 to-purple-500 rounded-xl opacity-0 group-hover:opacity-20 blur-xl transition-all duration-500"></div>
                                     </div>
-                                    <div class="flex-1">
-                                        <h3 class="text-xl font-bold text-indigo-900 mb-2 group-hover:text-indigo-600 transition-colors" data-lang="fr">Intelligence Artificielle</h3>
-                                        <h3 class="text-xl font-bold text-indigo-900 mb-2 group-hover:text-indigo-600 transition-colors hidden" data-lang="ar">الذكاء الاصطناعي</h3>
-                                        <p class="text-gray-700 leading-relaxed" data-lang="fr">IA avancée pour l'analyse prédictive, l'automatisation intelligente et l'optimisation des processus. Algorithmes transparents et éthiques.</p>
-                                        <p class="text-gray-700 leading-relaxed hidden" data-lang="ar">ذكاء اصطناعي متقدم للتحليل التنبؤي والأتمتة الذكية وتحسين العمليات. خوارزميات شفافة وأخلاقية.</p>
+                                    <div class="flex-1 text-center sm:text-left">
+                                        <h3 class="text-lg md:text-xl font-bold text-indigo-900 mb-2 group-hover:text-indigo-600 transition-colors" data-lang="fr">Intelligence Artificielle</h3>
+                                        <h3 class="text-lg md:text-xl font-bold text-indigo-900 mb-2 group-hover:text-indigo-600 transition-colors hidden" data-lang="ar">الذكاء الاصطناعي</h3>
+                                        <p class="text-sm md:text-base text-gray-700 leading-relaxed" data-lang="fr">IA avancée pour l'analyse prédictive, l'automatisation intelligente et l'optimisation des processus. Algorithmes transparents et éthiques.</p>
+                                        <p class="text-sm md:text-base text-gray-700 leading-relaxed hidden" data-lang="ar">ذكاء اصطناعي متقدم للتحليل التنبؤي والأتمتة الذكية وتحسين العمليات. خوارزميات شفافة وأخلاقية.</p>
                                     </div>
                                 </div>
                             </div>
@@ -1347,21 +1366,21 @@
                     
                     <!-- Cloud Security Card -->
                     <div class="modern-tech-card group mobile-card-animate mobile-stagger-1">
-                        <div class="bg-white/90 backdrop-blur-sm p-6 rounded-2xl border border-white/50 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 relative overflow-hidden mobile-touch-effect">
+                        <div class="bg-white/90 backdrop-blur-sm p-4 md:p-6 rounded-2xl border border-white/50 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 relative overflow-hidden mobile-touch-effect">
                             <div class="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-cyan-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                             <div class="relative z-10">
-                                <div class="flex items-start space-x-4">
-                                    <div class="tech-icon-wrapper">
-                                        <div class="w-14 h-14 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-xl flex items-center justify-center text-white shadow-lg transform transition-all duration-500 group-hover:scale-110 group-hover:rotate-12">
-                                            <i class="fas fa-shield-alt text-xl"></i>
+                                <div class="flex flex-col sm:flex-row sm:items-start space-y-3 sm:space-y-0 sm:space-x-4">
+                                    <div class="tech-icon-wrapper flex-shrink-0">
+                                        <div class="w-12 h-12 md:w-14 md:h-14 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-xl flex items-center justify-center text-white shadow-lg transform transition-all duration-500 group-hover:scale-110 group-hover:rotate-12">
+                                            <i class="fas fa-shield-alt text-lg md:text-xl"></i>
                                         </div>
                                         <div class="absolute inset-0 bg-gradient-to-br from-blue-400 to-cyan-500 rounded-xl opacity-0 group-hover:opacity-20 blur-xl transition-all duration-500"></div>
                                     </div>
-                                    <div class="flex-1">
-                                        <h3 class="text-xl font-bold text-indigo-900 mb-2 group-hover:text-indigo-600 transition-colors" data-lang="fr">Sécurité Avancée</h3>
-                                        <h3 class="text-xl font-bold text-indigo-900 mb-2 group-hover:text-indigo-600 transition-colors hidden" data-lang="ar">أمان متقدم</h3>
-                                        <p class="text-gray-700 leading-relaxed" data-lang="fr">Infrastructure sécurisée de niveau bancaire avec chiffrement AES-256, authentification multi-facteurs et protection contre les cybermenaces.</p>
-                                        <p class="text-gray-700 leading-relaxed hidden" data-lang="ar">بنية تحتية آمنة بمستوى البنوك مع تشفير AES-256 ومصادقة متعددة العوامل وحماية من التهديدات السيبرانية.</p>
+                                    <div class="flex-1 text-center sm:text-left">
+                                        <h3 class="text-lg md:text-xl font-bold text-indigo-900 mb-2 group-hover:text-indigo-600 transition-colors" data-lang="fr">Sécurité Avancée</h3>
+                                        <h3 class="text-lg md:text-xl font-bold text-indigo-900 mb-2 group-hover:text-indigo-600 transition-colors hidden" data-lang="ar">أمان متقدم</h3>
+                                        <p class="text-sm md:text-base text-gray-700 leading-relaxed" data-lang="fr">Infrastructure sécurisée de niveau bancaire avec chiffrement AES-256, authentification multi-facteurs et protection contre les cybermenaces.</p>
+                                        <p class="text-sm md:text-base text-gray-700 leading-relaxed hidden" data-lang="ar">بنية تحتية آمنة بمستوى البنوك مع تشفير AES-256 ومصادقة متعددة العوامل وحماية من التهديدات السيبرانية.</p>
                                     </div>
                                 </div>
                             </div>
@@ -1370,21 +1389,21 @@
                     
                     <!-- Mobile Technology Card -->
                     <div class="modern-tech-card group mobile-card-animate mobile-stagger-2">
-                        <div class="bg-white/90 backdrop-blur-sm p-6 rounded-2xl border border-white/50 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 relative overflow-hidden mobile-touch-effect">
+                        <div class="bg-white/90 backdrop-blur-sm p-4 md:p-6 rounded-2xl border border-white/50 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 relative overflow-hidden mobile-touch-effect">
                             <div class="absolute inset-0 bg-gradient-to-r from-green-500/10 to-emerald-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                             <div class="relative z-10">
-                                <div class="flex items-start space-x-4">
-                                    <div class="tech-icon-wrapper">
-                                        <div class="w-14 h-14 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl flex items-center justify-center text-white shadow-lg transform transition-all duration-500 group-hover:scale-110 group-hover:rotate-12">
-                                            <i class="fas fa-mobile-alt text-xl"></i>
+                                <div class="flex flex-col sm:flex-row sm:items-start space-y-3 sm:space-y-0 sm:space-x-4">
+                                    <div class="tech-icon-wrapper flex-shrink-0">
+                                        <div class="w-12 h-12 md:w-14 md:h-14 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl flex items-center justify-center text-white shadow-lg transform transition-all duration-500 group-hover:scale-110 group-hover:rotate-12">
+                                            <i class="fas fa-mobile-alt text-lg md:text-xl"></i>
                                         </div>
                                         <div class="absolute inset-0 bg-gradient-to-br from-green-400 to-emerald-500 rounded-xl opacity-0 group-hover:opacity-20 blur-xl transition-all duration-500"></div>
                                     </div>
-                                    <div class="flex-1">
-                                        <h3 class="text-xl font-bold text-indigo-900 mb-2 group-hover:text-indigo-600 transition-colors" data-lang="fr">Design Responsive</h3>
-                                        <h3 class="text-xl font-bold text-indigo-900 mb-2 group-hover:text-indigo-600 transition-colors hidden" data-lang="ar">تصميم متجاوب</h3>
-                                        <p class="text-gray-700 leading-relaxed" data-lang="fr">Interface adaptative optimisée pour tous les appareils avec expérience utilisateur fluide et intuitive.</p>
-                                        <p class="text-gray-700 leading-relaxed hidden" data-lang="ar">واجهة تكيفية محسنة لجميع الأجهزة مع تجربة مستخدم سلسة وبديهية.</p>
+                                    <div class="flex-1 text-center sm:text-left">
+                                        <h3 class="text-lg md:text-xl font-bold text-indigo-900 mb-2 group-hover:text-indigo-600 transition-colors" data-lang="fr">Design Responsive</h3>
+                                        <h3 class="text-lg md:text-xl font-bold text-indigo-900 mb-2 group-hover:text-indigo-600 transition-colors hidden" data-lang="ar">تصميم متجاوب</h3>
+                                        <p class="text-sm md:text-base text-gray-700 leading-relaxed" data-lang="fr">Interface adaptative optimisée pour tous les appareils avec expérience utilisateur fluide et intuitive.</p>
+                                        <p class="text-sm md:text-base text-gray-700 leading-relaxed hidden" data-lang="ar">واجهة تكيفية محسنة لجميع الأجهزة مع تجربة مستخدم سلسة وبديهية.</p>
                                     </div>
                                 </div>
                             </div>
@@ -1393,79 +1412,79 @@
                 </div>
                 
                 <!-- Right Column - Statistics & Visual Elements -->
-                <div class="space-y-8">
+                <div class="space-y-6 md:space-y-8 order-1 lg:order-2">
                     <!-- Technology Statistics -->
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6">
                         <div class="modern-stat-card group mobile-card-animate mobile-stagger-3">
-                            <div class="bg-gradient-to-br from-indigo-500 to-purple-600 p-6 rounded-2xl text-white text-center shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-rotate-3 relative overflow-hidden mobile-touch-effect">
+                            <div class="bg-gradient-to-br from-indigo-500 to-purple-600 p-4 md:p-6 rounded-2xl text-white text-center shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-rotate-3 relative overflow-hidden mobile-touch-effect">
                                 <div class="absolute inset-0 bg-gradient-to-br from-indigo-400 to-purple-500 opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
                                 <div class="relative z-10">
-                                    <div class="text-3xl font-bold mb-2">99.9%</div>
-                                    <div class="text-sm font-medium" data-lang="fr">Performance</div>
-                                    <div class="text-sm font-medium hidden" data-lang="ar">الأداء</div>
+                                    <div class="text-2xl md:text-3xl font-bold mb-2">99.9%</div>
+                                    <div class="text-xs md:text-sm font-medium" data-lang="fr">Performance</div>
+                                    <div class="text-xs md:text-sm font-medium hidden" data-lang="ar">الأداء</div>
                                 </div>
                             </div>
                         </div>
                         
                         <div class="modern-stat-card group mobile-card-animate mobile-stagger-4">
-                            <div class="bg-gradient-to-br from-blue-500 to-cyan-600 p-6 rounded-2xl text-white text-center shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:rotate-3 relative overflow-hidden mobile-touch-effect">
+                            <div class="bg-gradient-to-br from-blue-500 to-cyan-600 p-4 md:p-6 rounded-2xl text-white text-center shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:rotate-3 relative overflow-hidden mobile-touch-effect">
                                 <div class="absolute inset-0 bg-gradient-to-br from-blue-400 to-cyan-500 opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
                                 <div class="relative z-10">
-                                    <div class="text-3xl font-bold mb-2">256-bit</div>
-                                    <div class="text-sm font-medium" data-lang="fr">Sécurité</div>
-                                    <div class="text-sm font-medium hidden" data-lang="ar">الأمان</div>
+                                    <div class="text-2xl md:text-3xl font-bold mb-2">256-bit</div>
+                                    <div class="text-xs md:text-sm font-medium" data-lang="fr">Sécurité</div>
+                                    <div class="text-xs md:text-sm font-medium hidden" data-lang="ar">الأمان</div>
                                 </div>
                             </div>
                         </div>
                         
                         <div class="modern-stat-card group mobile-card-animate mobile-stagger-5">
-                            <div class="bg-gradient-to-br from-green-500 to-emerald-600 p-6 rounded-2xl text-white text-center shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-rotate-3 relative overflow-hidden mobile-touch-effect">
+                            <div class="bg-gradient-to-br from-green-500 to-emerald-600 p-4 md:p-6 rounded-2xl text-white text-center shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-rotate-3 relative overflow-hidden mobile-touch-effect">
                                 <div class="absolute inset-0 bg-gradient-to-br from-green-400 to-emerald-500 opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
                                 <div class="relative z-10">
-                                    <div class="text-3xl font-bold mb-2">24/7</div>
-                                    <div class="text-sm font-medium" data-lang="fr">Disponibilité</div>
-                                    <div class="text-sm font-medium hidden" data-lang="ar">التوفر</div>
+                                    <div class="text-2xl md:text-3xl font-bold mb-2">24/7</div>
+                                    <div class="text-xs md:text-sm font-medium" data-lang="fr">Disponibilité</div>
+                                    <div class="text-xs md:text-sm font-medium hidden" data-lang="ar">التوفر</div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     
-                                        <!-- Technology Benefits -->
-                    <div class="bg-white/80 backdrop-blur-sm p-8 rounded-2xl border border-white/50 shadow-xl mobile-card-animate">
-                        <h3 class="text-2xl font-bold text-indigo-900 mb-6" data-lang="fr">Avantages Clés</h3>
-                        <h3 class="text-2xl font-bold text-indigo-900 mb-6 hidden" data-lang="ar">المزايا الرئيسية</h3>
+                    <!-- Technology Benefits -->
+                    <div class="bg-white/80 backdrop-blur-sm p-6 md:p-8 rounded-2xl border border-white/50 shadow-xl mobile-card-animate">
+                        <h3 class="text-xl md:text-2xl font-bold text-indigo-900 mb-4 md:mb-6" data-lang="fr">Avantages Clés</h3>
+                        <h3 class="text-xl md:text-2xl font-bold text-indigo-900 mb-4 md:mb-6 hidden" data-lang="ar">المزايا الرئيسية</h3>
                         
-                        <div class="space-y-4">
+                        <div class="space-y-3 md:space-y-4">
                             <div class="flex items-center space-x-3 rtl:space-x-reverse">
-                                <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
-                                    <i class="fas fa-check text-green-600 text-sm"></i>
+                                <div class="w-6 h-6 md:w-8 md:h-8 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-check text-green-600 text-xs md:text-sm"></i>
                                 </div>
-                                <span class="text-gray-700" data-lang="fr">Performance optimale</span>
-                                <span class="text-gray-700 hidden" data-lang="ar">أداء مثالي</span>
+                                <span class="text-sm md:text-base text-gray-700" data-lang="fr">Performance optimale</span>
+                                <span class="text-sm md:text-base text-gray-700 hidden" data-lang="ar">أداء مثالي</span>
                             </div>
                             
                             <div class="flex items-center space-x-3 rtl:space-x-reverse">
-                                <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
-                                    <i class="fas fa-check text-green-600 text-sm"></i>
+                                <div class="w-6 h-6 md:w-8 md:h-8 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-check text-green-600 text-xs md:text-sm"></i>
                                 </div>
-                                <span class="text-gray-700" data-lang="fr">Sécurité maximale</span>
-                                <span class="text-gray-700 hidden" data-lang="ar">أمان أقصى</span>
+                                <span class="text-sm md:text-base text-gray-700" data-lang="fr">Sécurité maximale</span>
+                                <span class="text-sm md:text-base text-gray-700 hidden" data-lang="ar">أمان أقصى</span>
                             </div>
                             
                             <div class="flex items-center space-x-3 rtl:space-x-reverse">
-                                <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
-                                    <i class="fas fa-check text-green-600 text-sm"></i>
+                                <div class="w-6 h-6 md:w-8 md:h-8 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-check text-green-600 text-xs md:text-sm"></i>
                                 </div>
-                                <span class="text-gray-700" data-lang="fr">Interface moderne</span>
-                                <span class="text-gray-700 hidden" data-lang="ar">واجهة حديثة</span>
+                                <span class="text-sm md:text-base text-gray-700" data-lang="fr">Interface moderne</span>
+                                <span class="text-sm md:text-base text-gray-700 hidden" data-lang="ar">واجهة حديثة</span>
                             </div>
                             
                             <div class="flex items-center space-x-3 rtl:space-x-reverse">
-                                <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
-                                    <i class="fas fa-check text-green-600 text-sm"></i>
+                                <div class="w-6 h-6 md:w-8 md:h-8 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-check text-green-600 text-xs md:text-sm"></i>
                                 </div>
-                                <span class="text-gray-700" data-lang="fr">Support 24/7</span>
-                                <span class="text-gray-700 hidden" data-lang="ar">دعم 24/7</span>
+                                <span class="text-sm md:text-base text-gray-700" data-lang="fr">Support 24/7</span>
+                                <span class="text-sm md:text-base text-gray-700 hidden" data-lang="ar">دعم 24/7</span>
                             </div>
                         </div>
                     </div>
@@ -1794,7 +1813,7 @@
     </footer>
 
     <!-- Enhanced Back to Top Button -->
-    <button id="backToTop" class="fixed bottom-28 right-8 w-14 h-14 bg-gradient-to-br from-indigo-600 to-purple-600 text-white rounded-full shadow-xl flex items-center justify-center opacity-0 invisible transition-all duration-500 hover:scale-110 hover:shadow-2xl group z-50">
+    <button id="backToTop" class="fixed bottom-40 right-8 w-14 h-14 bg-gradient-to-br from-indigo-600 to-purple-600 text-white rounded-full shadow-xl flex items-center justify-center opacity-0 invisible transition-all duration-500 hover:scale-110 hover:shadow-2xl group z-50">
         <i class="fas fa-arrow-up text-lg group-hover:animate-bounce"></i>
         <div class="absolute inset-0 bg-white/20 rounded-full scale-0 group-hover:scale-100 transition-transform duration-300"></div>
     </button>
