@@ -700,28 +700,79 @@
             
             /* Enhanced mobile technology cards */
             .modern-tech-card .bg-white\\/90 {
-                padding: 1.5rem;
-                margin: 0 0.5rem;
+                padding: 1.25rem;
+                margin: 0 0.25rem;
+                border-radius: 1rem;
             }
             
             /* Better mobile text visibility */
             .modern-tech-card h3 {
-                font-size: 1.25rem;
-                line-height: 1.4;
-                margin-bottom: 0.75rem;
+                font-size: 1.125rem;
+                line-height: 1.3;
+                margin-bottom: 0.5rem;
+                font-weight: 700;
             }
             
             .modern-tech-card p {
-                font-size: 1rem;
-                line-height: 1.6;
+                font-size: 0.875rem;
+                line-height: 1.5;
                 max-width: 100%;
+                color: #4a5568;
             }
             
             /* Improved mobile icon sizing */
             .tech-icon-wrapper .w-16 {
-                width: 4rem;
-                height: 4rem;
-                margin: 0 auto 1rem auto;
+                width: 3.5rem;
+                height: 3.5rem;
+                margin: 0 auto 0.75rem auto;
+            }
+            
+            /* Better mobile spacing */
+            .space-y-4 > * + * {
+                margin-top: 1rem;
+            }
+            
+            /* Mobile grid improvements */
+            .grid.grid-cols-1.sm\\:grid-cols-3 {
+                gap: 0.5rem;
+            }
+            
+            /* Mobile statistics cards */
+            .modern-stat-card .bg-gradient-to-br {
+                padding: 1rem;
+                border-radius: 1rem;
+            }
+            
+            .modern-stat-card .text-2xl {
+                font-size: 1.5rem;
+            }
+            
+            .modern-stat-card .text-xs {
+                font-size: 0.75rem;
+            }
+            
+            /* Mobile benefits section */
+            .bg-white\\/80 {
+                padding: 1.25rem;
+                border-radius: 1rem;
+            }
+            
+            .bg-white\\/80 h3 {
+                font-size: 1.25rem;
+                margin-bottom: 1rem;
+            }
+            
+            .bg-white\\/80 .space-y-3 > * + * {
+                margin-top: 0.75rem;
+            }
+            
+            .bg-white\\/80 .w-6 {
+                width: 1.5rem;
+                height: 1.5rem;
+            }
+            
+            .bg-white\\/80 .text-sm {
+                font-size: 0.875rem;
             }
             
             /* Better mobile navigation visibility */
@@ -758,6 +809,140 @@
         .focus-visible:focus {
             outline: 2px solid var(--primary-color);
             outline-offset: 2px;
+        }
+        
+        /* Modern Floating Action Button */
+        .modern-fab {
+            position: relative;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+            overflow: visible;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .modern-fab:hover {
+            transform: scale(1.1) translateY(-2px);
+        }
+        
+        .modern-fab:active {
+            transform: scale(0.95);
+        }
+        
+        .fab-background {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            box-shadow: 
+                0 4px 20px rgba(102, 126, 234, 0.4),
+                0 8px 32px rgba(102, 126, 234, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .modern-fab:hover .fab-background {
+            background: linear-gradient(135deg, #5a67d8 0%, #6b46c1 100%);
+            box-shadow: 
+                0 8px 32px rgba(102, 126, 234, 0.6),
+                0 16px 48px rgba(102, 126, 234, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3);
+        }
+        
+        .fab-content {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+        }
+        
+        .fab-icon {
+            width: 24px;
+            height: 24px;
+            transform: rotate(180deg);
+            transition: transform 0.3s ease;
+        }
+        
+        .modern-fab:hover .fab-icon {
+            transform: rotate(180deg) translateY(-2px);
+        }
+        
+        .fab-ripple {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%);
+            transition: all 0.6s ease;
+        }
+        
+        .modern-fab:active .fab-ripple {
+            width: 100px;
+            height: 100px;
+            opacity: 0;
+        }
+        
+        .fab-tooltip {
+            position: absolute;
+            right: 70px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 500;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            pointer-events: none;
+        }
+        
+        .fab-tooltip::after {
+            content: '';
+            position: absolute;
+            right: -4px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 0;
+            height: 0;
+            border-left: 4px solid rgba(0, 0, 0, 0.8);
+            border-top: 4px solid transparent;
+            border-bottom: 4px solid transparent;
+        }
+        
+        .modern-fab:hover .fab-tooltip {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(-50%) translateX(-4px);
+        }
+        
+        /* Mobile optimizations for FAB */
+        @media (max-width: 768px) {
+            .modern-fab {
+                width: 52px;
+                height: 52px;
+            }
+            
+            .fab-icon {
+                width: 22px;
+                height: 22px;
+            }
+            
+            .fab-tooltip {
+                display: none;
+            }
         }
         
         /* High Contrast Mode */
@@ -1375,17 +1560,17 @@
         
         <div class="container mx-auto px-4 relative z-10">
             <!-- Section Header -->
-            <div class="text-center mb-8 md:mb-16">
-                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6 bg-gradient-to-r from-indigo-600 via-purple-600 to-cyan-600 bg-clip-text text-transparent health-tech-title" data-lang="fr">Technologie Avancée</h2>
-                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6 bg-gradient-to-r from-indigo-600 via-purple-600 to-cyan-600 bg-clip-text text-transparent health-tech-title hidden" data-lang="ar">تقنية متقدمة</h2>
-                <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto px-4" data-lang="fr">Découvrez les technologies innovantes qui transforment l'expérience utilisateur</p>
-                <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto px-4 hidden" data-lang="ar">اكتشف التقنيات المبتكرة التي تحول تجربة المستخدم</p>
+            <div class="text-center mb-8 md:mb-16 px-4">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6 bg-gradient-to-r from-indigo-600 via-purple-600 to-cyan-600 bg-clip-text text-transparent health-tech-title" data-lang="fr">Technologie Avancée</h2>
+                <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6 bg-gradient-to-r from-indigo-600 via-purple-600 to-cyan-600 bg-clip-text text-transparent health-tech-title hidden" data-lang="ar">تقنية متقدمة</h2>
+                <p class="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl sm:max-w-3xl mx-auto" data-lang="fr">Découvrez les technologies innovantes qui transforment l'expérience utilisateur</p>
+                <p class="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl sm:max-w-3xl mx-auto hidden" data-lang="ar">اكتشف التقنيات المبتكرة التي تحول تجربة المستخدم</p>
             </div>
             
             <!-- Main Content Grid -->
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-start px-2 sm:px-4">
                 <!-- Left Column - Technology Features -->
-                <div class="space-y-4 md:space-y-6 order-2 lg:order-1">
+                <div class="space-y-4 md:space-y-6 order-2 lg:order-1 w-full">
                     <!-- AI Technology Card -->
                     <div class="modern-tech-card group mobile-card-animate">
                         <div class="bg-white/90 backdrop-blur-sm p-4 md:p-6 rounded-2xl border border-white/50 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 relative overflow-hidden mobile-touch-effect">
@@ -1457,7 +1642,7 @@
                 </div>
                 
                 <!-- Right Column - Statistics & Visual Elements -->
-                <div class="space-y-6 md:space-y-8 order-1 lg:order-2">
+                <div class="space-y-6 md:space-y-8 order-1 lg:order-2 w-full">
                     <!-- Technology Statistics -->
                     <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6">
                         <div class="modern-stat-card group mobile-card-animate mobile-stagger-3">
@@ -1857,11 +2042,20 @@
         </div>
     </footer>
 
-    <!-- Enhanced Back to Top Button -->
-    <button id="backToTop" class="fixed bottom-40 right-8 w-14 h-14 bg-gradient-to-br from-indigo-600 to-purple-600 text-white rounded-full shadow-xl flex items-center justify-center opacity-0 invisible transition-all duration-500 hover:scale-110 hover:shadow-2xl group z-50">
-        <i class="fas fa-arrow-up text-lg group-hover:animate-bounce"></i>
-        <div class="absolute inset-0 bg-white/20 rounded-full scale-0 group-hover:scale-100 transition-transform duration-300"></div>
-    </button>
+    <!-- Modern Floating Action Button - Back to Top -->
+    <div class="fixed bottom-6 right-6 z-50">
+        <button id="backToTop" class="modern-fab opacity-0 invisible transition-all duration-700 ease-out transform translate-y-10 scale-75 group">
+            <div class="fab-background"></div>
+            <div class="fab-content">
+                <svg class="fab-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 4L12 20M12 4L6 10M12 4L18 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <div class="fab-ripple"></div>
+            </div>
+            <div class="fab-tooltip" data-lang="fr">Retour en haut</div>
+            <div class="fab-tooltip hidden" data-lang="ar">العودة للأعلى</div>
+        </button>
+    </div>
 
     <script>
         // Enhanced Scroll Animation Observer
@@ -2337,16 +2531,16 @@
             });
         });
 
-        // Enhanced Back to Top Button
+        // Modern Floating Action Button - Back to Top
         const backToTopButton = document.getElementById('backToTop');
         
         window.addEventListener('scroll', () => {
             if (window.pageYOffset > 300) {
-                backToTopButton.classList.remove('opacity-0', 'invisible');
-                backToTopButton.classList.add('opacity-100', 'visible');
+                backToTopButton.classList.remove('opacity-0', 'invisible', 'translate-y-10', 'scale-75');
+                backToTopButton.classList.add('opacity-100', 'visible', 'translate-y-0', 'scale-100');
             } else {
-                backToTopButton.classList.remove('opacity-100', 'visible');
-                backToTopButton.classList.add('opacity-0', 'invisible');
+                backToTopButton.classList.remove('opacity-100', 'visible', 'translate-y-0', 'scale-100');
+                backToTopButton.classList.add('opacity-0', 'invisible', 'translate-y-10', 'scale-75');
             }
         });
 
@@ -2356,20 +2550,19 @@
                 behavior: 'smooth'
             });
             
-            // Add click animation
-            backToTopButton.style.transform = 'scale(0.9)';
-            setTimeout(() => {
-                backToTopButton.style.transform = '';
-            }, 150);
-        });
-        
-        // Add hover sound effect (optional)
-        backToTopButton.addEventListener('mouseenter', () => {
-            backToTopButton.style.transform = 'scale(1.1)';
-        });
-        
-        backToTopButton.addEventListener('mouseleave', () => {
-            backToTopButton.style.transform = '';
+            // Add ripple effect
+            const ripple = backToTopButton.querySelector('.fab-ripple');
+            if (ripple) {
+                ripple.style.width = '0';
+                ripple.style.height = '0';
+                ripple.style.opacity = '1';
+                
+                setTimeout(() => {
+                    ripple.style.width = '100px';
+                    ripple.style.height = '100px';
+                    ripple.style.opacity = '0';
+                }, 10);
+            }
         });
     </script>
 </body>
