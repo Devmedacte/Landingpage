@@ -4,888 +4,280 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- Next-Generation SEO Meta Tags -->
-    <title>Medacte - Super App Santé Maroc | Télémedecine & Pharmacie en Ligne</title>
-    <meta name="description" content="La première plateforme de santé digitale au Maroc. Rendez-vous en ligne, télémedecine, pharmacie en ligne, suivi médical. Disponible à Casablanca, Rabat, Marrakech, Fès, Tanger, Agadir.">
-    <meta name="keywords" content="médecin Maroc, pharmacie en ligne Maroc, télémedecine Maroc, rendez-vous médical Casablanca, consultation en ligne Maroc, santé digitale Maroc, طبيب أون لاين المغرب, صيدلية إلكترونية المغرب">
-    <meta name="author" content="Medacte">
-    <meta name="robots" content="index, follow">
-    <meta name="language" content="French, Arabic">
-    <meta name="geo.region" content="MA">
-    <meta name="geo.placename" content="Morocco">
+    <title>Medacte - Plateforme Santé Digitale Maroc</title>
+    <meta name="description" content="La première plateforme de santé digitale au Maroc. Télémedecine, pharmacie en ligne, rendez-vous médicaux.">
     
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://medacte.com/">
-    <meta property="og:title" content="Medacte - Super App Santé Maroc">
-    <meta property="og:description" content="La première plateforme de santé digitale au Maroc. Rendez-vous en ligne, télémedecine, pharmacie en ligne.">
-    <meta property="og:image" content="https://medacte.com/og-image.jpg">
-    <meta property="og:locale" content="fr_FR">
-    <meta property="og:locale:alternate" content="ar_MA">
-    
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://medacte.com/">
-    <meta property="twitter:title" content="Medacte - Super App Santé Maroc">
-    <meta property="twitter:description" content="La première plateforme de santé digitale au Maroc">
-    <meta property="twitter:image" content="https://medacte.com/twitter-image.jpg">
-    
-    <!-- Structured Data for Healthcare -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "MedicalOrganization",
-        "name": "Medacte",
-        "description": "Plateforme de santé digitale au Maroc",
-        "url": "https://medacte.com",
-        "logo": "https://medacte.com/logo.png",
-        "address": {
-            "@type": "PostalAddress",
-            "addressCountry": "MA",
-            "addressRegion": "Casablanca"
-        },
-        "contactPoint": {
-            "@type": "ContactPoint",
-            "telephone": "+212-773-125597",
-            "contactType": "customer service",
-            "availableLanguage": ["French", "Arabic"]
-        },
-        "sameAs": [
-            "https://facebook.com/medacte",
-            "https://instagram.com/medacte",
-            "https://linkedin.com/company/medacte"
-        ]
-    }
-    </script>
-    
-    <!-- PWA Manifest -->
-    <link rel="manifest" href="/manifest.json">
-    <meta name="theme-color" content="#4F46E5">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    <meta name="apple-mobile-web-app-title" content="Medacte">
-    
-    <!-- Preload Critical Resources -->
-    <link rel="preload" href="https://cdn.tailwindcss.com" as="script">
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" as="script">
-    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
-    <link rel="dns-prefetch" href="//flagcdn.com">
-    
-    <!-- Modern CSS Framework -->
+    <!-- CSS Frameworks -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Next-Generation 3D & WebGL -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/ScrollTrigger.min.js"></script>
     
-    <!-- AI & Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'GA_MEASUREMENT_ID');
-    </script>
-    
     <style>
-        /* Next-Generation CSS with Modern Effects */
+        /* Modern CSS Variables */
         :root {
-            --primary-color: #4F46E5;
-            --secondary-color: #7C3AED;
-            --accent-color: #06B6D4;
-            --success-color: #10B981;
-            --warning-color: #F59E0B;
-            --error-color: #EF4444;
+            --primary: #4F46E5;
+            --secondary: #7C3AED;
+            --accent: #06B6D4;
+            --success: #10B981;
+            --text-primary: #1F2937;
+            --text-secondary: #6B7280;
         }
         
-        /* Modern Scroll Animations */
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Modern Navigation */
+        .nav-link {
+            @apply font-medium text-gray-700 hover:text-indigo-600 transition-all duration-300 relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+                 /* Mobile Menu */
+         .mobile-menu {
+             position: fixed;
+             top: 0;
+             left: 0;
+             right: 0;
+             bottom: 0;
+             background: rgba(255, 255, 255, 0.95);
+             backdrop-filter: blur(10px);
+             z-index: 60;
+             display: flex;
+             flex-direction: column;
+             align-items: center;
+             justify-content: center;
+             transform: translateX(100%);
+             transition: transform 0.3s ease-in-out;
+         }
+         
+         .mobile-menu.active {
+             transform: translateX(0);
+         }
+         
+         .mobile-nav-link {
+             font-size: 1.25rem;
+             font-weight: 500;
+             color: #374151;
+             padding: 1rem 1.5rem;
+             border-radius: 0.5rem;
+             transition: all 0.3s ease;
+             display: flex;
+             align-items: center;
+         }
+         
+         .mobile-nav-link:hover {
+             color: #4F46E5;
+             background: #EEF2FF;
+             transform: scale(1.05);
+         }
+        
+        /* Scroll Animations */
         .scroll-animate {
             opacity: 0;
             transform: translateY(30px);
             transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
         }
+        
         .scroll-animate.show {
             opacity: 1;
             transform: translateY(0);
         }
         
-        /* Enhanced Mobile Scroll Animations */
-        .mobile-scroll-animate {
-            opacity: 0;
-            transform: translateY(50px);
-            transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        }
-        
-        .mobile-scroll-animate.show {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        /* Staggered Mobile Animations */
-        .mobile-stagger-1 { transition-delay: 0.1s; }
-        .mobile-stagger-2 { transition-delay: 0.2s; }
-        .mobile-stagger-3 { transition-delay: 0.3s; }
-        .mobile-stagger-4 { transition-delay: 0.4s; }
-        .mobile-stagger-5 { transition-delay: 0.5s; }
-        
-        /* Mobile Hover Effects */
-        @media (max-width: 768px) {
-            .mobile-touch-effect {
-                transition: all 0.3s ease;
-            }
-            
-            .mobile-touch-effect:active {
-                transform: scale(0.95);
-                opacity: 0.8;
-            }
-            
-            /* Mobile Card Animations */
-            .mobile-card-animate {
-                opacity: 0;
-                transform: scale(0.9) translateY(30px);
-                transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-            }
-            
-            .mobile-card-animate.show {
-                opacity: 1;
-                transform: scale(1) translateY(0);
-            }
-        }
-        
-        /* Glassmorphism 2.0 */
-        .glass-effect {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(20px) saturate(180%);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-        }
-        
-        .glass-effect-dark {
-            background: rgba(0, 0, 0, 0.1);
-            backdrop-filter: blur(20px) saturate(180%);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
-
-        
-
-        
-
-        
-        /* Modern FAQ Animations */
+        /* FAQ Styles */
         .faq-item {
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-            opacity: 1 !important;
-            visibility: visible !important;
-        }
-        
-        .faq-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-        }
-        
-        .faq-question {
             transition: all 0.3s ease;
-            cursor: pointer;
         }
         
         .faq-answer {
-            transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            max-height: 0;
             overflow: hidden;
+            transition: max-height 0.3s ease;
         }
         
         .faq-item.active .faq-answer {
-            max-height: 1000px !important;
+            max-height: 1000px;
         }
         
-        .faq-item.active .faq-icon i {
-            transform: rotate(45deg) !important;
-        }
-        
-        /* Ensure sections are visible */
-        #faq, #about {
-            opacity: 1 !important;
-            visibility: visible !important;
-            display: block !important;
-        }
-        
-        /* Ensure Health Technology elements are visible */
-        .modern-tech-card,
-        .modern-stat-card,
-        .tech-icon-wrapper,
-        .floating-tech-shape {
-            opacity: 1 !important;
-            visibility: visible !important;
-            display: block !important;
-        }
-        
-        /* Ensure FAQ elements are visible */
-        .faq-item,
-        .faq-question,
-        .faq-answer,
-        .faq-icon {
-            opacity: 1 !important;
-            visibility: visible !important;
-        }
-        
-        /* Floating Shapes Animation */
-        .floating-shape {
-            position: absolute;
-            border-radius: 50%;
-            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
-            opacity: 0.1;
-            animation: float 6s ease-in-out infinite;
-        }
-        
-        .shape-1 {
-            width: 80px;
-            height: 80px;
-            top: 10%;
-            left: 10%;
-            animation-delay: 0s;
-        }
-        
-        .shape-2 {
-            width: 120px;
-            height: 120px;
-            top: 60%;
-            right: 15%;
-            animation-delay: 2s;
-        }
-        
-        .shape-3 {
-            width: 60px;
-            height: 60px;
-            bottom: 20%;
-            left: 20%;
-            animation-delay: 4s;
-        }
-        
-        .shape-4 {
-            width: 100px;
-            height: 100px;
-            top: 30%;
-            right: 30%;
-            animation-delay: 1s;
-        }
-        
+        /* Floating Animations */
         @keyframes float {
             0%, 100% { transform: translateY(0px) rotate(0deg); }
             50% { transform: translateY(-20px) rotate(180deg); }
         }
         
-        /* Particle Animation */
-        .particle {
-            position: absolute;
-            width: 4px;
-            height: 4px;
-            background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
-            border-radius: 50%;
-            animation: particle-float 8s linear infinite;
+        .floating-shape {
+            animation: float 6s ease-in-out infinite;
         }
         
-        .particle-1 {
-            top: 20%;
-            left: 10%;
-            animation-delay: 0s;
-        }
-        
-        .particle-2 {
-            top: 40%;
-            right: 20%;
-            animation-delay: 2s;
-        }
-        
-        .particle-3 {
-            bottom: 30%;
-            left: 30%;
-            animation-delay: 4s;
-        }
-        
-        .particle-4 {
-            top: 60%;
-            right: 40%;
-            animation-delay: 6s;
-        }
-        
-        .particle-5 {
-            bottom: 50%;
-            left: 50%;
-            animation-delay: 1s;
-        }
-        
-        @keyframes particle-float {
-            0% { transform: translateY(100vh) scale(0); opacity: 0; }
-            10% { opacity: 1; }
-            90% { opacity: 1; }
-            100% { transform: translateY(-100px) scale(1); opacity: 0; }
-        }
-        
-        /* 3D Card Effects */
-        .perspective-1000 {
-            perspective: 1000px;
-        }
-        
-        .transform-style-preserve-3d {
-            transform-style: preserve-3d;
-        }
-        
-        .rotate-y-12 {
-            transform: rotateY(12deg);
-        }
-        
-        .rotate-y-180 {
-            transform: rotateY(180deg);
-        }
-        
-        .feature-front, .feature-back {
-            backface-visibility: hidden;
-        }
-        
-        .feature-back {
-            transform: rotateY(180deg);
-        }
-        
-        /* Feature Icon Wrapper */
-        .feature-icon-wrapper {
-            position: relative;
-        }
-        
-        /* Tech Feature Animations */
-        .tech-feature {
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        
-        .tech-feature:hover {
-            transform: translateY(-8px) scale(1.02);
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
-        }
-        
-        /* 3D Tech Stat Circles */
-        .tech-stat-circle {
-            position: relative;
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        
-        .tech-stat-circle:hover {
-            transform: translateY(-10px);
-        }
-        
-        .tech-stat-circle::before {
-            content: '';
-            position: absolute;
-            top: -5px;
-            left: -5px;
-            right: -5px;
-            bottom: -5px;
-            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-            border-radius: 50%;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-        
-        .tech-stat-circle:hover::before {
-            opacity: 1;
-        }
-        
-        /* Modern Health Technology Styles */
-        .floating-tech-shape {
-            position: absolute;
-            border-radius: 50%;
-            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
-            opacity: 0.1;
-            animation: tech-float 8s ease-in-out infinite;
-        }
-        
-        .floating-tech-shape.shape-1 {
-            width: 100px;
-            height: 100px;
-            top: 10%;
-            left: 5%;
-            animation-delay: 0s;
-        }
-        
-        .floating-tech-shape.shape-2 {
-            width: 80px;
-            height: 80px;
-            top: 60%;
-            right: 10%;
-            animation-delay: 2s;
-        }
-        
-        .floating-tech-shape.shape-3 {
-            width: 120px;
-            height: 120px;
-            bottom: 20%;
-            left: 15%;
-            animation-delay: 4s;
-        }
-        
-        .floating-tech-shape.shape-4 {
-            width: 60px;
-            height: 60px;
-            top: 30%;
-            right: 30%;
-            animation-delay: 6s;
-        }
-        
-        @keyframes tech-float {
-            0%, 100% { transform: translateY(0px) rotate(0deg) scale(1); }
-            50% { transform: translateY(-30px) rotate(180deg) scale(1.1); }
-        }
-        
-        /* Modern Tech Cards */
-        .modern-tech-card {
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        
-        .modern-tech-card:hover {
-            transform: translateY(-8px);
-        }
-        
-        .tech-icon-wrapper {
-            position: relative;
-        }
-        
-        /* Modern Stat Cards */
-        .modern-stat-card {
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        
-        .modern-stat-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        /* Title Animations */
-        .faq-title, .features-title, .health-tech-title {
-            background-size: 200% 200%;
-            animation: gradient-shift 3s ease infinite;
-        }
-        
-        @keyframes gradient-shift {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-        }
-        
-        /* Magnetic Hover Effect */
-        .magnetic-hover {
-            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        
-        /* Smooth Scroll Behavior */
-        html {
-            scroll-behavior: smooth;
-        }
-        
-        /* Enhanced Backdrop Blur */
-        .backdrop-blur-sm {
-            backdrop-filter: blur(8px);
-        }
-        
-        .backdrop-blur-md {
-            backdrop-filter: blur(12px);
-        }
-        
-        .backdrop-blur-lg {
-            backdrop-filter: blur(16px);
-        }
-        
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        
-        ::-webkit-scrollbar-track {
-            background: #f1f1f1;
-        }
-        
-        ::-webkit-scrollbar-thumb {
-            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
-            border-radius: 4px;
-        }
-        
-        ::-webkit-scrollbar-thumb:hover {
-            background: linear-gradient(45deg, var(--secondary-color), var(--accent-color));
-        }
-        
-        /* RTL Support for Arabic */
-        .rtl {
-            direction: rtl;
-        }
-        
-        /* Arabic Icon Centering */
-        [lang="ar"] i {
-            display: inline-flex !important;
-            align-items: center !important;
-            justify-content: center !important;
-        }
-        
-        [lang="ar"] .faq-icon i,
-        [lang="ar"] .tech-icon-wrapper i,
-        [lang="ar"] .feature-icon-wrapper i {
-            margin: 0 !important;
-            padding: 0 !important;
-        }
-        
-        /* Arabic Button and Link Icons */
-        [lang="ar"] button i,
-        [lang="ar"] a i {
-            margin-left: 0.5rem !important;
-            margin-right: 0 !important;
-            display: inline-flex !important;
-            align-items: center !important;
-        }
-        
-        /* Arabic Navigation Icons */
-        [lang="ar"] nav a i {
-            margin-left: 0.25rem !important;
-            margin-right: 0 !important;
-            display: inline-flex !important;
-            align-items: center !important;
-        }
-        
-        /* Arabic Spacing Fixes */
-        .rtl .mr-1 {
-            margin-right: 0 !important;
-            margin-left: 0.25rem !important;
-        }
-        
-        .rtl .mr-2 {
+        /* RTL Support */
+        [dir="rtl"] .mr-2 {
             margin-right: 0 !important;
             margin-left: 0.5rem !important;
         }
         
-        .rtl .ml-1 {
-            margin-left: 0 !important;
-            margin-right: 0.25rem !important;
-        }
-        
-        .rtl .ml-2 {
+        [dir="rtl"] .ml-2 {
             margin-left: 0 !important;
             margin-right: 0.5rem !important;
         }
         
-        .rtl .space-x-3 > * + * {
-            margin-left: 0 !important;
-            margin-right: 0.75rem !important;
+        /* Mobile Optimizations */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem !important;
+                line-height: 1.2;
+            }
+            
+            .mobile-padding {
+                padding: 1rem !important;
+            }
+            
+            .mobile-card {
+                margin-bottom: 1rem;
+                transform: none !important;
+            }
+            
+            .mobile-card:hover {
+                transform: translateY(-2px) !important;
+            }
         }
         
-        .rtl .space-x-6 > * + * {
-            margin-left: 0 !important;
-            margin-right: 1.5rem !important;
+        /* Glass Effect */
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
-        
-        .rtl .space-x-8 > * + * {
-            margin-left: 0 !important;
-            margin-right: 2rem !important;
-        }
-        
-        /* RTL Space Reverse */
-        .rtl .space-x-3 > * + * {
-            margin-left: 0.75rem !important;
-            margin-right: 0 !important;
-        }
-        
-        .rtl .space-x-6 > * + * {
-            margin-left: 1.5rem !important;
-            margin-right: 0 !important;
-        }
-        
-        /* Arabic Icon Centering in Cards */
-        [lang="ar"] .tech-icon-wrapper i,
-        [lang="ar"] .faq-icon i {
-            display: flex !important;
-            align-items: center !important;
-            justify-content: center !important;
-            width: 100% !important;
-            height: 100% !important;
-        }
-        
-
-        
-        /* AI Chat Interface - Fixed Position */
-        .ai-chat-widget {
-            position: fixed;
-            bottom: 100px;
-            right: 20px;
-            z-index: 1000;
-            transition: all 0.3s ease;
-        }
-        
-        .ai-chat-button {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            border: none;
-            color: white;
-            font-size: 24px;
-            cursor: pointer;
-            box-shadow: 0 10px 30px rgba(79, 70, 229, 0.3);
-            transition: all 0.3s ease;
-        }
-        
-        .ai-chat-button:hover {
-            transform: scale(1.1);
-            box-shadow: 0 15px 40px rgba(79, 70, 229, 0.4);
-        }
-        
-
         
         /* Gradient Text */
         .gradient-text {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color), var(--accent-color));
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-        
-
-            margin-right: 0.75rem !important;
-            margin-left: 0.75rem !important;
-        }
-        
-        [lang="ar"] .mr-4 {
-            margin-right: 1rem !important;
-            margin-left: 1rem !important;
-        }
-        
-        /* Arabic icon spacing */
-        [lang="ar"] i {
-            margin-left: 0.5rem !important;
-            margin-right: 0 !important;
-        }
-        
-        [lang="ar"] .fas,
-        [lang="ar"] .fab,
-        [lang="ar"] .far {
-            margin-left: 0.5rem !important;
-            margin-right: 0 !important;
-        }
-        
-
-        
-        /* Mobile Optimizations */
-        @media (max-width: 768px) {
-            .glass-effect {
-                backdrop-filter: blur(10px);
-            }
-            
-            .feature-card:hover {
-                transform: translateY(-5px);
-            }
-            
-
-        }
-        
-        /* Dark Mode Support */
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --primary-color: #6366F1;
-                --secondary-color: #8B5CF6;
-            }
-            
-            body {
-                background: #0F172A;
-                color: #F1F5F9;
-            }
-        }
-        
-        /* Accessibility Improvements */
-        .focus-visible:focus {
-            outline: 2px solid var(--primary-color);
-            outline-offset: 2px;
-        }
-        
-        /* High Contrast Mode */
-        @media (prefers-contrast: high) {
-            .glass-effect {
-                background: rgba(255, 255, 255, 0.9);
-                border: 2px solid #000;
-            }
-        }
     </style>
 </head>
-<body class="bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 text-gray-800 min-h-screen overflow-x-hidden">
-    <!-- AI Chat Widget - Fixed Position -->
-    <div class="ai-chat-widget" id="aiChatWidget">
-        <button class="ai-chat-button" id="aiChatButton" aria-label="Chat with AI Health Assistant">
-            <i class="fas fa-robot"></i>
-        </button>
-    </div>
-
-    <!-- Professional Signup Banner with Morocco-specific content -->
-    <div class="bg-gradient-to-r from-indigo-600 via-purple-600 to-indigo-800 text-white py-4 px-4 text-center sticky top-0 z-50 shadow-lg glass-effect-dark">
-        <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
-            <p class="mb-2 md:mb-0 font-medium text-sm md:text-base" data-lang="fr">
-                <i class="fas fa-star mr-2"></i>
-                Médecins, pharmacies et laboratoires: inscrivez-vous sur notre plateforme
-            </p>
-            <p class="mb-2 md:mb-0 font-medium text-sm md:text-base hidden" data-lang="ar">
-                <i class="fas fa-star mr-2"></i>
-                الأطباء والصيدليات والمختبرات: سجلوا على منصتنا
-            </p>
-            <a href="https://forms.gle/ehREcRXVs5azynum6" 
-               target="_blank"
-               rel="noopener noreferrer"
-               class="bg-white text-indigo-800 hover:bg-indigo-100 px-6 py-3 rounded-full font-medium transition-all shadow-lg whitespace-nowrap hover:scale-105 neumorphism"
-               data-lang="fr">
-               <i class="fas fa-user-plus mr-2"></i>S'inscrire maintenant
-            </a>
-            <a href="https://forms.gle/ehREcRXVs5azynum6" 
-               target="_blank"
-               rel="noopener noreferrer"
-               class="bg-white text-indigo-800 hover:bg-indigo-100 px-6 py-3 rounded-full font-medium transition-all shadow-lg whitespace-nowrap hover:scale-105 neumorphism hidden"
-               data-lang="ar">
-               <i class="fas fa-user-plus mr-2"></i>سجل الآن
-            </a>
-        </div>
-    </div>
-
-    <!-- Advanced 3D Background Canvas -->
-    <div id="canvas3d" class="fixed inset-0 pointer-events-none"></div>
-
-    <!-- Language Switch with Morocco Flag -->
-    <div class="fixed bottom-4 left-4 z-50 flex space-x-2">
-        <button id="switchToFr" class="language-switch glass-effect px-4 py-2 rounded-full shadow-lg flex items-center backdrop-blur-sm border border-white/20 hover:scale-105 transition-all">
-            <img src="https://flagcdn.com/w20/fr.png" srcset="https://flagcdn.com/w40/fr.png 2x" width="20" alt="France" class="mr-2">
-            <span class="font-medium">Français</span>
-        </button>
-        <button id="switchToAr" class="language-switch glass-effect px-4 py-2 rounded-full shadow-lg flex items-center backdrop-blur-sm border border-white/20 hover:scale-105 transition-all">
-            <img src="https://flagcdn.com/w20/ma.png" srcset="https://flagcdn.com/w40/ma.png 2x" width="20" alt="Morocco" class="mr-2">
-            <span class="font-medium">العربية</span>
-        </button>
-    </div>
-
-    <!-- Enhanced Header with Morocco Cities -->
-    <header class="container mx-auto px-4 py-6 flex justify-between items-center relative z-10">
-        <div class="flex items-center">
-            <div class="w-12 h-12 bg-gradient-to-br from-indigo-600 to-purple-600 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg">
-                <i class="fas fa-heartbeat"></i>
-            </div>
-            <div class="ml-3">
-                <h1 class="text-2xl font-bold text-indigo-800 gradient-text" data-lang="fr">Medacte</h1>
-                <h1 class="text-2xl font-bold text-indigo-800 gradient-text hidden" data-lang="ar">ميداكت</h1>
-                <p class="text-xs text-gray-600" data-lang="fr">Santé Digitale Maroc</p>
-                <p class="text-xs text-gray-600 hidden" data-lang="ar">الصحة الرقمية المغرب</p>
+<body class="bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 text-gray-800 overflow-x-hidden">
+    
+    <!-- Fixed Header -->
+    <header class="fixed top-0 left-0 right-0 bg-white/90 backdrop-blur-md border-b border-gray-200/50 z-50">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <div class="w-10 h-10 bg-gradient-to-br from-indigo-600 to-purple-600 rounded-xl flex items-center justify-center text-white shadow-lg">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <div class="ml-3">
+                        <h1 class="text-xl font-bold gradient-text" data-lang="fr">Medacte</h1>
+                        <h1 class="text-xl font-bold gradient-text hidden" data-lang="ar">ميداكت</h1>
+                        <p class="text-xs text-gray-600" data-lang="fr">Santé Digitale</p>
+                        <p class="text-xs text-gray-600 hidden" data-lang="ar">الصحة الرقمية</p>
+                    </div>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <nav class="hidden lg:flex items-center space-x-8">
+                    <a href="#features" class="nav-link" data-lang="fr">
+                        <i class="fas fa-star mr-2"></i>Fonctionnalités
+                    </a>
+                    <a href="#features" class="nav-link hidden" data-lang="ar">
+                        <i class="fas fa-star ml-2"></i>الميزات
+                    </a>
+                    <a href="#faq" class="nav-link" data-lang="fr">
+                        <i class="fas fa-question-circle mr-2"></i>FAQ
+                    </a>
+                    <a href="#faq" class="nav-link hidden" data-lang="ar">
+                        <i class="fas fa-question-circle ml-2"></i>الأسئلة الشائعة
+                    </a>
+                    <a href="#about" class="nav-link" data-lang="fr">
+                        <i class="fas fa-cogs mr-2"></i>Technologie
+                    </a>
+                    <a href="#about" class="nav-link hidden" data-lang="ar">
+                        <i class="fas fa-cogs ml-2"></i>التكنولوجيا
+                    </a>
+                    <a href="#contact" class="nav-link" data-lang="fr">
+                        <i class="fas fa-envelope mr-2"></i>Contact
+                    </a>
+                    <a href="#contact" class="nav-link hidden" data-lang="ar">
+                        <i class="fas fa-envelope ml-2"></i>اتصل بنا
+                    </a>
+                </nav>
+                
+                <!-- Mobile Menu Button -->
+                <button class="lg:hidden w-10 h-10 bg-indigo-600 text-white rounded-lg flex items-center justify-center hover:bg-indigo-700 transition-colors" id="mobileMenuButton">
+                    <i class="fas fa-bars"></i>
+                </button>
             </div>
         </div>
-        
-        <!-- Morocco Cities Quick Access -->
-        <div class="hidden lg:flex items-center space-x-4">
-            <div class="text-xs text-gray-600" data-lang="fr">Disponible dans:</div>
-            <div class="text-xs text-gray-600 hidden" data-lang="ar">متاح في:</div>
-            <div class="flex space-x-2">
-                <span class="px-2 py-1 bg-indigo-100 text-indigo-800 rounded-full text-xs">Casablanca</span>
-                <span class="px-2 py-1 bg-indigo-100 text-indigo-800 rounded-full text-xs">Rabat</span>
-                <span class="px-2 py-1 bg-indigo-100 text-indigo-800 rounded-full text-xs">Marrakech</span>
-                <span class="px-2 py-1 bg-indigo-100 text-indigo-800 rounded-full text-xs">Fès</span>
-            </div>
-        </div>
-        
-        <nav class="hidden md:flex space-x-8">
-            <a href="#features" class="font-medium hover:text-indigo-600 transition-all hover:scale-105" data-lang="fr">
-                <i class="fas fa-star mr-1"></i>Fonctionnalités
-            </a>
-            <a href="#features" class="font-medium hover:text-indigo-600 transition-all hover:scale-105 hidden" data-lang="ar">
-                <i class="fas fa-star ml-1"></i>الميزات
-            </a>
-            <a href="#faq" class="font-medium hover:text-indigo-600 transition-all hover:scale-105" data-lang="fr">
-                <i class="fas fa-question-circle mr-1"></i>FAQ
-            </a>
-            <a href="#faq" class="font-medium hover:text-indigo-600 transition-all hover:scale-105 hidden" data-lang="ar">
-                <i class="fas fa-question-circle ml-1"></i>الأسئلة الشائعة
-            </a>
-            <a href="#about" class="font-medium hover:text-indigo-600 transition-all hover:scale-105" data-lang="fr">
-                <i class="fas fa-info-circle mr-1"></i>À propos
-            </a>
-            <a href="#about" class="font-medium hover:text-indigo-600 transition-all hover:scale-105 hidden" data-lang="ar">
-                <i class="fas fa-info-circle ml-1"></i>حول
-            </a>
-            <a href="#contact" class="font-medium hover:text-indigo-600 transition-all hover:scale-105" data-lang="fr">
-                <i class="fas fa-envelope mr-1"></i>Contact
-            </a>
-            <a href="#contact" class="font-medium hover:text-indigo-600 transition-all hover:scale-105 hidden" data-lang="ar">
-                <i class="fas fa-envelope ml-1"></i>اتصل بنا
-            </a>
-        </nav>
-        
-        <button class="md:hidden text-2xl glass-effect p-2 rounded-lg" id="mobileMenuButton" aria-label="Menu">
-            <i class="fas fa-bars"></i>
-        </button>
     </header>
-
-    <!-- Enhanced Mobile Menu with Close Button -->
-    <div id="mobileMenu" class="fixed inset-0 bg-white/95 backdrop-blur-md z-40 flex flex-col items-center justify-center hidden">
-        <!-- Close Button - Top Right -->
-        <button id="closeMobileMenu" class="absolute top-6 right-6 text-3xl glass-effect p-4 rounded-full hover:bg-red-100 hover:text-red-600 transition-all">
+    
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="mobile-menu">
+        <button id="closeMobileMenu" class="absolute top-6 right-6 w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-red-100 hover:text-red-600 transition-all">
             <i class="fas fa-times"></i>
         </button>
         
-        <!-- Close Button - Bottom Center -->
-        <button id="closeMobileMenuBottom" class="absolute bottom-6 left-1/2 transform -translate-x-1/2 bg-indigo-600 text-white px-8 py-3 rounded-full font-medium hover:bg-indigo-700 transition-all">
-            <i class="fas fa-times mr-2"></i>
-            <span data-lang="fr">Fermer</span>
-            <span data-lang="ar" class="hidden">إغلاق</span>
-        </button>
-        
-        <nav class="flex flex-col items-center space-y-8">
-            <a href="#features" class="text-xl font-medium hover:text-indigo-600 transition-all hover:scale-105" data-lang="fr">
-                <i class="fas fa-star mr-2"></i>Fonctionnalités
+        <nav class="flex flex-col items-center space-y-6">
+            <a href="#features" class="mobile-nav-link" data-lang="fr">
+                <i class="fas fa-star mr-3"></i>Fonctionnalités
             </a>
-            <a href="#features" class="text-xl font-medium hover:text-indigo-600 transition-all hover:scale-105 hidden" data-lang="ar">
-                <i class="fas fa-star ml-2"></i>الميزات
+            <a href="#features" class="mobile-nav-link hidden" data-lang="ar">
+                <i class="fas fa-star ml-3"></i>الميزات
             </a>
-            <a href="#faq" class="text-xl font-medium hover:text-indigo-600 transition-all hover:scale-105" data-lang="fr">
-                <i class="fas fa-question-circle mr-2"></i>FAQ
+            <a href="#faq" class="mobile-nav-link" data-lang="fr">
+                <i class="fas fa-question-circle mr-3"></i>FAQ
             </a>
-            <a href="#faq" class="text-xl font-medium hover:text-indigo-600 transition-all hover:scale-105 hidden" data-lang="ar">
-                <i class="fas fa-question-circle ml-2"></i>الأسئلة الشائعة
+            <a href="#faq" class="mobile-nav-link hidden" data-lang="ar">
+                <i class="fas fa-question-circle ml-3"></i>الأسئلة الشائعة
             </a>
-            <a href="#about" class="text-xl font-medium hover:text-indigo-600 transition-all hover:scale-105" data-lang="fr">
-                <i class="fas fa-info-circle mr-2"></i>À propos
+            <a href="#about" class="mobile-nav-link" data-lang="fr">
+                <i class="fas fa-cogs mr-3"></i>Technologie
             </a>
-            <a href="#about" class="text-xl font-medium hover:text-indigo-600 transition-all hover:scale-105 hidden" data-lang="ar">
-                <i class="fas fa-info-circle ml-2"></i>حول
+            <a href="#about" class="mobile-nav-link hidden" data-lang="ar">
+                <i class="fas fa-cogs ml-3"></i>التكنولوجيا
             </a>
-            <a href="#contact" class="text-xl font-medium hover:text-indigo-600 transition-all hover:scale-105" data-lang="fr">
-                <i class="fas fa-envelope mr-2"></i>Contact
+            <a href="#contact" class="mobile-nav-link" data-lang="fr">
+                <i class="fas fa-envelope mr-3"></i>Contact
             </a>
-            <a href="#contact" class="text-xl font-medium hover:text-indigo-600 transition-all hover:scale-105 hidden" data-lang="ar">
-                <i class="fas fa-envelope ml-2"></i>اتصل بنا
+            <a href="#contact" class="mobile-nav-link hidden" data-lang="ar">
+                <i class="fas fa-envelope ml-3"></i>اتصل بنا
             </a>
         </nav>
-        
-        <!-- Mobile Cities -->
-        <div class="mt-8 text-center">
-            <p class="text-sm text-gray-600 mb-4" data-lang="fr">Disponible dans:</p>
-            <p class="text-sm text-gray-600 mb-4 hidden" data-lang="ar">متاح في:</p>
-            <div class="grid grid-cols-2 gap-2">
-                <span class="px-3 py-2 bg-indigo-100 text-indigo-800 rounded-lg text-sm">Casablanca</span>
-                <span class="px-3 py-2 bg-indigo-100 text-indigo-800 rounded-lg text-sm">Rabat</span>
-                <span class="px-3 py-2 bg-indigo-100 text-indigo-800 rounded-lg text-sm">Marrakech</span>
-                <span class="px-3 py-2 bg-indigo-100 text-indigo-800 rounded-lg text-sm">Fès</span>
-            </div>
-        </div>
     </div>
-
-    <!-- Next-Generation Hero Section -->
-    <section class="hero-section min-h-screen flex items-center relative">
-        <div class="container mx-auto px-4 hero-content relative z-10">
+    
+    <!-- Hero Section -->
+    <section class="min-h-screen flex items-center relative pt-20">
+        <div class="container mx-auto px-4 relative z-10">
             <div class="max-w-4xl mx-auto text-center scroll-animate">
+                <!-- AI Powered Badge -->
                 <div class="mb-8">
-                    <div class="inline-flex items-center space-x-3 bg-gradient-to-r from-indigo-500/10 to-purple-500/10 backdrop-blur-sm border border-indigo-200/50 px-6 py-3 rounded-full text-sm font-medium text-indigo-700 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105" data-lang="fr">
-                        <div class="w-8 h-8 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-full flex items-center justify-center text-white shadow-md">
+                    <div class="inline-flex items-center space-x-3 bg-gradient-to-r from-indigo-100 to-purple-100 px-6 py-3 rounded-full text-indigo-700 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105" data-lang="fr">
+                        <div class="w-8 h-8 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-full flex items-center justify-center text-white">
                             <i class="fas fa-robot text-sm"></i>
                         </div>
                         <span class="font-semibold">AI Powered</span>
                         <div class="w-1 h-1 bg-indigo-400 rounded-full"></div>
                         <span>Disponible au Maroc</span>
                     </div>
-                    <div class="inline-flex items-center space-x-3 bg-gradient-to-r from-indigo-500/10 to-purple-500/10 backdrop-blur-sm border border-indigo-200/50 px-6 py-3 rounded-full text-sm font-medium text-indigo-700 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 hidden" data-lang="ar">
-                        <div class="w-8 h-8 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-full flex items-center justify-center text-white shadow-md">
+                    <div class="inline-flex items-center space-x-3 bg-gradient-to-r from-indigo-100 to-purple-100 px-6 py-3 rounded-full text-indigo-700 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 hidden" data-lang="ar">
+                        <div class="w-8 h-8 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-full flex items-center justify-center text-white">
                             <i class="fas fa-robot text-sm"></i>
                         </div>
                         <span class="font-semibold">مدعوم بالذكاء الاصطناعي</span>
@@ -894,15 +286,17 @@
                     </div>
                 </div>
                 
-                <h2 class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 gradient-text leading-tight" data-lang="fr">
+                <!-- Hero Title -->
+                <h2 class="hero-title text-4xl md:text-6xl lg:text-7xl font-bold mb-6 gradient-text leading-tight" data-lang="fr">
                     Votre santé, <br>
                     <span class="text-indigo-600">notre priorité</span>
                 </h2>
-                <h2 class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 gradient-text leading-tight hidden" data-lang="ar">
+                <h2 class="hero-title text-4xl md:text-6xl lg:text-7xl font-bold mb-6 gradient-text leading-tight hidden" data-lang="ar">
                     صحتك، <br>
                     <span class="text-indigo-600">أولويتنا</span>
                 </h2>
                 
+                <!-- Hero Description -->
                 <p class="text-xl md:text-2xl mb-8 text-gray-700 max-w-3xl mx-auto leading-relaxed" data-lang="fr">
                     La première super application santé qui révolutionne l'accès aux soins au Maroc. 
                     <span class="font-semibold text-indigo-600">Bientôt disponible!</span>
@@ -912,23 +306,24 @@
                     <span class="font-semibold text-indigo-600">قريبا متاح!</span>
                 </p>
                 
-                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6 justify-center">
-                    <a href="https://forms.gle/tvqkcwZDCqXG8qSU9" target="_blank" rel="noopener noreferrer" class="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white px-8 py-4 rounded-full font-medium transition-all shadow-lg hover:scale-105 neumorphism group" data-lang="fr">
+                <!-- CTA Buttons -->
+                <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+                    <a href="https://forms.gle/tvqkcwZDCqXG8qSU9" target="_blank" class="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white px-8 py-4 rounded-full font-medium transition-all shadow-lg hover:scale-105 group" data-lang="fr">
                         <i class="fas fa-rocket mr-2 group-hover:animate-bounce"></i>Pré-inscription
                     </a>
-                    <a href="https://forms.gle/tvqkcwZDCqXG8qSU9" target="_blank" rel="noopener noreferrer" class="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white px-8 py-4 rounded-full font-medium transition-all shadow-lg hover:scale-105 neumorphism group hidden" data-lang="ar">
+                    <a href="https://forms.gle/tvqkcwZDCqXG8qSU9" target="_blank" class="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white px-8 py-4 rounded-full font-medium transition-all shadow-lg hover:scale-105 group hidden" data-lang="ar">
                         <i class="fas fa-rocket ml-2 group-hover:animate-bounce"></i>تسجيل مسبق
                     </a>
-                    <button class="border-2 border-indigo-600 text-indigo-600 hover:bg-indigo-50 px-8 py-4 rounded-full font-medium transition-all hover:scale-105 glass-effect group" data-lang="fr">
+                    <button class="border-2 border-indigo-600 text-indigo-600 hover:bg-indigo-50 px-8 py-4 rounded-full font-medium transition-all hover:scale-105 group" data-lang="fr">
                         <i class="fas fa-play mr-2 group-hover:animate-pulse"></i>Voir la démo
                     </button>
-                    <button class="border-2 border-indigo-600 text-indigo-600 hover:bg-indigo-50 px-8 py-4 rounded-full font-medium transition-all hover:scale-105 glass-effect group hidden" data-lang="ar">
+                    <button class="border-2 border-indigo-600 text-indigo-600 hover:bg-indigo-50 px-8 py-4 rounded-full font-medium transition-all hover:scale-105 group hidden" data-lang="ar">
                         <i class="fas fa-play ml-2 group-hover:animate-pulse"></i>عرض التجريبي
                     </button>
                 </div>
                 
-                <!-- Morocco Stats -->
-                <div class="mt-12 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-2xl mx-auto">
+                <!-- Stats -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-2xl mx-auto">
                     <div class="text-center">
                         <div class="text-2xl md:text-3xl font-bold text-indigo-600">100+</div>
                         <div class="text-sm text-gray-600" data-lang="fr">Professionnels</div>
@@ -953,515 +348,226 @@
             </div>
         </div>
     </section>
-
-    <!-- Modern Features Section -->
-    <section id="features" class="py-20 bg-gradient-to-br from-white via-indigo-50 to-purple-50 relative overflow-hidden">
-        <!-- Animated Background Particles -->
-        <div class="absolute inset-0 overflow-hidden">
-            <div class="particle particle-1"></div>
-            <div class="particle particle-2"></div>
-            <div class="particle particle-3"></div>
-            <div class="particle particle-4"></div>
-            <div class="particle particle-5"></div>
-        </div>
-        
+    
+    <!-- Features Section -->
+    <section id="features" class="py-20 bg-white relative overflow-hidden">
         <div class="container mx-auto px-4 relative z-10">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent features-title" data-lang="fr">Nos fonctionnalités</h2>
-                <h2 class="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent features-title hidden" data-lang="ar">ميزاتنا</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto features-subtitle" data-lang="fr">Découvrez comment Medacte va transformer votre expérience santé avec des technologies de pointe</p>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto features-subtitle hidden" data-lang="ar">اكتشف كيف ستحول ميداكت تجربتك الصحية بأحدث التقنيات</p>
+            <div class="text-center mb-16 scroll-animate">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 gradient-text" data-lang="fr">Nos Fonctionnalités</h2>
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 gradient-text hidden" data-lang="ar">ميزاتنا</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto" data-lang="fr">Découvrez comment Medacte transforme votre expérience santé</p>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto hidden" data-lang="ar">اكتشف كيف يحول ميداكت تجربتك الصحية</p>
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Feature 1 - 3D Card -->
-                <div class="feature-card-3d group perspective-1000">
-                    <div class="relative transform-style-preserve-3d transition-all duration-700 group-hover:rotate-y-12">
-                        <div class="feature-front bg-white/90 backdrop-blur-sm p-8 rounded-2xl border border-white/50 shadow-xl hover:shadow-2xl transition-all duration-500">
-                            <div class="feature-icon-wrapper mb-6">
-                                <div class="w-16 h-16 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-2xl flex items-center justify-center text-white shadow-lg transform transition-all duration-500 group-hover:scale-110 group-hover:rotate-12">
-                                    <i class="fas fa-calendar-check text-2xl"></i>
-                                </div>
-                                <div class="absolute inset-0 bg-gradient-to-br from-indigo-400 to-purple-500 rounded-2xl opacity-0 group-hover:opacity-20 blur-xl transition-all duration-500"></div>
-                            </div>
-                            <h3 class="text-xl font-bold mb-4 text-indigo-900 group-hover:text-indigo-600 transition-colors" data-lang="fr">Rendez-vous en ligne</h3>
-                            <h3 class="text-xl font-bold mb-4 text-indigo-900 group-hover:text-indigo-600 transition-colors hidden" data-lang="ar">مواعيد عبر الإنترنت</h3>
-                            <p class="text-gray-600 leading-relaxed" data-lang="fr">Prenez rendez-vous avec des professionnels de santé en quelques clics, 24h/24. Interface intuitive et confirmation instantanée.</p>
-                            <p class="text-gray-600 leading-relaxed hidden" data-lang="ar">احجز موعدًا مع متخصصي الرعاية الصحية ببضع نقرات، على مدار الساعة. واجهة سهلة الاستخدام وتأكيد فوري.</p>
+                <!-- Feature 1 -->
+                <div class="bg-white p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 mobile-card scroll-animate">
+                    <div class="w-16 h-16 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-2xl flex items-center justify-center text-white mb-6 mx-auto shadow-lg">
+                        <i class="fas fa-calendar-check text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4 text-center" data-lang="fr">Rendez-vous en ligne</h3>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4 text-center hidden" data-lang="ar">مواعيد عبر الإنترنت</h3>
+                    <p class="text-gray-600 text-center leading-relaxed" data-lang="fr">Prenez rendez-vous avec des médecins qualifiés en quelques clics</p>
+                    <p class="text-gray-600 text-center leading-relaxed hidden" data-lang="ar">احجز موعدًا مع أطباء مؤهلين بنقرات قليلة</p>
+                </div>
+                
+                <!-- Feature 2 -->
+                <div class="bg-white p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 mobile-card scroll-animate">
+                    <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-2xl flex items-center justify-center text-white mb-6 mx-auto shadow-lg">
+                        <i class="fas fa-pills text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4 text-center" data-lang="fr">Pharmacie en ligne</h3>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4 text-center hidden" data-lang="ar">صيدلية إلكترونية</h3>
+                    <p class="text-gray-600 text-center leading-relaxed" data-lang="fr">Commandez vos médicaments et recevez-les à domicile</p>
+                    <p class="text-gray-600 text-center leading-relaxed hidden" data-lang="ar">اطلب أدويتك واستلمها في المنزل</p>
+                </div>
+                
+                <!-- Feature 3 -->
+                <div class="bg-white p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 mobile-card scroll-animate">
+                    <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center text-white mb-6 mx-auto shadow-lg">
+                        <i class="fas fa-user-md text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4 text-center" data-lang="fr">Téléconsultation</h3>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4 text-center hidden" data-lang="ar">استشارة عن بعد</h3>
+                    <p class="text-gray-600 text-center leading-relaxed" data-lang="fr">Consultez votre médecin depuis chez vous en vidéo</p>
+                    <p class="text-gray-600 text-center leading-relaxed hidden" data-lang="ar">استشر طبيبك من منزلك عبر الفيديو</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- FAQ Section -->
+    <section id="faq" class="py-20 bg-gradient-to-br from-indigo-50 to-purple-50 relative overflow-hidden">
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="text-center mb-16 scroll-animate">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 gradient-text" data-lang="fr">Questions Fréquentes</h2>
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 gradient-text hidden" data-lang="ar">الأسئلة الشائعة</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto" data-lang="fr">Trouvez rapidement les réponses à vos questions</p>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto hidden" data-lang="ar">اعثر بسرعة على إجابات أسئلتك</p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto space-y-6">
+                <!-- FAQ Item 1 -->
+                <div class="faq-item bg-white/80 backdrop-blur-sm rounded-2xl border border-white/50 shadow-xl mobile-card scroll-animate">
+                    <button class="faq-question w-full px-6 py-6 text-left flex items-center justify-between group">
+                        <h3 class="text-lg font-semibold text-gray-900 group-hover:text-indigo-600 transition-colors" data-lang="fr">Combien coûte une consultation ?</h3>
+                        <h3 class="text-lg font-semibold text-gray-900 group-hover:text-indigo-600 transition-colors hidden" data-lang="ar">كم تكلفة الاستشارة؟</h3>
+                        <div class="w-8 h-8 rounded-full bg-indigo-600 flex items-center justify-center text-white">
+                            <i class="fas fa-plus transition-transform duration-300"></i>
                         </div>
-                        <div class="feature-back absolute inset-0 bg-gradient-to-br from-indigo-600 to-purple-700 p-8 rounded-2xl text-white opacity-0 group-hover:opacity-100 transition-all duration-500 transform rotate-y-180">
-                            <h4 class="text-lg font-bold mb-3" data-lang="fr">Fonctionnalités avancées</h4>
-                            <h4 class="text-lg font-bold mb-3 hidden" data-lang="ar">ميزات متقدمة</h4>
-                            <ul class="text-sm space-y-2">
-                                <li class="flex items-center"><i class="fas fa-check mr-2"></i> <span data-lang="fr">Rappels automatiques</span><span data-lang="ar" class="hidden">تذكيرات تلقائية</span></li>
-                                <li class="flex items-center"><i class="fas fa-check mr-2"></i> <span data-lang="fr">Annulation facile</span><span data-lang="ar" class="hidden">إلغاء سهل</span></li>
-                                <li class="flex items-center"><i class="fas fa-check mr-2"></i> <span data-lang="fr">Historique complet</span><span data-lang="ar" class="hidden">سجل كامل</span></li>
-                            </ul>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="px-6 pb-6">
+                            <p class="text-gray-700 leading-relaxed" data-lang="fr">Les tarifs varient selon la spécialité : consultation générale (150-200 MAD), spécialiste (250-350 MAD). La première consultation est offerte !</p>
+                            <p class="text-gray-700 leading-relaxed hidden" data-lang="ar">تختلف الأسعار حسب التخصص: استشارة عامة (150-200 درهم)، متخصص (250-350 درهم). الاستشارة الأولى مجانية!</p>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Feature 2 - 3D Card -->
-                <div class="feature-card-3d group perspective-1000">
-                    <div class="relative transform-style-preserve-3d transition-all duration-700 group-hover:rotate-y-12">
-                        <div class="feature-front bg-white/90 backdrop-blur-sm p-8 rounded-2xl border border-white/50 shadow-xl hover:shadow-2xl transition-all duration-500">
-                            <div class="feature-icon-wrapper mb-6">
-                                <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-2xl flex items-center justify-center text-white shadow-lg transform transition-all duration-500 group-hover:scale-110 group-hover:rotate-12">
-                                    <i class="fas fa-comments text-2xl"></i>
-                                </div>
-                                <div class="absolute inset-0 bg-gradient-to-br from-blue-400 to-cyan-500 rounded-2xl opacity-0 group-hover:opacity-20 blur-xl transition-all duration-500"></div>
-                            </div>
-                            <h3 class="text-xl font-bold mb-4 text-indigo-900 group-hover:text-indigo-600 transition-colors" data-lang="fr">Consultation à distance</h3>
-                            <h3 class="text-xl font-bold mb-4 text-indigo-900 group-hover:text-indigo-600 transition-colors hidden" data-lang="ar">استشارة عن بعد</h3>
-                            <p class="text-gray-600 leading-relaxed" data-lang="fr">Consultez un médecin par vidéo HD ou chat sécurisé sans vous déplacer. Qualité professionnelle garantie.</p>
-                            <p class="text-gray-600 leading-relaxed hidden" data-lang="ar">استشر طبيبًا عبر فيديو عالي الجودة أو دردشة آمنة دون الحاجة إلى التنقل. جودة مهنية مضمونة.</p>
+                <!-- FAQ Item 2 -->
+                <div class="faq-item bg-white/80 backdrop-blur-sm rounded-2xl border border-white/50 shadow-xl mobile-card scroll-animate">
+                    <button class="faq-question w-full px-6 py-6 text-left flex items-center justify-between group">
+                        <h3 class="text-lg font-semibold text-gray-900 group-hover:text-indigo-600 transition-colors" data-lang="fr">Comment obtenir une ordonnance ?</h3>
+                        <h3 class="text-lg font-semibold text-gray-900 group-hover:text-indigo-600 transition-colors hidden" data-lang="ar">كيف أحصل على وصفة طبية؟</h3>
+                        <div class="w-8 h-8 rounded-full bg-indigo-600 flex items-center justify-center text-white">
+                            <i class="fas fa-plus transition-transform duration-300"></i>
                         </div>
-                        <div class="feature-back absolute inset-0 bg-gradient-to-br from-blue-600 to-cyan-700 p-8 rounded-2xl text-white opacity-0 group-hover:opacity-100 transition-all duration-500 transform rotate-y-180">
-                            <h4 class="text-lg font-bold mb-3" data-lang="fr">Technologies utilisées</h4>
-                            <h4 class="text-lg font-bold mb-3 hidden" data-lang="ar">التقنيات المستخدمة</h4>
-                            <ul class="text-sm space-y-2">
-                                <li class="flex items-center"><i class="fas fa-video mr-2"></i> <span data-lang="fr">Vidéo HD 1080p</span><span data-lang="ar" class="hidden">فيديو عالي الجودة</span></li>
-                                <li class="flex items-center"><i class="fas fa-shield-alt mr-2"></i> <span data-lang="fr">Chiffrement end-to-end</span><span data-lang="ar" class="hidden">تشفير من طرف لطرف</span></li>
-                                <li class="flex items-center"><i class="fas fa-wifi mr-2"></i> <span data-lang="fr">Adaptation réseau</span><span data-lang="ar" class="hidden">تكيف الشبكة</span></li>
-                            </ul>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="px-6 pb-6">
+                            <p class="text-gray-700 leading-relaxed" data-lang="fr">Après consultation, le médecin peut prescrire des médicaments. L'ordonnance est envoyée électroniquement à votre pharmacie partenaire.</p>
+                            <p class="text-gray-700 leading-relaxed hidden" data-lang="ar">بعد الاستشارة، يمكن للطبيب وصف الأدوية. يتم إرسال الوصفة إلكترونيًا إلى صيدليتك الشريكة.</p>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Feature 3 - 3D Card -->
-                <div class="feature-card-3d group perspective-1000">
-                    <div class="relative transform-style-preserve-3d transition-all duration-700 group-hover:rotate-y-12">
-                        <div class="feature-front bg-white/90 backdrop-blur-sm p-8 rounded-2xl border border-white/50 shadow-xl hover:shadow-2xl transition-all duration-500">
-                            <div class="feature-icon-wrapper mb-6">
-                                <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center text-white shadow-lg transform transition-all duration-500 group-hover:scale-110 group-hover:rotate-12">
-                                    <i class="fas fa-pills text-2xl"></i>
-                                </div>
-                                <div class="absolute inset-0 bg-gradient-to-br from-green-400 to-emerald-500 rounded-2xl opacity-0 group-hover:opacity-20 blur-xl transition-all duration-500"></div>
-                            </div>
-                            <h3 class="text-xl font-bold mb-4 text-indigo-900 group-hover:text-indigo-600 transition-colors" data-lang="fr">Pharmacie en ligne</h3>
-                            <h3 class="text-xl font-bold mb-4 text-indigo-900 group-hover:text-indigo-600 transition-colors hidden" data-lang="ar">صيدلية على الإنترنت</h3>
-                            <p class="text-gray-600 leading-relaxed" data-lang="fr">Commandez vos médicaments et recevez-les à domicile. Livraison rapide et suivi en temps réel de votre commande.</p>
-                            <p class="text-gray-600 leading-relaxed hidden" data-lang="ar">اطلب أدويتك واستلمها في منزلك. توصيل سريع ومتابعة فورية لطلبك.</p>
+                <!-- FAQ Item 3 -->
+                <div class="faq-item bg-white/80 backdrop-blur-sm rounded-2xl border border-white/50 shadow-xl mobile-card scroll-animate">
+                    <button class="faq-question w-full px-6 py-6 text-left flex items-center justify-between group">
+                        <h3 class="text-lg font-semibold text-gray-900 group-hover:text-indigo-600 transition-colors" data-lang="fr">Dans quelles villes êtes-vous disponibles ?</h3>
+                        <h3 class="text-lg font-semibold text-gray-900 group-hover:text-indigo-600 transition-colors hidden" data-lang="ar">في أي مدن أنتم متاحون؟</h3>
+                        <div class="w-8 h-8 rounded-full bg-indigo-600 flex items-center justify-center text-white">
+                            <i class="fas fa-plus transition-transform duration-300"></i>
                         </div>
-                        <div class="feature-back absolute inset-0 bg-gradient-to-br from-green-600 to-emerald-700 p-8 rounded-2xl text-white opacity-0 group-hover:opacity-100 transition-all duration-500 transform rotate-y-180">
-                            <h4 class="text-lg font-bold mb-3" data-lang="fr">Services inclus</h4>
-                            <h4 class="text-lg font-bold mb-3 hidden" data-lang="ar">الخدمات المدرجة</h4>
-                            <ul class="text-sm space-y-2">
-                                <li class="flex items-center"><i class="fas fa-truck mr-2"></i> <span data-lang="fr">Livraison 2h</span><span data-lang="ar" class="hidden">توصيل في ساعتين</span></li>
-                                <li class="flex items-center"><i class="fas fa-map-marker-alt mr-2"></i> <span data-lang="fr">Suivi GPS</span><span data-lang="ar" class="hidden">متابعة GPS</span></li>
-                                <li class="flex items-center"><i class="fas fa-clock mr-2"></i> <span data-lang="fr">24h/24</span><span data-lang="ar" class="hidden">24 ساعة</span></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Feature 4 - 3D Card -->
-                <div class="feature-card-3d group perspective-1000">
-                    <div class="relative transform-style-preserve-3d transition-all duration-700 group-hover:rotate-y-12">
-                        <div class="feature-front bg-white/90 backdrop-blur-sm p-8 rounded-2xl border border-white/50 shadow-xl hover:shadow-2xl transition-all duration-500">
-                            <div class="feature-icon-wrapper mb-6">
-                                <div class="w-16 h-16 bg-gradient-to-br from-red-500 to-pink-600 rounded-2xl flex items-center justify-center text-white shadow-lg transform transition-all duration-500 group-hover:scale-110 group-hover:rotate-12">
-                                    <i class="fas fa-heartbeat text-2xl"></i>
-                                </div>
-                                <div class="absolute inset-0 bg-gradient-to-br from-red-400 to-pink-500 rounded-2xl opacity-0 group-hover:opacity-20 blur-xl transition-all duration-500"></div>
-                            </div>
-                            <h3 class="text-xl font-bold mb-4 text-indigo-900 group-hover:text-indigo-600 transition-colors" data-lang="fr">Suivi médical</h3>
-                            <h3 class="text-xl font-bold mb-4 text-indigo-900 group-hover:text-indigo-600 transition-colors hidden" data-lang="ar">متابعة طبية</h3>
-                            <p class="text-gray-600 leading-relaxed" data-lang="fr">Accédez à votre dossier médical complet et suivez vos indicateurs santé en temps réel avec des graphiques interactifs.</p>
-                            <p class="text-gray-600 leading-relaxed hidden" data-lang="ar">الوصول إلى ملفك الطبي الكامل ومتابعة مؤشراتك الصحية في الوقت الفعلي مع رسوم بيانية تفاعلية.</p>
-                        </div>
-                        <div class="feature-back absolute inset-0 bg-gradient-to-br from-red-600 to-pink-700 p-8 rounded-2xl text-white opacity-0 group-hover:opacity-100 transition-all duration-500 transform rotate-y-180">
-                            <h4 class="text-lg font-bold mb-3" data-lang="fr">Données suivies</h4>
-                            <h4 class="text-lg font-bold mb-3 hidden" data-lang="ar">البيانات المتابعة</h4>
-                            <ul class="text-sm space-y-2">
-                                <li class="flex items-center"><i class="fas fa-chart-line mr-2"></i> <span data-lang="fr">Tension artérielle</span><span data-lang="ar" class="hidden">ضغط الدم</span></li>
-                                <li class="flex items-center"><i class="fas fa-weight mr-2"></i> <span data-lang="fr">Poids & IMC</span><span data-lang="ar" class="hidden">الوزن ومؤشر كتلة الجسم</span></li>
-                                <li class="flex items-center"><i class="fas fa-pills mr-2"></i> <span data-lang="fr">Médicaments</span><span data-lang="ar" class="hidden">الأدوية</span></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Feature 5 - 3D Card -->
-                <div class="feature-card-3d group perspective-1000">
-                    <div class="relative transform-style-preserve-3d transition-all duration-700 group-hover:rotate-y-12">
-                        <div class="feature-front bg-white/90 backdrop-blur-sm p-8 rounded-2xl border border-white/50 shadow-xl hover:shadow-2xl transition-all duration-500">
-                            <div class="feature-icon-wrapper mb-6">
-                                <div class="w-16 h-16 bg-gradient-to-br from-orange-500 to-red-600 rounded-2xl flex items-center justify-center text-white shadow-lg transform transition-all duration-500 group-hover:scale-110 group-hover:rotate-12">
-                                    <i class="fas fa-ambulance text-2xl"></i>
-                                </div>
-                                <div class="absolute inset-0 bg-gradient-to-br from-orange-400 to-red-500 rounded-2xl opacity-0 group-hover:opacity-20 blur-xl transition-all duration-500"></div>
-                            </div>
-                            <h3 class="text-xl font-bold mb-4 text-indigo-900 group-hover:text-indigo-600 transition-colors" data-lang="fr">Urgence 24/7</h3>
-                            <h3 class="text-xl font-bold mb-4 text-indigo-900 group-hover:text-indigo-600 transition-colors hidden" data-lang="ar">طوارئ 24/7</h3>
-                            <p class="text-gray-600 leading-relaxed" data-lang="fr">Accès immédiat à des services d'urgence partout au Maroc. Réponse en moins de 30 secondes.</p>
-                            <p class="text-gray-600 leading-relaxed hidden" data-lang="ar">وصول فوري إلى خدمات الطوارئ في جميع أنحاء المغرب. استجابة في أقل من 30 ثانية.</p>
-                        </div>
-                        <div class="feature-back absolute inset-0 bg-gradient-to-br from-orange-600 to-red-700 p-8 rounded-2xl text-white opacity-0 group-hover:opacity-100 transition-all duration-500 transform rotate-y-180">
-                            <h4 class="text-lg font-bold mb-3" data-lang="fr">Services d'urgence</h4>
-                            <h4 class="text-lg font-bold mb-3 hidden" data-lang="ar">خدمات الطوارئ</h4>
-                            <ul class="text-sm space-y-2">
-                                <li class="flex items-center"><i class="fas fa-phone mr-2"></i> <span data-lang="fr">Appel immédiat</span><span data-lang="ar" class="hidden">اتصال فوري</span></li>
-                                <li class="flex items-center"><i class="fas fa-location-arrow mr-2"></i> <span data-lang="fr">Géolocalisation</span><span data-lang="ar" class="hidden">تحديد الموقع</span></li>
-                                <li class="flex items-center"><i class="fas fa-user-md mr-2"></i> <span data-lang="fr">Médecin de garde</span><span data-lang="ar" class="hidden">طبيب المناوبة</span></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Feature 6 - 3D Card -->
-                <div class="feature-card-3d group perspective-1000">
-                    <div class="relative transform-style-preserve-3d transition-all duration-700 group-hover:rotate-y-12">
-                        <div class="feature-front bg-white/90 backdrop-blur-sm p-8 rounded-2xl border border-white/50 shadow-xl hover:shadow-2xl transition-all duration-500">
-                            <div class="feature-icon-wrapper mb-6">
-                                <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-2xl flex items-center justify-center text-white shadow-lg transform transition-all duration-500 group-hover:scale-110 group-hover:rotate-12">
-                                    <i class="fas fa-shield-alt text-2xl"></i>
-                                </div>
-                                <div class="absolute inset-0 bg-gradient-to-br from-purple-400 to-indigo-500 rounded-2xl opacity-0 group-hover:opacity-20 blur-xl transition-all duration-500"></div>
-                            </div>
-                            <h3 class="text-xl font-bold mb-4 text-indigo-900 group-hover:text-indigo-600 transition-colors" data-lang="fr">Sécurité des données</h3>
-                            <h3 class="text-xl font-bold mb-4 text-indigo-900 group-hover:text-indigo-600 transition-colors hidden" data-lang="ar">حماية البيانات</h3>
-                            <p class="text-gray-600 leading-relaxed" data-lang="fr">Vos données médicales sont cryptées avec des standards bancaires et protégées par des protocoles de sécurité avancés.</p>
-                            <p class="text-gray-600 leading-relaxed hidden" data-lang="ar">بياناتك الطبية مشفرة بمعايير بنكية ومحمية ببروتوكولات أمان متقدمة.</p>
-                        </div>
-                        <div class="feature-back absolute inset-0 bg-gradient-to-br from-purple-600 to-indigo-700 p-8 rounded-2xl text-white opacity-0 group-hover:opacity-100 transition-all duration-500 transform rotate-y-180">
-                            <h4 class="text-lg font-bold mb-3" data-lang="fr">Protection avancée</h4>
-                            <h4 class="text-lg font-bold mb-3 hidden" data-lang="ar">حماية متقدمة</h4>
-                            <ul class="text-sm space-y-2">
-                                <li class="flex items-center"><i class="fas fa-lock mr-2"></i> <span data-lang="fr">Chiffrement AES-256</span><span data-lang="ar" class="hidden">تشفير AES-256</span></li>
-                                <li class="flex items-center"><i class="fas fa-certificate mr-2"></i> <span data-lang="fr">Certification ISO</span><span data-lang="ar" class="hidden">شهادة ISO</span></li>
-                                <li class="flex items-center"><i class="fas fa-eye-slash mr-2"></i> <span data-lang="fr">Anonymisation</span><span data-lang="ar" class="hidden">إخفاء الهوية</span></li>
-                            </ul>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="px-6 pb-6">
+                            <p class="text-gray-700 leading-relaxed" data-lang="fr">Medacte est disponible dans 6 villes : Casablanca, Rabat, Marrakech, Fès, Tanger et Agadir. Nous étendons progressivement notre couverture.</p>
+                            <p class="text-gray-700 leading-relaxed hidden" data-lang="ar">ميداكت متاح في 6 مدن: الدار البيضاء، الرباط، مراكش، فاس، طنجة وأكادير. نوسع تغطيتنا تدريجياً.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- Modern FAQ Section -->
-    <section id="faq" class="py-20 bg-gradient-to-br from-indigo-50 via-white to-purple-50 relative overflow-hidden">
-        <!-- Animated Background Elements -->
-        <div class="absolute inset-0 overflow-hidden">
-            <div class="floating-shape shape-1"></div>
-            <div class="floating-shape shape-2"></div>
-            <div class="floating-shape shape-3"></div>
-            <div class="floating-shape shape-4"></div>
-        </div>
-        
+    
+    <!-- Technology Section -->
+    <section id="about" class="py-20 bg-white relative overflow-hidden">
         <div class="container mx-auto px-4 relative z-10">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent faq-title" data-lang="fr">Questions Fréquentes</h2>
-                <h2 class="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent faq-title hidden" data-lang="ar">الأسئلة الشائعة</h2>
-                <p class="text-xl text-gray-600 max-w-2xl mx-auto faq-subtitle" data-lang="fr">Trouvez rapidement les réponses à vos questions sur Medacte</p>
-                <p class="text-xl text-gray-600 max-w-2xl mx-auto faq-subtitle hidden" data-lang="ar">اعثر بسرعة على إجابات أسئلتك حول ميداكت</p>
+            <div class="text-center mb-16 scroll-animate">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 gradient-text" data-lang="fr">Technologie Avancée</h2>
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 gradient-text hidden" data-lang="ar">تقنية متقدمة</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto" data-lang="fr">Découvrez les technologies qui transforment l'expérience utilisateur</p>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto hidden" data-lang="ar">اكتشف التقنيات التي تحول تجربة المستخدم</p>
             </div>
             
-            <div class="max-w-4xl mx-auto">
-                <div class="space-y-6">
-                    <!-- FAQ Item 1 -->
-                    <div class="faq-item bg-white/80 backdrop-blur-sm rounded-2xl border border-white/50 shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden mobile-card-animate mobile-touch-effect">
-                        <button class="faq-question w-full px-8 py-6 text-left flex items-center justify-between group">
-                            <h3 class="text-xl font-semibold text-indigo-900 group-hover:text-indigo-600 transition-colors" data-lang="fr">Combien coûte une consultation sur Medacte ?</h3>
-                            <h3 class="text-xl font-semibold text-indigo-900 group-hover:text-indigo-600 transition-colors hidden" data-lang="ar">كم تكلفة الاستشارة على ميداكت؟</h3>
-                            <div class="faq-icon w-8 h-8 rounded-full bg-gradient-to-r from-indigo-500 to-purple-500 flex items-center justify-center text-white transition-all duration-300 group-hover:scale-110">
-                                <i class="fas fa-plus transform transition-transform duration-300"></i>
-                            </div>
-                        </button>
-                        <div class="faq-answer max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
-                            <div class="px-8 pb-6">
-                                <p class="text-gray-700 leading-relaxed" data-lang="fr">Les tarifs varient selon la spécialité : consultation générale (150-200 MAD), spécialiste (250-350 MAD), urgence (400 MAD). Nous proposons des forfaits familiaux et des réductions pour les abonnés. La première consultation est offerte !</p>
-                                <p class="text-gray-700 leading-relaxed hidden" data-lang="ar">تختلف الأسعار حسب التخصص: استشارة عامة (150-200 درهم)، متخصص (250-350 درهم)، طوارئ (400 درهم). نقدم باقات عائلية وخصومات للمشتركين. الاستشارة الأولى مجانية!</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- FAQ Item 2 -->
-                    <div class="faq-item bg-white/80 backdrop-blur-sm rounded-2xl border border-white/50 shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden">
-                        <button class="faq-question w-full px-8 py-6 text-left flex items-center justify-between group">
-                            <h3 class="text-xl font-semibold text-indigo-900 group-hover:text-indigo-600 transition-colors" data-lang="fr">Puis-je obtenir une ordonnance en ligne ?</h3>
-                            <h3 class="text-xl font-semibold text-indigo-900 group-hover:text-indigo-600 transition-colors hidden" data-lang="ar">هل يمكنني الحصول على وصفة طبية عبر الإنترنت؟</h3>
-                            <div class="faq-icon w-8 h-8 rounded-full bg-gradient-to-r from-indigo-500 to-purple-500 flex items-center justify-center text-white transition-all duration-300 group-hover:scale-110">
-                                <i class="fas fa-plus transform transition-transform duration-300"></i>
-                            </div>
-                        </button>
-                        <div class="faq-answer max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
-                            <div class="px-8 pb-6">
-                                <p class="text-gray-700 leading-relaxed" data-lang="fr">Oui ! Après votre consultation, le médecin peut vous prescrire des médicaments si nécessaire. L'ordonnance est envoyée électroniquement à votre pharmacie partenaire. Vous recevez également une copie numérique dans votre espace patient.</p>
-                                <p class="text-gray-700 leading-relaxed hidden" data-lang="ar">نعم! بعد استشارتك، يمكن للطبيب أن يصف لك أدوية إذا لزم الأمر. يتم إرسال الوصفة الطبية إلكترونيًا إلى صيدليتك الشريكة. كما تحصل على نسخة رقمية في مساحة المريض الخاصة بك.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- FAQ Item 3 -->
-                    <div class="faq-item bg-white/80 backdrop-blur-sm rounded-2xl border border-white/50 shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden">
-                        <button class="faq-question w-full px-8 py-6 text-left flex items-center justify-between group">
-                            <h3 class="text-xl font-semibold text-indigo-900 group-hover:text-indigo-600 transition-colors" data-lang="fr">Dans quelles villes Medacte est-il disponible ?</h3>
-                            <h3 class="text-xl font-semibold text-indigo-900 group-hover:text-indigo-600 transition-colors hidden" data-lang="ar">في أي مدن متاح ميداكت؟</h3>
-                            <div class="faq-icon w-8 h-8 rounded-full bg-gradient-to-r from-indigo-500 to-purple-500 flex items-center justify-center text-white transition-all duration-300 group-hover:scale-110">
-                                <i class="fas fa-plus transform transition-transform duration-300"></i>
-                            </div>
-                        </button>
-                        <div class="faq-answer max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
-                            <div class="px-8 pb-6">
-                                <p class="text-gray-700 leading-relaxed" data-lang="fr">Medacte est disponible dans toutes les grandes villes du Maroc : Casablanca, Rabat, Marrakech, Fès, Tanger, Agadir, Meknès, Oujda, et plus encore. La télémedecine est accessible partout, et la livraison de médicaments couvre 95% du territoire.</p>
-                                <p class="text-gray-700 leading-relaxed hidden" data-lang="ar">ميداكت متاح في جميع المدن الكبرى في المغرب: الدار البيضاء، الرباط، مراكش، فاس، طنجة، أغادير، مكناس، وجدة، والمزيد. الطب عن بعد متاح في كل مكان، وتوصيل الأدوية يغطي 95% من الأراضي.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- FAQ Item 4 -->
-                    <div class="faq-item bg-white/80 backdrop-blur-sm rounded-2xl border border-white/50 shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden">
-                        <button class="faq-question w-full px-8 py-6 text-left flex items-center justify-between group">
-                            <h3 class="text-xl font-semibold text-indigo-900 group-hover:text-indigo-600 transition-colors" data-lang="fr">Comment fonctionne le suivi médical ?</h3>
-                            <h3 class="text-xl font-semibold text-indigo-900 group-hover:text-indigo-600 transition-colors hidden" data-lang="ar">كيف يعمل المتابعة الطبية؟</h3>
-                            <div class="faq-icon w-8 h-8 rounded-full bg-gradient-to-r from-indigo-500 to-purple-500 flex items-center justify-center text-white transition-all duration-300 group-hover:scale-110">
-                                <i class="fas fa-plus transform transition-transform duration-300"></i>
-                            </div>
-                        </button>
-                        <div class="faq-answer max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
-                            <div class="px-8 pb-6">
-                                <p class="text-gray-700 leading-relaxed" data-lang="fr">Votre dossier médical est centralisé et accessible 24h/24. Vous pouvez consulter vos antécédents, résultats d'analyses, ordonnances, et planifier des rappels de prise de médicaments. Nos médecins ont accès à votre historique complet pour un suivi optimal.</p>
-                                <p class="text-gray-700 leading-relaxed hidden" data-lang="ar">ملفك الطبي مركزي ويمكن الوصول إليه على مدار الساعة. يمكنك الاطلاع على سجلك الطبي، نتائج التحاليل، الوصفات الطبية، وتخطيط تذكيرات تناول الأدوية. أطباؤنا لديهم إمكانية الوصول إلى سجلك الكامل لمتابعة مثالية.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- FAQ Item 5 -->
-                    <div class="faq-item bg-white/80 backdrop-blur-sm rounded-2xl border border-white/50 shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden">
-                        <button class="faq-question w-full px-8 py-6 text-left flex items-center justify-between group">
-                            <h3 class="text-xl font-semibold text-indigo-900 group-hover:text-indigo-600 transition-colors" data-lang="fr">Puis-je annuler ou reporter un rendez-vous ?</h3>
-                            <h3 class="text-xl font-semibold text-indigo-900 group-hover:text-indigo-600 transition-colors hidden" data-lang="ar">هل يمكنني إلغاء أو تأجيل موعد؟</h3>
-                            <div class="faq-icon w-8 h-8 rounded-full bg-gradient-to-r from-indigo-500 to-purple-500 flex items-center justify-center text-white transition-all duration-300 group-hover:scale-110">
-                                <i class="fas fa-plus transform transition-transform duration-300"></i>
-                            </div>
-                        </button>
-                        <div class="faq-answer max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
-                            <div class="px-8 pb-6">
-                                <p class="text-gray-700 leading-relaxed" data-lang="fr">Oui, vous pouvez annuler ou reporter votre rendez-vous jusqu'à 2 heures avant la consultation. Les modifications se font facilement dans votre espace patient. En cas d'annulation tardive, des frais peuvent s'appliquer selon la politique du médecin.</p>
-                                <p class="text-gray-700 leading-relaxed hidden" data-lang="ar">نعم، يمكنك إلغاء أو تأجيل موعدك حتى ساعتين قبل الاستشارة. يمكن إجراء التعديلات بسهولة في مساحة المريض الخاصة بك. في حالة الإلغاء المتأخر، قد تطبق رسوم حسب سياسة الطبيب.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- FAQ Item 6 -->
-                    <div class="faq-item bg-white/80 backdrop-blur-sm rounded-2xl border border-white/50 shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden">
-                        <button class="faq-question w-full px-8 py-6 text-left flex items-center justify-between group">
-                            <h3 class="text-xl font-semibold text-indigo-900 group-hover:text-indigo-600 transition-colors" data-lang="fr">Les consultations sont-elles remboursées par l'assurance ?</h3>
-                            <h3 class="text-xl font-semibold text-indigo-900 group-hover:text-indigo-600 transition-colors hidden" data-lang="ar">هل يتم استرداد الاستشارات من التأمين؟</h3>
-                            <div class="faq-icon w-8 h-8 rounded-full bg-gradient-to-r from-indigo-500 to-purple-500 flex items-center justify-center text-white transition-all duration-300 group-hover:scale-110">
-                                <i class="fas fa-plus transform transition-transform duration-300"></i>
-                            </div>
-                        </button>
-                        <div class="faq-answer max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
-                            <div class="px-8 pb-6">
-                                <p class="text-gray-700 leading-relaxed" data-lang="fr">Medacte collabore avec de nombreuses compagnies d'assurance au Maroc. Vérifiez avec votre assureur si la télémedecine est couverte. Nous fournissons les factures nécessaires pour le remboursement. Certaines mutuelles remboursent jusqu'à 80% des frais.</p>
-                                <p class="text-gray-700 leading-relaxed hidden" data-lang="ar">يتعاون ميداكت مع العديد من شركات التأمين في المغرب. تحقق مع شركة التأمين الخاصة بك إذا كان الطب عن بعد مشمولاً. نقدم الفواتير اللازمة للاسترداد. بعض التأمينات التكميلية تسترد حتى 80% من الرسوم.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- FAQ Item 7 -->
-                    <div class="faq-item bg-white/80 backdrop-blur-sm rounded-2xl border border-white/50 shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden">
-                        <button class="faq-question w-full px-8 py-6 text-left flex items-center justify-between group">
-                            <h3 class="text-xl font-semibold text-indigo-900 group-hover:text-indigo-600 transition-colors" data-lang="fr">Comment fonctionne la livraison de médicaments ?</h3>
-                            <h3 class="text-xl font-semibold text-indigo-900 group-hover:text-indigo-600 transition-colors hidden" data-lang="ar">كيف يعمل توصيل الأدوية؟</h3>
-                            <div class="faq-icon w-8 h-8 rounded-full bg-gradient-to-r from-indigo-500 to-purple-500 flex items-center justify-center text-white transition-all duration-300 group-hover:scale-110">
-                                <i class="fas fa-plus transform transition-transform duration-300"></i>
-                            </div>
-                        </button>
-                        <div class="faq-answer max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
-                            <div class="px-8 pb-6">
-                                <p class="text-gray-700 leading-relaxed" data-lang="fr">La livraison se fait en 2-4 heures dans les grandes villes, 24h dans les zones rurales. Nos livreurs sont formés et équipés pour transporter les médicaments en toute sécurité. Vous recevez un SMS avec le suivi GPS en temps réel. Paiement à la livraison ou en ligne.</p>
-                                <p class="text-gray-700 leading-relaxed hidden" data-lang="ar">يتم التوصيل في 2-4 ساعات في المدن الكبرى، 24 ساعة في المناطق الريفية. سائقونا مدربون ومجهزون لنقل الأدوية بأمان. تحصل على رسالة نصية مع متابعة GPS في الوقت الفعلي. الدفع عند الاستلام أو عبر الإنترنت.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- FAQ Item 8 -->
-                    <div class="faq-item bg-white/80 backdrop-blur-sm rounded-2xl border border-white/50 shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden">
-                        <button class="faq-question w-full px-8 py-6 text-left flex items-center justify-between group">
-                            <h3 class="text-xl font-semibold text-indigo-900 group-hover:text-indigo-600 transition-colors" data-lang="fr">Puis-je consulter un spécialiste directement ?</h3>
-                            <h3 class="text-xl font-semibold text-indigo-900 group-hover:text-indigo-600 transition-colors hidden" data-lang="ar">هل يمكنني استشارة متخصص مباشرة؟</h3>
-                            <div class="faq-icon w-8 h-8 rounded-full bg-gradient-to-r from-indigo-500 to-purple-500 flex items-center justify-center text-white transition-all duration-300 group-hover:scale-110">
-                                <i class="fas fa-plus transform transition-transform duration-300"></i>
-                            </div>
-                        </button>
-                        <div class="faq-answer max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
-                            <div class="px-8 pb-6">
-                                <p class="text-gray-700 leading-relaxed" data-lang="fr">Oui, vous pouvez consulter directement un spécialiste selon vos besoins. Cependant, nous recommandons de commencer par un médecin généraliste qui pourra vous orienter vers le bon spécialiste si nécessaire. Cela optimise votre parcours de soins et réduit les coûts.</p>
-                                <p class="text-gray-700 leading-relaxed hidden" data-lang="ar">نعم، يمكنك استشارة متخصص مباشرة حسب احتياجاتك. ومع ذلك، نوصي بالبدء بطبيب عام يمكنه توجيهك إلى المتخصص المناسب إذا لزم الأمر. هذا يحسن مسار رعايتك ويقلل التكاليف.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Modern Health Technology Section -->
-    <section id="about" class="py-20 bg-gradient-to-br from-indigo-50 via-white to-purple-50 relative overflow-hidden">
-        <!-- Animated Background Elements -->
-        <div class="absolute inset-0 overflow-hidden">
-            <div class="floating-tech-shape shape-1"></div>
-            <div class="floating-tech-shape shape-2"></div>
-            <div class="floating-tech-shape shape-3"></div>
-            <div class="floating-tech-shape shape-4"></div>
-        </div>
-        
-        <div class="container mx-auto px-4 relative z-10">
-            <!-- Section Header -->
-            <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-indigo-600 via-purple-600 to-cyan-600 bg-clip-text text-transparent health-tech-title" data-lang="fr">Technologie Avancée</h2>
-                <h2 class="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-indigo-600 via-purple-600 to-cyan-600 bg-clip-text text-transparent health-tech-title hidden" data-lang="ar">تقنية متقدمة</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto" data-lang="fr">Découvrez les technologies innovantes qui transforment l'expérience utilisateur</p>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto hidden" data-lang="ar">اكتشف التقنيات المبتكرة التي تحول تجربة المستخدم</p>
-            </div>
-            
-            <!-- Main Content Grid -->
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <!-- Left Column - Technology Features -->
+                <!-- Technology Cards -->
                 <div class="space-y-6">
-                    <!-- AI Technology Card -->
-                    <div class="modern-tech-card group mobile-card-animate">
-                        <div class="bg-white/90 backdrop-blur-sm p-6 rounded-2xl border border-white/50 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 relative overflow-hidden mobile-touch-effect">
-                            <div class="absolute inset-0 bg-gradient-to-r from-indigo-500/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                            <div class="relative z-10">
-                                <div class="flex items-start space-x-4">
-                                    <div class="tech-icon-wrapper">
-                                        <div class="w-14 h-14 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-xl flex items-center justify-center text-white shadow-lg transform transition-all duration-500 group-hover:scale-110 group-hover:rotate-12">
-                                            <i class="fas fa-brain text-xl"></i>
-                                        </div>
-                                        <div class="absolute inset-0 bg-gradient-to-br from-indigo-400 to-purple-500 rounded-xl opacity-0 group-hover:opacity-20 blur-xl transition-all duration-500"></div>
-                                    </div>
-                                    <div class="flex-1">
-                                        <h3 class="text-xl font-bold text-indigo-900 mb-2 group-hover:text-indigo-600 transition-colors" data-lang="fr">Intelligence Artificielle</h3>
-                                        <h3 class="text-xl font-bold text-indigo-900 mb-2 group-hover:text-indigo-600 transition-colors hidden" data-lang="ar">الذكاء الاصطناعي</h3>
-                                        <p class="text-gray-700 leading-relaxed" data-lang="fr">IA avancée pour l'analyse prédictive, l'automatisation intelligente et l'optimisation des processus. Algorithmes transparents et éthiques.</p>
-                                        <p class="text-gray-700 leading-relaxed hidden" data-lang="ar">ذكاء اصطناعي متقدم للتحليل التنبؤي والأتمتة الذكية وتحسين العمليات. خوارزميات شفافة وأخلاقية.</p>
-                                    </div>
-                                </div>
+                    <div class="bg-white p-6 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 mobile-card scroll-animate">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-14 h-14 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-xl flex items-center justify-center text-white shadow-lg">
+                                <i class="fas fa-brain text-xl"></i>
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="text-xl font-bold text-gray-900 mb-2" data-lang="fr">Intelligence Artificielle</h3>
+                                <h3 class="text-xl font-bold text-gray-900 mb-2 hidden" data-lang="ar">الذكاء الاصطناعي</h3>
+                                <p class="text-gray-700" data-lang="fr">IA avancée pour l'analyse prédictive et l'optimisation des processus</p>
+                                <p class="text-gray-700 hidden" data-lang="ar">ذكاء اصطناعي متقدم للتحليل التنبؤي وتحسين العمليات</p>
                             </div>
                         </div>
                     </div>
                     
-                    <!-- Cloud Security Card -->
-                    <div class="modern-tech-card group mobile-card-animate mobile-stagger-1">
-                        <div class="bg-white/90 backdrop-blur-sm p-6 rounded-2xl border border-white/50 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 relative overflow-hidden mobile-touch-effect">
-                            <div class="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-cyan-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                            <div class="relative z-10">
-                                <div class="flex items-start space-x-4">
-                                    <div class="tech-icon-wrapper">
-                                        <div class="w-14 h-14 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-xl flex items-center justify-center text-white shadow-lg transform transition-all duration-500 group-hover:scale-110 group-hover:rotate-12">
-                                            <i class="fas fa-shield-alt text-xl"></i>
-                                        </div>
-                                        <div class="absolute inset-0 bg-gradient-to-br from-blue-400 to-cyan-500 rounded-xl opacity-0 group-hover:opacity-20 blur-xl transition-all duration-500"></div>
-                                    </div>
-                                    <div class="flex-1">
-                                        <h3 class="text-xl font-bold text-indigo-900 mb-2 group-hover:text-indigo-600 transition-colors" data-lang="fr">Sécurité Avancée</h3>
-                                        <h3 class="text-xl font-bold text-indigo-900 mb-2 group-hover:text-indigo-600 transition-colors hidden" data-lang="ar">أمان متقدم</h3>
-                                        <p class="text-gray-700 leading-relaxed" data-lang="fr">Infrastructure sécurisée de niveau bancaire avec chiffrement AES-256, authentification multi-facteurs et protection contre les cybermenaces.</p>
-                                        <p class="text-gray-700 leading-relaxed hidden" data-lang="ar">بنية تحتية آمنة بمستوى البنوك مع تشفير AES-256 ومصادقة متعددة العوامل وحماية من التهديدات السيبرانية.</p>
-                                    </div>
-                                </div>
+                    <div class="bg-white p-6 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 mobile-card scroll-animate">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-14 h-14 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-xl flex items-center justify-center text-white shadow-lg">
+                                <i class="fas fa-shield-alt text-xl"></i>
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="text-xl font-bold text-gray-900 mb-2" data-lang="fr">Sécurité Avancée</h3>
+                                <h3 class="text-xl font-bold text-gray-900 mb-2 hidden" data-lang="ar">أمان متقدم</h3>
+                                <p class="text-gray-700" data-lang="fr">Chiffrement AES-256 et authentification multi-facteurs</p>
+                                <p class="text-gray-700 hidden" data-lang="ar">تشفير AES-256 ومصادقة متعددة العوامل</p>
                             </div>
                         </div>
                     </div>
                     
-                    <!-- Mobile Technology Card -->
-                    <div class="modern-tech-card group mobile-card-animate mobile-stagger-2">
-                        <div class="bg-white/90 backdrop-blur-sm p-6 rounded-2xl border border-white/50 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 relative overflow-hidden mobile-touch-effect">
-                            <div class="absolute inset-0 bg-gradient-to-r from-green-500/10 to-emerald-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                            <div class="relative z-10">
-                                <div class="flex items-start space-x-4">
-                                    <div class="tech-icon-wrapper">
-                                        <div class="w-14 h-14 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl flex items-center justify-center text-white shadow-lg transform transition-all duration-500 group-hover:scale-110 group-hover:rotate-12">
-                                            <i class="fas fa-mobile-alt text-xl"></i>
-                                        </div>
-                                        <div class="absolute inset-0 bg-gradient-to-br from-green-400 to-emerald-500 rounded-xl opacity-0 group-hover:opacity-20 blur-xl transition-all duration-500"></div>
-                                    </div>
-                                    <div class="flex-1">
-                                        <h3 class="text-xl font-bold text-indigo-900 mb-2 group-hover:text-indigo-600 transition-colors" data-lang="fr">Design Responsive</h3>
-                                        <h3 class="text-xl font-bold text-indigo-900 mb-2 group-hover:text-indigo-600 transition-colors hidden" data-lang="ar">تصميم متجاوب</h3>
-                                        <p class="text-gray-700 leading-relaxed" data-lang="fr">Interface adaptative optimisée pour tous les appareils avec expérience utilisateur fluide et intuitive.</p>
-                                        <p class="text-gray-700 leading-relaxed hidden" data-lang="ar">واجهة تكيفية محسنة لجميع الأجهزة مع تجربة مستخدم سلسة وبديهية.</p>
-                                    </div>
-                                </div>
+                    <div class="bg-white p-6 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 mobile-card scroll-animate">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-14 h-14 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl flex items-center justify-center text-white shadow-lg">
+                                <i class="fas fa-mobile-alt text-xl"></i>
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="text-xl font-bold text-gray-900 mb-2" data-lang="fr">Design Responsive</h3>
+                                <h3 class="text-xl font-bold text-gray-900 mb-2 hidden" data-lang="ar">تصميم متجاوب</h3>
+                                <p class="text-gray-700" data-lang="fr">Interface optimisée pour tous les appareils</p>
+                                <p class="text-gray-700 hidden" data-lang="ar">واجهة محسنة لجميع الأجهزة</p>
                             </div>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Right Column - Statistics & Visual Elements -->
+                <!-- Statistics -->
                 <div class="space-y-8">
-                    <!-- Technology Statistics -->
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        <div class="modern-stat-card group mobile-card-animate mobile-stagger-3">
-                            <div class="bg-gradient-to-br from-indigo-500 to-purple-600 p-6 rounded-2xl text-white text-center shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-rotate-3 relative overflow-hidden mobile-touch-effect">
-                                <div class="absolute inset-0 bg-gradient-to-br from-indigo-400 to-purple-500 opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
-                                <div class="relative z-10">
-                                    <div class="text-3xl font-bold mb-2">99.9%</div>
-                                    <div class="text-sm font-medium" data-lang="fr">Performance</div>
-                                    <div class="text-sm font-medium hidden" data-lang="ar">الأداء</div>
-                                </div>
-                            </div>
+                        <div class="bg-gradient-to-br from-indigo-500 to-purple-600 p-6 rounded-2xl text-white text-center shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-105 mobile-card scroll-animate">
+                            <div class="text-3xl font-bold mb-2">99.9%</div>
+                            <div class="text-sm font-medium" data-lang="fr">Performance</div>
+                            <div class="text-sm font-medium hidden" data-lang="ar">الأداء</div>
                         </div>
                         
-                        <div class="modern-stat-card group mobile-card-animate mobile-stagger-4">
-                            <div class="bg-gradient-to-br from-blue-500 to-cyan-600 p-6 rounded-2xl text-white text-center shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:rotate-3 relative overflow-hidden mobile-touch-effect">
-                                <div class="absolute inset-0 bg-gradient-to-br from-blue-400 to-cyan-500 opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
-                                <div class="relative z-10">
-                                    <div class="text-3xl font-bold mb-2">256-bit</div>
-                                    <div class="text-sm font-medium" data-lang="fr">Sécurité</div>
-                                    <div class="text-sm font-medium hidden" data-lang="ar">الأمان</div>
-                                </div>
-                            </div>
+                        <div class="bg-gradient-to-br from-blue-500 to-cyan-600 p-6 rounded-2xl text-white text-center shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-105 mobile-card scroll-animate">
+                            <div class="text-3xl font-bold mb-2">256-bit</div>
+                            <div class="text-sm font-medium" data-lang="fr">Sécurité</div>
+                            <div class="text-sm font-medium hidden" data-lang="ar">الأمان</div>
                         </div>
                         
-                        <div class="modern-stat-card group mobile-card-animate mobile-stagger-5">
-                            <div class="bg-gradient-to-br from-green-500 to-emerald-600 p-6 rounded-2xl text-white text-center shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-rotate-3 relative overflow-hidden mobile-touch-effect">
-                                <div class="absolute inset-0 bg-gradient-to-br from-green-400 to-emerald-500 opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
-                                <div class="relative z-10">
-                                    <div class="text-3xl font-bold mb-2">24/7</div>
-                                    <div class="text-sm font-medium" data-lang="fr">Disponibilité</div>
-                                    <div class="text-sm font-medium hidden" data-lang="ar">التوفر</div>
-                                </div>
-                            </div>
+                        <div class="bg-gradient-to-br from-green-500 to-emerald-600 p-6 rounded-2xl text-white text-center shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-105 mobile-card scroll-animate">
+                            <div class="text-3xl font-bold mb-2">24/7</div>
+                            <div class="text-sm font-medium" data-lang="fr">Disponibilité</div>
+                            <div class="text-sm font-medium hidden" data-lang="ar">التوفر</div>
                         </div>
                     </div>
                     
-                                        <!-- Technology Benefits -->
-                    <div class="bg-white/80 backdrop-blur-sm p-8 rounded-2xl border border-white/50 shadow-xl mobile-card-animate">
-                        <h3 class="text-2xl font-bold text-indigo-900 mb-6" data-lang="fr">Avantages Clés</h3>
-                        <h3 class="text-2xl font-bold text-indigo-900 mb-6 hidden" data-lang="ar">المزايا الرئيسية</h3>
+                    <!-- Benefits -->
+                    <div class="bg-white/80 backdrop-blur-sm p-8 rounded-2xl border border-white/50 shadow-xl scroll-animate">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-6" data-lang="fr">Avantages Clés</h3>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-6 hidden" data-lang="ar">المزايا الرئيسية</h3>
                         
                         <div class="space-y-4">
-                            <div class="flex items-center space-x-3 rtl:space-x-reverse">
-                                <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center">
                                     <i class="fas fa-check text-green-600 text-sm"></i>
                                 </div>
                                 <span class="text-gray-700" data-lang="fr">Performance optimale</span>
                                 <span class="text-gray-700 hidden" data-lang="ar">أداء مثالي</span>
                             </div>
-                            
-                            <div class="flex items-center space-x-3 rtl:space-x-reverse">
-                                <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center">
                                     <i class="fas fa-check text-green-600 text-sm"></i>
                                 </div>
                                 <span class="text-gray-700" data-lang="fr">Sécurité maximale</span>
                                 <span class="text-gray-700 hidden" data-lang="ar">أمان أقصى</span>
                             </div>
-                            
-                            <div class="flex items-center space-x-3 rtl:space-x-reverse">
-                                <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center">
                                     <i class="fas fa-check text-green-600 text-sm"></i>
                                 </div>
                                 <span class="text-gray-700" data-lang="fr">Interface moderne</span>
                                 <span class="text-gray-700 hidden" data-lang="ar">واجهة حديثة</span>
                             </div>
-                            
-                            <div class="flex items-center space-x-3 rtl:space-x-reverse">
-                                <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center">
                                     <i class="fas fa-check text-green-600 text-sm"></i>
                                 </div>
                                 <span class="text-gray-700" data-lang="fr">Support 24/7</span>
@@ -1473,840 +579,246 @@
             </div>
         </div>
     </section>
-
-    </section>
-
-    <!-- Enhanced Contact Section with No 3D Background -->
-    <section id="contact" class="py-20 bg-gradient-to-br from-white to-indigo-50 relative overflow-hidden">
-        <!-- Background Pattern -->
-        <div class="absolute inset-0 opacity-5">
-            <div class="absolute inset-0" style="background-image: radial-gradient(circle at 1px 1px, #4F46E5 1px, transparent 0); background-size: 40px 40px;"></div>
-        </div>
-        
-        <div class="container mx-auto px-4 relative z-10">
-            <div class="max-w-4xl mx-auto">
-                <div class="text-center mb-12">
-                    <h2 class="text-4xl md:text-5xl font-bold mb-6 gradient-text" data-lang="fr">
-                        <i class="fas fa-rocket mr-4"></i>Bientôt disponible
-                    </h2>
-                    <h2 class="text-4xl md:text-5xl font-bold mb-6 gradient-text hidden" data-lang="ar">
-                        <i class="fas fa-rocket mr-4"></i>قريبا متاح
-                    </h2>
-                    <p class="text-xl md:text-2xl text-gray-600 max-w-2xl mx-auto leading-relaxed" data-lang="fr">
-                        Inscrivez-vous pour être informé du lancement et bénéficier d'offres exclusives
-                    </p>
-                    <p class="text-xl md:text-2xl text-gray-600 max-w-2xl mx-auto leading-relaxed hidden" data-lang="ar">
-                        سجل للحصول على إشعار عند الإطلاق والاستفادة من العروض الحصرية
-                    </p>
-                </div>
+    
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gradient-to-br from-indigo-50 to-purple-50">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center scroll-animate">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 gradient-text" data-lang="fr">
+                    <i class="fas fa-rocket mr-4"></i>Bientôt disponible
+                </h2>
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 gradient-text hidden" data-lang="ar">
+                    <i class="fas fa-rocket ml-4"></i>قريبا متاح
+                </h2>
+                <p class="text-xl text-gray-600 mb-8" data-lang="fr">
+                    Inscrivez-vous pour être informé du lancement
+                </p>
+                <p class="text-xl text-gray-600 mb-8 hidden" data-lang="ar">
+                    سجل للحصول على إشعار عند الإطلاق
+                </p>
                 
-                <form class="bg-white/80 backdrop-blur-sm rounded-3xl p-8 md:p-12 shadow-2xl border border-white/30">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-                        <div class="group">
-                            <label class="block text-gray-700 mb-3 font-semibold" data-lang="fr">
-                                <i class="fas fa-user mr-2 text-indigo-600"></i>Nom complet
-                            </label>
-                            <label class="block text-gray-700 mb-3 font-semibold hidden" data-lang="ar">
-                                <i class="fas fa-user mr-2 text-indigo-600"></i>الاسم الكامل
-                            </label>
-                            <input type="text" class="w-full px-4 py-4 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all bg-white/50 backdrop-blur-sm hover:bg-white/80">
-                        </div>
-                        <div class="group">
-                            <label class="block text-gray-700 mb-3 font-semibold" data-lang="fr">
-                                <i class="fas fa-envelope mr-2 text-indigo-600"></i>Email
-                            </label>
-                            <label class="block text-gray-700 mb-3 font-semibold hidden" data-lang="ar">
-                                <i class="fas fa-envelope mr-2 text-indigo-600"></i>البريد الإلكتروني
-                            </label>
-                            <input type="email" class="w-full px-4 py-4 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all bg-white/50 backdrop-blur-sm hover:bg-white/80">
-                        </div>
-                        <div class="group">
-                            <label class="block text-gray-700 mb-3 font-semibold" data-lang="fr">
-                                <i class="fas fa-phone mr-2 text-indigo-600"></i>Téléphone
-                            </label>
-                            <label class="block text-gray-700 mb-3 font-semibold hidden" data-lang="ar">
-                                <i class="fas fa-phone mr-2 text-indigo-600"></i>الهاتف
-                            </label>
-                            <input type="tel" class="w-full px-4 py-4 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all bg-white/50 backdrop-blur-sm hover:bg-white/80">
-                        </div>
-                        <div class="group">
-                            <label class="block text-gray-700 mb-3 font-semibold" data-lang="fr">
-                                <i class="fas fa-map-marker-alt mr-2 text-indigo-600"></i>Ville
-                            </label>
-                            <label class="block text-gray-700 mb-3 font-semibold hidden" data-lang="ar">
-                                <i class="fas fa-map-marker-alt mr-2 text-indigo-600"></i>المدينة
-                            </label>
-                            <select class="w-full px-4 py-4 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all bg-white/50 backdrop-blur-sm hover:bg-white/80">
-                                <option value="" data-lang="fr">Sélectionnez votre ville</option>
-                                <option value="" data-lang="ar" class="hidden">اختر مدينتك</option>
-                                <option value="casablanca">Casablanca</option>
-                                <option value="rabat">Rabat</option>
-                                <option value="marrakech">Marrakech</option>
-                                <option value="fes">Fès</option>
-                                <option value="tanger">Tanger</option>
-                                <option value="agadir">Agadir</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="mb-8">
-                        <label class="block text-gray-700 mb-3 font-semibold" data-lang="fr">
-                            <i class="fas fa-comment mr-2 text-indigo-600"></i>Message
-                        </label>
-                        <label class="block text-gray-700 mb-3 font-semibold hidden" data-lang="ar">
-                            <i class="fas fa-comment mr-2 text-indigo-600"></i>رسالة
-                        </label>
-                        <textarea rows="4" class="w-full px-4 py-4 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all bg-white/50 backdrop-blur-sm hover:bg-white/80 resize-none"></textarea>
-                    </div>
-                    <div class="flex items-center mb-8 p-4 bg-indigo-50 rounded-xl">
-                        <input type="checkbox" id="newsletter" class="mr-3 w-5 h-5 text-indigo-600 rounded focus:ring-indigo-500">
-                        <label for="newsletter" class="text-gray-700 font-medium" data-lang="fr">
-                            <i class="fas fa-bell mr-2 text-indigo-600"></i>Je souhaite recevoir des actualités et offres de Medacte
-                        </label>
-                        <label for="newsletter" class="text-gray-700 font-medium hidden" data-lang="ar">
-                            <i class="fas fa-bell mr-2 text-indigo-600"></i>أرغب في تلقي أخبار وعروض من ميداكت
-                        </label>
-                    </div>
-                    <button type="submit" class="w-full bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white px-8 py-5 rounded-xl font-semibold text-lg transition-all shadow-lg hover:scale-105 hover:shadow-xl" data-lang="fr">
-                        <i class="fas fa-paper-plane mr-3"></i>Envoyer
-                    </button>
-                    <button type="submit" class="w-full bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white px-8 py-5 rounded-xl font-semibold text-lg transition-all shadow-lg hover:scale-105 hover:shadow-xl hidden" data-lang="ar">
-                        <i class="fas fa-paper-plane mr-3"></i>إرسال
-                    </button>
-                </form>
+                <a href="https://forms.gle/tvqkcwZDCqXG8qSU9" target="_blank" class="inline-block bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white px-8 py-4 rounded-full font-medium transition-all shadow-lg hover:scale-105">
+                    <i class="fas fa-bell mr-2"></i>
+                    <span data-lang="fr">M'informer du lancement</span>
+                    <span data-lang="ar" class="hidden">أخبرني عند الإطلاق</span>
+                </a>
             </div>
         </div>
     </section>
-
-    <!-- Enhanced Footer with No 3D Background -->
-    <footer class="bg-gradient-to-br from-indigo-900 via-purple-900 to-indigo-950 text-white py-16 relative overflow-hidden">
-        <!-- Background Pattern -->
-        <div class="absolute inset-0 opacity-10">
-            <div class="absolute inset-0" style="background-image: radial-gradient(circle at 1px 1px, #ffffff 1px, transparent 0); background-size: 40px 40px;"></div>
-        </div>
-        
-        <div class="container mx-auto px-4 relative z-10">
-            <!-- Main Footer Content -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-                <!-- Company Info -->
-                <div class="lg:col-span-1">
-                    <div class="flex items-center mb-6">
-                        <div class="w-12 h-12 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg">
-                            <i class="fas fa-heartbeat"></i>
-                        </div>
-                        <div class="ml-3">
-                            <h3 class="text-2xl font-bold" data-lang="fr">Medacte</h3>
-                            <h3 class="text-2xl font-bold hidden" data-lang="ar">ميداكت</h3>
-                            <p class="text-indigo-300 text-sm" data-lang="fr">Santé Digitale Maroc</p>
-                            <p class="text-indigo-300 text-sm hidden" data-lang="ar">الصحة الرقمية المغرب</p>
-                        </div>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="text-center">
+                <div class="flex items-center justify-center mb-6">
+                    <div class="w-12 h-12 bg-gradient-to-br from-indigo-600 to-purple-600 rounded-xl flex items-center justify-center text-white shadow-lg">
+                        <i class="fas fa-heartbeat"></i>
                     </div>
-                    <p class="text-indigo-200 leading-relaxed mb-6" data-lang="fr">
-                        La première plateforme de santé digitale au Maroc, révolutionnant l'accès aux soins pour tous les Marocains.
-                    </p>
-                    <p class="text-indigo-200 leading-relaxed mb-6 hidden" data-lang="ar">
-                        أول منصة للصحة الرقمية في المغرب، ثورة في الوصول إلى الرعاية الصحية لجميع المغاربة.
-                    </p>
-                    
-                    <!-- Morocco Cities -->
-                    <div class="mb-6">
-                        <h5 class="text-indigo-300 font-semibold mb-3" data-lang="fr">Disponible dans:</h5>
-                        <h5 class="text-indigo-300 font-semibold mb-3 hidden" data-lang="ar">متاح في:</h5>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-3 py-1 bg-indigo-800/50 rounded-full text-sm">Casablanca</span>
-                            <span class="px-3 py-1 bg-indigo-800/50 rounded-full text-sm">Rabat</span>
-                            <span class="px-3 py-1 bg-indigo-800/50 rounded-full text-sm">Marrakech</span>
-                            <span class="px-3 py-1 bg-indigo-800/50 rounded-full text-sm">Fès</span>
-                        </div>
+                    <div class="ml-3">
+                        <h3 class="text-xl font-bold gradient-text" data-lang="fr">Medacte</h3>
+                        <h3 class="text-xl font-bold gradient-text hidden" data-lang="ar">ميداكت</h3>
                     </div>
                 </div>
+                <p class="text-gray-400 mb-6" data-lang="fr">© 2024 Medacte. Tous droits réservés.</p>
+                <p class="text-gray-400 mb-6 hidden" data-lang="ar">© 2024 ميداكت. جميع الحقوق محفوظة.</p>
                 
-                <!-- Quick Links -->
-                <div>
-                    <h4 class="text-xl font-bold mb-6 flex items-center" data-lang="fr">
-                        <i class="fas fa-link mr-3 text-indigo-400"></i>Liens rapides
-                    </h4>
-                    <h4 class="text-xl font-bold mb-6 flex items-center hidden" data-lang="ar">
-                        <i class="fas fa-link mr-3 text-indigo-400"></i>روابط سريعة
-                    </h4>
-                    <ul class="space-y-3">
-                        <li>
-                            <a href="#features" class="text-indigo-200 hover:text-white transition-all hover:translate-x-2 flex items-center group" data-lang="fr">
-                                <i class="fas fa-star mr-3 text-indigo-400 group-hover:text-indigo-300"></i>Fonctionnalités
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#features" class="text-indigo-200 hover:text-white transition-all hover:translate-x-2 flex items-center group hidden" data-lang="ar">
-                                <i class="fas fa-star mr-3 text-indigo-400 group-hover:text-indigo-300"></i>الميزات
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#about" class="text-indigo-200 hover:text-white transition-all hover:translate-x-2 flex items-center group" data-lang="fr">
-                                <i class="fas fa-info-circle mr-3 text-indigo-400 group-hover:text-indigo-300"></i>À propos
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#about" class="text-indigo-200 hover:text-white transition-all hover:translate-x-2 flex items-center group hidden" data-lang="ar">
-                                <i class="fas fa-info-circle mr-3 text-indigo-400 group-hover:text-indigo-300"></i>حول
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#contact" class="text-indigo-200 hover:text-white transition-all hover:translate-x-2 flex items-center group" data-lang="fr">
-                                <i class="fas fa-envelope mr-3 text-indigo-400 group-hover:text-indigo-300"></i>Contact
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#contact" class="text-indigo-200 hover:text-white transition-all hover:translate-x-2 flex items-center group hidden" data-lang="ar">
-                                <i class="fas fa-envelope mr-3 text-indigo-400 group-hover:text-indigo-300"></i>اتصل بنا
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                
-                <!-- Legal -->
-                <div>
-                    <h4 class="text-xl font-bold mb-6 flex items-center" data-lang="fr">
-                        <i class="fas fa-gavel mr-3 text-indigo-400"></i>Légal
-                    </h4>
-                    <h4 class="text-xl font-bold mb-6 flex items-center hidden" data-lang="ar">
-                        <i class="fas fa-gavel mr-3 text-indigo-400"></i>قانوني
-                    </h4>
-                    <ul class="space-y-3">
-                        <li>
-                            <a href="#" class="text-indigo-200 hover:text-white transition-all hover:translate-x-2 flex items-center group" data-lang="fr">
-                                <i class="fas fa-file-contract mr-3 text-indigo-400 group-hover:text-indigo-300"></i>Conditions d'utilisation
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="text-indigo-200 hover:text-white transition-all hover:translate-x-2 flex items-center group hidden" data-lang="ar">
-                                <i class="fas fa-file-contract mr-3 text-indigo-400 group-hover:text-indigo-300"></i>شروط الاستخدام
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="text-indigo-200 hover:text-white transition-all hover:translate-x-2 flex items-center group" data-lang="fr">
-                                <i class="fas fa-shield-alt mr-3 text-indigo-400 group-hover:text-indigo-300"></i>Politique de confidentialité
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="text-indigo-200 hover:text-white transition-all hover:translate-x-2 flex items-center group hidden" data-lang="ar">
-                                <i class="fas fa-shield-alt mr-3 text-indigo-400 group-hover:text-indigo-300"></i>سياسة الخصوصية
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="text-indigo-200 hover:text-white transition-all hover:translate-x-2 flex items-center group" data-lang="fr">
-                                <i class="fas fa-cookie-bite mr-3 text-indigo-400 group-hover:text-indigo-300"></i>Cookies
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="text-indigo-200 hover:text-white transition-all hover:translate-x-2 flex items-center group hidden" data-lang="ar">
-                                <i class="fas fa-cookie-bite mr-3 text-indigo-400 group-hover:text-indigo-300"></i>الكوكيز
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                
-                <!-- Contact & Social -->
-                <div>
-                    <h4 class="text-xl font-bold mb-6 flex items-center" data-lang="fr">
-                        <i class="fas fa-users mr-3 text-indigo-400"></i>Nous suivre
-                    </h4>
-                    <h4 class="text-xl font-bold mb-6 flex items-center hidden" data-lang="ar">
-                        <i class="fas fa-users mr-3 text-indigo-400"></i>تابعنا
-                    </h4>
-                    
-                    <!-- Social Media -->
-                    <div class="flex space-x-4 mb-8">
-                        <a href="#" class="w-12 h-12 bg-gradient-to-br from-indigo-600 to-purple-600 rounded-full flex items-center justify-center hover:scale-110 transition-all shadow-lg hover:shadow-xl">
-                            <i class="fab fa-facebook-f text-lg"></i>
-                        </a>
-                        <a href="#" class="w-12 h-12 bg-gradient-to-br from-indigo-600 to-purple-600 rounded-full flex items-center justify-center hover:scale-110 transition-all shadow-lg hover:shadow-xl">
-                            <i class="fab fa-twitter text-lg"></i>
-                        </a>
-                        <a href="#" class="w-12 h-12 bg-gradient-to-br from-indigo-600 to-purple-600 rounded-full flex items-center justify-center hover:scale-110 transition-all shadow-lg hover:shadow-xl">
-                            <i class="fab fa-instagram text-lg"></i>
-                        </a>
-                        <a href="#" class="w-12 h-12 bg-gradient-to-br from-indigo-600 to-purple-600 rounded-full flex items-center justify-center hover:scale-110 transition-all shadow-lg hover:shadow-xl">
-                            <i class="fab fa-linkedin-in text-lg"></i>
-                        </a>
-                    </div>
-                    
-                    <!-- Contact Info -->
-                    <div class="space-y-3">
-                        <div class="flex items-center text-indigo-200">
-                            <i class="fas fa-envelope mr-3 text-indigo-400"></i>
-                            <span>contact@medacte.com</span>
-                        </div>
-                        <div class="flex items-center text-indigo-200">
-                            <i class="fas fa-phone mr-3 text-indigo-400"></i>
-                            <span>+212 773-125597</span>
-                        </div>
-                        <div class="flex items-center text-indigo-200">
-                            <i class="fas fa-map-marker-alt mr-3 text-indigo-400"></i>
-                            <span data-lang="fr">Casablanca, Maroc</span>
-                            <span data-lang="ar" class="hidden">الدار البيضاء، المغرب</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Newsletter Signup -->
-            <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 mb-12">
-                <div class="text-center">
-                    <h4 class="text-2xl font-bold mb-4" data-lang="fr">
-                        <i class="fas fa-bell mr-3 text-indigo-400"></i>Restez informé
-                    </h4>
-                    <h4 class="text-2xl font-bold mb-4 hidden" data-lang="ar">
-                        <i class="fas fa-bell mr-3 text-indigo-400"></i>ابق على اطلاع
-                    </h4>
-                    <p class="text-indigo-200 mb-6 max-w-2xl mx-auto" data-lang="fr">
-                        Recevez les dernières actualités et offres exclusives de Medacte directement dans votre boîte mail.
-                    </p>
-                    <p class="text-indigo-200 mb-6 max-w-2xl mx-auto hidden" data-lang="ar">
-                        احصل على آخر الأخبار والعروض الحصرية من ميداكت مباشرة في بريدك الإلكتروني.
-                    </p>
-                    <div class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-                        <input type="email" placeholder="Votre email" class="flex-1 px-4 py-3 rounded-xl border border-indigo-300 bg-white/20 text-white placeholder-indigo-200 focus:outline-none focus:ring-2 focus:ring-indigo-400">
-                        <button class="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white px-6 py-3 rounded-xl font-semibold transition-all hover:scale-105">
-                            <i class="fas fa-paper-plane mr-2"></i>S'abonner
-                        </button>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Copyright -->
-            <div class="border-t border-indigo-800 pt-8 text-center">
-                <div class="flex flex-col md:flex-row justify-between items-center">
-                    <p class="text-indigo-300 mb-4 md:mb-0" data-lang="fr">
-                        &copy; 2025 Medacte. Tous droits réservés. | 
-                        <span class="text-indigo-400">La santé digitale pour tous les Marocains</span>
-                    </p>
-                    <p class="text-indigo-300 mb-4 md:mb-0 hidden" data-lang="ar">
-                        &copy; 2025 ميداكت. جميع الحقوق محفوظة. | 
-                        <span class="text-indigo-400">الصحة الرقمية لجميع المغاربة</span>
-                    </p>
-                    <div class="flex space-x-6">
-                        <a href="#" class="text-indigo-300 hover:text-white transition-colors" data-lang="fr">Mentions légales</a>
-                        <a href="#" class="text-indigo-300 hover:text-white transition-colors" data-lang="fr">CGU</a>
-                        <a href="#" class="text-indigo-300 hover:text-white transition-colors" data-lang="fr">RGPD</a>
-                    </div>
+                <div class="flex justify-center space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fab fa-facebook text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fab fa-instagram text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fab fa-linkedin text-xl"></i>
+                    </a>
                 </div>
             </div>
         </div>
     </footer>
-
-    <!-- Enhanced Back to Top Button -->
-    <button id="backToTop" class="fixed bottom-28 right-8 w-14 h-14 bg-gradient-to-br from-indigo-600 to-purple-600 text-white rounded-full shadow-xl flex items-center justify-center opacity-0 invisible transition-all duration-500 hover:scale-110 hover:shadow-2xl group z-50">
-        <i class="fas fa-arrow-up text-lg group-hover:animate-bounce"></i>
-        <div class="absolute inset-0 bg-white/20 rounded-full scale-0 group-hover:scale-100 transition-transform duration-300"></div>
+    
+    <!-- Language Switch -->
+    <div class="fixed bottom-4 left-4 z-50 flex space-x-2">
+        <button id="switchToFr" class="glass-effect px-4 py-2 rounded-full shadow-lg flex items-center hover:scale-105 transition-all">
+            <img src="https://flagcdn.com/w20/fr.png" width="20" alt="France" class="mr-2">
+            <span class="font-medium text-sm">FR</span>
+        </button>
+        <button id="switchToAr" class="glass-effect px-4 py-2 rounded-full shadow-lg flex items-center hover:scale-105 transition-all">
+            <img src="https://flagcdn.com/w20/ma.png" width="20" alt="Morocco" class="mr-2">
+            <span class="font-medium text-sm">AR</span>
+        </button>
+    </div>
+    
+    <!-- AI Chat Widget -->
+    <div class="fixed bottom-20 right-6 z-50">
+        <button class="w-14 h-14 bg-gradient-to-br from-indigo-600 to-purple-600 text-white rounded-full shadow-xl flex items-center justify-center hover:scale-110 transition-all">
+            <i class="fas fa-robot text-lg"></i>
+        </button>
+    </div>
+    
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="fixed bottom-6 right-6 w-12 h-12 bg-gradient-to-br from-indigo-600 to-purple-600 text-white rounded-full shadow-xl flex items-center justify-center opacity-0 invisible transition-all duration-500 hover:scale-110 z-40">
+        <i class="fas fa-arrow-up"></i>
     </button>
-
+    
     <script>
-        // Enhanced Scroll Animation Observer
-        const animateOnScroll = function() {
-            const elements = document.querySelectorAll('.scroll-animate, .mobile-scroll-animate, .mobile-card-animate');
-            const windowHeight = window.innerHeight;
-            const windowTopPosition = window.scrollY;
-            const windowBottomPosition = (windowTopPosition + windowHeight);
-            
-            elements.forEach(element => {
-                const elementHeight = element.offsetHeight;
-                const elementTopPosition = element.offsetTop;
-                const elementBottomPosition = (elementTopPosition + elementHeight);
-                
-                // Check if element is in viewport with offset for better trigger
-                if ((elementBottomPosition >= windowTopPosition + 100) &&
-                    (elementTopPosition <= windowBottomPosition - 100)) {
-                    element.classList.add('show');
-                }
-            });
-        };
-
-        // Run once on page load
-        document.addEventListener('DOMContentLoaded', animateOnScroll);
-        // Run on scroll
-        window.addEventListener('scroll', animateOnScroll);
-        // Run on resize (in case layout changes)
-        window.addEventListener('resize', animateOnScroll);
-
-        // Professional Signup Form Handling
-        document.querySelectorAll('[href="https://forms.gle/ehREcRXVs5azynum6"]').forEach(link => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                // Here you can add any pre-submission logic
-                // For example, tracking the click event
-                console.log('Professional signup clicked');
-                // Then proceed to open the form
-                window.open(link.href, '_blank', 'noopener,noreferrer');
-            });
-        });
-
         // Mobile Menu Toggle
         const mobileMenuButton = document.getElementById('mobileMenuButton');
         const mobileMenu = document.getElementById('mobileMenu');
         const closeMobileMenu = document.getElementById('closeMobileMenu');
-        const closeMobileMenuBottom = document.getElementById('closeMobileMenuBottom');
         
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.remove('hidden');
-            document.body.style.overflow = 'hidden'; // Prevent background scrolling
-        });
-        
-        closeMobileMenu.addEventListener('click', () => {
-            mobileMenu.classList.add('hidden');
-            document.body.style.overflow = ''; // Restore scrolling
-        });
-        
-        closeMobileMenuBottom.addEventListener('click', () => {
-            mobileMenu.classList.add('hidden');
-            document.body.style.overflow = ''; // Restore scrolling
-        });
-        
-        // Close menu when clicking on navigation links
-        document.querySelectorAll('#mobileMenu nav a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-                document.body.style.overflow = '';
+        if (mobileMenuButton && mobileMenu) {
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.add('active');
+                document.body.style.overflow = 'hidden';
             });
-        });
-
-        // Language Switch with RTL support
+        }
+        
+                 if (closeMobileMenu && mobileMenu) {
+             closeMobileMenu.addEventListener('click', () => {
+                 mobileMenu.classList.remove('active');
+                 document.body.style.overflow = '';
+             });
+         }
+         
+         // Close mobile menu when clicking on navigation links
+         document.querySelectorAll('.mobile-nav-link').forEach(link => {
+             link.addEventListener('click', () => {
+                 if (mobileMenu) {
+                     mobileMenu.classList.remove('active');
+                     document.body.style.overflow = '';
+                 }
+             });
+         });
+        
+        // Language Switch
         const switchToFr = document.getElementById('switchToFr');
         const switchToAr = document.getElementById('switchToAr');
         
-        switchToFr.addEventListener('click', () => {
-            document.documentElement.lang = 'fr';
-            document.documentElement.dir = 'ltr';
-            document.body.classList.remove('rtl');
-            document.querySelectorAll('[data-lang="fr"]').forEach(el => el.classList.remove('hidden'));
-            document.querySelectorAll('[data-lang="ar"]').forEach(el => el.classList.add('hidden'));
-        });
-        
-        switchToAr.addEventListener('click', () => {
-            document.documentElement.lang = 'ar';
-            document.documentElement.dir = 'rtl';
-            document.body.classList.add('rtl');
-            document.querySelectorAll('[data-lang="ar"]').forEach(el => el.classList.remove('hidden'));
-            document.querySelectorAll('[data-lang="fr"]').forEach(el => el.classList.add('hidden'));
-        });
-
-        // 3D Background with Three.js
-        const scene = new THREE.Scene();
-        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-        const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
-        renderer.setSize(window.innerWidth, window.innerHeight);
-        document.getElementById('canvas3d').appendChild(renderer.domElement);
-
-        // Create floating shapes
-        const geometry = new THREE.IcosahedronGeometry(1, 0);
-        const material = new THREE.MeshPhongMaterial({ 
-            color: 0x5a67d8,
-            transparent: true,
-            opacity: 0.7,
-            shininess: 100
-        });
-
-        const shapes = [];
-        const shapeCount = 10;
-
-        for (let i = 0; i < shapeCount; i++) {
-            const shape = new THREE.Mesh(geometry, material);
-            
-            // Random position
-            shape.position.x = Math.random() * 20 - 10;
-            shape.position.y = Math.random() * 20 - 10;
-            shape.position.z = Math.random() * 20 - 10;
-            
-            // Random size
-            const size = Math.random() * 0.5 + 0.5;
-            shape.scale.set(size, size, size);
-            
-            // Random rotation
-            shape.rotation.x = Math.random() * Math.PI;
-            shape.rotation.y = Math.random() * Math.PI;
-            
-            // Store reference for animation
-            shape.userData = {
-                speed: {
-                    x: Math.random() * 0.02 - 0.01,
-                    y: Math.random() * 0.02 - 0.01,
-                    z: Math.random() * 0.02 - 0.01
-                },
-                rotation: {
-                    x: Math.random() * 0.02 - 0.01,
-                    y: Math.random() * 0.02 - 0.01
-                }
-            };
-            
-            shapes.push(shape);
-            scene.add(shape);
-        }
-
-        // Add lights
-        const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
-        scene.add(ambientLight);
-
-        const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
-        directionalLight.position.set(1, 1, 1);
-        scene.add(directionalLight);
-
-        // Camera position
-        camera.position.z = 5;
-
-        // Handle window resize
-        window.addEventListener('resize', () => {
-            camera.aspect = window.innerWidth / window.innerHeight;
-            camera.updateProjectionMatrix();
-            renderer.setSize(window.innerWidth, window.innerHeight);
-        });
-
-        // Animation loop
-        function animate() {
-            requestAnimationFrame(animate);
-            
-            // Animate shapes
-            shapes.forEach(shape => {
-                // Movement
-                shape.position.x += shape.userData.speed.x;
-                shape.position.y += shape.userData.speed.y;
-                shape.position.z += shape.userData.speed.z;
-                
-                // Bounce off edges
-                if (Math.abs(shape.position.x) > 10) shape.userData.speed.x *= -1;
-                if (Math.abs(shape.position.y) > 10) shape.userData.speed.y *= -1;
-                if (Math.abs(shape.position.z) > 10) shape.userData.speed.z *= -1;
-                
-                // Rotation
-                shape.rotation.x += shape.userData.rotation.x;
-                shape.rotation.y += shape.userData.rotation.y;
+        if (switchToFr) {
+            switchToFr.addEventListener('click', () => {
+                document.documentElement.lang = 'fr';
+                document.documentElement.dir = 'ltr';
+                document.querySelectorAll('[data-lang="fr"]').forEach(el => el.classList.remove('hidden'));
+                document.querySelectorAll('[data-lang="ar"]').forEach(el => el.classList.add('hidden'));
             });
-            
-            renderer.render(scene, camera);
         }
-
-        animate();
-
-
-
-        // Modern FAQ Functionality
+        
+        if (switchToAr) {
+            switchToAr.addEventListener('click', () => {
+                document.documentElement.lang = 'ar';
+                document.documentElement.dir = 'rtl';
+                document.querySelectorAll('[data-lang="ar"]').forEach(el => el.classList.remove('hidden'));
+                document.querySelectorAll('[data-lang="fr"]').forEach(el => el.classList.add('hidden'));
+            });
+        }
+        
+        // Scroll Animations
+        const animateOnScroll = function() {
+            const elements = document.querySelectorAll('.scroll-animate');
+            const windowHeight = window.innerHeight;
+            const windowTop = window.scrollY;
+            const windowBottom = windowTop + windowHeight;
+            
+            elements.forEach(element => {
+                const elementTop = element.offsetTop;
+                const elementBottom = elementTop + element.offsetHeight;
+                
+                if (elementBottom >= windowTop && elementTop <= windowBottom) {
+                    element.classList.add('show');
+                }
+            });
+        };
+        
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
+        
+        // FAQ Functionality
         const faqItems = document.querySelectorAll('.faq-item');
         
-        // Initialize FAQ items with better error handling
-        faqItems.forEach((item, index) => {
+        faqItems.forEach(item => {
             const question = item.querySelector('.faq-question');
             const answer = item.querySelector('.faq-answer');
-            const icon = item.querySelector('.faq-icon i');
+            const icon = item.querySelector('i.fa-plus');
             
-            if (!question || !answer || !icon) {
-                console.error(`FAQ item ${index + 1} is missing required elements`);
-                return;
-            }
-            
-            // Set initial state with explicit styles
-            answer.style.maxHeight = '0px';
-            answer.style.overflow = 'hidden';
-            answer.style.transition = 'max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
-            answer.style.opacity = '1';
-            answer.style.visibility = 'visible';
-            
-            // Ensure icon is properly set
-            icon.className = 'fas fa-plus transform transition-transform duration-300';
-            
-            question.addEventListener('click', (e) => {
-                e.preventDefault();
-                const isActive = item.classList.contains('active');
-                
-                // Close all other FAQ items
-                faqItems.forEach(otherItem => {
-                    if (otherItem !== item) {
-                        otherItem.classList.remove('active');
-                        const otherAnswer = otherItem.querySelector('.faq-answer');
-                        const otherIcon = otherItem.querySelector('.faq-icon i');
-                        if (otherAnswer && otherIcon) {
-                            otherAnswer.style.maxHeight = '0px';
-                            otherIcon.style.transform = 'rotate(0deg)';
-                            otherIcon.className = 'fas fa-plus transform transition-transform duration-300';
+            if (question && answer && icon) {
+                question.addEventListener('click', () => {
+                    const isActive = item.classList.contains('active');
+                    
+                    // Close all other FAQ items
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                            const otherAnswer = otherItem.querySelector('.faq-answer');
+                            const otherIcon = otherItem.querySelector('i.fa-plus, i.fa-minus');
+                            if (otherAnswer) otherAnswer.style.maxHeight = '0';
+                            if (otherIcon) {
+                                otherIcon.className = 'fas fa-plus transition-transform duration-300';
+                                otherIcon.style.transform = 'rotate(0deg)';
+                            }
                         }
+                    });
+                    
+                    // Toggle current item
+                    if (isActive) {
+                        item.classList.remove('active');
+                        answer.style.maxHeight = '0';
+                        icon.className = 'fas fa-plus transition-transform duration-300';
+                        icon.style.transform = 'rotate(0deg)';
+                    } else {
+                        item.classList.add('active');
+                        answer.style.maxHeight = answer.scrollHeight + 'px';
+                        icon.className = 'fas fa-minus transition-transform duration-300';
+                        icon.style.transform = 'rotate(45deg)';
                     }
                 });
-                
-                // Toggle current item
-                if (isActive) {
-                    item.classList.remove('active');
-                    answer.style.maxHeight = '0px';
-                    icon.style.transform = 'rotate(0deg)';
-                    icon.className = 'fas fa-plus transform transition-transform duration-300';
-                } else {
-                    item.classList.add('active');
-                    // Calculate the actual height needed
-                    const scrollHeight = answer.scrollHeight;
-                    answer.style.maxHeight = (scrollHeight + 20) + 'px';
-                    icon.style.transform = 'rotate(45deg)';
-                    icon.className = 'fas fa-minus transform transition-transform duration-300';
-                }
-            });
-        });
-        
-        // Debug FAQ functionality
-        console.log('FAQ Items found:', faqItems.length);
-        
-        // Ensure FAQ items are visible
-        if (faqItems.length === 0) {
-            console.error('No FAQ items found! Check HTML structure.');
-        } else {
-            console.log('FAQ section is working correctly.');
-        }
-
-        // GSAP Animations
-        gsap.registerPlugin(ScrollTrigger);
-        
-        // Check if sections are visible
-        const faqSection = document.getElementById('faq');
-        const aboutSection = document.getElementById('about');
-        
-        if (!faqSection) {
-            console.error('FAQ section not found!');
-        } else {
-            console.log('FAQ section found and visible');
-            // Ensure FAQ section is visible
-            faqSection.style.opacity = '1';
-            faqSection.style.visibility = 'visible';
-            faqSection.style.display = 'block';
-        }
-        
-        if (!aboutSection) {
-            console.error('Health Technology section not found!');
-        } else {
-            console.log('Health Technology section found and visible');
-            // Ensure Health Technology section is visible
-            aboutSection.style.opacity = '1';
-            aboutSection.style.visibility = 'visible';
-            aboutSection.style.display = 'block';
-            
-            // Ensure all tech cards are visible
-            const techCards = aboutSection.querySelectorAll('.modern-tech-card, .modern-stat-card');
-            techCards.forEach(card => {
-                card.style.opacity = '1';
-                card.style.visibility = 'visible';
-                card.style.display = 'block';
-            });
-        }
-        
-        // FAQ Section Animations
-        gsap.from('.faq-title', {
-            scrollTrigger: {
-                trigger: '#faq',
-                start: 'top 80%',
-                end: 'bottom 20%',
-                toggleActions: 'play none none reverse'
-            },
-            y: 50,
-            opacity: 0,
-            duration: 1,
-            ease: 'power3.out'
-        });
-        
-        gsap.from('.faq-subtitle', {
-            scrollTrigger: {
-                trigger: '#faq',
-                start: 'top 80%',
-                end: 'bottom 20%',
-                toggleActions: 'play none none reverse'
-            },
-            y: 30,
-            opacity: 0,
-            duration: 1,
-            delay: 0.2,
-            ease: 'power3.out'
-        });
-        
-        gsap.from('.faq-item', {
-            scrollTrigger: {
-                trigger: '#faq',
-                start: 'top 80%',
-                end: 'bottom 20%',
-                toggleActions: 'play none none reverse'
-            },
-            y: 50,
-            opacity: 0,
-            duration: 0.8,
-            stagger: 0.1,
-            ease: 'power3.out'
-        });
-        
-        // Features Section Animations
-        gsap.from('.features-title', {
-            scrollTrigger: {
-                trigger: '#features',
-                start: 'top 80%',
-                end: 'bottom 20%',
-                toggleActions: 'play none none reverse'
-            },
-            y: 50,
-            opacity: 0,
-            duration: 1,
-            ease: 'power3.out'
-        });
-        
-        gsap.from('.features-subtitle', {
-            scrollTrigger: {
-                trigger: '#features',
-                start: 'top 80%',
-                end: 'bottom 20%',
-                toggleActions: 'play none none reverse'
-            },
-            y: 30,
-            opacity: 0,
-            duration: 1,
-            delay: 0.2,
-            ease: 'power3.out'
-        });
-        
-        gsap.from('.feature-card-3d', {
-            scrollTrigger: {
-                trigger: '#features',
-                start: 'top 80%',
-                end: 'bottom 20%',
-                toggleActions: 'play none none reverse'
-            },
-            y: 100,
-            opacity: 0,
-            duration: 1,
-            stagger: 0.15,
-            ease: 'power3.out'
-        });
-        
-        // Health Tech Section Animations
-        gsap.from('.health-tech-title', {
-            scrollTrigger: {
-                trigger: '#about',
-                start: 'top 80%',
-                end: 'bottom 20%',
-                toggleActions: 'play none none reverse'
-            },
-            y: 50,
-            opacity: 0,
-            duration: 1,
-            ease: 'power3.out'
-        });
-        
-        gsap.from('.modern-tech-card', {
-            scrollTrigger: {
-                trigger: '#about',
-                start: 'top 80%',
-                end: 'bottom 20%',
-                toggleActions: 'play none none reverse'
-            },
-            x: -100,
-            opacity: 0,
-            duration: 0.8,
-            stagger: 0.2,
-            ease: 'power3.out'
-        });
-        
-        gsap.from('.modern-stat-card', {
-            scrollTrigger: {
-                trigger: '#about',
-                start: 'top 80%',
-                end: 'bottom 20%',
-                toggleActions: 'play none none reverse'
-            },
-            y: 50,
-            opacity: 0,
-            duration: 0.6,
-            stagger: 0.1,
-            ease: 'power3.out'
-        });
-        
-        // Floating Tech Shapes Animation
-        gsap.to('.floating-tech-shape', {
-            y: -30,
-            rotation: 360,
-            scale: 1.1,
-            duration: 8,
-            ease: 'power2.inOut',
-            yoyo: true,
-            repeat: -1,
-            stagger: 2
-        });
-        
-        // Floating Elements Animation
-        gsap.to('.floating-shape', {
-            y: -20,
-            rotation: 360,
-            duration: 6,
-            ease: 'power2.inOut',
-            yoyo: true,
-            repeat: -1,
-            stagger: 1
-        });
-        
-        // Particle Animation
-        gsap.to('.particle', {
-            y: -window.innerHeight,
-            duration: 8,
-            ease: 'none',
-            repeat: -1,
-            stagger: 2
-        });
-        
-        // Magnetic Hover Effect
-        document.querySelectorAll('.feature-card-3d, .tech-feature, .faq-item').forEach(element => {
-            element.addEventListener('mousemove', (e) => {
-                const rect = element.getBoundingClientRect();
-                const x = e.clientX - rect.left - rect.width / 2;
-                const y = e.clientY - rect.top - rect.height / 2;
-                
-                gsap.to(element, {
-                    x: x * 0.1,
-                    y: y * 0.1,
-                    duration: 0.3,
-                    ease: 'power2.out'
-                });
-            });
-            
-            element.addEventListener('mouseleave', () => {
-                gsap.to(element, {
-                    x: 0,
-                    y: 0,
-                    duration: 0.3,
-                    ease: 'power2.out'
-                });
-            });
-        });
-
-        // Enhanced Back to Top Button
-        const backToTopButton = document.getElementById('backToTop');
-        
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
-                backToTopButton.classList.remove('opacity-0', 'invisible');
-                backToTopButton.classList.add('opacity-100', 'visible');
-            } else {
-                backToTopButton.classList.remove('opacity-100', 'visible');
-                backToTopButton.classList.add('opacity-0', 'invisible');
             }
         });
-
-        backToTopButton.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
+        
+        // Back to Top Button
+        const backToTopButton = document.getElementById('backToTop');
+        
+        if (backToTopButton) {
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 300) {
+                    backToTopButton.classList.remove('opacity-0', 'invisible');
+                    backToTopButton.classList.add('opacity-100', 'visible');
+                } else {
+                    backToTopButton.classList.add('opacity-0', 'invisible');
+                    backToTopButton.classList.remove('opacity-100', 'visible');
+                }
             });
             
-            // Add click animation
-            backToTopButton.style.transform = 'scale(0.9)';
-            setTimeout(() => {
-                backToTopButton.style.transform = '';
-            }, 150);
-        });
+            backToTopButton.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        }
         
-        // Add hover sound effect (optional)
-        backToTopButton.addEventListener('mouseenter', () => {
-            backToTopButton.style.transform = 'scale(1.1)';
-        });
-        
-        backToTopButton.addEventListener('mouseleave', () => {
-            backToTopButton.style.transform = '';
-        });
+        // GSAP Animations
+        if (typeof gsap !== 'undefined') {
+            gsap.registerPlugin(ScrollTrigger);
+            
+            // Hero Animation
+            gsap.from('.hero-title', {
+                y: 50,
+                opacity: 0,
+                duration: 1,
+                ease: 'power3.out'
+            });
+            
+            // Section Animations
+            gsap.from('.scroll-animate', {
+                scrollTrigger: {
+                    trigger: '.scroll-animate',
+                    start: 'top 80%',
+                    toggleActions: 'play none none reverse'
+                },
+                y: 50,
+                opacity: 0,
+                duration: 0.8,
+                stagger: 0.1
+            });
+        }
     </script>
 </body>
 </html>
