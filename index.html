@@ -111,6 +111,49 @@
             transform: translateY(0);
         }
         
+        /* Enhanced Mobile Scroll Animations */
+        .mobile-scroll-animate {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        
+        .mobile-scroll-animate.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Staggered Mobile Animations */
+        .mobile-stagger-1 { transition-delay: 0.1s; }
+        .mobile-stagger-2 { transition-delay: 0.2s; }
+        .mobile-stagger-3 { transition-delay: 0.3s; }
+        .mobile-stagger-4 { transition-delay: 0.4s; }
+        .mobile-stagger-5 { transition-delay: 0.5s; }
+        
+        /* Mobile Hover Effects */
+        @media (max-width: 768px) {
+            .mobile-touch-effect {
+                transition: all 0.3s ease;
+            }
+            
+            .mobile-touch-effect:active {
+                transform: scale(0.95);
+                opacity: 0.8;
+            }
+            
+            /* Mobile Card Animations */
+            .mobile-card-animate {
+                opacity: 0;
+                transform: scale(0.9) translateY(30px);
+                transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            }
+            
+            .mobile-card-animate.show {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+        
         /* Glassmorphism 2.0 */
         .glass-effect {
             background: rgba(255, 255, 255, 0.1);
@@ -1117,7 +1160,7 @@
             <div class="max-w-4xl mx-auto">
                 <div class="space-y-6">
                     <!-- FAQ Item 1 -->
-                    <div class="faq-item bg-white/80 backdrop-blur-sm rounded-2xl border border-white/50 shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden">
+                    <div class="faq-item bg-white/80 backdrop-blur-sm rounded-2xl border border-white/50 shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden mobile-card-animate mobile-touch-effect">
                         <button class="faq-question w-full px-8 py-6 text-left flex items-center justify-between group">
                             <h3 class="text-xl font-semibold text-indigo-900 group-hover:text-indigo-600 transition-colors" data-lang="fr">Combien coûte une consultation sur Medacte ?</h3>
                             <h3 class="text-xl font-semibold text-indigo-900 group-hover:text-indigo-600 transition-colors hidden" data-lang="ar">كم تكلفة الاستشارة على ميداكت؟</h3>
@@ -1269,10 +1312,10 @@
         <div class="container mx-auto px-4 relative z-10">
             <!-- Section Header -->
             <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-indigo-600 via-purple-600 to-cyan-600 bg-clip-text text-transparent health-tech-title" data-lang="fr">Health Technologie</h2>
-                <h2 class="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-indigo-600 via-purple-600 to-cyan-600 bg-clip-text text-transparent health-tech-title hidden" data-lang="ar">تكنولوجيا الصحة</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto" data-lang="fr">Découvrez les technologies de pointe qui révolutionnent la santé au Maroc</p>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto hidden" data-lang="ar">اكتشف أحدث التقنيات التي تحدث ثورة في الصحة بالمغرب</p>
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-indigo-600 via-purple-600 to-cyan-600 bg-clip-text text-transparent health-tech-title" data-lang="fr">Technologie Avancée</h2>
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-indigo-600 via-purple-600 to-cyan-600 bg-clip-text text-transparent health-tech-title hidden" data-lang="ar">تقنية متقدمة</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto" data-lang="fr">Découvrez les technologies innovantes qui transforment l'expérience utilisateur</p>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto hidden" data-lang="ar">اكتشف التقنيات المبتكرة التي تحول تجربة المستخدم</p>
             </div>
             
             <!-- Main Content Grid -->
@@ -1280,8 +1323,8 @@
                 <!-- Left Column - Technology Features -->
                 <div class="space-y-6">
                     <!-- AI Technology Card -->
-                    <div class="modern-tech-card group">
-                        <div class="bg-white/90 backdrop-blur-sm p-6 rounded-2xl border border-white/50 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 relative overflow-hidden">
+                    <div class="modern-tech-card group mobile-card-animate">
+                        <div class="bg-white/90 backdrop-blur-sm p-6 rounded-2xl border border-white/50 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 relative overflow-hidden mobile-touch-effect">
                             <div class="absolute inset-0 bg-gradient-to-r from-indigo-500/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                             <div class="relative z-10">
                                 <div class="flex items-start space-x-4">
@@ -1294,8 +1337,8 @@
                                     <div class="flex-1">
                                         <h3 class="text-xl font-bold text-indigo-900 mb-2 group-hover:text-indigo-600 transition-colors" data-lang="fr">Intelligence Artificielle</h3>
                                         <h3 class="text-xl font-bold text-indigo-900 mb-2 group-hover:text-indigo-600 transition-colors hidden" data-lang="ar">الذكاء الاصطناعي</h3>
-                                        <p class="text-gray-700 leading-relaxed" data-lang="fr">IA avancée pour le diagnostic précoce, l'analyse prédictive et l'optimisation des parcours de soins. Algorithmes certifiés et transparents.</p>
-                                        <p class="text-gray-700 leading-relaxed hidden" data-lang="ar">ذكاء اصطناعي متقدم للتشخيص المبكر والتحليل التنبؤي وتحسين مسارات الرعاية. خوارزميات معتمدة وشفافة.</p>
+                                        <p class="text-gray-700 leading-relaxed" data-lang="fr">IA avancée pour l'analyse prédictive, l'automatisation intelligente et l'optimisation des processus. Algorithmes transparents et éthiques.</p>
+                                        <p class="text-gray-700 leading-relaxed hidden" data-lang="ar">ذكاء اصطناعي متقدم للتحليل التنبؤي والأتمتة الذكية وتحسين العمليات. خوارزميات شفافة وأخلاقية.</p>
                                     </div>
                                 </div>
                             </div>
@@ -1303,8 +1346,8 @@
                     </div>
                     
                     <!-- Cloud Security Card -->
-                    <div class="modern-tech-card group">
-                        <div class="bg-white/90 backdrop-blur-sm p-6 rounded-2xl border border-white/50 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 relative overflow-hidden">
+                    <div class="modern-tech-card group mobile-card-animate mobile-stagger-1">
+                        <div class="bg-white/90 backdrop-blur-sm p-6 rounded-2xl border border-white/50 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 relative overflow-hidden mobile-touch-effect">
                             <div class="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-cyan-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                             <div class="relative z-10">
                                 <div class="flex items-start space-x-4">
@@ -1315,10 +1358,10 @@
                                         <div class="absolute inset-0 bg-gradient-to-br from-blue-400 to-cyan-500 rounded-xl opacity-0 group-hover:opacity-20 blur-xl transition-all duration-500"></div>
                                     </div>
                                     <div class="flex-1">
-                                        <h3 class="text-xl font-bold text-indigo-900 mb-2 group-hover:text-indigo-600 transition-colors" data-lang="fr">Sécurité Cloud</h3>
-                                        <h3 class="text-xl font-bold text-indigo-900 mb-2 group-hover:text-indigo-600 transition-colors hidden" data-lang="ar">أمان السحابة</h3>
-                                        <p class="text-gray-700 leading-relaxed" data-lang="fr">Infrastructure cloud de niveau bancaire avec chiffrement AES-256, conformité GDPR et audit de sécurité continu.</p>
-                                        <p class="text-gray-700 leading-relaxed hidden" data-lang="ar">بنية تحتية سحابية بمستوى البنوك مع تشفير AES-256 وامتثال GDPR ومراجعة أمنية مستمرة.</p>
+                                        <h3 class="text-xl font-bold text-indigo-900 mb-2 group-hover:text-indigo-600 transition-colors" data-lang="fr">Sécurité Avancée</h3>
+                                        <h3 class="text-xl font-bold text-indigo-900 mb-2 group-hover:text-indigo-600 transition-colors hidden" data-lang="ar">أمان متقدم</h3>
+                                        <p class="text-gray-700 leading-relaxed" data-lang="fr">Infrastructure sécurisée de niveau bancaire avec chiffrement AES-256, authentification multi-facteurs et protection contre les cybermenaces.</p>
+                                        <p class="text-gray-700 leading-relaxed hidden" data-lang="ar">بنية تحتية آمنة بمستوى البنوك مع تشفير AES-256 ومصادقة متعددة العوامل وحماية من التهديدات السيبرانية.</p>
                                     </div>
                                 </div>
                             </div>
@@ -1326,8 +1369,8 @@
                     </div>
                     
                     <!-- Mobile Technology Card -->
-                    <div class="modern-tech-card group">
-                        <div class="bg-white/90 backdrop-blur-sm p-6 rounded-2xl border border-white/50 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 relative overflow-hidden">
+                    <div class="modern-tech-card group mobile-card-animate mobile-stagger-2">
+                        <div class="bg-white/90 backdrop-blur-sm p-6 rounded-2xl border border-white/50 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 relative overflow-hidden mobile-touch-effect">
                             <div class="absolute inset-0 bg-gradient-to-r from-green-500/10 to-emerald-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                             <div class="relative z-10">
                                 <div class="flex items-start space-x-4">
@@ -1338,10 +1381,10 @@
                                         <div class="absolute inset-0 bg-gradient-to-br from-green-400 to-emerald-500 rounded-xl opacity-0 group-hover:opacity-20 blur-xl transition-all duration-500"></div>
                                     </div>
                                     <div class="flex-1">
-                                        <h3 class="text-xl font-bold text-indigo-900 mb-2 group-hover:text-indigo-600 transition-colors" data-lang="fr">Mobile First</h3>
-                                        <h3 class="text-xl font-bold text-indigo-900 mb-2 group-hover:text-indigo-600 transition-colors hidden" data-lang="ar">موبايل أولاً</h3>
-                                        <p class="text-gray-700 leading-relaxed" data-lang="fr">Application native optimisée pour tous les appareils avec interface intuitive et performance maximale.</p>
-                                        <p class="text-gray-700 leading-relaxed hidden" data-lang="ar">تطبيق أصلي محسن لجميع الأجهزة مع واجهة سهلة الاستخدام وأداء أقصى.</p>
+                                        <h3 class="text-xl font-bold text-indigo-900 mb-2 group-hover:text-indigo-600 transition-colors" data-lang="fr">Design Responsive</h3>
+                                        <h3 class="text-xl font-bold text-indigo-900 mb-2 group-hover:text-indigo-600 transition-colors hidden" data-lang="ar">تصميم متجاوب</h3>
+                                        <p class="text-gray-700 leading-relaxed" data-lang="fr">Interface adaptative optimisée pour tous les appareils avec expérience utilisateur fluide et intuitive.</p>
+                                        <p class="text-gray-700 leading-relaxed hidden" data-lang="ar">واجهة تكيفية محسنة لجميع الأجهزة مع تجربة مستخدم سلسة وبديهية.</p>
                                     </div>
                                 </div>
                             </div>
@@ -1353,77 +1396,77 @@
                 <div class="space-y-8">
                     <!-- Technology Statistics -->
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        <div class="modern-stat-card group">
-                            <div class="bg-gradient-to-br from-indigo-500 to-purple-600 p-6 rounded-2xl text-white text-center shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-rotate-3 relative overflow-hidden">
+                        <div class="modern-stat-card group mobile-card-animate mobile-stagger-3">
+                            <div class="bg-gradient-to-br from-indigo-500 to-purple-600 p-6 rounded-2xl text-white text-center shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-rotate-3 relative overflow-hidden mobile-touch-effect">
                                 <div class="absolute inset-0 bg-gradient-to-br from-indigo-400 to-purple-500 opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
                                 <div class="relative z-10">
                                     <div class="text-3xl font-bold mb-2">99.9%</div>
+                                    <div class="text-sm font-medium" data-lang="fr">Performance</div>
+                                    <div class="text-sm font-medium hidden" data-lang="ar">الأداء</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="modern-stat-card group mobile-card-animate mobile-stagger-4">
+                            <div class="bg-gradient-to-br from-blue-500 to-cyan-600 p-6 rounded-2xl text-white text-center shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:rotate-3 relative overflow-hidden mobile-touch-effect">
+                                <div class="absolute inset-0 bg-gradient-to-br from-blue-400 to-cyan-500 opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
+                                <div class="relative z-10">
+                                    <div class="text-3xl font-bold mb-2">256-bit</div>
+                                    <div class="text-sm font-medium" data-lang="fr">Sécurité</div>
+                                    <div class="text-sm font-medium hidden" data-lang="ar">الأمان</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="modern-stat-card group mobile-card-animate mobile-stagger-5">
+                            <div class="bg-gradient-to-br from-green-500 to-emerald-600 p-6 rounded-2xl text-white text-center shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-rotate-3 relative overflow-hidden mobile-touch-effect">
+                                <div class="absolute inset-0 bg-gradient-to-br from-green-400 to-emerald-500 opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
+                                <div class="relative z-10">
+                                    <div class="text-3xl font-bold mb-2">24/7</div>
                                     <div class="text-sm font-medium" data-lang="fr">Disponibilité</div>
                                     <div class="text-sm font-medium hidden" data-lang="ar">التوفر</div>
                                 </div>
                             </div>
                         </div>
-                        
-                        <div class="modern-stat-card group">
-                            <div class="bg-gradient-to-br from-blue-500 to-cyan-600 p-6 rounded-2xl text-white text-center shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:rotate-3 relative overflow-hidden">
-                                <div class="absolute inset-0 bg-gradient-to-br from-blue-400 to-cyan-500 opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
-                                <div class="relative z-10">
-                                    <div class="text-3xl font-bold mb-2">256-bit</div>
-                                    <div class="text-sm font-medium" data-lang="fr">Chiffrement</div>
-                                    <div class="text-sm font-medium hidden" data-lang="ar">التشفير</div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="modern-stat-card group">
-                            <div class="bg-gradient-to-br from-green-500 to-emerald-600 p-6 rounded-2xl text-white text-center shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-rotate-3 relative overflow-hidden">
-                                <div class="absolute inset-0 bg-gradient-to-br from-green-400 to-emerald-500 opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
-                                <div class="relative z-10">
-                                    <div class="text-3xl font-bold mb-2">24/7</div>
-                                    <div class="text-sm font-medium" data-lang="fr">Support</div>
-                                    <div class="text-sm font-medium hidden" data-lang="ar">الدعم</div>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                     
-                    <!-- Technology Benefits -->
-                    <div class="bg-white/80 backdrop-blur-sm p-8 rounded-2xl border border-white/50 shadow-xl">
-                        <h3 class="text-2xl font-bold text-indigo-900 mb-6" data-lang="fr">Avantages Technologiques</h3>
-                        <h3 class="text-2xl font-bold text-indigo-900 mb-6 hidden" data-lang="ar">المزايا التقنية</h3>
+                                        <!-- Technology Benefits -->
+                    <div class="bg-white/80 backdrop-blur-sm p-8 rounded-2xl border border-white/50 shadow-xl mobile-card-animate">
+                        <h3 class="text-2xl font-bold text-indigo-900 mb-6" data-lang="fr">Avantages Clés</h3>
+                        <h3 class="text-2xl font-bold text-indigo-900 mb-6 hidden" data-lang="ar">المزايا الرئيسية</h3>
                         
                         <div class="space-y-4">
-                                                            <div class="flex items-center space-x-3 rtl:space-x-reverse">
-                                    <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
-                                        <i class="fas fa-check text-green-600 text-sm"></i>
-                                    </div>
-                                    <span class="text-gray-700" data-lang="fr">Temps de réponse < 30 secondes</span>
-                                    <span class="text-gray-700 hidden" data-lang="ar">وقت استجابة أقل من 30 ثانية</span>
+                            <div class="flex items-center space-x-3 rtl:space-x-reverse">
+                                <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-check text-green-600 text-sm"></i>
                                 </div>
-                                
-                                <div class="flex items-center space-x-3 rtl:space-x-reverse">
-                                    <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
-                                        <i class="fas fa-check text-green-600 text-sm"></i>
-                                    </div>
-                                    <span class="text-gray-700" data-lang="fr">Chiffrement de niveau bancaire</span>
-                                    <span class="text-gray-700 hidden" data-lang="ar">تشفير بمستوى البنوك</span>
+                                <span class="text-gray-700" data-lang="fr">Performance optimale</span>
+                                <span class="text-gray-700 hidden" data-lang="ar">أداء مثالي</span>
+                            </div>
+                            
+                            <div class="flex items-center space-x-3 rtl:space-x-reverse">
+                                <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-check text-green-600 text-sm"></i>
                                 </div>
-                                
-                                <div class="flex items-center space-x-3 rtl:space-x-reverse">
-                                    <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
-                                        <i class="fas fa-check text-green-600 text-sm"></i>
-                                    </div>
-                                    <span class="text-gray-700" data-lang="fr">Conformité internationale</span>
-                                    <span class="text-gray-700 hidden" data-lang="ar">امتثال دولي</span>
+                                <span class="text-gray-700" data-lang="fr">Sécurité maximale</span>
+                                <span class="text-gray-700 hidden" data-lang="ar">أمان أقصى</span>
+                            </div>
+                            
+                            <div class="flex items-center space-x-3 rtl:space-x-reverse">
+                                <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-check text-green-600 text-sm"></i>
                                 </div>
-                                
-                                <div class="flex items-center space-x-3 rtl:space-x-reverse">
-                                    <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
-                                        <i class="fas fa-check text-green-600 text-sm"></i>
-                                    </div>
-                                    <span class="text-gray-700" data-lang="fr">Interface intuitive</span>
-                                    <span class="text-gray-700 hidden" data-lang="ar">واجهة سهلة الاستخدام</span>
+                                <span class="text-gray-700" data-lang="fr">Interface moderne</span>
+                                <span class="text-gray-700 hidden" data-lang="ar">واجهة حديثة</span>
+                            </div>
+                            
+                            <div class="flex items-center space-x-3 rtl:space-x-reverse">
+                                <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-check text-green-600 text-sm"></i>
                                 </div>
+                                <span class="text-gray-700" data-lang="fr">Support 24/7</span>
+                                <span class="text-gray-700 hidden" data-lang="ar">دعم 24/7</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1751,15 +1794,15 @@
     </footer>
 
     <!-- Enhanced Back to Top Button -->
-    <button id="backToTop" class="fixed bottom-24 right-8 w-14 h-14 bg-gradient-to-br from-indigo-600 to-purple-600 text-white rounded-full shadow-xl flex items-center justify-center opacity-0 invisible transition-all duration-500 hover:scale-110 hover:shadow-2xl group z-50">
+    <button id="backToTop" class="fixed bottom-28 right-8 w-14 h-14 bg-gradient-to-br from-indigo-600 to-purple-600 text-white rounded-full shadow-xl flex items-center justify-center opacity-0 invisible transition-all duration-500 hover:scale-110 hover:shadow-2xl group z-50">
         <i class="fas fa-arrow-up text-lg group-hover:animate-bounce"></i>
         <div class="absolute inset-0 bg-white/20 rounded-full scale-0 group-hover:scale-100 transition-transform duration-300"></div>
     </button>
 
     <script>
-        // Scroll Animation Observer
+        // Enhanced Scroll Animation Observer
         const animateOnScroll = function() {
-            const elements = document.querySelectorAll('.scroll-animate');
+            const elements = document.querySelectorAll('.scroll-animate, .mobile-scroll-animate, .mobile-card-animate');
             const windowHeight = window.innerHeight;
             const windowTopPosition = window.scrollY;
             const windowBottomPosition = (windowTopPosition + windowHeight);
@@ -1769,9 +1812,9 @@
                 const elementTopPosition = element.offsetTop;
                 const elementBottomPosition = (elementTopPosition + elementHeight);
                 
-                // Check if element is in viewport
-                if ((elementBottomPosition >= windowTopPosition) &&
-                    (elementTopPosition <= windowBottomPosition)) {
+                // Check if element is in viewport with offset for better trigger
+                if ((elementBottomPosition >= windowTopPosition + 100) &&
+                    (elementTopPosition <= windowBottomPosition - 100)) {
                     element.classList.add('show');
                 }
             });
