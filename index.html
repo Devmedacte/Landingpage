@@ -755,6 +755,7 @@
             .bg-white\\/80 {
                 padding: 1.25rem;
                 border-radius: 1rem;
+                margin-top: 2rem;
             }
             
             .bg-white\\/80 h3 {
@@ -773,6 +774,67 @@
             
             .bg-white\\/80 .text-sm {
                 font-size: 0.875rem;
+            }
+            
+            /* Perfect mobile centering for technology cards */
+            .modern-tech-card {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            
+            .modern-tech-card .bg-white\\/90 {
+                width: 100%;
+                max-width: 100%;
+                margin: 0 auto;
+            }
+            
+            .modern-tech-card .flex-col {
+                align-items: center;
+                text-align: center;
+            }
+            
+            .modern-tech-card .tech-icon-wrapper {
+                margin: 0 auto 1rem auto;
+            }
+            
+            .modern-tech-card .flex-1 {
+                width: 100%;
+                max-width: 100%;
+            }
+            
+            .modern-tech-card .max-w-sm {
+                max-width: 100%;
+                padding: 0 0.5rem;
+            }
+            
+            /* Better mobile spacing between cards */
+            .space-y-4 > .modern-tech-card + .modern-tech-card {
+                margin-top: 1.5rem;
+            }
+            
+            /* Ensure proper mobile layout */
+            @media (max-width: 640px) {
+                .modern-tech-card .bg-white\\/90 {
+                    padding: 1.5rem 1rem;
+                }
+                
+                .modern-tech-card h3 {
+                    font-size: 1.125rem;
+                    margin-bottom: 0.75rem;
+                }
+                
+                .modern-tech-card p {
+                    font-size: 0.875rem;
+                    line-height: 1.5;
+                    padding: 0 0.25rem;
+                }
+                
+                .tech-icon-wrapper .w-16 {
+                    width: 3.5rem;
+                    height: 3.5rem;
+                    margin-bottom: 1rem;
+                }
             }
             
             /* Better mobile navigation visibility */
@@ -1583,11 +1645,11 @@
                                         </div>
                                         <div class="absolute inset-0 bg-gradient-to-br from-indigo-400 to-purple-500 rounded-xl opacity-0 group-hover:opacity-20 blur-xl transition-all duration-500"></div>
                                     </div>
-                                    <div class="flex-1 text-center sm:text-left">
+                                    <div class="flex-1 text-center sm:text-left w-full">
                                         <h3 class="text-xl md:text-xl font-bold text-indigo-900 mb-3 group-hover:text-indigo-600 transition-colors" data-lang="fr">Intelligence Artificielle</h3>
                                         <h3 class="text-xl md:text-xl font-bold text-indigo-900 mb-3 group-hover:text-indigo-600 transition-colors hidden" data-lang="ar">الذكاء الاصطناعي</h3>
-                                        <p class="text-base md:text-base text-gray-700 leading-relaxed max-w-md mx-auto sm:mx-0" data-lang="fr">IA avancée pour l'analyse prédictive, l'automatisation intelligente et l'optimisation des processus. Algorithmes transparents et éthiques.</p>
-                                        <p class="text-base md:text-base text-gray-700 leading-relaxed max-w-md mx-auto sm:mx-0 hidden" data-lang="ar">ذكاء اصطناعي متقدم للتحليل التنبؤي والأتمتة الذكية وتحسين العمليات. خوارزميات شفافة وأخلاقية.</p>
+                                        <p class="text-base md:text-base text-gray-700 leading-relaxed max-w-sm sm:max-w-md mx-auto sm:mx-0 px-2 sm:px-0" data-lang="fr">IA avancée pour l'analyse prédictive, l'automatisation intelligente et l'optimisation des processus. Algorithmes transparents et éthiques.</p>
+                                        <p class="text-base md:text-base text-gray-700 leading-relaxed max-w-sm sm:max-w-md mx-auto sm:mx-0 px-2 sm:px-0 hidden" data-lang="ar">ذكاء اصطناعي متقدم للتحليل التنبؤي والأتمتة الذكية وتحسين العمليات. خوارزميات شفافة وأخلاقية.</p>
                                     </div>
                                 </div>
                             </div>
@@ -1606,11 +1668,11 @@
                                         </div>
                                         <div class="absolute inset-0 bg-gradient-to-br from-blue-400 to-cyan-500 rounded-xl opacity-0 group-hover:opacity-20 blur-xl transition-all duration-500"></div>
                                     </div>
-                                    <div class="flex-1 text-center sm:text-left">
+                                    <div class="flex-1 text-center sm:text-left w-full">
                                         <h3 class="text-xl md:text-xl font-bold text-indigo-900 mb-3 group-hover:text-indigo-600 transition-colors" data-lang="fr">Sécurité Avancée</h3>
                                         <h3 class="text-xl md:text-xl font-bold text-indigo-900 mb-3 group-hover:text-indigo-600 transition-colors hidden" data-lang="ar">أمان متقدم</h3>
-                                        <p class="text-base md:text-base text-gray-700 leading-relaxed max-w-md mx-auto sm:mx-0" data-lang="fr">Infrastructure sécurisée de niveau bancaire avec chiffrement AES-256, authentification multi-facteurs et protection contre les cybermenaces.</p>
-                                        <p class="text-base md:text-base text-gray-700 leading-relaxed max-w-md mx-auto sm:mx-0 hidden" data-lang="ar">بنية تحتية آمنة بمستوى البنوك مع تشفير AES-256 ومصادقة متعددة العوامل وحماية من التهديدات السيبرانية.</p>
+                                        <p class="text-base md:text-base text-gray-700 leading-relaxed max-w-sm sm:max-w-md mx-auto sm:mx-0 px-2 sm:px-0" data-lang="fr">Infrastructure sécurisée de niveau bancaire avec chiffrement AES-256, authentification multi-facteurs et protection contre les cybermenaces.</p>
+                                        <p class="text-base md:text-base text-gray-700 leading-relaxed max-w-sm sm:max-w-md mx-auto sm:mx-0 px-2 sm:px-0 hidden" data-lang="ar">بنية تحتية آمنة بمستوى البنوك مع تشفير AES-256 ومصادقة متعددة العوامل وحماية من التهديدات السيبرانية.</p>
                                     </div>
                                 </div>
                             </div>
@@ -1629,11 +1691,11 @@
                                         </div>
                                         <div class="absolute inset-0 bg-gradient-to-br from-green-400 to-emerald-500 rounded-xl opacity-0 group-hover:opacity-20 blur-xl transition-all duration-500"></div>
                                     </div>
-                                    <div class="flex-1 text-center sm:text-left">
+                                    <div class="flex-1 text-center sm:text-left w-full">
                                         <h3 class="text-xl md:text-xl font-bold text-indigo-900 mb-3 group-hover:text-indigo-600 transition-colors" data-lang="fr">Design Responsive</h3>
                                         <h3 class="text-xl md:text-xl font-bold text-indigo-900 mb-3 group-hover:text-indigo-600 transition-colors hidden" data-lang="ar">تصميم متجاوب</h3>
-                                        <p class="text-base md:text-base text-gray-700 leading-relaxed max-w-md mx-auto sm:mx-0" data-lang="fr">Interface adaptative optimisée pour tous les appareils avec expérience utilisateur fluide et intuitive.</p>
-                                        <p class="text-base md:text-base text-gray-700 leading-relaxed max-w-md mx-auto sm:mx-0 hidden" data-lang="ar">واجهة تكيفية محسنة لجميع الأجهزة مع تجربة مستخدم سلسة وبديهية.</p>
+                                        <p class="text-base md:text-base text-gray-700 leading-relaxed max-w-sm sm:max-w-md mx-auto sm:mx-0 px-2 sm:px-0" data-lang="fr">Interface adaptative optimisée pour tous les appareils avec expérience utilisateur fluide et intuitive.</p>
+                                        <p class="text-base md:text-base text-gray-700 leading-relaxed max-w-sm sm:max-w-md mx-auto sm:mx-0 px-2 sm:px-0 hidden" data-lang="ar">واجهة تكيفية محسنة لجميع الأجهزة مع تجربة مستخدم سلسة وبديهية.</p>
                                     </div>
                                 </div>
                             </div>
@@ -1680,7 +1742,7 @@
                     </div>
                     
                     <!-- Technology Benefits -->
-                    <div class="bg-white/80 backdrop-blur-sm p-6 md:p-8 rounded-2xl border border-white/50 shadow-xl mobile-card-animate">
+                    <div class="bg-white/80 backdrop-blur-sm p-6 md:p-8 rounded-2xl border border-white/50 shadow-xl mobile-card-animate mt-8 md:mt-12">
                         <h3 class="text-xl md:text-2xl font-bold text-indigo-900 mb-4 md:mb-6" data-lang="fr">Avantages Clés</h3>
                         <h3 class="text-xl md:text-2xl font-bold text-indigo-900 mb-4 md:mb-6 hidden" data-lang="ar">المزايا الرئيسية</h3>
                         
