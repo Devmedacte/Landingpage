@@ -677,7 +677,181 @@
                 transform: translateY(-5px);
             }
             
-
+            /* Improved mobile spacing for technology section */
+            .modern-tech-card {
+                margin-bottom: 1.5rem;
+            }
+            
+            /* Better mobile touch targets */
+            .mobile-touch-effect {
+                min-height: 80px;
+            }
+            
+            /* Ensure proper text wrapping on mobile */
+            .tech-icon-wrapper + div {
+                min-width: 0;
+                flex: 1;
+            }
+            
+            /* Better mobile grid layout */
+            .grid.grid-cols-1.sm\\:grid-cols-3 {
+                gap: 0.75rem;
+            }
+            
+            /* Enhanced mobile technology cards */
+            .modern-tech-card .bg-white\\/90 {
+                padding: 1.25rem;
+                margin: 0 0.25rem;
+                border-radius: 1rem;
+            }
+            
+            /* Better mobile text visibility */
+            .modern-tech-card h3 {
+                font-size: 1.125rem;
+                line-height: 1.3;
+                margin-bottom: 0.5rem;
+                font-weight: 700;
+            }
+            
+            .modern-tech-card p {
+                font-size: 0.875rem;
+                line-height: 1.5;
+                max-width: 100%;
+                color: #4a5568;
+            }
+            
+            /* Improved mobile icon sizing */
+            .tech-icon-wrapper .w-16 {
+                width: 3.5rem;
+                height: 3.5rem;
+                margin: 0 auto 0.75rem auto;
+            }
+            
+            /* Better mobile spacing */
+            .space-y-4 > * + * {
+                margin-top: 1rem;
+            }
+            
+            /* Mobile grid improvements */
+            .grid.grid-cols-1.sm\\:grid-cols-3 {
+                gap: 0.5rem;
+            }
+            
+            /* Mobile statistics cards */
+            .modern-stat-card .bg-gradient-to-br {
+                padding: 1rem;
+                border-radius: 1rem;
+            }
+            
+            .modern-stat-card .text-2xl {
+                font-size: 1.5rem;
+            }
+            
+            .modern-stat-card .text-xs {
+                font-size: 0.75rem;
+            }
+            
+            /* Mobile benefits section */
+            .bg-white\\/80 {
+                padding: 1.25rem;
+                border-radius: 1rem;
+                margin-top: 2rem;
+            }
+            
+            .bg-white\\/80 h3 {
+                font-size: 1.25rem;
+                margin-bottom: 1rem;
+            }
+            
+            .bg-white\\/80 .space-y-3 > * + * {
+                margin-top: 0.75rem;
+            }
+            
+            .bg-white\\/80 .w-6 {
+                width: 1.5rem;
+                height: 1.5rem;
+            }
+            
+            .bg-white\\/80 .text-sm {
+                font-size: 0.875rem;
+            }
+            
+            /* Perfect mobile centering for technology cards */
+            .modern-tech-card {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            
+            .modern-tech-card .bg-white\\/90 {
+                width: 100%;
+                max-width: 100%;
+                margin: 0 auto;
+            }
+            
+            .modern-tech-card .flex-col {
+                align-items: center;
+                text-align: center;
+            }
+            
+            .modern-tech-card .tech-icon-wrapper {
+                margin: 0 auto 1rem auto;
+            }
+            
+            .modern-tech-card .flex-1 {
+                width: 100%;
+                max-width: 100%;
+            }
+            
+            .modern-tech-card .max-w-sm {
+                max-width: 100%;
+                padding: 0 0.5rem;
+            }
+            
+            /* Better mobile spacing between cards */
+            .space-y-4 > .modern-tech-card + .modern-tech-card {
+                margin-top: 1.5rem;
+            }
+            
+            /* Ensure proper mobile layout */
+            @media (max-width: 640px) {
+                .modern-tech-card .bg-white\\/90 {
+                    padding: 1.5rem 1rem;
+                }
+                
+                .modern-tech-card h3 {
+                    font-size: 1.125rem;
+                    margin-bottom: 0.75rem;
+                }
+                
+                .modern-tech-card p {
+                    font-size: 0.875rem;
+                    line-height: 1.5;
+                    padding: 0 0.25rem;
+                }
+                
+                .tech-icon-wrapper .w-16 {
+                    width: 3.5rem;
+                    height: 3.5rem;
+                    margin-bottom: 1rem;
+                }
+            }
+            
+            /* Better mobile navigation visibility */
+            #mobileMenu nav a {
+                font-size: 1.125rem;
+                padding: 0.75rem 1rem;
+                border-radius: 0.5rem;
+                background: rgba(99, 102, 241, 0.05);
+                border: 1px solid rgba(99, 102, 241, 0.1);
+                transition: all 0.3s ease;
+            }
+            
+            #mobileMenu nav a:hover {
+                background: rgba(99, 102, 241, 0.1);
+                transform: translateY(-2px);
+                box-shadow: 0 4px 12px rgba(99, 102, 241, 0.2);
+            }
         }
         
         /* Dark Mode Support */
@@ -697,6 +871,140 @@
         .focus-visible:focus {
             outline: 2px solid var(--primary-color);
             outline-offset: 2px;
+        }
+        
+        /* Modern Floating Action Button */
+        .modern-fab {
+            position: relative;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+            overflow: visible;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .modern-fab:hover {
+            transform: scale(1.1) translateY(-2px);
+        }
+        
+        .modern-fab:active {
+            transform: scale(0.95);
+        }
+        
+        .fab-background {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            box-shadow: 
+                0 4px 20px rgba(102, 126, 234, 0.4),
+                0 8px 32px rgba(102, 126, 234, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .modern-fab:hover .fab-background {
+            background: linear-gradient(135deg, #5a67d8 0%, #6b46c1 100%);
+            box-shadow: 
+                0 8px 32px rgba(102, 126, 234, 0.6),
+                0 16px 48px rgba(102, 126, 234, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3);
+        }
+        
+        .fab-content {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+        }
+        
+        .fab-icon {
+            width: 24px;
+            height: 24px;
+            transform: rotate(180deg);
+            transition: transform 0.3s ease;
+        }
+        
+        .modern-fab:hover .fab-icon {
+            transform: rotate(180deg) translateY(-2px);
+        }
+        
+        .fab-ripple {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%);
+            transition: all 0.6s ease;
+        }
+        
+        .modern-fab:active .fab-ripple {
+            width: 100px;
+            height: 100px;
+            opacity: 0;
+        }
+        
+        .fab-tooltip {
+            position: absolute;
+            right: 70px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 500;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            pointer-events: none;
+        }
+        
+        .fab-tooltip::after {
+            content: '';
+            position: absolute;
+            right: -4px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 0;
+            height: 0;
+            border-left: 4px solid rgba(0, 0, 0, 0.8);
+            border-top: 4px solid transparent;
+            border-bottom: 4px solid transparent;
+        }
+        
+        .modern-fab:hover .fab-tooltip {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(-50%) translateX(-4px);
+        }
+        
+        /* Mobile optimizations for FAB */
+        @media (max-width: 768px) {
+            .modern-fab {
+                width: 52px;
+                height: 52px;
+            }
+            
+            .fab-icon {
+                width: 22px;
+                height: 22px;
+            }
+            
+            .fab-tooltip {
+                display: none;
+            }
         }
         
         /* High Contrast Mode */
@@ -831,42 +1139,45 @@
             <span data-lang="ar" class="hidden">إغلاق</span>
         </button>
         
-        <nav class="flex flex-col items-center space-y-8">
-            <a href="#features" class="text-xl font-medium hover:text-indigo-600 transition-all hover:scale-105" data-lang="fr">
-                <i class="fas fa-star mr-2"></i>Fonctionnalités
-            </a>
-            <a href="#features" class="text-xl font-medium hover:text-indigo-600 transition-all hover:scale-105 hidden" data-lang="ar">
-                <i class="fas fa-star ml-2"></i>الميزات
-            </a>
-            <a href="#faq" class="text-xl font-medium hover:text-indigo-600 transition-all hover:scale-105" data-lang="fr">
-                <i class="fas fa-question-circle mr-2"></i>FAQ
-            </a>
-            <a href="#faq" class="text-xl font-medium hover:text-indigo-600 transition-all hover:scale-105 hidden" data-lang="ar">
-                <i class="fas fa-question-circle ml-2"></i>الأسئلة الشائعة
-            </a>
-            <a href="#about" class="text-xl font-medium hover:text-indigo-600 transition-all hover:scale-105" data-lang="fr">
-                <i class="fas fa-info-circle mr-2"></i>À propos
-            </a>
-            <a href="#about" class="text-xl font-medium hover:text-indigo-600 transition-all hover:scale-105 hidden" data-lang="ar">
-                <i class="fas fa-info-circle ml-2"></i>حول
-            </a>
-            <a href="#contact" class="text-xl font-medium hover:text-indigo-600 transition-all hover:scale-105" data-lang="fr">
-                <i class="fas fa-envelope mr-2"></i>Contact
-            </a>
-            <a href="#contact" class="text-xl font-medium hover:text-indigo-600 transition-all hover:scale-105 hidden" data-lang="ar">
-                <i class="fas fa-envelope ml-2"></i>اتصل بنا
-            </a>
-        </nav>
-        
-        <!-- Mobile Cities -->
-        <div class="mt-8 text-center">
-            <p class="text-sm text-gray-600 mb-4" data-lang="fr">Disponible dans:</p>
-            <p class="text-sm text-gray-600 mb-4 hidden" data-lang="ar">متاح في:</p>
-            <div class="grid grid-cols-2 gap-2">
-                <span class="px-3 py-2 bg-indigo-100 text-indigo-800 rounded-lg text-sm">Casablanca</span>
-                <span class="px-3 py-2 bg-indigo-100 text-indigo-800 rounded-lg text-sm">Rabat</span>
-                <span class="px-3 py-2 bg-indigo-100 text-indigo-800 rounded-lg text-sm">Marrakech</span>
-                <span class="px-3 py-2 bg-indigo-100 text-indigo-800 rounded-lg text-sm">Fès</span>
+        <!-- Main Navigation - Centered -->
+        <div class="flex flex-col items-center justify-center flex-1 px-6">
+            <nav class="flex flex-col items-center space-y-6 md:space-y-8 w-full max-w-sm">
+                <a href="#features" class="w-full text-center text-lg md:text-xl font-medium hover:text-indigo-600 transition-all hover:scale-105 py-3 px-6 rounded-lg hover:bg-indigo-50" data-lang="fr">
+                    <i class="fas fa-star mr-2"></i>Fonctionnalités
+                </a>
+                <a href="#features" class="w-full text-center text-lg md:text-xl font-medium hover:text-indigo-600 transition-all hover:scale-105 py-3 px-6 rounded-lg hover:bg-indigo-50 hidden" data-lang="ar">
+                    <i class="fas fa-star ml-2"></i>الميزات
+                </a>
+                <a href="#faq" class="w-full text-center text-lg md:text-xl font-medium hover:text-indigo-600 transition-all hover:scale-105 py-3 px-6 rounded-lg hover:bg-indigo-50" data-lang="fr">
+                    <i class="fas fa-question-circle mr-2"></i>FAQ
+                </a>
+                <a href="#faq" class="w-full text-center text-lg md:text-xl font-medium hover:text-indigo-600 transition-all hover:scale-105 py-3 px-6 rounded-lg hover:bg-indigo-50 hidden" data-lang="ar">
+                    <i class="fas fa-question-circle ml-2"></i>الأسئلة الشائعة
+                </a>
+                <a href="#about" class="w-full text-center text-lg md:text-xl font-medium hover:text-indigo-600 transition-all hover:scale-105 py-3 px-6 rounded-lg hover:bg-indigo-50" data-lang="fr">
+                    <i class="fas fa-info-circle mr-2"></i>À propos
+                </a>
+                <a href="#about" class="w-full text-center text-lg md:text-xl font-medium hover:text-indigo-600 transition-all hover:scale-105 py-3 px-6 rounded-lg hover:bg-indigo-50 hidden" data-lang="ar">
+                    <i class="fas fa-info-circle ml-2"></i>حول
+                </a>
+                <a href="#contact" class="w-full text-center text-lg md:text-xl font-medium hover:text-indigo-600 transition-all hover:scale-105 py-3 px-6 rounded-lg hover:bg-indigo-50" data-lang="fr">
+                    <i class="fas fa-envelope mr-2"></i>Contact
+                </a>
+                <a href="#contact" class="w-full text-center text-lg md:text-xl font-medium hover:text-indigo-600 transition-all hover:scale-105 py-3 px-6 rounded-lg hover:bg-indigo-50 hidden" data-lang="ar">
+                    <i class="fas fa-envelope ml-2"></i>اتصل بنا
+                </a>
+            </nav>
+            
+            <!-- Mobile Cities - Below Navigation -->
+            <div class="mt-8 text-center w-full max-w-sm">
+                <p class="text-sm text-gray-600 mb-4" data-lang="fr">Disponible dans:</p>
+                <p class="text-sm text-gray-600 mb-4 hidden" data-lang="ar">متاح في:</p>
+                <div class="grid grid-cols-2 gap-2">
+                    <span class="px-3 py-2 bg-indigo-100 text-indigo-800 rounded-lg text-sm">Casablanca</span>
+                    <span class="px-3 py-2 bg-indigo-100 text-indigo-800 rounded-lg text-sm">Rabat</span>
+                    <span class="px-3 py-2 bg-indigo-100 text-indigo-800 rounded-lg text-sm">Marrakech</span>
+                    <span class="px-3 py-2 bg-indigo-100 text-indigo-800 rounded-lg text-sm">Fès</span>
+                </div>
             </div>
         </div>
     </div>
@@ -1311,34 +1622,34 @@
         
         <div class="container mx-auto px-4 relative z-10">
             <!-- Section Header -->
-            <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-indigo-600 via-purple-600 to-cyan-600 bg-clip-text text-transparent health-tech-title" data-lang="fr">Technologie Avancée</h2>
-                <h2 class="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-indigo-600 via-purple-600 to-cyan-600 bg-clip-text text-transparent health-tech-title hidden" data-lang="ar">تقنية متقدمة</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto" data-lang="fr">Découvrez les technologies innovantes qui transforment l'expérience utilisateur</p>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto hidden" data-lang="ar">اكتشف التقنيات المبتكرة التي تحول تجربة المستخدم</p>
+            <div class="text-center mb-8 md:mb-16 px-4">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6 bg-gradient-to-r from-indigo-600 via-purple-600 to-cyan-600 bg-clip-text text-transparent health-tech-title" data-lang="fr">Technologie Avancée</h2>
+                <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6 bg-gradient-to-r from-indigo-600 via-purple-600 to-cyan-600 bg-clip-text text-transparent health-tech-title hidden" data-lang="ar">تقنية متقدمة</h2>
+                <p class="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl sm:max-w-3xl mx-auto" data-lang="fr">Découvrez les technologies innovantes qui transforment l'expérience utilisateur</p>
+                <p class="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl sm:max-w-3xl mx-auto hidden" data-lang="ar">اكتشف التقنيات المبتكرة التي تحول تجربة المستخدم</p>
             </div>
             
             <!-- Main Content Grid -->
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-start px-2 sm:px-4">
                 <!-- Left Column - Technology Features -->
-                <div class="space-y-6">
+                <div class="space-y-4 md:space-y-6 order-2 lg:order-1 w-full">
                     <!-- AI Technology Card -->
                     <div class="modern-tech-card group mobile-card-animate">
-                        <div class="bg-white/90 backdrop-blur-sm p-6 rounded-2xl border border-white/50 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 relative overflow-hidden mobile-touch-effect">
+                        <div class="bg-white/90 backdrop-blur-sm p-4 md:p-6 rounded-2xl border border-white/50 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 relative overflow-hidden mobile-touch-effect">
                             <div class="absolute inset-0 bg-gradient-to-r from-indigo-500/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                             <div class="relative z-10">
-                                <div class="flex items-start space-x-4">
-                                    <div class="tech-icon-wrapper">
-                                        <div class="w-14 h-14 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-xl flex items-center justify-center text-white shadow-lg transform transition-all duration-500 group-hover:scale-110 group-hover:rotate-12">
-                                            <i class="fas fa-brain text-xl"></i>
+                                <div class="flex flex-col items-center sm:flex-row sm:items-start space-y-4 sm:space-y-0 sm:space-x-4">
+                                    <div class="tech-icon-wrapper flex-shrink-0">
+                                        <div class="w-16 h-16 md:w-14 md:h-14 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-xl flex items-center justify-center text-white shadow-lg transform transition-all duration-500 group-hover:scale-110 group-hover:rotate-12">
+                                            <i class="fas fa-brain text-xl md:text-xl"></i>
                                         </div>
                                         <div class="absolute inset-0 bg-gradient-to-br from-indigo-400 to-purple-500 rounded-xl opacity-0 group-hover:opacity-20 blur-xl transition-all duration-500"></div>
                                     </div>
-                                    <div class="flex-1">
-                                        <h3 class="text-xl font-bold text-indigo-900 mb-2 group-hover:text-indigo-600 transition-colors" data-lang="fr">Intelligence Artificielle</h3>
-                                        <h3 class="text-xl font-bold text-indigo-900 mb-2 group-hover:text-indigo-600 transition-colors hidden" data-lang="ar">الذكاء الاصطناعي</h3>
-                                        <p class="text-gray-700 leading-relaxed" data-lang="fr">IA avancée pour l'analyse prédictive, l'automatisation intelligente et l'optimisation des processus. Algorithmes transparents et éthiques.</p>
-                                        <p class="text-gray-700 leading-relaxed hidden" data-lang="ar">ذكاء اصطناعي متقدم للتحليل التنبؤي والأتمتة الذكية وتحسين العمليات. خوارزميات شفافة وأخلاقية.</p>
+                                    <div class="flex-1 text-center sm:text-left w-full">
+                                        <h3 class="text-xl md:text-xl font-bold text-indigo-900 mb-3 group-hover:text-indigo-600 transition-colors" data-lang="fr">Intelligence Artificielle</h3>
+                                        <h3 class="text-xl md:text-xl font-bold text-indigo-900 mb-3 group-hover:text-indigo-600 transition-colors hidden" data-lang="ar">الذكاء الاصطناعي</h3>
+                                        <p class="text-base md:text-base text-gray-700 leading-relaxed max-w-sm sm:max-w-md mx-auto sm:mx-0 px-2 sm:px-0" data-lang="fr">IA avancée pour l'analyse prédictive, l'automatisation intelligente et l'optimisation des processus. Algorithmes transparents et éthiques.</p>
+                                        <p class="text-base md:text-base text-gray-700 leading-relaxed max-w-sm sm:max-w-md mx-auto sm:mx-0 px-2 sm:px-0 hidden" data-lang="ar">ذكاء اصطناعي متقدم للتحليل التنبؤي والأتمتة الذكية وتحسين العمليات. خوارزميات شفافة وأخلاقية.</p>
                                     </div>
                                 </div>
                             </div>
@@ -1347,21 +1658,21 @@
                     
                     <!-- Cloud Security Card -->
                     <div class="modern-tech-card group mobile-card-animate mobile-stagger-1">
-                        <div class="bg-white/90 backdrop-blur-sm p-6 rounded-2xl border border-white/50 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 relative overflow-hidden mobile-touch-effect">
+                        <div class="bg-white/90 backdrop-blur-sm p-4 md:p-6 rounded-2xl border border-white/50 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 relative overflow-hidden mobile-touch-effect">
                             <div class="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-cyan-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                             <div class="relative z-10">
-                                <div class="flex items-start space-x-4">
-                                    <div class="tech-icon-wrapper">
-                                        <div class="w-14 h-14 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-xl flex items-center justify-center text-white shadow-lg transform transition-all duration-500 group-hover:scale-110 group-hover:rotate-12">
-                                            <i class="fas fa-shield-alt text-xl"></i>
+                                <div class="flex flex-col items-center sm:flex-row sm:items-start space-y-4 sm:space-y-0 sm:space-x-4">
+                                    <div class="tech-icon-wrapper flex-shrink-0">
+                                        <div class="w-16 h-16 md:w-14 md:h-14 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-xl flex items-center justify-center text-white shadow-lg transform transition-all duration-500 group-hover:scale-110 group-hover:rotate-12">
+                                            <i class="fas fa-shield-alt text-xl md:text-xl"></i>
                                         </div>
                                         <div class="absolute inset-0 bg-gradient-to-br from-blue-400 to-cyan-500 rounded-xl opacity-0 group-hover:opacity-20 blur-xl transition-all duration-500"></div>
                                     </div>
-                                    <div class="flex-1">
-                                        <h3 class="text-xl font-bold text-indigo-900 mb-2 group-hover:text-indigo-600 transition-colors" data-lang="fr">Sécurité Avancée</h3>
-                                        <h3 class="text-xl font-bold text-indigo-900 mb-2 group-hover:text-indigo-600 transition-colors hidden" data-lang="ar">أمان متقدم</h3>
-                                        <p class="text-gray-700 leading-relaxed" data-lang="fr">Infrastructure sécurisée de niveau bancaire avec chiffrement AES-256, authentification multi-facteurs et protection contre les cybermenaces.</p>
-                                        <p class="text-gray-700 leading-relaxed hidden" data-lang="ar">بنية تحتية آمنة بمستوى البنوك مع تشفير AES-256 ومصادقة متعددة العوامل وحماية من التهديدات السيبرانية.</p>
+                                    <div class="flex-1 text-center sm:text-left w-full">
+                                        <h3 class="text-xl md:text-xl font-bold text-indigo-900 mb-3 group-hover:text-indigo-600 transition-colors" data-lang="fr">Sécurité Avancée</h3>
+                                        <h3 class="text-xl md:text-xl font-bold text-indigo-900 mb-3 group-hover:text-indigo-600 transition-colors hidden" data-lang="ar">أمان متقدم</h3>
+                                        <p class="text-base md:text-base text-gray-700 leading-relaxed max-w-sm sm:max-w-md mx-auto sm:mx-0 px-2 sm:px-0" data-lang="fr">Infrastructure sécurisée de niveau bancaire avec chiffrement AES-256, authentification multi-facteurs et protection contre les cybermenaces.</p>
+                                        <p class="text-base md:text-base text-gray-700 leading-relaxed max-w-sm sm:max-w-md mx-auto sm:mx-0 px-2 sm:px-0 hidden" data-lang="ar">بنية تحتية آمنة بمستوى البنوك مع تشفير AES-256 ومصادقة متعددة العوامل وحماية من التهديدات السيبرانية.</p>
                                     </div>
                                 </div>
                             </div>
@@ -1370,21 +1681,21 @@
                     
                     <!-- Mobile Technology Card -->
                     <div class="modern-tech-card group mobile-card-animate mobile-stagger-2">
-                        <div class="bg-white/90 backdrop-blur-sm p-6 rounded-2xl border border-white/50 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 relative overflow-hidden mobile-touch-effect">
+                        <div class="bg-white/90 backdrop-blur-sm p-4 md:p-6 rounded-2xl border border-white/50 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 relative overflow-hidden mobile-touch-effect">
                             <div class="absolute inset-0 bg-gradient-to-r from-green-500/10 to-emerald-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                             <div class="relative z-10">
-                                <div class="flex items-start space-x-4">
-                                    <div class="tech-icon-wrapper">
-                                        <div class="w-14 h-14 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl flex items-center justify-center text-white shadow-lg transform transition-all duration-500 group-hover:scale-110 group-hover:rotate-12">
-                                            <i class="fas fa-mobile-alt text-xl"></i>
+                                <div class="flex flex-col items-center sm:flex-row sm:items-start space-y-4 sm:space-y-0 sm:space-x-4">
+                                    <div class="tech-icon-wrapper flex-shrink-0">
+                                        <div class="w-16 h-16 md:w-14 md:h-14 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl flex items-center justify-center text-white shadow-lg transform transition-all duration-500 group-hover:scale-110 group-hover:rotate-12">
+                                            <i class="fas fa-mobile-alt text-xl md:text-xl"></i>
                                         </div>
                                         <div class="absolute inset-0 bg-gradient-to-br from-green-400 to-emerald-500 rounded-xl opacity-0 group-hover:opacity-20 blur-xl transition-all duration-500"></div>
                                     </div>
-                                    <div class="flex-1">
-                                        <h3 class="text-xl font-bold text-indigo-900 mb-2 group-hover:text-indigo-600 transition-colors" data-lang="fr">Design Responsive</h3>
-                                        <h3 class="text-xl font-bold text-indigo-900 mb-2 group-hover:text-indigo-600 transition-colors hidden" data-lang="ar">تصميم متجاوب</h3>
-                                        <p class="text-gray-700 leading-relaxed" data-lang="fr">Interface adaptative optimisée pour tous les appareils avec expérience utilisateur fluide et intuitive.</p>
-                                        <p class="text-gray-700 leading-relaxed hidden" data-lang="ar">واجهة تكيفية محسنة لجميع الأجهزة مع تجربة مستخدم سلسة وبديهية.</p>
+                                    <div class="flex-1 text-center sm:text-left w-full">
+                                        <h3 class="text-xl md:text-xl font-bold text-indigo-900 mb-3 group-hover:text-indigo-600 transition-colors" data-lang="fr">Design Responsive</h3>
+                                        <h3 class="text-xl md:text-xl font-bold text-indigo-900 mb-3 group-hover:text-indigo-600 transition-colors hidden" data-lang="ar">تصميم متجاوب</h3>
+                                        <p class="text-base md:text-base text-gray-700 leading-relaxed max-w-sm sm:max-w-md mx-auto sm:mx-0 px-2 sm:px-0" data-lang="fr">Interface adaptative optimisée pour tous les appareils avec expérience utilisateur fluide et intuitive.</p>
+                                        <p class="text-base md:text-base text-gray-700 leading-relaxed max-w-sm sm:max-w-md mx-auto sm:mx-0 px-2 sm:px-0 hidden" data-lang="ar">واجهة تكيفية محسنة لجميع الأجهزة مع تجربة مستخدم سلسة وبديهية.</p>
                                     </div>
                                 </div>
                             </div>
@@ -1393,79 +1704,79 @@
                 </div>
                 
                 <!-- Right Column - Statistics & Visual Elements -->
-                <div class="space-y-8">
+                <div class="space-y-6 md:space-y-8 order-1 lg:order-2 w-full">
                     <!-- Technology Statistics -->
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6">
                         <div class="modern-stat-card group mobile-card-animate mobile-stagger-3">
-                            <div class="bg-gradient-to-br from-indigo-500 to-purple-600 p-6 rounded-2xl text-white text-center shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-rotate-3 relative overflow-hidden mobile-touch-effect">
+                            <div class="bg-gradient-to-br from-indigo-500 to-purple-600 p-4 md:p-6 rounded-2xl text-white text-center shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-rotate-3 relative overflow-hidden mobile-touch-effect">
                                 <div class="absolute inset-0 bg-gradient-to-br from-indigo-400 to-purple-500 opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
                                 <div class="relative z-10">
-                                    <div class="text-3xl font-bold mb-2">99.9%</div>
-                                    <div class="text-sm font-medium" data-lang="fr">Performance</div>
-                                    <div class="text-sm font-medium hidden" data-lang="ar">الأداء</div>
+                                    <div class="text-2xl md:text-3xl font-bold mb-2">99.9%</div>
+                                    <div class="text-xs md:text-sm font-medium" data-lang="fr">Performance</div>
+                                    <div class="text-xs md:text-sm font-medium hidden" data-lang="ar">الأداء</div>
                                 </div>
                             </div>
                         </div>
                         
                         <div class="modern-stat-card group mobile-card-animate mobile-stagger-4">
-                            <div class="bg-gradient-to-br from-blue-500 to-cyan-600 p-6 rounded-2xl text-white text-center shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:rotate-3 relative overflow-hidden mobile-touch-effect">
+                            <div class="bg-gradient-to-br from-blue-500 to-cyan-600 p-4 md:p-6 rounded-2xl text-white text-center shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:rotate-3 relative overflow-hidden mobile-touch-effect">
                                 <div class="absolute inset-0 bg-gradient-to-br from-blue-400 to-cyan-500 opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
                                 <div class="relative z-10">
-                                    <div class="text-3xl font-bold mb-2">256-bit</div>
-                                    <div class="text-sm font-medium" data-lang="fr">Sécurité</div>
-                                    <div class="text-sm font-medium hidden" data-lang="ar">الأمان</div>
+                                    <div class="text-2xl md:text-3xl font-bold mb-2">256-bit</div>
+                                    <div class="text-xs md:text-sm font-medium" data-lang="fr">Sécurité</div>
+                                    <div class="text-xs md:text-sm font-medium hidden" data-lang="ar">الأمان</div>
                                 </div>
                             </div>
                         </div>
                         
                         <div class="modern-stat-card group mobile-card-animate mobile-stagger-5">
-                            <div class="bg-gradient-to-br from-green-500 to-emerald-600 p-6 rounded-2xl text-white text-center shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-rotate-3 relative overflow-hidden mobile-touch-effect">
+                            <div class="bg-gradient-to-br from-green-500 to-emerald-600 p-4 md:p-6 rounded-2xl text-white text-center shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-rotate-3 relative overflow-hidden mobile-touch-effect">
                                 <div class="absolute inset-0 bg-gradient-to-br from-green-400 to-emerald-500 opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
                                 <div class="relative z-10">
-                                    <div class="text-3xl font-bold mb-2">24/7</div>
-                                    <div class="text-sm font-medium" data-lang="fr">Disponibilité</div>
-                                    <div class="text-sm font-medium hidden" data-lang="ar">التوفر</div>
+                                    <div class="text-2xl md:text-3xl font-bold mb-2">24/7</div>
+                                    <div class="text-xs md:text-sm font-medium" data-lang="fr">Disponibilité</div>
+                                    <div class="text-xs md:text-sm font-medium hidden" data-lang="ar">التوفر</div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     
-                                        <!-- Technology Benefits -->
-                    <div class="bg-white/80 backdrop-blur-sm p-8 rounded-2xl border border-white/50 shadow-xl mobile-card-animate">
-                        <h3 class="text-2xl font-bold text-indigo-900 mb-6" data-lang="fr">Avantages Clés</h3>
-                        <h3 class="text-2xl font-bold text-indigo-900 mb-6 hidden" data-lang="ar">المزايا الرئيسية</h3>
+                    <!-- Technology Benefits -->
+                    <div class="bg-white/80 backdrop-blur-sm p-6 md:p-8 rounded-2xl border border-white/50 shadow-xl mobile-card-animate mt-8 md:mt-12">
+                        <h3 class="text-xl md:text-2xl font-bold text-indigo-900 mb-4 md:mb-6" data-lang="fr">Avantages Clés</h3>
+                        <h3 class="text-xl md:text-2xl font-bold text-indigo-900 mb-4 md:mb-6 hidden" data-lang="ar">المزايا الرئيسية</h3>
                         
-                        <div class="space-y-4">
+                        <div class="space-y-3 md:space-y-4">
                             <div class="flex items-center space-x-3 rtl:space-x-reverse">
-                                <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
-                                    <i class="fas fa-check text-green-600 text-sm"></i>
+                                <div class="w-6 h-6 md:w-8 md:h-8 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-check text-green-600 text-xs md:text-sm"></i>
                                 </div>
-                                <span class="text-gray-700" data-lang="fr">Performance optimale</span>
-                                <span class="text-gray-700 hidden" data-lang="ar">أداء مثالي</span>
+                                <span class="text-sm md:text-base text-gray-700" data-lang="fr">Performance optimale</span>
+                                <span class="text-sm md:text-base text-gray-700 hidden" data-lang="ar">أداء مثالي</span>
                             </div>
                             
                             <div class="flex items-center space-x-3 rtl:space-x-reverse">
-                                <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
-                                    <i class="fas fa-check text-green-600 text-sm"></i>
+                                <div class="w-6 h-6 md:w-8 md:h-8 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-check text-green-600 text-xs md:text-sm"></i>
                                 </div>
-                                <span class="text-gray-700" data-lang="fr">Sécurité maximale</span>
-                                <span class="text-gray-700 hidden" data-lang="ar">أمان أقصى</span>
+                                <span class="text-sm md:text-base text-gray-700" data-lang="fr">Sécurité maximale</span>
+                                <span class="text-sm md:text-base text-gray-700 hidden" data-lang="ar">أمان أقصى</span>
                             </div>
                             
                             <div class="flex items-center space-x-3 rtl:space-x-reverse">
-                                <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
-                                    <i class="fas fa-check text-green-600 text-sm"></i>
+                                <div class="w-6 h-6 md:w-8 md:h-8 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-check text-green-600 text-xs md:text-sm"></i>
                                 </div>
-                                <span class="text-gray-700" data-lang="fr">Interface moderne</span>
-                                <span class="text-gray-700 hidden" data-lang="ar">واجهة حديثة</span>
+                                <span class="text-sm md:text-base text-gray-700" data-lang="fr">Interface moderne</span>
+                                <span class="text-sm md:text-base text-gray-700 hidden" data-lang="ar">واجهة حديثة</span>
                             </div>
                             
                             <div class="flex items-center space-x-3 rtl:space-x-reverse">
-                                <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
-                                    <i class="fas fa-check text-green-600 text-sm"></i>
+                                <div class="w-6 h-6 md:w-8 md:h-8 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-check text-green-600 text-xs md:text-sm"></i>
                                 </div>
-                                <span class="text-gray-700" data-lang="fr">Support 24/7</span>
-                                <span class="text-gray-700 hidden" data-lang="ar">دعم 24/7</span>
+                                <span class="text-sm md:text-base text-gray-700" data-lang="fr">Support 24/7</span>
+                                <span class="text-sm md:text-base text-gray-700 hidden" data-lang="ar">دعم 24/7</span>
                             </div>
                         </div>
                     </div>
@@ -1793,11 +2104,20 @@
         </div>
     </footer>
 
-    <!-- Enhanced Back to Top Button -->
-    <button id="backToTop" class="fixed bottom-28 right-8 w-14 h-14 bg-gradient-to-br from-indigo-600 to-purple-600 text-white rounded-full shadow-xl flex items-center justify-center opacity-0 invisible transition-all duration-500 hover:scale-110 hover:shadow-2xl group z-50">
-        <i class="fas fa-arrow-up text-lg group-hover:animate-bounce"></i>
-        <div class="absolute inset-0 bg-white/20 rounded-full scale-0 group-hover:scale-100 transition-transform duration-300"></div>
-    </button>
+    <!-- Modern Floating Action Button - Back to Top -->
+    <div class="fixed bottom-6 right-6 z-50">
+        <button id="backToTop" class="modern-fab opacity-0 invisible transition-all duration-700 ease-out transform translate-y-10 scale-75 group">
+            <div class="fab-background"></div>
+            <div class="fab-content">
+                <svg class="fab-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 4L12 20M12 4L6 10M12 4L18 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <div class="fab-ripple"></div>
+            </div>
+            <div class="fab-tooltip" data-lang="fr">Retour en haut</div>
+            <div class="fab-tooltip hidden" data-lang="ar">العودة للأعلى</div>
+        </button>
+    </div>
 
     <script>
         // Enhanced Scroll Animation Observer
@@ -2273,16 +2593,16 @@
             });
         });
 
-        // Enhanced Back to Top Button
+        // Modern Floating Action Button - Back to Top
         const backToTopButton = document.getElementById('backToTop');
         
         window.addEventListener('scroll', () => {
             if (window.pageYOffset > 300) {
-                backToTopButton.classList.remove('opacity-0', 'invisible');
-                backToTopButton.classList.add('opacity-100', 'visible');
+                backToTopButton.classList.remove('opacity-0', 'invisible', 'translate-y-10', 'scale-75');
+                backToTopButton.classList.add('opacity-100', 'visible', 'translate-y-0', 'scale-100');
             } else {
-                backToTopButton.classList.remove('opacity-100', 'visible');
-                backToTopButton.classList.add('opacity-0', 'invisible');
+                backToTopButton.classList.remove('opacity-100', 'visible', 'translate-y-0', 'scale-100');
+                backToTopButton.classList.add('opacity-0', 'invisible', 'translate-y-10', 'scale-75');
             }
         });
 
@@ -2292,20 +2612,19 @@
                 behavior: 'smooth'
             });
             
-            // Add click animation
-            backToTopButton.style.transform = 'scale(0.9)';
-            setTimeout(() => {
-                backToTopButton.style.transform = '';
-            }, 150);
-        });
-        
-        // Add hover sound effect (optional)
-        backToTopButton.addEventListener('mouseenter', () => {
-            backToTopButton.style.transform = 'scale(1.1)';
-        });
-        
-        backToTopButton.addEventListener('mouseleave', () => {
-            backToTopButton.style.transform = '';
+            // Add ripple effect
+            const ripple = backToTopButton.querySelector('.fab-ripple');
+            if (ripple) {
+                ripple.style.width = '0';
+                ripple.style.height = '0';
+                ripple.style.opacity = '1';
+                
+                setTimeout(() => {
+                    ripple.style.width = '100px';
+                    ripple.style.height = '100px';
+                    ripple.style.opacity = '0';
+                }, 10);
+            }
         });
     </script>
 </body>
