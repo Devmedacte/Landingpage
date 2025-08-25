@@ -645,13 +645,13 @@
         
 
         
-        /* AI Chat Interface - Fixed Position */
+        /* AI Chat Interface - Completely Fixed Position */
         .ai-chat-widget {
             position: fixed;
             bottom: 100px;
             right: 20px;
             z-index: 1000;
-            transition: all 0.3s ease;
+            transition: none;
         }
         
         .ai-chat-button {
@@ -664,12 +664,14 @@
             font-size: 24px;
             cursor: pointer;
             box-shadow: 0 10px 30px rgba(79, 70, 229, 0.3);
-            transition: all 0.3s ease;
+            transition: none;
+            transform: none;
         }
         
         .ai-chat-button:hover {
             transform: none;
             box-shadow: 0 10px 30px rgba(79, 70, 229, 0.3);
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
         }
         
 
