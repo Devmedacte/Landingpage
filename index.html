@@ -668,8 +668,8 @@
         }
         
         .ai-chat-button:hover {
-            transform: scale(1.1);
-            box-shadow: 0 15px 40px rgba(79, 70, 229, 0.4);
+            transform: none;
+            box-shadow: 0 10px 30px rgba(79, 70, 229, 0.3);
         }
         
 
@@ -1095,20 +1095,21 @@
     <!-- Advanced 3D Background Canvas -->
     <div id="canvas3d" class="fixed inset-0 pointer-events-none"></div>
 
-    <!-- Language Switch with Morocco Flag -->
+    <!-- Language Switch with Morocco Flag - Fixed -->
     <div class="fixed bottom-4 left-4 z-50 flex space-x-2">
-        <button id="switchToFr" class="language-switch glass-effect px-4 py-2 rounded-full shadow-lg flex items-center backdrop-blur-sm border border-white/20 hover:scale-105 transition-all">
+        <button id="switchToFr" class="language-switch glass-effect px-4 py-2 rounded-full shadow-lg flex items-center backdrop-blur-sm border border-white/20">
             <img src="https://flagcdn.com/w20/fr.png" srcset="https://flagcdn.com/w40/fr.png 2x" width="20" alt="France" class="mr-2">
             <span class="font-medium">Français</span>
         </button>
-        <button id="switchToAr" class="language-switch glass-effect px-4 py-2 rounded-full shadow-lg flex items-center backdrop-blur-sm border border-white/20 hover:scale-105 transition-all">
+        <button id="switchToAr" class="language-switch glass-effect px-4 py-2 rounded-full shadow-lg flex items-center backdrop-blur-sm border border-white/20">
             <img src="https://flagcdn.com/w20/ma.png" srcset="https://flagcdn.com/w40/ma.png 2x" width="20" alt="Morocco" class="mr-2">
             <span class="font-medium">العربية</span>
         </button>
     </div>
 
-    <!-- Enhanced Header with Morocco Cities -->
-    <header class="container mx-auto px-4 py-6 flex justify-between items-center relative z-10">
+    <!-- Enhanced Header with Morocco Cities - Fixed -->
+    <header class="sticky top-0 bg-white/95 backdrop-blur-sm border-b border-white/50 shadow-lg z-30">
+        <div class="container mx-auto px-4 py-6 flex justify-between items-center relative z-10">
         <div class="flex items-center">
             <div class="w-12 h-12 bg-gradient-to-br from-indigo-600 to-purple-600 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg">
                 <i class="fas fa-heartbeat"></i>
@@ -1134,28 +1135,28 @@
         </div>
         
         <nav class="hidden md:flex space-x-8">
-            <a href="#features" class="font-medium hover:text-indigo-600 transition-all hover:scale-105" data-lang="fr">
+            <a href="#features" class="font-medium text-indigo-600" data-lang="fr">
                 <i class="fas fa-star mr-1"></i>Fonctionnalités
             </a>
-            <a href="#features" class="font-medium hover:text-indigo-600 transition-all hover:scale-105 hidden" data-lang="ar">
+            <a href="#features" class="font-medium text-indigo-600 hidden" data-lang="ar">
                 <i class="fas fa-star ml-1"></i>الميزات
             </a>
-            <a href="#faq" class="font-medium hover:text-indigo-600 transition-all hover:scale-105" data-lang="fr">
+            <a href="#faq" class="font-medium text-indigo-600" data-lang="fr">
                 <i class="fas fa-question-circle mr-1"></i>FAQ
             </a>
-            <a href="#faq" class="font-medium hover:text-indigo-600 transition-all hover:scale-105 hidden" data-lang="ar">
+            <a href="#faq" class="font-medium text-indigo-600 hidden" data-lang="ar">
                 <i class="fas fa-question-circle ml-1"></i>الأسئلة الشائعة
             </a>
-            <a href="#about" class="font-medium hover:text-indigo-600 transition-all hover:scale-105" data-lang="fr">
+            <a href="#about" class="font-medium text-indigo-600" data-lang="fr">
                 <i class="fas fa-info-circle mr-1"></i>À propos
             </a>
-            <a href="#about" class="font-medium hover:text-indigo-600 transition-all hover:scale-105 hidden" data-lang="ar">
+            <a href="#about" class="font-medium text-indigo-600 hidden" data-lang="ar">
                 <i class="fas fa-info-circle ml-1"></i>حول
             </a>
-            <a href="#contact" class="font-medium hover:text-indigo-600 transition-all hover:scale-105" data-lang="fr">
+            <a href="#contact" class="font-medium text-indigo-600" data-lang="fr">
                 <i class="fas fa-envelope mr-1"></i>Contact
             </a>
-            <a href="#contact" class="font-medium hover:text-indigo-600 transition-all hover:scale-105 hidden" data-lang="ar">
+            <a href="#contact" class="font-medium text-indigo-600 hidden" data-lang="ar">
                 <i class="fas fa-envelope ml-1"></i>اتصل بنا
             </a>
         </nav>
@@ -1163,17 +1164,18 @@
         <button class="md:hidden text-2xl glass-effect p-2 rounded-lg" id="mobileMenuButton" aria-label="Menu">
             <i class="fas fa-bars"></i>
         </button>
+        </div>
     </header>
 
     <!-- Enhanced Mobile Menu with Close Button -->
     <div id="mobileMenu" class="fixed inset-0 bg-white/95 backdrop-blur-md z-40 flex flex-col items-center justify-center hidden">
         <!-- Close Button - Top Right -->
-        <button id="closeMobileMenu" class="absolute top-6 right-6 text-3xl glass-effect p-4 rounded-full hover:bg-red-100 hover:text-red-600 transition-all">
+        <button id="closeMobileMenu" class="absolute top-6 right-6 text-3xl glass-effect p-4 rounded-full bg-red-100 text-red-600">
             <i class="fas fa-times"></i>
         </button>
         
         <!-- Close Button - Bottom Center -->
-        <button id="closeMobileMenuBottom" class="absolute bottom-6 left-1/2 transform -translate-x-1/2 bg-indigo-600 text-white px-8 py-3 rounded-full font-medium hover:bg-indigo-700 transition-all">
+        <button id="closeMobileMenuBottom" class="absolute bottom-6 left-1/2 transform -translate-x-1/2 bg-indigo-600 text-white px-8 py-3 rounded-full font-medium">
             <i class="fas fa-times mr-2"></i>
             <span data-lang="fr">Fermer</span>
             <span data-lang="ar" class="hidden">إغلاق</span>
@@ -1182,28 +1184,28 @@
         <!-- Main Navigation - Centered -->
         <div class="flex flex-col items-center justify-center flex-1 px-6">
             <nav class="flex flex-col items-center space-y-6 md:space-y-8 w-full max-w-sm">
-                <a href="#features" class="w-full text-center text-lg md:text-xl font-medium hover:text-indigo-600 transition-all hover:scale-105 py-3 px-6 rounded-lg hover:bg-indigo-50" data-lang="fr">
+                <a href="#features" class="w-full text-center text-lg md:text-xl font-medium text-indigo-600 py-3 px-6 rounded-lg bg-indigo-50" data-lang="fr">
                     <i class="fas fa-star mr-2"></i>Fonctionnalités
                 </a>
-                <a href="#features" class="w-full text-center text-lg md:text-xl font-medium hover:text-indigo-600 transition-all hover:scale-105 py-3 px-6 rounded-lg hover:bg-indigo-50 hidden" data-lang="ar">
+                <a href="#features" class="w-full text-center text-lg md:text-xl font-medium text-indigo-600 py-3 px-6 rounded-lg bg-indigo-50 hidden" data-lang="ar">
                     <i class="fas fa-star ml-2"></i>الميزات
                 </a>
-                <a href="#faq" class="w-full text-center text-lg md:text-xl font-medium hover:text-indigo-600 transition-all hover:scale-105 py-3 px-6 rounded-lg hover:bg-indigo-50" data-lang="fr">
+                <a href="#faq" class="w-full text-center text-lg md:text-xl font-medium text-indigo-600 py-3 px-6 rounded-lg bg-indigo-50" data-lang="fr">
                     <i class="fas fa-question-circle mr-2"></i>FAQ
                 </a>
-                <a href="#faq" class="w-full text-center text-lg md:text-xl font-medium hover:text-indigo-600 transition-all hover:scale-105 py-3 px-6 rounded-lg hover:bg-indigo-50 hidden" data-lang="ar">
+                <a href="#faq" class="w-full text-center text-lg md:text-xl font-medium text-indigo-600 py-3 px-6 rounded-lg bg-indigo-50 hidden" data-lang="ar">
                     <i class="fas fa-question-circle ml-2"></i>الأسئلة الشائعة
                 </a>
-                <a href="#about" class="w-full text-center text-lg md:text-xl font-medium hover:text-indigo-600 transition-all hover:scale-105 py-3 px-6 rounded-lg hover:bg-indigo-50" data-lang="fr">
+                <a href="#about" class="w-full text-center text-lg md:text-xl font-medium text-indigo-600 py-3 px-6 rounded-lg bg-indigo-50" data-lang="fr">
                     <i class="fas fa-info-circle mr-2"></i>À propos
                 </a>
-                <a href="#about" class="w-full text-center text-lg md:text-xl font-medium hover:text-indigo-600 transition-all hover:scale-105 py-3 px-6 rounded-lg hover:bg-indigo-50 hidden" data-lang="ar">
+                <a href="#about" class="w-full text-center text-lg md:text-xl font-medium text-indigo-600 py-3 px-6 rounded-lg bg-indigo-50 hidden" data-lang="ar">
                     <i class="fas fa-info-circle ml-2"></i>حول
                 </a>
-                <a href="#contact" class="w-full text-center text-lg md:text-xl font-medium hover:text-indigo-600 transition-all hover:scale-105 py-3 px-6 rounded-lg hover:bg-indigo-50" data-lang="fr">
+                <a href="#contact" class="w-full text-center text-lg md:text-xl font-medium text-indigo-600 py-3 px-6 rounded-lg bg-indigo-50" data-lang="fr">
                     <i class="fas fa-envelope mr-2"></i>Contact
                 </a>
-                <a href="#contact" class="w-full text-center text-lg md:text-xl font-medium hover:text-indigo-600 transition-all hover:scale-105 py-3 px-6 rounded-lg hover:bg-indigo-50 hidden" data-lang="ar">
+                <a href="#contact" class="w-full text-center text-lg md:text-xl font-medium text-indigo-600 py-3 px-6 rounded-lg bg-indigo-50 hidden" data-lang="ar">
                     <i class="fas fa-envelope ml-2"></i>اتصل بنا
                 </a>
             </nav>
@@ -1227,7 +1229,7 @@
         <div class="container mx-auto px-4 hero-content relative z-10">
             <div class="max-w-4xl mx-auto text-center scroll-animate">
                 <div class="mb-8">
-                    <div class="inline-flex items-center space-x-3 bg-gradient-to-r from-indigo-500/10 to-purple-500/10 backdrop-blur-sm border border-indigo-200/50 px-6 py-3 rounded-full text-sm font-medium text-indigo-700 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105" data-lang="fr">
+                    <div class="inline-flex items-center space-x-3 bg-gradient-to-r from-indigo-500/10 to-purple-500/10 backdrop-blur-sm border border-indigo-200/50 px-6 py-3 rounded-full text-sm font-medium text-indigo-700 shadow-lg" data-lang="fr">
                         <div class="w-8 h-8 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-full flex items-center justify-center text-white shadow-md">
                             <i class="fas fa-robot text-sm"></i>
                         </div>
@@ -1235,7 +1237,7 @@
                         <div class="w-1 h-1 bg-indigo-400 rounded-full"></div>
                         <span>Disponible au Maroc</span>
                     </div>
-                    <div class="inline-flex items-center space-x-3 bg-gradient-to-r from-indigo-500/10 to-purple-500/10 backdrop-blur-sm border border-indigo-200/50 px-6 py-3 rounded-full text-sm font-medium text-indigo-700 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 hidden" data-lang="ar">
+                    <div class="inline-flex items-center space-x-3 bg-gradient-to-r from-indigo-500/10 to-purple-500/10 backdrop-blur-sm border border-indigo-200/50 px-6 py-3 rounded-full text-sm font-medium text-indigo-700 shadow-lg hidden" data-lang="ar">
                         <div class="w-8 h-8 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-full flex items-center justify-center text-white shadow-md">
                             <i class="fas fa-robot text-sm"></i>
                         </div>
