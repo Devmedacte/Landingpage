@@ -249,6 +249,21 @@
             display: block !important;
             position: relative !important;
             z-index: 10 !important;
+            min-height: 100vh !important;
+        }
+        
+        /* Fix FAQ items visibility */
+        .faq-item {
+            opacity: 1 !important;
+            visibility: visible !important;
+            display: block !important;
+            transform: none !important;
+            transition: none !important;
+        }
+        
+        /* Remove all animations from FAQ */
+        .faq-item * {
+            animation: none !important;
         }
         
         /* Ensure Health Technology elements are visible */
@@ -647,31 +662,38 @@
         
         /* AI Chat Interface - Completely Fixed Position */
         .ai-chat-widget {
-            position: fixed;
-            bottom: 100px;
-            right: 20px;
-            z-index: 1000;
-            transition: none;
+            position: fixed !important;
+            bottom: 100px !important;
+            right: 20px !important;
+            z-index: 1000 !important;
+            transition: none !important;
+            transform: none !important;
+            animation: none !important;
         }
         
         .ai-chat-button {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            border: none;
-            color: white;
-            font-size: 24px;
-            cursor: pointer;
-            box-shadow: 0 10px 30px rgba(79, 70, 229, 0.3);
-            transition: none;
-            transform: none;
+            width: 60px !important;
+            height: 60px !important;
+            border-radius: 50% !important;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)) !important;
+            border: none !important;
+            color: white !important;
+            font-size: 24px !important;
+            cursor: pointer !important;
+            box-shadow: 0 10px 30px rgba(79, 70, 229, 0.3) !important;
+            transition: none !important;
+            transform: none !important;
+            animation: none !important;
         }
         
-        .ai-chat-button:hover {
-            transform: none;
-            box-shadow: 0 10px 30px rgba(79, 70, 229, 0.3);
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        .ai-chat-button:hover,
+        .ai-chat-button:focus,
+        .ai-chat-button:active {
+            transform: none !important;
+            box-shadow: 0 10px 30px rgba(79, 70, 229, 0.3) !important;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)) !important;
+            scale: none !important;
+            animation: none !important;
         }
         
 
@@ -1491,7 +1513,7 @@
             <div class="max-w-4xl mx-auto">
                 <div class="space-y-6">
                                     <!-- FAQ Item 1 -->
-                <div class="faq-item bg-white/95 backdrop-blur-sm rounded-2xl border border-white/50 shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden mobile-card-animate mobile-touch-effect">
+                <div class="faq-item bg-white/95 backdrop-blur-sm rounded-2xl border border-white/50 shadow-xl overflow-hidden">
                         <button class="faq-question w-full px-8 py-6 text-left flex items-center justify-between group">
                             <h3 class="text-xl font-semibold text-indigo-900 group-hover:text-indigo-600 transition-colors" data-lang="fr">Combien coûte une consultation sur Medacte ?</h3>
                             <h3 class="text-xl font-semibold text-indigo-900 group-hover:text-indigo-600 transition-colors hidden" data-lang="ar">كم تكلفة الاستشارة على ميداكت؟</h3>
@@ -1508,7 +1530,7 @@
                     </div>
 
                                     <!-- FAQ Item 2 -->
-                <div class="faq-item bg-white/95 backdrop-blur-sm rounded-2xl border border-white/50 shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden">
+                <div class="faq-item bg-white/95 backdrop-blur-sm rounded-2xl border border-white/50 shadow-xl overflow-hidden">
                         <button class="faq-question w-full px-8 py-6 text-left flex items-center justify-between group">
                             <h3 class="text-xl font-semibold text-indigo-900 group-hover:text-indigo-600 transition-colors" data-lang="fr">Puis-je obtenir une ordonnance en ligne ?</h3>
                             <h3 class="text-xl font-semibold text-indigo-900 group-hover:text-indigo-600 transition-colors hidden" data-lang="ar">هل يمكنني الحصول على وصفة طبية عبر الإنترنت؟</h3>
@@ -1525,7 +1547,7 @@
                     </div>
 
                                     <!-- FAQ Item 3 -->
-                <div class="faq-item bg-white/95 backdrop-blur-sm rounded-2xl border border-white/50 shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden">
+                <div class="faq-item bg-white/95 backdrop-blur-sm rounded-2xl border border-white/50 shadow-xl overflow-hidden">
                         <button class="faq-question w-full px-8 py-6 text-left flex items-center justify-between group">
                             <h3 class="text-xl font-semibold text-indigo-900 group-hover:text-indigo-600 transition-colors" data-lang="fr">Dans quelles villes Medacte est-il disponible ?</h3>
                             <h3 class="text-xl font-semibold text-indigo-900 group-hover:text-indigo-600 transition-colors hidden" data-lang="ar">في أي مدن متاح ميداكت؟</h3>
@@ -1542,7 +1564,7 @@
                     </div>
 
                                     <!-- FAQ Item 4 -->
-                <div class="faq-item bg-white/95 backdrop-blur-sm rounded-2xl border border-white/50 shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden">
+                <div class="faq-item bg-white/95 backdrop-blur-sm rounded-2xl border border-white/50 shadow-xl overflow-hidden">
                         <button class="faq-question w-full px-8 py-6 text-left flex items-center justify-between group">
                             <h3 class="text-xl font-semibold text-indigo-900 group-hover:text-indigo-600 transition-colors" data-lang="fr">Comment fonctionne le suivi médical ?</h3>
                             <h3 class="text-xl font-semibold text-indigo-900 group-hover:text-indigo-600 transition-colors hidden" data-lang="ar">كيف يعمل المتابعة الطبية؟</h3>
@@ -1559,7 +1581,7 @@
                     </div>
 
                                     <!-- FAQ Item 5 -->
-                <div class="faq-item bg-white/95 backdrop-blur-sm rounded-2xl border border-white/50 shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden">
+                <div class="faq-item bg-white/95 backdrop-blur-sm rounded-2xl border border-white/50 shadow-xl overflow-hidden">
                         <button class="faq-question w-full px-8 py-6 text-left flex items-center justify-between group">
                             <h3 class="text-xl font-semibold text-indigo-900 group-hover:text-indigo-600 transition-colors" data-lang="fr">Puis-je annuler ou reporter un rendez-vous ?</h3>
                             <h3 class="text-xl font-semibold text-indigo-900 group-hover:text-indigo-600 transition-colors hidden" data-lang="ar">هل يمكنني إلغاء أو تأجيل موعد؟</h3>
@@ -1576,7 +1598,7 @@
                     </div>
 
                                     <!-- FAQ Item 6 -->
-                <div class="faq-item bg-white/95 backdrop-blur-sm rounded-2xl border border-white/50 shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden">
+                <div class="faq-item bg-white/95 backdrop-blur-sm rounded-2xl border border-white/50 shadow-xl overflow-hidden">
                         <button class="faq-question w-full px-8 py-6 text-left flex items-center justify-between group">
                             <h3 class="text-xl font-semibold text-indigo-900 group-hover:text-indigo-600 transition-colors" data-lang="fr">Les consultations sont-elles remboursées par l'assurance ?</h3>
                             <h3 class="text-xl font-semibold text-indigo-900 group-hover:text-indigo-600 transition-colors hidden" data-lang="ar">هل يتم استرداد الاستشارات من التأمين؟</h3>
@@ -1593,7 +1615,7 @@
                     </div>
 
                                     <!-- FAQ Item 7 -->
-                <div class="faq-item bg-white/95 backdrop-blur-sm rounded-2xl border border-white/50 shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden">
+                <div class="faq-item bg-white/95 backdrop-blur-sm rounded-2xl border border-white/50 shadow-xl overflow-hidden">
                         <button class="faq-question w-full px-8 py-6 text-left flex items-center justify-between group">
                             <h3 class="text-xl font-semibold text-indigo-900 group-hover:text-indigo-600 transition-colors" data-lang="fr">Comment fonctionne la livraison de médicaments ?</h3>
                             <h3 class="text-xl font-semibold text-indigo-900 group-hover:text-indigo-600 transition-colors hidden" data-lang="ar">كيف يعمل توصيل الأدوية؟</h3>
@@ -1610,7 +1632,7 @@
                     </div>
 
                                     <!-- FAQ Item 8 -->
-                <div class="faq-item bg-white/95 backdrop-blur-sm rounded-2xl border border-white/50 shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden">
+                <div class="faq-item bg-white/95 backdrop-blur-sm rounded-2xl border border-white/50 shadow-xl overflow-hidden">
                         <button class="faq-question w-full px-8 py-6 text-left flex items-center justify-between group">
                             <h3 class="text-xl font-semibold text-indigo-900 group-hover:text-indigo-600 transition-colors" data-lang="fr">Puis-je consulter un spécialiste directement ?</h3>
                             <h3 class="text-xl font-semibold text-indigo-900 group-hover:text-indigo-600 transition-colors hidden" data-lang="ar">هل يمكنني استشارة متخصص مباشرة؟</h3>
@@ -2113,9 +2135,9 @@
     </div>
 
     <script>
-        // Enhanced Scroll Animation Observer
+        // Enhanced Scroll Animation Observer - Disabled for FAQ
         const animateOnScroll = function() {
-            const elements = document.querySelectorAll('.scroll-animate, .mobile-scroll-animate, .mobile-card-animate:not(.feature-card-fixed):not(.tech-card-fixed):not(.stat-card-fixed)');
+            const elements = document.querySelectorAll('.scroll-animate, .mobile-scroll-animate, .mobile-card-animate:not(.feature-card-fixed):not(.tech-card-fixed):not(.stat-card-fixed):not(.faq-item)');
             const windowHeight = window.innerHeight;
             const windowTopPosition = window.scrollY;
             const windowBottomPosition = (windowTopPosition + windowHeight);
