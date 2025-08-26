@@ -504,107 +504,106 @@
         </section>
         
         <!-- Quick Actions Section -->
-        <section class="py-20 bg-gradient-to-br from-blue-50 via-white to-indigo-50 relative overflow-hidden">
-            <!-- Subtle background elements -->
-            <div class="absolute inset-0">
-                <div class="absolute top-10 left-10 w-32 h-32 bg-blue-200 rounded-full opacity-20 blur-2xl"></div>
-                <div class="absolute bottom-10 right-10 w-40 h-40 bg-indigo-200 rounded-full opacity-20 blur-2xl"></div>
-            </div>
-            
+        <section class="py-20 relative overflow-hidden">
             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <!-- Header -->
                 <header class="text-center mb-16">
-                    <div class="inline-flex items-center px-4 py-2 glass-effect rounded-full mb-6">
-                        <span class="text-blue-700 font-semibold text-sm lg:text-base">⚡ Accès Rapide</span>
+                    <div class="inline-flex items-center px-6 py-3 bg-black bg-opacity-80 backdrop-blur-sm rounded-full mb-8 shadow-2xl">
+                        <span class="text-white font-bold text-lg">⚡ Accès Rapide</span>
                     </div>
-                    <h2 class="text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 mb-6">
-                        <span class="gradient-text">Services Essentiels</span>
+                    <h2 class="text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-8 drop-shadow-2xl">
+                        <span class="bg-gradient-to-r from-blue-400 via-purple-400 to-emerald-400 bg-clip-text text-transparent">Plus de Services</span>
                     </h2>
-                    <p class="text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                        Accédez rapidement aux services de santé dont vous avez besoin
+                    <p class="text-xl lg:text-2xl text-gray-200 max-w-4xl mx-auto leading-relaxed drop-shadow-lg">
+                        Découvrez nos services supplémentaires pour une expérience complète
                     </p>
                 </header>
                 
                 <!-- Quick Actions Grid -->
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10">
-                    <!-- Pharmacies -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+                    <!-- Services Gratuits -->
                     <article class="group">
-                        <div class="glass-card rounded-2xl p-8 h-full transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
+                        <div class="bg-black bg-opacity-60 backdrop-blur-md rounded-3xl p-8 h-full transform transition-all duration-500 hover:scale-105 hover:bg-opacity-80 border border-white border-opacity-20 shadow-2xl">
                             <div class="text-center mb-6">
-                                <div class="w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-4 transform group-hover:scale-110 transition-transform duration-300">
-                                    <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_1a8dx7zj.json" background="transparent" speed="1" style="width: 50px; height: 50px;" loop autoplay></lottie-player>
+                                <div class="w-20 h-20 bg-gradient-to-r from-emerald-500 to-blue-500 rounded-3xl flex items-center justify-center mx-auto mb-6 transform group-hover:scale-110 transition-transform duration-500 shadow-2xl">
+                                    <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                    </svg>
                                 </div>
-                                <h3 class="text-xl font-bold text-gray-900 mb-3">Pharmacies Proches</h3>
+                                <h3 class="text-2xl font-bold text-white mb-4 drop-shadow-lg">Services Gratuits</h3>
                             </div>
-                            <p class="text-gray-600 leading-relaxed mb-6 text-center">
-                                Trouvez les pharmacies les plus proches avec leurs horaires et services
+                            <p class="text-gray-300 leading-relaxed mb-6 text-center text-lg">
+                                Tous nos services de santé sont 100% gratuits et accessibles 24h/24
                             </p>
                             <div class="text-center">
-                                <span class="inline-flex items-center px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">
-                                    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                <a href="#services" class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-emerald-500 to-blue-500 text-white font-semibold rounded-full hover:from-emerald-600 hover:to-blue-600 transition-all duration-300 shadow-lg">
+                                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
                                     </svg>
-                                    24h/24
-                                </span>
+                                    Découvrir
+                                </a>
                             </div>
                         </div>
                     </article>
                     
-                    <!-- Médecins -->
+                    <!-- Télécharger l'application -->
                     <article class="group">
-                        <div class="glass-card rounded-2xl p-8 h-full transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
+                        <div class="bg-black bg-opacity-60 backdrop-blur-md rounded-3xl p-8 h-full transform transition-all duration-500 hover:scale-105 hover:bg-opacity-80 border border-white border-opacity-20 shadow-2xl">
                             <div class="text-center mb-6">
-                                <div class="w-16 h-16 bg-gradient-to-r from-emerald-500 to-emerald-600 rounded-2xl flex items-center justify-center mx-auto mb-4 transform group-hover:scale-110 transition-transform duration-300">
-                                    <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_8a5p2o1k.json" background="transparent" speed="1" style="width: 50px; height: 50px;" loop autoplay></lottie-player>
+                                <div class="w-20 h-20 bg-gradient-to-r from-purple-500 to-pink-500 rounded-3xl flex items-center justify-center mx-auto mb-6 transform group-hover:scale-110 transition-transform duration-500 shadow-2xl">
+                                    <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+                                    </svg>
                                 </div>
-                                <h3 class="text-xl font-bold text-gray-900 mb-3">Consultation Rapide</h3>
+                                <h3 class="text-2xl font-bold text-white mb-4 drop-shadow-lg">Télécharger l'App</h3>
                             </div>
-                            <p class="text-gray-600 leading-relaxed mb-6 text-center">
-                                Consultez un médecin en ligne rapidement et en toute sécurité
+                            <p class="text-gray-300 leading-relaxed mb-6 text-center text-lg">
+                                Téléchargez notre application mobile pour accéder à tous nos services
                             </p>
                             <div class="text-center">
-                                <span class="inline-flex items-center px-4 py-2 bg-emerald-100 text-emerald-700 rounded-full text-sm font-medium">
-                                    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                <a href="#download" class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white font-semibold rounded-full hover:from-purple-600 hover:to-pink-600 transition-all duration-300 shadow-lg">
+                                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
                                     </svg>
-                                    Immédiat
-                                </span>
+                                    Télécharger
+                                </a>
                             </div>
                         </div>
                     </article>
                     
-                    <!-- Cliniques -->
+                    <!-- Questions Fréquentes -->
                     <article class="group">
-                        <div class="glass-card rounded-2xl p-8 h-full transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
+                        <div class="bg-black bg-opacity-60 backdrop-blur-md rounded-3xl p-8 h-full transform transition-all duration-500 hover:scale-105 hover:bg-opacity-80 border border-white border-opacity-20 shadow-2xl">
                             <div class="text-center mb-6">
-                                <div class="w-16 h-16 bg-gradient-to-r from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-4 transform group-hover:scale-110 transition-transform duration-300">
-                                    <lottie-player src="https://assets3.lottiefiles.com/packages/lf20_5tl1xxnz.json" background="transparent" speed="1" style="width: 50px; height: 50px;" loop autoplay></lottie-player>
+                                <div class="w-20 h-20 bg-gradient-to-r from-orange-500 to-red-500 rounded-3xl flex items-center justify-center mx-auto mb-6 transform group-hover:scale-110 transition-transform duration-500 shadow-2xl">
+                                    <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                    </svg>
                                 </div>
-                                <h3 class="text-xl font-bold text-gray-900 mb-3">Cliniques & Hôpitaux</h3>
+                                <h3 class="text-2xl font-bold text-white mb-4 drop-shadow-lg">Questions Fréquentes</h3>
                             </div>
-                            <p class="text-gray-600 leading-relaxed mb-6 text-center">
-                                Localisez les établissements de santé avec leurs spécialités
+                            <p class="text-gray-300 leading-relaxed mb-6 text-center text-lg">
+                                Trouvez rapidement les réponses à vos questions les plus courantes
                             </p>
                             <div class="text-center">
-                                <span class="inline-flex items-center px-4 py-2 bg-purple-100 text-purple-700 rounded-full text-sm font-medium">
-                                    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                <a href="#faq" class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-orange-500 to-red-500 text-white font-semibold rounded-full hover:from-orange-600 hover:to-red-600 transition-all duration-300 shadow-lg">
+                                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                                     </svg>
-                                    Proche
-                                </span>
+                                    Voir FAQ
+                                </a>
                             </div>
                         </div>
                     </article>
                 </div>
                 
                 <!-- CTA -->
-                <div class="text-center mt-12">
-                    <a href="#services" class="inline-flex items-center px-6 py-3 glass-effect text-gray-900 font-semibold rounded-full hover:bg-white hover:bg-opacity-90 transition-all duration-300">
-                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                <div class="text-center mt-16">
+                    <a href="#contact" class="inline-flex items-center px-8 py-4 bg-white bg-opacity-20 backdrop-blur-sm text-white font-bold rounded-full hover:bg-opacity-30 transition-all duration-300 border border-white border-opacity-30 shadow-2xl">
+                        <svg class="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
                         </svg>
-                        Découvrir tous nos services
+                        Nous Contacter
                     </a>
                 </div>
             </div>
