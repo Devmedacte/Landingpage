@@ -9,11 +9,16 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap');
         
         body {
             font-family: 'Poppins', sans-serif;
             overflow-x: hidden;
+        }
+        
+        body[dir="rtl"] {
+            font-family: 'Cairo', sans-serif;
         }
         
         .language-selector:hover .dropdown-content {
@@ -23,6 +28,7 @@
         .card-3d {
             transform-style: preserve-3d;
             transition: all 0.5s ease;
+            backdrop-filter: blur(10px);
         }
         
         .card-3d:hover {
@@ -43,6 +49,53 @@
         .perspective {
             perspective: 1000px;
         }
+        
+        .logo-svg {
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #00BFFF 0%, #20B2AA 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .feature-card {
+            transition: all 0.3s ease;
+            background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.7) 100%);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #00BFFF 0%, #20B2AA 100%);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 191, 255, 0.3);
+        }
+        
+        .btn-secondary {
+            background: linear-gradient(135deg, #20B2AA 0%, #00BFFF 100%);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-secondary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(32, 178, 170, 0.3);
+        }
     </style>
 </head>
 <body class="bg-gray-50">
@@ -54,16 +107,16 @@
         <!-- Language Selector -->
         <div class="absolute top-4 right-4 z-50">
             <div class="language-selector relative inline-block">
-                <button class="bg-white bg-opacity-80 px-4 py-2 rounded-full shadow-md flex items-center space-x-2">
+                <button class="glass-effect px-4 py-2 rounded-full shadow-lg flex items-center space-x-2 text-gray-800 font-medium">
                     <span>🇫🇷 FR</span>
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                     </svg>
                 </button>
-                <div class="dropdown-content hidden absolute right-0 mt-2 w-40 bg-white rounded-md shadow-lg z-50">
-                    <a href="?lang=fr" class="block px-4 py-2 text-gray-800 hover:bg-blue-50">🇫🇷 Français</a>
+                <div class="dropdown-content hidden absolute right-0 mt-2 w-40 glass-effect rounded-md shadow-lg z-50">
+                    <a href="?lang=fr" class="block px-4 py-2 text-gray-800 hover:bg-blue-50 rounded-t-md">🇫🇷 Français</a>
                     <a href="?lang=en" class="block px-4 py-2 text-gray-800 hover:bg-blue-50">🇬🇧 English</a>
-                    <a href="?lang=ar" class="block px-4 py-2 text-gray-800 hover:bg-blue-50">🇲🇦 العربية المغربية</a>
+                    <a href="?lang=ar" class="block px-4 py-2 text-gray-800 hover:bg-blue-50 rounded-b-md">🇲🇦 العربية المغربية</a>
                 </div>
             </div>
         </div>
@@ -72,10 +125,20 @@
         <section class="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8">
             <div class="max-w-7xl mx-auto text-center">
                 <div class="flex justify-center mb-8">
-                    <img src="https://via.placeholder.com/150x50?text=Medacte" alt="Medacte Logo" class="h-12">
+                    <!-- Medacte Logo SVG -->
+                    <svg class="logo-svg h-16 w-auto" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Head Circle -->
+                        <circle cx="25" cy="20" r="8" fill="#00BFFF"/>
+                        <!-- Upper Body/Arm -->
+                        <path d="M30 25 Q45 15 55 30 Q50 40 40 35" fill="#00BFFF" stroke="#0099CC" stroke-width="1"/>
+                        <!-- Lower Body/Leg -->
+                        <path d="M35 35 Q50 45 60 30 Q55 20 45 25" fill="#20B2AA" stroke="#1E90FF" stroke-width="1"/>
+                        <!-- Text -->
+                        <text x="70" y="35" font-family="Poppins, sans-serif" font-size="24" font-weight="700" fill="#1F2937">Medacte</text>
+                    </svg>
                 </div>
                 <h1 class="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-                    <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-teal-400">Santé Digitale</span> 
+                    <span class="gradient-text">Santé Digitale</span> 
                     <br>pour tous au Maroc
                 </h1>
                 <p class="text-xl md:text-2xl text-gray-700 max-w-3xl mx-auto mb-12">
@@ -86,25 +149,25 @@
                 <div class="perspective max-w-4xl mx-auto">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                         <!-- Patient Card -->
-                        <div class="card-3d bg-white bg-opacity-90 rounded-2xl p-8 shadow-xl border border-gray-100 transform transition-all duration-500 hover:scale-105">
+                        <div class="card-3d glass-effect rounded-2xl p-8 shadow-xl transform transition-all duration-500 hover:scale-105">
                             <div class="flex justify-center mb-6">
                                 <lottie-player src="https://assets5.lottiefiles.com/packages/lf20_iv4isxbl.json" background="transparent" speed="1" style="width: 120px; height: 120px;" loop autoplay></lottie-player>
                             </div>
                             <h3 class="text-2xl font-bold text-gray-900 mb-4">Je suis Patient</h3>
                             <p class="text-gray-600 mb-6">Accédez à votre dossier médical, consultez en ligne, recevez vos ordonnances et plus encore.</p>
-                            <a href="#" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-8 rounded-full transition duration-300 transform hover:scale-105">
+                            <a href="#" class="inline-block btn-primary text-white font-medium py-3 px-8 rounded-full">
                                 Continuer
                             </a>
                         </div>
                         
                         <!-- Professional Card -->
-                        <div class="card-3d bg-white bg-opacity-90 rounded-2xl p-8 shadow-xl border border-gray-100 transform transition-all duration-500 hover:scale-105">
+                        <div class="card-3d glass-effect rounded-2xl p-8 shadow-xl transform transition-all duration-500 hover:scale-105">
                             <div class="flex justify-center mb-6">
                                 <lottie-player src="https://assets5.lottiefiles.com/packages/lf20_k0qivqza.json" background="transparent" speed="1" style="width: 120px; height: 120px;" loop autoplay></lottie-player>
                             </div>
                             <h3 class="text-2xl font-bold text-gray-900 mb-4">Je suis Professionnel</h3>
                             <p class="text-gray-600 mb-6">Pour les médecins, pharmacies et laboratoires. Gestion des patients simplifiée.</p>
-                            <a href="#" class="inline-block bg-teal-600 hover:bg-teal-700 text-white font-medium py-3 px-8 rounded-full transition duration-300 transform hover:scale-105">
+                            <a href="#" class="inline-block btn-secondary text-white font-medium py-3 px-8 rounded-full">
                                 Continuer
                             </a>
                         </div>
