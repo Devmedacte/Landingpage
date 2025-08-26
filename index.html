@@ -4,8 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Medacte - Santé Digitale au Maroc</title>
-    <meta name="description" content="Votre santé dans votre poche. Gratuit, sécurisé et accessible à tous au Maroc.">
-    <meta name="keywords" content="santé digitale, téléconsultation, e-prescription, Maroc, médecine">
+    <meta name="description" content="Medacte - Application de santé digitale gratuite au Maroc. Téléconsultation, e-reçus, dossier médical sécurisé, livraison de médicaments. Votre santé dans votre poche.">
+    <meta name="keywords" content="santé digitale, téléconsultation, e-prescription, Maroc, médecine, application santé, dossier médical, livraison médicaments, pharmacie, rappels médicaments">
+    <meta name="author" content="Medacte">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Medacte - Santé Digitale au Maroc">
+    <meta property="og:description" content="Application de santé gratuite avec téléconsultation, e-reçus et livraison de médicaments au Maroc">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://medacte.ma">
+    <meta property="og:image" content="https://medacte.ma/og-image.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Medacte - Santé Digitale au Maroc">
+    <meta name="twitter:description" content="Application de santé gratuite avec téléconsultation, e-reçus et livraison de médicaments au Maroc">
+    <link rel="canonical" href="https://medacte.ma">
     
     <!-- Preload critical resources -->
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" as="style">
@@ -376,8 +387,65 @@
     
     <!-- Main Content -->
     <div class="relative z-10">
+        <!-- Mobile Navigation -->
+        <nav class="lg:hidden fixed top-0 left-0 right-0 z-50 glass-effect border-b border-white border-opacity-20">
+            <div class="flex items-center justify-between px-4 py-3">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <svg class="h-8 w-auto" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="25" cy="20" r="8" fill="#00BFFF"/>
+                        <path d="M30 25 Q45 15 55 30 Q50 40 40 35" fill="#00BFFF" stroke="#0099CC" stroke-width="1"/>
+                        <path d="M35 35 Q50 45 60 30 Q55 20 45 25" fill="#20B2AA" stroke="#1E90FF" stroke-width="1"/>
+                        <text x="70" y="35" font-family="Poppins, sans-serif" font-size="20" font-weight="700" fill="#1F2937">Medacte</text>
+                    </svg>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="glass-effect p-2 rounded-lg">
+                    <svg class="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden glass-effect border-t border-white border-opacity-20">
+                <div class="px-4 py-4 space-y-4">
+                    <a href="#services" class="block text-gray-800 font-medium hover:text-blue-600 transition-colors">Services</a>
+                    <a href="#faq" class="block text-gray-800 font-medium hover:text-blue-600 transition-colors">FAQ</a>
+                    <a href="#download" class="block text-gray-800 font-medium hover:text-blue-600 transition-colors">Télécharger</a>
+                    <a href="#contact" class="block text-gray-800 font-medium hover:text-blue-600 transition-colors">Contact</a>
+                </div>
+            </div>
+        </nav>
+        
+        <!-- Desktop Navigation -->
+        <nav class="hidden lg:block fixed top-0 left-0 right-0 z-50 glass-effect border-b border-white border-opacity-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center justify-between h-16">
+                    <!-- Logo -->
+                    <div class="flex items-center">
+                        <svg class="h-10 w-auto" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="25" cy="20" r="8" fill="#00BFFF"/>
+                            <path d="M30 25 Q45 15 55 30 Q50 40 40 35" fill="#00BFFF" stroke="#0099CC" stroke-width="1"/>
+                            <path d="M35 35 Q50 45 60 30 Q55 20 45 25" fill="#20B2AA" stroke="#1E90FF" stroke-width="1"/>
+                            <text x="70" y="35" font-family="Poppins, sans-serif" font-size="24" font-weight="700" fill="#1F2937">Medacte</text>
+                        </svg>
+                    </div>
+                    
+                    <!-- Desktop Menu -->
+                    <div class="flex items-center space-x-8">
+                        <a href="#services" class="text-gray-800 font-medium hover:text-blue-600 transition-colors">Services</a>
+                        <a href="#faq" class="text-gray-800 font-medium hover:text-blue-600 transition-colors">FAQ</a>
+                        <a href="#download" class="text-gray-800 font-medium hover:text-blue-600 transition-colors">Télécharger</a>
+                        <a href="#contact" class="text-gray-800 font-medium hover:text-blue-600 transition-colors">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        
         <!-- Language Selector -->
-        <div class="absolute top-4 right-4 z-50">
+        <div class="fixed top-4 right-4 z-50">
             <div class="language-selector relative inline-block">
                 <button class="glass-effect px-4 py-2 rounded-full shadow-lg flex items-center space-x-2 text-gray-800 font-medium hover:bg-white hover:bg-opacity-20 transition-all duration-300">
                     <span>🇫🇷 FR</span>
@@ -450,239 +518,171 @@
             </div>
         </section>
         
-        <!-- Features Section -->
-        <section class="py-24 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 relative overflow-hidden">
-            <!-- Animated background elements -->
+        <!-- Services Section -->
+        <section id="services" class="py-16 lg:py-20 bg-gradient-to-br from-blue-50 via-white to-indigo-50 relative overflow-hidden">
+            <!-- Subtle background elements -->
             <div class="absolute inset-0">
-                <div class="absolute top-0 left-0 w-72 h-72 bg-blue-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"></div>
-                <div class="absolute top-0 right-0 w-72 h-72 bg-purple-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000"></div>
-                <div class="absolute -bottom-8 left-20 w-72 h-72 bg-pink-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000"></div>
+                <div class="absolute top-10 left-10 w-32 h-32 bg-blue-200 rounded-full opacity-20 blur-2xl"></div>
+                <div class="absolute bottom-10 right-10 w-40 h-40 bg-indigo-200 rounded-full opacity-20 blur-2xl"></div>
             </div>
             
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                <div class="text-center mb-20">
-                    <div class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-emerald-400 to-blue-500 rounded-full mb-8 shadow-lg">
-                        <span class="text-white font-bold text-lg">🚀 Services 100% Gratuits</span>
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <!-- SEO-optimized header -->
+                <header class="text-center mb-12 lg:mb-16">
+                    <div class="inline-flex items-center px-4 py-2 glass-effect rounded-full mb-6">
+                        <span class="text-blue-700 font-semibold text-sm lg:text-base">✨ Services Gratuits</span>
                     </div>
-                    <h2 class="text-5xl md:text-6xl font-bold text-gray-900 mb-8">
-                        <span class="bg-gradient-to-r from-blue-600 via-purple-600 to-emerald-600 bg-clip-text text-transparent">
-                            Votre Santé, Notre Priorité
-                        </span>
+                    <h2 class="text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 mb-6">
+                        <span class="gradient-text">Nos Services de Santé</span>
                     </h2>
-                    <p class="text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-                        Découvrez notre suite complète de services de santé numérique, 
-                        <span class="font-bold text-blue-600">entièrement gratuits</span> et accessibles 24h/24
+                    <p class="text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                        Tous nos services sont <span class="font-semibold text-blue-600">100% gratuits</span> et accessibles 24h/24
                     </p>
-                </div>
+                </header>
                 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+                <!-- Services Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
                     <!-- E-Reçus Numériques -->
-                    <div class="group relative">
-                        <div class="absolute -inset-1 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-3xl blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200"></div>
-                        <div class="relative bg-white rounded-3xl p-8 shadow-2xl border border-gray-100 transform transition-all duration-700 hover:scale-105 hover:-translate-y-2">
-                            <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full opacity-10 -translate-y-16 translate-x-16"></div>
-                            
-                            <div class="relative z-10">
-                                <div class="w-20 h-20 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center mb-6 transform group-hover:scale-110 transition-transform duration-500">
-                                    <lottie-player src="https://assets9.lottiefiles.com/packages/lf20_2znxgjyt.json" background="transparent" speed="1" style="width: 50px; height: 50px;" loop autoplay></lottie-player>
+                    <article class="group">
+                        <div class="glass-card rounded-2xl p-6 lg:p-8 h-full transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
+                            <div class="flex items-center mb-4">
+                                <div class="w-12 h-12 lg:w-14 lg:h-14 bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mr-4">
+                                    <lottie-player src="https://assets9.lottiefiles.com/packages/lf20_2znxgjyt.json" background="transparent" speed="1" style="width: 40px; height: 40px;" loop autoplay></lottie-player>
                                 </div>
-                                
-                                <h3 class="text-2xl font-bold text-gray-900 mb-4 group-hover:text-blue-600 transition-colors duration-300">
-                                    E-Reçus Numériques
-                                </h3>
-                                <p class="text-gray-600 leading-relaxed mb-6">
-                                    Recevez vos ordonnances directement sur votre smartphone. Plus de papier, plus de perte. 
-                                    Stockage sécurisé et accès instantané à tous vos documents médicaux.
-                                </p>
-                                
-                                <div class="flex items-center justify-between">
-                                    <div class="flex items-center text-blue-600 font-semibold group-hover:text-blue-700 transition-colors duration-300">
-                                        <span>Découvrir</span>
-                                        <svg class="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                                        </svg>
-                                    </div>
-                                    <div class="text-sm text-gray-400">Gratuit</div>
-                                </div>
+                                <h3 class="text-lg lg:text-xl font-bold text-gray-900">E-Reçus Numériques</h3>
+                            </div>
+                            <p class="text-gray-600 leading-relaxed mb-4">
+                                Recevez vos ordonnances directement sur votre smartphone. Stockage sécurisé et accès instantané.
+                            </p>
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm text-blue-600 font-medium">Gratuit</span>
+                                <svg class="w-5 h-5 text-gray-400 group-hover:text-blue-600 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                </svg>
                             </div>
                         </div>
-                    </div>
+                    </article>
                     
                     <!-- Dossier Médical -->
-                    <div class="group relative">
-                        <div class="absolute -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 rounded-3xl blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200"></div>
-                        <div class="relative bg-white rounded-3xl p-8 shadow-2xl border border-gray-100 transform transition-all duration-700 hover:scale-105 hover:-translate-y-2">
-                            <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full opacity-10 -translate-y-16 translate-x-16"></div>
-                            
-                            <div class="relative z-10">
-                                <div class="w-20 h-20 bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center mb-6 transform group-hover:scale-110 transition-transform duration-500">
-                                    <lottie-player src="https://assets3.lottiefiles.com/packages/lf20_5tl1xxnz.json" background="transparent" speed="1" style="width: 50px; height: 50px;" loop autoplay></lottie-player>
+                    <article class="group">
+                        <div class="glass-card rounded-2xl p-6 lg:p-8 h-full transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
+                            <div class="flex items-center mb-4">
+                                <div class="w-12 h-12 lg:w-14 lg:h-14 bg-gradient-to-r from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mr-4">
+                                    <lottie-player src="https://assets3.lottiefiles.com/packages/lf20_5tl1xxnz.json" background="transparent" speed="1" style="width: 40px; height: 40px;" loop autoplay></lottie-player>
                                 </div>
-                                
-                                <h3 class="text-2xl font-bold text-gray-900 mb-4 group-hover:text-purple-600 transition-colors duration-300">
-                                    Dossier Médical Sécurisé
-                                </h3>
-                                <p class="text-gray-600 leading-relaxed mb-6">
-                                    Centralisez tous vos documents médicaux en un seul endroit. Chiffrement de niveau bancaire 
-                                    et accès sécurisé pour vous et vos professionnels de santé autorisés.
-                                </p>
-                                
-                                <div class="flex items-center justify-between">
-                                    <div class="flex items-center text-purple-600 font-semibold group-hover:text-purple-700 transition-colors duration-300">
-                                        <span>Découvrir</span>
-                                        <svg class="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                                        </svg>
-                                    </div>
-                                    <div class="text-sm text-gray-400">Gratuit</div>
-                                </div>
+                                <h3 class="text-lg lg:text-xl font-bold text-gray-900">Dossier Médical</h3>
+                            </div>
+                            <p class="text-gray-600 leading-relaxed mb-4">
+                                Centralisez tous vos documents médicaux. Chiffrement de niveau bancaire et accès sécurisé.
+                            </p>
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm text-purple-600 font-medium">Gratuit</span>
+                                <svg class="w-5 h-5 text-gray-400 group-hover:text-purple-600 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                </svg>
                             </div>
                         </div>
-                    </div>
+                    </article>
                     
                     <!-- Téléconsultation -->
-                    <div class="group relative">
-                        <div class="absolute -inset-1 bg-gradient-to-r from-emerald-600 to-teal-600 rounded-3xl blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200"></div>
-                        <div class="relative bg-white rounded-3xl p-8 shadow-2xl border border-gray-100 transform transition-all duration-700 hover:scale-105 hover:-translate-y-2">
-                            <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-emerald-500 to-teal-500 rounded-full opacity-10 -translate-y-16 translate-x-16"></div>
-                            
-                            <div class="relative z-10">
-                                <div class="w-20 h-20 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-2xl flex items-center justify-center mb-6 transform group-hover:scale-110 transition-transform duration-500">
-                                    <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_8a5p2o1k.json" background="transparent" speed="1" style="width: 50px; height: 50px;" loop autoplay></lottie-player>
+                    <article class="group">
+                        <div class="glass-card rounded-2xl p-6 lg:p-8 h-full transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
+                            <div class="flex items-center mb-4">
+                                <div class="w-12 h-12 lg:w-14 lg:h-14 bg-gradient-to-r from-emerald-500 to-emerald-600 rounded-xl flex items-center justify-center mr-4">
+                                    <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_8a5p2o1k.json" background="transparent" speed="1" style="width: 40px; height: 40px;" loop autoplay></lottie-player>
                                 </div>
-                                
-                                <h3 class="text-2xl font-bold text-gray-900 mb-4 group-hover:text-emerald-600 transition-colors duration-300">
-                                    Téléconsultation HD
-                                </h3>
-                                <p class="text-gray-600 leading-relaxed mb-6">
-                                    Consultez un médecin en vidéo haute définition sans vous déplacer. Disponible 24h/24, 
-                                    qualité professionnelle garantie et prescriptions numériques instantanées.
-                                </p>
-                                
-                                <div class="flex items-center justify-between">
-                                    <div class="flex items-center text-emerald-600 font-semibold group-hover:text-emerald-700 transition-colors duration-300">
-                                        <span>Découvrir</span>
-                                        <svg class="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                                        </svg>
-                                    </div>
-                                    <div class="text-sm text-gray-400">Gratuit</div>
-                                </div>
+                                <h3 class="text-lg lg:text-xl font-bold text-gray-900">Téléconsultation</h3>
+                            </div>
+                            <p class="text-gray-600 leading-relaxed mb-4">
+                                Consultez un médecin en vidéo HD sans vous déplacer. Disponible 24h/24.
+                            </p>
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm text-emerald-600 font-medium">Gratuit</span>
+                                <svg class="w-5 h-5 text-gray-400 group-hover:text-emerald-600 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                </svg>
                             </div>
                         </div>
-                    </div>
+                    </article>
                     
-                    <!-- Trouver Pharmacie -->
-                    <div class="group relative">
-                        <div class="absolute -inset-1 bg-gradient-to-r from-orange-600 to-red-600 rounded-3xl blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200"></div>
-                        <div class="relative bg-white rounded-3xl p-8 shadow-2xl border border-gray-100 transform transition-all duration-700 hover:scale-105 hover:-translate-y-2">
-                            <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-orange-500 to-red-500 rounded-full opacity-10 -translate-y-16 translate-x-16"></div>
-                            
-                            <div class="relative z-10">
-                                <div class="w-20 h-20 bg-gradient-to-r from-orange-500 to-red-500 rounded-2xl flex items-center justify-center mb-6 transform group-hover:scale-110 transition-transform duration-500">
-                                    <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_1a8dx7zj.json" background="transparent" speed="1" style="width: 50px; height: 50px;" loop autoplay></lottie-player>
+                    <!-- Pharmacies -->
+                    <article class="group">
+                        <div class="glass-card rounded-2xl p-6 lg:p-8 h-full transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
+                            <div class="flex items-center mb-4">
+                                <div class="w-12 h-12 lg:w-14 lg:h-14 bg-gradient-to-r from-orange-500 to-orange-600 rounded-xl flex items-center justify-center mr-4">
+                                    <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_1a8dx7zj.json" background="transparent" speed="1" style="width: 40px; height: 40px;" loop autoplay></lottie-player>
                                 </div>
-                                
-                                <h3 class="text-2xl font-bold text-gray-900 mb-4 group-hover:text-orange-600 transition-colors duration-300">
-                                    Pharmacies à Proximité
-                                </h3>
-                                <p class="text-gray-600 leading-relaxed mb-6">
-                                    Localisez les pharmacies les plus proches avec leurs horaires, services disponibles 
-                                    et disponibilité en temps réel. Navigation GPS intégrée.
-                                </p>
-                                
-                                <div class="flex items-center justify-between">
-                                    <div class="flex items-center text-orange-600 font-semibold group-hover:text-orange-700 transition-colors duration-300">
-                                        <span>Découvrir</span>
-                                        <svg class="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                                        </svg>
-                                    </div>
-                                    <div class="text-sm text-gray-400">Gratuit</div>
-                                </div>
+                                <h3 class="text-lg lg:text-xl font-bold text-gray-900">Pharmacies Proches</h3>
+                            </div>
+                            <p class="text-gray-600 leading-relaxed mb-4">
+                                Trouvez les pharmacies les plus proches avec horaires et services disponibles.
+                            </p>
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm text-orange-600 font-medium">Gratuit</span>
+                                <svg class="w-5 h-5 text-gray-400 group-hover:text-orange-600 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                </svg>
                             </div>
                         </div>
-                    </div>
+                    </article>
                     
-                    <!-- Livraison Médicaments -->
-                    <div class="group relative">
-                        <div class="absolute -inset-1 bg-gradient-to-r from-green-600 to-emerald-600 rounded-3xl blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200"></div>
-                        <div class="relative bg-white rounded-3xl p-8 shadow-2xl border border-gray-100 transform transition-all duration-700 hover:scale-105 hover:-translate-y-2">
-                            <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-green-500 to-emerald-500 rounded-full opacity-10 -translate-y-16 translate-x-16"></div>
-                            
-                            <div class="relative z-10">
-                                <div class="w-20 h-20 bg-gradient-to-r from-green-500 to-emerald-500 rounded-2xl flex items-center justify-center mb-6 transform group-hover:scale-110 transition-transform duration-500">
-                                    <lottie-player src="https://assets4.lottiefiles.com/packages/lf20_3GLd0L.json" background="transparent" speed="1" style="width: 50px; height: 50px;" loop autoplay></lottie-player>
+                    <!-- Livraison -->
+                    <article class="group">
+                        <div class="glass-card rounded-2xl p-6 lg:p-8 h-full transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
+                            <div class="flex items-center mb-4">
+                                <div class="w-12 h-12 lg:w-14 lg:h-14 bg-gradient-to-r from-green-500 to-green-600 rounded-xl flex items-center justify-center mr-4">
+                                    <lottie-player src="https://assets4.lottiefiles.com/packages/lf20_3GLd0L.json" background="transparent" speed="1" style="width: 40px; height: 40px;" loop autoplay></lottie-player>
                                 </div>
-                                
-                                <h3 class="text-2xl font-bold text-gray-900 mb-4 group-hover:text-green-600 transition-colors duration-300">
-                                    Livraison Express
-                                </h3>
-                                <p class="text-gray-600 leading-relaxed mb-6">
-                                    Commandez vos médicaments et recevez-les à domicile en moins de 2 heures. 
-                                    Service premium gratuit avec suivi en temps réel et notifications.
-                                </p>
-                                
-                                <div class="flex items-center justify-between">
-                                    <div class="flex items-center text-green-600 font-semibold group-hover:text-green-700 transition-colors duration-300">
-                                        <span>Découvrir</span>
-                                        <svg class="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                                        </svg>
-                                    </div>
-                                    <div class="text-sm text-gray-400">Gratuit</div>
-                                </div>
+                                <h3 class="text-lg lg:text-xl font-bold text-gray-900">Livraison Express</h3>
+                            </div>
+                            <p class="text-gray-600 leading-relaxed mb-4">
+                                Commandez vos médicaments et recevez-les à domicile en moins de 2 heures.
+                            </p>
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm text-green-600 font-medium">Gratuit</span>
+                                <svg class="w-5 h-5 text-gray-400 group-hover:text-green-600 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                </svg>
                             </div>
                         </div>
-                    </div>
+                    </article>
                     
-                    <!-- Rappels Intelligents -->
-                    <div class="group relative">
-                        <div class="absolute -inset-1 bg-gradient-to-r from-pink-600 to-rose-600 rounded-3xl blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200"></div>
-                        <div class="relative bg-white rounded-3xl p-8 shadow-2xl border border-gray-100 transform transition-all duration-700 hover:scale-105 hover:-translate-y-2">
-                            <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-pink-500 to-rose-500 rounded-full opacity-10 -translate-y-16 translate-x-16"></div>
-                            
-                            <div class="relative z-10">
-                                <div class="w-20 h-20 bg-gradient-to-r from-pink-500 to-rose-500 rounded-2xl flex items-center justify-center mb-6 transform group-hover:scale-110 transition-transform duration-500">
-                                    <lottie-player src="https://assets5.lottiefiles.com/packages/lf20_4kx2q32n.json" background="transparent" speed="1" style="width: 50px; height: 50px;" loop autoplay></lottie-player>
+                    <!-- Rappels -->
+                    <article class="group">
+                        <div class="glass-card rounded-2xl p-6 lg:p-8 h-full transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
+                            <div class="flex items-center mb-4">
+                                <div class="w-12 h-12 lg:w-14 lg:h-14 bg-gradient-to-r from-pink-500 to-pink-600 rounded-xl flex items-center justify-center mr-4">
+                                    <lottie-player src="https://assets5.lottiefiles.com/packages/lf20_4kx2q32n.json" background="transparent" speed="1" style="width: 40px; height:40px;" loop autoplay></lottie-player>
                                 </div>
-                                
-                                <h3 class="text-2xl font-bold text-gray-900 mb-4 group-hover:text-pink-600 transition-colors duration-300">
-                                    Rappels Intelligents
-                                </h3>
-                                <p class="text-gray-600 leading-relaxed mb-6">
-                                    Ne ratez plus vos prises de médicaments ou rendez-vous. Notifications personnalisées 
-                                    et intelligentes avec rappels progressifs et historique complet.
-                                </p>
-                                
-                                <div class="flex items-center justify-between">
-                                    <div class="flex items-center text-pink-600 font-semibold group-hover:text-pink-700 transition-colors duration-300">
-                                        <span>Découvrir</span>
-                                        <svg class="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                                        </svg>
-                                    </div>
-                                    <div class="text-sm text-gray-400">Gratuit</div>
-                                </div>
+                                <h3 class="text-lg lg:text-xl font-bold text-gray-900">Rappels Intelligents</h3>
+                            </div>
+                            <p class="text-gray-600 leading-relaxed mb-4">
+                                Ne ratez plus vos prises de médicaments ou rendez-vous avec notifications intelligentes.
+                            </p>
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm text-pink-600 font-medium">Gratuit</span>
+                                <svg class="w-5 h-5 text-gray-400 group-hover:text-pink-600 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                </svg>
                             </div>
                         </div>
-                    </div>
+                    </article>
                 </div>
                 
-                <!-- Call to Action -->
-                <div class="text-center mt-20">
-                    <div class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 via-purple-600 to-emerald-600 text-white rounded-full font-bold text-lg shadow-2xl hover:shadow-3xl transform hover:scale-105 transition-all duration-300">
-                        <svg class="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <!-- CTA -->
+                <div class="text-center mt-12 lg:mt-16">
+                    <a href="#download" class="inline-flex items-center px-6 py-3 glass-effect text-gray-900 font-semibold rounded-full hover:bg-white hover:bg-opacity-90 transition-all duration-300">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
                         </svg>
                         Télécharger l'application
-                    </div>
+                    </a>
                 </div>
             </div>
         </section>
         
         <!-- App Download Section -->
-        <section class="py-20 bg-gradient-to-r from-blue-50 to-teal-50">
+        <section id="download" class="py-20 bg-gradient-to-r from-blue-50 to-teal-50">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="lg:flex items-center justify-between">
                     <div class="lg:w-1/2 mb-12 lg:mb-0">
@@ -796,7 +796,7 @@
         </section>
         
         <!-- FAQ Section -->
-        <section class="py-20 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
+        <section id="faq" class="py-20 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
             <!-- Background decorative elements -->
             <div class="absolute inset-0 opacity-5">
                 <div class="absolute top-20 right-10 w-32 h-32 bg-blue-400 rounded-full blur-3xl"></div>
@@ -1006,7 +1006,7 @@
         </section>
         
         <!-- Footer -->
-        <footer class="bg-gray-900 text-white pt-16 pb-8">
+        <footer id="contact" class="bg-gray-900 text-white pt-16 pb-8">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
                     <div>
@@ -1111,8 +1111,26 @@
             }
         });
 
-        // Language selector functionality
+        // Mobile Navigation
         document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            if (mobileMenuBtn && mobileMenu) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('hidden');
+                });
+                
+                // Close mobile menu when clicking on a link
+                const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+                mobileMenuLinks.forEach(link => {
+                    link.addEventListener('click', function() {
+                        mobileMenu.classList.add('hidden');
+                    });
+                });
+            }
+            
+            // Language selector functionality
             // Get current language from URL parameter or default to French
             const urlParams = new URLSearchParams(window.location.search);
             const currentLang = urlParams.get('lang') || 'fr';
