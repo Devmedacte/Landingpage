@@ -53,10 +53,9 @@
         }
         
         .glass-effect {
-            background: var(--glass-bg);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid var(--glass-border);
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
         }
         
         .glass-card {
@@ -212,6 +211,63 @@
     
     <!-- Main Content -->
     <div class="relative z-10">
+        <!-- Mobile Navigation -->
+        <nav class="lg:hidden fixed top-0 left-0 right-0 z-50 glass-effect border-b border-gray-200">
+            <div class="flex items-center justify-between px-4 py-3">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <svg class="h-8 w-auto" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="25" cy="20" r="8" fill="#00BFFF"/>
+                        <path d="M30 25 Q45 15 55 30 Q50 40 40 35" fill="#00BFFF" stroke="#0099CC" stroke-width="1"/>
+                        <path d="M35 35 Q50 45 60 30 Q55 20 45 25" fill="#20B2AA" stroke="#1E90FF" stroke-width="1"/>
+                        <text x="70" y="35" font-family="Poppins, sans-serif" font-size="20" font-weight="700" fill="#1F2937">Medacte</text>
+                    </svg>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="glass-effect p-2 rounded-lg">
+                    <svg class="w-6 h-6 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden glass-effect border-t border-gray-200">
+                <div class="px-4 py-4 space-y-4">
+                    <a href="#services" class="block text-gray-900 font-medium hover:text-blue-600 transition-colors">Services</a>
+                    <a href="#faq" class="block text-gray-900 font-medium hover:text-blue-600 transition-colors">FAQ</a>
+                    <a href="#download" class="block text-gray-900 font-medium hover:text-blue-600 transition-colors">Download</a>
+                    <a href="#contact" class="block text-gray-900 font-medium hover:text-blue-600 transition-colors">Contact</a>
+                </div>
+            </div>
+        </nav>
+        
+        <!-- Desktop Navigation -->
+        <nav class="hidden lg:block fixed top-0 left-0 right-0 z-50 glass-effect border-b border-gray-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center justify-between h-16">
+                    <!-- Logo -->
+                    <div class="flex items-center">
+                        <svg class="h-10 w-auto" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="25" cy="20" r="8" fill="#00BFFF"/>
+                            <path d="M30 25 Q45 15 55 30 Q50 40 40 35" fill="#00BFFF" stroke="#0099CC" stroke-width="1"/>
+                            <path d="M35 35 Q50 45 60 30 Q55 20 45 25" fill="#20B2AA" stroke="#1E90FF" stroke-width="1"/>
+                            <text x="70" y="35" font-family="Poppins, sans-serif" font-size="24" font-weight="700" fill="#1F2937">Medacte</text>
+                        </svg>
+                    </div>
+                    
+                    <!-- Desktop Menu -->
+                    <div class="flex items-center space-x-8">
+                        <a href="#services" class="text-gray-900 font-medium hover:text-blue-600 transition-colors">Services</a>
+                        <a href="#faq" class="text-gray-900 font-medium hover:text-blue-600 transition-colors">FAQ</a>
+                        <a href="#download" class="text-gray-900 font-medium hover:text-blue-600 transition-colors">Download</a>
+                        <a href="#contact" class="text-gray-900 font-medium hover:text-blue-600 transition-colors">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        
         <!-- Language Selector -->
         <div class="absolute top-4 right-4 z-50">
             <div class="language-selector relative inline-block">
@@ -261,7 +317,7 @@
                         <!-- Patient Card -->
                         <div class="card-3d glass-card rounded-2xl p-8 shadow-xl transform transition-all duration-500 hover:scale-105">
                             <div class="flex justify-center mb-6">
-                                <lottie-player src="https://assets5.lottiefiles.com/packages/lf20_iv4isxbl.json" background="transparent" speed="1" style="width: 120px; height: 120px;" loop autoplay></lottie-player>
+                                <lottie-player src="https://assets9.lottiefiles.com/packages/lf20_2znxgjyt.json" background="transparent" speed="1" style="width: 120px; height: 120px;" loop autoplay></lottie-player>
                             </div>
                             <h3 class="text-2xl font-bold text-gray-900 mb-4">I am a Patient</h3>
                             <p class="text-gray-600 mb-6">Access your medical records, consult online, receive prescriptions and more.</p>
@@ -485,6 +541,24 @@
                     console.log('Language changed to:', this.getAttribute('href'));
                 });
             });
+            
+            // Mobile menu functionality
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+            
+            if (mobileMenuBtn && mobileMenu) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('hidden');
+                });
+                
+                // Close mobile menu when clicking on links
+                mobileMenuLinks.forEach(link => {
+                    link.addEventListener('click', function() {
+                        mobileMenu.classList.add('hidden');
+                    });
+                });
+            }
         });
     </script>
 </body>
