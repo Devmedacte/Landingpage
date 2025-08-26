@@ -478,7 +478,7 @@
                         <!-- Patient Card -->
                         <div class="card-3d glass-card rounded-2xl p-8 shadow-xl transform transition-all duration-500 hover:scale-105">
                             <div class="flex justify-center mb-6">
-                                <lottie-player src="https://assets9.lottiefiles.com/packages/lf20_2znxgjyt.json" background="transparent" speed="1" style="width: 120px; height: 120px;" loop autoplay></lottie-player>
+                                <lottie-player src="https://assets5.lottiefiles.com/packages/lf20_iv4isxbl.json" background="transparent" speed="1" style="width: 120px; height: 120px;" loop autoplay></lottie-player>
                             </div>
                             <h3 class="text-2xl font-bold text-gray-900 mb-4">Je suis Patient</h3>
                             <p class="text-gray-600 mb-6">Accédez à votre dossier médical, consultez en ligne, recevez vos ordonnances et plus encore.</p>
@@ -499,6 +499,106 @@
                             </a>
                         </div>
                     </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Quick Actions Section -->
+        <section class="py-16 bg-gradient-to-r from-red-50 via-orange-50 to-yellow-50 relative overflow-hidden">
+            <!-- Background decorative elements -->
+            <div class="absolute inset-0">
+                <div class="absolute top-0 left-0 w-32 h-32 bg-red-200 rounded-full opacity-20 blur-2xl"></div>
+                <div class="absolute bottom-0 right-0 w-40 h-40 bg-orange-200 rounded-full opacity-20 blur-2xl"></div>
+            </div>
+            
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <!-- Header -->
+                <header class="text-center mb-12">
+                    <div class="inline-flex items-center px-4 py-2 glass-effect rounded-full mb-6">
+                        <span class="text-red-700 font-semibold text-sm lg:text-base">🚨 Actions Rapides</span>
+                    </div>
+                    <h2 class="text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 mb-6">
+                        <span class="gradient-text">Urgences & Soins</span>
+                    </h2>
+                    <p class="text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                        Accès rapide aux services d'urgence et de soins 24h/24
+                    </p>
+                </header>
+                
+                <!-- Quick Actions Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+                    <!-- Notfall/Nacht Apotheken -->
+                    <article class="group">
+                        <div class="glass-card rounded-2xl p-6 lg:p-8 h-full transform transition-all duration-300 hover:scale-105 hover:shadow-xl border-l-4 border-red-500">
+                            <div class="flex items-center mb-4">
+                                <div class="w-12 h-12 lg:w-14 lg:h-14 bg-gradient-to-r from-red-500 to-red-600 rounded-xl flex items-center justify-center mr-4">
+                                    <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_1a8dx7zj.json" background="transparent" speed="1" style="width: 40px; height: 40px;" loop autoplay></lottie-player>
+                                </div>
+                                <h3 class="text-lg lg:text-xl font-bold text-gray-900">Pharmacies de Nuit</h3>
+                            </div>
+                            <p class="text-gray-600 leading-relaxed mb-4">
+                                Trouvez les pharmacies ouvertes 24h/24 près de chez vous. Service d'urgence disponible.
+                            </p>
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm text-red-600 font-medium">Urgence</span>
+                                <svg class="w-5 h-5 text-gray-400 group-hover:text-red-600 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                </svg>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <!-- Notfall Ärzte -->
+                    <article class="group">
+                        <div class="glass-card rounded-2xl p-6 lg:p-8 h-full transform transition-all duration-300 hover:scale-105 hover:shadow-xl border-l-4 border-orange-500">
+                            <div class="flex items-center mb-4">
+                                <div class="w-12 h-12 lg:w-14 lg:h-14 bg-gradient-to-r from-orange-500 to-orange-600 rounded-xl flex items-center justify-center mr-4">
+                                    <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_8a5p2o1k.json" background="transparent" speed="1" style="width: 40px; height: 40px;" loop autoplay></lottie-player>
+                                </div>
+                                <h3 class="text-lg lg:text-xl font-bold text-gray-900">Médecins d'Urgence</h3>
+                            </div>
+                            <p class="text-gray-600 leading-relaxed mb-4">
+                                Contactez un médecin en urgence. Consultation immédiate disponible 24h/24.
+                            </p>
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm text-orange-600 font-medium">Urgence</span>
+                                <svg class="w-5 h-5 text-gray-400 group-hover:text-orange-600 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                </svg>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <!-- Klinik finden -->
+                    <article class="group">
+                        <div class="glass-card rounded-2xl p-6 lg:p-8 h-full transform transition-all duration-300 hover:scale-105 hover:shadow-xl border-l-4 border-yellow-500">
+                            <div class="flex items-center mb-4">
+                                <div class="w-12 h-12 lg:w-14 lg:h-14 bg-gradient-to-r from-yellow-500 to-yellow-600 rounded-xl flex items-center justify-center mr-4">
+                                    <lottie-player src="https://assets3.lottiefiles.com/packages/lf20_5tl1xxnz.json" background="transparent" speed="1" style="width: 40px; height: 40px;" loop autoplay></lottie-player>
+                                </div>
+                                <h3 class="text-lg lg:text-xl font-bold text-gray-900">Trouver une Clinique</h3>
+                            </div>
+                            <p class="text-gray-600 leading-relaxed mb-4">
+                                Localisez les cliniques et hôpitaux les plus proches avec leurs services disponibles.
+                            </p>
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm text-yellow-600 font-medium">Urgence</span>
+                                <svg class="w-5 h-5 text-gray-400 group-hover:text-yellow-600 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                </svg>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                
+                <!-- Emergency CTA -->
+                <div class="text-center mt-12">
+                    <a href="#emergency" class="inline-flex items-center px-8 py-4 glass-effect text-gray-900 font-bold rounded-full hover:bg-white hover:bg-opacity-90 transition-all duration-300 border-2 border-red-500">
+                        <svg class="w-6 h-6 mr-3 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z"></path>
+                        </svg>
+                        Numéro d'Urgence: 15
+                    </a>
                 </div>
             </div>
         </section>
