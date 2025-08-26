@@ -72,17 +72,15 @@
         }
         
         .glass-effect {
-            background: var(--glass-bg);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid var(--glass-border);
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
         }
         
         .glass-effect-dark {
-            background: var(--glass-bg-dark);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid var(--glass-border-dark);
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
         }
         
         .glass-card {
@@ -397,7 +395,7 @@
     <!-- Main Content -->
     <div class="relative z-10">
         <!-- Mobile Navigation -->
-        <nav class="lg:hidden fixed top-0 left-0 right-0 z-50 glass-effect border-b border-white border-opacity-20">
+        <nav class="lg:hidden fixed top-0 left-0 right-0 z-50 glass-effect border-b border-gray-200">
             <div class="flex items-center justify-between px-4 py-3">
                 <!-- Logo -->
                 <div class="flex items-center">
@@ -411,25 +409,25 @@
                 
                 <!-- Mobile Menu Button -->
                 <button id="mobile-menu-btn" class="glass-effect p-2 rounded-lg">
-                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg class="w-6 h-6 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                     </svg>
                 </button>
             </div>
             
             <!-- Mobile Menu -->
-            <div id="mobile-menu" class="hidden glass-effect border-t border-white border-opacity-20">
+            <div id="mobile-menu" class="hidden glass-effect border-t border-gray-200">
                 <div class="px-4 py-4 space-y-4">
-                    <a href="#services" class="block text-white font-medium hover:text-blue-300 transition-colors">Services</a>
-                    <a href="#faq" class="block text-white font-medium hover:text-blue-300 transition-colors">FAQ</a>
-                    <a href="#download" class="block text-white font-medium hover:text-blue-300 transition-colors">Télécharger</a>
-                    <a href="#contact" class="block text-white font-medium hover:text-blue-300 transition-colors">Contact</a>
+                    <a href="#services" class="block text-gray-900 font-medium hover:text-blue-600 transition-colors">Services</a>
+                    <a href="#faq" class="block text-gray-900 font-medium hover:text-blue-600 transition-colors">FAQ</a>
+                    <a href="#download" class="block text-gray-900 font-medium hover:text-blue-600 transition-colors">Télécharger</a>
+                    <a href="#contact" class="block text-gray-900 font-medium hover:text-blue-600 transition-colors">Contact</a>
                 </div>
             </div>
         </nav>
         
         <!-- Desktop Navigation -->
-        <nav class="hidden lg:block fixed top-0 left-0 right-0 z-50 glass-effect border-b border-white border-opacity-20">
+        <nav class="hidden lg:block fixed top-0 left-0 right-0 z-50 glass-effect border-b border-gray-200">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex items-center justify-between h-16">
                     <!-- Logo -->
@@ -444,10 +442,10 @@
                     
                     <!-- Desktop Menu -->
                     <div class="flex items-center space-x-8">
-                        <a href="#services" class="text-white font-medium hover:text-blue-300 transition-colors">Services</a>
-                        <a href="#faq" class="text-white font-medium hover:text-blue-300 transition-colors">FAQ</a>
-                        <a href="#download" class="text-white font-medium hover:text-blue-300 transition-colors">Télécharger</a>
-                        <a href="#contact" class="text-white font-medium hover:text-blue-300 transition-colors">Contact</a>
+                        <a href="#services" class="text-gray-900 font-medium hover:text-blue-600 transition-colors">Services</a>
+                        <a href="#faq" class="text-gray-900 font-medium hover:text-blue-600 transition-colors">FAQ</a>
+                        <a href="#download" class="text-gray-900 font-medium hover:text-blue-600 transition-colors">Télécharger</a>
+                        <a href="#contact" class="text-gray-900 font-medium hover:text-blue-600 transition-colors">Contact</a>
                     </div>
                 </div>
             </div>
