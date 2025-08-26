@@ -460,11 +460,19 @@
             spacing: 18.00
         });
         
-        // Loading screen
+        // Loading screen functionality
         window.addEventListener('load', function() {
-            setTimeout(function() {
-                document.getElementById('loading').classList.add('hidden');
-            }, 1000);
+            // Hide loading screen after page is fully loaded
+            const loadingScreen = document.getElementById('loading');
+            if (loadingScreen) {
+                setTimeout(() => {
+                    loadingScreen.classList.add('hidden');
+                    // Remove from DOM after animation completes
+                    setTimeout(() => {
+                        loadingScreen.remove();
+                    }, 500);
+                }, 1000); // Show loading for at least 1 second
+            }
         });
         
         // Language selector functionality
