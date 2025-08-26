@@ -217,38 +217,130 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: var(--gradient-primary);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             z-index: 9999;
-            transition: opacity 0.5s ease-out;
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
         }
         
         .loading.hidden {
             opacity: 0;
+            transform: scale(1.1);
             pointer-events: none;
         }
         
-        .spinner {
-            width: 50px;
-            height: 50px;
-            border: 3px solid rgba(255,255,255,0.3);
-            border-top: 3px solid white;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
+        .loading-content {
+            text-align: center;
+            color: white;
         }
         
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+        .loading-logo {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 2rem;
+            animation: pulse 2s infinite;
+        }
+        
+        .loading-text {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-out 0.3s forwards;
+        }
+        
+        .loading-subtext {
+            font-size: 1rem;
+            opacity: 0.8;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-out 0.5s forwards;
+        }
+        
+        .loading-progress {
+            width: 200px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 2px;
+            margin-top: 2rem;
+            overflow: hidden;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-out 0.7s forwards;
+        }
+        
+        .loading-progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #00BFFF, #20B2AA);
+            border-radius: 2px;
+            animation: progress 2s ease-out forwards;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes progress {
+            from { width: 0%; }
+            to { width: 100%; }
+        }
+        
+        /* FAQ Styles */
+        .faq-item {
+            transition: all 0.3s ease-in-out;
+        }
+        
+        .faq-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .faq-question {
+            transition: all 0.3s ease-in-out;
+        }
+        
+        .faq-question:hover {
+            background-color: rgba(59, 130, 246, 0.05);
+        }
+        
+        .faq-answer {
+            transition: max-height 0.3s ease-in-out;
+        }
+        
+        .faq-icon {
+            transition: transform 0.3s ease-in-out;
+        }
+        
+        .faq-item.active {
+            border-color: #3B82F6;
+            box-shadow: 0 20px 25px -5px rgba(59, 130, 246, 0.1), 0 10px 10px -5px rgba(59, 130, 246, 0.04);
         }
     </style>
 </head>
 <body class="bg-gray-50">
     <!-- Loading Screen -->
     <div id="loading" class="loading">
-        <div class="spinner"></div>
+        <div class="loading-content">
+            <lottie-player src="https://assets5.lottiefiles.com/packages/lf20_iv4isxbl.json" class="loading-logo" background="transparent" speed="1" style="width: 120px; height: 120px;" loop autoplay></lottie-player>
+            <p class="loading-text">Chargement...</p>
+            <p class="loading-subtext">Votre application Medacte est en cours de chargement.</p>
+            <div class="loading-progress">
+                <div class="loading-progress-bar"></div>
+            </div>
+        </div>
     </div>
     
     <!-- 3D Background Effect -->
@@ -331,78 +423,206 @@
         </section>
         
         <!-- Features Section -->
-        <section class="py-20 bg-white bg-opacity-90">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section class="py-20 bg-gradient-to-br from-blue-50 via-white to-teal-50 relative overflow-hidden">
+            <!-- Background decorative elements -->
+            <div class="absolute inset-0 opacity-5">
+                <div class="absolute top-20 left-10 w-32 h-32 bg-blue-400 rounded-full blur-3xl"></div>
+                <div class="absolute bottom-20 right-10 w-40 h-40 bg-teal-400 rounded-full blur-3xl"></div>
+                <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-60 h-60 bg-purple-400 rounded-full blur-3xl"></div>
+            </div>
+            
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div class="text-center mb-16">
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Nos Services Gratuits</h2>
-                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">Tout ce dont vous avez besoin pour votre santé au quotidien</p>
+                    <div class="inline-flex items-center px-4 py-2 bg-gradient-to-r from-blue-100 to-teal-100 rounded-full mb-6">
+                        <span class="text-blue-600 font-semibold">✨ 100% Gratuit</span>
+                    </div>
+                    <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+                        <span class="gradient-text">Nos Services Gratuits</span>
+                    </h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                        Tout ce dont vous avez besoin pour votre santé au quotidien, 
+                        <span class="font-semibold text-blue-600">sans aucun coût</span>
+                    </p>
                 </div>
                 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <!-- E-Rezept -->
-                    <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 transform transition-all duration-300 hover:shadow-xl">
-                        <div class="h-48 bg-gradient-to-r from-blue-500 to-blue-600 flex items-center justify-center">
-                            <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_obhph3sh.json" background="transparent" speed="1" style="width: 150px; height: 150px;" loop autoplay></lottie-player>
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-gray-900 mb-3">E-Reçus Numériques</h3>
-                            <p class="text-gray-600">Recevez vos ordonnances directement sur votre smartphone, sans papier.</p>
+                    <div class="group relative">
+                        <div class="absolute inset-0 bg-gradient-to-r from-blue-500 to-blue-600 rounded-2xl blur-xl opacity-0 group-hover:opacity-20 transition-all duration-500"></div>
+                        <div class="relative bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100 transform transition-all duration-500 hover:scale-105 hover:shadow-2xl group-hover:border-blue-200">
+                            <div class="h-48 bg-gradient-to-r from-blue-500 to-blue-600 flex items-center justify-center relative overflow-hidden">
+                                <div class="absolute inset-0 bg-gradient-to-r from-blue-400 to-blue-500 opacity-20 group-hover:opacity-40 transition-all duration-500"></div>
+                                <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_obhph3sh.json" background="transparent" speed="1" style="width: 150px; height: 150px;" loop autoplay></lottie-player>
+                            </div>
+                            <div class="p-8">
+                                <div class="flex items-center mb-4">
+                                    <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-3">
+                                        <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                                        </svg>
+                                    </div>
+                                    <h3 class="text-xl font-bold text-gray-900">E-Reçus Numériques</h3>
+                                </div>
+                                <p class="text-gray-600 leading-relaxed">Recevez vos ordonnances directement sur votre smartphone, sans papier. Stockage sécurisé et accès instantané.</p>
+                                <div class="mt-6 flex items-center text-blue-600 font-medium">
+                                    <span>En savoir plus</span>
+                                    <svg class="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                    </svg>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     
                     <!-- Dossier Médical -->
-                    <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 transform transition-all duration-300 hover:shadow-xl">
-                        <div class="h-48 bg-gradient-to-r from-purple-500 to-purple-600 flex items-center justify-center">
-                            <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_5tkzkblw.json" background="transparent" speed="1" style="width: 150px; height: 150px;" loop autoplay></lottie-player>
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-gray-900 mb-3">Dossier Médical Sécurisé</h3>
-                            <p class="text-gray-600">Tous vos documents médicaux centralisés et accessibles en un clic.</p>
+                    <div class="group relative">
+                        <div class="absolute inset-0 bg-gradient-to-r from-purple-500 to-purple-600 rounded-2xl blur-xl opacity-0 group-hover:opacity-20 transition-all duration-500"></div>
+                        <div class="relative bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100 transform transition-all duration-500 hover:scale-105 hover:shadow-2xl group-hover:border-purple-200">
+                            <div class="h-48 bg-gradient-to-r from-purple-500 to-purple-600 flex items-center justify-center relative overflow-hidden">
+                                <div class="absolute inset-0 bg-gradient-to-r from-purple-400 to-purple-500 opacity-20 group-hover:opacity-40 transition-all duration-500"></div>
+                                <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_5tkzkblw.json" background="transparent" speed="1" style="width: 150px; height: 150px;" loop autoplay></lottie-player>
+                            </div>
+                            <div class="p-8">
+                                <div class="flex items-center mb-4">
+                                    <div class="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center mr-3">
+                                        <svg class="w-5 h-5 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                                        </svg>
+                                    </div>
+                                    <h3 class="text-xl font-bold text-gray-900">Dossier Médical Sécurisé</h3>
+                                </div>
+                                <p class="text-gray-600 leading-relaxed">Tous vos documents médicaux centralisés et accessibles en un clic. Chiffrement de niveau bancaire.</p>
+                                <div class="mt-6 flex items-center text-purple-600 font-medium">
+                                    <span>En savoir plus</span>
+                                    <svg class="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                    </svg>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     
                     <!-- Téléconsultation -->
-                    <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 transform transition-all duration-300 hover:shadow-xl">
-                        <div class="h-48 bg-gradient-to-r from-teal-500 to-teal-600 flex items-center justify-center">
-                            <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_jmrp7tny.json" background="transparent" speed="1" style="width: 150px; height: 150px;" loop autoplay></lottie-player>
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-gray-900 mb-3">Téléconsultation</h3>
-                            <p class="text-gray-600">Consultez un médecin en vidéo sans vous déplacer, 24h/24.</p>
+                    <div class="group relative">
+                        <div class="absolute inset-0 bg-gradient-to-r from-teal-500 to-teal-600 rounded-2xl blur-xl opacity-0 group-hover:opacity-20 transition-all duration-500"></div>
+                        <div class="relative bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100 transform transition-all duration-500 hover:scale-105 hover:shadow-2xl group-hover:border-teal-200">
+                            <div class="h-48 bg-gradient-to-r from-teal-500 to-teal-600 flex items-center justify-center relative overflow-hidden">
+                                <div class="absolute inset-0 bg-gradient-to-r from-teal-400 to-teal-500 opacity-20 group-hover:opacity-40 transition-all duration-500"></div>
+                                <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_jmrp7tny.json" background="transparent" speed="1" style="width: 150px; height: 150px;" loop autoplay></lottie-player>
+                            </div>
+                            <div class="p-8">
+                                <div class="flex items-center mb-4">
+                                    <div class="w-10 h-10 bg-teal-100 rounded-full flex items-center justify-center mr-3">
+                                        <svg class="w-5 h-5 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                                        </svg>
+                                    </div>
+                                    <h3 class="text-xl font-bold text-gray-900">Téléconsultation</h3>
+                                </div>
+                                <p class="text-gray-600 leading-relaxed">Consultez un médecin en vidéo sans vous déplacer, 24h/24. Qualité professionnelle garantie.</p>
+                                <div class="mt-6 flex items-center text-teal-600 font-medium">
+                                    <span>En savoir plus</span>
+                                    <svg class="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                    </svg>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     
                     <!-- Trouver Pharmacie -->
-                    <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 transform transition-all duration-300 hover:shadow-xl">
-                        <div class="h-48 bg-gradient-to-r from-amber-500 to-amber-600 flex items-center justify-center">
-                            <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_1a8dx7zj.json" background="transparent" speed="1" style="width: 150px; height: 150px;" loop autoplay></lottie-player>
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-gray-900 mb-3">Trouver une Pharmacie</h3>
-                            <p class="text-gray-600">Localisez les pharmacies les plus proches avec leurs horaires.</p>
+                    <div class="group relative">
+                        <div class="absolute inset-0 bg-gradient-to-r from-amber-500 to-amber-600 rounded-2xl blur-xl opacity-0 group-hover:opacity-20 transition-all duration-500"></div>
+                        <div class="relative bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100 transform transition-all duration-500 hover:scale-105 hover:shadow-2xl group-hover:border-amber-200">
+                            <div class="h-48 bg-gradient-to-r from-amber-500 to-amber-600 flex items-center justify-center relative overflow-hidden">
+                                <div class="absolute inset-0 bg-gradient-to-r from-amber-400 to-amber-500 opacity-20 group-hover:opacity-40 transition-all duration-500"></div>
+                                <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_1a8dx7zj.json" background="transparent" speed="1" style="width: 150px; height: 150px;" loop autoplay></lottie-player>
+                            </div>
+                            <div class="p-8">
+                                <div class="flex items-center mb-4">
+                                    <div class="w-10 h-10 bg-amber-100 rounded-full flex items-center justify-center mr-3">
+                                        <svg class="w-5 h-5 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                        </svg>
+                                    </div>
+                                    <h3 class="text-xl font-bold text-gray-900">Trouver une Pharmacie</h3>
+                                </div>
+                                <p class="text-gray-600 leading-relaxed">Localisez les pharmacies les plus proches avec leurs horaires et services disponibles en temps réel.</p>
+                                <div class="mt-6 flex items-center text-amber-600 font-medium">
+                                    <span>En savoir plus</span>
+                                    <svg class="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                    </svg>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     
                     <!-- Livraison Médicaments -->
-                    <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 transform transition-all duration-300 hover:shadow-xl">
-                        <div class="h-48 bg-gradient-to-r from-green-500 to-green-600 flex items-center justify-center">
-                            <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_3GLd0L.json" background="transparent" speed="1" style="width: 150px; height: 150px;" loop autoplay></lottie-player>
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-gray-900 mb-3">Livraison de Médicaments</h3>
-                            <p class="text-gray-600">Commandez vos médicaments et recevez-les à domicile.</p>
+                    <div class="group relative">
+                        <div class="absolute inset-0 bg-gradient-to-r from-green-500 to-green-600 rounded-2xl blur-xl opacity-0 group-hover:opacity-20 transition-all duration-500"></div>
+                        <div class="relative bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100 transform transition-all duration-500 hover:scale-105 hover:shadow-2xl group-hover:border-green-200">
+                            <div class="h-48 bg-gradient-to-r from-green-500 to-green-600 flex items-center justify-center relative overflow-hidden">
+                                <div class="absolute inset-0 bg-gradient-to-r from-green-400 to-green-500 opacity-20 group-hover:opacity-40 transition-all duration-500"></div>
+                                <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_3GLd0L.json" background="transparent" speed="1" style="width: 150px; height: 150px;" loop autoplay></lottie-player>
+                            </div>
+                            <div class="p-8">
+                                <div class="flex items-center mb-4">
+                                    <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center mr-3">
+                                        <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path>
+                                        </svg>
+                                    </div>
+                                    <h3 class="text-xl font-bold text-gray-900">Livraison de Médicaments</h3>
+                                </div>
+                                <p class="text-gray-600 leading-relaxed">Commandez vos médicaments et recevez-les à domicile en moins de 2 heures. Service premium gratuit.</p>
+                                <div class="mt-6 flex items-center text-green-600 font-medium">
+                                    <span>En savoir plus</span>
+                                    <svg class="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                    </svg>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     
                     <!-- Rappels -->
-                    <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 transform transition-all duration-300 hover:shadow-xl">
-                        <div class="h-48 bg-gradient-to-r from-pink-500 to-pink-600 flex items-center justify-center">
-                            <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_4kx2q32n.json" background="transparent" speed="1" style="width: 150px; height: 150px;" loop autoplay></lottie-player>
+                    <div class="group relative">
+                        <div class="absolute inset-0 bg-gradient-to-r from-pink-500 to-pink-600 rounded-2xl blur-xl opacity-0 group-hover:opacity-20 transition-all duration-500"></div>
+                        <div class="relative bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100 transform transition-all duration-500 hover:scale-105 hover:shadow-2xl group-hover:border-pink-200">
+                            <div class="h-48 bg-gradient-to-r from-pink-500 to-pink-600 flex items-center justify-center relative overflow-hidden">
+                                <div class="absolute inset-0 bg-gradient-to-r from-pink-400 to-pink-500 opacity-20 group-hover:opacity-40 transition-all duration-500"></div>
+                                <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_4kx2q32n.json" background="transparent" speed="1" style="width: 150px; height: 150px;" loop autoplay></lottie-player>
+                            </div>
+                            <div class="p-8">
+                                <div class="flex items-center mb-4">
+                                    <div class="w-10 h-10 bg-pink-100 rounded-full flex items-center justify-center mr-3">
+                                        <svg class="w-5 h-5 text-pink-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                        </svg>
+                                    </div>
+                                    <h3 class="text-xl font-bold text-gray-900">Rappels Intelligents</h3>
+                                </div>
+                                <p class="text-gray-600 leading-relaxed">Ne ratez plus vos prises de médicaments ou rendez-vous. Notifications personnalisées et intelligentes.</p>
+                                <div class="mt-6 flex items-center text-pink-600 font-medium">
+                                    <span>En savoir plus</span>
+                                    <svg class="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                    </svg>
+                                </div>
+                            </div>
                         </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-gray-900 mb-3">Rappels Intelligents</h3>
-                            <p class="text-gray-600">Ne ratez plus vos prises de médicaments ou rendez-vous.</p>
-                        </div>
+                    </div>
+                </div>
+                
+                <!-- Call to Action -->
+                <div class="text-center mt-16">
+                    <div class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-600 to-teal-600 text-white rounded-full font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+                        </svg>
+                        Télécharger l'application
                     </div>
                 </div>
             </div>
@@ -516,6 +736,210 @@
                                 <h4 class="font-bold text-gray-900">Fatima Zahra</h4>
                                 <p class="text-gray-600 text-sm">Patient, Marrakech</p>
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- FAQ Section -->
+        <section class="py-20 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
+            <!-- Background decorative elements -->
+            <div class="absolute inset-0 opacity-5">
+                <div class="absolute top-20 right-10 w-32 h-32 bg-blue-400 rounded-full blur-3xl"></div>
+                <div class="absolute bottom-20 left-10 w-40 h-40 bg-teal-400 rounded-full blur-3xl"></div>
+            </div>
+            
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="text-center mb-16">
+                    <div class="inline-flex items-center px-4 py-2 bg-gradient-to-r from-blue-100 to-teal-100 rounded-full mb-6">
+                        <span class="text-blue-600 font-semibold">❓ Questions Fréquentes</span>
+                    </div>
+                    <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+                        <span class="gradient-text">FAQ</span>
+                    </h2>
+                    <p class="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+                        Trouvez rapidement les réponses à vos questions sur Medacte
+                    </p>
+                </div>
+                
+                <div class="space-y-4">
+                    <!-- FAQ Item 1 -->
+                    <div class="faq-item bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
+                        <button class="faq-question w-full px-8 py-6 text-left flex items-center justify-between hover:bg-gray-50 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+                            <div class="flex items-center">
+                                <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+                                    <svg class="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                    </svg>
+                                </div>
+                                <h3 class="text-lg font-semibold text-gray-900">Medacte est-il vraiment gratuit ?</h3>
+                            </div>
+                            <svg class="faq-icon w-5 h-5 text-gray-500 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                            <div class="px-8 pb-6">
+                                <p class="text-gray-600 leading-relaxed">
+                                    Oui, Medacte est entièrement gratuit ! Tous nos services de base, y compris la téléconsultation, 
+                                    le stockage de documents médicaux, les rappels et la localisation de pharmacies sont disponibles 
+                                    sans aucun coût. Nous croyons que la santé numérique doit être accessible à tous.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 2 -->
+                    <div class="faq-item bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
+                        <button class="faq-question w-full px-8 py-6 text-left flex items-center justify-between hover:bg-gray-50 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+                            <div class="flex items-center">
+                                <div class="w-8 h-8 bg-teal-100 rounded-full flex items-center justify-center mr-4">
+                                    <svg class="w-4 h-4 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+                                    </svg>
+                                </div>
+                                <h3 class="text-lg font-semibold text-gray-900">Mes données médicales sont-elles sécurisées ?</h3>
+                            </div>
+                            <svg class="faq-icon w-5 h-5 text-gray-500 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                            <div class="px-8 pb-6">
+                                <p class="text-gray-600 leading-relaxed">
+                                    Absolument ! Nous utilisons un chiffrement de niveau bancaire (AES-256) pour protéger toutes vos données. 
+                                    Nos serveurs sont hébergés au Maroc et respectent les normes internationales de sécurité. 
+                                    Vos informations médicales ne sont accessibles qu'à vous et aux professionnels de santé que vous autorisez.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 3 -->
+                    <div class="faq-item bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
+                        <button class="faq-question w-full px-8 py-6 text-left flex items-center justify-between hover:bg-gray-50 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+                            <div class="flex items-center">
+                                <div class="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center mr-4">
+                                    <svg class="w-4 h-4 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                                    </svg>
+                                </div>
+                                <h3 class="text-lg font-semibold text-gray-900">Comment fonctionne la téléconsultation ?</h3>
+                            </div>
+                            <svg class="faq-icon w-5 h-5 text-gray-500 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                            <div class="px-8 pb-6">
+                                <p class="text-gray-600 leading-relaxed">
+                                    La téléconsultation est simple et rapide ! Choisissez un médecin disponible, 
+                                    prenez rendez-vous et connectez-vous à l'heure prévue. La consultation se fait 
+                                    en vidéo HD sécurisée. Le médecin peut vous prescrire des médicaments 
+                                    et vous envoyer l'ordonnance directement sur l'application.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 4 -->
+                    <div class="faq-item bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
+                        <button class="faq-question w-full px-8 py-6 text-left flex items-center justify-between hover:bg-gray-50 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+                            <div class="flex items-center">
+                                <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-4">
+                                    <svg class="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path>
+                                    </svg>
+                                </div>
+                                <h3 class="text-lg font-semibold text-gray-900">La livraison de médicaments est-elle disponible partout ?</h3>
+                            </div>
+                            <svg class="faq-icon w-5 h-5 text-gray-500 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                            <div class="px-8 pb-6">
+                                <p class="text-gray-600 leading-relaxed">
+                                    Actuellement, la livraison de médicaments est disponible dans les principales villes du Maroc 
+                                    (Casablanca, Rabat, Marrakech, Fès, Agadir, etc.). Nous étendons progressivement 
+                                    notre réseau de livraison. Vérifiez la disponibilité dans votre zone lors de la commande.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 5 -->
+                    <div class="faq-item bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
+                        <button class="faq-question w-full px-8 py-6 text-left flex items-center justify-between hover:bg-gray-50 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+                            <div class="flex items-center">
+                                <div class="w-8 h-8 bg-amber-100 rounded-full flex items-center justify-center mr-4">
+                                    <svg class="w-4 h-4 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+                                    </svg>
+                                </div>
+                                <h3 class="text-lg font-semibold text-gray-900">L'application fonctionne-t-elle sur tous les smartphones ?</h3>
+                            </div>
+                            <svg class="faq-icon w-5 h-5 text-gray-500 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                            <div class="px-8 pb-6">
+                                <p class="text-gray-600 leading-relaxed">
+                                    Oui ! Medacte est compatible avec iOS 12+ et Android 7+. L'application est optimisée 
+                                    pour fonctionner sur tous les smartphones, même les modèles plus anciens. 
+                                    Elle occupe peu d'espace de stockage et fonctionne même avec une connexion internet limitée.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 6 -->
+                    <div class="faq-item bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
+                        <button class="faq-question w-full px-8 py-6 text-left flex items-center justify-between hover:bg-gray-50 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+                            <div class="flex items-center">
+                                <div class="w-8 h-8 bg-pink-100 rounded-full flex items-center justify-center mr-4">
+                                    <svg class="w-4 h-4 text-pink-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192L5.636 18.364M12 2.25a9.75 9.75 0 100 19.5 9.75 9.75 0 000-19.5z"></path>
+                                    </svg>
+                                </div>
+                                <h3 class="text-lg font-semibold text-gray-900">Comment contacter le support client ?</h3>
+                            </div>
+                            <svg class="faq-icon w-5 h-5 text-gray-500 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                            <div class="px-8 pb-6">
+                                <p class="text-gray-600 leading-relaxed">
+                                    Notre équipe support est disponible 24h/24 ! Vous pouvez nous contacter via le chat intégré 
+                                    dans l'application, par email à support@medacte.ma, ou par téléphone au +212 522 123 456. 
+                                    Nous répondons généralement en moins de 2 heures.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Contact CTA -->
+                <div class="text-center mt-16">
+                    <div class="bg-gradient-to-r from-blue-600 to-teal-600 rounded-2xl p-8 text-white">
+                        <h3 class="text-2xl font-bold mb-4">Vous avez d'autres questions ?</h3>
+                        <p class="text-blue-100 mb-6">Notre équipe est là pour vous aider</p>
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                            <button class="inline-flex items-center px-6 py-3 bg-white text-blue-600 rounded-full font-semibold hover:bg-gray-100 transition-all duration-300">
+                                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+                                </svg>
+                                Chat en ligne
+                            </button>
+                            <button class="inline-flex items-center px-6 py-3 border-2 border-white text-white rounded-full font-semibold hover:bg-white hover:text-blue-600 transition-all duration-300">
+                                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                                </svg>
+                                Nous écrire
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -656,6 +1080,38 @@
                 });
             });
             
+            // FAQ Functionality
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', function() {
+                    const faqItem = this.closest('.faq-item');
+                    const answer = faqItem.querySelector('.faq-answer');
+                    const icon = this.querySelector('.faq-icon');
+                    
+                    // Close all other FAQ items
+                    document.querySelectorAll('.faq-item').forEach(item => {
+                        if (item !== faqItem) {
+                            const otherAnswer = item.querySelector('.faq-answer');
+                            const otherIcon = item.querySelector('.faq-icon');
+                            otherAnswer.style.maxHeight = '0px';
+                            otherIcon.style.transform = 'rotate(0deg)';
+                            item.classList.remove('active');
+                        }
+                    });
+                    
+                    // Toggle current FAQ item
+                    if (faqItem.classList.contains('active')) {
+                        answer.style.maxHeight = '0px';
+                        icon.style.transform = 'rotate(0deg)';
+                        faqItem.classList.remove('active');
+                    } else {
+                        answer.style.maxHeight = answer.scrollHeight + 'px';
+                        icon.style.transform = 'rotate(180deg)';
+                        faqItem.classList.add('active');
+                    }
+                });
+            });
+            
             // Smooth scroll for anchor links
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
@@ -665,6 +1121,29 @@
                         behavior: 'smooth'
                     });
                 });
+            });
+            
+            // Add scroll animations for FAQ items
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+            
+            // Observe FAQ items for animation
+            document.querySelectorAll('.faq-item').forEach((item, index) => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateY(20px)';
+                item.style.transition = `all 0.6s ease-out ${index * 0.1}s`;
+                observer.observe(item);
             });
         });
     </script>
