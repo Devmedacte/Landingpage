@@ -504,100 +504,107 @@
         </section>
         
         <!-- Quick Actions Section -->
-        <section class="py-16 bg-gradient-to-r from-red-50 via-orange-50 to-yellow-50 relative overflow-hidden">
-            <!-- Background decorative elements -->
+        <section class="py-20 bg-gradient-to-br from-blue-50 via-white to-indigo-50 relative overflow-hidden">
+            <!-- Subtle background elements -->
             <div class="absolute inset-0">
-                <div class="absolute top-0 left-0 w-32 h-32 bg-red-200 rounded-full opacity-20 blur-2xl"></div>
-                <div class="absolute bottom-0 right-0 w-40 h-40 bg-orange-200 rounded-full opacity-20 blur-2xl"></div>
+                <div class="absolute top-10 left-10 w-32 h-32 bg-blue-200 rounded-full opacity-20 blur-2xl"></div>
+                <div class="absolute bottom-10 right-10 w-40 h-40 bg-indigo-200 rounded-full opacity-20 blur-2xl"></div>
             </div>
             
             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <!-- Header -->
-                <header class="text-center mb-12">
+                <header class="text-center mb-16">
                     <div class="inline-flex items-center px-4 py-2 glass-effect rounded-full mb-6">
-                        <span class="text-red-700 font-semibold text-sm lg:text-base">🚨 Actions Rapides</span>
+                        <span class="text-blue-700 font-semibold text-sm lg:text-base">⚡ Accès Rapide</span>
                     </div>
                     <h2 class="text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 mb-6">
-                        <span class="gradient-text">Urgences & Soins</span>
+                        <span class="gradient-text">Services Essentiels</span>
                     </h2>
                     <p class="text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                        Accès rapide aux services d'urgence et de soins 24h/24
+                        Accédez rapidement aux services de santé dont vous avez besoin
                     </p>
                 </header>
                 
                 <!-- Quick Actions Grid -->
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-                    <!-- Notfall/Nacht Apotheken -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10">
+                    <!-- Pharmacies -->
                     <article class="group">
-                        <div class="glass-card rounded-2xl p-6 lg:p-8 h-full transform transition-all duration-300 hover:scale-105 hover:shadow-xl border-l-4 border-red-500">
-                            <div class="flex items-center mb-4">
-                                <div class="w-12 h-12 lg:w-14 lg:h-14 bg-gradient-to-r from-red-500 to-red-600 rounded-xl flex items-center justify-center mr-4">
-                                    <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_1a8dx7zj.json" background="transparent" speed="1" style="width: 40px; height: 40px;" loop autoplay></lottie-player>
+                        <div class="glass-card rounded-2xl p-8 h-full transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
+                            <div class="text-center mb-6">
+                                <div class="w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-4 transform group-hover:scale-110 transition-transform duration-300">
+                                    <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_1a8dx7zj.json" background="transparent" speed="1" style="width: 50px; height: 50px;" loop autoplay></lottie-player>
                                 </div>
-                                <h3 class="text-lg lg:text-xl font-bold text-gray-900">Pharmacies de Nuit</h3>
+                                <h3 class="text-xl font-bold text-gray-900 mb-3">Pharmacies Proches</h3>
                             </div>
-                            <p class="text-gray-600 leading-relaxed mb-4">
-                                Trouvez les pharmacies ouvertes 24h/24 près de chez vous. Service d'urgence disponible.
+                            <p class="text-gray-600 leading-relaxed mb-6 text-center">
+                                Trouvez les pharmacies les plus proches avec leurs horaires et services
                             </p>
-                            <div class="flex items-center justify-between">
-                                <span class="text-sm text-red-600 font-medium">Urgence</span>
-                                <svg class="w-5 h-5 text-gray-400 group-hover:text-red-600 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                                </svg>
+                            <div class="text-center">
+                                <span class="inline-flex items-center px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">
+                                    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                    </svg>
+                                    24h/24
+                                </span>
                             </div>
                         </div>
                     </article>
                     
-                    <!-- Notfall Ärzte -->
+                    <!-- Médecins -->
                     <article class="group">
-                        <div class="glass-card rounded-2xl p-6 lg:p-8 h-full transform transition-all duration-300 hover:scale-105 hover:shadow-xl border-l-4 border-orange-500">
-                            <div class="flex items-center mb-4">
-                                <div class="w-12 h-12 lg:w-14 lg:h-14 bg-gradient-to-r from-orange-500 to-orange-600 rounded-xl flex items-center justify-center mr-4">
-                                    <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_8a5p2o1k.json" background="transparent" speed="1" style="width: 40px; height: 40px;" loop autoplay></lottie-player>
+                        <div class="glass-card rounded-2xl p-8 h-full transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
+                            <div class="text-center mb-6">
+                                <div class="w-16 h-16 bg-gradient-to-r from-emerald-500 to-emerald-600 rounded-2xl flex items-center justify-center mx-auto mb-4 transform group-hover:scale-110 transition-transform duration-300">
+                                    <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_8a5p2o1k.json" background="transparent" speed="1" style="width: 50px; height: 50px;" loop autoplay></lottie-player>
                                 </div>
-                                <h3 class="text-lg lg:text-xl font-bold text-gray-900">Médecins d'Urgence</h3>
+                                <h3 class="text-xl font-bold text-gray-900 mb-3">Consultation Rapide</h3>
                             </div>
-                            <p class="text-gray-600 leading-relaxed mb-4">
-                                Contactez un médecin en urgence. Consultation immédiate disponible 24h/24.
+                            <p class="text-gray-600 leading-relaxed mb-6 text-center">
+                                Consultez un médecin en ligne rapidement et en toute sécurité
                             </p>
-                            <div class="flex items-center justify-between">
-                                <span class="text-sm text-orange-600 font-medium">Urgence</span>
-                                <svg class="w-5 h-5 text-gray-400 group-hover:text-orange-600 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                                </svg>
+                            <div class="text-center">
+                                <span class="inline-flex items-center px-4 py-2 bg-emerald-100 text-emerald-700 rounded-full text-sm font-medium">
+                                    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                    </svg>
+                                    Immédiat
+                                </span>
                             </div>
                         </div>
                     </article>
                     
-                    <!-- Klinik finden -->
+                    <!-- Cliniques -->
                     <article class="group">
-                        <div class="glass-card rounded-2xl p-6 lg:p-8 h-full transform transition-all duration-300 hover:scale-105 hover:shadow-xl border-l-4 border-yellow-500">
-                            <div class="flex items-center mb-4">
-                                <div class="w-12 h-12 lg:w-14 lg:h-14 bg-gradient-to-r from-yellow-500 to-yellow-600 rounded-xl flex items-center justify-center mr-4">
-                                    <lottie-player src="https://assets3.lottiefiles.com/packages/lf20_5tl1xxnz.json" background="transparent" speed="1" style="width: 40px; height: 40px;" loop autoplay></lottie-player>
+                        <div class="glass-card rounded-2xl p-8 h-full transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
+                            <div class="text-center mb-6">
+                                <div class="w-16 h-16 bg-gradient-to-r from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-4 transform group-hover:scale-110 transition-transform duration-300">
+                                    <lottie-player src="https://assets3.lottiefiles.com/packages/lf20_5tl1xxnz.json" background="transparent" speed="1" style="width: 50px; height: 50px;" loop autoplay></lottie-player>
                                 </div>
-                                <h3 class="text-lg lg:text-xl font-bold text-gray-900">Trouver une Clinique</h3>
+                                <h3 class="text-xl font-bold text-gray-900 mb-3">Cliniques & Hôpitaux</h3>
                             </div>
-                            <p class="text-gray-600 leading-relaxed mb-4">
-                                Localisez les cliniques et hôpitaux les plus proches avec leurs services disponibles.
+                            <p class="text-gray-600 leading-relaxed mb-6 text-center">
+                                Localisez les établissements de santé avec leurs spécialités
                             </p>
-                            <div class="flex items-center justify-between">
-                                <span class="text-sm text-yellow-600 font-medium">Urgence</span>
-                                <svg class="w-5 h-5 text-gray-400 group-hover:text-yellow-600 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                                </svg>
+                            <div class="text-center">
+                                <span class="inline-flex items-center px-4 py-2 bg-purple-100 text-purple-700 rounded-full text-sm font-medium">
+                                    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                    </svg>
+                                    Proche
+                                </span>
                             </div>
                         </div>
                     </article>
                 </div>
                 
-                <!-- Emergency CTA -->
+                <!-- CTA -->
                 <div class="text-center mt-12">
-                    <a href="#emergency" class="inline-flex items-center px-8 py-4 glass-effect text-gray-900 font-bold rounded-full hover:bg-white hover:bg-opacity-90 transition-all duration-300 border-2 border-red-500">
-                        <svg class="w-6 h-6 mr-3 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z"></path>
+                    <a href="#services" class="inline-flex items-center px-6 py-3 glass-effect text-gray-900 font-semibold rounded-full hover:bg-white hover:bg-opacity-90 transition-all duration-300">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
                         </svg>
-                        Numéro d'Urgence: 15
+                        Découvrir tous nos services
                     </a>
                 </div>
             </div>
