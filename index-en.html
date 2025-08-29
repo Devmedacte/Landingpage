@@ -399,58 +399,125 @@
     
     <!-- Main Content -->
     <div class="relative z-10">
-        <!-- Mobile Navigation -->
-        <nav class="lg:hidden fixed top-0 left-0 right-0 z-50 glass-effect border-b border-gray-200">
-            <div class="flex items-center justify-between px-4 py-3">
-                <!-- Logo -->
-                <div class="flex items-center">
-                    <svg class="h-8 w-auto" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="25" cy="20" r="8" fill="#00BFFF"/>
-                        <path d="M30 25 Q45 15 55 30 Q50 40 40 35" fill="#00BFFF" stroke="#0099CC" stroke-width="1"/>
-                        <path d="M35 35 Q50 45 60 30 Q55 20 45 25" fill="#20B2AA" stroke="#1E90FF" stroke-width="1"/>
-                        <text x="70" y="35" font-family="Poppins, sans-serif" font-size="20" font-weight="700" fill="#1F2937">Medacte</text>
-                    </svg>
+        <!-- Modern Mobile Navigation -->
+        <nav class="lg:hidden fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-white/80 border-b border-white/20 shadow-lg">
+            <div class="flex items-center justify-between px-6 py-4">
+                <!-- Modern Logo -->
+                <div class="flex items-center group">
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-gradient-to-r from-blue-500 to-teal-500 rounded-full blur-lg opacity-30 group-hover:opacity-50 transition-opacity"></div>
+                        <svg class="h-8 w-auto relative" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="25" cy="20" r="8" fill="url(#logoGradient)"/>
+                            <path d="M30 25 Q45 15 55 30 Q50 40 40 35" fill="url(#logoGradient)" stroke="#0099CC" stroke-width="1"/>
+                            <path d="M35 35 Q50 45 60 30 Q55 20 45 25" fill="url(#logoGradient2)" stroke="#1E90FF" stroke-width="1"/>
+                            <text x="70" y="35" font-family="Poppins, sans-serif" font-size="20" font-weight="700" fill="#1F2937">Medacte</text>
+                            <defs>
+                                <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#00BFFF"/>
+                                    <stop offset="100%" style="stop-color:#20B2AA"/>
+                                </linearGradient>
+                                <linearGradient id="logoGradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#20B2AA"/>
+                                    <stop offset="100%" style="stop-color:#00BFFF"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
                 </div>
                 
-                <!-- Mobile Menu Button -->
-                <button id="mobile-menu-btn" class="glass-effect p-2 rounded-lg">
-                    <svg class="w-6 h-6 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <!-- Modern Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="relative p-3 rounded-xl bg-gradient-to-r from-blue-500/10 to-teal-500/10 border border-white/20 hover:from-blue-500/20 hover:to-teal-500/20 transition-all duration-300 group">
+                    <div class="absolute inset-0 bg-gradient-to-r from-blue-500 to-teal-500 rounded-xl opacity-0 group-hover:opacity-10 transition-opacity"></div>
+                    <svg class="w-6 h-6 text-gray-900 relative" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                     </svg>
                 </button>
             </div>
             
-            <!-- Mobile Menu -->
-            <div id="mobile-menu" class="hidden glass-effect border-t border-gray-200">
-                <div class="px-4 py-4 space-y-4">
-                    <a href="#services" class="block text-gray-900 font-medium hover:text-blue-600 transition-colors">Services</a>
-                    <a href="#faq" class="block text-gray-900 font-medium hover:text-blue-600 transition-colors">FAQ</a>
-                    <a href="#download" class="block text-gray-900 font-medium hover:text-blue-600 transition-colors">Download</a>
-                    <a href="#contact" class="block text-gray-900 font-medium hover:text-blue-600 transition-colors">Contact</a>
+            <!-- Modern Mobile Menu -->
+            <div id="mobile-menu" class="hidden backdrop-blur-xl bg-white/90 border-t border-white/20 shadow-xl">
+                <div class="px-6 py-6 space-y-2">
+                    <a href="#services" class="block p-4 rounded-xl text-gray-900 font-semibold hover:bg-gradient-to-r hover:from-blue-500/10 hover:to-teal-500/10 transition-all duration-300 group">
+                        <div class="flex items-center">
+                            <div class="w-2 h-2 bg-blue-500 rounded-full mr-3 group-hover:scale-150 transition-transform"></div>
+                            <span>Services</span>
+                        </div>
+                    </a>
+                    <a href="#faq" class="block p-4 rounded-xl text-gray-900 font-semibold hover:bg-gradient-to-r hover:from-blue-500/10 hover:to-teal-500/10 transition-all duration-300 group">
+                        <div class="flex items-center">
+                            <div class="w-2 h-2 bg-teal-500 rounded-full mr-3 group-hover:scale-150 transition-transform"></div>
+                            <span>FAQ</span>
+                        </div>
+                    </a>
+                    <a href="#download" class="block p-4 rounded-xl text-gray-900 font-semibold hover:bg-gradient-to-r hover:from-blue-500/10 hover:to-teal-500/10 transition-all duration-300 group">
+                        <div class="flex items-center">
+                            <div class="w-2 h-2 bg-purple-500 rounded-full mr-3 group-hover:scale-150 transition-transform"></div>
+                            <span>Download</span>
+                        </div>
+                    </a>
+                    <a href="#contact" class="block p-4 rounded-xl text-gray-900 font-semibold hover:bg-gradient-to-r hover:from-blue-500/10 hover:to-teal-500/10 transition-all duration-300 group">
+                        <div class="flex items-center">
+                            <div class="w-2 h-2 bg-orange-500 rounded-full mr-3 group-hover:scale-150 transition-transform"></div>
+                            <span>Contact</span>
+                        </div>
+                    </a>
                 </div>
             </div>
         </nav>
         
-        <!-- Desktop Navigation -->
-        <nav class="hidden lg:block fixed top-0 left-0 right-0 z-50 glass-effect border-b border-gray-200">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="flex items-center justify-between h-16">
-                    <!-- Logo -->
-                    <div class="flex items-center">
-                        <svg class="h-10 w-auto" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="25" cy="20" r="8" fill="#00BFFF"/>
-                            <path d="M30 25 Q45 15 55 30 Q50 40 40 35" fill="#00BFFF" stroke="#0099CC" stroke-width="1"/>
-                            <path d="M35 35 Q50 45 60 30 Q55 20 45 25" fill="#20B2AA" stroke="#1E90FF" stroke-width="1"/>
-                            <text x="70" y="35" font-family="Poppins, sans-serif" font-size="24" font-weight="700" fill="#1F2937">Medacte</text>
-                        </svg>
+        <!-- Modern Desktop Navigation -->
+        <nav class="hidden lg:block fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-white/80 border-b border-white/20 shadow-lg">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                <div class="flex items-center justify-between h-20">
+                    <!-- Modern Logo -->
+                    <div class="flex items-center group">
+                        <div class="relative">
+                            <div class="absolute inset-0 bg-gradient-to-r from-blue-500 to-teal-500 rounded-full blur-lg opacity-30 group-hover:opacity-50 transition-opacity"></div>
+                            <svg class="h-12 w-auto relative" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="25" cy="20" r="8" fill="url(#logoGradient)"/>
+                                <path d="M30 25 Q45 15 55 30 Q50 40 40 35" fill="url(#logoGradient)" stroke="#0099CC" stroke-width="1"/>
+                                <path d="M35 35 Q50 45 60 30 Q55 20 45 25" fill="url(#logoGradient2)" stroke="#1E90FF" stroke-width="1"/>
+                                <text x="70" y="35" font-family="Poppins, sans-serif" font-size="24" font-weight="700" fill="#1F2937">Medacte</text>
+                                <defs>
+                                    <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" style="stop-color:#00BFFF"/>
+                                        <stop offset="100%" style="stop-color:#20B2AA"/>
+                                    </linearGradient>
+                                    <linearGradient id="logoGradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" style="stop-color:#20B2AA"/>
+                                        <stop offset="100%" style="stop-color:#00BFFF"/>
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                        </div>
                     </div>
                     
-                    <!-- Desktop Menu -->
-                    <div class="flex items-center space-x-8">
-                        <a href="#services" class="text-gray-900 font-medium hover:text-blue-600 transition-colors">Services</a>
-                        <a href="#faq" class="text-gray-900 font-medium hover:text-blue-600 transition-colors">FAQ</a>
-                        <a href="#download" class="text-gray-900 font-medium hover:text-blue-600 transition-colors">Download</a>
-                        <a href="#contact" class="text-gray-900 font-medium hover:text-blue-600 transition-colors">Contact</a>
+                    <!-- Modern Desktop Menu -->
+                    <div class="flex items-center space-x-1">
+                        <a href="#services" class="relative px-6 py-3 text-gray-900 font-semibold rounded-xl hover:bg-gradient-to-r hover:from-blue-500/10 hover:to-teal-500/10 transition-all duration-300 group">
+                            <div class="flex items-center">
+                                <div class="w-2 h-2 bg-blue-500 rounded-full mr-2 group-hover:scale-150 transition-transform"></div>
+                                <span>Services</span>
+                            </div>
+                        </a>
+                        <a href="#faq" class="relative px-6 py-3 text-gray-900 font-semibold rounded-xl hover:bg-gradient-to-r hover:from-blue-500/10 hover:to-teal-500/10 transition-all duration-300 group">
+                            <div class="flex items-center">
+                                <div class="w-2 h-2 bg-teal-500 rounded-full mr-2 group-hover:scale-150 transition-transform"></div>
+                                <span>FAQ</span>
+                            </div>
+                        </a>
+                        <a href="#download" class="relative px-6 py-3 text-gray-900 font-semibold rounded-xl hover:bg-gradient-to-r hover:from-blue-500/10 hover:to-teal-500/10 transition-all duration-300 group">
+                            <div class="flex items-center">
+                                <div class="w-2 h-2 bg-purple-500 rounded-full mr-2 group-hover:scale-150 transition-transform"></div>
+                                <span>Download</span>
+                            </div>
+                        </a>
+                        <a href="#contact" class="relative px-6 py-3 text-gray-900 font-semibold rounded-xl hover:bg-gradient-to-r hover:from-blue-500/10 hover:to-teal-500/10 transition-all duration-300 group">
+                            <div class="flex items-center">
+                                <div class="w-2 h-2 bg-orange-500 rounded-full mr-2 group-hover:scale-150 transition-transform"></div>
+                                <span>Contact</span>
+                            </div>
+                        </a>
                     </div>
                 </div>
             </div>
