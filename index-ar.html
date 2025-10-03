@@ -366,10 +366,7 @@
         .faq-answer {
             transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out;
             overflow: hidden;
-        }
-        
-        .faq-answer.active {
-            max-height: 500px;
+            max-height: 0;
         }
         
         .faq-icon {
@@ -1656,37 +1653,55 @@
             });
         });
         
-        // FAQ Functionality
-        const faqQuestions = document.querySelectorAll('.faq-question');
-        faqQuestions.forEach(question => {
-            question.addEventListener('click', function() {
-                const faqItem = this.closest('.faq-item');
-                const answer = faqItem.querySelector('.faq-answer');
-                const icon = this.querySelector('.faq-icon');
-                
-                // Close all other FAQ items
-                document.querySelectorAll('.faq-item').forEach(item => {
-                    if (item !== faqItem) {
-                        const otherAnswer = item.querySelector('.faq-answer');
-                        const otherIcon = item.querySelector('.faq-icon');
-                        otherAnswer.style.maxHeight = '0px';
+        // FAQ Functionality - Simplified and Reliable
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const faqItem = this.closest('.faq-item');
+                    const answer = faqItem.querySelector('.faq-answer');
+                    const icon = this.querySelector('.faq-icon');
+                    
+                    // Close all other FAQ items first
+                    document.querySelectorAll('.faq-item').forEach(item => {
+                        if (item !== faqItem) {
+                            const otherAnswer = item.querySelector('.faq-answer');
+                            const otherIcon = item.querySelector('.faq-icon');
+                            
+                            otherAnswer.style.maxHeight = '0';
+                            otherAnswer.style.padding = '0';
                             otherIcon.style.transform = 'rotate(0deg)';
                             item.classList.remove('active');
                         }
                     });
                     
-                    // Toggle current FAQ item
+                    // Toggle current item
                     if (faqItem.classList.contains('active')) {
-                        answer.style.maxHeight = '0px';
+                        // Close
+                        answer.style.maxHeight = '0';
+                        answer.style.padding = '0';
                         icon.style.transform = 'rotate(0deg)';
                         faqItem.classList.remove('active');
                     } else {
-                        answer.style.maxHeight = answer.scrollHeight + 'px';
+                        // Open
+                        answer.style.maxHeight = 'none';
+                        const height = answer.scrollHeight;
+                        answer.style.maxHeight = '0';
+                        
+                        setTimeout(() => {
+                            answer.style.maxHeight = height + 'px';
+                            answer.style.padding = '0 32px 32px 32px';
+                        }, 10);
+                        
                         icon.style.transform = 'rotate(180deg)';
                         faqItem.classList.add('active');
                     }
                 });
             });
+        });
             
             // Smooth scroll for anchor links
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
