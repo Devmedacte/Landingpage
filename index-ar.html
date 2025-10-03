@@ -240,6 +240,15 @@
             }
         }
         
+        /* Prevent animation hanging */
+        .faq-answer {
+            will-change: max-height;
+        }
+        
+        .faq-answer:not(.active) {
+            max-height: 0 !important;
+        }
+        
         /* Dark Mode Support */
         @media (prefers-color-scheme: dark) {
             :root {
@@ -355,7 +364,12 @@
         }
         
         .faq-answer {
-            transition: max-height 0.3s ease-in-out;
+            transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out;
+            overflow: hidden;
+        }
+        
+        .faq-answer.active {
+            max-height: 500px;
         }
         
         .faq-icon {
@@ -426,7 +440,7 @@
             <div class="flex items-center justify-between px-4 py-3">
                 <!-- Logo -->
                 <div class="flex items-center">
-                    <img src="https://pub-9f200de23f1a4fada809186205ec0a61.r2.dev/logo.svg" alt="Medacte" class="h-16 w-auto">
+                    <img src="https://pub-9f200de23f1a4fada809186205ec0a61.r2.dev/logo.svg" alt="Medacte" class="h-20 w-auto">
                 </div>
                 
                 <!-- Mobile Menu Button -->
@@ -454,7 +468,7 @@
                 <div class="flex items-center justify-between h-16">
                     <!-- Logo -->
                     <div class="flex items-center">
-                        <img src="https://pub-9f200de23f1a4fada809186205ec0a61.r2.dev/logo.svg" alt="Medacte" class="h-20 w-auto">
+                        <img src="https://pub-9f200de23f1a4fada809186205ec0a61.r2.dev/logo.svg" alt="Medacte" class="h-24 w-auto">
                     </div>
                     
                     <!-- Desktop Menu -->
@@ -1298,7 +1312,7 @@
                     <!-- Company Info -->
                     <div class="lg:col-span-1">
                         <div class="flex items-center mb-6">
-                            <img src="https://pub-9f200de23f1a4fada809186205ec0a61.r2.dev/logo.svg" alt="Medacte" class="h-16 w-auto">
+                            <img src="https://pub-9f200de23f1a4fada809186205ec0a61.r2.dev/logo.svg" alt="Medacte" class="h-20 w-auto">
                         </div>
                         <p class="text-gray-400 mb-6 leading-relaxed">
                             تطبيق صحي رقمي مجاني في المغرب، 
