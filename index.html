@@ -144,6 +144,8 @@
             transform-style: preserve-3d;
             transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
             perspective: 1000px;
+            will-change: transform;
+            backface-visibility: hidden;
         }
         
         .card-3d:hover {
@@ -164,6 +166,8 @@
         /* Animations */
         .floating {
             animation: floating 3s ease-in-out infinite;
+            will-change: transform;
+            backface-visibility: hidden;
         }
         
         @keyframes floating {
@@ -218,6 +222,15 @@
             .logo-svg {
                 height: 6rem;
             }
+        }
+        
+        /* Performance Optimizations */
+        * {
+            box-sizing: border-box;
+        }
+        
+        .animate-blob, .floating, .card-3d {
+            transform: translateZ(0);
         }
         
         /* Dark Mode Support */
@@ -358,6 +371,8 @@
         
         .animate-blob {
             animation: blob 7s infinite;
+            will-change: transform;
+            backface-visibility: hidden;
         }
         
         .animation-delay-2000 {
@@ -581,9 +596,9 @@
         <section class="py-12 lg:py-16 bg-black relative overflow-hidden">
             <!-- Animated Background Elements -->
             <div class="absolute inset-0 overflow-hidden">
-                <div class="absolute -top-40 -right-40 w-80 h-80 bg-blue-600 rounded-full mix-blend-multiply filter blur-xl opacity-10 animate-blob"></div>
-                <div class="absolute -bottom-40 -left-40 w-80 h-80 bg-indigo-600 rounded-full mix-blend-multiply filter blur-xl opacity-10 animate-blob animation-delay-2000"></div>
-                <div class="absolute top-40 left-40 w-80 h-80 bg-cyan-600 rounded-full mix-blend-multiply filter blur-xl opacity-10 animate-blob animation-delay-4000"></div>
+                <div class="absolute -top-40 -right-40 w-80 h-80 bg-blue-600 rounded-full mix-blend-multiply filter blur-xl opacity-5 animate-blob"></div>
+                <div class="absolute -bottom-40 -left-40 w-80 h-80 bg-indigo-600 rounded-full mix-blend-multiply filter blur-xl opacity-5 animate-blob animation-delay-2000"></div>
+                <div class="absolute top-40 left-40 w-80 h-80 bg-cyan-600 rounded-full mix-blend-multiply filter blur-xl opacity-5 animate-blob animation-delay-4000"></div>
             </div>
             
             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -1269,7 +1284,7 @@
                     <!-- Company Info -->
                     <div class="lg:col-span-1">
                         <div class="flex items-center mb-6">
-                            <img src="https://pub-9f200de23f1a4fada809186205ec0a61.r2.dev/logo.svg" alt="Medacte" class="h-12 w-auto">
+                            <img src="https://pub-9f200de23f1a4fada809186205ec0a61.r2.dev/logo.svg" alt="Medacte" class="h-16 w-auto">
                         </div>
                         <p class="text-gray-400 mb-6 leading-relaxed">
                             Application gratuite de santé digitale au Maroc, 

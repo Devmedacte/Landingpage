@@ -220,6 +220,15 @@
             }
         }
         
+        /* Performance Optimizations */
+        * {
+            box-sizing: border-box;
+        }
+        
+        .animate-blob, .floating, .card-3d {
+            transform: translateZ(0);
+        }
+        
         /* Dark Mode Support */
         @media (prefers-color-scheme: dark) {
             :root {
@@ -365,6 +374,8 @@
         
         .animate-blob {
             animation: blob 7s infinite;
+            will-change: transform;
+            backface-visibility: hidden;
         }
         
         .animation-delay-2000 {
@@ -1276,7 +1287,7 @@
                     <!-- Company Info -->
                     <div class="lg:col-span-1">
                         <div class="flex items-center mb-6">
-                            <img src="https://pub-9f200de23f1a4fada809186205ec0a61.r2.dev/logo.svg" alt="Medacte" class="h-12 w-auto">
+                            <img src="https://pub-9f200de23f1a4fada809186205ec0a61.r2.dev/logo.svg" alt="Medacte" class="h-16 w-auto">
                         </div>
                         <p class="text-gray-400 mb-6 leading-relaxed">
                             Free digital health application in Morocco, 
