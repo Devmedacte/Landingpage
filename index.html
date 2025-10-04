@@ -52,18 +52,32 @@
             --glass-bg-dark: rgba(255, 255, 255, 0.05);
             --glass-border-dark: rgba(255, 255, 255, 0.1);
             --hover-bg: rgba(255, 255, 255, 0.05);
+            --nav-text: white;
+            --nav-hover: #60a5fa;
+            --input-bg: rgba(255, 255, 255, 0.1);
+            --input-border: rgba(255, 255, 255, 0.2);
+            --input-text: white;
+            --input-placeholder: rgba(255, 255, 255, 0.6);
         }
 
         /* Light mode colors */
         [data-theme="light"] {
-            --bg-primary: #ffffff;
-            --bg-secondary: rgba(255, 255, 255, 0.8);
-            --text-primary: #1a1a1a;
-            --text-secondary: rgba(26, 26, 26, 0.8);
-            --text-muted: rgba(26, 26, 26, 0.6);
-            --glass-bg-dark: rgba(255, 255, 255, 0.9);
-            --glass-border-dark: rgba(255, 255, 255, 0.3);
+            --bg-primary: #f8fafc;
+            --bg-secondary: rgba(248, 250, 252, 0.9);
+            --text-primary: #1e293b;
+            --text-secondary: rgba(30, 41, 59, 0.8);
+            --text-muted: rgba(30, 41, 59, 0.6);
+            --glass-bg-dark: rgba(255, 255, 255, 0.8);
+            --glass-border-dark: rgba(148, 163, 184, 0.2);
             --hover-bg: rgba(0, 0, 0, 0.05);
+            --glass-bg: rgba(255, 255, 255, 0.7);
+            --glass-border: rgba(148, 163, 184, 0.3);
+            --nav-text: #1e293b;
+            --nav-hover: #3b82f6;
+            --input-bg: rgba(255, 255, 255, 0.8);
+            --input-border: rgba(148, 163, 184, 0.3);
+            --input-text: #1e293b;
+            --input-placeholder: rgba(30, 41, 59, 0.6);
         }
 
         * {
@@ -79,6 +93,30 @@
             overflow-x: hidden;
             cursor: none;
             transition: background-color 0.3s ease, color 0.3s ease;
+            position: relative;
+        }
+
+        /* Subtle background pattern */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 1px 1px, rgba(102, 126, 234, 0.15) 1px, transparent 0);
+            background-size: 20px 20px;
+            pointer-events: none;
+            z-index: -1;
+            opacity: 0.3;
+        }
+
+        /* Light mode background pattern */
+        [data-theme="light"] body::before {
+            background-image: 
+                radial-gradient(circle at 1px 1px, rgba(102, 126, 234, 0.08) 1px, transparent 0);
+            opacity: 0.2;
         }
 
         /* Custom Cursor */
@@ -267,6 +305,48 @@
             right: 0;
         }
 
+        /* Navigation Links */
+        .nav-link {
+            color: var(--nav-text);
+            transition: color 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            color: var(--nav-hover);
+        }
+
+        /* Input Elements */
+        .theme-input {
+            background: var(--input-bg);
+            border: 1px solid var(--input-border);
+            color: var(--input-text);
+            transition: all 0.3s ease;
+        }
+        
+        .theme-input::placeholder {
+            color: var(--input-placeholder);
+        }
+        
+        .theme-input:focus {
+            outline: none;
+            border-color: var(--nav-hover);
+        }
+
+        /* FAQ Buttons */
+        .faq-button {
+            background: transparent;
+            transition: background-color 0.3s ease;
+        }
+        
+        .faq-button:hover {
+            background: var(--hover-bg);
+        }
+
+        /* Text Colors */
+        .text-primary {
+            color: var(--text-primary);
+        }
+
         /* Mode Switcher */
         .mode-switcher {
             position: fixed;
@@ -328,17 +408,29 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: radial-gradient(circle at 20% 50%, rgba(102, 126, 234, 0.3) 0%, transparent 50%),
-                        radial-gradient(circle at 80% 20%, rgba(118, 75, 162, 0.3) 0%, transparent 50%),
-                        radial-gradient(circle at 40% 80%, rgba(240, 147, 251, 0.3) 0%, transparent 50%);
+            background: radial-gradient(circle at 20% 50%, rgba(102, 126, 234, 0.15) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(118, 75, 162, 0.15) 0%, transparent 50%),
+                        radial-gradient(circle at 40% 80%, rgba(240, 147, 251, 0.15) 0%, transparent 50%);
+        }
+
+        /* Light mode hero background */
+        [data-theme="light"] .hero-bg {
+            background: radial-gradient(circle at 20% 50%, rgba(102, 126, 234, 0.08) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(118, 75, 162, 0.08) 0%, transparent 50%),
+                        radial-gradient(circle at 40% 80%, rgba(240, 147, 251, 0.08) 0%, transparent 50%);
         }
 
         /* Particle System */
         .particle {
             position: absolute;
-            background: rgba(102, 126, 234, 0.6);
+            background: rgba(102, 126, 234, 0.4);
             border-radius: 50%;
             pointer-events: none;
+        }
+
+        /* Light mode particles */
+        [data-theme="light"] .particle {
+            background: rgba(102, 126, 234, 0.2);
         }
 
         /* Responsive Design */
@@ -578,14 +670,14 @@
                 </div>
                 
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="#accueil" class="text-white hover:text-blue-300 transition-colors">Accueil</a>
-                    <a href="#services" class="text-white hover:text-blue-300 transition-colors">Services</a>
-                    <a href="#innovation" class="text-white hover:text-blue-300 transition-colors">Innovation</a>
-                    <a href="#contact" class="text-white hover:text-blue-300 transition-colors">Contact</a>
+                    <a href="#accueil" class="nav-link">Accueil</a>
+                    <a href="#services" class="nav-link">Services</a>
+                    <a href="#innovation" class="nav-link">Innovation</a>
+                    <a href="#contact" class="nav-link">Contact</a>
                     <button class="px-4 py-2 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-semibold rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/25 border border-blue-400/20 backdrop-blur-sm">Télécharger</button>
                 </div>
 
-                <button class="md:hidden text-white" id="mobileMenuBtn">
+                <button class="md:hidden nav-link" id="mobileMenuBtn">
                     <i data-feather="menu" class="w-6 h-6"></i>
                 </button>
             </div>
@@ -601,7 +693,7 @@
                     <h1 class="text-5xl lg:text-7xl font-bold mb-6 leading-tight">
                         <span class="gradient-text">L'Avenir</span><br>
                         de la Santé<br>
-                        <span class="text-white">Digitale</span>
+                        <span class="text-primary">Digitale</span>
                     </h1>
                     <p class="text-xl text-gray-300 mb-8 leading-relaxed">
                         Découvrez une révolution médicale au Maroc avec l'IA, la blockchain et la réalité augmentée. 
@@ -1103,7 +1195,7 @@
             <div class="space-y-4">
                 <!-- FAQ Item 1 -->
                 <div class="glass-card overflow-hidden">
-                    <button class="w-full p-6 text-left flex justify-between items-center hover:bg-white hover:bg-opacity-5 transition-colors" onclick="toggleFAQ(1)">
+                    <button class="w-full p-6 text-left flex justify-between items-center faq-button" onclick="toggleFAQ(1)">
                         <span class="text-lg font-medium">Comment créer un compte sur Medacte ?</span>
                         <i data-feather="chevron-down" class="w-6 h-6 transition-transform" id="chevron-1"></i>
                     </button>
@@ -1116,7 +1208,7 @@
 
                 <!-- FAQ Item 2 -->
                 <div class="glass-card overflow-hidden">
-                    <button class="w-full p-6 text-left flex justify-between items-center hover:bg-white hover:bg-opacity-5 transition-colors" onclick="toggleFAQ(2)">
+                    <button class="w-full p-6 text-left flex justify-between items-center faq-button" onclick="toggleFAQ(2)">
                         <span class="text-lg font-medium">Est-ce que Medacte est vraiment gratuit pour les patients ?</span>
                         <i data-feather="chevron-down" class="w-6 h-6 transition-transform" id="chevron-2"></i>
                     </button>
@@ -1129,7 +1221,7 @@
 
                 <!-- FAQ Item 3 -->
                 <div class="glass-card overflow-hidden">
-                    <button class="w-full p-6 text-left flex justify-between items-center hover:bg-white hover:bg-opacity-5 transition-colors" onclick="toggleFAQ(3)">
+                    <button class="w-full p-6 text-left flex justify-between items-center faq-button" onclick="toggleFAQ(3)">
                         <span class="text-lg font-medium">Comment fonctionne la téléconsultation ?</span>
                         <i data-feather="chevron-down" class="w-6 h-6 transition-transform" id="chevron-3"></i>
                     </button>
@@ -1142,7 +1234,7 @@
 
                 <!-- FAQ Item 4 -->
                 <div class="glass-card overflow-hidden">
-                    <button class="w-full p-6 text-left flex justify-between items-center hover:bg-white hover:bg-opacity-5 transition-colors" onclick="toggleFAQ(4)">
+                    <button class="w-full p-6 text-left flex justify-between items-center faq-button" onclick="toggleFAQ(4)">
                         <span class="text-lg font-medium">Mes données médicales sont-elles sécurisées ?</span>
                         <i data-feather="chevron-down" class="w-6 h-6 transition-transform" id="chevron-4"></i>
                     </button>
@@ -1155,7 +1247,7 @@
 
                 <!-- FAQ Item 5 -->
                 <div class="glass-card overflow-hidden">
-                    <button class="w-full p-6 text-left flex justify-between items-center hover:bg-white hover:bg-opacity-5 transition-colors" onclick="toggleFAQ(5)">
+                    <button class="w-full p-6 text-left flex justify-between items-center faq-button" onclick="toggleFAQ(5)">
                         <span class="text-lg font-medium">Dans quelles villes du Maroc êtes-vous disponibles ?</span>
                         <i data-feather="chevron-down" class="w-6 h-6 transition-transform" id="chevron-5"></i>
                     </button>
@@ -1321,7 +1413,7 @@
                 <form class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
                     <input type="email" 
                            placeholder="Votre adresse email" 
-                           class="flex-1 px-6 py-4 bg-white bg-opacity-10 border border-white border-opacity-20 rounded-full text-white placeholder-gray-400 focus:outline-none focus:border-blue-400">
+                           class="flex-1 px-6 py-4 theme-input rounded-full">
                     <button type="submit" class="px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-semibold rounded-2xl transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-blue-500/30 border border-blue-400/20 backdrop-blur-sm">
                         <div class="flex items-center justify-center">
                             <div class="w-6 h-6 mr-3 bg-white/20 rounded-full flex items-center justify-center">
@@ -1398,17 +1490,17 @@
                             <div class="grid md:grid-cols-2 gap-4">
                                 <input type="text" 
                                        placeholder="Prénom" 
-                                       class="w-full px-4 py-3 bg-white bg-opacity-10 border border-white border-opacity-20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-blue-400">
+                                       class="w-full px-4 py-3 theme-input rounded-lg">
                                 <input type="text" 
                                        placeholder="Nom" 
-                                       class="w-full px-4 py-3 bg-white bg-opacity-10 border border-white border-opacity-20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-blue-400">
+                                       class="w-full px-4 py-3 theme-input rounded-lg">
                             </div>
                             
                             <input type="email" 
                                    placeholder="Email" 
-                                   class="w-full px-4 py-3 bg-white bg-opacity-10 border border-white border-opacity-20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-blue-400">
+                                   class="w-full px-4 py-3 theme-input rounded-lg">
                             
-                            <select class="w-full px-4 py-3 bg-white bg-opacity-10 border border-white border-opacity-20 rounded-lg text-white focus:outline-none focus:border-blue-400">
+                            <select class="w-full px-4 py-3 theme-input rounded-lg">
                                 <option value="">Sujet de votre message</option>
                                 <option value="support">Support technique</option>
                                 <option value="partnership">Partenariat</option>
@@ -1418,7 +1510,7 @@
                             
                             <textarea placeholder="Votre message" 
                                       rows="4" 
-                                      class="w-full px-4 py-3 bg-white bg-opacity-10 border border-white border-opacity-20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-blue-400"></textarea>
+                                      class="w-full px-4 py-3 theme-input rounded-lg"></textarea>
                             
                             <button type="submit" class="w-full px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-semibold rounded-2xl transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-blue-500/30 border border-blue-400/20 backdrop-blur-sm">
                                 <div class="flex items-center justify-center">
@@ -1497,20 +1589,20 @@
                 <div>
                     <h3 class="text-lg font-semibold mb-4 gradient-text">Services</h3>
                     <ul class="space-y-2 text-gray-400">
-                        <li><a href="#" class="hover:text-white transition-colors">Téléconsultation</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">IA Médicale</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Blockchain</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Réalité Augmentée</a></li>
+                        <li><a href="#" class="nav-link">Téléconsultation</a></li>
+                        <li><a href="#" class="nav-link">IA Médicale</a></li>
+                        <li><a href="#" class="nav-link">Blockchain</a></li>
+                        <li><a href="#" class="nav-link">Réalité Augmentée</a></li>
                     </ul>
                 </div>
                 
                 <div>
                     <h3 class="text-lg font-semibold mb-4 gradient-text">Support</h3>
                     <ul class="space-y-2 text-gray-400">
-                        <li><a href="#" class="hover:text-white transition-colors">Centre d'aide</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Sécurité</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Confidentialité</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Contact</a></li>
+                        <li><a href="#" class="nav-link">Centre d'aide</a></li>
+                        <li><a href="#" class="nav-link">Sécurité</a></li>
+                        <li><a href="#" class="nav-link">Confidentialité</a></li>
+                        <li><a href="#" class="nav-link">Contact</a></li>
                     </ul>
                 </div>
             </div>
@@ -1636,10 +1728,11 @@
             
             for (let i = 0; i < particleCount; i++) {
                 const geometry = new THREE.SphereGeometry(0.1, 8, 8);
+                const isLightMode = document.documentElement.getAttribute('data-theme') === 'light';
                 const material = new THREE.MeshBasicMaterial({ 
-                    color: new THREE.Color().setHSL(Math.random() * 0.2 + 0.5, 0.7, 0.6),
+                    color: new THREE.Color().setHSL(Math.random() * 0.2 + 0.5, 0.7, isLightMode ? 0.4 : 0.6),
                     transparent: true,
-                    opacity: 0.6
+                    opacity: isLightMode ? 0.3 : 0.6
                 });
                 
                 const particle = new THREE.Mesh(geometry, material);
@@ -1707,15 +1800,15 @@
                     <div class="flex items-center">
                         <img src="https://pub-9f200de23f1a4fada809186205ec0a61.r2.dev/logo.svg" alt="Medacte" class="h-16 w-16">
                     </div>
-                    <button id="closeMobileMenu" class="text-white p-2">
+                    <button id="closeMobileMenu" class="nav-link p-2">
                         <i data-feather="x" class="w-6 h-6"></i>
                     </button>
                 </div>
                 <div class="flex flex-col items-center justify-center h-full space-y-6 px-6">
-                    <a href="#accueil" class="text-xl text-white hover:text-blue-300 transition-colors py-3">Accueil</a>
-                    <a href="#services" class="text-xl text-white hover:text-blue-300 transition-colors py-3">Services</a>
-                    <a href="#innovation" class="text-xl text-white hover:text-blue-300 transition-colors py-3">Innovation</a>
-                    <a href="#contact" class="text-xl text-white hover:text-blue-300 transition-colors py-3">Contact</a>
+                    <a href="#accueil" class="text-xl nav-link py-3">Accueil</a>
+                    <a href="#services" class="text-xl nav-link py-3">Services</a>
+                    <a href="#innovation" class="text-xl nav-link py-3">Innovation</a>
+                    <a href="#contact" class="text-xl nav-link py-3">Contact</a>
                     <button class="mt-8 px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-semibold rounded-2xl transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-blue-500/30 border border-blue-400/20 backdrop-blur-sm">Télécharger</button>
                 </div>
             `;
