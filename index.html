@@ -36,56 +36,56 @@
     
     <style>
         :root {
-            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            --accent-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            --primary-gradient: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+            --secondary-gradient: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);
+            --accent-gradient: linear-gradient(135deg, #f59e0b 0%, #f97316 100%);
             --glass-bg: rgba(255, 255, 255, 0.1);
             --glass-border: rgba(255, 255, 255, 0.2);
-            --shadow-glow: 0 0 30px rgba(102, 126, 234, 0.3);
+            --shadow-glow: 0 0 30px rgba(99, 102, 241, 0.3);
             
-            /* Dark mode colors - Modern Orange Theme */
-            --bg-primary: #0c0a09;
-            --bg-secondary: rgba(12, 10, 9, 0.8);
-            --text-primary: #fef3c7;
-            --text-secondary: rgba(254, 243, 199, 0.85);
-            --text-muted: rgba(254, 243, 199, 0.65);
+            /* Dark mode colors - Modern Design */
+            --bg-primary: #0f0f23;
+            --bg-secondary: rgba(15, 15, 35, 0.8);
+            --text-primary: #f8fafc;
+            --text-secondary: rgba(248, 250, 252, 0.85);
+            --text-muted: rgba(248, 250, 252, 0.65);
             --glass-bg-dark: rgba(255, 255, 255, 0.08);
-            --glass-border-dark: rgba(249, 115, 22, 0.3);
-            --hover-bg: rgba(249, 115, 22, 0.15);
-            --nav-text: #fef3c7;
-            --nav-hover: #f97316;
+            --glass-border-dark: rgba(99, 102, 241, 0.2);
+            --hover-bg: rgba(99, 102, 241, 0.1);
+            --nav-text: #f8fafc;
+            --nav-hover: #f59e0b;
             --input-bg: rgba(255, 255, 255, 0.12);
-            --input-border: rgba(249, 115, 22, 0.4);
-            --input-text: #fef3c7;
-            --input-placeholder: rgba(254, 243, 199, 0.6);
-            --accent-orange: #f97316;
-            --accent-red: #dc2626;
-            --accent-yellow: #f59e0b;
-            --accent-amber: #ea580c;
+            --input-border: rgba(99, 102, 241, 0.3);
+            --input-text: #f8fafc;
+            --input-placeholder: rgba(248, 250, 252, 0.6);
+            --accent-blue: #6366f1;
+            --accent-purple: #8b5cf6;
+            --accent-cyan: #06b6d4;
+            --accent-orange: #f59e0b;
         }
 
-        /* Light mode colors - Modern Orange Theme */
+        /* Light mode colors - Modern Design */
         [data-theme="light"] {
-            --bg-primary: #fffbeb;
-            --bg-secondary: rgba(255, 251, 235, 0.9);
-            --text-primary: #1c1917;
-            --text-secondary: rgba(28, 25, 23, 0.85);
-            --text-muted: rgba(28, 25, 23, 0.65);
+            --bg-primary: #fafbff;
+            --bg-secondary: rgba(250, 251, 255, 0.9);
+            --text-primary: #1e293b;
+            --text-secondary: rgba(30, 41, 59, 0.85);
+            --text-muted: rgba(30, 41, 59, 0.65);
             --glass-bg-dark: rgba(255, 255, 255, 0.85);
-            --glass-border-dark: rgba(249, 115, 22, 0.25);
-            --hover-bg: rgba(249, 115, 22, 0.1);
+            --glass-border-dark: rgba(99, 102, 241, 0.2);
+            --hover-bg: rgba(99, 102, 241, 0.08);
             --glass-bg: rgba(255, 255, 255, 0.8);
-            --glass-border: rgba(249, 115, 22, 0.3);
-            --nav-text: #1c1917;
-            --nav-hover: #ea580c;
+            --glass-border: rgba(99, 102, 241, 0.25);
+            --nav-text: #1e293b;
+            --nav-hover: #f59e0b;
             --input-bg: rgba(255, 255, 255, 0.9);
-            --input-border: rgba(249, 115, 22, 0.3);
-            --input-text: #1c1917;
-            --input-placeholder: rgba(28, 25, 23, 0.6);
-            --accent-orange: #ea580c;
-            --accent-red: #b91c1c;
-            --accent-yellow: #d97706;
-            --accent-amber: #c2410c;
+            --input-border: rgba(99, 102, 241, 0.25);
+            --input-text: #1e293b;
+            --input-placeholder: rgba(30, 41, 59, 0.6);
+            --accent-blue: #4f46e5;
+            --accent-purple: #7c3aed;
+            --accent-cyan: #0891b2;
+            --accent-orange: #d97706;
         }
 
         * {
@@ -104,7 +104,7 @@
             position: relative;
         }
 
-        /* Modern geometric background pattern */
+        /* Modern subtle background pattern */
         body::before {
             content: '';
             position: fixed;
@@ -113,22 +113,22 @@
             width: 100%;
             height: 100%;
             background-image: 
-                linear-gradient(90deg, rgba(249, 115, 22, 0.1) 1px, transparent 1px),
-                linear-gradient(180deg, rgba(220, 38, 38, 0.08) 1px, transparent 1px),
-                linear-gradient(45deg, rgba(245, 158, 11, 0.05) 1px, transparent 1px);
-            background-size: 40px 40px, 40px 40px, 20px 20px;
+                radial-gradient(circle at 25% 25%, rgba(99, 102, 241, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, rgba(139, 92, 246, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(6, 182, 212, 0.06) 0%, transparent 50%);
+            background-size: 300px 300px, 400px 400px, 200px 200px;
             pointer-events: none;
             z-index: -1;
-            opacity: 0.3;
+            opacity: 0.4;
         }
 
         /* Light mode background pattern */
         [data-theme="light"] body::before {
             background-image: 
-                linear-gradient(90deg, rgba(234, 88, 12, 0.08) 1px, transparent 1px),
-                linear-gradient(180deg, rgba(185, 28, 28, 0.06) 1px, transparent 1px),
-                linear-gradient(45deg, rgba(217, 119, 6, 0.04) 1px, transparent 1px);
-            opacity: 0.2;
+                radial-gradient(circle at 25% 25%, rgba(79, 70, 229, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, rgba(124, 58, 237, 0.06) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(8, 145, 178, 0.04) 0%, transparent 50%);
+            opacity: 0.3;
         }
 
         /* Custom Cursor */
@@ -136,7 +136,7 @@
             position: fixed;
             width: 20px;
             height: 20px;
-            background: radial-gradient(circle, rgba(249, 115, 22, 0.8) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.8) 0%, transparent 70%);
             border-radius: 50%;
             pointer-events: none;
             z-index: 9999;
@@ -147,7 +147,7 @@
             position: fixed;
             width: 6px;
             height: 6px;
-            background: rgba(220, 38, 38, 0.8);
+            background: rgba(6, 182, 212, 0.8);
             border-radius: 50%;
             pointer-events: none;
             z-index: 9998;
@@ -181,13 +181,13 @@
 
         .glass-card:hover {
             transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 20px 40px rgba(249, 115, 22, 0.4);
-            border-color: rgba(220, 38, 38, 0.5);
+            box-shadow: 0 20px 40px rgba(99, 102, 241, 0.3);
+            border-color: rgba(6, 182, 212, 0.4);
         }
 
-        /* Static Gradient Text - Modern Orange Theme */
+        /* Modern Gradient Text - Orange Accent */
         .gradient-text {
-            background: linear-gradient(45deg, #f97316, #ea580c, #dc2626, #f59e0b);
+            background: linear-gradient(45deg, #f59e0b, #f97316, #ea580c);
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -210,11 +210,11 @@
 
         @keyframes pulseGlow {
             0%, 100% { 
-                box-shadow: 0 0 20px rgba(102, 126, 234, 0.3);
+                box-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
                 transform: scale(1);
             }
             50% { 
-                box-shadow: 0 0 40px rgba(102, 126, 234, 0.6);
+                box-shadow: 0 0 40px rgba(99, 102, 241, 0.6);
                 transform: scale(1.05);
             }
         }
@@ -266,7 +266,7 @@
 
         /* Interactive Buttons */
         .btn-primary {
-            background: linear-gradient(135deg, #f97316 0%, #dc2626 100%);
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
             border: none;
             padding: 15px 30px;
             border-radius: 50px;
@@ -295,7 +295,7 @@
 
         .btn-primary:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.4);
         }
 
         /* Navigation */
@@ -384,7 +384,7 @@
 
         .mode-switcher:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(249, 115, 22, 0.4);
+            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.3);
         }
 
         .mode-btn {
@@ -403,7 +403,7 @@
         .mode-btn.active {
             background: var(--primary-gradient);
             color: white;
-            box-shadow: 0 4px 15px rgba(249, 115, 22, 0.5);
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
         }
 
         .mode-btn:hover:not(.active) {
@@ -427,30 +427,30 @@
             width: 100%;
             height: 100%;
             background: 
-                linear-gradient(135deg, rgba(249, 115, 22, 0.1) 0%, transparent 50%),
-                linear-gradient(45deg, rgba(220, 38, 38, 0.08) 0%, transparent 50%),
-                linear-gradient(225deg, rgba(245, 158, 11, 0.06) 0%, transparent 50%);
+                linear-gradient(135deg, rgba(99, 102, 241, 0.08) 0%, transparent 50%),
+                linear-gradient(45deg, rgba(139, 92, 246, 0.06) 0%, transparent 50%),
+                linear-gradient(225deg, rgba(6, 182, 212, 0.04) 0%, transparent 50%);
         }
 
         /* Light mode hero background */
         [data-theme="light"] .hero-bg {
             background: 
-                linear-gradient(135deg, rgba(234, 88, 12, 0.08) 0%, transparent 50%),
-                linear-gradient(45deg, rgba(185, 28, 28, 0.06) 0%, transparent 50%),
-                linear-gradient(225deg, rgba(217, 119, 6, 0.04) 0%, transparent 50%);
+                linear-gradient(135deg, rgba(79, 70, 229, 0.06) 0%, transparent 50%),
+                linear-gradient(45deg, rgba(124, 58, 237, 0.04) 0%, transparent 50%),
+                linear-gradient(225deg, rgba(8, 145, 178, 0.03) 0%, transparent 50%);
         }
 
         /* Modern Geometric Shapes */
         .particle {
             position: absolute;
-            background: rgba(249, 115, 22, 0.7);
+            background: rgba(99, 102, 241, 0.6);
             border-radius: 50%;
             pointer-events: none;
         }
 
         /* Light mode particles */
         [data-theme="light"] .particle {
-            background: rgba(234, 88, 12, 0.5);
+            background: rgba(79, 70, 229, 0.4);
         }
 
         /* Responsive Design */
@@ -1756,9 +1756,9 @@
                 const geometry = new THREE.SphereGeometry(0.1, 8, 8);
                 const isLightMode = document.documentElement.getAttribute('data-theme') === 'light';
                 const material = new THREE.MeshBasicMaterial({ 
-                    color: new THREE.Color().setHSL(Math.random() * 0.1 + 0.05, 0.9, isLightMode ? 0.6 : 0.7),
+                    color: new THREE.Color().setHSL(Math.random() * 0.2 + 0.5, 0.7, isLightMode ? 0.6 : 0.7),
                     transparent: true,
-                    opacity: isLightMode ? 0.5 : 0.8
+                    opacity: isLightMode ? 0.4 : 0.6
                 });
                 
                 const particle = new THREE.Mesh(geometry, material);
