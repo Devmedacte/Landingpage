@@ -42,6 +42,9 @@
             font-family: 'Poppins', sans-serif;
             overflow-x: hidden;
             line-height: 1.6;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
         
         body[dir="rtl"] {
@@ -61,6 +64,28 @@
             --shadow-light: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
             --shadow-medium: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
             --shadow-heavy: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            
+            /* Dark mode colors (default) */
+            --bg-primary: #0a0a0a;
+            --bg-secondary: rgba(0, 0, 0, 0.3);
+            --text-primary: white;
+            --text-secondary: rgba(255, 255, 255, 0.8);
+            --text-muted: rgba(255, 255, 255, 0.6);
+            --glass-bg-theme: rgba(255, 255, 255, 0.05);
+            --glass-border-theme: rgba(255, 255, 255, 0.1);
+            --hover-bg: rgba(255, 255, 255, 0.05);
+        }
+
+        /* Light mode colors */
+        [data-theme="light"] {
+            --bg-primary: #ffffff;
+            --bg-secondary: rgba(255, 255, 255, 0.8);
+            --text-primary: #1a1a1a;
+            --text-secondary: rgba(26, 26, 26, 0.8);
+            --text-muted: rgba(26, 26, 26, 0.6);
+            --glass-bg-theme: rgba(255, 255, 255, 0.9);
+            --glass-border-theme: rgba(255, 255, 255, 0.3);
+            --hover-bg: rgba(0, 0, 0, 0.05);
         }
         
         /* Utility Classes */
@@ -226,6 +251,51 @@
                 --glass-bg: rgba(0, 0, 0, 0.2);
                 --glass-border: rgba(255, 255, 255, 0.1);
             }
+        }
+
+        /* Mode Switcher */
+        .mode-switcher {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1001;
+            background: var(--glass-bg-theme);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border-theme);
+            border-radius: 50px;
+            padding: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .mode-switcher:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 191, 255, 0.2);
+        }
+
+        .mode-btn {
+            background: transparent;
+            border: none;
+            padding: 12px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .mode-btn.active {
+            background: var(--gradient-primary);
+            color: white;
+            box-shadow: 0 4px 15px rgba(0, 191, 255, 0.3);
+        }
+
+        .mode-btn:hover:not(.active) {
+            background: var(--hover-bg);
         }
         
         /* Loading Animation */
@@ -1686,6 +1756,42 @@
                 observer.observe(item);
             });
         });
+
+        // Theme switching functionality
+        function setTheme(theme) {
+            document.documentElement.setAttribute('data-theme', theme);
+            localStorage.setItem('theme', theme);
+            
+            // Update active button
+            document.querySelectorAll('.mode-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.closest('.mode-btn').classList.add('active');
+            
+            // Reinitialize feather icons
+            feather.replace();
+        }
+
+        // Load saved theme on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedTheme = localStorage.getItem('theme') || 'dark';
+            setTheme(savedTheme);
+            
+            // Set initial active button
+            document.querySelectorAll('.mode-btn').forEach(btn => btn.classList.remove('active'));
+            const activeBtn = savedTheme === 'dark' ? 
+                document.querySelector('.mode-btn[onclick="setTheme(\'dark\')"]') :
+                document.querySelector('.mode-btn[onclick="setTheme(\'light\')"]');
+            if (activeBtn) activeBtn.classList.add('active');
+        });
     </script>
+
+    <!-- Mode Switcher -->
+    <div class="mode-switcher">
+        <button class="mode-btn active" onclick="setTheme('dark')" title="الوضع المظلم">
+            <i data-feather="moon"></i>
+        </button>
+        <button class="mode-btn" onclick="setTheme('light')" title="الوضع المضيء">
+            <i data-feather="sun"></i>
+        </button>
+    </div>
 </body>
 </html>
