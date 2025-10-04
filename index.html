@@ -1127,18 +1127,39 @@
                 </div>
             </div>
 
-            <div class="text-center mt-12">
-                <div class="glass-card p-8 inline-block">
-                    <h3 class="text-xl font-bold gradient-text mb-6">Rejoignez Medacte</h3>
-                    <p class="text-gray-300 mb-8">Choisissez votre profil pour accéder à nos services</p>
-                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                        <button class="btn-primary pulse-glow px-8 py-4">
+            <div class="mt-12">
+                <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                    <!-- Patient Card -->
+                    <div class="glass-card p-8 text-center scale-in">
+                        <div class="mb-6 flex justify-center">
+                            <div class="w-48 h-48 flex items-center justify-center">
+                                <img src="https://pub-9f200de23f1a4fada809186205ec0a61.r2.dev/Patient.svg" alt="Patient" class="max-w-full max-h-full object-contain">
+                            </div>
+                        </div>
+                        <h3 class="text-2xl font-bold gradient-text mb-4">Je suis Patient</h3>
+                        <p class="text-gray-300 mb-6">
+                            Accédez à vos consultations, dossiers médicaux et services de santé digitaux.
+                        </p>
+                        <button class="btn-primary pulse-glow w-full">
                             <i data-feather="user" class="w-5 h-5 mr-2"></i>
-                            Je suis Patient
+                            Accéder au Portail Patient
                         </button>
-                        <button class="glass-card px-8 py-4 text-white hover:bg-white hover:bg-opacity-10 transition-all">
+                    </div>
+
+                    <!-- Professionnel Card -->
+                    <div class="glass-card p-8 text-center scale-in">
+                        <div class="mb-6 flex justify-center">
+                            <div class="w-48 h-48 flex items-center justify-center">
+                                <img src="https://pub-9f200de23f1a4fada809186205ec0a61.r2.dev/%C3%A4rtzeprofile.svg" alt="Professionnel" class="max-w-full max-h-full object-contain">
+                            </div>
+                        </div>
+                        <h3 class="text-2xl font-bold gradient-text mb-4">Je suis Professionnel</h3>
+                        <p class="text-gray-300 mb-6">
+                            Gérez vos patients, consultations et accédez aux outils professionnels.
+                        </p>
+                        <button class="glass-card px-8 py-4 text-white hover:bg-white hover:bg-opacity-10 transition-all w-full">
                             <i data-feather="briefcase" class="w-5 h-5 mr-2"></i>
-                            Je suis Professionnel
+                            Accéder au Portail Pro
                         </button>
                     </div>
                 </div>
