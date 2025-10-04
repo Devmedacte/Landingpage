@@ -153,14 +153,15 @@
             z-index: 9998;
         }
 
-        /* 3D Background Container */
-        .bg-3d {
+        /* Modern Background Container */
+        .bg-modern {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
             z-index: -1;
+            background: var(--bg-primary);
         }
 
         /* Glassmorphism Elements */
@@ -363,6 +364,33 @@
         /* Background Colors */
         .bg-secondary {
             background-color: var(--text-secondary);
+        }
+
+        /* Modern Button Classes */
+        .btn-modern-primary {
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+            border: none;
+            color: white;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-modern-secondary {
+            background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);
+            border: none;
+            color: white;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-modern-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.4);
+        }
+
+        .btn-modern-secondary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(6, 182, 212, 0.4);
         }
 
         /* Mode Switcher */
@@ -684,8 +712,8 @@
     <!-- Custom Cursor -->
     <div class="cursor" id="cursor"></div>
 
-    <!-- 3D Background -->
-    <div class="bg-3d" id="bg3d"></div>
+    <!-- Modern Background -->
+    <div class="bg-modern" id="bgModern"></div>
 
     <!-- Navigation -->
     <nav class="nav-glass fade-in">
@@ -700,7 +728,7 @@
                     <a href="#services" class="nav-link">Services</a>
                     <a href="#innovation" class="nav-link">Innovation</a>
                     <a href="#contact" class="nav-link">Contact</a>
-                    <button class="px-4 py-2 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-semibold rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/25 border border-blue-400/20 backdrop-blur-sm">Télécharger</button>
+                    <button class="px-4 py-2 bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 text-white font-semibold rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-indigo-500/25 border border-indigo-400/20 backdrop-blur-sm">Télécharger</button>
                 </div>
 
                 <button class="md:hidden nav-link" id="mobileMenuBtn">
@@ -726,7 +754,7 @@
                         Votre santé n'a jamais été aussi intelligente.
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4">
-                        <button class="px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-semibold rounded-2xl transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-blue-500/30 border border-blue-400/20 backdrop-blur-sm">
+                        <button class="px-6 py-3 bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 text-white font-semibold rounded-2xl transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-indigo-500/30 border border-indigo-400/20 backdrop-blur-sm">
                             <div class="flex items-center justify-center">
                                 <div class="w-6 h-6 mr-3 bg-white/20 rounded-full flex items-center justify-center">
                                     <i data-feather="play-circle" class="w-4 h-4"></i>
@@ -734,7 +762,7 @@
                                 <span>Découvrir la Révolution</span>
                             </div>
                         </button>
-                        <button class="px-6 py-3 bg-gradient-to-r from-green-500 to-cyan-600 hover:from-green-600 hover:to-cyan-700 text-white font-semibold rounded-2xl transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-green-500/30 border border-green-400/20 backdrop-blur-sm">
+                        <button class="px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white font-semibold rounded-2xl transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-cyan-500/30 border border-cyan-400/20 backdrop-blur-sm">
                             <div class="flex items-center justify-center">
                                 <div class="w-6 h-6 mr-3 bg-white/20 rounded-full flex items-center justify-center">
                                     <i data-feather="download" class="w-4 h-4"></i>
@@ -790,9 +818,9 @@
                             Diagnostic assisté par IA, prédiction des maladies et recommandations personnalisées en temps réel.
                         </p>
                         <div class="flex justify-center space-x-2">
-                            <div class="w-2 h-2 bg-blue-400 rounded-full pulse-glow"></div>
-                            <div class="w-2 h-2 bg-blue-400 rounded-full pulse-glow" style="animation-delay: 0.2s"></div>
-                            <div class="w-2 h-2 bg-blue-400 rounded-full pulse-glow" style="animation-delay: 0.4s"></div>
+                            <div class="w-2 h-2 bg-indigo-400 rounded-full pulse-glow"></div>
+                            <div class="w-2 h-2 bg-indigo-400 rounded-full pulse-glow" style="animation-delay: 0.2s"></div>
+                            <div class="w-2 h-2 bg-indigo-400 rounded-full pulse-glow" style="animation-delay: 0.4s"></div>
                         </div>
                     </div>
                 </div>
@@ -1169,7 +1197,7 @@
 
                 <!-- Dots Indicator -->
                 <div class="flex justify-center mt-8 space-x-2" id="dotsContainer">
-                    <div class="w-3 h-3 bg-blue-400 rounded-full cursor-pointer transition-all" data-slide="0"></div>
+                    <div class="w-3 h-3 bg-indigo-400 rounded-full cursor-pointer transition-all" data-slide="0"></div>
                     <div class="w-3 h-3 bg-secondary rounded-full cursor-pointer transition-all" data-slide="1"></div>
                     <div class="w-3 h-3 bg-secondary rounded-full cursor-pointer transition-all" data-slide="2"></div>
                     <div class="w-3 h-3 bg-secondary rounded-full cursor-pointer transition-all" data-slide="3"></div>
@@ -1184,7 +1212,7 @@
                     <h3 class="text-2xl font-bold gradient-text mb-4">Prêt à Révolutionner Votre Santé ?</h3>
                     <p class="text-secondary mb-6">Téléchargez Medacte gratuitement et découvrez tous ces avantages</p>
                     <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                        <button class="px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-semibold rounded-2xl transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-blue-500/30 border border-blue-400/20 backdrop-blur-sm">
+                        <button class="px-6 py-3 bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 text-white font-semibold rounded-2xl transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-indigo-500/30 border border-indigo-400/20 backdrop-blur-sm">
                             <div class="flex items-center justify-center">
                                 <div class="w-6 h-6 mr-3 bg-white/20 rounded-full flex items-center justify-center">
                                     <i data-feather="download" class="w-4 h-4"></i>
@@ -1192,7 +1220,7 @@
                                 <span>Télécharger Gratuitement</span>
                             </div>
                         </button>
-                        <button class="px-6 py-3 bg-gradient-to-r from-green-500 to-cyan-600 hover:from-green-600 hover:to-cyan-700 text-white font-semibold rounded-2xl transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-green-500/30 border border-green-400/20 backdrop-blur-sm">
+                        <button class="px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white font-semibold rounded-2xl transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-cyan-500/30 border border-cyan-400/20 backdrop-blur-sm">
                             <div class="flex items-center justify-center">
                                 <div class="w-6 h-6 mr-3 bg-white/20 rounded-full flex items-center justify-center">
                                     <i data-feather="play-circle" class="w-4 h-4"></i>
@@ -1342,7 +1370,7 @@
                         <p class="text-secondary mb-6">
                             Accédez à vos consultations, dossiers médicaux et services de santé digitaux.
                         </p>
-                        <button class="mx-auto px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-semibold rounded-2xl transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-blue-500/30 border border-blue-400/20 backdrop-blur-sm">
+                        <button class="mx-auto px-6 py-3 bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 text-white font-semibold rounded-2xl transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-indigo-500/30 border border-indigo-400/20 backdrop-blur-sm">
                             <div class="flex items-center justify-center">
                                 <div class="w-6 h-6 mr-3 bg-white/20 rounded-full flex items-center justify-center">
                                     <i data-feather="user" class="w-4 h-4"></i>
@@ -1363,7 +1391,7 @@
                         <p class="text-secondary mb-6">
                             Gérez vos patients, consultations et accédez aux outils professionnels.
                         </p>
-                        <button class="mx-auto px-6 py-3 bg-gradient-to-r from-green-500 to-cyan-600 hover:from-green-600 hover:to-cyan-700 text-white font-semibold rounded-2xl transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-green-500/30 border border-green-400/20 backdrop-blur-sm">
+                        <button class="mx-auto px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white font-semibold rounded-2xl transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-cyan-500/30 border border-cyan-400/20 backdrop-blur-sm">
                             <div class="flex items-center justify-center">
                                 <div class="w-6 h-6 mr-3 bg-white/20 rounded-full flex items-center justify-center">
                                     <i data-feather="user-check" class="w-4 h-4"></i>
@@ -1440,7 +1468,7 @@
                     <input type="email" 
                            placeholder="Votre adresse email" 
                            class="flex-1 px-6 py-4 theme-input rounded-full">
-                    <button type="submit" class="px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-semibold rounded-2xl transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-blue-500/30 border border-blue-400/20 backdrop-blur-sm">
+                    <button type="submit" class="px-6 py-3 bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 text-white font-semibold rounded-2xl transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-indigo-500/30 border border-indigo-400/20 backdrop-blur-sm">
                         <div class="flex items-center justify-center">
                             <div class="w-6 h-6 mr-3 bg-white/20 rounded-full flex items-center justify-center">
                                 <i data-feather="send" class="w-4 h-4"></i>
@@ -1538,7 +1566,7 @@
                                       rows="4" 
                                       class="w-full px-4 py-3 theme-input rounded-lg"></textarea>
                             
-                            <button type="submit" class="w-full px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-semibold rounded-2xl transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-blue-500/30 border border-blue-400/20 backdrop-blur-sm">
+                            <button type="submit" class="w-full px-6 py-3 bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 text-white font-semibold rounded-2xl transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-indigo-500/30 border border-indigo-400/20 backdrop-blur-sm">
                                 <div class="flex items-center justify-center">
                                     <div class="w-6 h-6 mr-3 bg-white/20 rounded-full flex items-center justify-center">
                                         <i data-feather="send" class="w-4 h-4"></i>
@@ -1564,7 +1592,7 @@
                     Rejoignez plus de 500,000 utilisateurs qui ont déjà transformé leur santé avec Medacte au Maroc.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <button class="px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-semibold rounded-2xl transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-blue-500/30 border border-blue-400/20 backdrop-blur-sm">
+                    <button class="px-6 py-3 bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 text-white font-semibold rounded-2xl transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-indigo-500/30 border border-indigo-400/20 backdrop-blur-sm">
                         <div class="flex items-center justify-center">
                             <div class="w-6 h-6 mr-3 bg-white/20 rounded-full flex items-center justify-center">
                                 <i data-feather="download" class="w-4 h-4"></i>
@@ -1572,7 +1600,7 @@
                             <span>Télécharger Maintenant</span>
                         </div>
                     </button>
-                    <button class="px-6 py-3 bg-gradient-to-r from-green-500 to-cyan-600 hover:from-green-600 hover:to-cyan-700 text-white font-semibold rounded-2xl transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-green-500/30 border border-green-400/20 backdrop-blur-sm">
+                    <button class="px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white font-semibold rounded-2xl transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-cyan-500/30 border border-cyan-400/20 backdrop-blur-sm">
                         <div class="flex items-center justify-center">
                             <div class="w-6 h-6 mr-3 bg-white/20 rounded-full flex items-center justify-center">
                                 <i data-feather="play-circle" class="w-4 h-4"></i>
@@ -1714,7 +1742,7 @@
             });
 
             // 3D Background with Three.js
-            init3DBackground();
+            initModernBackground();
 
             // Scroll animations
             initScrollAnimations();
@@ -1738,7 +1766,7 @@
         });
 
         // 3D Background initialization
-        function init3DBackground() {
+        function initModernBackground() {
             const scene = new THREE.Scene();
             const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
             const renderer = new THREE.WebGLRenderer({ alpha: true });
@@ -1746,7 +1774,7 @@
             renderer.setSize(window.innerWidth, window.innerHeight);
             renderer.setClearColor(0x000000, 0);
             
-            document.getElementById('bg3d').appendChild(renderer.domElement);
+            document.getElementById('bgModern').appendChild(renderer.domElement);
             
             // Create floating particles
             const particles = [];
@@ -1837,7 +1865,7 @@
                     <a href="#services" class="text-xl nav-link py-3">Services</a>
                     <a href="#innovation" class="text-xl nav-link py-3">Innovation</a>
                     <a href="#contact" class="text-xl nav-link py-3">Contact</a>
-                    <button class="mt-8 px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-semibold rounded-2xl transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-blue-500/30 border border-blue-400/20 backdrop-blur-sm">Télécharger</button>
+                    <button class="mt-8 px-6 py-3 bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 text-white font-semibold rounded-2xl transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-indigo-500/30 border border-indigo-400/20 backdrop-blur-sm">Télécharger</button>
                 </div>
             `;
             
@@ -1996,11 +2024,11 @@
                 // Update dots
                 dots.forEach((dot, index) => {
                     if (index === currentSlide) {
-                        dot.classList.remove('bg-gray-600');
-                        dot.classList.add('bg-blue-400');
+                        dot.classList.remove('bg-slate-400');
+                        dot.classList.add('bg-indigo-400');
                     } else {
-                        dot.classList.remove('bg-blue-400');
-                        dot.classList.add('bg-gray-600');
+                        dot.classList.remove('bg-indigo-400');
+                        dot.classList.add('bg-slate-400');
                     }
                 });
             }
