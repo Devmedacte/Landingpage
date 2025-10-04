@@ -36,12 +36,12 @@
     
     <style>
         :root {
-            --primary-gradient: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+            --primary-gradient: linear-gradient(135deg, #3b82f6 0%, #06b6d4 100%);
             --secondary-gradient: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);
             --accent-gradient: linear-gradient(135deg, #f59e0b 0%, #f97316 100%);
             --glass-bg: rgba(255, 255, 255, 0.1);
             --glass-border: rgba(255, 255, 255, 0.2);
-            --shadow-glow: 0 0 30px rgba(99, 102, 241, 0.3);
+            --shadow-glow: 0 0 30px rgba(59, 130, 246, 0.3);
             
             /* Dark mode colors - Modern Design */
             --bg-primary: #0f0f23;
@@ -50,16 +50,15 @@
             --text-secondary: rgba(248, 250, 252, 0.85);
             --text-muted: rgba(248, 250, 252, 0.65);
             --glass-bg-dark: rgba(255, 255, 255, 0.08);
-            --glass-border-dark: rgba(99, 102, 241, 0.2);
-            --hover-bg: rgba(99, 102, 241, 0.1);
+            --glass-border-dark: rgba(59, 130, 246, 0.2);
+            --hover-bg: rgba(59, 130, 246, 0.1);
             --nav-text: #f8fafc;
             --nav-hover: #f59e0b;
             --input-bg: rgba(255, 255, 255, 0.12);
-            --input-border: rgba(99, 102, 241, 0.3);
+            --input-border: rgba(59, 130, 246, 0.3);
             --input-text: #f8fafc;
             --input-placeholder: rgba(248, 250, 252, 0.6);
-            --accent-blue: #6366f1;
-            --accent-purple: #8b5cf6;
+            --accent-blue: #3b82f6;
             --accent-cyan: #06b6d4;
             --accent-orange: #f59e0b;
         }
@@ -72,18 +71,17 @@
             --text-secondary: rgba(30, 41, 59, 0.85);
             --text-muted: rgba(30, 41, 59, 0.65);
             --glass-bg-dark: rgba(255, 255, 255, 0.85);
-            --glass-border-dark: rgba(99, 102, 241, 0.2);
-            --hover-bg: rgba(99, 102, 241, 0.08);
+            --glass-border-dark: rgba(59, 130, 246, 0.2);
+            --hover-bg: rgba(59, 130, 246, 0.08);
             --glass-bg: rgba(255, 255, 255, 0.8);
-            --glass-border: rgba(99, 102, 241, 0.25);
+            --glass-border: rgba(59, 130, 246, 0.25);
             --nav-text: #1e293b;
             --nav-hover: #f59e0b;
             --input-bg: rgba(255, 255, 255, 0.9);
-            --input-border: rgba(99, 102, 241, 0.25);
+            --input-border: rgba(59, 130, 246, 0.25);
             --input-text: #1e293b;
             --input-placeholder: rgba(30, 41, 59, 0.6);
-            --accent-blue: #4f46e5;
-            --accent-purple: #7c3aed;
+            --accent-blue: #2563eb;
             --accent-cyan: #0891b2;
             --accent-orange: #d97706;
         }
@@ -113,9 +111,9 @@
             width: 100%;
             height: 100%;
             background-image: 
-                radial-gradient(circle at 25% 25%, rgba(99, 102, 241, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 75% 75%, rgba(139, 92, 246, 0.08) 0%, transparent 50%),
-                radial-gradient(circle at 50% 50%, rgba(6, 182, 212, 0.06) 0%, transparent 50%);
+                radial-gradient(circle at 25% 25%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, rgba(6, 182, 212, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.06) 0%, transparent 50%);
             background-size: 300px 300px, 400px 400px, 200px 200px;
             pointer-events: none;
             z-index: -1;
@@ -125,9 +123,9 @@
         /* Light mode background pattern */
         [data-theme="light"] body::before {
             background-image: 
-                radial-gradient(circle at 25% 25%, rgba(79, 70, 229, 0.08) 0%, transparent 50%),
-                radial-gradient(circle at 75% 75%, rgba(124, 58, 237, 0.06) 0%, transparent 50%),
-                radial-gradient(circle at 50% 50%, rgba(8, 145, 178, 0.04) 0%, transparent 50%);
+                radial-gradient(circle at 25% 25%, rgba(37, 99, 235, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, rgba(8, 145, 178, 0.06) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(37, 99, 235, 0.04) 0%, transparent 50%);
             opacity: 0.3;
         }
 
@@ -136,7 +134,7 @@
             position: fixed;
             width: 20px;
             height: 20px;
-            background: radial-gradient(circle, rgba(99, 102, 241, 0.8) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.8) 0%, transparent 70%);
             border-radius: 50%;
             pointer-events: none;
             z-index: 9999;
@@ -182,7 +180,7 @@
 
         .glass-card:hover {
             transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 20px 40px rgba(99, 102, 241, 0.3);
+            box-shadow: 0 20px 40px rgba(59, 130, 246, 0.3);
             border-color: rgba(6, 182, 212, 0.4);
         }
 
@@ -211,11 +209,11 @@
 
         @keyframes pulseGlow {
             0%, 100% { 
-                box-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
+                box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
                 transform: scale(1);
             }
             50% { 
-                box-shadow: 0 0 40px rgba(99, 102, 241, 0.6);
+                box-shadow: 0 0 40px rgba(59, 130, 246, 0.6);
                 transform: scale(1.05);
             }
         }
@@ -267,7 +265,7 @@
 
         /* Interactive Buttons */
         .btn-primary {
-            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+            background: linear-gradient(135deg, #3b82f6 0%, #06b6d4 100%);
             border: none;
             padding: 15px 30px;
             border-radius: 50px;
@@ -296,7 +294,7 @@
 
         .btn-primary:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.4);
+            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.4);
         }
 
         /* Navigation */
@@ -368,7 +366,7 @@
 
         /* Modern Button Classes */
         .btn-modern-primary {
-            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+            background: linear-gradient(135deg, #3b82f6 0%, #06b6d4 100%);
             border: none;
             color: white;
             font-weight: 600;
@@ -385,7 +383,7 @@
 
         .btn-modern-primary:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.4);
+            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.4);
         }
 
         .btn-modern-secondary:hover {
@@ -412,7 +410,7 @@
 
         .mode-switcher:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.3);
+            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
         }
 
         .mode-btn {
@@ -431,7 +429,7 @@
         .mode-btn.active {
             background: var(--primary-gradient);
             color: white;
-            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
         }
 
         .mode-btn:hover:not(.active) {
@@ -455,30 +453,30 @@
             width: 100%;
             height: 100%;
             background: 
-                linear-gradient(135deg, rgba(99, 102, 241, 0.08) 0%, transparent 50%),
-                linear-gradient(45deg, rgba(139, 92, 246, 0.06) 0%, transparent 50%),
-                linear-gradient(225deg, rgba(6, 182, 212, 0.04) 0%, transparent 50%);
+                linear-gradient(135deg, rgba(59, 130, 246, 0.08) 0%, transparent 50%),
+                linear-gradient(45deg, rgba(6, 182, 212, 0.06) 0%, transparent 50%),
+                linear-gradient(225deg, rgba(59, 130, 246, 0.04) 0%, transparent 50%);
         }
 
         /* Light mode hero background */
         [data-theme="light"] .hero-bg {
             background: 
-                linear-gradient(135deg, rgba(79, 70, 229, 0.06) 0%, transparent 50%),
-                linear-gradient(45deg, rgba(124, 58, 237, 0.04) 0%, transparent 50%),
-                linear-gradient(225deg, rgba(8, 145, 178, 0.03) 0%, transparent 50%);
+                linear-gradient(135deg, rgba(37, 99, 235, 0.06) 0%, transparent 50%),
+                linear-gradient(45deg, rgba(8, 145, 178, 0.04) 0%, transparent 50%),
+                linear-gradient(225deg, rgba(37, 99, 235, 0.03) 0%, transparent 50%);
         }
 
         /* Modern Geometric Shapes */
         .particle {
             position: absolute;
-            background: rgba(99, 102, 241, 0.6);
+            background: rgba(59, 130, 246, 0.6);
             border-radius: 50%;
             pointer-events: none;
         }
 
         /* Light mode particles */
         [data-theme="light"] .particle {
-            background: rgba(79, 70, 229, 0.4);
+            background: rgba(37, 99, 235, 0.4);
         }
 
         /* Responsive Design */
@@ -728,7 +726,7 @@
                     <a href="#services" class="nav-link">Services</a>
                     <a href="#innovation" class="nav-link">Innovation</a>
                     <a href="#contact" class="nav-link">Contact</a>
-                    <button class="px-4 py-2 bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 text-white font-semibold rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-indigo-500/25 border border-indigo-400/20 backdrop-blur-sm">Télécharger</button>
+                    <button class="px-4 py-2 bg-gradient-to-r from-blue-500 to-cyan-600 hover:from-blue-600 hover:to-cyan-700 text-white font-semibold rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/25 border border-blue-400/20 backdrop-blur-sm">Télécharger</button>
                 </div>
 
                 <button class="md:hidden nav-link" id="mobileMenuBtn">
@@ -754,7 +752,7 @@
                         Votre santé n'a jamais été aussi intelligente.
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4">
-                        <button class="px-6 py-3 bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 text-white font-semibold rounded-2xl transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-indigo-500/30 border border-indigo-400/20 backdrop-blur-sm">
+                        <button class="px-6 py-3 bg-gradient-to-r from-blue-500 to-cyan-600 hover:from-blue-600 hover:to-cyan-700 text-white font-semibold rounded-2xl transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-blue-500/30 border border-blue-400/20 backdrop-blur-sm">
                             <div class="flex items-center justify-center">
                                 <div class="w-6 h-6 mr-3 bg-white/20 rounded-full flex items-center justify-center">
                                     <i data-feather="play-circle" class="w-4 h-4"></i>
@@ -818,9 +816,9 @@
                             Diagnostic assisté par IA, prédiction des maladies et recommandations personnalisées en temps réel.
                         </p>
                         <div class="flex justify-center space-x-2">
-                            <div class="w-2 h-2 bg-indigo-400 rounded-full pulse-glow"></div>
-                            <div class="w-2 h-2 bg-indigo-400 rounded-full pulse-glow" style="animation-delay: 0.2s"></div>
-                            <div class="w-2 h-2 bg-indigo-400 rounded-full pulse-glow" style="animation-delay: 0.4s"></div>
+                            <div class="w-2 h-2 bg-blue-400 rounded-full pulse-glow"></div>
+                            <div class="w-2 h-2 bg-blue-400 rounded-full pulse-glow" style="animation-delay: 0.2s"></div>
+                            <div class="w-2 h-2 bg-blue-400 rounded-full pulse-glow" style="animation-delay: 0.4s"></div>
                         </div>
                     </div>
                 </div>
@@ -847,16 +845,16 @@
                 <div class="glass-card p-8 scale-in">
                     <div class="text-center">
                         <div class="glass-card p-6 w-20 h-20 mx-auto mb-6 flex items-center justify-center">
-                            <i data-feather="eye" class="w-10 h-10 text-purple-400"></i>
+                            <i data-feather="eye" class="w-10 h-10 text-blue-400"></i>
                         </div>
                         <h3 class="text-2xl font-bold mb-4 gradient-text">Réalité Augmentée</h3>
                         <p class="text-secondary mb-6">
                             Visualisez vos organes en 3D, suivez vos traitements et consultez vos médecins en réalité augmentée.
                         </p>
                         <div class="flex justify-center space-x-2">
-                            <div class="w-2 h-2 bg-purple-400 rounded-full pulse-glow"></div>
-                            <div class="w-2 h-2 bg-purple-400 rounded-full pulse-glow" style="animation-delay: 0.2s"></div>
-                            <div class="w-2 h-2 bg-purple-400 rounded-full pulse-glow" style="animation-delay: 0.4s"></div>
+                            <div class="w-2 h-2 bg-blue-400 rounded-full pulse-glow"></div>
+                            <div class="w-2 h-2 bg-blue-400 rounded-full pulse-glow" style="animation-delay: 0.2s"></div>
+                            <div class="w-2 h-2 bg-blue-400 rounded-full pulse-glow" style="animation-delay: 0.4s"></div>
                         </div>
                     </div>
                 </div>
@@ -901,7 +899,7 @@
 
                         <div class="glass-card p-6 flex items-start space-x-4">
                             <div class="glass-card p-3 w-12 h-12 flex items-center justify-center">
-                                <i data-feather="truck" class="w-6 h-6 text-purple-400"></i>
+                                <i data-feather="truck" class="w-6 h-6 text-blue-400"></i>
                             </div>
                             <div>
                                 <h3 class="text-xl font-bold mb-2 gradient-text">Livraison Drone</h3>
@@ -1197,7 +1195,7 @@
 
                 <!-- Dots Indicator -->
                 <div class="flex justify-center mt-8 space-x-2" id="dotsContainer">
-                    <div class="w-3 h-3 bg-indigo-400 rounded-full cursor-pointer transition-all" data-slide="0"></div>
+                    <div class="w-3 h-3 bg-blue-400 rounded-full cursor-pointer transition-all" data-slide="0"></div>
                     <div class="w-3 h-3 bg-secondary rounded-full cursor-pointer transition-all" data-slide="1"></div>
                     <div class="w-3 h-3 bg-secondary rounded-full cursor-pointer transition-all" data-slide="2"></div>
                     <div class="w-3 h-3 bg-secondary rounded-full cursor-pointer transition-all" data-slide="3"></div>
@@ -1212,7 +1210,7 @@
                     <h3 class="text-2xl font-bold gradient-text mb-4">Prêt à Révolutionner Votre Santé ?</h3>
                     <p class="text-secondary mb-6">Téléchargez Medacte gratuitement et découvrez tous ces avantages</p>
                     <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                        <button class="px-6 py-3 bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 text-white font-semibold rounded-2xl transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-indigo-500/30 border border-indigo-400/20 backdrop-blur-sm">
+                        <button class="px-6 py-3 bg-gradient-to-r from-blue-500 to-cyan-600 hover:from-blue-600 hover:to-cyan-700 text-white font-semibold rounded-2xl transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-blue-500/30 border border-blue-400/20 backdrop-blur-sm">
                             <div class="flex items-center justify-center">
                                 <div class="w-6 h-6 mr-3 bg-white/20 rounded-full flex items-center justify-center">
                                     <i data-feather="download" class="w-4 h-4"></i>
@@ -1370,7 +1368,7 @@
                         <p class="text-secondary mb-6">
                             Accédez à vos consultations, dossiers médicaux et services de santé digitaux.
                         </p>
-                        <button class="mx-auto px-6 py-3 bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 text-white font-semibold rounded-2xl transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-indigo-500/30 border border-indigo-400/20 backdrop-blur-sm">
+                        <button class="mx-auto px-6 py-3 bg-gradient-to-r from-blue-500 to-cyan-600 hover:from-blue-600 hover:to-cyan-700 text-white font-semibold rounded-2xl transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-blue-500/30 border border-blue-400/20 backdrop-blur-sm">
                             <div class="flex items-center justify-center">
                                 <div class="w-6 h-6 mr-3 bg-white/20 rounded-full flex items-center justify-center">
                                     <i data-feather="user" class="w-4 h-4"></i>
@@ -1442,9 +1440,9 @@
                     <p class="text-secondary">Gendarmerie</p>
                 </a>
 
-                <a href="tel:0801004747" class="glass-card p-6 text-center hover:bg-purple-500 hover:bg-opacity-20 transition-all scale-in">
+                <a href="tel:0801004747" class="glass-card p-6 text-center hover:bg-blue-500 hover:bg-opacity-20 transition-all scale-in">
                     <div class="glass-card p-4 w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                        <i data-feather="heart" class="w-8 h-8 text-purple-400"></i>
+                        <i data-feather="heart" class="w-8 h-8 text-blue-400"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-2">SAMU</h3>
                     <p class="text-secondary">080 100 47 47</p>
@@ -1468,7 +1466,7 @@
                     <input type="email" 
                            placeholder="Votre adresse email" 
                            class="flex-1 px-6 py-4 theme-input rounded-full">
-                    <button type="submit" class="px-6 py-3 bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 text-white font-semibold rounded-2xl transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-indigo-500/30 border border-indigo-400/20 backdrop-blur-sm">
+                    <button type="submit" class="px-6 py-3 bg-gradient-to-r from-blue-500 to-cyan-600 hover:from-blue-600 hover:to-cyan-700 text-white font-semibold rounded-2xl transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-blue-500/30 border border-blue-400/20 backdrop-blur-sm">
                         <div class="flex items-center justify-center">
                             <div class="w-6 h-6 mr-3 bg-white/20 rounded-full flex items-center justify-center">
                                 <i data-feather="send" class="w-4 h-4"></i>
@@ -1566,7 +1564,7 @@
                                       rows="4" 
                                       class="w-full px-4 py-3 theme-input rounded-lg"></textarea>
                             
-                            <button type="submit" class="w-full px-6 py-3 bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 text-white font-semibold rounded-2xl transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-indigo-500/30 border border-indigo-400/20 backdrop-blur-sm">
+                            <button type="submit" class="w-full px-6 py-3 bg-gradient-to-r from-blue-500 to-cyan-600 hover:from-blue-600 hover:to-cyan-700 text-white font-semibold rounded-2xl transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-blue-500/30 border border-blue-400/20 backdrop-blur-sm">
                                 <div class="flex items-center justify-center">
                                     <div class="w-6 h-6 mr-3 bg-white/20 rounded-full flex items-center justify-center">
                                         <i data-feather="send" class="w-4 h-4"></i>
@@ -1592,7 +1590,7 @@
                     Rejoignez plus de 500,000 utilisateurs qui ont déjà transformé leur santé avec Medacte au Maroc.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <button class="px-6 py-3 bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 text-white font-semibold rounded-2xl transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-indigo-500/30 border border-indigo-400/20 backdrop-blur-sm">
+                    <button class="px-6 py-3 bg-gradient-to-r from-blue-500 to-cyan-600 hover:from-blue-600 hover:to-cyan-700 text-white font-semibold rounded-2xl transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-blue-500/30 border border-blue-400/20 backdrop-blur-sm">
                         <div class="flex items-center justify-center">
                             <div class="w-6 h-6 mr-3 bg-white/20 rounded-full flex items-center justify-center">
                                 <i data-feather="download" class="w-4 h-4"></i>
@@ -1865,7 +1863,7 @@
                     <a href="#services" class="text-xl nav-link py-3">Services</a>
                     <a href="#innovation" class="text-xl nav-link py-3">Innovation</a>
                     <a href="#contact" class="text-xl nav-link py-3">Contact</a>
-                    <button class="mt-8 px-6 py-3 bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 text-white font-semibold rounded-2xl transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-indigo-500/30 border border-indigo-400/20 backdrop-blur-sm">Télécharger</button>
+                    <button class="mt-8 px-6 py-3 bg-gradient-to-r from-blue-500 to-cyan-600 hover:from-blue-600 hover:to-cyan-700 text-white font-semibold rounded-2xl transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-blue-500/30 border border-blue-400/20 backdrop-blur-sm">Télécharger</button>
                 </div>
             `;
             
@@ -2025,9 +2023,9 @@
                 dots.forEach((dot, index) => {
                     if (index === currentSlide) {
                         dot.classList.remove('bg-slate-400');
-                        dot.classList.add('bg-indigo-400');
+                        dot.classList.add('bg-blue-400');
                     } else {
-                        dot.classList.remove('bg-indigo-400');
+                        dot.classList.remove('bg-blue-400');
                         dot.classList.add('bg-slate-400');
                     }
                 });
