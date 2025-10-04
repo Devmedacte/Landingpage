@@ -31,8 +31,6 @@
     <!-- External Resources -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/feather-icons"></script>
-    <script src="https://unpkg.com/three@0.158.0/build/three.min.js"></script>
-    <script src="https://unpkg.com/@tweenjs/tween.js@20.0.3/dist/tween.umd.js"></script>
     
     <style>
         :root {
@@ -151,16 +149,6 @@
             z-index: 9998;
         }
 
-        /* Modern Background Container */
-        .bg-modern {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            background: var(--bg-primary);
-        }
 
         /* Glassmorphism Elements */
         .glass {
@@ -466,18 +454,6 @@
                 linear-gradient(225deg, rgba(37, 99, 235, 0.03) 0%, transparent 50%);
         }
 
-        /* Modern Geometric Shapes */
-        .particle {
-            position: absolute;
-            background: rgba(59, 130, 246, 0.6);
-            border-radius: 50%;
-            pointer-events: none;
-        }
-
-        /* Light mode particles */
-        [data-theme="light"] .particle {
-            background: rgba(37, 99, 235, 0.4);
-        }
 
         /* Responsive Design */
         @media (max-width: 768px) {
@@ -710,8 +686,6 @@
     <!-- Custom Cursor -->
     <div class="cursor" id="cursor"></div>
 
-    <!-- Modern Background -->
-    <div class="bg-modern" id="bgModern"></div>
 
     <!-- Navigation -->
     <nav class="nav-glass fade-in">
@@ -1740,7 +1714,7 @@
             });
 
             // 3D Background with Three.js
-            initModernBackground();
+            initSimpleBackground();
 
             // Scroll animations
             initScrollAnimations();
@@ -1763,62 +1737,62 @@
             });
         });
 
-        // 3D Background initialization
-        function initModernBackground() {
-            const scene = new THREE.Scene();
-            const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-            const renderer = new THREE.WebGLRenderer({ alpha: true });
+        // Simple Background initialization
+        function initSimpleBackground() {
+            // Add simple floating elements
+            const bgElement = document.createElement('div');
+            bgElement.className = 'simple-bg';
+            bgElement.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: -1;
+                pointer-events: none;
+                overflow: hidden;
+            `;
             
-            renderer.setSize(window.innerWidth, window.innerHeight);
-            renderer.setClearColor(0x000000, 0);
-            
-            document.getElementById('bgModern').appendChild(renderer.domElement);
-            
-            // Create floating particles
-            const particles = [];
-            const particleCount = 100;
-            
-            for (let i = 0; i < particleCount; i++) {
-                const geometry = new THREE.SphereGeometry(0.1, 8, 8);
-                const isLightMode = document.documentElement.getAttribute('data-theme') === 'light';
-                const material = new THREE.MeshBasicMaterial({ 
-                    color: new THREE.Color().setHSL(Math.random() * 0.2 + 0.5, 0.7, isLightMode ? 0.6 : 0.7),
-                    transparent: true,
-                    opacity: isLightMode ? 0.4 : 0.6
-                });
-                
-                const particle = new THREE.Mesh(geometry, material);
-                particle.position.x = (Math.random() - 0.5) * 20;
-                particle.position.y = (Math.random() - 0.5) * 20;
-                particle.position.z = (Math.random() - 0.5) * 20;
-                
-                particles.push(particle);
-                scene.add(particle);
+            // Create simple floating circles
+            for (let i = 0; i < 15; i++) {
+                const circle = document.createElement('div');
+                circle.style.cssText = `
+                    position: absolute;
+                    width: ${Math.random() * 80 + 40}px;
+                    height: ${Math.random() * 80 + 40}px;
+                    background: radial-gradient(circle, rgba(59, 130, 246, 0.08) 0%, transparent 70%);
+                    border-radius: 50%;
+                    left: ${Math.random() * 100}%;
+                    top: ${Math.random() * 100}%;
+                    animation: floatSimple ${Math.random() * 15 + 10}s linear infinite;
+                    animation-delay: ${Math.random() * 5}s;
+                `;
+                bgElement.appendChild(circle);
             }
             
-            camera.position.z = 5;
+            document.body.appendChild(bgElement);
             
-            // Animation loop
-            function animate() {
-                requestAnimationFrame(animate);
-                
-                particles.forEach((particle, index) => {
-                    particle.rotation.x += 0.01;
-                    particle.rotation.y += 0.01;
-                    particle.position.y += Math.sin(Date.now() * 0.001 + index) * 0.001;
-                });
-                
-                renderer.render(scene, camera);
-            }
-            
-            animate();
-            
-            // Handle window resize
-            window.addEventListener('resize', () => {
-                camera.aspect = window.innerWidth / window.innerHeight;
-                camera.updateProjectionMatrix();
-                renderer.setSize(window.innerWidth, window.innerHeight);
-            });
+            // Add CSS animation
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes floatSimple {
+                    0% {
+                        transform: translateY(100vh) translateX(0px) rotate(0deg);
+                        opacity: 0;
+                    }
+                    10% {
+                        opacity: 0.2;
+                    }
+                    90% {
+                        opacity: 0.2;
+                    }
+                    100% {
+                        transform: translateY(-100px) translateX(50px) rotate(180deg);
+                        opacity: 0;
+                    }
+                }
+            `;
+            document.head.appendChild(style);
         }
 
         // Scroll animations
