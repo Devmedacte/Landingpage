@@ -973,13 +973,6 @@
                     </div>
                 </div>
 
-                <!-- Navigation Arrows -->
-                <button class="absolute left-4 top-1/2 transform -translate-y-1/2 glass-card p-3 hover:bg-white hover:bg-opacity-10 transition-all" id="prevBtn">
-                    <i data-feather="chevron-left" class="w-6 h-6"></i>
-                </button>
-                <button class="absolute right-4 top-1/2 transform -translate-y-1/2 glass-card p-3 hover:bg-white hover:bg-opacity-10 transition-all" id="nextBtn">
-                    <i data-feather="chevron-right" class="w-6 h-6"></i>
-                </button>
 
                 <!-- Dots Indicator -->
                 <div class="flex justify-center mt-8 space-x-2" id="dotsContainer">
@@ -1740,17 +1733,18 @@
             });
         }
 
-        // Benefits Slider
+        // Benefits Slider - Infinite Auto-Play
         function initBenefitsSlider() {
             const slider = document.getElementById('benefitsSlider');
-            const prevBtn = document.getElementById('prevBtn');
-            const nextBtn = document.getElementById('nextBtn');
             const dots = document.querySelectorAll('#dotsContainer div');
             
             let currentSlide = 0;
             const totalSlides = 6;
+            let isTransitioning = false;
             
             function updateSlider() {
+                if (isTransitioning) return;
+                
                 const slideWidth = window.innerWidth >= 1024 ? 33.333 : window.innerWidth >= 768 ? 50 : 100;
                 const translateX = -currentSlide * slideWidth;
                 slider.style.transform = `translateX(${translateX}%)`;
@@ -1768,29 +1762,29 @@
             }
             
             function nextSlide() {
+                if (isTransitioning) return;
+                
+                isTransitioning = true;
                 currentSlide = (currentSlide + 1) % totalSlides;
                 updateSlider();
+                
+                // Reset transition lock after animation
+                setTimeout(() => {
+                    isTransitioning = false;
+                }, 500);
             }
             
-            function prevSlide() {
-                currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-                updateSlider();
-            }
-            
-            // Event listeners
-            nextBtn.addEventListener('click', nextSlide);
-            prevBtn.addEventListener('click', prevSlide);
-            
-            // Dot navigation
+            // Dot navigation (optional - can be removed if not needed)
             dots.forEach((dot, index) => {
                 dot.addEventListener('click', () => {
+                    if (isTransitioning) return;
                     currentSlide = index;
                     updateSlider();
                 });
             });
             
-            // Auto-play slider
-            setInterval(nextSlide, 5000);
+            // Continuous auto-play - never stops
+            setInterval(nextSlide, 3000); // Faster auto-play (3 seconds)
             
             // Handle window resize
             window.addEventListener('resize', updateSlider);
