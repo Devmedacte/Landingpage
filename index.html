@@ -2,13 +2,12 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- Primary Meta Tags -->
-    <title>Medacte - Santé Digitale au Maroc | Plateforme Médicale Complète</title>
-    <meta name="title" content="Medacte - Santé Digitale au Maroc | Plateforme Médicale Complète">
-    <meta name="description" content="Révolutionnez votre santé au Maroc avec Medacte. Téléconsultation, ordonnances numériques, livraison de médicaments et dossier médical sécurisé. Gratuit et accessible à tous.">
-    <meta name="keywords" content="santé digitale, téléconsultation, ordonnances numériques, livraison médicaments, dossier médical, Maroc, médecine, pharmacie">
+    <title>Medacte - Révolution Digitale de la Santé au Maroc</title>
+    <meta name="description" content="Découvrez l'avenir de la santé digitale au Maroc avec Medacte. Téléconsultation, IA médicale, réalité augmentée et blockchain pour une santé révolutionnaire.">
+    <meta name="keywords" content="santé digitale, IA médicale, téléconsultation, blockchain santé, réalité augmentée, Maroc, innovation médicale">
     <meta name="author" content="Medacte">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://medacte.com">
@@ -16,928 +15,865 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://medacte.com">
-    <meta property="og:title" content="Medacte - Santé Digitale au Maroc">
-    <meta property="og:description" content="Votre santé dans votre poche. Gratuit, sécurisé et accessible à tous au Maroc.">
+    <meta property="og:title" content="Medacte - Révolution Digitale de la Santé">
+    <meta property="og:description" content="L'avenir de la santé est ici. IA, blockchain et réalité augmentée pour révolutionner les soins au Maroc.">
     <meta property="og:image" content="https://pub-9f200de23f1a4fada809186205ec0a61.r2.dev/app.svg">
-    <meta property="og:site_name" content="Medacte">
-    <meta property="og:locale" content="fr_FR">
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://medacte.com">
-    <meta property="twitter:title" content="Medacte - Santé Digitale au Maroc">
-    <meta property="twitter:description" content="Votre santé dans votre poche. Gratuit, sécurisé et accessible à tous au Maroc.">
+    <meta property="twitter:title" content="Medacte - Révolution Digitale de la Santé">
+    <meta property="twitter:description" content="L'avenir de la santé est ici. IA, blockchain et réalité augmentée pour révolutionner les soins au Maroc.">
     <meta property="twitter:image" content="https://pub-9f200de23f1a4fada809186205ec0a61.r2.dev/app.svg">
     
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="https://pub-9f200de23f1a4fada809186205ec0a61.r2.dev/logo.svg">
-    <link rel="apple-touch-icon" href="https://pub-9f200de23f1a4fada809186205ec0a61.r2.dev/logo.svg">
-    
-    <!-- Preload critical resources -->
-    <link rel="preload" href="https://cdn.tailwindcss.com" as="script">
-    <link rel="preload" href="https://unpkg.com/feather-icons" as="script">
-    <link rel="preload" href="https://pub-9f200de23f1a4fada809186205ec0a61.r2.dev/logo.svg" as="image">
     
     <!-- External Resources -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/feather-icons"></script>
-    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-<style>
-        .hero-gradient {
-            background: linear-gradient(135deg, #4f46e5 0%, #06b6d4 100%);
+    <script src="https://unpkg.com/three@0.158.0/build/three.min.js"></script>
+    <script src="https://unpkg.com/@tweenjs/tween.js@20.0.3/dist/tween.umd.js"></script>
+    
+    <style>
+        :root {
+            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --accent-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            --glass-bg: rgba(255, 255, 255, 0.1);
+            --glass-border: rgba(255, 255, 255, 0.2);
+            --shadow-glow: 0 0 30px rgba(102, 126, 234, 0.3);
         }
-        .feature-card {
-            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-        .feature-card:hover {
-            transform: translateY(-8px) scale(1.02);
-            box-shadow: 0 14px 28px rgba(0,0,0,0.12), 0 10px 10px rgba(0,0,0,0.08);
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #0a0a0a;
+            color: white;
+            overflow-x: hidden;
+            cursor: none;
         }
-        .testimonial-card {
-            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+
+        /* Custom Cursor */
+        .cursor {
+            position: fixed;
+            width: 20px;
+            height: 20px;
+            background: radial-gradient(circle, rgba(102, 126, 234, 0.8) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            transition: transform 0.1s ease;
         }
-        .testimonial-card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 14px 28px rgba(0,0,0,0.12), 0 10px 10px rgba(0,0,0,0.08);
+
+        .cursor-trail {
+            position: fixed;
+            width: 6px;
+            height: 6px;
+            background: rgba(102, 126, 234, 0.6);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9998;
         }
-        
-        /* Mobile optimizations */
-        @media (max-width: 640px) {
-            .hero-gradient {
-                background: linear-gradient(135deg, #4f46e5 0%, #06b6d4 80%);
+
+        /* 3D Background Container */
+        .bg-3d {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        /* Glassmorphism Elements */
+        .glass {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .glass-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.2);
+            border-color: rgba(102, 126, 234, 0.3);
+        }
+
+        /* Animated Gradient Text */
+        .gradient-text {
+            background: linear-gradient(45deg, #667eea, #764ba2, #f093fb, #f5576c);
+            background-size: 400% 400%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradientShift 4s ease-in-out infinite;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        /* Floating Animation */
+        .float {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        /* Pulse Glow */
+        .pulse-glow {
+            animation: pulseGlow 2s ease-in-out infinite;
+        }
+
+        @keyframes pulseGlow {
+            0%, 100% { 
+                box-shadow: 0 0 20px rgba(102, 126, 234, 0.3);
+                transform: scale(1);
             }
-            .feature-card {
-                margin-bottom: 1rem;
-            }
-            .quick-action-btn {
-                padding: 1rem 0.5rem;
+            50% { 
+                box-shadow: 0 0 40px rgba(102, 126, 234, 0.6);
+                transform: scale(1.05);
             }
         }
-        
-        /* Smooth animations */
-        [data-aos] {
+
+        /* Scroll Animations */
+        .fade-in {
             opacity: 0;
-            transition-property: opacity, transform;
+            transform: translateY(50px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        
-        [data-aos].aos-animate {
+
+        .fade-in.visible {
             opacity: 1;
-        }
-        
-        [data-aos="fade-up"] {
-            transform: translateY(20px);
-        }
-        
-        [data-aos="fade-up"].aos-animate {
             transform: translateY(0);
         }
-        
-        [data-aos="fade-right"] {
-            transform: translateX(-20px);
+
+        .slide-in-left {
+            opacity: 0;
+            transform: translateX(-100px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        
-        [data-aos="fade-right"].aos-animate {
+
+        .slide-in-left.visible {
+            opacity: 1;
             transform: translateX(0);
         }
-        
-        [data-aos="fade-left"] {
-            transform: translateX(20px);
+
+        .slide-in-right {
+            opacity: 0;
+            transform: translateX(100px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        
-        [data-aos="fade-left"].aos-animate {
+
+        .slide-in-right.visible {
+            opacity: 1;
             transform: translateX(0);
         }
-        
-        [data-aos="zoom-in"] {
-            transform: scale(0.9);
+
+        .scale-in {
+            opacity: 0;
+            transform: scale(0.8);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        
-        [data-aos="zoom-in"].aos-animate {
+
+        .scale-in.visible {
+            opacity: 1;
             transform: scale(1);
+        }
+
+        /* Interactive Buttons */
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .btn-primary:hover::before {
+            left: 100%;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        }
+
+        /* Navigation */
+        .nav-glass {
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Hero Section */
+        .hero-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 20% 50%, rgba(102, 126, 234, 0.3) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(118, 75, 162, 0.3) 0%, transparent 50%),
+                        radial-gradient(circle at 40% 80%, rgba(240, 147, 251, 0.3) 0%, transparent 50%);
+        }
+
+        /* Particle System */
+        .particle {
+            position: absolute;
+            background: rgba(102, 126, 234, 0.6);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-section {
+                padding: 20px;
+            }
+            
+            .glass-card {
+                margin: 10px;
+            }
+            
+            .cursor {
+                display: none;
+            }
+        }
+
+        /* Loading Animation */
+        .loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #0a0a0a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
+            transition: opacity 0.5s ease;
+        }
+
+        .loading-logo {
+            width: 100px;
+            height: 100px;
+            border: 3px solid rgba(102, 126, 234, 0.3);
+            border-top: 3px solid #667eea;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
     </style>
 </head>
-<body class="font-sans antialiased text-gray-800">
-    <!-- Skip to main content for accessibility -->
-    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-0 bg-blue-600 text-white p-2 z-50">Aller au contenu principal</a>
-    
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-logo"></div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor" id="cursor"></div>
+
+    <!-- 3D Background -->
+    <div class="bg-3d" id="bg3d"></div>
+
     <!-- Navigation -->
-    <nav class="bg-white shadow-md sticky top-0 z-50" role="navigation" aria-label="Navigation principale">
-        <div class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16 items-center">
-                <div class="flex items-center flex-shrink-0">
-                    <img src="https://pub-9f200de23f1a4fada809186205ec0a61.r2.dev/logo.svg" alt="Medacte" class="h-12">
+    <nav class="nav-glass fixed top-0 left-0 right-0 z-50 fade-in">
+        <div class="max-w-7xl mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-3">
+                    <img src="https://pub-9f200de23f1a4fada809186205ec0a61.r2.dev/logo.svg" alt="Medacte" class="h-10 w-10">
+                    <span class="text-2xl font-bold gradient-text">Medacte</span>
                 </div>
-                <div class="hidden md:flex items-center space-x-6" role="menubar">
-                    <a href="#accueil" class="text-blue-600 font-medium px-3 py-2 rounded-md text-sm" role="menuitem" aria-current="page">Accueil</a>
-                    <a href="#services" class="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm" role="menuitem">Services</a>
-                    <a href="#urgences" class="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm" role="menuitem">Urgences</a>
-                    <a href="#faq" class="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm" role="menuitem">FAQ</a>
-                    <a href="#download" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition text-sm" role="menuitem">Télécharger</a>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#accueil" class="text-white hover:text-blue-300 transition-colors">Accueil</a>
+                    <a href="#services" class="text-white hover:text-blue-300 transition-colors">Services</a>
+                    <a href="#innovation" class="text-white hover:text-blue-300 transition-colors">Innovation</a>
+                    <a href="#contact" class="text-white hover:text-blue-300 transition-colors">Contact</a>
+                    <button class="btn-primary">Télécharger</button>
                 </div>
-                <div class="md:hidden flex items-center">
-                    <button id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-600 hover:text-blue-600 focus:outline-none" aria-label="Ouvrir le menu de navigation" aria-expanded="false" aria-controls="mobile-menu">
-                        <i data-feather="menu" class="block h-6 w-6" aria-hidden="true"></i>
-                        <i data-feather="x" class="hidden h-6 w-6" aria-hidden="true"></i>
+
+                <button class="md:hidden text-white" id="mobileMenuBtn">
+                    <i data-feather="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="accueil" class="hero-section">
+        <div class="hero-bg"></div>
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="fade-in">
+                    <h1 class="text-5xl lg:text-7xl font-bold mb-6 leading-tight">
+                        <span class="gradient-text">L'Avenir</span><br>
+                        de la Santé<br>
+                        <span class="text-white">Digitale</span>
+                    </h1>
+                    <p class="text-xl text-gray-300 mb-8 leading-relaxed">
+                        Découvrez une révolution médicale au Maroc avec l'IA, la blockchain et la réalité augmentée. 
+                        Votre santé n'a jamais été aussi intelligente.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <button class="btn-primary pulse-glow">
+                            <i data-feather="play-circle" class="w-5 h-5 mr-2"></i>
+                            Découvrir la Révolution
+                        </button>
+                        <button class="glass-card px-8 py-4 text-white hover:bg-white hover:bg-opacity-10">
+                            <i data-feather="download" class="w-5 h-5 mr-2"></i>
+                            Télécharger l'App
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="slide-in-right">
+                    <div class="relative">
+                        <div class="glass-card p-8 float">
+                            <img src="https://pub-9f200de23f1a4fada809186205ec0a61.r2.dev/app.svg" 
+                                 alt="Interface Medacte" 
+                                 class="w-full h-auto rounded-2xl">
+                        </div>
+                        
+                        <!-- Floating Elements -->
+                        <div class="absolute -top-4 -right-4 glass-card p-4 pulse-glow">
+                            <i data-feather="zap" class="w-8 h-8 text-yellow-400"></i>
+                        </div>
+                        <div class="absolute -bottom-4 -left-4 glass-card p-4 pulse-glow">
+                            <i data-feather="shield" class="w-8 h-8 text-green-400"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Innovation Section -->
+    <section id="innovation" class="py-20 relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl lg:text-6xl font-bold mb-6">
+                    <span class="gradient-text">Technologies</span> Révolutionnaires
+                </h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    Nous intégrons les technologies les plus avancées pour créer l'écosystème de santé le plus intelligent du Maroc.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- AI Card -->
+                <div class="glass-card p-8 scale-in">
+                    <div class="text-center">
+                        <div class="glass-card p-6 w-20 h-20 mx-auto mb-6 flex items-center justify-center">
+                            <i data-feather="cpu" class="w-10 h-10 text-blue-400"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 gradient-text">Intelligence Artificielle</h3>
+                        <p class="text-gray-300 mb-6">
+                            Diagnostic assisté par IA, prédiction des maladies et recommandations personnalisées en temps réel.
+                        </p>
+                        <div class="flex justify-center space-x-2">
+                            <div class="w-2 h-2 bg-blue-400 rounded-full pulse-glow"></div>
+                            <div class="w-2 h-2 bg-blue-400 rounded-full pulse-glow" style="animation-delay: 0.2s"></div>
+                            <div class="w-2 h-2 bg-blue-400 rounded-full pulse-glow" style="animation-delay: 0.4s"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blockchain Card -->
+                <div class="glass-card p-8 scale-in">
+                    <div class="text-center">
+                        <div class="glass-card p-6 w-20 h-20 mx-auto mb-6 flex items-center justify-center">
+                            <i data-feather="shield" class="w-10 h-10 text-green-400"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 gradient-text">Blockchain Sécurisée</h3>
+                        <p class="text-gray-300 mb-6">
+                            Vos données médicales sont protégées par une blockchain inviolable et cryptographiquement sécurisée.
+                        </p>
+                        <div class="flex justify-center space-x-2">
+                            <div class="w-2 h-2 bg-green-400 rounded-full pulse-glow"></div>
+                            <div class="w-2 h-2 bg-green-400 rounded-full pulse-glow" style="animation-delay: 0.2s"></div>
+                            <div class="w-2 h-2 bg-green-400 rounded-full pulse-glow" style="animation-delay: 0.4s"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AR Card -->
+                <div class="glass-card p-8 scale-in">
+                    <div class="text-center">
+                        <div class="glass-card p-6 w-20 h-20 mx-auto mb-6 flex items-center justify-center">
+                            <i data-feather="eye" class="w-10 h-10 text-purple-400"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 gradient-text">Réalité Augmentée</h3>
+                        <p class="text-gray-300 mb-6">
+                            Visualisez vos organes en 3D, suivez vos traitements et consultez vos médecins en réalité augmentée.
+                        </p>
+                        <div class="flex justify-center space-x-2">
+                            <div class="w-2 h-2 bg-purple-400 rounded-full pulse-glow"></div>
+                            <div class="w-2 h-2 bg-purple-400 rounded-full pulse-glow" style="animation-delay: 0.2s"></div>
+                            <div class="w-2 h-2 bg-purple-400 rounded-full pulse-glow" style="animation-delay: 0.4s"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl lg:text-6xl font-bold mb-6">
+                    <span class="gradient-text">Services</span> Révolutionnaires
+                </h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    Découvrez notre gamme complète de services médicaux digitaux qui transforment votre expérience de santé.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="slide-in-left">
+                    <div class="space-y-8">
+                        <div class="glass-card p-6 flex items-start space-x-4">
+                            <div class="glass-card p-3 w-12 h-12 flex items-center justify-center">
+                                <i data-feather="video" class="w-6 h-6 text-blue-400"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold mb-2 gradient-text">Téléconsultation IA</h3>
+                                <p class="text-gray-300">Consultez des médecins experts via IA avancée avec diagnostic en temps réel.</p>
+                            </div>
+                        </div>
+
+                        <div class="glass-card p-6 flex items-start space-x-4">
+                            <div class="glass-card p-3 w-12 h-12 flex items-center justify-center">
+                                <i data-feather="smartphone" class="w-6 h-6 text-green-400"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold mb-2 gradient-text">Dossier Médical 3D</h3>
+                                <p class="text-gray-300">Visualisez votre santé en 3D avec historique complet et prédictions.</p>
+                            </div>
+                        </div>
+
+                        <div class="glass-card p-6 flex items-start space-x-4">
+                            <div class="glass-card p-3 w-12 h-12 flex items-center justify-center">
+                                <i data-feather="truck" class="w-6 h-6 text-purple-400"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold mb-2 gradient-text">Livraison Drone</h3>
+                                <p class="text-gray-300">Recevez vos médicaments par drone en moins de 30 minutes.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="slide-in-right">
+                    <div class="relative">
+                        <div class="glass-card p-8 float">
+                            <img src="https://pub-9f200de23f1a4fada809186205ec0a61.r2.dev/sicherheit.svg" 
+                                 alt="Services Medacte" 
+                                 class="w-full h-auto rounded-2xl">
+                        </div>
+                        
+                        <!-- Animated Stats -->
+                        <div class="absolute top-4 right-4 glass-card p-4">
+                            <div class="text-center">
+                                <div class="text-2xl font-bold gradient-text" id="stat1">500K+</div>
+                                <div class="text-sm text-gray-300">Patients</div>
+                            </div>
+                        </div>
+                        
+                        <div class="absolute bottom-4 left-4 glass-card p-4">
+                            <div class="text-center">
+                                <div class="text-2xl font-bold gradient-text" id="stat2">99.9%</div>
+                                <div class="text-sm text-gray-300">Sécurité</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 relative">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <div class="glass-card p-12 fade-in">
+                <h2 class="text-4xl lg:text-6xl font-bold mb-6">
+                    Prêt pour la <span class="gradient-text">Révolution</span> ?
+                </h2>
+                <p class="text-xl text-gray-300 mb-8">
+                    Rejoignez plus de 500,000 utilisateurs qui ont déjà transformé leur santé avec Medacte.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button class="btn-primary pulse-glow">
+                        <i data-feather="download" class="w-5 h-5 mr-2"></i>
+                        Télécharger Maintenant
+                    </button>
+                    <button class="glass-card px-8 py-4 text-white hover:bg-white hover:bg-opacity-10">
+                        <i data-feather="play-circle" class="w-5 h-5 mr-2"></i>
+                        Voir la Démo
                     </button>
                 </div>
             </div>
         </div>
-
-        <!-- Mobile menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg rounded-lg mx-4 mt-2" role="menu" aria-label="Menu mobile">
-            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <a href="#accueil" class="block px-3 py-2 rounded-md text-base font-medium text-blue-600 bg-blue-50" role="menuitem" aria-current="page">Accueil</a>
-                <a href="#services" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-blue-600 hover:bg-blue-50" role="menuitem">Services</a>
-                <a href="#urgences" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-blue-600 hover:bg-blue-50" role="menuitem">Urgences</a>
-                <a href="#faq" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-blue-600 hover:bg-blue-50" role="menuitem">FAQ</a>
-                <a href="#download" class="block px-3 py-2 rounded-md text-base font-medium text-white bg-blue-600 hover:bg-blue-700" role="menuitem">Télécharger</a>
-            </div>
-        </div>
-    </nav>
-    <!-- Main Content -->
-    <main id="main-content">
-        <!-- Hero Section -->
-        <section id="accueil" class="hero-gradient text-white py-12 md:py-20" aria-labelledby="hero-title">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="flex flex-col md:flex-row items-center">
-                    <div class="w-full md:w-1/2 mb-10 md:mb-0 md:pr-8">
-                        <h1 id="hero-title" class="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 leading-tight">Santé Digitale pour tous au Maroc</h1>
-                        <p class="text-lg sm:text-xl mb-8">Votre santé dans votre poche. Gratuit, sécurisé et accessible à tous.</p>
-                        <div class="flex flex-col sm:flex-row gap-3">
-                            <a href="#patient-signup" class="bg-white text-blue-600 px-5 py-3 rounded-lg font-medium text-center hover:bg-gray-100 transition transform hover:scale-105 shadow-md" aria-label="S'inscrire en tant que patient">
-                                <div class="flex items-center justify-center">
-                                    <i data-feather="user" class="w-5 h-5 mr-2" aria-hidden="true"></i>
-                                    <span>Je suis Patient</span>
-                                </div>
-                            </a>
-                            <a href="#professional-signup" class="bg-blue-700 text-white px-5 py-3 rounded-lg font-medium text-center hover:bg-blue-800 transition transform hover:scale-105 shadow-md" aria-label="S'inscrire en tant que professionnel de santé">
-                                <div class="flex items-center justify-center">
-                                    <i data-feather="briefcase" class="w-5 h-5 mr-2" aria-hidden="true"></i>
-                                    <span>Je suis Professionnel</span>
-                                </div>
-                            </a>
-                        </div>
-                </div>
-                    <div class="w-full md:w-1/2 flex justify-center">
-                        <div class="relative">
-                            <img src="https://pub-9f200de23f1a4fada809186205ec0a61.r2.dev/app.svg" alt="Interface de l'application Medacte montrant les fonctionnalités principales" 
-                                 class="rounded-2xl shadow-2xl w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg" loading="eager">
-                            <div class="absolute -bottom-4 -right-4 bg-white p-2 rounded-full shadow-lg">
-                                <div class="animate-pulse rounded-full p-1 bg-gradient-to-r from-blue-500 to-indigo-600">
-                                    <i data-feather="download" class="w-6 h-6 text-white" aria-hidden="true"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-            </div>
-        </div>
     </section>
-        <!-- Quick Actions Section -->
-        <section id="urgences" class="py-12 md:py-20 bg-white" aria-labelledby="urgences-title">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 id="urgences-title" class="text-2xl md:text-3xl font-bold text-center mb-8 md:mb-12">Actions Rapides pour Urgences</h2>
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
-                    <!-- Ambulance -->
-                    <a href="tel:15" class="bg-red-600 text-white p-4 rounded-lg flex flex-col items-center justify-center hover:bg-red-700 transition text-center h-full" aria-label="Appeler une ambulance - Numéro 15">
-                        <i data-feather="truck" class="w-10 h-10 mb-2" aria-hidden="true"></i>
-                        <span class="font-semibold">Appeler une Ambulance</span>
-                    </a>
 
-                    <!-- Emergency Doctor -->
-                    <a href="#emergency-doctor" class="bg-blue-600 text-white p-4 rounded-lg flex flex-col items-center justify-center hover:bg-blue-700 transition text-center h-full" aria-label="Contacter un médecin d'urgence">
-                        <i data-feather="user" class="w-10 h-10 mb-2" aria-hidden="true"></i>
-                        <span class="font-semibold">Contacter un Médecin d'Urgence</span>
-                    </a>
-
-                    <!-- Night Pharmacy -->
-                    <a href="#night-pharmacy" class="bg-indigo-600 text-white p-4 rounded-lg flex flex-col items-center justify-center hover:bg-indigo-700 transition text-center h-full" aria-label="Trouver une pharmacie de garde">
-                        <i data-feather="plus-circle" class="w-10 h-10 mb-2" aria-hidden="true"></i>
-                        <span class="font-semibold">Pharmacie de Garde</span>
-                    </a>
-
-                    <!-- Nearby Hospitals -->
-                    <a href="#nearby-hospitals" class="bg-green-600 text-white p-4 rounded-lg flex flex-col items-center justify-center hover:bg-green-700 transition text-center h-full" aria-label="Localiser l'hôpital le plus proche">
-                        <i data-feather="map-pin" class="w-10 h-10 mb-2" aria-hidden="true"></i>
-                        <span class="font-semibold">Hôpital le Plus Proche</span>
-                    </a>
-                </div>
-
-                <div class="mt-8 bg-gray-100 p-4 rounded-lg">
-                    <h3 class="text-xl font-semibold mb-4 text-center">Numéros d'Urgence Importants</h3>
-                    <div class="grid grid-cols-2 gap-4 max-w-lg mx-auto">
-                        <div class="bg-white p-3 rounded-lg text-center">
-                            <a href="tel:15" class="text-red-600 font-bold text-lg hover:text-red-700">15</a>
-                            <p class="text-sm">Urgences Médicales</p>
-                        </div>
-                        <div class="bg-white p-3 rounded-lg text-center">
-                            <a href="tel:19" class="text-red-600 font-bold text-lg hover:text-red-700">19</a>
-                            <p class="text-sm">Police</p>
-                        </div>
-                        <div class="bg-white p-3 rounded-lg text-center">
-                            <a href="tel:177" class="text-red-600 font-bold text-lg hover:text-red-700">177</a>
-                            <p class="text-sm">Gendarmerie Royale</p>
-                        </div>
-                        <div class="bg-white p-3 rounded-lg text-center">
-                            <a href="tel:0801004747" class="text-red-600 font-bold text-lg hover:text-red-700">080 100 47 47</a>
-                            <p class="text-sm">SAMU</p>
-                        </div>
+    <!-- Footer -->
+    <footer class="py-12 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="md:col-span-2">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <img src="https://pub-9f200de23f1a4fada809186205ec0a61.r2.dev/logo.svg" alt="Medacte" class="h-10 w-10">
+                        <span class="text-2xl font-bold gradient-text">Medacte</span>
                     </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Security Section -->
-        <section class="py-20 bg-white" aria-labelledby="security-title">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid md:grid-cols-2 gap-12 items-center">
-                    <div>
-                        <h2 id="security-title" class="text-3xl font-bold mb-6">Votre Sécurité est Notre Priorité</h2>
-                    <p class="text-lg text-gray-600 mb-6">
-                        Medacte respecte les plus hauts standards internationaux de sécurité et de protection des données de santé.
+                    <p class="text-gray-400 mb-6">
+                        Révolutionnant la santé digitale au Maroc avec l'IA, la blockchain et la réalité augmentée.
                     </p>
-                        <div class="flex items-center text-gray-700 mb-4">
-                            <i data-feather="check-circle" class="text-green-500 mr-3" aria-hidden="true"></i>
-                            <span>Chiffrement de niveau bancaire</span>
-                        </div>
-                        <div class="flex items-center text-gray-700 mb-4">
-                            <i data-feather="check-circle" class="text-green-500 mr-3" aria-hidden="true"></i>
-                            <span>Certification ISO 27001</span>
-                        </div>
-                        <div class="flex items-center text-gray-700 mb-4">
-                            <i data-feather="check-circle" class="text-green-500 mr-3" aria-hidden="true"></i>
-                            <span>Authentification à deux facteurs</span>
-                        </div>
-                    <div class="mt-8 bg-blue-50 p-4 rounded-lg inline-block">
-                        <p class="text-blue-700 font-medium">Plus de 500,000 utilisateurs nous font confiance</p>
-                    </div>
-                </div>
-                    <div class="flex justify-center">
-                        <img src="https://pub-9f200de23f1a4fada809186205ec0a61.r2.dev/sicherheit.svg" alt="Illustration des mesures de sécurité et de protection des données Medacte" class="rounded-xl shadow-lg" loading="lazy">
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- Modern Services Section -->
-        <section id="services" class="py-24 bg-gradient-to-r from-blue-50 to-indigo-50" aria-labelledby="services-title">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-16">
-                    <span class="inline-block px-3 py-1 text-sm font-medium text-blue-700 bg-blue-100 rounded-full mb-4">NOS SERVICES</span>
-                    <h2 id="services-title" class="text-4xl font-bold text-gray-900 mb-4">Santé Digitale à Portée de Main</h2>
-                    <p class="text-xl text-gray-600 max-w-2xl mx-auto">Découvrez comment Medacte révolutionne votre expérience médicale avec des solutions innovantes et sécurisées.</p>
-                </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" data-aos="fade-up" data-aos-duration="800">
-                <!-- Service 1 -->
-                <div class="bg-white p-8 rounded-2xl shadow-xl transform transition-all duration-500 hover:-translate-y-2 feature-card">
-                    <div class="bg-blue-100 p-4 rounded-2xl w-14 h-14 flex items-center justify-center mb-6">
-                        <i data-feather="file-text" class="text-blue-600 w-6 h-6"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-3">Ordonnances Numériques</h3>
-                    <p class="text-gray-600 mb-6">Recevez et gérez vos ordonnances médicales directement sur votre smartphone, avec un stockage sécurisé et un accès instantané.</p>
-                    <div class="flex items-center">
-                        <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800 mr-2">
-                            <i data-feather="shield" class="w-3 h-3 mr-1"></i> Sécurisé
-                        </span>
-                        <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-800">
-                            <i data-feather="clock" class="w-3 h-3 mr-1"></i> Instantané
-                        </span>
+                    <div class="flex space-x-4">
+                        <a href="#" class="glass-card p-3 hover:bg-white hover:bg-opacity-10">
+                            <i data-feather="facebook" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="glass-card p-3 hover:bg-white hover:bg-opacity-10">
+                            <i data-feather="twitter" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="glass-card p-3 hover:bg-white hover:bg-opacity-10">
+                            <i data-feather="instagram" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="glass-card p-3 hover:bg-white hover:bg-opacity-10">
+                            <i data-feather="linkedin" class="w-5 h-5"></i>
+                        </a>
                     </div>
                 </div>
                 
-                <!-- Service 2 -->
-                <div class="bg-white p-8 rounded-2xl shadow-xl transform transition-all duration-500 hover:-translate-y-2 feature-card">
-                    <div class="bg-purple-100 p-4 rounded-2xl w-14 h-14 flex items-center justify-center mb-6">
-                        <i data-feather="folder" class="text-purple-600 w-6 h-6"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-3">Dossier Médical Unifié</h3>
-                    <p class="text-gray-600 mb-6">Centralisez l'ensemble de vos documents médicaux avec un chiffrement de niveau bancaire pour une accessibilité optimale.</p>
-                    <div class="flex items-center">
-                        <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-purple-100 text-purple-800 mr-2">
-                            <i data-feather="lock" class="w-3 h-3 mr-1"></i> Privé
-                        </span>
-                        <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-indigo-100 text-indigo-800">
-                            <i data-feather="cloud" class="w-3 h-3 mr-1"></i> Cloud
-                        </span>
-                    </div>
-                </div>
-                
-                <!-- Service 3 -->
-                <div class="bg-white p-8 rounded-2xl shadow-xl transform transition-all duration-500 hover:-translate-y-2 feature-card">
-                    <div class="bg-green-100 p-4 rounded-2xl w-14 h-14 flex items-center justify-center mb-6">
-                        <i data-feather="video" class="text-green-600 w-6 h-6"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-3">Téléconsultation Premium</h3>
-                    <p class="text-gray-600 mb-6">Consultez un médecin qualifié en vidéo HD depuis chez vous, disponible 24h/24 avec des rendez-vous en moins de 15 minutes.</p>
-                    <div class="flex items-center">
-                        <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-800 mr-2">
-                            <i data-feather="zap" class="w-3 h-3 mr-1"></i> Rapide
-                        </span>
-                        <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-teal-100 text-teal-800">
-                            <i data-feather="users" class="w-3 h-3 mr-1"></i> Experts
-                        </span>
-                    </div>
-                </div>
-                
-                <!-- Service 4 -->
-                <div class="bg-white p-8 rounded-2xl shadow-xl transform transition-all duration-500 hover:-translate-y-2 feature-card">
-                    <div class="bg-yellow-100 p-4 rounded-2xl w-14 h-14 flex items-center justify-center mb-6">
-                        <i data-feather="map-pin" class="text-yellow-600 w-6 h-6"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-3">Pharmacies à Proximité</h3>
-                    <p class="text-gray-600 mb-6">Localisez instantanément les pharmacies les plus proches avec leurs horaires, services et disponibilités en temps réel.</p>
-                    <div class="flex items-center">
-                        <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-yellow-100 text-yellow-800 mr-2">
-                            <i data-feather="compass" class="w-3 h-3 mr-1"></i> Local
-                        </span>
-                        <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-orange-100 text-orange-800">
-                            <i data-feather="watch" class="w-3 h-3 mr-1"></i> Temps réel
-                        </span>
-                    </div>
-                </div>
-                
-                <!-- Service 5 -->
-                <div class="bg-white p-8 rounded-2xl shadow-xl transform transition-all duration-500 hover:-translate-y-2 feature-card">
-                    <div class="bg-red-100 p-4 rounded-2xl w-14 h-14 flex items-center justify-center mb-6">
-                        <i data-feather="truck" class="text-red-600 w-6 h-6"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-3">Livraison Express Médicaments</h3>
-                    <p class="text-gray-600 mb-6">Commandez vos médicaments et recevez-les à domicile en moins de 2h, avec suivi en direct de votre livraison.</p>
-                    <div class="flex items-center">
-                        <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-red-100 text-red-800 mr-2">
-                            <i data-feather="truck" class="w-3 h-3 mr-1"></i> Express
-                        </span>
-                        <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-pink-100 text-pink-800">
-                            <i data-feather="package" class="w-3 h-3 mr-1"></i> Suivi
-                        </span>
-                    </div>
-                </div>
-                
-                <!-- Service 6 -->
-                <div class="bg-white p-8 rounded-2xl shadow-xl transform transition-all duration-500 hover:-translate-y-2 feature-card">
-                    <div class="bg-pink-100 p-4 rounded-2xl w-14 h-14 flex items-center justify-center mb-6">
-                        <i data-feather="bell" class="text-pink-600 w-6 h-6"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-3">Rappels Intelligents</h3>
-                    <p class="text-gray-600 mb-6">Programmez des alertes personnalisées pour vos prises de médicaments et rendez-vous, avec historique complet.</p>
-                    <div class="flex items-center">
-                        <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-pink-100 text-pink-800 mr-2">
-                            <i data-feather="calendar" class="w-3 h-3 mr-1"></i> Agenda
-                        </span>
-                        <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-indigo-100 text-indigo-800">
-                            <i data-feather="bar-chart-2" class="w-3 h-3 mr-1"></i> Historique
-                        </span>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="text-center mt-16" data-aos="fade-up" data-aos-delay="200">
-                <div class="inline-flex flex-col sm:flex-row gap-4">
-                    <a href="#" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-xl font-bold text-lg inline-flex items-center justify-center transition-all transform hover:scale-105 shadow-lg hover:shadow-xl">
-                        <i data-feather="download" class="mr-3"></i> Télécharger Maintenant
-                    </a>
-                    <a href="#" class="border-2 border-blue-600 text-blue-600 hover:bg-blue-50 px-8 py-4 rounded-xl font-bold text-lg inline-flex items-center justify-center transition-all transform hover:scale-105">
-                        <i data-feather="play-circle" class="mr-3"></i> Voir Démo
-                    </a>
-                </div>
-                <p class="text-gray-500 mt-6 text-sm">Gratuit • Sans engagement • Compatible iOS & Android</p>
-            </div>
-        </div>
-    </section>
-
-        <!-- Structured Data -->
-        <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@type": "Organization",
-            "name": "Medacte",
-            "description": "Plateforme de santé digitale au Maroc offrant téléconsultation, ordonnances numériques et livraison de médicaments",
-            "url": "https://medacte.com",
-            "logo": "https://pub-9f200de23f1a4fada809186205ec0a61.r2.dev/logo.svg",
-            "contactPoint": {
-                "@type": "ContactPoint",
-                "telephone": "+212-XXX-XXXXXX",
-                "contactType": "customer service",
-                "availableLanguage": "French"
-            },
-            "sameAs": [
-                "https://facebook.com/medacte",
-                "https://twitter.com/medacte",
-                "https://instagram.com/medacte",
-                "https://linkedin.com/company/medacte"
-            ],
-            "address": {
-                "@type": "PostalAddress",
-                "addressCountry": "MA",
-                "addressLocality": "Casablanca"
-            }
-        }
-        </script>
-        
-        <!-- Add AOS animation library -->
-        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        // Initialize AOS animation
-        AOS.init({
-            once: true,
-            duration: 800,
-            easing: 'ease-out-quart',
-            throttleDelay: 50,
-            debounceDelay: 50,
-            offset: 120
-        });
-    </script>
-<!-- Modern Health Card Section -->
-<section class="py-20 bg-gradient-to-br from-blue-50 to-indigo-100">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid md:grid-cols-2 gap-16 items-center">
-            <div class="relative" data-aos="fade-right" data-aos-delay="200">
-                <!-- 3D Card Container -->
-                <div class="perspective-1000" style="perspective: 1000px;">
-                    <div class="relative transform-style-preserve-3d transition-all duration-700 hover:rotate-y-180">
-                        <!-- Health Card -->
-                        <div class="bg-white rounded-2xl shadow-2xl p-6 w-full max-w-md mx-auto transform transition-all duration-500 hover:shadow-3xl">
-                            <div class="relative">
-                                <img src="https://pub-9f200de23f1a4fada809186205ec0a61.r2.dev/Business%20Card.svg" 
-                                     alt="Carte Santé Medacte" 
-                                     class="w-full h-auto rounded-lg"
-                                     data-aos="zoom-in">
-                            </div>
-                            <div class="mt-4 text-center">
-                                <p class="text-gray-600">Votre carte santé numérique sécurisée</p>
-                                <button class="mt-2 bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-6 py-3 rounded-lg font-medium hover:from-blue-600 hover:to-indigo-700 transition-all transform hover:scale-105">
-                                    Commander gratuitement
-                                </button>
-                            </div>
-                        </div>
-</div>
-                </div>
-
-                <!-- Floating Elements -->
-</div>
-
-            <div data-aos="fade-left">
-                <h2 class="text-4xl font-bold mb-8 bg-gradient-to-r from-blue-600 to-indigo-700 bg-clip-text text-transparent">Votre Passeport Santé Intelligent</h2>
-                <p class="text-xl text-gray-600 mb-8 leading-relaxed">La carte santé Medacte combine technologie NFC et QR code pour un accès ultra-sécurisé à vos données médicales, disponible en format physique et digital.</p>
-                
-                <div class="space-y-6 mb-10">
-                    <div class="flex items-start" data-aos="fade-up" data-aos-delay="100">
-                        <div class="bg-blue-100 p-3 rounded-full mr-5 flex-shrink-0">
-                            <i data-feather="shield" class="text-blue-600"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-lg mb-1">Chiffrement Blockchain</h4>
-                            <p class="text-gray-600">Protection maximale de vos données avec technologie blockchain</p>
-                        </div>
-                    </div>
-                    <div class="flex items-start" data-aos="fade-up" data-aos-delay="150">
-                        <div class="bg-blue-100 p-3 rounded-full mr-5 flex-shrink-0">
-                            <i data-feather="smartphone" class="text-blue-600"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-lg mb-1">Synchronisation Instantanée</h4>
-                            <p class="text-gray-600">Mises à jour en temps réel sur tous vos appareils</p>
-                        </div>
-                    </div>
-                    <div class="flex items-start" data-aos="fade-up" data-aos-delay="200">
-                        <div class="bg-blue-100 p-3 rounded-full mr-5 flex-shrink-0">
-                            <i data-feather="globe" class="text-blue-600"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-lg mb-1">Reconnue Internationalement</h4>
-                            <p class="text-gray-600">Valable dans les hôpitaux partenaires à travers le monde</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="flex flex-col sm:flex-row gap-4">
-                    <a href="#" class="bg-gradient-to-r from-blue-600 to-indigo-700 hover:from-blue-700 hover:to-indigo-800 text-white px-8 py-4 rounded-xl font-bold inline-flex items-center justify-center transition-all transform hover:scale-105 shadow-lg hover:shadow-xl">
-                        <i data-feather="credit-card" class="mr-3"></i> Commander maintenant
-                    </a>
-                    <a href="#" class="border-2 border-blue-600 text-blue-600 hover:bg-blue-50 px-8 py-4 rounded-xl font-bold inline-flex items-center justify-center transition-all transform hover:scale-105">
-                        <i data-feather="play" class="mr-3"></i> Voir la démo
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<style>
-    @keyframes pulse-glow {
-        0%, 100% { opacity: 0.9; }
-        50% { opacity: 1; box-shadow: 0 0 20px rgba(79, 70, 229, 0.7); }
-    }
-    .animate-pulse {
-        animation: pulse-glow 2s infinite;
-    }
-    .group:hover .animate-pulse {
-        animation: none;
-    }
-</style>
-<!-- Animated Glass Stats Section -->
-    <section class="py-16 relative overflow-hidden">
-<div class="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-600 opacity-10"></div>
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
-                <div class="p-4 backdrop-blur-sm bg-white/10 rounded-xl border border-white/20 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1" data-aos="fade-up" data-aos-delay="100">
-                    <div class="text-3xl font-bold mb-1 text-white" id="stat1">0</div>
-                    <div class="text-sm text-white/80">Patients Satisfaits</div>
-                </div>
-                <div class="p-4 backdrop-blur-sm bg-white/10 rounded-xl border border-white/20 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1" data-aos="fade-up" data-aos-delay="150">
-                    <div class="text-3xl font-bold mb-1 text-white" id="stat2">0</div>
-                    <div class="text-sm text-white/80">Professionnels</div>
-                </div>
-                <div class="p-4 backdrop-blur-sm bg-white/10 rounded-xl border border-white/20 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1" data-aos="fade-up" data-aos-delay="200">
-                    <div class="text-3xl font-bold mb-1 text-white" id="stat3">0</div>
-                    <div class="text-sm text-white/80">Consultations</div>
-                </div>
-                <div class="p-4 backdrop-blur-sm bg-white/10 rounded-xl border border-white/20 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1" data-aos="fade-up" data-aos-delay="250">
-                    <div class="text-3xl font-bold mb-1 text-white" id="stat4">0</div>
-                    <div class="text-sm text-white/80">Villes Desservies</div>
-                </div>
-            </div>
-        </div>
-        <script>
-            // Optimized counter animation
-            function animateValue(id, start, end, duration) {
-                const obj = document.getElementById(id);
-                let startTimestamp = null;
-                let animationId = null;
-                
-                const easeOutQuad = (t) => {
-                    return 1 - (1 - t) * (1 - t);
-                };
-
-                const step = (timestamp) => {
-                    if (!startTimestamp) startTimestamp = timestamp;
-                    const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-                    const easedProgress = easeOutQuad(progress);
-                    const value = Math.floor(easedProgress * (end - start) + start);
-                    
-                    obj.innerHTML = "+" + value.toLocaleString();
-                    
-                    if (progress < 1) {
-                        animationId = window.requestAnimationFrame(step);
-                    }
-                };
-
-                // Start animation
-                animationId = window.requestAnimationFrame(step);
-
-                // Clean up on element removal
-                obj.addEventListener('DOMNodeRemoved', () => {
-                    if (animationId) {
-                        window.cancelAnimationFrame(animationId);
-                    }
-                });
-            }
-
-            // Optimized intersection observer
-            let hasAnimated = false;
-            const observer = new IntersectionObserver((entries) => {
-                const entry = entries[0];
-                if (entry.isIntersecting && !hasAnimated) {
-                    hasAnimated = true;
-                    animateValue("stat1", 0, 500000, 2000);
-                    animateValue("stat2", 0, 15000, 1800);
-                    animateValue("stat3", 0, 1000000, 2200);
-                    animateValue("stat4", 0, 45, 1500);
-                    observer.unobserve(entry.target);
-                }
-            }, {
-                threshold: 0.1,
-                rootMargin: '0px 0px -100px 0px'
-            });
-            
-            const statSection = document.querySelector(".relative.overflow-hidden");
-            if (statSection) {
-                observer.observe(statSection);
-            }
-</script>
-    </section>
-<!-- App Download Section -->
-    <section class="py-20 bg-white">
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div class="flex justify-center">
-                    <img src="https://pub-9f200de23f1a4fada809186205ec0a61.r2.dev/app.svg" alt="Medacte App" class="rounded-xl shadow-lg">
-</div>
                 <div>
-                    <h2 class="text-3xl font-bold mb-6">Téléchargez Medacte</h2>
-                    <p class="text-xl text-gray-600 mb-8">Disponible gratuitement sur iOS et Android. Gérez votre santé où que vous soyez.</p>
-                    
-                    <div class="grid grid-cols-2 gap-4 max-w-xs">
-                        <a href="#" class="bg-black text-white p-3 rounded-lg flex items-center">
-                            <i data-feather="apple" class="mr-2"></i>
-                            <span>App Store</span>
-                        </a>
-                        <a href="#" class="bg-green-600 text-white p-3 rounded-lg flex items-center">
-                            <i data-feather="play" class="mr-2"></i>
-                            <span>Play Store</span>
-                        </a>
-                    </div>
-                    
-                    <div class="mt-8">
-                        <h3 class="text-lg font-medium mb-3">QR Code</h3>
-                        <p class="text-gray-600 mb-4">Scannez pour télécharger</p>
-                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://medacte.com/download" alt="QR Code" class="w-32 h-32 border p-2 rounded-lg">
-                    </div>
+                    <h3 class="text-lg font-semibold mb-4 gradient-text">Services</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors">Téléconsultation</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">IA Médicale</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Blockchain</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Réalité Augmentée</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4 gradient-text">Support</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors">Centre d'aide</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Sécurité</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Confidentialité</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Contact</a></li>
+                    </ul>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Testimonials -->
-    <section class="py-20 bg-blue-600 text-white">
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-center mb-12">Ce qu'ils disent de Medacte</h2>
-            <p class="text-xl text-center mb-12">Des milliers de patients et professionnels nous font confiance</p>
             
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Testimonial 1 -->
-                <div class="bg-white text-gray-800 p-6 rounded-xl testimonial-card">
-                    <div class="flex items-center mb-4">
-                        <img src="https://randomuser.me/api/portraits/women/43.jpg" alt="Dr. Leila Benani" class="w-12 h-12 rounded-full mr-4">
-                        <div>
-                            <h4 class="font-bold">Dr. Leila Benani</h4>
-                            <p class="text-sm text-gray-600">Médecin Généraliste, Casablanca</p>
-                        </div>
-                    </div>
-                    <p class="italic mb-4">"Medacte a révolutionné ma pratique médicale. La gestion des dossiers patients est tellement plus simple et efficace."</p>
-                    <div class="flex text-yellow-400">
-                        <i data-feather="star" class="w-4 h-4 fill-current"></i>
-                        <i data-feather="star" class="w-4 h-4 fill-current"></i>
-                        <i data-feather="star" class="w-4 h-4 fill-current"></i>
-                        <i data-feather="star" class="w-4 h-4 fill-current"></i>
-                        <i data-feather="star" class="w-4 h-4 fill-current"></i>
-                    </div>
-                </div>
-                
-                <!-- Testimonial 2 -->
-                <div class="bg-white text-gray-800 p-6 rounded-xl testimonial-card">
-                    <div class="flex items-center mb-4">
-                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Youssef El Amrani" class="w-12 h-12 rounded-full mr-4">
-                        <div>
-                            <h4 class="font-bold">Youssef El Amrani</h4>
-                            <p class="text-sm text-gray-600">Pharmacien, Rabat</p>
-                        </div>
-                    </div>
-                    <p class="italic mb-4">"En tant que pharmacien, Medacte m'a permis de gagner un temps précieux dans la gestion des ordonnances et des stocks."</p>
-                    <div class="flex text-yellow-400">
-                        <i data-feather="star" class="w-4 h-4 fill-current"></i>
-                        <i data-feather="star" class="w-4 h-4 fill-current"></i>
-                        <i data-feather="star" class="w-4 h-4 fill-current"></i>
-                        <i data-feather="star" class="w-4 h-4 fill-current"></i>
-                        <i data-feather="star" class="w-4 h-4 fill-current"></i>
-                    </div>
-                </div>
-                
-                <!-- Testimonial 3 -->
-                <div class="bg-white text-gray-800 p-6 rounded-xl testimonial-card">
-                    <div class="flex items-center mb-4">
-                        <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Fatima Zahra" class="w-12 h-12 rounded-full mr-4">
-                        <div>
-                            <h4 class="font-bold">Fatima Zahra</h4>
-                            <p class="text-sm text-gray-600">Patient, Marrakech</p>
-                        </div>
-                    </div>
-                    <p class="italic mb-4">"La livraison de médicaments à domicile est un vrai soulagement pour moi qui ai des difficultés à me déplacer."</p>
-                    <div class="flex text-yellow-400">
-                        <i data-feather="star" class="w-4 h-4 fill-current"></i>
-                        <i data-feather="star" class="w-4 h-4 fill-current"></i>
-                        <i data-feather="star" class="w-4 h-4 fill-current"></i>
-                        <i data-feather="star" class="w-4 h-4 fill-current"></i>
-                        <i data-feather="star" class="w-4 h-4 fill-current"></i>
-                    </div>
-                </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Medacte. Tous droits réservés. Révolutionnant la santé digitale au Maroc.</p>
             </div>
         </div>
-    </section>
+    </footer>
 
-    <!-- FAQ Section -->
-    <section class="py-16 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-center mb-12">Questions Fréquentes</h2>
-            
-            <div class="max-w-3xl mx-auto">
-                <div class="space-y-4">
-                    <!-- FAQ Item 1 -->
-                    <div class="border rounded-lg overflow-hidden">
-                        <button class="w-full p-4 text-left bg-gray-50 hover:bg-gray-100 transition flex justify-between items-center">
-                            <span class="font-medium">Comment créer un compte sur Medacte?</span>
-                            <i data-feather="chevron-down" class="w-5 h-5 text-gray-600"></i>
-                        </button>
-                        <div class="p-4 border-t">
-                            <p class="text-gray-600">Téléchargez l'application Medacte depuis l'App Store ou Google Play. Suivez les instructions pour créer votre compte en moins de 2 minutes.</p>
-                        </div>
-                    </div>
-                    
-                    <!-- FAQ Item 2 -->
-                    <div class="border rounded-lg overflow-hidden">
-                        <button class="w-full p-4 text-left bg-gray-50 hover:bg-gray-100 transition flex justify-between items-center">
-                            <span class="font-medium">Est-ce que Medacte est vraiment gratuit?</span>
-                            <i data-feather="chevron-down" class="w-5 h-5 text-gray-600"></i>
-                        </button>
-                        <div class="p-4 border-t">
-                            <p class="text-gray-600">Oui, tous nos services sont 100% gratuits pour les patients. Nous croyons en l'accès égal aux soins de santé pour tous.</p>
-                        </div>
-                    </div>
-                    
-                    <!-- FAQ Item 3 -->
-                    <div class="border rounded-lg overflow-hidden">
-                        <button class="w-full p-4 text-left bg-gray-50 hover:bg-gray-100 transition flex justify-between items-center">
-                            <span class="font-medium">Comment fonctionne la téléconsultation?</span>
-                            <i data-feather="chevron-down" class="w-5 h-5 text-gray-600"></i>
-                        </button>
-                        <div class="p-4 border-t">
-                            <p class="text-gray-600">Prenez rendez-vous avec un médecin disponible. À l'heure du rendez-vous, cliquez sur le lien dans l'application pour démarrer la consultation vidéo.</p>
-                        </div>
-                    </div>
-                    
-                    <!-- FAQ Item 4 -->
-                    <div class="border rounded-lg overflow-hidden">
-                        <button class="w-full p-4 text-left bg-gray-50 hover:bg-gray-100 transition flex justify-between items-center">
-                            <span class="font-medium">Mes données médicales sont-elles sécurisées?</span>
-                            <i data-feather="chevron-down" class="w-5 h-5 text-gray-600"></i>
-                        </button>
-                        <div class="p-4 border-t">
-                            <p class="text-gray-600">Absolument. Nous utilisons un chiffrement de niveau bancaire et suivons les réglementations strictes de protection des données de santé.</p>
-                        </div>
-                    </div>
-                    
-                    <!-- FAQ Item 5 -->
-                    <div class="border rounded-lg overflow-hidden">
-                        <button class="w-full p-4 text-left bg-gray-50 hover:bg-gray-100 transition flex justify-between items-center">
-                            <span class="font-medium">Puis-je accéder à mon dossier médical depuis l'étranger?</span>
-                            <i data-feather="chevron-down" class="w-5 h-5 text-gray-600"></i>
-                        </button>
-                        <div class="p-4 border-t">
-                            <p class="text-gray-600">Oui, tant que vous avez une connexion internet, vous pouvez accéder à votre dossier médical depuis n'importe où dans le monde.</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="mt-12 text-center">
-                    <h3 class="text-xl font-medium mb-4">Vous avez d'autres questions ?</h3>
-                    <p class="text-lg mb-6">Notre équipe est là pour vous aider 24h/24</p>
-                    <a href="#" class="bg-blue-600 text-white px-6 py-3 rounded-lg font-medium inline-flex items-center hover:bg-blue-700 transition">
-                        <i data-feather="message-square" class="mr-2"></i> Contactez-nous
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-        <!-- Modern Footer -->
-        <footer class="bg-gray-900 text-white pt-20 pb-12" role="contentinfo">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid grid-cols-1 md:grid-cols-5 gap-12">
-                    <div class="md:col-span-2">
-                        <div class="flex items-center mb-6">
-                            <img src="https://pub-9f200de23f1a4fada809186205ec0a61.r2.dev/logo.svg" alt="Logo Medacte" class="h-16 mr-4">
-                            <span class="text-2xl font-bold">Medacte</span>
-                        </div>
-                        <p class="text-gray-400 mb-6">Révolution numérique pour votre santé au Maroc</p>
-                        <div class="flex space-x-4">
-                            <a href="https://facebook.com/medacte" class="bg-gray-800 hover:bg-gray-700 p-3 rounded-full transition" aria-label="Suivez-nous sur Facebook">
-                                <i data-feather="facebook" class="w-5 h-5" aria-hidden="true"></i>
-                            </a>
-                            <a href="https://twitter.com/medacte" class="bg-gray-800 hover:bg-gray-700 p-3 rounded-full transition" aria-label="Suivez-nous sur Twitter">
-                                <i data-feather="twitter" class="w-5 h-5" aria-hidden="true"></i>
-                            </a>
-                            <a href="https://instagram.com/medacte" class="bg-gray-800 hover:bg-gray-700 p-3 rounded-full transition" aria-label="Suivez-nous sur Instagram">
-                                <i data-feather="instagram" class="w-5 h-5" aria-hidden="true"></i>
-                            </a>
-                            <a href="https://linkedin.com/company/medacte" class="bg-gray-800 hover:bg-gray-700 p-3 rounded-full transition" aria-label="Suivez-nous sur LinkedIn">
-                                <i data-feather="linkedin" class="w-5 h-5" aria-hidden="true"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div>
-                        <h3 class="text-lg font-semibold mb-6 uppercase tracking-wider">Solutions</h3>
-                        <ul class="space-y-3">
-                            <li><a href="#patient-signup" class="text-gray-400 hover:text-white transition flex items-center">
-                                <i data-feather="chevron-right" class="w-4 h-4 mr-2" aria-hidden="true"></i> Pour les Patients
-                            </a></li>
-                            <li><a href="#professional-signup" class="text-gray-400 hover:text-white transition flex items-center">
-                                <i data-feather="chevron-right" class="w-4 h-4 mr-2" aria-hidden="true"></i> Pour les Médecins
-                            </a></li>
-                            <li><a href="#pharmacy-signup" class="text-gray-400 hover:text-white transition flex items-center">
-                                <i data-feather="chevron-right" class="w-4 h-4 mr-2" aria-hidden="true"></i> Pour les Pharmacies
-                            </a></li>
-                            <li><a href="#hospital-signup" class="text-gray-400 hover:text-white transition flex items-center">
-                                <i data-feather="chevron-right" class="w-4 h-4 mr-2" aria-hidden="true"></i> Pour les Hôpitaux
-                            </a></li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h3 class="text-lg font-semibold mb-6 uppercase tracking-wider">Entreprise</h3>
-                        <ul class="space-y-3">
-                            <li><a href="#about" class="text-gray-400 hover:text-white transition flex items-center">
-                                <i data-feather="chevron-right" class="w-4 h-4 mr-2" aria-hidden="true"></i> À propos
-                            </a></li>
-                            <li><a href="#careers" class="text-gray-400 hover:text-white transition flex items-center">
-                                <i data-feather="chevron-right" class="w-4 h-4 mr-2" aria-hidden="true"></i> Carrières
-                            </a></li>
-                            <li><a href="#blog" class="text-gray-400 hover:text-white transition flex items-center">
-                                <i data-feather="chevron-right" class="w-4 h-4 mr-2" aria-hidden="true"></i> Blog
-                            </a></li>
-                            <li><a href="#press" class="text-gray-400 hover:text-white transition flex items-center">
-                                <i data-feather="chevron-right" class="w-4 h-4 mr-2" aria-hidden="true"></i> Presse
-                            </a></li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h3 class="text-lg font-semibold mb-6 uppercase tracking-wider">Support</h3>
-                        <ul class="space-y-3">
-                            <li><a href="#help" class="text-gray-400 hover:text-white transition flex items-center">
-                                <i data-feather="chevron-right" class="w-4 h-4 mr-2" aria-hidden="true"></i> Centre d'aide
-                            </a></li>
-                            <li><a href="#security" class="text-gray-400 hover:text-white transition flex items-center">
-                                <i data-feather="chevron-right" class="w-4 h-4 mr-2" aria-hidden="true"></i> Sécurité
-                            </a></li>
-                            <li><a href="#privacy" class="text-gray-400 hover:text-white transition flex items-center">
-                                <i data-feather="chevron-right" class="w-4 h-4 mr-2" aria-hidden="true"></i> Confidentialité
-                            </a></li>
-                            <li><a href="#contact" class="text-gray-400 hover:text-white transition flex items-center">
-                                <i data-feather="chevron-right" class="w-4 h-4 mr-2" aria-hidden="true"></i> Contact
-                            </a></li>
-                        </ul>
-                    </div>
-            </div>
-                <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-                    <p class="text-gray-400 mb-4 md:mb-0">© 2024 Medacte. Tous droits réservés.</p>
-                    <div class="flex space-x-6">
-                        <a href="#terms" class="text-gray-400 hover:text-white transition text-sm">Conditions</a>
-                        <a href="#privacy" class="text-gray-400 hover:text-white transition text-sm">Confidentialité</a>
-                        <a href="#cookies" class="text-gray-400 hover:text-white transition text-sm">Cookies</a>
-                        <a href="#gdpr" class="text-gray-400 hover:text-white transition text-sm">RGPD</a>
-                    </div>
-                </div>
-            </div>
-        </footer>
-    </main>
-<script>
-        // Initialize feather icons
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Medacte",
+        "description": "Plateforme révolutionnaire de santé digitale au Maroc intégrant IA, blockchain et réalité augmentée",
+        "url": "https://medacte.com",
+        "logo": "https://pub-9f200de23f1a4fada809186205ec0a61.r2.dev/logo.svg",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+212-XXX-XXXXXX",
+            "contactType": "customer service",
+            "availableLanguage": "French"
+        },
+        "sameAs": [
+            "https://facebook.com/medacte",
+            "https://twitter.com/medacte",
+            "https://instagram.com/medacte",
+            "https://linkedin.com/company/medacte"
+        ],
+        "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "MA",
+            "addressLocality": "Casablanca"
+        }
+    }
+    </script>
+
+    <script>
+        // Initialize everything when DOM is loaded
         document.addEventListener('DOMContentLoaded', function() {
+            // Initialize feather icons
             feather.replace();
             
-            // Mobile menu toggle with accessibility improvements
-            const mobileMenuButton = document.getElementById('mobile-menu-button');
-            const mobileMenu = document.getElementById('mobile-menu');
-            const menuIcon = mobileMenuButton.querySelector('[data-feather="menu"]');
-            const closeIcon = mobileMenuButton.querySelector('[data-feather="x"]');
+            // Hide loading screen
+            setTimeout(() => {
+                document.getElementById('loadingScreen').style.opacity = '0';
+                setTimeout(() => {
+                    document.getElementById('loadingScreen').style.display = 'none';
+                }, 500);
+            }, 2000);
+
+            // Custom cursor
+            const cursor = document.getElementById('cursor');
+            const cursorTrails = [];
             
-            mobileMenuButton.addEventListener('click', function() {
-                const isExpanded = mobileMenu.classList.toggle('hidden');
+            document.addEventListener('mousemove', (e) => {
+                cursor.style.left = e.clientX + 'px';
+                cursor.style.top = e.clientY + 'px';
                 
-                // Update ARIA attributes
-                mobileMenuButton.setAttribute('aria-expanded', !isExpanded);
+                // Create cursor trail
+                const trail = document.createElement('div');
+                trail.className = 'cursor-trail';
+                trail.style.left = e.clientX + 'px';
+                trail.style.top = e.clientY + 'px';
+                document.body.appendChild(trail);
                 
-                if (isExpanded) {
-                    menuIcon.classList.add('hidden');
-                    closeIcon.classList.remove('hidden');
-                    mobileMenuButton.setAttribute('aria-label', 'Fermer le menu de navigation');
-                } else {
-                    menuIcon.classList.remove('hidden');
-                    closeIcon.classList.add('hidden');
-                    mobileMenuButton.setAttribute('aria-label', 'Ouvrir le menu de navigation');
+                cursorTrails.push(trail);
+                
+                // Remove old trails
+                if (cursorTrails.length > 10) {
+                    const oldTrail = cursorTrails.shift();
+                    oldTrail.remove();
                 }
                 
-                feather.replace();
+                // Fade out trails
+                setTimeout(() => {
+                    trail.style.opacity = '0';
+                    trail.style.transform = 'scale(0)';
+                    setTimeout(() => trail.remove(), 300);
+                }, 100);
             });
-            
-            // Smooth scroll for anchor links
+
+            // 3D Background with Three.js
+            init3DBackground();
+
+            // Scroll animations
+            initScrollAnimations();
+
+            // Mobile menu
+            initMobileMenu();
+
+            // Smooth scrolling for anchor links
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
                     e.preventDefault();
-                    
                     const target = document.querySelector(this.getAttribute('href'));
                     if (target) {
                         target.scrollIntoView({
-                            behavior: 'smooth'
+                            behavior: 'smooth',
+                            block: 'start'
                         });
                     }
                 });
             });
+        });
+
+        // 3D Background initialization
+        function init3DBackground() {
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+            const renderer = new THREE.WebGLRenderer({ alpha: true });
             
-            // Add animation class on scroll
-            const animateOnScroll = function() {
-                const elements = document.querySelectorAll('[data-aos]');
-                
-                elements.forEach(element => {
-                    const elementPosition = element.getBoundingClientRect().top;
-                    const windowHeight = window.innerHeight;
-                    
-                    if (elementPosition < windowHeight - 100) {
-                        element.classList.add('aos-animate');
-                    }
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            renderer.setClearColor(0x000000, 0);
+            
+            document.getElementById('bg3d').appendChild(renderer.domElement);
+            
+            // Create floating particles
+            const particles = [];
+            const particleCount = 100;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const geometry = new THREE.SphereGeometry(0.1, 8, 8);
+                const material = new THREE.MeshBasicMaterial({ 
+                    color: new THREE.Color().setHSL(Math.random() * 0.2 + 0.5, 0.7, 0.6),
+                    transparent: true,
+                    opacity: 0.6
                 });
+                
+                const particle = new THREE.Mesh(geometry, material);
+                particle.position.x = (Math.random() - 0.5) * 20;
+                particle.position.y = (Math.random() - 0.5) * 20;
+                particle.position.z = (Math.random() - 0.5) * 20;
+                
+                particles.push(particle);
+                scene.add(particle);
+            }
+            
+            camera.position.z = 5;
+            
+            // Animation loop
+            function animate() {
+                requestAnimationFrame(animate);
+                
+                particles.forEach((particle, index) => {
+                    particle.rotation.x += 0.01;
+                    particle.rotation.y += 0.01;
+                    particle.position.y += Math.sin(Date.now() * 0.001 + index) * 0.001;
+                });
+                
+                renderer.render(scene, camera);
+            }
+            
+            animate();
+            
+            // Handle window resize
+            window.addEventListener('resize', () => {
+                camera.aspect = window.innerWidth / window.innerHeight;
+                camera.updateProjectionMatrix();
+                renderer.setSize(window.innerWidth, window.innerHeight);
+            });
+        }
+
+        // Scroll animations
+        function initScrollAnimations() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
             };
             
-            window.addEventListener('scroll', animateOnScroll);
-            animateOnScroll(); // Initialize on load
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+            
+            // Observe all animated elements
+            document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right, .scale-in').forEach(el => {
+                observer.observe(el);
+            });
+        }
+
+        // Mobile menu
+        function initMobileMenu() {
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const mobileMenu = document.createElement('div');
+            mobileMenu.className = 'fixed top-0 left-0 w-full h-full bg-black bg-opacity-90 backdrop-filter backdrop-blur-lg z-40 hidden';
+            mobileMenu.innerHTML = `
+                <div class="flex justify-end p-6">
+                    <button id="closeMobileMenu" class="text-white">
+                        <i data-feather="x" class="w-6 h-6"></i>
+                    </button>
+                </div>
+                <div class="flex flex-col items-center justify-center h-full space-y-8">
+                    <a href="#accueil" class="text-2xl text-white hover:text-blue-300 transition-colors">Accueil</a>
+                    <a href="#services" class="text-2xl text-white hover:text-blue-300 transition-colors">Services</a>
+                    <a href="#innovation" class="text-2xl text-white hover:text-blue-300 transition-colors">Innovation</a>
+                    <a href="#contact" class="text-2xl text-white hover:text-blue-300 transition-colors">Contact</a>
+                    <button class="btn-primary mt-8">Télécharger</button>
+                </div>
+            `;
+            
+            document.body.appendChild(mobileMenu);
+            
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.remove('hidden');
+                feather.replace();
+            });
+            
+            document.getElementById('closeMobileMenu').addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+            
+            // Close menu when clicking on links
+            mobileMenu.addEventListener('click', (e) => {
+                if (e.target.tagName === 'A') {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        }
+
+        // Counter animation for stats
+        function animateCounters() {
+            const counters = document.querySelectorAll('#stat1, #stat2');
+            
+            counters.forEach(counter => {
+                const target = counter.textContent.includes('K') ? 500 : 99.9;
+                const increment = target / 100;
+                let current = 0;
+                
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        current = target;
+                        clearInterval(timer);
+                    }
+                    
+                    if (counter.id === 'stat1') {
+                        counter.textContent = Math.floor(current) + 'K+';
+                    } else {
+                        counter.textContent = current.toFixed(1) + '%';
+                    }
+                }, 20);
+            });
+        }
+
+        // Trigger counter animation when stats section is visible
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounters();
+                    statsObserver.unobserve(entry.target);
+                }
+            });
         });
-</script>
+
+        const statsSection = document.querySelector('#services');
+        if (statsSection) {
+            statsObserver.observe(statsSection);
+        }
+    </script>
 </body>
 </html>
