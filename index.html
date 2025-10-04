@@ -346,6 +346,19 @@
         .text-primary {
             color: var(--text-primary);
         }
+        
+        .text-secondary {
+            color: var(--text-secondary);
+        }
+        
+        .text-muted {
+            color: var(--text-muted);
+        }
+
+        /* Background Colors */
+        .bg-secondary {
+            background-color: var(--text-secondary);
+        }
 
         /* Mode Switcher */
         .mode-switcher {
@@ -626,7 +639,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: #0a0a0a;
+            background: var(--bg-primary);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -641,6 +654,12 @@
             border-top: 3px solid #667eea;
             border-radius: 50%;
             animation: spin 1s linear infinite;
+        }
+
+        /* Light mode loading spinner */
+        [data-theme="light"] .loading-logo {
+            border: 3px solid rgba(102, 126, 234, 0.2);
+            border-top: 3px solid #667eea;
         }
 
         @keyframes spin {
@@ -695,7 +714,7 @@
                         de la Santé<br>
                         <span class="text-primary">Digitale</span>
                     </h1>
-                    <p class="text-xl text-gray-300 mb-8 leading-relaxed">
+                    <p class="text-xl text-secondary mb-8 leading-relaxed">
                         Découvrez une révolution médicale au Maroc avec l'IA, la blockchain et la réalité augmentée. 
                         Votre santé n'a jamais été aussi intelligente.
                     </p>
@@ -747,7 +766,7 @@
                 <h2 class="text-4xl lg:text-6xl font-bold mb-6">
                     <span class="gradient-text">Technologies</span> Révolutionnaires
                 </h2>
-                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                <p class="text-xl text-secondary max-w-3xl mx-auto">
                     Nous intégrons les technologies les plus avancées pour créer l'écosystème de santé le plus intelligent du Maroc.
                 </p>
             </div>
@@ -760,7 +779,7 @@
                             <i data-feather="cpu" class="w-10 h-10 text-blue-400"></i>
                         </div>
                         <h3 class="text-2xl font-bold mb-4 gradient-text">Intelligence Artificielle</h3>
-                        <p class="text-gray-300 mb-6">
+                        <p class="text-secondary mb-6">
                             Diagnostic assisté par IA, prédiction des maladies et recommandations personnalisées en temps réel.
                         </p>
                         <div class="flex justify-center space-x-2">
@@ -778,7 +797,7 @@
                             <i data-feather="shield" class="w-10 h-10 text-green-400"></i>
                         </div>
                         <h3 class="text-2xl font-bold mb-4 gradient-text">Blockchain Sécurisée</h3>
-                        <p class="text-gray-300 mb-6">
+                        <p class="text-secondary mb-6">
                             Vos données médicales sont protégées par une blockchain inviolable et cryptographiquement sécurisée.
                         </p>
                         <div class="flex justify-center space-x-2">
@@ -796,7 +815,7 @@
                             <i data-feather="eye" class="w-10 h-10 text-purple-400"></i>
                         </div>
                         <h3 class="text-2xl font-bold mb-4 gradient-text">Réalité Augmentée</h3>
-                        <p class="text-gray-300 mb-6">
+                        <p class="text-secondary mb-6">
                             Visualisez vos organes en 3D, suivez vos traitements et consultez vos médecins en réalité augmentée.
                         </p>
                         <div class="flex justify-center space-x-2">
@@ -817,7 +836,7 @@
                 <h2 class="text-4xl lg:text-6xl font-bold mb-6">
                     <span class="gradient-text">Services</span> Révolutionnaires
                 </h2>
-                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                <p class="text-xl text-secondary max-w-3xl mx-auto">
                     Découvrez notre gamme complète de services médicaux digitaux qui transforment votre expérience de santé.
                 </p>
             </div>
@@ -831,7 +850,7 @@
                             </div>
                             <div>
                                 <h3 class="text-xl font-bold mb-2 gradient-text">Téléconsultation IA</h3>
-                                <p class="text-gray-300">Consultez des médecins experts via IA avancée avec diagnostic en temps réel.</p>
+                                <p class="text-secondary">Consultez des médecins experts via IA avancée avec diagnostic en temps réel.</p>
                             </div>
                         </div>
 
@@ -841,7 +860,7 @@
                             </div>
                             <div>
                                 <h3 class="text-xl font-bold mb-2 gradient-text">Dossier Médical 3D</h3>
-                                <p class="text-gray-300">Visualisez votre santé en 3D avec historique complet et prédictions.</p>
+                                <p class="text-secondary">Visualisez votre santé en 3D avec historique complet et prédictions.</p>
                             </div>
                         </div>
 
@@ -851,7 +870,7 @@
                             </div>
                             <div>
                                 <h3 class="text-xl font-bold mb-2 gradient-text">Livraison Drone</h3>
-                                <p class="text-gray-300">Recevez vos médicaments par drone en moins de 30 minutes.</p>
+                                <p class="text-secondary">Recevez vos médicaments par drone en moins de 30 minutes.</p>
                             </div>
                         </div>
                     </div>
@@ -869,14 +888,14 @@
                         <div class="absolute top-4 right-4 glass-card p-4">
                             <div class="text-center">
                                 <div class="text-2xl font-bold gradient-text" id="stat1">500K+</div>
-                                <div class="text-sm text-gray-300">Patients</div>
+                                <div class="text-sm text-secondary">Patients</div>
                             </div>
                         </div>
                         
                         <div class="absolute bottom-4 left-4 glass-card p-4">
                             <div class="text-center">
                                 <div class="text-2xl font-bold gradient-text" id="stat2">99.9%</div>
-                                <div class="text-sm text-gray-300">Sécurité</div>
+                                <div class="text-sm text-secondary">Sécurité</div>
                             </div>
                         </div>
                     </div>
@@ -892,7 +911,7 @@
                 <h2 class="text-4xl lg:text-6xl font-bold mb-6">
                     <span class="gradient-text">Impact</span> au Maroc
                 </h2>
-                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                <p class="text-xl text-secondary max-w-3xl mx-auto">
                     Des chiffres qui témoignent de notre engagement pour révolutionner la santé digitale au Maroc.
                 </p>
             </div>
@@ -900,26 +919,26 @@
             <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
                 <div class="glass-card p-8 text-center scale-in">
                     <div class="text-4xl lg:text-5xl font-bold gradient-text mb-2" id="stat-patients">0</div>
-                    <div class="text-gray-300 mb-2">Patients Satisfaits</div>
-                    <div class="text-sm text-gray-400">Dans tout le Maroc</div>
+                    <div class="text-secondary mb-2">Patients Satisfaits</div>
+                    <div class="text-sm text-muted">Dans tout le Maroc</div>
                 </div>
                 
                 <div class="glass-card p-8 text-center scale-in">
                     <div class="text-4xl lg:text-5xl font-bold gradient-text mb-2" id="stat-doctors">0</div>
-                    <div class="text-gray-300 mb-2">Médecins Partenaires</div>
-                    <div class="text-sm text-gray-400">Certifiés et vérifiés</div>
+                    <div class="text-secondary mb-2">Médecins Partenaires</div>
+                    <div class="text-sm text-muted">Certifiés et vérifiés</div>
                 </div>
                 
                 <div class="glass-card p-8 text-center scale-in">
                     <div class="text-4xl lg:text-5xl font-bold gradient-text mb-2" id="stat-cities">0</div>
-                    <div class="text-gray-300 mb-2">Villes Desservies</div>
-                    <div class="text-sm text-gray-400">De Tanger à Agadir</div>
+                    <div class="text-secondary mb-2">Villes Desservies</div>
+                    <div class="text-sm text-muted">De Tanger à Agadir</div>
                 </div>
                 
                 <div class="glass-card p-8 text-center scale-in">
                     <div class="text-4xl lg:text-5xl font-bold gradient-text mb-2" id="stat-consultations">0</div>
-                    <div class="text-gray-300 mb-2">Consultations</div>
-                    <div class="text-sm text-gray-400">Réussies avec succès</div>
+                    <div class="text-secondary mb-2">Consultations</div>
+                    <div class="text-sm text-muted">Réussies avec succès</div>
                 </div>
             </div>
         </div>
@@ -932,7 +951,7 @@
                 <h2 class="text-4xl lg:text-6xl font-bold mb-6">
                     <span class="gradient-text">Témoignages</span> Authentiques
                 </h2>
-                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                <p class="text-xl text-secondary max-w-3xl mx-auto">
                     Découvrez les expériences réelles de nos patients et médecins partenaires au Maroc.
                 </p>
             </div>
@@ -945,7 +964,7 @@
                              alt="Dr. Aicha Benali" class="w-16 h-16 rounded-full mr-4">
                         <div>
                             <h4 class="text-lg font-bold gradient-text">Dr. Aicha Benali</h4>
-                            <p class="text-sm text-gray-400">Médecin Généraliste, Casablanca</p>
+                            <p class="text-sm text-muted">Médecin Généraliste, Casablanca</p>
                             <div class="flex text-yellow-400 mt-1">
                                 <i data-feather="star" class="w-4 h-4 fill-current"></i>
                                 <i data-feather="star" class="w-4 h-4 fill-current"></i>
@@ -955,7 +974,7 @@
                             </div>
                         </div>
                     </div>
-                    <p class="text-gray-300 italic">
+                    <p class="text-secondary italic">
                         "Medacte a révolutionné ma pratique médicale. La gestion des dossiers patients est tellement plus simple et efficace. Mes patients adorent pouvoir consulter leurs résultats en temps réel."
                     </p>
                 </div>
@@ -967,7 +986,7 @@
                              alt="Youssef El Amrani" class="w-16 h-16 rounded-full mr-4">
                         <div>
                             <h4 class="text-lg font-bold gradient-text">Youssef El Amrani</h4>
-                            <p class="text-sm text-gray-400">Patient, Rabat</p>
+                            <p class="text-sm text-muted">Patient, Rabat</p>
                             <div class="flex text-yellow-400 mt-1">
                                 <i data-feather="star" class="w-4 h-4 fill-current"></i>
                                 <i data-feather="star" class="w-4 h-4 fill-current"></i>
@@ -977,7 +996,7 @@
                             </div>
                         </div>
                     </div>
-                    <p class="text-gray-300 italic">
+                    <p class="text-secondary italic">
                         "En tant que père de famille, Medacte me permet de gérer la santé de toute ma famille depuis mon téléphone. Les consultations vidéo sont très pratiques et les médecins sont excellents."
                     </p>
                 </div>
@@ -989,7 +1008,7 @@
                              alt="Fatima Zahra" class="w-16 h-16 rounded-full mr-4">
                         <div>
                             <h4 class="text-lg font-bold gradient-text">Fatima Zahra</h4>
-                            <p class="text-sm text-gray-400">Pharmacienne, Marrakech</p>
+                            <p class="text-sm text-muted">Pharmacienne, Marrakech</p>
                             <div class="flex text-yellow-400 mt-1">
                                 <i data-feather="star" class="w-4 h-4 fill-current"></i>
                                 <i data-feather="star" class="w-4 h-4 fill-current"></i>
@@ -999,7 +1018,7 @@
                             </div>
                         </div>
                     </div>
-                    <p class="text-gray-300 italic">
+                    <p class="text-secondary italic">
                         "La livraison de médicaments à domicile est un vrai soulagement pour mes patients âgés. Le système de commande est très intuitif et la livraison est toujours ponctuelle."
                     </p>
                 </div>
@@ -1014,7 +1033,7 @@
                 <h2 class="text-4xl lg:text-6xl font-bold mb-6">
                     <span class="gradient-text">Avantages</span> Medacte
                 </h2>
-                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                <p class="text-xl text-secondary max-w-3xl mx-auto">
                     Découvrez pourquoi plus de 500,000 Marocains choisissent Medacte pour leur santé digitale.
                 </p>
             </div>
@@ -1033,7 +1052,7 @@
                                     </div>
                                 </div>
                                 <h3 class="text-2xl font-bold gradient-text mb-4">Consultation Instantanée</h3>
-                                <p class="text-gray-300 mb-6">
+                                <p class="text-secondary mb-6">
                                     Consultez un médecin en moins de 15 minutes, 24h/24 et 7j/7. Plus besoin d'attendre des heures en salle d'attente.
                                 </p>
                                 <div class="flex items-center justify-center text-green-400">
@@ -1052,7 +1071,7 @@
                                     </div>
                                 </div>
                                 <h3 class="text-2xl font-bold gradient-text mb-4">Sécurité Maximale</h3>
-                                <p class="text-gray-300 mb-6">
+                                <p class="text-secondary mb-6">
                                     Vos données médicales sont protégées par un chiffrement de niveau bancaire et stockées sur des serveurs sécurisés au Maroc.
                                 </p>
                                 <div class="flex items-center justify-center text-green-400">
@@ -1071,7 +1090,7 @@
                                     </div>
                                 </div>
                                 <h3 class="text-2xl font-bold gradient-text mb-4">Dossier Médical Unifié</h3>
-                                <p class="text-gray-300 mb-6">
+                                <p class="text-secondary mb-6">
                                     Centralisez tous vos documents médicaux, ordonnances et résultats d'analyses dans un seul endroit sécurisé.
                                 </p>
                                 <div class="flex items-center justify-center text-green-400">
@@ -1090,7 +1109,7 @@
                                     </div>
                                 </div>
                                 <h3 class="text-2xl font-bold gradient-text mb-4">Livraison Express</h3>
-                                <p class="text-gray-300 mb-6">
+                                <p class="text-secondary mb-6">
                                     Recevez vos médicaments à domicile en moins de 2h avec suivi en temps réel de votre livraison.
                                 </p>
                                 <div class="flex items-center justify-center text-green-400">
@@ -1109,7 +1128,7 @@
                                     </div>
                                 </div>
                                 <h3 class="text-2xl font-bold gradient-text mb-4">Rappels Intelligents</h3>
-                                <p class="text-gray-300 mb-6">
+                                <p class="text-secondary mb-6">
                                     Ne ratez plus jamais vos prises de médicaments avec nos rappels personnalisés et notifications intelligentes.
                                 </p>
                                 <div class="flex items-center justify-center text-green-400">
@@ -1128,7 +1147,7 @@
                                     </div>
                                 </div>
                                 <h3 class="text-2xl font-bold gradient-text mb-4">Médecins Certifiés</h3>
-                                <p class="text-gray-300 mb-6">
+                                <p class="text-secondary mb-6">
                                     Consultez uniquement des médecins vérifiés et certifiés par l'Ordre des Médecins du Maroc.
                                 </p>
                                 <div class="flex items-center justify-center text-green-400">
@@ -1144,11 +1163,11 @@
                 <!-- Dots Indicator -->
                 <div class="flex justify-center mt-8 space-x-2" id="dotsContainer">
                     <div class="w-3 h-3 bg-blue-400 rounded-full cursor-pointer transition-all" data-slide="0"></div>
-                    <div class="w-3 h-3 bg-gray-600 rounded-full cursor-pointer transition-all" data-slide="1"></div>
-                    <div class="w-3 h-3 bg-gray-600 rounded-full cursor-pointer transition-all" data-slide="2"></div>
-                    <div class="w-3 h-3 bg-gray-600 rounded-full cursor-pointer transition-all" data-slide="3"></div>
-                    <div class="w-3 h-3 bg-gray-600 rounded-full cursor-pointer transition-all" data-slide="4"></div>
-                    <div class="w-3 h-3 bg-gray-600 rounded-full cursor-pointer transition-all" data-slide="5"></div>
+                    <div class="w-3 h-3 bg-secondary rounded-full cursor-pointer transition-all" data-slide="1"></div>
+                    <div class="w-3 h-3 bg-secondary rounded-full cursor-pointer transition-all" data-slide="2"></div>
+                    <div class="w-3 h-3 bg-secondary rounded-full cursor-pointer transition-all" data-slide="3"></div>
+                    <div class="w-3 h-3 bg-secondary rounded-full cursor-pointer transition-all" data-slide="4"></div>
+                    <div class="w-3 h-3 bg-secondary rounded-full cursor-pointer transition-all" data-slide="5"></div>
                 </div>
             </div>
 
@@ -1156,7 +1175,7 @@
             <div class="text-center mt-16">
                 <div class="glass-card p-8 inline-block">
                     <h3 class="text-2xl font-bold gradient-text mb-4">Prêt à Révolutionner Votre Santé ?</h3>
-                    <p class="text-gray-300 mb-6">Téléchargez Medacte gratuitement et découvrez tous ces avantages</p>
+                    <p class="text-secondary mb-6">Téléchargez Medacte gratuitement et découvrez tous ces avantages</p>
                     <div class="flex flex-col sm:flex-row gap-4 justify-center">
                         <button class="px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-semibold rounded-2xl transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-blue-500/30 border border-blue-400/20 backdrop-blur-sm">
                             <div class="flex items-center justify-center">
@@ -1187,7 +1206,7 @@
                 <h2 class="text-4xl lg:text-6xl font-bold mb-6">
                     <span class="gradient-text">Questions</span> Fréquentes
                 </h2>
-                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                <p class="text-xl text-secondary max-w-3xl mx-auto">
                     Tout ce que vous devez savoir sur Medacte et nos services au Maroc.
                 </p>
             </div>
@@ -1200,7 +1219,7 @@
                         <i data-feather="chevron-down" class="w-6 h-6 transition-transform" id="chevron-1"></i>
                     </button>
                     <div class="px-6 pb-6 hidden" id="faq-1">
-                        <p class="text-gray-300">
+                        <p class="text-secondary">
                             Téléchargez l'application Medacte depuis l'App Store ou Google Play. Suivez les instructions pour créer votre compte en moins de 2 minutes avec votre numéro de téléphone marocain.
                         </p>
                     </div>
@@ -1213,7 +1232,7 @@
                         <i data-feather="chevron-down" class="w-6 h-6 transition-transform" id="chevron-2"></i>
                     </button>
                     <div class="px-6 pb-6 hidden" id="faq-2">
-                        <p class="text-gray-300">
+                        <p class="text-secondary">
                             Oui, tous nos services sont 100% gratuits pour les patients. Nous croyons en l'accès égal aux soins de santé pour tous les Marocains, peu importe leur situation financière.
                         </p>
                     </div>
@@ -1226,7 +1245,7 @@
                         <i data-feather="chevron-down" class="w-6 h-6 transition-transform" id="chevron-3"></i>
                     </button>
                     <div class="px-6 pb-6 hidden" id="faq-3">
-                        <p class="text-gray-300">
+                        <p class="text-secondary">
                             Prenez rendez-vous avec un médecin disponible dans votre région. À l'heure du rendez-vous, cliquez sur le lien dans l'application pour démarrer la consultation vidéo HD sécurisée.
                         </p>
                     </div>
@@ -1239,7 +1258,7 @@
                         <i data-feather="chevron-down" class="w-6 h-6 transition-transform" id="chevron-4"></i>
                     </button>
                     <div class="px-6 pb-6 hidden" id="faq-4">
-                        <p class="text-gray-300">
+                        <p class="text-secondary">
                             Absolument. Nous utilisons un chiffrement de niveau bancaire et suivons les réglementations strictes de protection des données de santé au Maroc. Vos données sont stockées sur des serveurs sécurisés au Maroc.
                         </p>
                     </div>
@@ -1252,7 +1271,7 @@
                         <i data-feather="chevron-down" class="w-6 h-6 transition-transform" id="chevron-5"></i>
                     </button>
                     <div class="px-6 pb-6 hidden" id="faq-5">
-                        <p class="text-gray-300">
+                        <p class="text-secondary">
                             Nous sommes présents dans 45 villes du Maroc, incluant Casablanca, Rabat, Marrakech, Fès, Tanger, Agadir, Meknès, Oujda, et bien d'autres. Notre réseau s'étend continuellement.
                         </p>
                     </div>
@@ -1268,7 +1287,7 @@
                 <h2 class="text-4xl lg:text-6xl font-bold mb-6">
                     <span class="gradient-text">Partenaires</span> de Confiance
                 </h2>
-                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                <p class="text-xl text-secondary max-w-3xl mx-auto">
                     Nous collaborons avec les meilleurs établissements de santé et institutions au Maroc.
                 </p>
             </div>
@@ -1277,28 +1296,28 @@
                 <div class="glass-card p-6 flex items-center justify-center scale-in">
                     <div class="text-center">
                         <div class="text-2xl font-bold gradient-text mb-2">CHU</div>
-                        <div class="text-sm text-gray-400">Casablanca</div>
+                        <div class="text-sm text-muted">Casablanca</div>
                     </div>
                 </div>
                 
                 <div class="glass-card p-6 flex items-center justify-center scale-in">
                     <div class="text-center">
                         <div class="text-2xl font-bold gradient-text mb-2">Hôpital</div>
-                        <div class="text-sm text-gray-400">Ibn Sina</div>
+                        <div class="text-sm text-muted">Ibn Sina</div>
                     </div>
                 </div>
                 
                 <div class="glass-card p-6 flex items-center justify-center scale-in">
                     <div class="text-center">
                         <div class="text-2xl font-bold gradient-text mb-2">Clinique</div>
-                        <div class="text-sm text-gray-400">Agdal</div>
+                        <div class="text-sm text-muted">Agdal</div>
                     </div>
                 </div>
                 
                 <div class="glass-card p-6 flex items-center justify-center scale-in">
                     <div class="text-center">
                         <div class="text-2xl font-bold gradient-text mb-2">Centre</div>
-                        <div class="text-sm text-gray-400">Mohammed VI</div>
+                        <div class="text-sm text-muted">Mohammed VI</div>
                     </div>
                 </div>
             </div>
@@ -1313,7 +1332,7 @@
                             </div>
                         </div>
                         <h3 class="text-2xl font-bold gradient-text mb-4">Je suis Patient</h3>
-                        <p class="text-gray-300 mb-6">
+                        <p class="text-secondary mb-6">
                             Accédez à vos consultations, dossiers médicaux et services de santé digitaux.
                         </p>
                         <button class="mx-auto px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-semibold rounded-2xl transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-blue-500/30 border border-blue-400/20 backdrop-blur-sm">
@@ -1334,7 +1353,7 @@
                             </div>
                         </div>
                         <h3 class="text-2xl font-bold gradient-text mb-4">Je suis Professionnel</h3>
-                        <p class="text-gray-300 mb-6">
+                        <p class="text-secondary mb-6">
                             Gérez vos patients, consultations et accédez aux outils professionnels.
                         </p>
                         <button class="mx-auto px-6 py-3 bg-gradient-to-r from-green-500 to-cyan-600 hover:from-green-600 hover:to-cyan-700 text-white font-semibold rounded-2xl transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-green-500/30 border border-green-400/20 backdrop-blur-sm">
@@ -1358,7 +1377,7 @@
                 <h2 class="text-4xl lg:text-6xl font-bold mb-6">
                     <span class="gradient-text">Services</span> d'Urgence
                 </h2>
-                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                <p class="text-xl text-secondary max-w-3xl mx-auto">
                     En cas d'urgence médicale, nous sommes là pour vous aider 24h/24 au Maroc.
                 </p>
             </div>
@@ -1369,7 +1388,7 @@
                         <i data-feather="phone" class="w-8 h-8 text-red-400"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-2">15</h3>
-                    <p class="text-gray-300">Urgences Médicales</p>
+                    <p class="text-secondary">Urgences Médicales</p>
                 </a>
 
                 <a href="tel:19" class="glass-card p-6 text-center hover:bg-blue-500 hover:bg-opacity-20 transition-all scale-in">
@@ -1377,7 +1396,7 @@
                         <i data-feather="shield" class="w-8 h-8 text-blue-400"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-2">19</h3>
-                    <p class="text-gray-300">Police</p>
+                    <p class="text-secondary">Police</p>
                 </a>
 
                 <a href="tel:177" class="glass-card p-6 text-center hover:bg-green-500 hover:bg-opacity-20 transition-all scale-in">
@@ -1385,7 +1404,7 @@
                         <i data-feather="users" class="w-8 h-8 text-green-400"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-2">177</h3>
-                    <p class="text-gray-300">Gendarmerie</p>
+                    <p class="text-secondary">Gendarmerie</p>
                 </a>
 
                 <a href="tel:0801004747" class="glass-card p-6 text-center hover:bg-purple-500 hover:bg-opacity-20 transition-all scale-in">
@@ -1393,7 +1412,7 @@
                         <i data-feather="heart" class="w-8 h-8 text-purple-400"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-2">SAMU</h3>
-                    <p class="text-gray-300">080 100 47 47</p>
+                    <p class="text-secondary">080 100 47 47</p>
                 </a>
             </div>
         </div>
@@ -1406,7 +1425,7 @@
                 <h2 class="text-4xl lg:text-6xl font-bold mb-6">
                     Restez <span class="gradient-text">Informé</span>
                 </h2>
-                <p class="text-xl text-gray-300 mb-8">
+                <p class="text-xl text-secondary mb-8">
                     Recevez nos conseils santé, nouvelles fonctionnalités et offres exclusives directement dans votre boîte mail.
                 </p>
                 
@@ -1424,7 +1443,7 @@
                     </button>
                 </form>
                 
-                <p class="text-sm text-gray-400 mt-4">
+                <p class="text-sm text-muted mt-4">
                     Nous respectons votre vie privée. Désabonnement possible à tout moment.
                 </p>
             </div>
@@ -1438,7 +1457,7 @@
                 <h2 class="text-4xl lg:text-6xl font-bold mb-6">
                     <span class="gradient-text">Contactez</span>-Nous
                 </h2>
-                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                <p class="text-xl text-secondary max-w-3xl mx-auto">
                     Notre équipe est là pour vous accompagner dans votre parcours santé digital.
                 </p>
             </div>
@@ -1466,7 +1485,7 @@
 
                         <div class="glass-card p-6">
                             <h3 class="text-xl font-bold gradient-text mb-4">Horaires de Support</h3>
-                            <div class="space-y-2 text-gray-300">
+                            <div class="space-y-2 text-secondary">
                                 <div class="flex justify-between">
                                     <span>Lundi - Vendredi</span>
                                     <span>8h00 - 20h00</span>
@@ -1534,7 +1553,7 @@
                 <h2 class="text-4xl lg:text-6xl font-bold mb-6">
                     Prêt pour la <span class="gradient-text">Révolution</span> ?
                 </h2>
-                <p class="text-xl text-gray-300 mb-8">
+                <p class="text-xl text-secondary mb-8">
                     Rejoignez plus de 500,000 utilisateurs qui ont déjà transformé leur santé avec Medacte au Maroc.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
@@ -1560,14 +1579,14 @@
     </section>
 
     <!-- Footer -->
-    <footer class="py-12 border-t border-gray-800">
+    <footer class="py-12 border-t border-opacity-20" style="border-color: var(--text-muted);">
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid md:grid-cols-4 gap-8">
                 <div class="md:col-span-2">
                     <div class="flex items-center mb-6">
                         <img src="https://pub-9f200de23f1a4fada809186205ec0a61.r2.dev/logo.svg" alt="Medacte" class="h-24 w-24">
                     </div>
-                    <p class="text-gray-400 mb-6">
+                    <p class="text-muted mb-6">
                         Révolutionnant la santé digitale au Maroc avec l'IA, la blockchain et la réalité augmentée.
                     </p>
                     <div class="flex space-x-4">
@@ -1588,7 +1607,7 @@
                 
                 <div>
                     <h3 class="text-lg font-semibold mb-4 gradient-text">Services</h3>
-                    <ul class="space-y-2 text-gray-400">
+                    <ul class="space-y-2 text-muted">
                         <li><a href="#" class="nav-link">Téléconsultation</a></li>
                         <li><a href="#" class="nav-link">IA Médicale</a></li>
                         <li><a href="#" class="nav-link">Blockchain</a></li>
@@ -1598,7 +1617,7 @@
                 
                 <div>
                     <h3 class="text-lg font-semibold mb-4 gradient-text">Support</h3>
-                    <ul class="space-y-2 text-gray-400">
+                    <ul class="space-y-2 text-muted">
                         <li><a href="#" class="nav-link">Centre d'aide</a></li>
                         <li><a href="#" class="nav-link">Sécurité</a></li>
                         <li><a href="#" class="nav-link">Confidentialité</a></li>
@@ -1607,7 +1626,7 @@
                 </div>
             </div>
             
-            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+            <div class="border-t border-opacity-20 mt-8 pt-8 text-center text-muted" style="border-color: var(--text-muted);">
                 <p>&copy; 2024 Medacte. Tous droits réservés. Révolutionnant la santé digitale au Maroc.</p>
             </div>
         </div>
@@ -1794,9 +1813,11 @@
         function initMobileMenu() {
             const mobileMenuBtn = document.getElementById('mobileMenuBtn');
             const mobileMenu = document.createElement('div');
-            mobileMenu.className = 'fixed top-0 left-0 w-full h-full bg-black bg-opacity-95 backdrop-filter backdrop-blur-lg z-50 hidden';
+            mobileMenu.className = 'fixed top-0 left-0 w-full h-full backdrop-filter backdrop-blur-lg z-50 hidden';
+            mobileMenu.style.backgroundColor = 'var(--bg-primary)';
+            mobileMenu.style.opacity = '0.95';
             mobileMenu.innerHTML = `
-                <div class="flex justify-between items-center p-4 border-b border-gray-800">
+                <div class="flex justify-between items-center p-4 border-b border-opacity-20" style="border-color: var(--text-muted);">
                     <div class="flex items-center">
                         <img src="https://pub-9f200de23f1a4fada809186205ec0a61.r2.dev/logo.svg" alt="Medacte" class="h-16 w-16">
                     </div>
