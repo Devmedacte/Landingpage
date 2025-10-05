@@ -17,20 +17,56 @@
     <meta property="og:url" content="https://medacte.com">
     <meta property="og:title" content="Medacte - Révolution Digitale de la Santé">
     <meta property="og:description" content="L'avenir de la santé est ici. IA, blockchain et réalité augmentée pour révolutionner les soins au Maroc.">
-    <meta property="og:image" content="https://pub-9f200de23f1a4fada809186205ec0a61.r2.dev/app.svg">
+    <meta property="og:image" content="https://pub-9f200de23f1a4fada809186205ec0a61.r2.dev/minlogo.svg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Medacte - Révolution Digitale de la Santé">
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:title" content="Medacte - Révolution Digitale de la Santé">
     <meta property="twitter:description" content="L'avenir de la santé est ici. IA, blockchain et réalité augmentée pour révolutionner les soins au Maroc.">
-    <meta property="twitter:image" content="https://pub-9f200de23f1a4fada809186205ec0a61.r2.dev/app.svg">
+    <meta property="twitter:image" content="https://pub-9f200de23f1a4fada809186205ec0a61.r2.dev/minlogo.svg">
+    <meta property="twitter:image:alt" content="Medacte - Révolution Digitale de la Santé">
+    
+    <!-- Google Search Console / SEO -->
+    <meta name="google-site-verification" content="your-google-verification-code">
+    <meta name="theme-color" content="#3b82f6">
+    <meta name="msapplication-TileColor" content="#3b82f6">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Medacte">
+    
+    <!-- Additional SEO Meta Tags -->
+    <meta name="format-detection" content="telephone=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="Medacte">
+    <meta name="msapplication-tooltip" content="Medacte - Révolution Digitale de la Santé">
+    <meta name="msapplication-starturl" content="/">
+    
+    <!-- Apple Touch Icons -->
+    <link rel="apple-touch-icon" href="https://pub-9f200de23f1a4fada809186205ec0a61.r2.dev/minlogo.svg">
+    <link rel="apple-touch-icon" sizes="152x152" href="https://pub-9f200de23f1a4fada809186205ec0a61.r2.dev/minlogo.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://pub-9f200de23f1a4fada809186205ec0a61.r2.dev/minlogo.svg">
+    <link rel="apple-touch-icon" sizes="167x167" href="https://pub-9f200de23f1a4fada809186205ec0a61.r2.dev/minlogo.svg">
     
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="https://pub-9f200de23f1a4fada809186205ec0a61.r2.dev/logo.svg">
     
-    <!-- External Resources -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/feather-icons"></script>
+    <!-- Preload critical resources -->
+    <link rel="preload" href="https://cdn.tailwindcss.com" as="script">
+    <link rel="preload" href="https://unpkg.com/feather-icons" as="script">
+    <link rel="preload" href="https://pub-9f200de23f1a4fada809186205ec0a61.r2.dev/logo.svg" as="image">
+    <link rel="preload" href="https://pub-9f200de23f1a4fada809186205ec0a61.r2.dev/minlogo.svg" as="image">
+    
+    <!-- DNS prefetch for external domains -->
+    <link rel="dns-prefetch" href="//cdn.tailwindcss.com">
+    <link rel="dns-prefetch" href="//unpkg.com">
+    <link rel="dns-prefetch" href="//pub-9f200de23f1a4fada809186205ec0a61.r2.dev">
+    
+    <!-- External Resources with async loading -->
+    <script src="https://cdn.tailwindcss.com" async></script>
+    <script src="https://unpkg.com/feather-icons" async></script>
     
     <style>
         :root {
@@ -89,6 +125,17 @@
             padding: 0;
             box-sizing: border-box;
         }
+        
+        /* Performance optimizations */
+        * {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        img {
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: crisp-edges;
+        }
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -98,6 +145,8 @@
             cursor: none;
             transition: background-color 0.3s ease, color 0.3s ease;
             position: relative;
+            will-change: auto;
+            transform: translateZ(0);
         }
 
         /* Modern subtle background pattern */
@@ -183,8 +232,9 @@
         /* Floating Animation */
         .float {
             animation: float 6s ease-in-out infinite;
+            will-change: transform;
         }
-
+        
         @keyframes float {
             0%, 100% { transform: translateY(0px); }
             50% { transform: translateY(-20px); }
@@ -193,6 +243,7 @@
         /* Pulse Glow */
         .pulse-glow {
             animation: pulseGlow 2s ease-in-out infinite;
+            will-change: box-shadow, transform;
         }
 
         @keyframes pulseGlow {
@@ -663,6 +714,7 @@
             border-top: 3px solid #667eea;
             border-radius: 50%;
             animation: spin 1s linear infinite;
+            will-change: transform;
         }
 
         /* Light mode loading spinner */
@@ -692,7 +744,7 @@
         <div class="max-w-7xl mx-auto px-6 py-4">
             <div class="flex justify-between items-center">
                 <div class="flex items-center">
-                    <img src="https://pub-9f200de23f1a4fada809186205ec0a61.r2.dev/logo.svg" alt="Medacte" class="h-20 w-20">
+                    <img src="https://pub-9f200de23f1a4fada809186205ec0a61.r2.dev/logo.svg" alt="Medacte" class="h-20 w-20" loading="eager">
                 </div>
                 
                 <div class="hidden md:flex items-center space-x-8">
@@ -750,7 +802,9 @@
                         <div class="glass-card p-8 float">
                             <img src="https://pub-9f200de23f1a4fada809186205ec0a61.r2.dev/app.svg" 
                                  alt="Interface Medacte" 
-                                 class="w-full h-auto rounded-2xl">
+                                 class="w-full h-auto rounded-2xl"
+                                 loading="lazy"
+                                 decoding="async">
                         </div>
                         
                         <!-- Floating Elements -->
@@ -888,7 +942,9 @@
                         <div class="glass-card p-8 float">
                             <img src="https://pub-9f200de23f1a4fada809186205ec0a61.r2.dev/sicherheit.svg" 
                                  alt="Services Medacte" 
-                                 class="w-full h-auto rounded-2xl">
+                                 class="w-full h-auto rounded-2xl"
+                                 loading="lazy"
+                                 decoding="async">
                         </div>
                         
                         <!-- Animated Stats -->
@@ -968,7 +1024,9 @@
                 <div class="glass-card p-8 scale-in">
                     <div class="flex items-center mb-6">
                         <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=100&h=100&fit=crop&crop=face" 
-                             alt="Dr. Aicha Benali" class="w-16 h-16 rounded-full mr-4">
+                             alt="Dr. Aicha Benali" class="w-16 h-16 rounded-full mr-4"
+                             loading="lazy"
+                             decoding="async">
                         <div>
                             <h4 class="text-lg font-bold gradient-text">Dr. Aicha Benali</h4>
                             <p class="text-sm text-muted">Médecin Généraliste, Casablanca</p>
@@ -990,7 +1048,9 @@
                 <div class="glass-card p-8 scale-in">
                     <div class="flex items-center mb-6">
                         <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face" 
-                             alt="Youssef El Amrani" class="w-16 h-16 rounded-full mr-4">
+                             alt="Youssef El Amrani" class="w-16 h-16 rounded-full mr-4"
+                             loading="lazy"
+                             decoding="async">
                         <div>
                             <h4 class="text-lg font-bold gradient-text">Youssef El Amrani</h4>
                             <p class="text-sm text-muted">Patient, Rabat</p>
@@ -1012,7 +1072,9 @@
                 <div class="glass-card p-8 scale-in">
                     <div class="flex items-center mb-6">
                         <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=100&h=100&fit=crop&crop=face" 
-                             alt="Fatima Zahra" class="w-16 h-16 rounded-full mr-4">
+                             alt="Fatima Zahra" class="w-16 h-16 rounded-full mr-4"
+                             loading="lazy"
+                             decoding="async">
                         <div>
                             <h4 class="text-lg font-bold gradient-text">Fatima Zahra</h4>
                             <p class="text-sm text-muted">Pharmacienne, Marrakech</p>
@@ -1055,7 +1117,7 @@
                             <div class="glass-card p-6 scale-in text-center h-full">
                                 <div class="mb-6 flex justify-center">
                                     <div class="w-64 h-64 flex items-center justify-center">
-                                        <img src="https://pub-9f200de23f1a4fada809186205ec0a61.r2.dev/consultation.svg" alt="Consultation" class="max-w-full max-h-full object-contain">
+                                        <img src="https://pub-9f200de23f1a4fada809186205ec0a61.r2.dev/consultation.svg" alt="Consultation" class="max-w-full max-h-full object-contain" loading="lazy" decoding="async">
                                     </div>
                                 </div>
                                 <h3 class="text-2xl font-bold gradient-text mb-4">Consultation Instantanée</h3>
@@ -1074,7 +1136,7 @@
                             <div class="glass-card p-6 scale-in text-center h-full">
                                 <div class="mb-6 flex justify-center">
                                     <div class="w-64 h-64 flex items-center justify-center">
-                                        <img src="https://pub-9f200de23f1a4fada809186205ec0a61.r2.dev/security.svg" alt="Sécurité" class="max-w-full max-h-full object-contain">
+                                        <img src="https://pub-9f200de23f1a4fada809186205ec0a61.r2.dev/security.svg" alt="Sécurité" class="max-w-full max-h-full object-contain" loading="lazy" decoding="async">
                                     </div>
                                 </div>
                                 <h3 class="text-2xl font-bold gradient-text mb-4">Sécurité Maximale</h3>
@@ -1093,7 +1155,7 @@
                             <div class="glass-card p-6 scale-in text-center h-full">
                                 <div class="mb-6 flex justify-center">
                                     <div class="w-64 h-64 flex items-center justify-center">
-                                        <img src="https://pub-9f200de23f1a4fada809186205ec0a61.r2.dev/doussier.svg" alt="Dossier Médical" class="max-w-full max-h-full object-contain">
+                                        <img src="https://pub-9f200de23f1a4fada809186205ec0a61.r2.dev/doussier.svg" alt="Dossier Médical" class="max-w-full max-h-full object-contain" loading="lazy" decoding="async">
                                     </div>
                                 </div>
                                 <h3 class="text-2xl font-bold gradient-text mb-4">Dossier Médical Unifié</h3>
@@ -1112,7 +1174,7 @@
                             <div class="glass-card p-6 scale-in text-center h-full">
                                 <div class="mb-6 flex justify-center">
                                     <div class="w-64 h-64 flex items-center justify-center">
-                                        <img src="https://pub-9f200de23f1a4fada809186205ec0a61.r2.dev/Liederung.svg" alt="Livraison" class="max-w-full max-h-full object-contain">
+                                        <img src="https://pub-9f200de23f1a4fada809186205ec0a61.r2.dev/Liederung.svg" alt="Livraison" class="max-w-full max-h-full object-contain" loading="lazy" decoding="async">
                                     </div>
                                 </div>
                                 <h3 class="text-2xl font-bold gradient-text mb-4">Livraison Express</h3>
@@ -1131,7 +1193,7 @@
                             <div class="glass-card p-6 scale-in text-center h-full">
                                 <div class="mb-6 flex justify-center">
                                     <div class="w-64 h-64 flex items-center justify-center">
-                                        <img src="https://pub-9f200de23f1a4fada809186205ec0a61.r2.dev/Medikamente.svg" alt="Médicaments" class="max-w-full max-h-full object-contain">
+                                        <img src="https://pub-9f200de23f1a4fada809186205ec0a61.r2.dev/Medikamente.svg" alt="Médicaments" class="max-w-full max-h-full object-contain" loading="lazy" decoding="async">
                                     </div>
                                 </div>
                                 <h3 class="text-2xl font-bold gradient-text mb-4">Rappels Intelligents</h3>
@@ -1150,7 +1212,7 @@
                             <div class="glass-card p-6 scale-in text-center h-full">
                                 <div class="mb-6 flex justify-center">
                                     <div class="w-64 h-64 flex items-center justify-center">
-                                        <img src="https://pub-9f200de23f1a4fada809186205ec0a61.r2.dev/%C3%84rzte.svg" alt="Médecins" class="max-w-full max-h-full object-contain">
+                                        <img src="https://pub-9f200de23f1a4fada809186205ec0a61.r2.dev/%C3%84rzte.svg" alt="Médecins" class="max-w-full max-h-full object-contain" loading="lazy" decoding="async">
                                     </div>
                                 </div>
                                 <h3 class="text-2xl font-bold gradient-text mb-4">Médecins Certifiés</h3>
@@ -1335,7 +1397,7 @@
                     <div class="glass-card p-8 text-center scale-in">
                         <div class="mb-6 flex justify-center">
                             <div class="w-48 h-48 flex items-center justify-center">
-                                <img src="https://pub-9f200de23f1a4fada809186205ec0a61.r2.dev/Patient.svg" alt="Patient" class="max-w-full max-h-full object-contain">
+                                <img src="https://pub-9f200de23f1a4fada809186205ec0a61.r2.dev/Patient.svg" alt="Patient" class="max-w-full max-h-full object-contain" loading="lazy" decoding="async">
                             </div>
                         </div>
                         <h3 class="text-2xl font-bold gradient-text mb-4">Je suis Patient</h3>
@@ -1356,7 +1418,7 @@
                     <div class="glass-card p-8 text-center scale-in">
                         <div class="mb-6 flex justify-center">
                             <div class="w-48 h-48 flex items-center justify-center">
-                                <img src="https://pub-9f200de23f1a4fada809186205ec0a61.r2.dev/%C3%A4rtzeprofile.svg" alt="Professionnel" class="max-w-full max-h-full object-contain">
+                                <img src="https://pub-9f200de23f1a4fada809186205ec0a61.r2.dev/%C3%A4rtzeprofile.svg" alt="Professionnel" class="max-w-full max-h-full object-contain" loading="lazy" decoding="async">
                             </div>
                         </div>
                         <h3 class="text-2xl font-bold gradient-text mb-4">Je suis Professionnel</h3>
@@ -1591,7 +1653,7 @@
             <div class="grid md:grid-cols-4 gap-8">
                 <div class="md:col-span-2">
                     <div class="flex items-center mb-6">
-                        <img src="https://pub-9f200de23f1a4fada809186205ec0a61.r2.dev/logo.svg" alt="Medacte" class="h-24 w-24">
+                        <img src="https://pub-9f200de23f1a4fada809186205ec0a61.r2.dev/logo.svg" alt="Medacte" class="h-24 w-24" loading="eager">
                     </div>
                     <p class="text-muted mb-6">
                         Révolutionnant la santé digitale au Maroc avec l'IA, la blockchain et la réalité augmentée.
@@ -1647,7 +1709,7 @@
         "name": "Medacte",
         "description": "Plateforme révolutionnaire de santé digitale au Maroc intégrant IA, blockchain et réalité augmentée",
         "url": "https://medacte.com",
-        "logo": "https://pub-9f200de23f1a4fada809186205ec0a61.r2.dev/logo.svg",
+        "logo": "https://pub-9f200de23f1a4fada809186205ec0a61.r2.dev/minlogo.svg",
         "contactPoint": {
             "@type": "ContactPoint",
             "telephone": "+212-XXX-XXXXXX",
@@ -1671,26 +1733,39 @@
     <script>
         // Initialize everything when DOM is loaded
         document.addEventListener('DOMContentLoaded', function() {
-            // Initialize feather icons
-            feather.replace();
+            // Initialize feather icons with error handling
+            if (typeof feather !== 'undefined') {
+                feather.replace();
+            }
             
-            // Hide loading screen
+            // Hide loading screen with reduced timeout for better UX
             setTimeout(() => {
-                document.getElementById('loadingScreen').style.opacity = '0';
-                setTimeout(() => {
-                    document.getElementById('loadingScreen').style.display = 'none';
-                }, 500);
-            }, 2000);
+                const loadingScreen = document.getElementById('loadingScreen');
+                if (loadingScreen) {
+                    loadingScreen.style.opacity = '0';
+                    setTimeout(() => {
+                        loadingScreen.style.display = 'none';
+                    }, 300);
+                }
+            }, 1500);
 
-            // Custom cursor
+            // Custom cursor with performance optimization
             const cursor = document.getElementById('cursor');
             const cursorTrails = [];
+            let lastMouseTime = 0;
+            const MOUSE_THROTTLE = 16; // ~60fps
             
             document.addEventListener('mousemove', (e) => {
-                cursor.style.left = e.clientX + 'px';
-                cursor.style.top = e.clientY + 'px';
+                const now = performance.now();
+                if (now - lastMouseTime < MOUSE_THROTTLE) return;
+                lastMouseTime = now;
                 
-                // Create cursor trail
+                if (cursor) {
+                    cursor.style.left = e.clientX + 'px';
+                    cursor.style.top = e.clientY + 'px';
+                }
+                
+                // Create cursor trail with throttling
                 const trail = document.createElement('div');
                 trail.className = 'cursor-trail';
                 trail.style.left = e.clientX + 'px';
@@ -1699,18 +1774,24 @@
                 
                 cursorTrails.push(trail);
                 
-                // Remove old trails
-                if (cursorTrails.length > 10) {
+                // Remove old trails with better performance
+                if (cursorTrails.length > 8) {
                     const oldTrail = cursorTrails.shift();
-                    oldTrail.remove();
+                    if (oldTrail && oldTrail.parentNode) {
+                        oldTrail.remove();
+                    }
                 }
                 
                 // Fade out trails
                 setTimeout(() => {
-                    trail.style.opacity = '0';
-                    trail.style.transform = 'scale(0)';
-                    setTimeout(() => trail.remove(), 300);
-                }, 100);
+                    if (trail.parentNode) {
+                        trail.style.opacity = '0';
+                        trail.style.transform = 'scale(0)';
+                        setTimeout(() => {
+                            if (trail.parentNode) trail.remove();
+                        }, 200);
+                    }
+                }, 80);
             });
 
             // 3D Background with Three.js
@@ -1722,15 +1803,20 @@
             // Mobile menu
             initMobileMenu();
 
-            // Smooth scrolling for anchor links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            // Smooth scrolling for anchor links with performance optimization
+            const anchorLinks = document.querySelectorAll('a[href^="#"]');
+            anchorLinks.forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
                     e.preventDefault();
-                    const target = document.querySelector(this.getAttribute('href'));
+                    const targetId = this.getAttribute('href');
+                    const target = document.querySelector(targetId);
                     if (target) {
-                        target.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
+                        // Use requestAnimationFrame for smoother scrolling
+                        requestAnimationFrame(() => {
+                            target.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start'
+                            });
                         });
                     }
                 });
@@ -1826,7 +1912,7 @@
             mobileMenu.innerHTML = `
                 <div class="flex justify-between items-center p-4 border-b border-opacity-20" style="border-color: var(--text-muted);">
                     <div class="flex items-center">
-                        <img src="https://pub-9f200de23f1a4fada809186205ec0a61.r2.dev/logo.svg" alt="Medacte" class="h-16 w-16">
+                        <img src="https://pub-9f200de23f1a4fada809186205ec0a61.r2.dev/logo.svg" alt="Medacte" class="h-16 w-16" loading="eager">
                     </div>
                     <button id="closeMobileMenu" class="nav-link p-2">
                         <i data-feather="x" class="w-6 h-6"></i>
