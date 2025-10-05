@@ -1733,10 +1733,23 @@
     <script>
         // Initialize everything when DOM is loaded
         document.addEventListener('DOMContentLoaded', function() {
+            // Initialize theme first
+            const savedTheme = localStorage.getItem('theme') || 'dark';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+            
+            // Set initial active button
+            document.querySelectorAll('.mode-btn').forEach(btn => btn.classList.remove('active'));
+            const activeBtn = savedTheme === 'dark' ? 
+                document.querySelector('.mode-btn[onclick="setTheme(\'dark\')"]') :
+                document.querySelector('.mode-btn[onclick="setTheme(\'light\')"]');
+            if (activeBtn) activeBtn.classList.add('active');
+            
             // Initialize feather icons with error handling
-            if (typeof feather !== 'undefined') {
-                feather.replace();
-            }
+            setTimeout(() => {
+                if (typeof feather !== 'undefined') {
+                    feather.replace();
+                }
+            }, 200);
             
             // Hide loading screen with reduced timeout for better UX
             setTimeout(() => {
@@ -1932,7 +1945,9 @@
             mobileMenuBtn.addEventListener('click', () => {
                 mobileMenu.classList.remove('hidden');
                 document.body.style.overflow = 'hidden'; // Prevent background scroll
-                feather.replace();
+                if (typeof feather !== 'undefined') {
+                    feather.replace();
+                }
             });
             
             document.getElementById('closeMobileMenu').addEventListener('click', () => {
@@ -2036,7 +2051,9 @@
                     form.reset();
                 }, 2000);
                 
-                feather.replace();
+                if (typeof feather !== 'undefined') {
+                    feather.replace();
+                }
             });
         });
 
@@ -2059,7 +2076,9 @@
                     this.reset();
                 }, 2000);
                 
-                feather.replace();
+                if (typeof feather !== 'undefined') {
+                    feather.replace();
+                }
             });
         }
 
@@ -2133,24 +2152,19 @@
             
             // Update active button
             document.querySelectorAll('.mode-btn').forEach(btn => btn.classList.remove('active'));
-            event.target.closest('.mode-btn').classList.add('active');
+            const activeBtn = document.querySelector(`.mode-btn[onclick="setTheme('${theme}')"]`);
+            if (activeBtn) {
+                activeBtn.classList.add('active');
+            }
             
-            // Reinitialize feather icons
-            feather.replace();
+            // Reinitialize feather icons after a short delay
+            setTimeout(() => {
+                if (typeof feather !== 'undefined') {
+                    feather.replace();
+                }
+            }, 100);
         }
 
-        // Load saved theme on page load
-        document.addEventListener('DOMContentLoaded', function() {
-            const savedTheme = localStorage.getItem('theme') || 'dark';
-            setTheme(savedTheme);
-            
-            // Set initial active button
-            document.querySelectorAll('.mode-btn').forEach(btn => btn.classList.remove('active'));
-            const activeBtn = savedTheme === 'dark' ? 
-                document.querySelector('.mode-btn[onclick="setTheme(\'dark\')"]') :
-                document.querySelector('.mode-btn[onclick="setTheme(\'light\')"]');
-            if (activeBtn) activeBtn.classList.add('active');
-        });
     </script>
 
     <!-- Mode Switcher -->
