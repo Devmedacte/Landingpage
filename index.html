@@ -1425,37 +1425,6 @@
         </div>
     </section>
 
-    <!-- Newsletter Section -->
-    <section class="py-20 relative">
-        <div class="max-w-4xl mx-auto px-6">
-            <div class="glass-card p-12 text-center fade-in">
-                <h2 class="text-4xl lg:text-6xl font-bold mb-6">
-                    Restez <span class="gradient-text">Informé</span>
-                </h2>
-                <p class="text-xl text-secondary mb-8">
-                    Recevez nos conseils santé, nouvelles fonctionnalités et offres exclusives directement dans votre boîte mail.
-                </p>
-                
-                <form class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-                    <input type="email" 
-                           placeholder="Votre adresse email" 
-                           class="flex-1 px-6 py-4 theme-input rounded-full">
-                    <button type="submit" class="px-6 py-3 bg-gradient-to-r from-blue-500 to-cyan-600 hover:from-blue-600 hover:to-cyan-700 text-white font-semibold rounded-2xl transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-blue-500/30 border border-blue-400/20 backdrop-blur-sm">
-                        <div class="flex items-center justify-center">
-                            <div class="w-6 h-6 mr-3 bg-white/20 rounded-full flex items-center justify-center">
-                                <i data-feather="send" class="w-4 h-4"></i>
-                            </div>
-                            <span>S'abonner</span>
-                        </div>
-                    </button>
-                </form>
-                
-                <p class="text-sm text-muted mt-4">
-                    Nous respectons votre vie privée. Désabonnement possible à tout moment.
-                </p>
-            </div>
-        </div>
-    </section>
 
     <!-- Contact Section -->
     <section id="contact" class="py-20 relative">
@@ -1588,8 +1557,8 @@
     <!-- Footer -->
     <footer class="py-12 border-t border-opacity-20" style="border-color: var(--text-muted);">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="grid md:grid-cols-4 gap-8">
-                <div class="md:col-span-2">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
+                <div class="sm:col-span-2 lg:col-span-2">
                     <div class="flex items-center mb-6">
                         <img src="https://pub-9f200de23f1a4fada809186205ec0a61.r2.dev/logo.svg" alt="Medacte" class="h-24 w-24">
                     </div>
@@ -1630,6 +1599,28 @@
                         <li><a href="#" class="nav-link">Confidentialité</a></li>
                         <li><a href="#" class="nav-link">Contact</a></li>
                     </ul>
+                </div>
+                
+                <!-- Newsletter Section im Footer -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4 gradient-text">Restez Informé</h3>
+                    <p class="text-sm text-muted mb-4">
+                        Recevez nos conseils santé et nouvelles fonctionnalités.
+                    </p>
+                    <form class="space-y-3">
+                        <input type="email" 
+                               placeholder="Votre email" 
+                               class="w-full px-4 py-2 text-sm theme-input rounded-lg">
+                        <button type="submit" class="w-full px-4 py-2 bg-gradient-to-r from-blue-500 to-cyan-600 hover:from-blue-600 hover:to-cyan-700 text-white text-sm font-semibold rounded-lg transition-all duration-300 transform hover:scale-105">
+                            <div class="flex items-center justify-center">
+                                <i data-feather="send" class="w-4 h-4 mr-2"></i>
+                                <span>S'abonner</span>
+                            </div>
+                        </button>
+                    </form>
+                    <p class="text-xs text-muted mt-2">
+                        Désabonnement possible à tout moment.
+                    </p>
                 </div>
             </div>
             
