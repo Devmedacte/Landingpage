@@ -991,16 +991,15 @@
                 </p>
             </div>
 
-            <!-- Erste Phase: Karte links, 5 Vorteile rechts -->
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center mb-16" id="phase1">
+            <!-- Phase 1: Karte links, 5 Vorteile rechts -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center mb-20" id="phase1">
                 <!-- Karte links -->
-                <div class="order-2 lg:order-1" id="carteContainer">
-                    <div class="glass-card p-4 sm:p-6 lg:p-8 rounded-2xl lg:rounded-3xl shadow-2xl">
-                        <div class="w-full max-w-xs sm:max-w-sm lg:max-w-md mx-auto">
+                <div class="order-2 lg:order-1">
+                    <div class="glass-card p-6 lg:p-8 rounded-3xl shadow-2xl">
+                        <div class="w-full max-w-sm lg:max-w-md mx-auto">
                             <img src="https://pub-9f200de23f1a4fada809186205ec0a61.r2.dev/Carte%20Sant%C3%A9.svg" 
                                  alt="Medacte Carte Santé" 
                                  class="w-full h-auto transform transition-all duration-700 hover:scale-105"
-                                 id="carteSante"
                                  onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
                             <div class="hidden bg-gradient-to-br from-blue-500 to-cyan-600 rounded-2xl p-6 text-white text-center">
                                 <div class="w-full h-40 bg-white/20 rounded-xl mb-4 flex items-center justify-center">
@@ -1014,199 +1013,148 @@
                 </div>
 
                 <!-- Erste 5 Vorteile rechts -->
-                <div class="space-y-3 sm:space-y-4 lg:space-y-6 order-1 lg:order-2" id="firstBenefits">
-                    <div class="glass-card p-3 sm:p-4 lg:p-6 slide-in-right" data-delay="100">
-                        <div class="flex items-start space-x-3 sm:space-x-4">
-                            <div class="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-gradient-to-r from-blue-500 to-cyan-600 rounded-full flex items-center justify-center">
-                                <i data-feather="zap" class="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-white"></i>
+                <div class="space-y-6 order-1 lg:order-2">
+                    <div class="glass-card p-6 slide-in-right" data-delay="100">
+                        <div class="flex items-start space-x-4">
+                            <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-blue-500 to-cyan-600 rounded-full flex items-center justify-center">
+                                <i data-feather="zap" class="w-6 h-6 text-white"></i>
                             </div>
-                            <div class="min-w-0 flex-1">
-                                <h3 class="text-base sm:text-lg lg:text-xl font-bold gradient-text mb-1 sm:mb-2">Accès Rapide</h3>
-                                <p class="text-xs sm:text-sm lg:text-base text-secondary leading-relaxed">Identification & vérification des droits en secondes (QR/ID), moins d'attente.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="glass-card p-3 sm:p-4 lg:p-6 slide-in-right" data-delay="200">
-                        <div class="flex items-start space-x-3 sm:space-x-4">
-                            <div class="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-gradient-to-r from-green-500 to-emerald-600 rounded-full flex items-center justify-center">
-                                <i data-feather="eye" class="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-white"></i>
-                            </div>
-                            <div class="min-w-0 flex-1">
-                                <h3 class="text-base sm:text-lg lg:text-xl font-bold gradient-text mb-1 sm:mb-2">Situation Claire</h3>
-                                <p class="text-xs sm:text-sm lg:text-base text-secondary leading-relaxed">Statut CNSS/AMO, validité et panier de soins directement visibles → moins de litiges.</p>
+                            <div>
+                                <h3 class="text-xl font-bold gradient-text mb-2">Accès Rapide</h3>
+                                <p class="text-secondary">Identification & vérification des droits en secondes (QR/ID), moins d'attente.</p>
                             </div>
                         </div>
                     </div>
 
-                    <div class="glass-card p-3 sm:p-4 lg:p-6 slide-in-right" data-delay="300">
-                        <div class="flex items-start space-x-3 sm:space-x-4">
-                            <div class="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-gradient-to-r from-red-500 to-pink-600 rounded-full flex items-center justify-center">
-                                <i data-feather="alert-triangle" class="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-white"></i>
+                    <div class="glass-card p-6 slide-in-right" data-delay="200">
+                        <div class="flex items-start space-x-4">
+                            <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-green-500 to-emerald-600 rounded-full flex items-center justify-center">
+                                <i data-feather="eye" class="w-6 h-6 text-white"></i>
                             </div>
-                            <div class="min-w-0 flex-1">
-                                <h3 class="text-base sm:text-lg lg:text-xl font-bold gradient-text mb-1 sm:mb-2">Infos d'Urgence</h3>
-                                <p class="text-xs sm:text-sm lg:text-base text-secondary leading-relaxed">Groupe sanguin, allergies, contact d'urgence immédiatement disponible.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="glass-card p-3 sm:p-4 lg:p-6 slide-in-right" data-delay="400">
-                        <div class="flex items-start space-x-3 sm:space-x-4">
-                            <div class="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-gradient-to-r from-purple-500 to-indigo-600 rounded-full flex items-center justify-center">
-                                <i data-feather="shield" class="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-white"></i>
-                            </div>
-                            <div class="min-w-0 flex-1">
-                                <h3 class="text-base sm:text-lg lg:text-xl font-bold gradient-text mb-1 sm:mb-2">Réduction de la Fraude</h3>
-                                <p class="text-xs sm:text-sm lg:text-base text-secondary leading-relaxed">ID carte unique + QR-Token → moins de double facturation & usurpation d'identité.</p>
+                            <div>
+                                <h3 class="text-xl font-bold gradient-text mb-2">Situation Claire</h3>
+                                <p class="text-secondary">Statut CNSS/AMO, validité et panier de soins directement visibles → moins de litiges.</p>
                             </div>
                         </div>
                     </div>
 
-                    <div class="glass-card p-3 sm:p-4 lg:p-6 slide-in-right" data-delay="500">
-                        <div class="flex items-start space-x-3 sm:space-x-4">
-                            <div class="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-gradient-to-r from-yellow-500 to-orange-600 rounded-full flex items-center justify-center">
-                                <i data-feather="dollar-sign" class="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-white"></i>
+                    <div class="glass-card p-6 slide-in-right" data-delay="300">
+                        <div class="flex items-start space-x-4">
+                            <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-red-500 to-pink-600 rounded-full flex items-center justify-center">
+                                <i data-feather="alert-triangle" class="w-6 h-6 text-white"></i>
                             </div>
-                            <div class="min-w-0 flex-1">
-                                <h3 class="text-base sm:text-lg lg:text-xl font-bold gradient-text mb-1 sm:mb-2">Contrôle des Coûts</h3>
-                                <p class="text-xs sm:text-sm lg:text-base text-secondary leading-relaxed">Logique de vérification digitale (validité, plafonds) avant prestation → moins de sur/sous-consommation.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="glass-card p-3 sm:p-4 lg:p-6 slide-in-right" data-delay="600">
-                        <div class="flex items-start space-x-3 sm:space-x-4">
-                            <div class="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-gradient-to-r from-teal-500 to-cyan-600 rounded-full flex items-center justify-center">
-                                <i data-feather="credit-card" class="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-white"></i>
-                            </div>
-                            <div class="min-w-0 flex-1">
-                                <h3 class="text-base sm:text-lg lg:text-xl font-bold gradient-text mb-1 sm:mb-2">Facturation Fluide</h3>
-                                <p class="text-xs sm:text-sm lg:text-base text-secondary leading-relaxed">Champs unifiés pour cliniques/pharmacies → e-claims plus rapides & remboursement.</p>
+                            <div>
+                                <h3 class="text-xl font-bold gradient-text mb-2">Infos d'Urgence</h3>
+                                <p class="text-secondary">Groupe sanguin, allergies, contact d'urgence immédiatement disponible.</p>
                             </div>
                         </div>
                     </div>
 
-                    <div class="glass-card p-3 sm:p-4 lg:p-6 slide-in-right" data-delay="700">
-                        <div class="flex items-start space-x-3 sm:space-x-4">
-                            <div class="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full flex items-center justify-center">
-                                <i data-feather="link" class="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-white"></i>
+                    <div class="glass-card p-6 slide-in-right" data-delay="400">
+                        <div class="flex items-start space-x-4">
+                            <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-purple-500 to-indigo-600 rounded-full flex items-center justify-center">
+                                <i data-feather="shield" class="w-6 h-6 text-white"></i>
                             </div>
-                            <div class="min-w-0 flex-1">
-                                <h3 class="text-base sm:text-lg lg:text-xl font-bold gradient-text mb-1 sm:mb-2">Interopérabilité</h3>
-                                <p class="text-xs sm:text-sm lg:text-base text-secondary leading-relaxed">Compatible avec données CNSS/CNOPS/AMO ; extensible pour ayants-droit.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="glass-card p-3 sm:p-4 lg:p-6 slide-in-right" data-delay="800">
-                        <div class="flex items-start space-x-3 sm:space-x-4">
-                            <div class="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-gradient-to-r from-gray-500 to-slate-600 rounded-full flex items-center justify-center">
-                                <i data-feather="lock" class="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-white"></i>
-                            </div>
-                            <div class="min-w-0 flex-1">
-                                <h3 class="text-base sm:text-lg lg:text-xl font-bold gradient-text mb-1 sm:mb-2">Protection des Données</h3>
-                                <p class="text-xs sm:text-sm lg:text-base text-secondary leading-relaxed">QR contient uniquement identifiants minimaux + token court terme ; aucun diagnostic sur la carte.</p>
+                            <div>
+                                <h3 class="text-xl font-bold gradient-text mb-2">Réduction de la Fraude</h3>
+                                <p class="text-secondary">ID carte unique + QR-Token → moins de double facturation & usurpation d'identité.</p>
                             </div>
                         </div>
                     </div>
 
-                    <div class="glass-card p-3 sm:p-4 lg:p-6 slide-in-right" data-delay="900">
-                        <div class="flex items-start space-x-3 sm:space-x-4">
-                            <div class="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-gradient-to-r from-emerald-500 to-green-600 rounded-full flex items-center justify-center">
-                                <i data-feather="wifi-off" class="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-white"></i>
+                    <div class="glass-card p-6 slide-in-right" data-delay="500">
+                        <div class="flex items-start space-x-4">
+                            <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-yellow-500 to-orange-600 rounded-full flex items-center justify-center">
+                                <i data-feather="dollar-sign" class="w-6 h-6 text-white"></i>
                             </div>
-                            <div class="min-w-0 flex-1">
-                                <h3 class="text-base sm:text-lg lg:text-xl font-bold gradient-text mb-1 sm:mb-2">Fonctionnement Hors-ligne</h3>
-                                <p class="text-xs sm:text-sm lg:text-base text-secondary leading-relaxed">Champs visibles + Code-128 permettent vérification de base même sans réseau.</p>
+                            <div>
+                                <h3 class="text-xl font-bold gradient-text mb-2">Contrôle des Coûts</h3>
+                                <p class="text-secondary">Logique de vérification digitale (validité, plafonds) avant prestation → moins de sur/sous-consommation.</p>
                             </div>
                         </div>
-                    </div>
-
                     </div>
                 </div>
             </div>
 
-            <!-- Zweite Phase: Karte rechts, 5 Vorteile links -->
+            <!-- Phase 2: Karte rechts, 5 Vorteile links -->
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center" id="phase2">
                 <!-- Letzte 5 Vorteile links -->
-                <div class="space-y-3 sm:space-y-4 lg:space-y-6 order-2 lg:order-1" id="secondBenefits">
-                        <div class="glass-card p-3 sm:p-4 lg:p-6 slide-in-left" data-delay="600">
-                            <div class="flex items-start space-x-3 sm:space-x-4">
-                                <div class="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-gradient-to-r from-teal-500 to-cyan-600 rounded-full flex items-center justify-center">
-                                    <i data-feather="credit-card" class="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-white"></i>
-                                </div>
-                                <div class="min-w-0 flex-1">
-                                    <h3 class="text-base sm:text-lg lg:text-xl font-bold gradient-text mb-1 sm:mb-2">Facturation Fluide</h3>
-                                    <p class="text-xs sm:text-sm lg:text-base text-secondary leading-relaxed">Champs unifiés pour cliniques/pharmacies → e-claims plus rapides & remboursement.</p>
-                                </div>
+                <div class="space-y-6 order-2 lg:order-1">
+                    <div class="glass-card p-6 slide-in-left" data-delay="600">
+                        <div class="flex items-start space-x-4">
+                            <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-teal-500 to-cyan-600 rounded-full flex items-center justify-center">
+                                <i data-feather="credit-card" class="w-6 h-6 text-white"></i>
                             </div>
-                        </div>
-
-                        <div class="glass-card p-3 sm:p-4 lg:p-6 slide-in-left" data-delay="700">
-                            <div class="flex items-start space-x-3 sm:space-x-4">
-                                <div class="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full flex items-center justify-center">
-                                    <i data-feather="link" class="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-white"></i>
-                                </div>
-                                <div class="min-w-0 flex-1">
-                                    <h3 class="text-base sm:text-lg lg:text-xl font-bold gradient-text mb-1 sm:mb-2">Interopérabilité</h3>
-                                    <p class="text-xs sm:text-sm lg:text-base text-secondary leading-relaxed">Compatible avec données CNSS/CNOPS/AMO ; extensible pour ayants-droit.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="glass-card p-3 sm:p-4 lg:p-6 slide-in-left" data-delay="800">
-                            <div class="flex items-start space-x-3 sm:space-x-4">
-                                <div class="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-gradient-to-r from-gray-500 to-slate-600 rounded-full flex items-center justify-center">
-                                    <i data-feather="lock" class="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-white"></i>
-                                </div>
-                                <div class="min-w-0 flex-1">
-                                    <h3 class="text-base sm:text-lg lg:text-xl font-bold gradient-text mb-1 sm:mb-2">Protection des Données</h3>
-                                    <p class="text-xs sm:text-sm lg:text-base text-secondary leading-relaxed">QR contient uniquement identifiants minimaux + token court terme ; aucun diagnostic sur la carte.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="glass-card p-3 sm:p-4 lg:p-6 slide-in-left" data-delay="900">
-                            <div class="flex items-start space-x-3 sm:space-x-4">
-                                <div class="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-gradient-to-r from-emerald-500 to-green-600 rounded-full flex items-center justify-center">
-                                    <i data-feather="wifi-off" class="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-white"></i>
-                                </div>
-                                <div class="min-w-0 flex-1">
-                                    <h3 class="text-base sm:text-lg lg:text-xl font-bold gradient-text mb-1 sm:mb-2">Fonctionnement Hors-ligne</h3>
-                                    <p class="text-xs sm:text-sm lg:text-base text-secondary leading-relaxed">Champs visibles + Code-128 permettent vérification de base même sans réseau.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="glass-card p-3 sm:p-4 lg:p-6 slide-in-left" data-delay="1000">
-                            <div class="flex items-start space-x-3 sm:space-x-4">
-                                <div class="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-gradient-to-r from-rose-500 to-pink-600 rounded-full flex items-center justify-center">
-                                    <i data-feather="smartphone" class="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-white"></i>
-                                </div>
-                                <div class="min-w-0 flex-1">
-                                    <h3 class="text-base sm:text-lg lg:text-xl font-bold gradient-text mb-1 sm:mb-2">Évolutif & Brandable</h3>
-                                    <p class="text-xs sm:text-sm lg:text-base text-secondary leading-relaxed">Layout unifié (MA-MEDACTE-YYYY-####), facilement intégrable dans Apps/Portefeuilles.</p>
-                                </div>
+                            <div>
+                                <h3 class="text-xl font-bold gradient-text mb-2">Facturation Fluide</h3>
+                                <p class="text-secondary">Champs unifiés pour cliniques/pharmacies → e-claims plus rapides & remboursement.</p>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Karte rechts -->
-                    <div class="order-1 lg:order-2" id="carteContainer2">
-                        <div class="glass-card p-4 sm:p-6 lg:p-8 rounded-2xl lg:rounded-3xl shadow-2xl">
-                            <div class="w-full max-w-xs sm:max-w-sm lg:max-w-md mx-auto">
-                                <img src="https://pub-9f200de23f1a4fada809186205ec0a61.r2.dev/Carte%20Sant%C3%A9.svg" 
-                                     alt="Medacte Carte Santé" 
-                                     class="w-full h-auto transform transition-all duration-700 hover:scale-105"
-                                     onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                                <div class="hidden bg-gradient-to-br from-blue-500 to-cyan-600 rounded-2xl p-6 text-white text-center">
-                                    <div class="w-full h-40 bg-white/20 rounded-xl mb-4 flex items-center justify-center">
-                                        <i data-feather="credit-card" class="w-12 h-12 text-white/70"></i>
-                                    </div>
-                                    <h3 class="text-lg font-bold mb-2">Carte Santé Digitale</h3>
-                                    <p class="text-sm opacity-90">MA-MEDACTE-2024-####</p>
+                    <div class="glass-card p-6 slide-in-left" data-delay="700">
+                        <div class="flex items-start space-x-4">
+                            <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full flex items-center justify-center">
+                                <i data-feather="link" class="w-6 h-6 text-white"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold gradient-text mb-2">Interopérabilité</h3>
+                                <p class="text-secondary">Compatible avec données CNSS/CNOPS/AMO ; extensible pour ayants-droit.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="glass-card p-6 slide-in-left" data-delay="800">
+                        <div class="flex items-start space-x-4">
+                            <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-gray-500 to-slate-600 rounded-full flex items-center justify-center">
+                                <i data-feather="lock" class="w-6 h-6 text-white"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold gradient-text mb-2">Protection des Données</h3>
+                                <p class="text-secondary">QR contient uniquement identifiants minimaux + token court terme ; aucun diagnostic sur la carte.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="glass-card p-6 slide-in-left" data-delay="900">
+                        <div class="flex items-start space-x-4">
+                            <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-emerald-500 to-green-600 rounded-full flex items-center justify-center">
+                                <i data-feather="wifi-off" class="w-6 h-6 text-white"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold gradient-text mb-2">Fonctionnement Hors-ligne</h3>
+                                <p class="text-secondary">Champs visibles + Code-128 permettent vérification de base même sans réseau.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="glass-card p-6 slide-in-left" data-delay="1000">
+                        <div class="flex items-start space-x-4">
+                            <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-rose-500 to-pink-600 rounded-full flex items-center justify-center">
+                                <i data-feather="smartphone" class="w-6 h-6 text-white"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold gradient-text mb-2">Évolutif & Brandable</h3>
+                                <p class="text-secondary">Layout unifié (MA-MEDACTE-YYYY-####), facilement intégrable dans Apps/Portefeuilles.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Karte rechts -->
+                <div class="order-1 lg:order-2">
+                    <div class="glass-card p-6 lg:p-8 rounded-3xl shadow-2xl">
+                        <div class="w-full max-w-sm lg:max-w-md mx-auto">
+                            <img src="https://pub-9f200de23f1a4fada809186205ec0a61.r2.dev/Carte%20Sant%C3%A9.svg" 
+                                 alt="Medacte Carte Santé" 
+                                 class="w-full h-auto transform transition-all duration-700 hover:scale-105"
+                                 onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                            <div class="hidden bg-gradient-to-br from-blue-500 to-cyan-600 rounded-2xl p-6 text-white text-center">
+                                <div class="w-full h-40 bg-white/20 rounded-xl mb-4 flex items-center justify-center">
+                                    <i data-feather="credit-card" class="w-12 h-12 text-white/70"></i>
                                 </div>
+                                <h3 class="text-lg font-bold mb-2">Carte Santé Digitale</h3>
+                                <p class="text-sm opacity-90">MA-MEDACTE-2024-####</p>
                             </div>
                         </div>
                     </div>
