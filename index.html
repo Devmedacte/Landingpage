@@ -985,10 +985,20 @@
                 <div class="relative order-2 lg:order-1">
                     <div class="lg:sticky lg:top-1/2 lg:transform lg:-translate-y-1/2">
                         <div class="glass-card p-4 sm:p-6 lg:p-8 rounded-2xl lg:rounded-3xl shadow-2xl">
-                            <img src="https://pub-9f200de23f1a4fada809186205ec0a61.r2.dev/Carte%20Sant%C3%A9.svg" 
-                                 alt="Medacte Carte Santé" 
-                                 class="w-full h-auto max-w-xs sm:max-w-sm lg:max-w-md mx-auto transform transition-transform duration-700 hover:scale-105"
-                                 id="carteSante">
+                            <div class="w-full max-w-xs sm:max-w-sm lg:max-w-md mx-auto">
+                                <img src="https://pub-9f200de23f1a4fada809186205ec0a61.r2.dev/Carte%20Sant%C3%A9.svg" 
+                                     alt="Medacte Carte Santé" 
+                                     class="w-full h-auto transform transition-transform duration-700 hover:scale-105"
+                                     id="carteSante"
+                                     onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                                <div class="hidden bg-gradient-to-br from-blue-500 to-cyan-600 rounded-2xl p-6 text-white text-center">
+                                    <div class="w-full h-40 bg-white/20 rounded-xl mb-4 flex items-center justify-center">
+                                        <i data-feather="credit-card" class="w-12 h-12 text-white/70"></i>
+                                    </div>
+                                    <h3 class="text-lg font-bold mb-2">Carte Santé Digitale</h3>
+                                    <p class="text-sm opacity-90">MA-MEDACTE-2024-####</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1001,8 +1011,8 @@
                                 <i data-feather="zap" class="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-white"></i>
                             </div>
                             <div class="min-w-0 flex-1">
-                                <h3 class="text-base sm:text-lg lg:text-xl font-bold gradient-text mb-1 sm:mb-2">Schneller Zugang</h3>
-                                <p class="text-xs sm:text-sm lg:text-base text-secondary leading-relaxed">Identifikation & Anspruchsprüfung in Sekunden (QR/ID), weniger Wartezeit.</p>
+                                <h3 class="text-base sm:text-lg lg:text-xl font-bold gradient-text mb-1 sm:mb-2">Accès Rapide</h3>
+                                <p class="text-xs sm:text-sm lg:text-base text-secondary leading-relaxed">Identification & vérification des droits en secondes (QR/ID), moins d'attente.</p>
                             </div>
                         </div>
                     </div>
@@ -1013,8 +1023,8 @@
                                 <i data-feather="eye" class="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-white"></i>
                             </div>
                             <div class="min-w-0 flex-1">
-                                <h3 class="text-base sm:text-lg lg:text-xl font-bold gradient-text mb-1 sm:mb-2">Klare Anspruchslage</h3>
-                                <p class="text-xs sm:text-sm lg:text-base text-secondary leading-relaxed">CNSS/AMO-Status, Gültigkeit und Leistungskorb direkt ersichtlich → weniger Streitfälle.</p>
+                                <h3 class="text-base sm:text-lg lg:text-xl font-bold gradient-text mb-1 sm:mb-2">Situation Claire</h3>
+                                <p class="text-xs sm:text-sm lg:text-base text-secondary leading-relaxed">Statut CNSS/AMO, validité et panier de soins directement visibles → moins de litiges.</p>
                             </div>
                         </div>
                     </div>
@@ -1025,8 +1035,8 @@
                                 <i data-feather="alert-triangle" class="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-white"></i>
                             </div>
                             <div class="min-w-0 flex-1">
-                                <h3 class="text-base sm:text-lg lg:text-xl font-bold gradient-text mb-1 sm:mb-2">Notfallinfos</h3>
-                                <p class="text-xs sm:text-sm lg:text-base text-secondary leading-relaxed">Blutgruppe, Allergien, Notfallkontakt sofort verfügbar.</p>
+                                <h3 class="text-base sm:text-lg lg:text-xl font-bold gradient-text mb-1 sm:mb-2">Infos d'Urgence</h3>
+                                <p class="text-xs sm:text-sm lg:text-base text-secondary leading-relaxed">Groupe sanguin, allergies, contact d'urgence immédiatement disponible.</p>
                             </div>
                         </div>
                     </div>
@@ -1037,8 +1047,8 @@
                                 <i data-feather="shield" class="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-white"></i>
                             </div>
                             <div class="min-w-0 flex-1">
-                                <h3 class="text-base sm:text-lg lg:text-xl font-bold gradient-text mb-1 sm:mb-2">Betrugsreduktion</h3>
-                                <p class="text-xs sm:text-sm lg:text-base text-secondary leading-relaxed">Einmalige Karten-ID + QR-Token → weniger Doppelabrechnungen & Identitätsmissbrauch.</p>
+                                <h3 class="text-base sm:text-lg lg:text-xl font-bold gradient-text mb-1 sm:mb-2">Réduction de la Fraude</h3>
+                                <p class="text-xs sm:text-sm lg:text-base text-secondary leading-relaxed">ID carte unique + QR-Token → moins de double facturation & usurpation d'identité.</p>
                             </div>
                         </div>
                     </div>
@@ -1049,8 +1059,8 @@
                                 <i data-feather="dollar-sign" class="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-white"></i>
                             </div>
                             <div class="min-w-0 flex-1">
-                                <h3 class="text-base sm:text-lg lg:text-xl font-bold gradient-text mb-1 sm:mb-2">Kostenkontrolle</h3>
-                                <p class="text-xs sm:text-sm lg:text-base text-secondary leading-relaxed">Digitale Prüflogik (Gültigkeit, Höchstgrenzen) vor der Leistung → weniger Fehl- und Überversorgung.</p>
+                                <h3 class="text-base sm:text-lg lg:text-xl font-bold gradient-text mb-1 sm:mb-2">Contrôle des Coûts</h3>
+                                <p class="text-xs sm:text-sm lg:text-base text-secondary leading-relaxed">Logique de vérification digitale (validité, plafonds) avant prestation → moins de sur/sous-consommation.</p>
                             </div>
                         </div>
                     </div>
@@ -1061,8 +1071,8 @@
                                 <i data-feather="credit-card" class="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-white"></i>
                             </div>
                             <div class="min-w-0 flex-1">
-                                <h3 class="text-base sm:text-lg lg:text-xl font-bold gradient-text mb-1 sm:mb-2">Nahtlose Abrechnung</h3>
-                                <p class="text-xs sm:text-sm lg:text-base text-secondary leading-relaxed">Einheitliche Felder für Kliniken/Apotheken → schnellere e-Claims & Rückerstattung.</p>
+                                <h3 class="text-base sm:text-lg lg:text-xl font-bold gradient-text mb-1 sm:mb-2">Facturation Fluide</h3>
+                                <p class="text-xs sm:text-sm lg:text-base text-secondary leading-relaxed">Champs unifiés pour cliniques/pharmacies → e-claims plus rapides & remboursement.</p>
                             </div>
                         </div>
                     </div>
@@ -1073,8 +1083,8 @@
                                 <i data-feather="link" class="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-white"></i>
                             </div>
                             <div class="min-w-0 flex-1">
-                                <h3 class="text-base sm:text-lg lg:text-xl font-bold gradient-text mb-1 sm:mb-2">Interoperabilität</h3>
-                                <p class="text-xs sm:text-sm lg:text-base text-secondary leading-relaxed">Kompatibel mit CNSS/CNOPS/AMO-Daten; erweiterbar für Ayants-droit.</p>
+                                <h3 class="text-base sm:text-lg lg:text-xl font-bold gradient-text mb-1 sm:mb-2">Interopérabilité</h3>
+                                <p class="text-xs sm:text-sm lg:text-base text-secondary leading-relaxed">Compatible avec données CNSS/CNOPS/AMO ; extensible pour ayants-droit.</p>
                             </div>
                         </div>
                     </div>
@@ -1085,8 +1095,8 @@
                                 <i data-feather="lock" class="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-white"></i>
                             </div>
                             <div class="min-w-0 flex-1">
-                                <h3 class="text-base sm:text-lg lg:text-xl font-bold gradient-text mb-1 sm:mb-2">Datenschutz by design</h3>
-                                <p class="text-xs sm:text-sm lg:text-base text-secondary leading-relaxed">QR enthält nur Minimalkennungen + Kurzzeit-Token; keine Diagnosen auf der Karte.</p>
+                                <h3 class="text-base sm:text-lg lg:text-xl font-bold gradient-text mb-1 sm:mb-2">Protection des Données</h3>
+                                <p class="text-xs sm:text-sm lg:text-base text-secondary leading-relaxed">QR contient uniquement identifiants minimaux + token court terme ; aucun diagnostic sur la carte.</p>
                             </div>
                         </div>
                     </div>
@@ -1097,8 +1107,8 @@
                                 <i data-feather="wifi-off" class="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-white"></i>
                             </div>
                             <div class="min-w-0 flex-1">
-                                <h3 class="text-base sm:text-lg lg:text-xl font-bold gradient-text mb-1 sm:mb-2">Offline-tauglich</h3>
-                                <p class="text-xs sm:text-sm lg:text-base text-secondary leading-relaxed">Sichtfelder + Code-128 erlauben Basisprüfung auch ohne Netz.</p>
+                                <h3 class="text-base sm:text-lg lg:text-xl font-bold gradient-text mb-1 sm:mb-2">Fonctionnement Hors-ligne</h3>
+                                <p class="text-xs sm:text-sm lg:text-base text-secondary leading-relaxed">Champs visibles + Code-128 permettent vérification de base même sans réseau.</p>
                             </div>
                         </div>
                     </div>
@@ -1109,8 +1119,8 @@
                                 <i data-feather="smartphone" class="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-white"></i>
                             </div>
                             <div class="min-w-0 flex-1">
-                                <h3 class="text-base sm:text-lg lg:text-xl font-bold gradient-text mb-1 sm:mb-2">Skalierbar & brandfähig</h3>
-                                <p class="text-xs sm:text-sm lg:text-base text-secondary leading-relaxed">Einheitliches Layout (MA-MEDACTE-YYYY-####), leicht in Apps/Wallets integrierbar.</p>
+                                <h3 class="text-base sm:text-lg lg:text-xl font-bold gradient-text mb-1 sm:mb-2">Évolutif & Brandable</h3>
+                                <p class="text-xs sm:text-sm lg:text-base text-secondary leading-relaxed">Layout unifié (MA-MEDACTE-YYYY-####), facilement intégrable dans Apps/Portefeuilles.</p>
                             </div>
                         </div>
                     </div>
