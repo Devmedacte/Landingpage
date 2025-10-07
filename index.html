@@ -189,6 +189,34 @@
             0%, 100% { transform: translateY(0px); }
             50% { transform: translateY(-20px); }
         }
+        
+        /* Staggered animations */
+        .slide-in-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: all 0.6s ease-out;
+        }
+        
+        .slide-in-right.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .slide-in-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: all 0.6s ease-out;
+        }
+        
+        .slide-in-left.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        /* Carte Santé special animation */
+        #carteSante {
+            transition: all 0.7s ease-out;
+        }
 
         /* Pulse Glow */
         .pulse-glow {
@@ -747,10 +775,10 @@
                 
                 <div class="slide-in-right">
                     <div class="relative">
-                        <div class="glass-card p-8 float">
+                        <div class="float">
                             <img src="https://pub-9f200de23f1a4fada809186205ec0a61.r2.dev/app.svg" 
                                  alt="Interface Medacte" 
-                                 class="w-full h-auto rounded-2xl">
+                                 class="w-full h-auto">
                         </div>
                         
                         <!-- Floating Elements -->
@@ -951,83 +979,181 @@
         </div>
     </section>
 
-    <!-- Testimonials Section -->
-    <section class="py-20 relative">
+    <!-- Medacte Carte Santé Section -->
+    <section class="py-20 relative overflow-hidden">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-16 fade-in">
                 <h2 class="text-4xl lg:text-6xl font-bold mb-6">
-                    <span class="gradient-text">Témoignages</span> Authentiques
+                    <span class="gradient-text">Medacte</span> Carte Santé
                 </h2>
                 <p class="text-xl text-secondary max-w-3xl mx-auto">
-                    Découvrez les expériences réelles de nos patients et médecins partenaires au Maroc.
+                    La carte santé digitale qui révolutionne l'accès aux soins au Maroc avec l'IA et la blockchain.
                 </p>
             </div>
 
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Testimonial 1 -->
-                <div class="glass-card p-8 scale-in">
-                    <div class="flex items-center mb-6">
-                        <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=100&h=100&fit=crop&crop=face" 
-                             alt="Dr. Aicha Benali" class="w-16 h-16 rounded-full mr-4">
-                        <div>
-                            <h4 class="text-lg font-bold gradient-text">Dr. Aicha Benali</h4>
-                            <p class="text-sm text-muted">Médecin Généraliste, Casablanca</p>
-                            <div class="flex text-yellow-400 mt-1">
-                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
-                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
-                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
-                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
-                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+            <!-- Phase 1: Karte links, 5 Vorteile rechts -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center mb-20" id="phase1">
+                <!-- Karte links -->
+                <div class="order-2 lg:order-1">
+                    <div class="w-full max-w-sm lg:max-w-md mx-auto">
+                        <img src="https://pub-9f200de23f1a4fada809186205ec0a61.r2.dev/Carte%20Sant%C3%A9.svg" 
+                             alt="Medacte Carte Santé" 
+                             class="w-full h-auto transform transition-all duration-700 hover:scale-105"
+                             onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <div class="hidden bg-gradient-to-br from-blue-500 to-cyan-600 rounded-2xl p-6 text-white text-center">
+                            <div class="w-full h-40 bg-white/20 rounded-xl mb-4 flex items-center justify-center">
+                                <i data-feather="credit-card" class="w-12 h-12 text-white/70"></i>
                             </div>
+                            <h3 class="text-lg font-bold mb-2">Carte Santé Digitale</h3>
+                            <p class="text-sm opacity-90">MA-MEDACTE-2024-####</p>
                         </div>
                     </div>
-                    <p class="text-secondary italic">
-                        "Medacte a révolutionné ma pratique médicale. La gestion des dossiers patients est tellement plus simple et efficace. Mes patients adorent pouvoir consulter leurs résultats en temps réel."
-                    </p>
                 </div>
 
-                <!-- Testimonial 2 -->
-                <div class="glass-card p-8 scale-in">
-                    <div class="flex items-center mb-6">
-                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face" 
-                             alt="Youssef El Amrani" class="w-16 h-16 rounded-full mr-4">
-                        <div>
-                            <h4 class="text-lg font-bold gradient-text">Youssef El Amrani</h4>
-                            <p class="text-sm text-muted">Patient, Rabat</p>
-                            <div class="flex text-yellow-400 mt-1">
-                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
-                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
-                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
-                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
-                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                <!-- Erste 5 Vorteile rechts -->
+                <div class="space-y-6 order-1 lg:order-2">
+                    <div class="glass-card p-6 slide-in-right" data-delay="100">
+                        <div class="flex items-start space-x-4">
+                            <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-blue-500 to-cyan-600 rounded-full flex items-center justify-center">
+                                <i data-feather="zap" class="w-6 h-6 text-white"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold gradient-text mb-2">Accès Rapide</h3>
+                                <p class="text-secondary">Identification & vérification des droits en secondes (QR/ID), moins d'attente.</p>
                             </div>
                         </div>
                     </div>
-                    <p class="text-secondary italic">
-                        "En tant que père de famille, Medacte me permet de gérer la santé de toute ma famille depuis mon téléphone. Les consultations vidéo sont très pratiques et les médecins sont excellents."
-                    </p>
+
+                    <div class="glass-card p-6 slide-in-right" data-delay="200">
+                        <div class="flex items-start space-x-4">
+                            <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-green-500 to-emerald-600 rounded-full flex items-center justify-center">
+                                <i data-feather="eye" class="w-6 h-6 text-white"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold gradient-text mb-2">Situation Claire</h3>
+                                <p class="text-secondary">Statut CNSS/AMO, validité et panier de soins directement visibles → moins de litiges.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="glass-card p-6 slide-in-right" data-delay="300">
+                        <div class="flex items-start space-x-4">
+                            <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-red-500 to-pink-600 rounded-full flex items-center justify-center">
+                                <i data-feather="alert-triangle" class="w-6 h-6 text-white"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold gradient-text mb-2">Infos d'Urgence</h3>
+                                <p class="text-secondary">Groupe sanguin, allergies, contact d'urgence immédiatement disponible.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="glass-card p-6 slide-in-right" data-delay="400">
+                        <div class="flex items-start space-x-4">
+                            <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-purple-500 to-indigo-600 rounded-full flex items-center justify-center">
+                                <i data-feather="shield" class="w-6 h-6 text-white"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold gradient-text mb-2">Réduction de la Fraude</h3>
+                                <p class="text-secondary">ID carte unique + QR-Token → moins de double facturation & usurpation d'identité.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="glass-card p-6 slide-in-right" data-delay="500">
+                        <div class="flex items-start space-x-4">
+                            <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-yellow-500 to-orange-600 rounded-full flex items-center justify-center">
+                                <i data-feather="dollar-sign" class="w-6 h-6 text-white"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold gradient-text mb-2">Contrôle des Coûts</h3>
+                                <p class="text-secondary">Logique de vérification digitale (validité, plafonds) avant prestation → moins de sur/sous-consommation.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Phase 2: Karte rechts, 5 Vorteile links -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center" id="phase2">
+                <!-- Letzte 5 Vorteile links -->
+                <div class="space-y-6 order-2 lg:order-1">
+                    <div class="glass-card p-6 slide-in-left" data-delay="600">
+                        <div class="flex items-start space-x-4">
+                            <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-teal-500 to-cyan-600 rounded-full flex items-center justify-center">
+                                <i data-feather="credit-card" class="w-6 h-6 text-white"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold gradient-text mb-2">Facturation Fluide</h3>
+                                <p class="text-secondary">Champs unifiés pour cliniques/pharmacies → e-claims plus rapides & remboursement.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="glass-card p-6 slide-in-left" data-delay="700">
+                        <div class="flex items-start space-x-4">
+                            <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full flex items-center justify-center">
+                                <i data-feather="link" class="w-6 h-6 text-white"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold gradient-text mb-2">Interopérabilité</h3>
+                                <p class="text-secondary">Compatible avec données CNSS/CNOPS/AMO ; extensible pour ayants-droit.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="glass-card p-6 slide-in-left" data-delay="800">
+                        <div class="flex items-start space-x-4">
+                            <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-gray-500 to-slate-600 rounded-full flex items-center justify-center">
+                                <i data-feather="lock" class="w-6 h-6 text-white"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold gradient-text mb-2">Protection des Données</h3>
+                                <p class="text-secondary">QR contient uniquement identifiants minimaux + token court terme ; aucun diagnostic sur la carte.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="glass-card p-6 slide-in-left" data-delay="900">
+                        <div class="flex items-start space-x-4">
+                            <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-emerald-500 to-green-600 rounded-full flex items-center justify-center">
+                                <i data-feather="wifi-off" class="w-6 h-6 text-white"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold gradient-text mb-2">Fonctionnement Hors-ligne</h3>
+                                <p class="text-secondary">Champs visibles + Code-128 permettent vérification de base même sans réseau.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="glass-card p-6 slide-in-left" data-delay="1000">
+                        <div class="flex items-start space-x-4">
+                            <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-rose-500 to-pink-600 rounded-full flex items-center justify-center">
+                                <i data-feather="smartphone" class="w-6 h-6 text-white"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold gradient-text mb-2">Évolutif & Brandable</h3>
+                                <p class="text-secondary">Layout unifié (MA-MEDACTE-YYYY-####), facilement intégrable dans Apps/Portefeuilles.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- Testimonial 3 -->
-                <div class="glass-card p-8 scale-in">
-                    <div class="flex items-center mb-6">
-                        <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=100&h=100&fit=crop&crop=face" 
-                             alt="Fatima Zahra" class="w-16 h-16 rounded-full mr-4">
-                        <div>
-                            <h4 class="text-lg font-bold gradient-text">Fatima Zahra</h4>
-                            <p class="text-sm text-muted">Pharmacienne, Marrakech</p>
-                            <div class="flex text-yellow-400 mt-1">
-                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
-                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
-                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
-                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
-                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                <!-- Karte rechts -->
+                <div class="order-1 lg:order-2">
+                    <div class="w-full max-w-sm lg:max-w-md mx-auto">
+                        <img src="https://pub-9f200de23f1a4fada809186205ec0a61.r2.dev/Carte%20Sant%C3%A9.svg" 
+                             alt="Medacte Carte Santé" 
+                             class="w-full h-auto transform transition-all duration-700 hover:scale-105"
+                             onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <div class="hidden bg-gradient-to-br from-blue-500 to-cyan-600 rounded-2xl p-6 text-white text-center">
+                            <div class="w-full h-40 bg-white/20 rounded-xl mb-4 flex items-center justify-center">
+                                <i data-feather="credit-card" class="w-12 h-12 text-white/70"></i>
                             </div>
+                            <h3 class="text-lg font-bold mb-2">Carte Santé Digitale</h3>
+                            <p class="text-sm opacity-90">MA-MEDACTE-2024-####</p>
                         </div>
                     </div>
-                    <p class="text-secondary italic">
-                        "La livraison de médicaments à domicile est un vrai soulagement pour mes patients âgés. Le système de commande est très intuitif et la livraison est toujours ponctuelle."
-                    </p>
                 </div>
             </div>
         </div>
@@ -1425,37 +1551,6 @@
         </div>
     </section>
 
-    <!-- Newsletter Section -->
-    <section class="py-20 relative">
-        <div class="max-w-4xl mx-auto px-6">
-            <div class="glass-card p-12 text-center fade-in">
-                <h2 class="text-4xl lg:text-6xl font-bold mb-6">
-                    Restez <span class="gradient-text">Informé</span>
-                </h2>
-                <p class="text-xl text-secondary mb-8">
-                    Recevez nos conseils santé, nouvelles fonctionnalités et offres exclusives directement dans votre boîte mail.
-                </p>
-                
-                <form class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-                    <input type="email" 
-                           placeholder="Votre adresse email" 
-                           class="flex-1 px-6 py-4 theme-input rounded-full">
-                    <button type="submit" class="px-6 py-3 bg-gradient-to-r from-blue-500 to-cyan-600 hover:from-blue-600 hover:to-cyan-700 text-white font-semibold rounded-2xl transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-blue-500/30 border border-blue-400/20 backdrop-blur-sm">
-                        <div class="flex items-center justify-center">
-                            <div class="w-6 h-6 mr-3 bg-white/20 rounded-full flex items-center justify-center">
-                                <i data-feather="send" class="w-4 h-4"></i>
-                            </div>
-                            <span>S'abonner</span>
-                        </div>
-                    </button>
-                </form>
-                
-                <p class="text-sm text-muted mt-4">
-                    Nous respectons votre vie privée. Désabonnement possible à tout moment.
-                </p>
-            </div>
-        </div>
-    </section>
 
     <!-- Contact Section -->
     <section id="contact" class="py-20 relative">
@@ -1588,8 +1683,8 @@
     <!-- Footer -->
     <footer class="py-12 border-t border-opacity-20" style="border-color: var(--text-muted);">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="grid md:grid-cols-4 gap-8">
-                <div class="md:col-span-2">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
+                <div class="sm:col-span-2 lg:col-span-2">
                     <div class="flex items-center mb-6">
                         <img src="https://pub-9f200de23f1a4fada809186205ec0a61.r2.dev/logo.svg" alt="Medacte" class="h-24 w-24">
                     </div>
@@ -1630,6 +1725,28 @@
                         <li><a href="#" class="nav-link">Confidentialité</a></li>
                         <li><a href="#" class="nav-link">Contact</a></li>
                     </ul>
+                </div>
+                
+                <!-- Newsletter Section im Footer -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4 gradient-text">Restez Informé</h3>
+                    <p class="text-sm text-muted mb-4">
+                        Recevez nos conseils santé et nouvelles fonctionnalités.
+                    </p>
+                    <form class="space-y-3">
+                        <input type="email" 
+                               placeholder="Votre email" 
+                               class="w-full px-4 py-2 text-sm theme-input rounded-lg">
+                        <button type="submit" class="w-full px-4 py-2 bg-gradient-to-r from-blue-500 to-cyan-600 hover:from-blue-600 hover:to-cyan-700 text-white text-sm font-semibold rounded-lg transition-all duration-300 transform hover:scale-105">
+                            <div class="flex items-center justify-center">
+                                <i data-feather="send" class="w-4 h-4 mr-2"></i>
+                                <span>S'abonner</span>
+                            </div>
+                        </button>
+                    </form>
+                    <p class="text-xs text-muted mt-2">
+                        Désabonnement possible à tout moment.
+                    </p>
                 </div>
             </div>
             
@@ -1806,6 +1923,14 @@
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('visible');
+                        
+                        // Special handling for staggered animations
+                        if (entry.target.hasAttribute('data-delay')) {
+                            const delay = parseInt(entry.target.getAttribute('data-delay'));
+                            setTimeout(() => {
+                                entry.target.classList.add('visible');
+                            }, delay);
+                        }
                     }
                 });
             }, observerOptions);
@@ -1814,6 +1939,56 @@
             document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right, .scale-in').forEach(el => {
                 observer.observe(el);
             });
+            
+            // Special animation for Carte Santé
+            initCarteSanteAnimation();
+        }
+        
+        // Carte Santé scroll animation
+        function initCarteSanteAnimation() {
+            const phase1 = document.getElementById('phase1');
+            const phase2 = document.getElementById('phase2');
+            
+            if (!phase1 || !phase2) return;
+            
+            // Observer for phase 1 - show first phase
+            const phase1Observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        phase1.style.opacity = '1';
+                        phase1.style.transform = 'translateY(0)';
+                        phase2.style.opacity = '0.3';
+                        phase2.style.transform = 'translateY(50px)';
+                    }
+                });
+            }, {
+                threshold: 0.3,
+                rootMargin: '0px 0px -100px 0px'
+            });
+            
+            // Observer for phase 2 - show second phase
+            const phase2Observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        phase1.style.opacity = '0.3';
+                        phase1.style.transform = 'translateY(-50px)';
+                        phase2.style.opacity = '1';
+                        phase2.style.transform = 'translateY(0)';
+                    }
+                });
+            }, {
+                threshold: 0.3,
+                rootMargin: '0px 0px -100px 0px'
+            });
+            
+            // Add transition styles
+            phase1.style.transition = 'opacity 0.8s ease-in-out, transform 0.8s ease-in-out';
+            phase2.style.transition = 'opacity 0.8s ease-in-out, transform 0.8s ease-in-out';
+            phase2.style.opacity = '0.3';
+            phase2.style.transform = 'translateY(50px)';
+            
+            phase1Observer.observe(phase1);
+            phase2Observer.observe(phase2);
         }
 
         // Mobile menu
@@ -2054,6 +2229,46 @@
         }
 
         // Load saved theme on page load
+        // Carte Santé Scroll Animation
+        function initCarteSanteAnimation() {
+            const carteImage = document.getElementById('carteSante');
+            const benefits = document.querySelectorAll('[data-delay]');
+            
+            if (!carteImage) return;
+            
+            // Parallax effect for the card
+            window.addEventListener('scroll', () => {
+                const scrolled = window.pageYOffset;
+                const rate = scrolled * -0.3;
+                carteImage.style.transform = `translateY(${rate}px) scale(${1 + scrolled * 0.0001})`;
+            });
+            
+            // Intersection Observer for benefits animation
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const delay = entry.target.getAttribute('data-delay') || '0';
+                        setTimeout(() => {
+                            entry.target.style.opacity = '1';
+                            entry.target.style.transform = 'translateX(0)';
+                        }, parseInt(delay));
+                    }
+                });
+            }, observerOptions);
+            
+            benefits.forEach(benefit => {
+                benefit.style.opacity = '0';
+                benefit.style.transform = 'translateX(30px)';
+                benefit.style.transition = 'all 0.6s ease-out';
+                observer.observe(benefit);
+            });
+        }
+
         document.addEventListener('DOMContentLoaded', function() {
             const savedTheme = localStorage.getItem('theme') || 'dark';
             setTheme(savedTheme);
@@ -2064,6 +2279,9 @@
                 document.querySelector('.mode-btn[onclick="setTheme(\'dark\')"]') :
                 document.querySelector('.mode-btn[onclick="setTheme(\'light\')"]');
             if (activeBtn) activeBtn.classList.add('active');
+            
+            // Initialize Carte Santé animation
+            initCarteSanteAnimation();
         });
     </script>
 
